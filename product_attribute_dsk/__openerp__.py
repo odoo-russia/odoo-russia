@@ -18,14 +18,14 @@
 #
 ##############################################################################
 {
-    "name" : "Products Attributes By Product Type",
+    "name" : "Products Attributes",
     "version" : "1.0",
     "author" : "Denis Karataev",
     "category" : "Generic Modules",
     "depends" : ["product"],
     "init_xml" : [],
     "demo_xml" : [],
-    "description": "A module that add attributes to product, grouping by product type",
+    "description": "A module that add attributes to product",
     "update_xml" : ["product_attribute_dsk_view.xml"],
     "active": False,
     "installable": True,

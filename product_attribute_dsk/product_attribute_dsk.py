@@ -20,33 +20,61 @@
 
 from osv import fields, osv
 
+class product_attribute_group(osv.osv):
+    _name = 'product.attribute.group'
+    _columns = {
+        'name': fields.char('Product attribute group name', size=64, required=True),
+        'attribute_ids': fields.many2many(
+            'product.attribute',
+            'product_attribute_group_attribute',
+            'attribute_group_id',
+            'attribute_id',
+            'Attributes'),
+    }
+    _sql_constraints = [('attribute_group_name_unique','unique(name)','Attribute group name must be unique!')]
+product_attribute_group()
+
 class product_attribute(osv.osv):
     _name = 'product.attribute'
     _columns = {
-        'name': fields.char('Product attribute name',size=64),
-        'category_ids': fields.many2many(
-            'product.category',
-            'product_attribute_category',
+        'name': fields.char('Product attribute name', size=64, required=True),
+        'attribute_value_ids': fields.one2many('product.attribute.value','attribute_id','Attribute values'),
+        'attribute_group_ids': fields.many2many(
+            'product.attribute.group',
+            'product_attribute_group_attribute',
             'attribute_id',
-            'category_id',
-            'Categories',
-        ),
+            'attribute_group_id',
+            'Attribute groups'),
     }
+    _sql_constraints = [('attribute_name_unique','unique(name)','Attribute name must be unique!')]
 product_attribute()
 
-class product_category(osv.osv):
-    _name = 'product.category'
-    _inherit = 'product.category'
+class product_attribute_value(osv.osv):
+    _name = 'product.attribute.value'
     _columns = {
-        'attribute_ids': fields.many2many(
-            'product.attribute',
-            'product_attribute_category',
-            'category_id',
-            'attribute_id',
-            'Attributes'
-        ),
+        'name': fields.char('Product attribute value', size=64, required=True),
+        'attribute_id': fields.many2one('product.attribute', 'Product attribute', ondelete='restrict', required=True),
     }
-product_category()
-    
+    _sql_constraints = [('attribute_name_value_unique','unique(attribute_id, name)','Attribute value must be unique!')]
+product_attribute_value()
+
+class product_attribute_value_product(osv.osv):
+    _name = 'product.attribute.value.product'
+    _columns = {
+        'attribute_id': fields.many2one('product.attribute', 'Product attribute', ondelete='restrict', required=True),
+        'attribute_value_id': fields.many2one('product.attribute.value', 'Product attribute value', ondelete='restrict', required=True),
+        'product_id': fields.many2one('product.product', 'Product', ondelete='cascade', required=True),
+    }
+    _sql_constraints = [('attribute_name_product_unique','unique(attribute_id, product_id)','Attribute name must be unique!')]
+product_attribute_value_product()
+
+class product_product(osv.osv):
+    _name = 'product.product'
+    _inherit = 'product.product'
+    _columns = {
+        'attribute_group': fields.many2one('product.attribute.group','Product attribute group', ondelete='restrict', select=True),
+        'attribute_value_product_ids': fields.one2many('product.attribute.value.product', 'product_id', 'Attributes and their values'),
+    }
+product_product()
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
