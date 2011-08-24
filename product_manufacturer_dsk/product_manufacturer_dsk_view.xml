@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+
+        <record id="product_normal_form_view_dsk" model="ir.ui.view">
+            <field name="name">product.normal.form</field>
+            <field name="model">product.product</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="product.product_normal_form_view" />
+            <field name="arch" type="xml">
+                <xpath expr="//page[@string='Suppliers']" position="replace">
+                    <page string="Suppliers and Manufacturers">
+                        <separator string="Suppliers" colspan="4"/>
+                        <field colspan="4" name="seller_ids" nolabel="1"/>
+
+                        <separator string="Manufacturers" colspan="4"/>
+                        <field colspan="4" name="manufacturer_ids" nolabel="1">
+                            <tree string="Manufacturers">
+                                <field name="name"/>
+                                <field name="product_code"/>
+                                <field name="product_name"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="product_manufacturer_tree_view" model="ir.ui.view">
+            <field name="name">product.manufacturer.tree</field>
+            <field name="model">product.manufacturer</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Manufacturers">
+                    <field name="name"/>
+                    <field name="product_code"/>
+                    <field name="product_name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="product_manufacturer_form_view" model="ir.ui.view">
+            <field name="name">product.manufacturer.form</field>
+            <field name="model">product.manufacturer</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Manufacturer">
+                    <field name="name"/>
+                    <newline/>
+                    <field name="product_code"/>
+                    <field name="product_name"/>
+                </form>
+            </field>
+        </record>
+        
+    </data>
+</openerp>
