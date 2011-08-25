@@ -50,25 +50,58 @@ class product_attribute(osv.osv):
 product_attribute()
 
 class product_attribute_value(osv.osv):
+    def create(self, cr, uid, vals, context=None):
+        if context is None:
+            context = {}
+        attribute_id = context.get('attribute_id')
+        if attribute_id:
+            vals['attribute_id']=attribute_id
+        return super(product_attribute_value, self).create(cr, uid, vals, context)
+
     _name = 'product.attribute.value'
     _columns = {
         'name': fields.char('Product attribute value', size=64, required=True),
         'attribute_id': fields.many2one('product.attribute', 'Product attribute', ondelete='restrict', required=True),
     }
+
     _sql_constraints = [('attribute_name_value_unique','unique(attribute_id, name)','Attribute value must be unique!')]
 product_attribute_value()
 
 class product_attribute_value_product(osv.osv):
+    def _check_attribute_group_relation(self, cr, uid, ids):
+        for product_avp in self.browse(cr, uid, ids):
+            print (product_avp.attribute_group_id, product_avp.attribute_group_ids)
+            if product_avp.attribute_group_id not in product_avp.attribute_group_ids: return False
+        return True
+
+    def _check_attribute_value_relation(self, cr, uid, ids):
+        for product_avp in self.browse(cr, uid, ids):
+            print (product_avp.attribute_id, product_avp.attribute_value_attribute_id)
+            if product_avp.attribute_id != product_avp.attribute_value_attribute_id: return False
+        return True
+
     _name = 'product.attribute.value.product'
     _columns = {
         'attribute_id': fields.many2one('product.attribute', 'Product attribute', ondelete='restrict', required=True),
+        'attribute_group_ids': fields.related('attribute_id', 'attribute_group_ids', type='many2many', relation='product.attribute', string='Attribute groups', store=False),
         'attribute_value_id': fields.many2one('product.attribute.value', 'Product attribute value', ondelete='restrict', required=True),
+        'attribute_value_attribute_id': fields.related('attribute_value_id', 'attribute_id', type='many2one', relation='product.attribute.value', string="Attribute value parent id", store=False),
         'product_id': fields.many2one('product.product', 'Product', ondelete='cascade', required=True),
+        'attribute_group_id': fields.related('product_id', 'attribute_group', type='many2one', relation='product.product', str='Attribute group', store=False),
     }
     _sql_constraints = [('attribute_name_product_unique','unique(attribute_id, product_id)','Attribute name must be unique!')]
+    _constraints = [
+        (_check_attribute_group_relation, 'Mismatch in attribute group!', ['attribute_id', 'attribute_value_id']),
+        (_check_attribute_value_relation, 'Mismatch in attribute value!', ['attribute_id', 'attribute_value_id'])
+    ]
 product_attribute_value_product()
 
 class product_product(osv.osv):
+    def onchange_attribute_group(self, cr, uid, ids, attribute_group):
+        v = {'attribute_value_product_ids': []}
+
+        return {'value': v}
+
     _name = 'product.product'
     _inherit = 'product.product'
     _columns = {
