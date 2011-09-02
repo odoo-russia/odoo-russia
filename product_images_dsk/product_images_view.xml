@@ -47,7 +47,7 @@
 				<xpath expr="/form/notebook" position="inside">
 					<page string="Images">
                         <separator string="Default images" colspan="4"/>
-                        <field name="image" domain="[('type', 'in', ('image', 'image3d'))]"/>
+                        <field name="image" domain="[('type', 'in', ('image', 'image3d', 'scheme'))]"/>
                         <field name="animation" domain="[('type', '=', 'flash3d')]"/>
 
                         <separator string="Images" colspan="4"/>
