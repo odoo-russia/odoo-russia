@@ -22,6 +22,14 @@ class product_images(osv.osv):
     _name = "product.images"
     _description = __doc__
     _table = "product_images"
+
+    def _check_references(self, cr, uid, ids):
+        for image in self.browse(cr, uid, ids):
+            if image == image.product_id.image and image.type == 'flash3d' \
+            or image == image.product_id.animation and image.type != 'flash3d':
+                return False
+        return True
+            
     
     def get_image(self, cr, uid, id):
         each = self.read(cr, uid, id, ['image'])
@@ -42,4 +50,8 @@ class product_images(osv.osv):
         'comments':fields.text('Comments'),
         'product_id':fields.many2one('product.product', 'Product', required=True)
     }
+
+    _constraints = [
+        (_check_references, 'You can\'t change image type when this image is product default image!', ['type'])
+    ]
 product_images()
