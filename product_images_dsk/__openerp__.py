@@ -27,7 +27,7 @@
     """,
     "init_xml": [],
     "update_xml": [
-        'views/product_images_view.xml',
+        'product_images_view.xml',
     ],
     "installable": True,
     "active": False,
