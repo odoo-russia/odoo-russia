@@ -11,9 +11,10 @@
 						<page string="Image">
 							<group col="4" colspan="4">
 								<field name="name" colspan="2" />
+                                <field name="type"/>
 							</group>
 							<group col="4" colspan="4">
-								<field name="image" colspan="4" required="True"/>
+								<field name="image" colspan="4"/>
 							</group>
 							<separator string="Preview (Only when saved)" colspan="4" />
 							<field name="preview" widget="image" nolabel="1" colspan="4"/>
@@ -32,7 +33,8 @@
 			<field name="arch" type="xml">
 				<tree string="Product Images">
 					<field name="name" select="1" />
-					<field name="comments" select="2" />
+                    <field name="type" select="2" />
+                    <field name="comments" select="2" />
 				</tree>
 			</field>
 		</record>
@@ -44,7 +46,12 @@
 			<field name="arch" type="xml">
 				<xpath expr="/form/notebook" position="inside">
 					<page string="Images">
-						<field name="image_ids" nolabel="1" />
+                        <separator string="Default images" colspan="4"/>
+                        <field name="image" domain="[('type', 'in', ('image', 'image3d'))]"/>
+                        <field name="animation" domain="[('type', '=', 'flash3d')]"/>
+
+                        <separator string="Images" colspan="4"/>
+						<field name="image_ids" nolabel="1" colspan="4" />
 					</page>
 				</xpath>
 			</field>

@@ -17,9 +17,12 @@
 from osv import osv,fields
 
 class product_product(osv.osv):
+    _name = "product.product"
     _inherit = "product.product"
     _columns = {
-        'image_ids':fields.one2many(
+        'image': fields.many2one('product.images', 'Default image', ondelete='restrict'),
+        'animation': fields.many2one('product.images', 'Default animation', ondelete='restrict'),
+        'image_ids': fields.one2many(
                 'product.images',
                 'product_id',
                 'Product Images'

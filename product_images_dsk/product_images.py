@@ -34,10 +34,12 @@ class product_images(osv.osv):
         return res
     
     _columns = {
-        'name':fields.char('Image Title', size=100, required=True),
-        'image':fields.binary('Image', filters='*.png,*.jpg,*.gif'),
+        'name':fields.char('Image title', size=100, required=True),
+        'type': fields.selection(
+            [('image', 'Image'), ('image3d', '3D Image'), ('flash3d', '3D flash animation')], 'Image type', required=True),
+        'image':fields.binary('Image', filters='*.png,*.jpg,*.swf', required=True),
         'preview':fields.function(_get_image, type="binary", method=True),
         'comments':fields.text('Comments'),
-        'product_id':fields.many2one('product.product', 'Product')
+        'product_id':fields.many2one('product.product', 'Product', required=True)
     }
 product_images()
