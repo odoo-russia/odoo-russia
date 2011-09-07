@@ -50,10 +50,9 @@
             <field name="arch" type="xml">
                 <form string="Manufacturer">
                     <field name="name" on_change="onchange_manufacturer(name)"/>
-                    <newline/>
+                    <field name="product_country_id"/>
                     <field name="product_code"/>
                     <field name="product_name"/>
-                    <field name="product_country_id"/>
                     <field name="product_brand_id" domain="[('partner_id','=',name)]" attrs="{'readonly': [('name','=',False)]}"/>
                 </form>
             </field>
@@ -79,10 +78,11 @@
             <field name="arch" type="xml">
                 <form string="Product Brand">
                     <field name="name"/>
-                    <newline/>
                     <field name="partner_id"/>
-                    <field name="logo_id"/>
                     <field name="description"/>
+                    <field name="logo"/>
+                    <separator string="Preview (Only when saved)" colspan="4" />
+					<field name="preview" widget="image" nolabel="1" colspan="4"/>
                 </form>
             </field>
         </record>

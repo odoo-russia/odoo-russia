@@ -22,10 +22,22 @@ from osv import fields, osv
 
 class product_brand(osv.osv):
     _name = 'product.brand'
+
+    def get_logo(self, cr, uid, id):
+        each = self.read(cr, uid, id, ['logo'])
+        return each['logo']
+
+    def _get_logo(self, cr, uid, ids, field_name, arg, context={}):
+        res = {}
+        for each in ids:
+            res[each] = self.get_logo(cr, uid, each)
+        return res
+
     _columns = {
         'name': fields.char('Brand', size=64, required=True),
         'description': fields.text('Description'),
-        'logo_id': fields.many2one('ir.attachment', 'Logo', help='Select picture file', ondelete='restrict'),
+        'logo':fields.binary('Logo', filters='*.png,*.jpg'),
+        'preview':fields.function(_get_logo, type="binary", method=True),
         'partner_id': fields.many2one('res.partner', 'Partner', help='Select partner for this Brand', required=True,
                                       ondelete='restrict'),
     }
