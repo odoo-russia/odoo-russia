@@ -44,7 +44,8 @@ class product_images(osv.osv):
     _columns = {
         'name':fields.char('Image title', size=100, required=True),
         'type': fields.selection(
-            [('image', 'Image'), ('image3d', '3D Image'), ('scheme', 'Scheme'), ('flash3d', '3D flash animation')], 'Image type', required=True),
+            [('image', 'Image'), ('image3d', '3D Image'), ('scheme', 'Scheme'), ('flash3d', '3D flash animation')],
+            'Image type', required=True),
         'image':fields.binary('Image', filters='*.png,*.jpg,*.swf', required=True),
         'preview':fields.function(_get_image, type="binary", method=True),
         'comments':fields.text('Comments'),
