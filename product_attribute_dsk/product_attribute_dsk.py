@@ -93,18 +93,6 @@ class product_attribute_value(osv.osv):
 product_attribute_value()
 
 class product_attribute_value_product(osv.osv):
-    def _check_attribute_group_relation(self, cr, uid, ids):
-        for product_avp in self.browse(cr, uid, ids):
-            print (product_avp.attribute_group_id, product_avp.attribute_group_ids)
-            if product_avp.attribute_group_id not in product_avp.attribute_group_ids: return False
-        return True
-
-    def _check_attribute_value_relation(self, cr, uid, ids):
-        for product_avp in self.browse(cr, uid, ids):
-            print (product_avp.attribute_id, product_avp.attribute_value_attribute_id)
-            if product_avp.attribute_id != product_avp.attribute_value_attribute_id: return False
-        return True
-
     _name = 'product.attribute.value.product'
     _columns = {
         'attribute_id': fields.many2one('product.attribute', 'Product attribute', ondelete='restrict', required=True),
@@ -116,17 +104,15 @@ class product_attribute_value_product(osv.osv):
         'attribute_group_id': fields.related('product_id', 'attribute_group', type='many2one', relation='product.product', str='Attribute group', store=False),
     }
     _sql_constraints = [('attribute_name_product_unique','unique(attribute_id, product_id)','Attribute name must be unique!')]
-#    _constraints = [
-#        (_check_attribute_group_relation, 'Mismatch in attribute group!', ['attribute_id', 'attribute_value_id']),
-#        (_check_attribute_value_relation, 'Mismatch in attribute value!', ['attribute_id', 'attribute_value_id'])
-#    ]
 product_attribute_value_product()
 
 class product_product(osv.osv):
-    def onchange_attribute_group(self, cr, uid, ids, attribute_group):
-        v = {'attribute_value_product_ids': []}
-
-        return {'value': v}
+    def _check_references(self, cr, uid, ids):
+        for product in self.browse(cr, uid, ids):
+            for product_avp in product.attribute_value_product_ids:
+                if product.attribute_group not in product_avp.attribute_group_ids:
+                    return False
+        return True
 
     _name = 'product.product'
     _inherit = 'product.product'
@@ -134,6 +120,7 @@ class product_product(osv.osv):
         'attribute_group': fields.many2one('product.attribute.group','Product attribute group', ondelete='restrict', select=True),
         'attribute_value_product_ids': fields.one2many('product.attribute.value.product', 'product_id', 'Attributes and their values'),
     }
+    _constraints = [(_check_references,'Attributes don\'t belong to selected group!',['attribute_group'])]
 product_product()
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
