@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 6.0.3\n"
 "Report-Msgid-Bugs-To: support@openerp.com\n"
-"POT-Creation-Date: 2011-08-24 13:15+0000\n"
-"PO-Revision-Date: 2011-08-24 13:15+0000\n"
+"POT-Creation-Date: 2011-09-12 20:42+0000\n"
+"PO-Revision-Date: 2011-09-12 20:42+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,9 +16,14 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: product_manufacturer_dsk
-#: sql_constraint:product.manufacturer:0
-msgid "Each manufacturer can be selected only one time!"
-msgstr "Каждый производитель может быть выбран только один раз!"
+#: model:ir.module.module,description:product_manufacturer_dsk.module_meta_information
+msgid "A module that add manufacturers to product"
+msgstr "Модуль, добавляющий производителей к товару"
+
+#. module: product_manufacturer_dsk
+#: field:product.manufacturer,product_name:0
+msgid "Manufacturer Product Name"
+msgstr "Название ТМЦ производителя"
 
 #. module: product_manufacturer_dsk
 #: field:product.manufacturer,product_code:0
@@ -32,6 +37,18 @@ msgid "Product"
 msgstr "Товар"
 
 #. module: product_manufacturer_dsk
+#: model:ir.actions.act_window,name:product_manufacturer_dsk.product_brand_action_dsk
+#: model:ir.ui.menu,name:product_manufacturer_dsk.prod_brands
+#: view:product.brand:0
+msgid "Product Brands"
+msgstr "Бренды продукции"
+
+#. module: product_manufacturer_dsk
+#: field:product.brand,description:0
+msgid "Description"
+msgstr "Описание"
+
+#. module: product_manufacturer_dsk
 #: view:product.manufacturer:0
 #: view:product.product:0
 #: field:product.product,manufacturer_ids:0
@@ -39,9 +56,15 @@ msgid "Manufacturers"
 msgstr "Производители"
 
 #. module: product_manufacturer_dsk
-#: view:product.product:0
-msgid "Suppliers"
-msgstr "Поставщики"
+#: field:product.brand,preview:0
+msgid "unknown"
+msgstr "unknown"
+
+#. module: product_manufacturer_dsk
+#: field:product.brand,name:0
+#: field:product.manufacturer,product_brand_id:0
+msgid "Brand"
+msgstr "Бренд"
 
 #. module: product_manufacturer_dsk
 #: view:product.product:0
@@ -49,19 +72,50 @@ msgid "Suppliers and Manufacturers"
 msgstr "Поставщики и Производители"
 
 #. module: product_manufacturer_dsk
-#: model:ir.module.module,description:product_manufacturer_dsk.module_meta_information
-msgid "A module that add manufacturers to product"
-msgstr "Модуль, добавляющий производителей к товару"
-
-#. module: product_manufacturer_dsk
-#: constraint:product.product:0
-msgid "Error: Invalid ean code"
-msgstr "Ошибка: Неправильный штрих-код"
-
-#. module: product_manufacturer_dsk
 #: model:ir.module.module,shortdesc:product_manufacturer_dsk.module_meta_information
 msgid "Products Manufacturer Details"
 msgstr "Products Manufacturer Details"
+
+#. module: product_manufacturer_dsk
+#: view:product.manufacturer:0
+#: field:product.manufacturer,name:0
+msgid "Manufacturer"
+msgstr "Производитель"
+
+#. module: product_manufacturer_dsk
+#: model:ir.model,name:product_manufacturer_dsk.model_product_brand
+msgid "product.brand"
+msgstr "product.brand"
+
+#. module: product_manufacturer_dsk
+#: view:product.brand:0
+msgid "Product Brand"
+msgstr "Бренд продукции"
+
+#. module: product_manufacturer_dsk
+#: field:product.manufacturer,product_country_id:0
+msgid "Country"
+msgstr "Страна"
+
+#. module: product_manufacturer_dsk
+#: view:product.product:0
+msgid "Suppliers"
+msgstr "Поставщики"
+
+#. module: product_manufacturer_dsk
+#: help:product.brand,partner_id:0
+msgid "Select partner for this Brand"
+msgstr "Выберите производителя для этого бренда"
+
+#. module: product_manufacturer_dsk
+#: constraint:product.product:0
+msgid "Attributes don't belong to selected group!"
+msgstr "Характеристики товара не принадлежат выбранной группе характеристик!"
+
+#. module: product_manufacturer_dsk
+#: field:product.brand,logo:0
+msgid "Logo"
+msgstr "Логотип"
 
 #. module: product_manufacturer_dsk
 #: model:ir.model,name:product_manufacturer_dsk.model_product_manufacturer
@@ -69,13 +123,27 @@ msgid "product.manufacturer"
 msgstr "Производитель"
 
 #. module: product_manufacturer_dsk
-#: field:product.manufacturer,product_name:0
-msgid "Manufacturer Product Name"
-msgstr "Название ТМЦ производителя"
+#: constraint:product.manufacturer:0
+msgid "Manufacturer isn't owner of this brand! Select another."
+msgstr "Производитель не является владельцем этого бренда! Выберите другой."
 
 #. module: product_manufacturer_dsk
-#: view:product.manufacturer:0
-#: field:product.manufacturer,name:0
-msgid "Manufacturer"
+#: constraint:product.product:0
+msgid "Error: Invalid ean code"
+msgstr "Ошибка: Неправильный штрих-код"
+
+#. module: product_manufacturer_dsk
+#: sql_constraint:product.manufacturer:0
+msgid "Each manufacturer can be                         selected only one time!"
+msgstr "Каждый производитель может быть выбран только один раз!"
+
+#. module: product_manufacturer_dsk
+#: field:product.brand,partner_id:0
+msgid "Partner"
 msgstr "Производитель"
+
+#. module: product_manufacturer_dsk
+#: view:product.brand:0
+msgid "Preview (Only when saved)"
+msgstr "Превью (Только когда сохранено)"
 
