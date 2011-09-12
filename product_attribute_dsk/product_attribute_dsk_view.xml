@@ -23,8 +23,8 @@
                                        domain="[('attribute_group_id','=',parent.attribute_group),
                                                 ('attribute_id','=',parent.attribute_value_product_ids.attribute_id)]"
                                        
-                                       context="{'attribute_id': parent.attribute_value_product_ids.attribute_id,
-                                                'attribute_group_id': parent.attribute_group}"/>
+                                       context="{'default_attribute_id': parent.attribute_value_product_ids.attribute_id,
+                                                'default_attribute_group_id': parent.attribute_group}"/>
                             </tree>
                         </field>
                     </page>
@@ -50,10 +50,11 @@
             <field name="arch" type="xml">
                 <form string="Attribute group">
                     <separator string="Attribute group" colspan="4"/>
+                    <field name="id" invisible="1"/>
                     <field name="name"/>
 
                     <separator string="Attributes" colspan="4"/>
-                    <field colspan="4" name="attribute_ids" nolabel="1" context="{'attribute_group_id': parent.id}"/>
+                    <field colspan="4" name="attribute_ids" nolabel="1" context="{'attribute_group_id': id}"/>
                 </form>
             </field>
         </record>
@@ -77,6 +78,10 @@
                 <form string="Attribute">
                     <separator string="Attribute" colspan="4"/>
                     <field name="name"/>
+                    <field name="attribute_parent_group_id" invisible="1"/>
+
+                    <separator string="Values" colspan="4"/>
+                    <field colspan="4" name="attribute_value_ids" nolabel="1" context="{'attribute_group_id': attribute_parent_group_id}"/>
                 </form>
             </field>
         </record>
@@ -108,7 +113,7 @@
             <field name="res_model">product.attribute.group</field>
             <field name="view_mode">tree,form</field>
         </record>
-        <menuitem action="product_attribute_group_action_dsk" groups="base.group_extended" id="prod_groups_and_attributes" name="Product Attributes" parent="product.prod_config_main"/>
+        <menuitem action="product_attribute_group_action_dsk" groups="base.group_extended" id="prod_groups_and_attributes" name="Product Attributes" parent="stock.menu_product_in_config_stock"/>
 
     </data>
 </openerp>

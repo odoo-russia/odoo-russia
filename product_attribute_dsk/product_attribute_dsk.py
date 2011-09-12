@@ -35,6 +35,16 @@ class product_attribute_group(osv.osv):
 product_attribute_group()
 
 class product_attribute(osv.osv):
+    def read(self, cr, uid, ids, fields, context=None, load='_classic_read'):
+        if context is None:
+            context = {}
+        res = super(product_attribute, self).read(cr, uid, ids, fields, context, load)
+        attribute_group_id = context.get('attribute_group_id')
+        if attribute_group_id:
+            for res_item in res:
+                res_item['attribute_parent_group_id'] = attribute_group_id
+        return res
+
     _name = 'product.attribute'
     _columns = {
         'name': fields.char('Product attribute name', size=64, required=True),
@@ -45,6 +55,7 @@ class product_attribute(osv.osv):
             'attribute_id',
             'attribute_group_id',
             'Attribute groups'),
+        'attribute_parent_group_id': fields.integer('For context transfer', store=False),
     }
     _sql_constraints = [('attribute_name_unique','unique(name)','Attribute name must be unique!')]
 product_attribute()
@@ -55,16 +66,27 @@ class product_attribute_value(osv.osv):
             context = {}
         attribute_id = context.get('attribute_id')
         attribute_group_id = context.get('attribute_group_id')
-        if attribute_id and attribute_group_id:
+        if attribute_id:
             vals['attribute_id'] = attribute_id
+        if attribute_group_id:
             vals['attribute_group_id'] = attribute_group_id
         return super(product_attribute_value, self).create(cr, uid, vals, context)
 
+    def search(self, cr, uid, ids, offset=0, limit=None, order=None, context=None, count=False):
+        if context is None:
+            context = {}
+        attribute_group_id = context.get('attribute_group_id')
+        if attribute_group_id:
+            ids.append(('attribute_group_id','=',attribute_group_id))
+        return super(product_attribute_value, self).search(cr, uid, ids, limit=limit, order=order, context=context,
+                                                           count=count)
+    
     _name = 'product.attribute.value'
     _columns = {
         'name': fields.char('Product attribute value', size=64, required=True),
         'attribute_id': fields.many2one('product.attribute', 'Product attribute', ondelete='cascade', required=True),
-        'attribute_group_id': fields.many2one('product.attribute.group', 'Product attribute group', ondelete='restrict')
+        'attribute_group_id': fields.many2one('product.attribute.group', 'Product attribute group', ondelete='restrict',
+                                              required=True)
     }
 
     _sql_constraints = [('attribute_group_name_value_unique','unique(attribute_group_id, attribute_id, name)','Attribute value must be unique!')]
