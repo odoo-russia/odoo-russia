@@ -51,10 +51,7 @@ class product_manufacturer(osv.osv):
         return True
 
     def onchange_manufacturer(self, cr, uid, ids, name):
-        v = {}
-        if name == False:
-            v['product_brand_id'] = False
-        return {'value': v}
+        return {'value': {'product_brand_id': False}}
 
     _name = 'product.manufacturer'
     _columns = {
