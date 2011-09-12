@@ -1,0 +1,176 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* product_attribute_dsk
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.0.3\n"
+"Report-Msgid-Bugs-To: support@openerp.com\n"
+"POT-Creation-Date: 2011-09-12 20:41+0000\n"
+"PO-Revision-Date: 2011-09-12 20:41+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: product_attribute_dsk
+#: view:product.product:0
+#: field:product.product,attribute_value_product_ids:0
+msgid "Attributes and their values"
+msgstr "Характеристики товара и их значения"
+
+#. module: product_attribute_dsk
+#: model:ir.model,name:product_attribute_dsk.model_product_attribute
+msgid "product.attribute"
+msgstr "product.attribute"
+
+#. module: product_attribute_dsk
+#: model:ir.model,name:product_attribute_dsk.model_product_attribute_group
+msgid "product.attribute.group"
+msgstr "product.attribute.group"
+
+#. module: product_attribute_dsk
+#: field:product.attribute.value.product,attribute_value_attribute_id:0
+msgid "Attribute value parent id"
+msgstr "Id родителя значения характеристики"
+
+#. module: product_attribute_dsk
+#: model:ir.actions.act_window,name:product_attribute_dsk.product_attribute_group_action_dsk
+#: model:ir.ui.menu,name:product_attribute_dsk.prod_groups_and_attributes
+msgid "Product Attributes"
+msgstr "Характеристики товара"
+
+#. module: product_attribute_dsk
+#: field:product.attribute,attribute_parent_group_id:0
+msgid "For context transfer"
+msgstr "Для передачи контекста"
+
+#. module: product_attribute_dsk
+#: field:product.attribute.group,name:0
+msgid "Product attribute group name"
+msgstr "Название группы характеристик товара"
+
+#. module: product_attribute_dsk
+#: sql_constraint:product.attribute:0
+#: sql_constraint:product.attribute.value.product:0
+msgid "Attribute name must be unique!"
+msgstr "Название характеристики товара должно быть уникальным!"
+
+#. module: product_attribute_dsk
+#: sql_constraint:product.attribute.value:0
+msgid "Attribute value must be unique!"
+msgstr "Значение характеристики товара должно быть уникальным!"
+
+#. module: product_attribute_dsk
+#: model:ir.model,name:product_attribute_dsk.model_product_attribute_value
+msgid "product.attribute.value"
+msgstr "product.attribute.value"
+
+#. module: product_attribute_dsk
+#: model:ir.model,name:product_attribute_dsk.model_product_product
+#: field:product.attribute.value.product,product_id:0
+msgid "Product"
+msgstr "Товар"
+
+#. module: product_attribute_dsk
+#: model:ir.module.module,description:product_attribute_dsk.module_meta_information
+msgid "A module that add attributes to product"
+msgstr "Модуль, добавляющий характеристики к товару"
+
+#. module: product_attribute_dsk
+#: field:product.attribute.value,name:0
+#: field:product.attribute.value.product,attribute_value_id:0
+msgid "Product attribute value"
+msgstr "Значение характеристики товара"
+
+#. module: product_attribute_dsk
+#: view:product.attribute.group:0
+#: view:product.product:0
+msgid "Attribute group"
+msgstr "Группа характеристик товара"
+
+#. module: product_attribute_dsk
+#: field:product.attribute.value,attribute_group_id:0
+#: field:product.product,attribute_group:0
+msgid "Product attribute group"
+msgstr "Группа характеристик товара"
+
+#. module: product_attribute_dsk
+#: sql_constraint:product.attribute.group:0
+msgid "Attribute group name must be unique!"
+msgstr "Название группы характеристик товара должно быть уникальным!"
+
+#. module: product_attribute_dsk
+#: constraint:product.product:0
+msgid "Attributes don't belong to selected group!"
+msgstr "Характеристики товара не принадлежат выбранной группе характеристик!"
+
+#. module: product_attribute_dsk
+#: model:ir.module.module,shortdesc:product_attribute_dsk.module_meta_information
+msgid "Products Attributes"
+msgstr "Характеристики товара"
+
+#. module: product_attribute_dsk
+#: model:ir.model,name:product_attribute_dsk.model_product_attribute_value_product
+msgid "product.attribute.value.product"
+msgstr "product.attribute.value.product"
+
+#. module: product_attribute_dsk
+#: field:product.attribute,attribute_group_ids:0
+#: view:product.attribute.group:0
+#: field:product.attribute.value.product,attribute_group_ids:0
+msgid "Attribute groups"
+msgstr "Группы характеристик товара"
+
+#. module: product_attribute_dsk
+#: field:product.attribute,name:0
+msgid "Product attribute name"
+msgstr "Название характеристики товара"
+
+#. module: product_attribute_dsk
+#: view:product.attribute:0
+msgid "Values"
+msgstr "Значения"
+
+#. module: product_attribute_dsk
+#: view:product.attribute:0
+#: view:product.attribute.group:0
+#: field:product.attribute.group,attribute_ids:0
+#: view:product.product:0
+msgid "Attributes"
+msgstr "Характеристики товара"
+
+#. module: product_attribute_dsk
+#: field:product.attribute,attribute_value_ids:0
+#: view:product.attribute.value:0
+msgid "Attribute values"
+msgstr "Значения характеристик товара"
+
+#. module: product_attribute_dsk
+#: view:product.attribute.value:0
+msgid "Attribute value"
+msgstr "Значение характеристики товара"
+
+#. module: product_attribute_dsk
+#: view:product.attribute:0
+msgid "Attribute"
+msgstr "Характеристика товара"
+
+#. module: product_attribute_dsk
+#: constraint:product.product:0
+msgid "Error: Invalid ean code"
+msgstr "Ошибка: Неправильный штрих-код"
+
+#. module: product_attribute_dsk
+#: field:product.attribute.value.product,attribute_group_id:0
+msgid "unknown"
+msgstr "unknown"
+
+#. module: product_attribute_dsk
+#: field:product.attribute.value,attribute_id:0
+#: field:product.attribute.value.product,attribute_id:0
+msgid "Product attribute"
+msgstr "Характеристика товара"
+
