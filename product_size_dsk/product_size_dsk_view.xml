@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+
+        <record id="product_form_view_with_sizes_dsk" model="ir.ui.view">
+            <field name="name">product.normal.form</field>
+            <field name="model">product.product</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="product.product_normal_form_view" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='volume']" position="before">
+                    <field name="width" attrs="{'readonly':[('type','=','service')]}"/>
+                    <field name="height" attrs="{'readonly':[('type','=','service')]}"/>
+                    <field name="depth" attrs="{'readonly':[('type','=','service')]}"/>
+                </xpath>
+                <xpath expr="//field[@name='volume']" position="after">
+                    <button name="calculate_volume" type="object" string="Calculate volume" context="{'width': width,
+                            'height': height, 'depth': depth}"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>
