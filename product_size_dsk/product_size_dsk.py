@@ -32,15 +32,15 @@ class product_product(osv.osv):
     def calculate_volume(self, cr, uid, ids, context=None):
         if context is None:
             context = {}
-        v={}
-        width = context.get('width', 0)
-        height = context.get('height', 0)
-        depth = context.get('depth', 0)
-        if width>0 and height>0 and depth>0:
-            volume = width * height * depth / 1000000000.0
-        else:
-            volume = 0
-        return self.write(cr, uid, ids, {'volume': volume})
+        for product in self.browse(cr, uid, ids):
+            width = context.get('width', product.width)
+            height = context.get('height', product.height)
+            depth = context.get('depth', product.depth)
+            if width>0 and height>0 and depth>0:
+                volume = width * height * depth / 1000000000.0
+            else:
+                volume = 0
+            return self.write(cr, uid, ids, {'volume': volume})
         
 product_product()
 

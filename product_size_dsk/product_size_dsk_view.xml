@@ -15,7 +15,7 @@
                 </xpath>
                 <xpath expr="//field[@name='volume']" position="after">
                     <button name="calculate_volume" type="object" string="Calculate volume" context="{'width': width,
-                            'height': height, 'depth': depth}"/>
+                            'height': height, 'depth': depth}" icon="gtk-execute"/>
                 </xpath>
             </field>
         </record>
