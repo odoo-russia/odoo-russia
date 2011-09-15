@@ -1,2 +1,4 @@
 .idea
 *.pyc
+openerp-server
+openerp-web
