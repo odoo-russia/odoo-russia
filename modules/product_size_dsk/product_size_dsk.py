@@ -27,21 +27,21 @@ class product_product(osv.osv):
         'width': fields.integer('Width', size=5, help="Width in mm"),
         'height': fields.integer('Height', size=5, help="Height in mm"),
         'depth': fields.integer('Depth', size=5, help="Depth in mm"),
+        'volume_auto': fields.boolean('Auto calculate volume by sizes'),
     }
 
-    def calculate_volume(self, cr, uid, ids, context=None):
-        if context is None:
-            context = {}
-        for product in self.browse(cr, uid, ids):
-            width = context.get('width', product.width)
-            height = context.get('height', product.height)
-            depth = context.get('depth', product.depth)
-            if width>0 and height>0 and depth>0:
-                volume = width * height * depth / 1000000000.0
-            else:
-                volume = 0
-            return self.write(cr, uid, ids, {'volume': volume})
-        
+    _defaults = {
+        'volume_auto': lambda *a: True,
+    }
+
+    def onchange_sizes(self, cr, uid, ids, width, height, depth, volume_auto):
+        if volume_auto and width>0 and height>0 and depth>0:
+            v = {}
+            v['volume'] = '%.3f' % (width * height * depth / 1000000000.0)
+            print v['volume']
+            return {'value': v}
+        else:
+            return {}
 product_product()
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
