@@ -17,7 +17,9 @@
                         <field name="attribute_value_product_ids" colspan="4" nolabel="1">
                             <tree string="Attributes and their values" editable="bottom">
                                 <field name="attribute_id"
-                                       domain="[('attribute_group_ids','in',parent.attribute_group)]"/>
+                                       domain="[('attribute_group_ids','in',parent.attribute_group)]"
+
+                                        context="{'default_attribute_group_id': parent.attribute_group}"/>
                                 
                                 <field name="attribute_value_id"
                                        domain="[('attribute_group_id','=',parent.attribute_group),
@@ -109,11 +111,19 @@
         </record>
 
         <record id="product_attribute_group_action_dsk" model="ir.actions.act_window">
-            <field name="name">Product Attributes</field>
+            <field name="name">Product Attribute Groups</field>
             <field name="res_model">product.attribute.group</field>
             <field name="view_mode">tree,form</field>
         </record>
-        <menuitem action="product_attribute_group_action_dsk" groups="base.group_extended" id="prod_groups_and_attributes" name="Product Attributes" parent="stock.menu_product_in_config_stock"/>
+
+        <record id="product_attribute_action_dsk" model="ir.actions.act_window">
+            <field name="name">Product Attributes</field>
+            <field name="res_model">product.attribute</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <menuitem action="product_attribute_group_action_dsk" groups="base.group_extended" id="prod_groups" name="Product Attribute Groups" parent="stock.menu_product_in_config_stock"/>
+        <menuitem action="product_attribute_action_dsk" groups="base.group_extended" id="prod_attributes" name="Product Attributes" parent="stock.menu_product_in_config_stock"/>
 
     </data>
 </openerp>
