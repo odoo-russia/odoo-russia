@@ -18,31 +18,20 @@ from osv import osv, fields
 import base64, urllib
 
 class product_images(osv.osv):
-    "Products Image gallery"
-    _name = "product.images"
-    _description = __doc__
-    _table = "product_images"
-
-    def _check_references(self, cr, uid, ids):
-        for image in self.browse(cr, uid, ids):
-            if image == image.product_id.image and image.type == 'flash3d' \
-            or image == image.product_id.animation and image.type != 'flash3d':
-                return False
-        return True
-            
-    
     def get_image(self, cr, uid, id):
         each = self.read(cr, uid, id, ['image'])
         return each['image']
-    
+
     def _get_image(self, cr, uid, ids, field_name, arg, context={}):
         res = {}
         for each in ids:
             res[each] = self.get_image(cr, uid, each)
         return res
-    
+
+    _name = "product.images"
     _columns = {
-        'name':fields.char('Image title', size=100, required=True),
+        'name':fields.char('Image title', size=100),
+        'sequence': fields.integer('Sequence', help="Gives the sequence order when displaying a list of follow-up lines."),
         'type': fields.selection(
             [('image', 'Image'), ('image3d', '3D Image'), ('scheme', 'Scheme'), ('flash3d', '3D flash animation')],
             'Image type', required=True),
@@ -51,8 +40,5 @@ class product_images(osv.osv):
         'comments':fields.text('Comments'),
         'product_id':fields.many2one('product.product', 'Product', required=True)
     }
-
-    _constraints = [
-        (_check_references, 'You can\'t change image type when this image is product default image!', ['type'])
-    ]
+    _order = 'sequence'
 product_images()

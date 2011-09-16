@@ -33,6 +33,7 @@
 			<field name="arch" type="xml">
 				<tree string="Product Images">
 					<field name="name" select="1" />
+                    <field name="sequence"/>
                     <field name="type" select="2" />
                     <field name="comments" select="2" />
 				</tree>
@@ -46,10 +47,6 @@
 			<field name="arch" type="xml">
 				<xpath expr="/form/notebook" position="inside">
 					<page string="Images">
-                        <separator string="Default images" colspan="4"/>
-                        <field name="image" domain="[('type', 'in', ('image', 'image3d', 'scheme'))]"/>
-                        <field name="animation" domain="[('type', '=', 'flash3d')]"/>
-
                         <separator string="Images" colspan="4"/>
 						<field name="image_ids" nolabel="1" colspan="4" />
 					</page>

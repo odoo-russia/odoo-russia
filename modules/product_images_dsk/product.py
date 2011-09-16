@@ -20,8 +20,6 @@ class product_product(osv.osv):
     _name = "product.product"
     _inherit = "product.product"
     _columns = {
-        'image': fields.many2one('product.images', 'Default image', ondelete='restrict'),
-        'animation': fields.many2one('product.images', 'Default animation', ondelete='restrict'),
         'image_ids': fields.one2many(
                 'product.images',
                 'product_id',
