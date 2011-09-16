@@ -21,8 +21,6 @@
 from osv import fields, osv
 
 class product_brand(osv.osv):
-    _name = 'product.brand'
-
     def get_logo(self, cr, uid, id):
         each = self.read(cr, uid, id, ['logo'])
         return each['logo']
@@ -33,6 +31,7 @@ class product_brand(osv.osv):
             res[each] = self.get_logo(cr, uid, each)
         return res
 
+    _name = 'product.brand'
     _columns = {
         'name': fields.char('Brand', size=64, required=True),
         'description': fields.text('Description'),
