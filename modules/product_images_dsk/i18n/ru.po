@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 6.0.3\n"
 "Report-Msgid-Bugs-To: support@openerp.com\n"
-"POT-Creation-Date: 2011-09-12 20:43+0000\n"
-"PO-Revision-Date: 2011-09-12 20:43+0000\n"
+"POT-Creation-Date: 2011-09-16 08:53+0000\n"
+"PO-Revision-Date: 2011-09-16 08:53+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,12 +16,13 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: product_images_dsk
-#: view:product.product:0
-msgid "Default images"
-msgstr "Изображения по умолчанию"
+#: model:ir.module.module,shortdesc:product_images_dsk.module_meta_information
+msgid "Product Image Gallery"
+msgstr "Галерея изображений товара"
 
 #. module: product_images_dsk
 #: model:ir.model,name:product_images_dsk.model_product_product
+#: field:product.images,product_id:0
 msgid "Product"
 msgstr "Товар"
 
@@ -31,25 +32,43 @@ msgid "3D flash animation"
 msgstr "3D flash ролик"
 
 #. module: product_images_dsk
-#: field:product.product,animation:0
-msgid "Default animation"
-msgstr "Ролик по умолчанию"
+#: model:ir.module.module,description:product_images_dsk.module_meta_information
+msgid "\n"
+"    This Module implements an Image Gallery for products.\n"
+"    You can add images against every product.\n"
+"    "
+msgstr "\n"
+"    This Module implements an Image Gallery for products.\n"
+"    You can add images against every product.\n"
+"    "
+
+#. module: product_images_dsk
+#: model:ir.model,name:product_images_dsk.model_product_images
+msgid "Products Image gallery"
+msgstr "Галерея изображений товара"
 
 #. module: product_images_dsk
 #: view:product.images:0
+#: field:product.images,image:0
 #: selection:product.images,type:0
 msgid "Image"
 msgstr "Изображение"
 
 #. module: product_images_dsk
+#: field:product.images,sequence:0
+msgid "Sequence"
+msgstr "Последовательность"
+
+#. module: product_images_dsk
 #: view:product.images:0
+#: field:product.images,comments:0
 msgid "Comments"
 msgstr "Комментарий"
 
 #. module: product_images_dsk
 #: view:product.images:0
-msgid "Product Images"
-msgstr "Изображения товара"
+msgid "Preview (Only when saved)"
+msgstr "Превью (Только когда сохранено)"
 
 #. module: product_images_dsk
 #: model:ir.actions.act_window,name:product_images_dsk.act_product_2_images
@@ -63,14 +82,19 @@ msgid "Error: Invalid ean code"
 msgstr "Ошибка: Неправильный штрих-код"
 
 #. module: product_images_dsk
+#: field:product.images,name:0
+msgid "Image title"
+msgstr "Название изображения"
+
+#. module: product_images_dsk
 #: selection:product.images,type:0
 msgid "3D Image"
 msgstr "3D изображение"
 
 #. module: product_images_dsk
-#: constraint:product.images:0
-msgid "You can't change image type when this image is product default image!"
-msgstr "Вы не можете сменить тип изображения, когда оно является изображением по умолчанию у товара!"
+#: field:product.images,preview:0
+msgid "unknown"
+msgstr "unknown"
 
 #. module: product_images_dsk
 #: constraint:product.product:0
@@ -78,14 +102,10 @@ msgid "Attributes don't belong to selected group!"
 msgstr "Характеристики товара не принадлежат выбранной группе характеристик!"
 
 #. module: product_images_dsk
-#: field:product.product,image:0
-msgid "Default image"
-msgstr "Изображение по умолчанию"
-
-#. module: product_images_dsk
-#: model:ir.model,name:product_images_dsk.model_product_images
-msgid "Products Image gallery"
-msgstr "Галерея изображений товара"
+#: view:product.images:0
+#: field:product.product,image_ids:0
+msgid "Product Images"
+msgstr "Изображения товара"
 
 #. module: product_images_dsk
 #: selection:product.images,type:0
@@ -93,9 +113,9 @@ msgid "Scheme"
 msgstr "Схема/Чертеж"
 
 #. module: product_images_dsk
-#: view:product.images:0
-msgid "Preview (Only when saved)"
-msgstr "Превью (Только когда сохранено)"
+#: help:product.images,sequence:0
+msgid "Gives the sequence order when displaying a list of follow-up lines."
+msgstr "Gives the sequence order when displaying a list of follow-up lines."
 
 #. module: product_images_dsk
 #: field:product.images,type:0
