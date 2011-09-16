@@ -37,7 +37,7 @@ class product_product(osv.osv):
     def onchange_sizes(self, cr, uid, ids, width, height, depth, volume_auto):
         if volume_auto and width>0 and height>0 and depth>0:
             v = {}
-            v['volume'] = '%.3f' % (width * height * depth / 1000000000.0)
+            v['volume'] = width * height * depth / 1000000000.0
             print v['volume']
             return {'value': v}
         else:
