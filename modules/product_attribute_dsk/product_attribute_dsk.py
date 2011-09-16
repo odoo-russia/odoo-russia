@@ -63,14 +63,22 @@ class product_attribute_group(osv.osv):
 product_attribute_group()
 
 class product_attribute(osv.osv):
-    def read(self, cr, uid, ids, fields, context=None, load='_classic_read'):
+    def create(self, cr, uid, vals, context=None):
         if context is None:
             context = {}
-        res = super(product_attribute, self).read(cr, uid, ids, fields, context, load)
         attribute_group_id = context.get('attribute_group_id')
         if attribute_group_id:
-            for res_item in res:
-                res_item['attribute_parent_group_id'] = attribute_group_id
+            vals['attribute_group_ids']=[(4, attribute_group_id)]
+        return super(product_attribute, self).create(cr, uid, vals, context)
+
+    def _get_parent_group_id(self, cr, uid, ids, name, arg, context=None):
+        if context is None:
+            context = {}
+        res = {}
+        attribute_group_id = context.get('attribute_group_id')
+        if attribute_group_id:
+            for attribute in self.browse(cr, uid, ids, context):
+                res[attribute.id] = attribute_group_id
         return res
 
     _name = 'product.attribute'
@@ -83,7 +91,7 @@ class product_attribute(osv.osv):
             'attribute_id',
             'attribute_group_id',
             'Attribute groups'),
-        'attribute_parent_group_id': fields.integer('For context transfer', store=False),
+        'attribute_parent_group_id': fields.function(_get_parent_group_id, 'For context transfer', type='integer', method=True, store=False),
     }
     _sql_constraints = [('attribute_name_unique','unique(name)','Attribute name must be unique!')]
 product_attribute()
@@ -116,29 +124,34 @@ class product_attribute_value(osv.osv):
         'attribute_group_id': fields.many2one('product.attribute.group', 'Product attribute group', ondelete='restrict',
                                               required=True)
     }
-
     _sql_constraints = [('attribute_group_name_value_unique','unique(attribute_group_id, attribute_id, name)','Attribute value must be unique!')]
 product_attribute_value()
 
 class product_attribute_value_product(osv.osv):
+    def onchange_attribute_id(self, cr, uid, ids, attribute_id, attribute_value_id):
+        return {'value': {'attribute_value_id': False}}
+
+    def _check_references(self, cr, uid, ids):
+        for avp in self.browse(cr, uid, ids):
+            if avp.attribute_value_id.attribute_id != avp.attribute_id:
+                return False
+        return True
+
     _name = 'product.attribute.value.product'
     _columns = {
         'attribute_id': fields.many2one('product.attribute', 'Product attribute', ondelete='restrict', required=True),
         'attribute_value_id': fields.many2one('product.attribute.value', 'Product attribute value', ondelete='restrict', required=True),
         'product_id': fields.many2one('product.product', 'Product', ondelete='cascade', required=True),
-        
-        'attribute_group_ids': fields.related('attribute_id', 'attribute_group_ids', type='many2many', relation='product.attribute', string='Attribute groups', store=False),
-        'attribute_value_attribute_id': fields.related('attribute_value_id', 'attribute_id', type='many2one', relation='product.attribute.value', string="Attribute value parent id", store=False),
-        'attribute_group_id': fields.related('product_id', 'attribute_group', type='many2one', relation='product.product', str='Attribute group', store=False),
     }
     _sql_constraints = [('attribute_name_product_unique','unique(attribute_id, product_id)','Attribute name must be unique!')]
+    _constraints = [(_check_references, "Value don't belong to selected attribute!", ['attribute_value_id'])]
 product_attribute_value_product()
 
 class product_product(osv.osv):
     def _check_references(self, cr, uid, ids):
         for product in self.browse(cr, uid, ids):
             for product_avp in product.attribute_value_product_ids:
-                if product.attribute_group not in product_avp.attribute_group_ids:
+                if product.attribute_group not in product_avp.attribute_id.attribute_group_ids:
                     return False
         return True
 
