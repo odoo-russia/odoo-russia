@@ -1,0 +1,67 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* product_size_dsk
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.0.3\n"
+"Report-Msgid-Bugs-To: support@openerp.com\n"
+"POT-Creation-Date: 2011-09-16 08:55+0000\n"
+"PO-Revision-Date: 2011-09-16 08:55+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: product_size_dsk
+#: model:ir.model,name:product_size_dsk.model_product_product
+msgid "Product"
+msgstr "Товар"
+
+#. module: product_size_dsk
+#: field:product.product,volume_auto:0
+msgid "Auto calculate volume by sizes"
+msgstr "Автоматически рассчитывать объем"
+
+#. module: product_size_dsk
+#: help:product.product,width:0
+msgid "Width in mm"
+msgstr "Ширина в миллиметрах"
+
+#. module: product_size_dsk
+#: field:product.product,height:0
+msgid "Height"
+msgstr "Высота"
+
+#. module: product_size_dsk
+#: help:product.product,height:0
+msgid "Height in mm"
+msgstr "Высота в миллиметрах"
+
+#. module: product_size_dsk
+#: field:product.product,width:0
+msgid "Width"
+msgstr "Ширина"
+
+#. module: product_size_dsk
+#: field:product.product,depth:0
+msgid "Depth"
+msgstr "Глубина"
+
+#. module: product_size_dsk
+#: constraint:product.product:0
+msgid "Error: Invalid ean code"
+msgstr "Ошибка: Неправильный штрих-код"
+
+#. module: product_size_dsk
+#: help:product.product,depth:0
+msgid "Depth in mm"
+msgstr "Глубина в миллиметрах"
+
+#. module: product_size_dsk
+#: constraint:product.product:0
+msgid "Attributes don't belong to selected group!"
+msgstr "Характеристики товара не принадлежат выбранной группе характеристик!"
+
