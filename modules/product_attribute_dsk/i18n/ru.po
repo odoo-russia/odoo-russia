@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 6.0.3\n"
 "Report-Msgid-Bugs-To: support@openerp.com\n"
-"POT-Creation-Date: 2011-09-12 20:41+0000\n"
-"PO-Revision-Date: 2011-09-12 20:41+0000\n"
+"POT-Creation-Date: 2011-09-16 08:49+0000\n"
+"PO-Revision-Date: 2011-09-16 08:49+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -24,28 +24,24 @@ msgstr "Характеристики товара и их значения"
 #. module: product_attribute_dsk
 #: model:ir.model,name:product_attribute_dsk.model_product_attribute
 msgid "product.attribute"
-msgstr "product.attribute"
+msgstr "Характеристика товара"
 
 #. module: product_attribute_dsk
 #: model:ir.model,name:product_attribute_dsk.model_product_attribute_group
 msgid "product.attribute.group"
-msgstr "product.attribute.group"
+msgstr "Группа характеристик товара"
 
 #. module: product_attribute_dsk
-#: field:product.attribute.value.product,attribute_value_attribute_id:0
-msgid "Attribute value parent id"
-msgstr "Id родителя значения характеристики"
-
-#. module: product_attribute_dsk
-#: model:ir.actions.act_window,name:product_attribute_dsk.product_attribute_group_action_dsk
-#: model:ir.ui.menu,name:product_attribute_dsk.prod_groups_and_attributes
+#: model:ir.actions.act_window,name:product_attribute_dsk.product_attribute_action_dsk
+#: model:ir.ui.menu,name:product_attribute_dsk.prod_attributes
 msgid "Product Attributes"
 msgstr "Характеристики товара"
 
 #. module: product_attribute_dsk
-#: field:product.attribute,attribute_parent_group_id:0
-msgid "For context transfer"
-msgstr "Для передачи контекста"
+#: model:ir.actions.act_window,name:product_attribute_dsk.product_attribute_group_action_dsk
+#: model:ir.ui.menu,name:product_attribute_dsk.prod_groups
+msgid "Product Attribute Groups"
+msgstr "Группы характеристик товара"
 
 #. module: product_attribute_dsk
 #: field:product.attribute.group,name:0
@@ -66,13 +62,13 @@ msgstr "Значение характеристики товара должно 
 #. module: product_attribute_dsk
 #: model:ir.model,name:product_attribute_dsk.model_product_attribute_value
 msgid "product.attribute.value"
-msgstr "product.attribute.value"
+msgstr "Значение характеристики товара"
 
 #. module: product_attribute_dsk
 #: model:ir.model,name:product_attribute_dsk.model_product_product
 #: field:product.attribute.value.product,product_id:0
 msgid "Product"
-msgstr "Товар"
+msgstr "ТМЦ"
 
 #. module: product_attribute_dsk
 #: model:ir.module.module,description:product_attribute_dsk.module_meta_information
@@ -120,7 +116,6 @@ msgstr "product.attribute.value.product"
 #. module: product_attribute_dsk
 #: field:product.attribute,attribute_group_ids:0
 #: view:product.attribute.group:0
-#: field:product.attribute.value.product,attribute_group_ids:0
 msgid "Attribute groups"
 msgstr "Группы характеристик товара"
 
@@ -141,6 +136,11 @@ msgstr "Значения"
 #: view:product.product:0
 msgid "Attributes"
 msgstr "Характеристики товара"
+
+#. module: product_attribute_dsk
+#: constraint:product.attribute.value.product:0
+msgid "Value don't belong to selected attribute!"
+msgstr "Значение не принадлежит выбранной характеристике!"
 
 #. module: product_attribute_dsk
 #: field:product.attribute,attribute_value_ids:0
@@ -164,7 +164,7 @@ msgid "Error: Invalid ean code"
 msgstr "Ошибка: Неправильный штрих-код"
 
 #. module: product_attribute_dsk
-#: field:product.attribute.value.product,attribute_group_id:0
+#: field:product.attribute,attribute_parent_group_id:0
 msgid "unknown"
 msgstr "unknown"
 
