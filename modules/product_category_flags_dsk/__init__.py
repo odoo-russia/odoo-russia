@@ -18,7 +18,7 @@
 #
 ##############################################################################
 
-import product_flags_dsk
+import product_category_flags_dsk
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
 

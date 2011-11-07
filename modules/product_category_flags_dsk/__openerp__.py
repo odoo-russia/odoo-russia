@@ -18,15 +18,15 @@
 #
 ##############################################################################
 {
-    "name" : "Products Additional Flags",
+    "name" : "Product Category Additional Flags",
     "version" : "1.0",
     "author" : "Denis Karataev",
     "category" : "Generic Modules",
     "depends" : ["product"],
     "init_xml" : [],
     "demo_xml" : [],
-    "description": "A module that add additional flags to product",
-    "update_xml" : ["product_flags_dsk_view.xml"],
+    "description": "A module that add additional flags to product category",
+    "update_xml" : ["product_category_flags_dsk_view.xml"],
     "active": False,
     "installable": True,
 }

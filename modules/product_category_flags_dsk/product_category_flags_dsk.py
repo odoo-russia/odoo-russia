@@ -20,12 +20,12 @@
 
 from osv import fields, osv
 
-class product_product(osv.osv):
-    _name = 'product.product'
-    _inherit = 'product.product'
+class product_category(osv.osv):
+    _name = 'product.category'
+    _inherit = 'product.category'
     _columns = {
-        'description_short': fields.char('Short description', size=200),
+        'vip': fields.boolean('VIP'),
     }
-product_product()
+product_category()
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
