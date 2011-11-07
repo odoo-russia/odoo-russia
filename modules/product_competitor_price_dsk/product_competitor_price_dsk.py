@@ -20,12 +20,22 @@
 
 from osv import fields, osv
 
+class product_competitor(osv.osv):
+    _name = 'product.competitor'
+    _columns = {
+        'name': fields.many2one('res.partner', 'Competitor', required=True, ondelete='restrict'),
+        'product_id': fields.many2one('product.product', 'Product Id', required=True, ondelete='cascade'),
+        'similar_product_name': fields.char('Similar product name', size=128),
+        'similar_product_url': fields.char('Similar product URL', size=128),
+        'similar_product_price': fields.float('Price for similar product', digits=(10,2)),
+    }
+product_competitor()
+
 class product_product(osv.osv):
     _name = 'product.product'
     _inherit = 'product.product'
     _columns = {
-        'hit': fields.boolean('Hit'),
-        'new': fields.boolean('New'),
+        'competitor_ids': fields.one2many('product.competitor', 'product_id', 'Competitors'),
     }
 product_product()
 

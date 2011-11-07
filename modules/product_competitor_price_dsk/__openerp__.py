@@ -18,15 +18,15 @@
 #
 ##############################################################################
 {
-    "name" : "Product Additional Flags",
+    "name" : "Product Competitor Price",
     "version" : "1.0",
     "author" : "Denis Karataev",
     "category" : "Generic Modules",
     "depends" : ["product"],
     "init_xml" : [],
     "demo_xml" : [],
-    "description": "A module that add additional flags to product",
-    "update_xml" : ["product_flags_dsk_view.xml"],
+    "description": "A module that add competitor prices for products",
+    "update_xml" : ["product_competitor_price_dsk_view.xml"],
     "active": False,
     "installable": True,
 }

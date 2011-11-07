@@ -18,7 +18,7 @@
 #
 ##############################################################################
 
-import product_flags_dsk
+import product_competitor_price_dsk
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
 
