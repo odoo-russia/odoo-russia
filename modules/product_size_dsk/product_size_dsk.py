@@ -28,6 +28,7 @@ class product_product(osv.osv):
         'height': fields.integer('Height', size=5, help="Height in mm"),
         'depth': fields.integer('Depth', size=5, help="Depth in mm"),
         'volume_auto': fields.boolean('Auto calculate volume by sizes'),
+        'volume': fields.float('Volume', digits=(2,3), help="The volume in m3."),
     }
 
     _defaults = {
@@ -38,7 +39,6 @@ class product_product(osv.osv):
         if volume_auto and width>0 and height>0 and depth>0:
             v = {}
             v['volume'] = width * height * depth / 1000000000.0
-            print v['volume']
             return {'value': v}
         else:
             return {}
