@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+        <report
+            auto="False"
+            id="product_eshop_xml_report"
+            model="product.product"
+            name="eshop_xml_report"
+            string="XML выгрузка для интернет магазина"
+            />
+    </data>
+</openerp>
