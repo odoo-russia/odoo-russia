@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+
+        <record id="product_form_view_with_flags" model="ir.ui.view">
+            <field name="name">product.normal.form</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view" />
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="/form/notebook" position="inside">
+                    <page string="Competitors">
+                        <separator string="Competitors" colspan="4"/>
+                        <field colspan="4" name="competitor_ids" nolabel="1">
+                            <tree string="Competitors">
+                                <field name="name"/>
+                                <field name="similar_product_name"/>
+                                <field name="similar_product_url"/>
+                                <field name="similar_product_price"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="product_competitor_form_view" model="ir.ui.view">
+            <field name="name">product.competitor.form</field>
+            <field name="model">product.competitor</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Competitor">
+                    <separator string="Competitor" colspan="4"/>
+                    <field colspan="4" name="name"/>
+                    <newline/>
+                    <field name="similar_product_name"/>
+                    <field name="similar_product_url"/>
+                    <field name="similar_product_price"/>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</openerp>

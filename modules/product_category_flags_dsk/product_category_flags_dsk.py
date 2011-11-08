@@ -20,28 +20,12 @@
 
 from osv import fields, osv
 
-class product_product(osv.osv):
-    _name = 'product.product'
-    _inherit = 'product.product'
+class product_category(osv.osv):
+    _name = 'product.category'
+    _inherit = 'product.category'
     _columns = {
-        'width': fields.integer('Width', size=5, help="Width in mm"),
-        'height': fields.integer('Height', size=5, help="Height in mm"),
-        'depth': fields.integer('Depth', size=5, help="Depth in mm"),
-        'volume_auto': fields.boolean('Auto calculate volume by sizes'),
-        'volume': fields.float('Volume', digits=(2,3), help="The volume in m3."),
+        'vip': fields.boolean('VIP'),
     }
-
-    _defaults = {
-        'volume_auto': lambda *a: True,
-    }
-
-    def onchange_sizes(self, cr, uid, ids, width, height, depth, volume_auto):
-        if volume_auto and width>0 and height>0 and depth>0:
-            v = {}
-            v['volume'] = width * height * depth / 1000000000.0
-            return {'value': v}
-        else:
-            return {}
-product_product()
+product_category()
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

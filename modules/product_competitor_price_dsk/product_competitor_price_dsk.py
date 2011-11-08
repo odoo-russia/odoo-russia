@@ -20,28 +20,23 @@
 
 from osv import fields, osv
 
+class product_competitor(osv.osv):
+    _name = 'product.competitor'
+    _columns = {
+        'name': fields.many2one('res.partner', 'Competitor', required=True, ondelete='restrict'),
+        'product_id': fields.many2one('product.product', 'Product Id', required=True, ondelete='cascade'),
+        'similar_product_name': fields.char('Similar product name', size=128),
+        'similar_product_url': fields.char('Similar product URL', size=128),
+        'similar_product_price': fields.float('Price for similar product', digits=(10,2)),
+    }
+product_competitor()
+
 class product_product(osv.osv):
     _name = 'product.product'
     _inherit = 'product.product'
     _columns = {
-        'width': fields.integer('Width', size=5, help="Width in mm"),
-        'height': fields.integer('Height', size=5, help="Height in mm"),
-        'depth': fields.integer('Depth', size=5, help="Depth in mm"),
-        'volume_auto': fields.boolean('Auto calculate volume by sizes'),
-        'volume': fields.float('Volume', digits=(2,3), help="The volume in m3."),
+        'competitor_ids': fields.one2many('product.competitor', 'product_id', 'Competitors'),
     }
-
-    _defaults = {
-        'volume_auto': lambda *a: True,
-    }
-
-    def onchange_sizes(self, cr, uid, ids, width, height, depth, volume_auto):
-        if volume_auto and width>0 and height>0 and depth>0:
-            v = {}
-            v['volume'] = width * height * depth / 1000000000.0
-            return {'value': v}
-        else:
-            return {}
 product_product()
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

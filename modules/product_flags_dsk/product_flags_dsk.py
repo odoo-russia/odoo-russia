@@ -24,24 +24,9 @@ class product_product(osv.osv):
     _name = 'product.product'
     _inherit = 'product.product'
     _columns = {
-        'width': fields.integer('Width', size=5, help="Width in mm"),
-        'height': fields.integer('Height', size=5, help="Height in mm"),
-        'depth': fields.integer('Depth', size=5, help="Depth in mm"),
-        'volume_auto': fields.boolean('Auto calculate volume by sizes'),
-        'volume': fields.float('Volume', digits=(2,3), help="The volume in m3."),
+        'hit': fields.boolean('Hit'),
+        'new': fields.boolean('New'),
     }
-
-    _defaults = {
-        'volume_auto': lambda *a: True,
-    }
-
-    def onchange_sizes(self, cr, uid, ids, width, height, depth, volume_auto):
-        if volume_auto and width>0 and height>0 and depth>0:
-            v = {}
-            v['volume'] = width * height * depth / 1000000000.0
-            return {'value': v}
-        else:
-            return {}
 product_product()
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
