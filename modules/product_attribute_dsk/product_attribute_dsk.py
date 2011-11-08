@@ -139,6 +139,7 @@ class product_attribute_value_product(osv.osv):
 
     _name = 'product.attribute.value.product'
     _columns = {
+        'name': fields.char('', size=64),
         'attribute_id': fields.many2one('product.attribute', 'Product attribute', ondelete='restrict', required=True),
         'attribute_value_id': fields.many2one('product.attribute.value', 'Product attribute value', ondelete='restrict', required=True),
         'product_id': fields.many2one('product.product', 'Product', ondelete='cascade', required=True),
