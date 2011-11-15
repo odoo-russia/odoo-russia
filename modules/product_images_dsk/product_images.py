@@ -38,7 +38,7 @@ class product_images(osv.osv):
         'image':fields.binary('Image', filters='*.png,*.jpg,*.swf', required=True),
         'preview':fields.function(_get_image, type="binary", method=True),
         'comments':fields.text('Comments'),
-        'product_id':fields.many2one('product.product', 'Product', required=True)
+        'product_id':fields.many2one('product.product', 'Product', ondelete='cascade', required=True)
     }
     _order = 'sequence'
 product_images()
