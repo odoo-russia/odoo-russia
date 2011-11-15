@@ -53,6 +53,9 @@ class eshop_xml_report(report_int):
         xmlProducts = doc.createElement('products')
         xmlCatalog.appendChild(xmlProducts)
 
+        competitors = []
+        xmlCompetitors = doc.createElement('competitors')
+
         pool = pooler.get_pool(cr.dbname)
         product_ids = pool.get('product.product').search(cr, uid, [], context=context)
         products = pool.get('product.product').browse(cr, uid, product_ids, context)
@@ -81,11 +84,12 @@ class eshop_xml_report(report_int):
                         xmlText = doc.createTextNode(brand['description'])
                         xmlBrandDesc.appendChild(xmlText)
 
-                category = {'id': product.categ_id.id, 'name': product.categ_id.name}
+                category = {'id': product.categ_id.id, 'name': product.categ_id.name, 'vip': product.categ_id.vip}
                 if category not in categories:
                     categories.append(category)
                     xmlCategory = doc.createElement('category')
                     xmlCategory.setAttribute('id', str(category['id']))
+                    xmlCategory.setAttribute('vip', str(int(category['vip'])))
                     xmlCategories.appendChild(xmlCategory)
                     xmlText = doc.createTextNode(category['name'])
                     xmlCategory.appendChild(xmlText)
@@ -151,6 +155,16 @@ class eshop_xml_report(report_int):
             xmlText = doc.createTextNode('1')
             xmlProductStock.appendChild(xmlText)
 
+            xmlProductFlagHit = doc.createElement('hit')
+            xmlProduct.appendChild(xmlProductFlagHit)
+            xmlText = doc.createTextNode(str(int(product.hit)))
+            xmlProductFlagHit.appendChild(xmlText)
+
+            xmlProductFlagNew = doc.createElement('new')
+            xmlProduct.appendChild(xmlProductFlagNew)
+            xmlText = doc.createTextNode(str(int(product.new)))
+            xmlProductFlagNew.appendChild(xmlText)
+
             xmlProductWidth = doc.createElement('width')
             xmlProduct.appendChild(xmlProductWidth)
             xmlText = doc.createTextNode(str(product.width))
@@ -188,6 +202,33 @@ class eshop_xml_report(report_int):
                 if product_avp.attribute_value_id.name:
                     xmlText = doc.createTextNode(product_avp.attribute_value_id.name)
                     xmlProductParam.appendChild(xmlText)
+
+            xmlProductCompetitors = doc.createElement('competitors')
+            xmlProduct.appendChild(xmlProductCompetitors)
+
+            for product_competitor in product.competitor_ids:
+                if product_competitor.name.id not in competitors:
+                    competitors.append(product_competitor.name.id)
+                xmlProductCompetitor = doc.createElement('competitor')
+                xmlProductCompetitor.setAttribute('id', str(product_competitor.name.id))
+                xmlProductCompetitors.appendChild(xmlProductCompetitor)
+
+                xmlProductCompetitorSimilarProductName = doc.createElement('similar_product_name')
+                xmlProductCompetitor.appendChild(xmlProductCompetitorSimilarProductName)
+                if product_competitor.similar_product_name:
+                    xmlText = doc.createTextNode(product_competitor.similar_product_name)
+                    xmlProductCompetitorSimilarProductName.appendChild(xmlText)
+
+                xmlProductCompetitorSimilarProductUrl = doc.createElement('similar_product_url')
+                xmlProductCompetitor.appendChild(xmlProductCompetitorSimilarProductUrl)
+                if product_competitor.similar_product_url:
+                    xmlText = doc.createTextNode(product_competitor.similar_product_url)
+                    xmlProductCompetitorSimilarProductUrl.appendChild(xmlText)
+                
+                xmlProductCompetitorSimilarProductPrice = doc.createElement('similar_product_price')
+                xmlProductCompetitor.appendChild(xmlProductCompetitorSimilarProductPrice)
+                xmlText = doc.createTextNode(str(product_competitor.similar_product_price))
+                xmlProductCompetitorSimilarProductPrice.appendChild(xmlText)
             
             xmlProducts.appendChild(xmlProduct)
         if product_types:
@@ -221,6 +262,19 @@ class eshop_xml_report(report_int):
                         xmlProductTypeParams.appendChild(xmlProductTypeParam)
                         xmlText = doc.createTextNode(str(param.id))
                         xmlProductTypeParam.appendChild(xmlText)
+
+        if competitors:
+            xmlCompetitors = doc.createElement('competitors')
+            xmlCatalog.insertBefore(xmlCompetitors, xmlProducts)
+            comp_ids = pool.get('res.partner').search(cr, uid, [], context=context)
+            comps = pool.get('res.partner').browse(cr, uid, comp_ids, context)
+            for comp in comps:
+                if comp.id in competitors:
+                    xmlCompetitor = doc.createElement('competitor')
+                    xmlCompetitor.setAttribute('id', str(comp.id))
+                    xmlCompetitors.appendChild(xmlCompetitor)
+                    xmlText = doc.createTextNode(comp.name)
+                    xmlCompetitor.appendChild(xmlText)
         return (doc.toprettyxml(indent='  ', encoding='UTF-8'), 'txt')
 eshop_xml_report('report.eshop_xml_report')
 
