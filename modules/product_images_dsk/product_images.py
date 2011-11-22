@@ -33,12 +33,13 @@ class product_images(osv.osv):
         'name':fields.char('Image title', size=100),
         'sequence': fields.integer('Sequence', help="Gives the sequence order when displaying a list of follow-up lines."),
         'type': fields.selection(
-            [('image', 'Image'), ('image3d', '3D Image'), ('scheme', 'Scheme'), ('flash3d', '3D flash animation')],
+            [('image', 'Image'), ('scheme', 'Scheme'), ('flash3d', '3D flash animation')],
             'Image type', required=True),
-        'image':fields.binary('Image', filters='*.png,*.jpg,*.swf', required=True),
-        'preview':fields.function(_get_image, type="binary", method=True),
-        'comments':fields.text('Comments'),
-        'product_id':fields.many2one('product.product', 'Product', ondelete='cascade', required=True)
+        'image': fields.binary('Image', filters='*.png,*.jpg,*.swf', required=True),
+        'file_ext': fields.selection([('jpg', 'JPG'), ('png', 'PNG'), ('gif', 'GIF')], 'File extension'),
+        'preview': fields.function(_get_image, type="binary", method=True),
+        'comments': fields.text('Comments'),
+        'product_id': fields.many2one('product.product', 'Product', ondelete='cascade', required=True)
     }
     _order = 'sequence'
 product_images()

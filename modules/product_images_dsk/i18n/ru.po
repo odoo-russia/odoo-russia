@@ -87,11 +87,6 @@ msgid "Image title"
 msgstr "Название изображения"
 
 #. module: product_images_dsk
-#: selection:product.images,type:0
-msgid "3D Image"
-msgstr "3D изображение"
-
-#. module: product_images_dsk
 #: field:product.images,preview:0
 msgid "unknown"
 msgstr "unknown"

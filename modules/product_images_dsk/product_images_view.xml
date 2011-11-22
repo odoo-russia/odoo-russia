@@ -9,12 +9,15 @@
 				<form string="Product Images">
 					<notebook colspan="4">
 						<page string="Image">
-							<group col="4" colspan="4">
+							<group col="2" colspan="2">
 								<field name="name" colspan="2" />
-                                <field name="type"/>
+                                <newline/>
+                                <field name="image"/>
 							</group>
-							<group col="4" colspan="4">
-								<field name="image" colspan="4"/>
+                            <group col="2" colspan="2">
+								<field name="type"/>
+                                <newline/>
+                                <field name="file_ext" attrs="{'required': ['|', ('type', '=', 'image'), ('type', '=', 'scheme')], 'invisible': [('type', '!=', 'image'), ('type', '!=', 'scheme')]}"/>
 							</group>
 							<separator string="Preview (Only when saved)" colspan="4" />
 							<field name="preview" widget="image" nolabel="1" colspan="4"/>

@@ -1,3 +1,4 @@
+#coding: utf-8
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -19,11 +20,14 @@
 ##############################################################################
 
 import pooler
+from base64 import decodestring
 from report.interface import report_int
 from xml.dom.minidom import Document
 from datetime import datetime
 
 class eshop_xml_report(report_int):
+    export_path = '/home/dsk/Рабочий стол/'
+
     def create(self, cr, uid, ids, datas, context=None):
         if context is None:
             context = {}
@@ -229,6 +233,17 @@ class eshop_xml_report(report_int):
                 xmlProductCompetitor.appendChild(xmlProductCompetitorSimilarProductPrice)
                 xmlText = doc.createTextNode(str(product_competitor.similar_product_price))
                 xmlProductCompetitorSimilarProductPrice.appendChild(xmlText)
+
+            i=0
+            for product_image in product.image_ids:
+                if product_image.file_ext:
+                    i+=1
+                    append = '_'+str(i)+'.'+str(product_image.file_ext)
+                else:
+                    append = '.swf'
+                f = open(self.export_path+str(product.id)+append, 'w')
+                f.write(decodestring(product_image.image))
+                f.close()
             
             xmlProducts.appendChild(xmlProduct)
         if product_types:
