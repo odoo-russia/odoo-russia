@@ -234,16 +234,35 @@ class eshop_xml_report(report_int):
                 xmlText = doc.createTextNode(str(product_competitor.similar_product_price))
                 xmlProductCompetitorSimilarProductPrice.appendChild(xmlText)
 
+            #Product images +
+            xmlProductImages = doc.createElement('images')
+            xmlProduct.appendChild(xmlProductImages)
+
             i=0
             for product_image in product.image_ids:
                 if product_image.file_ext:
                     i+=1
-                    append = '_'+str(i)+'.'+str(product_image.file_ext)
+                    append = '_' + str(i)+'.' + str(product_image.file_ext)
                 else:
                     append = '.swf'
-                f = open(self.export_path+str(product.id)+append, 'w')
+                image_name = str(product.id) + append
+                f = open(self.export_path + image_name, 'w')
                 f.write(decodestring(product_image.image))
                 f.close()
+
+                xmlProductImage = doc.createElement('image')
+
+                xmlProductImageName = doc.createElement('name')
+                xmlText = doc.createTextNode()
+
+                xmlProductImageType = doc.createElement('type')
+                xmlProductImageDescription = doc.createElement('description')
+                xmlProductImageComment = doc.createElement('comment')
+
+                xmlProductImage.appendChild()
+                xmlProductImages.appendChild(xmlProductImage)
+                
+            #Product images -
             
             xmlProducts.appendChild(xmlProduct)
         if product_types:
