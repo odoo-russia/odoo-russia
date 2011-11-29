@@ -28,6 +28,11 @@ from datetime import datetime
 class eshop_xml_report(report_int):
     export_path = '/home/dsk/Рабочий стол/'
 
+    def write_file(self, file_name, value):
+        f = open(self.export_path + file_name, 'w')
+        f.write(decodestring(value))
+        f.close()
+
     def create(self, cr, uid, ids, datas, context=None):
         if context is None:
             context = {}
@@ -87,6 +92,16 @@ class eshop_xml_report(report_int):
                     if brand['description']:
                         xmlText = doc.createTextNode(brand['description'])
                         xmlBrandDesc.appendChild(xmlText)
+
+                    #Brand image +
+                    file_name = str(product.id) + '_brand'
+                    self.write_file(file_name, manufacturer.product_brand_id.logo)
+
+                    xmlText = doc.createTextNode()
+                    xmlBrandImage = doc.createElement('image')
+                    xmlBrandImage.appendChild(xmlText)
+                    xmlBrand.appendChild(xmlBrandImage)
+                    #Brand image -
 
                 category = {'id': product.categ_id.id, 'name': product.categ_id.name, 'vip': product.categ_id.vip}
                 if category not in categories:
@@ -255,7 +270,7 @@ class eshop_xml_report(report_int):
 
                 xmlProductImage = doc.createElement('image')
                 xmlProductImage.setAttribute('type', product_image.type)
-                xmlProductImage.setAttribute('extension', file_ext)
+                #xmlProductImage.setAttribute('extension', file_ext)
                 xmlProductImage.setAttribute('sequence', str(product_image.sequence))
                 xmlProductImages.appendChild(xmlProductImage)
 
