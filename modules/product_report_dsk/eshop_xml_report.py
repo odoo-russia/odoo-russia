@@ -28,6 +28,11 @@ from datetime import datetime
 class eshop_xml_report(report_int):
     export_path = '/home/dsk/Рабочий стол/'
 
+    def write_file(self, file_name, value):
+        f = open(self.export_path + file_name, 'w')
+        f.write(decodestring(value))
+        f.close()
+
     def create(self, cr, uid, ids, datas, context=None):
         if context is None:
             context = {}
@@ -87,6 +92,16 @@ class eshop_xml_report(report_int):
                     if brand['description']:
                         xmlText = doc.createTextNode(brand['description'])
                         xmlBrandDesc.appendChild(xmlText)
+
+                    #Brand image +
+                    file_name = str(product.id) + '_brand'
+                    self.write_file(file_name, manufacturer.product_brand_id.logo)
+
+                    xmlText = doc.createTextNode()
+                    xmlBrandImage = doc.createElement('image')
+                    xmlBrandImage.appendChild(xmlText)
+                    xmlBrand.appendChild(xmlBrandImage)
+                    #Brand image -
 
                 category = {'id': product.categ_id.id, 'name': product.categ_id.name, 'vip': product.categ_id.vip}
                 if category not in categories:
@@ -242,24 +257,48 @@ class eshop_xml_report(report_int):
             for product_image in product.image_ids:
                 if product_image.file_ext:
                     i+=1
-                    append = '_' + str(i)+'.' + str(product_image.file_ext)
+                    append = '_' + str(i) + '.' + str(product_image.file_ext)
+                    file_ext = product_image.file_ext
                 else:
-                    append = '.swf'
-                image_name = str(product.id) + append
-                f = open(self.export_path + image_name, 'w')
+                    file_ext = 'swf'
+                    append = '.' + file_ext
+
+                file_name = str(product.id) + append
+                f = open(self.export_path + file_name, 'w')
                 f.write(decodestring(product_image.image))
                 f.close()
 
                 xmlProductImage = doc.createElement('image')
+                xmlProductImage.setAttribute('type', product_image.type)
+                #xmlProductImage.setAttribute('extension', file_ext)
+                xmlProductImage.setAttribute('sequence', str(product_image.sequence))
+                xmlProductImages.appendChild(xmlProductImage)
 
+                xmlText = doc.createTextNode(file_name)
                 xmlProductImageName = doc.createElement('name')
-                xmlText = doc.createTextNode()
+                xmlProductImageName.appendChild(xmlText)
+                xmlProductImage.appendChild(xmlProductImageName)
 
-                xmlProductImageType = doc.createElement('type')
+                if product_image.name is False:
+                    image_name = ''
+                else:
+                    image_name = product_image.name
+                
+                xmlText = doc.createTextNode(image_name)
                 xmlProductImageDescription = doc.createElement('description')
-                xmlProductImageComment = doc.createElement('comment')
+                xmlProductImageDescription.appendChild(xmlText)
+                xmlProductImage.appendChild(xmlProductImageDescription)
 
-                xmlProductImage.appendChild()
+                if product_image.comments is False:
+                    image_comment = ''
+                else:
+                    image_comment = product_image.comments
+                
+                xmlText = doc.createTextNode(image_comment)
+                xmlProductImageComment = doc.createElement('comment')
+                xmlProductImageComment.appendChild(xmlText)
+                xmlProductImage.appendChild(xmlProductImageComment)
+
                 xmlProductImages.appendChild(xmlProductImage)
                 
             #Product images -
