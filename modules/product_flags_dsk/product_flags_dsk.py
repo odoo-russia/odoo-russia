@@ -24,8 +24,8 @@ class product_product(osv.osv):
     _name = 'product.product'
     _inherit = 'product.product'
     _columns = {
-        'hit': fields.boolean('Hit'),
-        'new': fields.boolean('New'),
+        'hit': fields.boolean('Hit', help='This product is sales hit'),
+        'new': fields.boolean('New', help='This product is new'),
     }
 product_product()
 

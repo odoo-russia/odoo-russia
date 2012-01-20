@@ -8,13 +8,10 @@
             <field name="inherit_id" ref="product.product_normal_form_view" />
             <field name="type">form</field>
             <field name="arch" type="xml">
-                <xpath expr="/form/notebook" position="inside">
-                    <page string="Flags">
-                        <separator string="Flags" colspan="4"/>
-                        <field name="hit"/>
-                        <newline/>
-                        <field name="new"/>
-                    </page>
+                <xpath expr="//page[@string='Procurement &amp; Locations']/group[@name='misc']/field[@name='active']" position="after">
+                    <field name="hit"/>
+                    <newline/>
+                    <field name="new"/>
                 </xpath>
             </field>
         </record>

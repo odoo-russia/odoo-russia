@@ -1,0 +1,52 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* product_flags_dsk
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.0.3\n"
+"Report-Msgid-Bugs-To: support@openerp.com\n"
+"POT-Creation-Date: 2012-01-20 13:39+0000\n"
+"PO-Revision-Date: 2012-01-20 13:39+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: product_flags_dsk
+#: model:ir.model,name:product_flags_dsk.model_product_product
+msgid "Product"
+msgstr "ТМЦ"
+
+#. module: product_flags_dsk
+#: field:product.product,hit:0
+msgid "Hit"
+msgstr "Хит продаж"
+
+#. module: product_flags_dsk
+#: help:product.product,hit:0
+msgid "This product is sales hit"
+msgstr "Этот товар является хитом продаж"
+
+#. module: product_flags_dsk
+#: constraint:product.product:0
+msgid "Error: Invalid ean code"
+msgstr "Ошибка: Неправильный штрих-код"
+
+#. module: product_flags_dsk
+#: constraint:product.product:0
+msgid "Attributes don't belong to selected group!"
+msgstr "Характеристики товара не принадлежат выбранной группе характеристик!"
+
+#. module: product_flags_dsk
+#: field:product.product,new:0
+msgid "New"
+msgstr "Новинка"
+
+#. module: product_flags_dsk
+#: help:product.product,new:0
+msgid "This product is new"
+msgstr "Этот товар является новинкой"
+
