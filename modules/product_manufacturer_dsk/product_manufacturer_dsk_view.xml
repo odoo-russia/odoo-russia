@@ -92,7 +92,7 @@
             <field name="res_model">product.brand</field>
             <field name="view_mode">tree,form</field>
         </record>
-        <menuitem action="product_brand_action_dsk" groups="base.group_extended" id="prod_brands" name="Product Brands" parent="stock.menu_product_in_config_stock"/>
+        <menuitem action="product_brand_action_dsk" groups="base.group_extended" id="prod_brands" name="Product Brands" parent="product.prod_config_main"/>
 
     </data>
 </openerp>

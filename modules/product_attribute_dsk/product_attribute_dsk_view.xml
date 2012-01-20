@@ -122,8 +122,8 @@
             <field name="view_mode">tree,form</field>
         </record>
         
-        <menuitem action="product_attribute_group_action_dsk" groups="base.group_extended" id="prod_groups" name="Product Attribute Groups" parent="stock.menu_product_in_config_stock"/>
-        <menuitem action="product_attribute_action_dsk" groups="base.group_extended" id="prod_attributes" name="Product Attributes" parent="stock.menu_product_in_config_stock"/>
+        <menuitem action="product_attribute_group_action_dsk" groups="base.group_extended" id="prod_groups" name="Product Attribute Groups" parent="product.prod_config_main"/>
+        <menuitem action="product_attribute_action_dsk" groups="base.group_extended" id="prod_attributes" name="Product Attributes" parent="product.prod_config_main"/>
 
     </data>
 </openerp>
