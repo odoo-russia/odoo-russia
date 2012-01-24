@@ -78,7 +78,8 @@
             <field name="arch" type="xml">
                 <form string="Product Brand">
                     <field name="name"/>
-                    <field name="logo"/>
+                    <field name="logo_filename" invisible="1"/>
+                    <field name="logo" filename="logo_filename"/>
                     <field name="partner_id" invisible="1"/>
                     <field name="description" colspan="4"/>
                     <separator string="Preview (Only when saved)" colspan="4" />
