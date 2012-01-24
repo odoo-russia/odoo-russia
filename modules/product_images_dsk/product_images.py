@@ -15,7 +15,6 @@
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.  #
 #########################################################################
 from osv import osv, fields
-import base64, urllib
 
 class product_images(osv.osv):
     def _get_filename(self, full_path):
