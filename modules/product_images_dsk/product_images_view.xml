@@ -12,12 +12,11 @@
 							<group col="2" colspan="2">
 								<field name="name" colspan="2" />
                                 <newline/>
-                                <field name="image"/>
+                                <field name="image_filename" invisible="1"/>
+                                <field name="image" filename="image_filename"/>
 							</group>
                             <group col="2" colspan="2">
 								<field name="type"/>
-                                <newline/>
-                                <field name="file_ext" attrs="{'required': ['|', ('type', '=', 'image'), ('type', '=', 'scheme')], 'invisible': [('type', '!=', 'image'), ('type', '!=', 'scheme')]}"/>
 							</group>
 							<separator string="Preview (Only when saved)" colspan="4" />
 							<field name="preview" widget="image" nolabel="1" colspan="4"/>

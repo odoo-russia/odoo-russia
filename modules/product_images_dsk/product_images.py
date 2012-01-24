@@ -18,6 +18,21 @@ from osv import osv, fields
 import base64, urllib
 
 class product_images(osv.osv):
+    def _get_filename(self, full_path):
+        return full_path.replace('\\', '/').split('/')[-1]
+
+    def create(self, cr, uid, vals, context=None):
+        if context is None:
+            context = {}
+        vals['image_filename'] =  self._get_filename(vals['image_filename'])
+        return super(product_images, self).create(cr, uid, vals, context)
+
+    def write(self, cr, uid, ids, vals, context=None):
+        if context is None:
+            context = {}
+        vals['image_filename'] =  self._get_filename(vals['image_filename'])
+        return super(product_images, self).write(cr, uid, ids, vals, context)
+
     def get_image(self, cr, uid, id):
         each = self.read(cr, uid, id, ['image'])
         return each['image']
@@ -35,8 +50,8 @@ class product_images(osv.osv):
         'type': fields.selection(
             [('image', 'Image'), ('scheme', 'Scheme'), ('flash3d', '3D flash animation')],
             'Image type', required=True),
-        'image': fields.binary('Image', filters='*.png,*.jpg,*.swf', required=True),
-        'file_ext': fields.selection([('jpg', 'JPG'), ('png', 'PNG'), ('gif', 'GIF')], 'File extension'),
+        'image': fields.binary('Image', required=True),
+        'image_filename': fields.char('Image filename', size=100),
         'preview': fields.function(_get_image, type="binary", method=True),
         'comments': fields.text('Comments'),
         'product_id': fields.many2one('product.product', 'Product', ondelete='cascade', required=True)
