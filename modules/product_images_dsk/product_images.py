@@ -51,7 +51,7 @@ class product_images(osv.osv):
             [('image', 'Image'), ('scheme', 'Scheme'), ('flash3d', '3D flash animation')],
             'Image type', required=True),
         'image': fields.binary('Image', required=True),
-        'image_filename': fields.char('Image filename', size=100),
+        'image_filename': fields.char('Image filename', size=500),
         'preview': fields.function(_get_image, type="binary", method=True),
         'comments': fields.text('Comments'),
         'product_id': fields.many2one('product.product', 'Product', ondelete='cascade', required=True)
