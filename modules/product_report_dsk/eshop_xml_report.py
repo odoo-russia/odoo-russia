@@ -20,15 +20,20 @@
 ##############################################################################
 
 import pooler
+import os.path
 from base64 import decodestring
 from report.interface import report_int
 from xml.dom.minidom import Document
 from datetime import datetime
 
 class eshop_xml_report(report_int):
-    export_path = '/home/dsk/Рабочий стол/'
+    export_path = '/home/dsk/sunmarket/'
 
-    def write_file(self, file_name, value):
+    def _get_file_ext(self, file_name):
+        (root, ext) = os.path.splitext(file_name)
+        return ext
+
+    def _write_file(self, file_name, value):
         f = open(self.export_path + file_name, 'w')
         f.write(decodestring(value))
         f.close()
@@ -94,10 +99,11 @@ class eshop_xml_report(report_int):
                         xmlBrandDesc.appendChild(xmlText)
 
                     #Brand image +
-                    file_name = str(product.id) + '_brand'
-                    self.write_file(file_name, manufacturer.product_brand_id.logo)
+                    file_name = 'brand_' + str(brand['id']) + self._get_file_ext(manufacturer.product_brand_id.logo_filename)
+                    print file_name
+                    self._write_file(file_name, manufacturer.product_brand_id.logo)
 
-                    xmlText = doc.createTextNode()
+                    xmlText = doc.createTextNode(file_name)
                     xmlBrandImage = doc.createElement('image')
                     xmlBrandImage.appendChild(xmlText)
                     xmlBrand.appendChild(xmlBrandImage)
@@ -255,22 +261,11 @@ class eshop_xml_report(report_int):
 
             i=0
             for product_image in product.image_ids:
-                if product_image.file_ext:
-                    i+=1
-                    append = '_' + str(i) + '.' + str(product_image.file_ext)
-                    file_ext = product_image.file_ext
-                else:
-                    file_ext = 'swf'
-                    append = '.' + file_ext
-
-                file_name = str(product.id) + append
-                f = open(self.export_path + file_name, 'w')
-                f.write(decodestring(product_image.image))
-                f.close()
+                file_name = 'product_' + str(product.id) + '_' + str(product_image.id) + self._get_file_ext(product_image.image_filename)
+                self._write_file(file_name, product_image.image)
 
                 xmlProductImage = doc.createElement('image')
                 xmlProductImage.setAttribute('type', product_image.type)
-                #xmlProductImage.setAttribute('extension', file_ext)
                 xmlProductImage.setAttribute('sequence', str(product_image.sequence))
                 xmlProductImages.appendChild(xmlProductImage)
 
