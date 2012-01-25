@@ -19,7 +19,8 @@
                                 <field name="attribute_id" on_change="onchange_attribute_id(attribute_id, attribute_value_id)"
                                        domain="[('attribute_group_ids','in',parent.attribute_group)]"
 
-                                        context="{'attribute_group_id': parent.attribute_group}"/>
+                                        context="{'attribute_group_id': parent.attribute_group,
+                                                  'form_view_ref': 'product_attribute_dsk.product_attribute_form_view_dsk_without_values'}"/>
                                 
                                 <field name="attribute_value_id"
                                        domain="[('attribute_group_id','=',parent.attribute_group),
@@ -76,6 +77,7 @@
             <field name="name">product.attribute.form</field>
             <field name="model">product.attribute</field>
             <field name="type">form</field>
+            <field name="priority" eval="1"/>
             <field name="arch" type="xml">
                 <form string="Attribute">
                     <separator string="Attribute" colspan="4"/>
@@ -84,6 +86,20 @@
 
                     <separator string="Values" colspan="4"/>
                     <field colspan="4" name="attribute_value_ids" nolabel="1" context="{'attribute_group_id': attribute_parent_group_id}"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="product_attribute_form_view_dsk_without_values" model="ir.ui.view">
+            <field name="name">product.attribute.form</field>
+            <field name="model">product.attribute</field>
+            <field name="type">form</field>
+            <field name="priority" eval="2"/>
+            <field name="arch" type="xml">
+                <form string="Attribute">
+                    <separator string="Attribute" colspan="4"/>
+                    <field name="name"/>
+                    <field name="attribute_parent_group_id" invisible="1"/>
                 </form>
             </field>
         </record>
