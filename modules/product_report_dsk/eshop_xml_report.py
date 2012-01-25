@@ -99,14 +99,19 @@ class eshop_xml_report(report_int):
                         xmlBrandDesc.appendChild(xmlText)
 
                     #Brand image +
-                    file_name = 'brand_' + str(brand['id']) + self._get_file_ext(manufacturer.product_brand_id.logo_filename)
-                    print file_name
-                    self._write_file(file_name, manufacturer.product_brand_id.logo)
+                    if manufacturer.product_brand_id.logo:
+                        file_name = 'brand_' + str(brand['id']) + self._get_file_ext(manufacturer.product_brand_id.logo_filename)
+                        self._write_file(file_name, manufacturer.product_brand_id.logo)
+                    else:
+                        file_name = ''
 
-                    xmlText = doc.createTextNode(file_name)
+
                     xmlBrandImage = doc.createElement('image')
-                    xmlBrandImage.appendChild(xmlText)
                     xmlBrand.appendChild(xmlBrandImage)
+                    if file_name:
+                        xmlText = doc.createTextNode(file_name)
+                        xmlBrandImage.appendChild(xmlText)
+
                     #Brand image -
 
                 category = {'id': product.categ_id.id, 'name': product.categ_id.name, 'vip': product.categ_id.vip}
@@ -259,20 +264,23 @@ class eshop_xml_report(report_int):
             xmlProductImages = doc.createElement('images')
             xmlProduct.appendChild(xmlProductImages)
 
-            i=0
             for product_image in product.image_ids:
-                file_name = 'product_' + str(product.id) + '_' + str(product_image.id) + self._get_file_ext(product_image.image_filename)
-                self._write_file(file_name, product_image.image)
+                if product_image.image:
+                    file_name = 'product_' + str(product.id) + '_' + str(product_image.id) + self._get_file_ext(product_image.image_filename)
+                    self._write_file(file_name, product_image.image)
+                else:
+                    file_name = ''
 
                 xmlProductImage = doc.createElement('image')
                 xmlProductImage.setAttribute('type', product_image.type)
                 xmlProductImage.setAttribute('sequence', str(product_image.sequence))
                 xmlProductImages.appendChild(xmlProductImage)
 
-                xmlText = doc.createTextNode(file_name)
                 xmlProductImageName = doc.createElement('name')
-                xmlProductImageName.appendChild(xmlText)
                 xmlProductImage.appendChild(xmlProductImageName)
+                if file_name:
+                    xmlText = doc.createTextNode(file_name)
+                    xmlProductImageName.appendChild(xmlText)
 
                 if product_image.name is False:
                     image_name = ''
