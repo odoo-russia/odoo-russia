@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+
+        <record id="product_form_view_with_relations" model="ir.ui.view">
+            <field name="name">product.normal.form</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view" />
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Product Relations">
+                        <field name="relation_ids" colspan="4" nolabel="1">
+                            <tree string="Product Relations" editable="bottom">
+                                <field name="linked_product_id" />
+                                <field name="type" />
+                            </tree>
+
+                            <form string="Product Relations">
+                                <field name="linked_product_id" />
+                                <field name="type" />
+                            </form>
+                        </field>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+    </data>
+</openerp>
