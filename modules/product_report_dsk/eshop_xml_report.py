@@ -229,9 +229,25 @@ class eshop_xml_report(report_int):
                 xmlProductParam = doc.createElement('param')
                 xmlProductParam.setAttribute('id', str(product_avp.attribute_id.id))
                 xmlProductParams.appendChild(xmlProductParam)
+
                 if product_avp.attribute_value_id.name:
                     xmlText = doc.createTextNode(product_avp.attribute_value_id.name)
                     xmlProductParam.appendChild(xmlText)
+
+            for product_avp in product.attribute_value_product_checkbx_ids:
+                if product_avp.attribute_id.id not in params:
+                    params.append(product_avp.attribute_id.id)
+                xmlProductParam = doc.createElement('param')
+                xmlProductParam.setAttribute('id', str(product_avp.attribute_id.id))
+                xmlProductParams.appendChild(xmlProductParam)
+
+                if product_avp.checkbx_value:
+                    xmlText = doc.createTextNode('1')
+                else:
+                    xmlText = doc.createTextNode('0')
+                xmlProductParam.appendChild(xmlText)
+
+
 
             xmlProductCompetitors = doc.createElement('competitors')
             xmlProduct.appendChild(xmlProductCompetitors)
@@ -316,6 +332,7 @@ class eshop_xml_report(report_int):
                 if attribute.id in params:
                     xmlParam = doc.createElement('param')
                     xmlParam.setAttribute('id', str(attribute.id))
+                    xmlParam.setAttribute('type', attribute.type)
                     xmlParams.appendChild(xmlParam)
                     xmlText = doc.createTextNode(attribute.name)
                     xmlParam.appendChild(xmlText)
