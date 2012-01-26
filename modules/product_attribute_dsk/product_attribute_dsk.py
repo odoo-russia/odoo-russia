@@ -71,6 +71,14 @@ class product_attribute(osv.osv):
             vals['attribute_group_ids']=[(4, attribute_group_id)]
         return super(product_attribute, self).create(cr, uid, vals, context)
 
+    def write(self, cr, uid, ids, vals, context=None):
+        if context is None:
+            context = {}
+        for attribute in self.browse(cr, uid, ids, context):
+            if attribute.attribute_value_ids:
+                vals['type']='string'
+        return super(product_attribute, self).write(cr, uid, ids, vals, context)
+
     def _get_parent_group_id(self, cr, uid, ids, name, arg, context=None):
         if context is None:
             context = {}
@@ -84,6 +92,10 @@ class product_attribute(osv.osv):
     _name = 'product.attribute'
     _inherit = 'product.attribute'
     _columns = {
+        'type': fields.selection(
+            (('string', 'String'), ('checkbox', 'Checkbox')),
+            'Attribute type',
+            required=True),
         'attribute_value_ids': fields.one2many('product.attribute.value','attribute_id','Attribute values'),
         'attribute_group_ids': fields.many2many(
             'product.attribute.group',
@@ -93,6 +105,7 @@ class product_attribute(osv.osv):
             'Attribute groups'),
         'attribute_parent_group_id': fields.function(_get_parent_group_id, 'For context transfer', type='integer', method=True, store=False),
     }
+    _order = 'type'
     _sql_constraints = [('attribute_name_unique','unique(name)','Attribute name must be unique!')]
 product_attribute()
 
@@ -141,6 +154,7 @@ class product_attribute_value_product(osv.osv):
     _columns = {
         'name': fields.char('', size=64),
         'attribute_id': fields.many2one('product.attribute', 'Product attribute', ondelete='restrict', required=True),
+        'checkbox_value': fields.boolean('Checkbox value'),
         'attribute_value_id': fields.many2one('product.attribute.value', 'Product attribute value', ondelete='restrict', required=True),
         'product_id': fields.many2one('product.product', 'Product', ondelete='cascade', required=True),
     }
