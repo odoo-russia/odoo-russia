@@ -17,9 +17,10 @@
                         <field name="attribute_value_product_ids" colspan="4" nolabel="1">
                             <tree string="Attributes and their values" editable="bottom">
                                 <field name="attribute_id" on_change="onchange_attribute_id(attribute_id, attribute_value_id)"
-                                       domain="[('attribute_group_ids','in',parent.attribute_group)]"
+                                       domain="[('attribute_group_ids','in',parent.attribute_group), ('type', '=', 'string')]"
 
                                         context="{'attribute_group_id': parent.attribute_group,
+                                                  'attribute_type': 'string',
                                                   'form_view_ref': 'product_attribute_dsk.product_attribute_form_view_dsk_without_values'}"/>
                                 
                                 <field name="attribute_value_id"
@@ -28,6 +29,20 @@
                                        
                                        context="{'default_attribute_id': parent.attribute_value_product_ids.attribute_id,
                                                 'default_attribute_group_id': parent.attribute_group}"/>
+                            </tree>
+                        </field>
+
+                        <separator string="Attributes and their values-checkboxes" colspan="4"/>
+                        <field name="attribute_value_product_checkbx_ids" colspan="4" nolabel="1">
+                            <tree string="Attributes and their values-checkboxes" editable="bottom">
+                                <field name="attribute_id" on_change="onchange_attribute_id(attribute_id, attribute_value_id)"
+                                       domain="[('attribute_group_ids','in',parent.attribute_group), ('type', '=', 'checkbox')]"
+
+                                       context="{'attribute_group_id': parent.attribute_group,
+                                                 'attribute_type': 'checkbox',
+                                                  'form_view_ref': 'product_attribute_dsk.product_attribute_form_view_dsk_without_values'}"/>
+
+                                <field name="checkbx_value"/>
                             </tree>
                         </field>
                     </page>
@@ -109,6 +124,7 @@
                 <form string="Attribute">
                     <separator string="Attribute" colspan="4"/>
                     <field name="name"/>
+                    <field name="type" invisible="1"/>
                     <field name="attribute_parent_group_id" invisible="1"/>
                 </form>
             </field>
