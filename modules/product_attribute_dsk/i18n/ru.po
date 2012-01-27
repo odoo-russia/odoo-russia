@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 6.0.3\n"
 "Report-Msgid-Bugs-To: support@openerp.com\n"
-"POT-Creation-Date: 2011-09-16 08:49+0000\n"
-"PO-Revision-Date: 2011-09-16 08:49+0000\n"
+"POT-Creation-Date: 2012-01-27 10:22+0000\n"
+"PO-Revision-Date: 2012-01-27 10:22+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -55,6 +55,11 @@ msgid "Attribute name must be unique!"
 msgstr "Название характеристики товара должно быть уникальным!"
 
 #. module: product_attribute_dsk
+#: view:product.attribute:0
+msgid "If already there are saved values of this attribute, this field will always be String. To change this field, first remove the attribute values."
+msgstr "Если уже есть сохраненные значения по этой характеристике, это поле всегда будет иметь тип Строка. Чтобы изменить это поле, сначала удалите все значения данной характеристики."
+
+#. module: product_attribute_dsk
 #: sql_constraint:product.attribute.value:0
 msgid "Attribute value must be unique!"
 msgstr "Значение характеристики товара должно быть уникальным!"
@@ -71,9 +76,9 @@ msgid "Product"
 msgstr "ТМЦ"
 
 #. module: product_attribute_dsk
-#: model:ir.module.module,description:product_attribute_dsk.module_meta_information
-msgid "A module that add attributes to product"
-msgstr "Модуль, добавляющий характеристики к товару"
+#: selection:product.attribute,type:0
+msgid "String"
+msgstr "Строка"
 
 #. module: product_attribute_dsk
 #: field:product.attribute.value,name:0
@@ -94,19 +99,14 @@ msgid "Product attribute group"
 msgstr "Группа характеристик товара"
 
 #. module: product_attribute_dsk
-#: sql_constraint:product.attribute.group:0
-msgid "Attribute group name must be unique!"
-msgstr "Название группы характеристик товара должно быть уникальным!"
+#: field:product.attribute,type:0
+msgid "Attribute type"
+msgstr "Тип характеристики"
 
 #. module: product_attribute_dsk
 #: constraint:product.product:0
 msgid "Attributes don't belong to selected group!"
 msgstr "Характеристики товара не принадлежат выбранной группе характеристик!"
-
-#. module: product_attribute_dsk
-#: model:ir.module.module,shortdesc:product_attribute_dsk.module_meta_information
-msgid "Products Attributes"
-msgstr "Характеристики товара"
 
 #. module: product_attribute_dsk
 #: model:ir.model,name:product_attribute_dsk.model_product_attribute_value_product
@@ -123,6 +123,16 @@ msgstr "Группы характеристик товара"
 #: field:product.attribute,name:0
 msgid "Product attribute name"
 msgstr "Название характеристики товара"
+
+#. module: product_attribute_dsk
+#: sql_constraint:product.attribute.group:0
+msgid "Attribute group name must be unique!"
+msgstr "Название группы характеристик товара должно быть уникальным!"
+
+#. module: product_attribute_dsk
+#: field:product.product,attribute_value_product_checkbx_ids:0
+msgid "Attributes and theis values-checkboxes"
+msgstr "Характеристики-функции и их значения-флажки"
 
 #. module: product_attribute_dsk
 #: view:product.attribute:0
@@ -149,6 +159,11 @@ msgid "Attribute values"
 msgstr "Значения характеристик товара"
 
 #. module: product_attribute_dsk
+#: selection:product.attribute,type:0
+msgid "Checkbox"
+msgstr "Флажок"
+
+#. module: product_attribute_dsk
 #: view:product.attribute.value:0
 msgid "Attribute value"
 msgstr "Значение характеристики товара"
@@ -157,6 +172,11 @@ msgstr "Значение характеристики товара"
 #: view:product.attribute:0
 msgid "Attribute"
 msgstr "Характеристика товара"
+
+#. module: product_attribute_dsk
+#: field:product.attribute.value.product,checkbx_value:0
+msgid "Checkbox value"
+msgstr "Значение флажка"
 
 #. module: product_attribute_dsk
 #: constraint:product.product:0
@@ -173,4 +193,9 @@ msgstr "unknown"
 #: field:product.attribute.value.product,attribute_id:0
 msgid "Product attribute"
 msgstr "Характеристика товара"
+
+#. module: product_attribute_dsk
+#: view:product.product:0
+msgid "Attributes and their values-checkboxes"
+msgstr "Характеристики-функции и их значения-флажки"
 
