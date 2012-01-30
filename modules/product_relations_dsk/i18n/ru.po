@@ -43,7 +43,7 @@ msgstr "Добавление в корзину дешевого товара"
 #. module: product_relations_dsk
 #: selection:product.relation,type:0
 msgid "Related"
-msgstr "Сопуствующий товар"
+msgstr "Сопутсвующий товар"
 
 #. module: product_relations_dsk
 #: field:product.relation,linked_product_id:0
