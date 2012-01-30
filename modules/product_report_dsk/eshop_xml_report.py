@@ -321,6 +321,21 @@ class eshop_xml_report(report_int):
                 xmlProductImages.appendChild(xmlProductImage)
                 
             #Product images -
+
+            #Product relations +
+
+            xmlProductRelations=doc.createElement('relations')
+            xmlProduct.appendChild(xmlProductRelations)
+
+            for relation in product.relation_ids:
+                xmlProductRelation=doc.createElement('relation')
+                xmlProductRelations.appendChild(xmlProductRelation)
+                xmlProductRelation.setAttribute('type', relation.type)
+
+                xmlText = doc.createTextNode(str(relation.linked_product_id.id))
+                xmlProductRelation.appendChild(xmlText)
+
+            #Product relations -
             
             xmlProducts.appendChild(xmlProduct)
         if product_types:
