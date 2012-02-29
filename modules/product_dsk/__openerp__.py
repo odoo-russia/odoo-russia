@@ -18,15 +18,27 @@
 #
 ##############################################################################
 {
-    "name" : "Product Additional Flags",
-    "version" : "1.0",
+    "name" : "Product Additionals",
+    "version" : "6.1",
     "author" : "Denis Karataev",
     "category" : "Generic Modules",
-    "depends" : ["product"],
+    "depends" : [
+        "product",
+        "product_attribute_dsk",
+        "product_category_flags_dsk",
+        "product_competitor_price_dsk",
+        "product_description_dsk",
+        "product_flags_dsk",
+        "product_images_dsk",
+        "product_manufacturer_dsk",
+        "product_relations_dsk",
+        "product_report_dsk",
+        "product_size_dsk"
+    ],
     "init_xml" : [],
     "demo_xml" : [],
-    "description": "A module that add additional flags to product",
-    "update_xml" : ["product_flags_dsk_view.xml"],
+    "description": "A module that expand standart product module",
+    "update_xml" : [],
     "active": False,
     "installable": True,
 }
