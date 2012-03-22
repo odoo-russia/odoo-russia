@@ -19,7 +19,7 @@
     "name" : "Product Image Gallery",
     "version" : "1.0",
     "author" : "Denis Karataev",
-    "category" : "Added functionality - Product Extension",
+    "category" : "Generic Modules",
     "depends" : ['base','product'],
     "description": """
     This Module implements an Image Gallery for products.

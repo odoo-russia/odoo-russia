@@ -19,7 +19,7 @@
 ##############################################################################
 {
     "name" : "Product Additionals",
-    "version" : "6.1",
+    "version" : "1.0",
     "author" : "Denis Karataev",
     "category" : "Generic Modules",
     "depends" : [
