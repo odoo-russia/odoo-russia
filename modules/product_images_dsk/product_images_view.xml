@@ -13,13 +13,11 @@
 								<field name="name" colspan="2" />
                                 <newline/>
                                 <field name="image_filename" invisible="1"/>
-                                <field name="image" filename="image_filename"/>
+                                <field name="image" widget="image" filename="image_filename"/>
 							</group>
                             <group col="2" colspan="2">
 								<field name="type"/>
 							</group>
-							<separator string="Preview (Only when saved)" colspan="4" />
-							<field name="preview" widget="image" nolabel="1" colspan="4"/>
 						</page>
 						<page string="Comments">
 							<field name="comments" nolabel="1" colspan="4" />

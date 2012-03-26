@@ -24,6 +24,6 @@ class product_product(osv.osv):
                 'product.images',
                 'product_id',
                 'Product Images'
-        )
+        ),
     }
 product_product()

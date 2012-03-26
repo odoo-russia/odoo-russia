@@ -23,24 +23,14 @@ class product_images(osv.osv):
     def create(self, cr, uid, vals, context=None):
         if context is None:
             context = {}
-        vals['image_filename'] =  self._get_filename(vals['image_filename'])
+            vals['image_filename'] =  self._get_filename(vals['image_filename'])
         return super(product_images, self).create(cr, uid, vals, context)
 
     def write(self, cr, uid, ids, vals, context=None):
         if context is None:
             context = {}
-        vals['image_filename'] =  self._get_filename(vals['image_filename'])
+            vals['image_filename'] =  self._get_filename(vals['image_filename'])
         return super(product_images, self).write(cr, uid, ids, vals, context)
-
-    def get_image(self, cr, uid, id):
-        each = self.read(cr, uid, id, ['image'])
-        return each['image']
-
-    def _get_image(self, cr, uid, ids, field_name, arg, context={}):
-        res = {}
-        for each in ids:
-            res[each] = self.get_image(cr, uid, each)
-        return res
 
     _name = "product.images"
     _columns = {
@@ -51,7 +41,6 @@ class product_images(osv.osv):
             'Image type', required=True),
         'image': fields.binary('Image', required=True),
         'image_filename': fields.char('Image filename', size=500),
-        'preview': fields.function(_get_image, type="binary", method=True),
         'comments': fields.text('Comments'),
         'product_id': fields.many2one('product.product', 'Product', ondelete='cascade', required=True)
     }
