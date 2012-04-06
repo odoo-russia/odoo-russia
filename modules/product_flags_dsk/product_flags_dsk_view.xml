@@ -8,11 +8,11 @@
             <field name="inherit_id" ref="eshop_base_dsk.product_normal_form_view_eshop_dsk" />
             <field name="type">form</field>
             <field name="arch" type="xml">
-                <xpath expr="//page[@string='Information']/group[@name='status']/field[@name='categ_id']" position="after">
+                <field name="categ_id" position="after">
                     <field name="hit"/>
                     <newline/>
                     <field name="new"/>
-                </xpath>
+                </field>
             </field>
         </record>
 
