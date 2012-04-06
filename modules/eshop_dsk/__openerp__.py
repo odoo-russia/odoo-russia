@@ -23,6 +23,8 @@
     "author" : "Denis Karataev",
     "category" : "Generic Modules",
     "depends" : [
+        "eshop_base_dsk",
+        "eshop_report_dsk",
         "product",
         "product_attribute_dsk",
         "product_category_flags_dsk",
@@ -32,8 +34,7 @@
         "product_images_dsk",
         "product_manufacturer_dsk",
         "product_relations_dsk",
-        "product_report_dsk",
-        "product_size_dsk"
+        "product_size_dsk",
     ],
     "init_xml" : [],
     "demo_xml" : [],
