@@ -31,8 +31,8 @@ class product_relation(osv.osv):
         return True
 
     _columns = {
-        'product_id': fields.many2one('product.product', 'Source product', required=True),
-        'linked_product_id': fields.many2one('product.product', 'Linked product', required=True),
+        'product_id': fields.many2one('product.product', 'Source product', required=True, ondelete='cascade'),
+        'linked_product_id': fields.many2one('product.product', 'Linked product', required=True, ondelete='cascade'),
         'type': fields.selection(
             (('cross_sell', 'Cross-Sell'), ('up_sell', 'Up-Sell'), ('related', 'Related')),
             'Relation type', required=True
