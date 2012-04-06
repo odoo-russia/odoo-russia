@@ -5,10 +5,10 @@
         <record id="product_form_view_with_flags" model="ir.ui.view">
             <field name="name">product.normal.form</field>
             <field name="model">product.product</field>
-            <field name="inherit_id" ref="product.product_normal_form_view" />
+            <field name="inherit_id" ref="eshop_base_dsk.product_normal_form_view_eshop_dsk" />
             <field name="type">form</field>
             <field name="arch" type="xml">
-                <xpath expr="//page[@string='Procurement &amp; Locations']/group[@name='misc']/field[@name='active']" position="after">
+                <xpath expr="//page[@string='Information']/group[@name='status']/field[@name='categ_id']" position="after">
                     <field name="hit"/>
                     <newline/>
                     <field name="new"/>
