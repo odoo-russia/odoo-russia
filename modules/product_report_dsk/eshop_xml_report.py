@@ -383,7 +383,7 @@ class eshop_xml_report(report_int):
                     xmlCompetitors.appendChild(xmlCompetitor)
                     xmlText = doc.createTextNode(comp.name)
                     xmlCompetitor.appendChild(xmlText)
-        return (doc.toprettyxml(indent='  ', encoding='UTF-8'), 'txt')
+        return (doc.toprettyxml(indent='  ', encoding='UTF-8'), 'xml')
 eshop_xml_report('report.eshop_xml_report')
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
