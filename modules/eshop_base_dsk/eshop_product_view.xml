@@ -60,7 +60,6 @@
             <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Products">
-                    <field name="id"/>
                     <field name="name"/>
                     <field name="categ_id"/>
                     <field name="variants" groups="product.group_product_variant"/>
