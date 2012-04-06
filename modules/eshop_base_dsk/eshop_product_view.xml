@@ -81,6 +81,7 @@
                 'form_view_ref': 'eshop_base_dsk.product_normal_form_view_eshop_dsk',
                 'default_eshop_sync':1,
             }</field>
+            <field name="domain">[('eshop_sync', '=', '1')]</field>
             <field name="view_id" ref="product_product_tree_view_eshop_dsk"/>
             <field name="search_view_id" ref="product.product_search_form_view"/>
         </record>
