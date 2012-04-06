@@ -84,11 +84,11 @@
             <field name="search_view_id" ref="product.product_search_form_view"/>
         </record>
 
-        <menuitem groups="eshop_base_dsk.group_eshop_manager" id="eshop_base_dsk.menu" name="E-shop"
-                sequence="100"/>
-        <menuitem groups="eshop_base_dsk.group_eshop_manager" id="eshop_base_dsk.submenu" name="E-shop"
-                parent="eshop_base_dsk.menu"/>
         <menuitem action="product_eshop_dsk_action" groups="eshop_base_dsk.group_eshop_manager"
-                  id="eshop_base_dsk.products" name="Products" parent="eshop_base_dsk.submenu"/>
+            id="eshop_base_dsk.menu" name="E-shop" sequence="100"/>
+        <menuitem groups="eshop_base_dsk.group_eshop_manager" id="eshop_base_dsk.submenu" name="E-shop"
+            parent="eshop_base_dsk.menu"/>
+        <menuitem action="product_eshop_dsk_action" groups="eshop_base_dsk.group_eshop_manager"
+            id="eshop_base_dsk.products" name="Products" parent="eshop_base_dsk.submenu"/>
     </data>
 </openerp>
