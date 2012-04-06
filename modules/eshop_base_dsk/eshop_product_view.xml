@@ -14,12 +14,26 @@
             </field>
         </record>
 
+        <record id="product_normal_form_view_with_eshop_flag" model="ir.ui.view">
+            <field name="name">product.normal.form</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view" />
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@string='Procurement &amp; Locations']/group[@name='misc']/field[@name='active']" position="after">
+                    <field name="eshop_sync"/>
+                </xpath>
+            </field>
+        </record>
+
         <record id="product_normal_form_view_eshop_dsk" model="ir.ui.view">
             <field name="name">product.normal.form</field>
             <field name="model">product.product</field>
             <field name="type">form</field>
             <field name="arch" type="xml">
                 <form string="Product">
+                    <field name="eshop_sync" invisible="1"/>
+
                     <separator string="Name" colspan="4"/>
                     <field name="name"/>
 
@@ -46,13 +60,11 @@
             <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Products">
-                    <field name="default_code"/>
+                    <field name="id"/>
                     <field name="name"/>
                     <field name="categ_id"/>
                     <field name="variants" groups="product.group_product_variant"/>
                     <field name="uom_id" string="UoM"/>
-                    <field name="type"/>
-                    <field name="state" groups="base.group_extended"/>
                     <field name="company_id" groups="base.group_multi_company" invisible="1"/>
                 </tree>
             </field>
@@ -64,7 +76,11 @@
             <field name="res_model">product.product</field>
             <field name="view_mode">tree,kanban,form</field>
             <field name="view_type">form</field>
-            <field name="context">{"search_default_filter_to_sell":1, 'form_view_ref': 'eshop_base_dsk.product_normal_form_view_eshop_dsk'}</field>
+            <field name="context">{
+                "search_default_filter_to_sell":1,
+                'form_view_ref': 'eshop_base_dsk.product_normal_form_view_eshop_dsk',
+                'default_eshop_sync':1,
+            }</field>
             <field name="view_id" ref="product_product_tree_view_eshop_dsk"/>
             <field name="search_view_id" ref="product.product_search_form_view"/>
         </record>
