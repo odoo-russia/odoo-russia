@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+
+        <record id="product_form_view_eshop_dsk_several_names" model="ir.ui.view">
+            <field name="name">product.normal.form</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="eshop_base_dsk.product_normal_form_view_eshop_dsk" />
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <field name="name" position="replace">
+                    <field name="name_eshop" required="1"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="product_product_tree_view_eshop_dsk_several_names" model="ir.ui.view">
+            <field name="name">product.product.tree</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="eshop_base_dsk.product_product_tree_view_eshop_dsk"/>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <field name="name" position="replace">
+                    <field name="name_eshop"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>
