@@ -1,7 +1,6 @@
 <?xml version="1.0" ?>
 <openerp>
     <data>
-
         <record id="product_category_form_view_eshop_dsk" model="ir.ui.view">
             <field name="name">product.category.form</field>
             <field name="model">product.category</field>
@@ -85,9 +84,12 @@
         </record>
 
         <menuitem action="product_eshop_dsk_action" groups="eshop_base_dsk.group_eshop_manager"
-            id="eshop_base_dsk.menu" name="E-shop" sequence="100"/>
+            id="eshop_base_dsk.menu" name="E-shop" sequence="100" web_icon="images/eshop.png"
+            web_icon_hover="images/eshop-hover.png"/>
+
         <menuitem groups="eshop_base_dsk.group_eshop_manager" id="eshop_base_dsk.submenu" name="E-shop"
             parent="eshop_base_dsk.menu"/>
+
         <menuitem action="product_eshop_dsk_action" groups="eshop_base_dsk.group_eshop_manager"
             id="eshop_base_dsk.products" name="Products" parent="eshop_base_dsk.submenu"/>
     </data>
