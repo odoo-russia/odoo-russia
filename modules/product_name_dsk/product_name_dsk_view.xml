@@ -9,7 +9,7 @@
             <field name="type">form</field>
             <field name="arch" type="xml">
                 <field name="name" position="replace">
-                    <field name="name_eshop" required="1"/>
+                    <field name="name_eshop" colspan="4" required="1"/>
                 </field>
             </field>
         </record>
