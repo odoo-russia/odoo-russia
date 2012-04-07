@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenERP Server 6.0.3\n"
-"Report-Msgid-Bugs-To: support@openerp.com\n"
-"POT-Creation-Date: 2011-09-16 08:55+0000\n"
-"PO-Revision-Date: 2011-09-16 08:55+0000\n"
+"Project-Id-Version: OpenERP Server 6.1-1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-04-07 07:03+0000\n"
+"PO-Revision-Date: 2012-04-07 07:03+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,24 +16,9 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: product_size_dsk
-#: model:ir.model,name:product_size_dsk.model_product_product
-msgid "Product"
-msgstr "Товар"
-
-#. module: product_size_dsk
-#: field:product.product,volume_auto:0
-msgid "Auto calculate volume by sizes"
-msgstr "Автоматически рассчитывать объем"
-
-#. module: product_size_dsk
-#: help:product.product,width:0
-msgid "Width in mm"
-msgstr "Ширина в миллиметрах"
-
-#. module: product_size_dsk
-#: field:product.product,height:0
-msgid "Height"
-msgstr "Высота"
+#: field:product.product,volume:0
+msgid "Volume, m3"
+msgstr "Объем, м3"
 
 #. module: product_size_dsk
 #: help:product.product,height:0
@@ -41,14 +26,39 @@ msgid "Height in mm"
 msgstr "Высота в миллиметрах"
 
 #. module: product_size_dsk
+#: model:ir.model,name:product_size_dsk.model_product_product
+msgid "Product"
+msgstr "ТМЦ"
+
+#. module: product_size_dsk
+#: field:product.product,height:0
+msgid "Height, mm"
+msgstr "Высота, мм"
+
+#. module: product_size_dsk
+#: field:product.product,volume_auto:0
+msgid "Auto calculate volume by sizes"
+msgstr "Автоматически рассчитывать объем"
+
+#. module: product_size_dsk
 #: field:product.product,width:0
-msgid "Width"
-msgstr "Ширина"
+msgid "Width, mm"
+msgstr "Ширина, мм"
+
+#. module: product_size_dsk
+#: help:product.product,width:0
+msgid "Width in mm"
+msgstr "Ширина в миллиметрах"
+
+#. module: product_size_dsk
+#: field:product.product,weight:0
+msgid "Gross weight, kg"
+msgstr "Вес брутто, кг"
 
 #. module: product_size_dsk
 #: field:product.product,depth:0
-msgid "Depth"
-msgstr "Глубина"
+msgid "Depth, mm"
+msgstr "Глубина, мм"
 
 #. module: product_size_dsk
 #: constraint:product.product:0
@@ -61,7 +71,27 @@ msgid "Depth in mm"
 msgstr "Глубина в миллиметрах"
 
 #. module: product_size_dsk
-#: constraint:product.product:0
-msgid "Attributes don't belong to selected group!"
-msgstr "Характеристики товара не принадлежат выбранной группе характеристик!"
+#: help:product.product,volume_auto:0
+msgid "If checked, volume computed by sizes"
+msgstr "Если отмечено, объем вычисляется по размерам"
+
+#. module: product_size_dsk
+#: field:product.product,weight_net:0
+msgid "Net weight, kg"
+msgstr "Вес нетто, кг"
+
+#. module: product_size_dsk
+#: help:product.product,volume:0
+msgid "The volume in m3."
+msgstr "Объем в м3."
+
+#. module: product_size_dsk
+#: help:product.product,weight_net:0
+msgid "The net weight in Kg."
+msgstr "Вес нетто в кг."
+
+#. module: product_size_dsk
+#: help:product.product,weight:0
+msgid "The gross weight in Kg."
+msgstr "Вес брутто в кг."
 
