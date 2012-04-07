@@ -1,7 +1,6 @@
 <?xml version="1.0" ?>
 <openerp>
     <data>
-
         <record id="product_form_view_with_description_dsk" model="ir.ui.view">
             <field name="name">product.normal.form</field>
             <field name="model">product.product</field>
@@ -10,8 +9,41 @@
             <field name="arch" type="xml">
                 <xpath expr="//page[@string='Descriptions']/separator[@string='Description']" position="before">
                     <separator string="Short description"/>
-                    <field colspan="4" name="description_short" nolabel="1"/>
+                    <field colspan="4" name="description_short" nolabel="1" readonly="1"/>
+
+                    <separator string="Description"/>
+                    <field colspan="4" name="description" nolabel="1" readonly="1"/>
                 </xpath>
+            </field>
+        </record>
+
+        <record id="product_form_view_eshop_dsk_description" model="ir.ui.view">
+            <field name="name">product.normal.form</field>
+            <field name="model">product.product</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="eshop_base_dsk.product_normal_form_view_eshop_dsk" />
+            <field name="arch" type="xml">
+                <page string="Information" position="after">
+                    <page string="Descriptions">
+                        <separator string="Short description"/>
+                        <field colspan="4" name="description_short" nolabel="1" required="1"/>
+
+                        <separator string="Description"/>
+                        <field colspan="4" name="description" nolabel="1" required="1"/>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+        <record id="product_product_tree_view_eshop_dsk_description" model="ir.ui.view">
+            <field name="name">product.product.tree</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="eshop_base_dsk.product_product_tree_view_eshop_dsk"/>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <field name="categ_id" position="before">
+                    <field name="description_short"/>
+                </field>
             </field>
         </record>
 
