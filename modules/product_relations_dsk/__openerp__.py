@@ -22,7 +22,7 @@
     "version" : "1.0",
     "author" : "Denis Karataev",
     "category" : "Generic Modules",
-    "depends" : ["product"],
+    "depends" : ["eshop_base_dsk", "product_name_dsk"],
     "init_xml" : [],
     "demo_xml" : [],
     "description": "A module that add relations between products",

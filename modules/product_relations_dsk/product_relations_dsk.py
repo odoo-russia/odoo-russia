@@ -51,6 +51,18 @@ class product_relation(osv.osv):
 product_relation()
 
 class product_product(osv.osv):
+    def name_get(self, cr, uid, ids, context=None):
+        if context is None:
+            context = {}
+        #TODO: context doesn't work for saving
+        if context.get('is_name_eshop'):
+            res = []
+            for product in self.browse(cr, uid, ids, context):
+                res.append((product['id'], product['name_eshop']))
+            return res
+        else:
+            return super(product_product, self).name_get(cr, uid, ids, context)
+
     _name = 'product.product'
     _inherit = 'product.product'
 
