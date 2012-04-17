@@ -2,13 +2,13 @@
 <openerp>
     <data>
 
-        <record id="product_form_view_with_flags" model="ir.ui.view">
+        <record id="product_form_view_eshop_dsk_competitor_price" model="ir.ui.view">
             <field name="name">product.normal.form</field>
             <field name="model">product.product</field>
-            <field name="inherit_id" ref="product.product_normal_form_view" />
             <field name="type">form</field>
+            <field name="inherit_id" ref="eshop_base_dsk.product_normal_form_view_eshop_dsk" />
             <field name="arch" type="xml">
-                <xpath expr="/form/notebook" position="inside">
+                <notebook position="inside">
                     <page string="Competitors">
                         <separator string="Competitors" colspan="4"/>
                         <field colspan="4" name="competitor_ids" nolabel="1">
@@ -20,7 +20,7 @@
                             </tree>
                         </field>
                     </page>
-                </xpath>
+                </notebook>
             </field>
         </record>
 

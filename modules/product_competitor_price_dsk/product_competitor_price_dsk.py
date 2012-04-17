@@ -27,7 +27,7 @@ class product_competitor(osv.osv):
         'product_id': fields.many2one('product.product', 'Product Id', required=True, ondelete='cascade'),
         'similar_product_name': fields.char('Similar product name', size=128),
         'similar_product_url': fields.char('Similar product URL', size=128),
-        'similar_product_price': fields.float('Price for similar product', digits=(10,2)),
+        'similar_product_price': fields.float('Price for similar product', digits=(10,2), required=True),
     }
 product_competitor()
 
