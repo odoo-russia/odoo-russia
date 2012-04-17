@@ -15,7 +15,6 @@
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.  #
 #########################################################################
 from osv import osv, fields
-import pooler
 
 class product_images(osv.osv):
     def _get_filename(self, full_path):
@@ -27,14 +26,8 @@ class product_images(osv.osv):
         image_path = vals.get('image_filename')
         if image_path:
             vals['image_filename'] =  self._get_filename(image_path)
-        print context
-        #Main product image updating
-#        product_id = context.get('product_id')
-#        image = vals.get('image')
-#        if image:
-#            pool = pooler.get_pool(cr.dbname)
-#            for product in pool.get('product.product').browse(cr, uid, [self.product_id], context):
-#                product.write(cr, uid, [product_id], {'image': image})
+
+        #TODO: update main product image
 
         return super(product_images, self).create(cr, uid, vals, context)
 
@@ -45,14 +38,7 @@ class product_images(osv.osv):
         if image_path:
             vals['image_filename'] =  self._get_filename(image_path)
 
-        print context
-        #Main product image updating
-#        product_id = context.get('product_id')
-#        image = vals.get('image')
-#        if image:
-#            pool = pooler.get_pool(cr.dbname)
-#            for product in pool.get('product.product').browse(cr, uid, [self.product_id], context):
-#                product.write(cr, uid, [product_id], {'image': image})
+        #TODO: update main product image
 
         return super(product_images, self).write(cr, uid, ids, vals, context)
 

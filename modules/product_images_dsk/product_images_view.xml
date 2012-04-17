@@ -13,7 +13,7 @@
 								<field name="name" colspan="2" />
                                 <newline/>
                                 <field name="image_filename" invisible="1"/>
-                                <field name="image" widget="image" filename="image_filename"/>
+                                <field name="image" widget="image" filename="image_filename" nolabel="1"/>
 							</group>
                             <group col="2" colspan="2">
 								<field name="type"/>
@@ -65,9 +65,8 @@
             <field name="arch" type="xml">
                 <notebook position="inside">
                     <page string="Images">
-                        <field name="id" invisible="1"/>
                         <separator string="Images" colspan="4"/>
-                        <field name="image_ids" nolabel="1" colspan="4" context="{'product_id': id}" />
+                        <field name="image_ids" nolabel="1" colspan="4"/>
                     </page>
                 </notebook>
             </field>
