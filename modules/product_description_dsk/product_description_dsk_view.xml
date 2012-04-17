@@ -10,10 +10,10 @@
                 <xpath expr="//page[@string='Descriptions']/separator[@string='Description']" position="before">
                     <separator string="Short description"/>
                     <field colspan="4" name="description_short" nolabel="1" readonly="1"/>
-
-                    <separator string="Description"/>
-                    <field colspan="4" name="description" nolabel="1" readonly="1"/>
                 </xpath>
+                <field name="description" position="replace">
+                    <field colspan="4" name="description" nolabel="1" readonly="1"/>
+                </field>
             </field>
         </record>
 
