@@ -27,32 +27,25 @@ class product_brand(osv.osv):
     def create(self, cr, uid, vals, context=None):
         if context is None:
             context = {}
-        vals['logo_filename'] =  self._get_filename(vals['logo_filename'])
+        image_path = vals.get('logo_filename')
+        if image_path:
+            vals['logo_filename'] =  self._get_filename(image_path)
         return super(product_brand, self).create(cr, uid, vals, context)
 
     def write(self, cr, uid, ids, vals, context=None):
         if context is None:
             context = {}
-        vals['logo_filename'] =  self._get_filename(vals['logo_filename'])
+        image_path = vals.get('logo_filename')
+        if image_path:
+            vals['logo_filename'] =  self._get_filename(image_path)
         return super(product_brand, self).write(cr, uid, ids, vals, context)
-
-    def get_logo(self, cr, uid, id):
-        each = self.read(cr, uid, id, ['logo'])
-        return each['logo']
-
-    def _get_logo(self, cr, uid, ids, field_name, arg, context={}):
-        res = {}
-        for each in ids:
-            res[each] = self.get_logo(cr, uid, each)
-        return res
 
     _name = 'product.brand'
     _columns = {
         'name': fields.char('Brand', size=64, required=True),
         'description': fields.text('Description'),
-        'logo': fields.binary('Logo', filters='*.png,*.jpg'),
+        'logo': fields.binary('Logo', required=True),
         'logo_filename': fields.char('Logo filename', size=500),
-        'preview': fields.function(_get_logo, type="binary", method=True),
         'partner_id': fields.many2one('res.partner', 'Partner', help='Select partner for this Brand', required=True,
                                       ondelete='restrict'),
     }

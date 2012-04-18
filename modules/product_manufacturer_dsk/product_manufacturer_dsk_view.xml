@@ -2,29 +2,18 @@
 <openerp>
     <data>
 
-        <record id="product_normal_form_view_dsk" model="ir.ui.view">
+        <record id="product_form_view_eshop_dsk_manufacturer" model="ir.ui.view">
             <field name="name">product.normal.form</field>
             <field name="model">product.product</field>
             <field name="type">form</field>
-            <field name="inherit_id" ref="product.product_normal_form_view" />
+            <field name="inherit_id" ref="eshop_base_dsk.product_normal_form_view_eshop_dsk" />
             <field name="arch" type="xml">
-                <xpath expr="//page[@string='Suppliers']" position="replace">
-                    <page string="Suppliers and Manufacturers">
-                        <separator string="Suppliers" colspan="4"/>
-                        <field colspan="4" name="seller_ids" nolabel="1"/>
-
+                <notebook position="inside">
+                    <page string="Manufacturers">
                         <separator string="Manufacturers" colspan="4"/>
-                        <field colspan="4" name="manufacturer_ids" nolabel="1">
-                            <tree string="Manufacturers">
-                                <field name="name"/>
-                                <field name="product_code"/>
-                                <field name="product_name"/>
-                                <field name="product_country_id"/>
-                                <field name="product_brand_id"/>
-                            </tree>
-                        </field>
+                        <field colspan="4" name="manufacturer_ids" nolabel="1"/>
                     </page>
-                </xpath>
+                </notebook>
             </field>
         </record>
 
@@ -53,7 +42,8 @@
                     <field name="product_country_id"/>
                     <field name="product_code"/>
                     <field name="product_name"/>
-                    <field name="product_brand_id" domain="[('partner_id','=',name)]" attrs="{'readonly': [('name','=',False)]}"/>
+                    <field name="product_brand_id" domain="[('partner_id','=',name)]" attrs="{'readonly': [('name','=',False)]}"
+                            context="{'default_partner_id': name}"/>
                 </form>
             </field>
         </record>
@@ -77,13 +67,23 @@
             <field name="type">form</field>
             <field name="arch" type="xml">
                 <form string="Product Brand">
-                    <field name="name"/>
-                    <field name="logo_filename" invisible="1"/>
-                    <field name="logo" filename="logo_filename"/>
                     <field name="partner_id" invisible="1"/>
-                    <field name="description" colspan="4"/>
-                    <separator string="Preview (Only when saved)" colspan="4" />
-					<field name="preview" widget="image" nolabel="1" colspan="4"/>
+                    <field name="logo_filename" invisible="1"/>
+
+                    <group colspan="3" col="3">
+                        <field name="name" colspan="3" attrs="{'invisible': [('partner_id','=',False)]}"/>
+                        <field name="description" colspan="3" attrs="{'invisible': [('partner_id','=',False)]}"/>
+                    </group>
+
+                    <!--TODO: padding-->
+                    <field name="logo" filename="logo_filename" widget="image" nolabel="1" colspan="1"
+                           attrs="{'invisible': [('partner_id','=',False)]}"/>
+
+                    <group colspan="4" col="1" attrs="{'invisible': [('partner_id','!=',False)]}">
+                        <label string="Create the brand only from manufacturer form!"/>
+                    </group>
+
+
                 </form>
             </field>
         </record>
@@ -93,7 +93,7 @@
             <field name="res_model">product.brand</field>
             <field name="view_mode">tree,form</field>
         </record>
-        <menuitem action="product_brand_action_dsk" groups="base.group_extended" id="prod_brands" name="Product Brands" parent="product.prod_config_main"/>
+        <menuitem action="product_brand_action_dsk" groups="eshop_base_dsk.group_eshop_manager" id="prod_brands" name="Product Brands" parent="eshop_base_dsk.settings"/>
 
     </data>
 </openerp>
