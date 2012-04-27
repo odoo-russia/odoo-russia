@@ -2,13 +2,13 @@
 <openerp>
     <data>
 
-        <record id="product_form_view_with_attribute_dsk" model="ir.ui.view">
+        <record id="product_form_view_eshop_dsk_attribute" model="ir.ui.view">
             <field name="name">product.normal.form</field>
             <field name="model">product.product</field>
             <field name="type">form</field>
-            <field name="inherit_id" ref="product.product_normal_form_view" />
+            <field name="inherit_id" ref="eshop_base_dsk.product_normal_form_view_eshop_dsk" />
             <field name="arch" type="xml">
-                <xpath expr="//page[contains(@string,'Suppliers')]" position="after">
+                <notebook position="inside">
                     <page string="Attributes">
                         <separator string="Attribute group" colspan="4"/>
                         <field name="attribute_group"/>
@@ -46,7 +46,7 @@
                             </tree>
                         </field>
                     </page>
-                </xpath>
+                </notebook>
             </field>
         </record>
 
@@ -164,8 +164,8 @@
             <field name="view_mode">tree,form</field>
         </record>
         
-        <menuitem action="product_attribute_group_action_dsk" groups="base.group_extended" id="prod_groups" name="Product Attribute Groups" parent="product.prod_config_main"/>
-        <menuitem action="product_attribute_action_dsk" groups="base.group_extended" id="prod_attributes" name="Product Attributes" parent="product.prod_config_main"/>
+        <menuitem action="product_attribute_group_action_dsk" groups="eshop_base_dsk.group_eshop_manager" id="prod_groups" name="Product Attribute Groups" parent="eshop_base_dsk.settings"/>
+        <menuitem action="product_attribute_action_dsk" groups="eshop_base_dsk.group_eshop_manager" id="prod_attributes" name="Product Attributes" parent="eshop_base_dsk.settings"/>
 
     </data>
 </openerp>

@@ -20,38 +20,10 @@
 
 from osv import fields, osv
 
-#Object definitions
-
 class product_attribute_group(osv.osv):
     _name = 'product.attribute.group'
     _columns = {
         'name': fields.char('Product attribute group name', size=64, required=True),
-    }
-product_attribute_group()
-
-class product_attribute(osv.osv):
-    _name = 'product.attribute'
-    _columns = {
-        'name': fields.char('Product attribute name', size=64, required=True),
-    }
-product_attribute()
-
-class product_attribute_value(osv.osv):
-    _name = 'product.attribute.value'
-    _columns = {
-        'name': fields.char('Product attribute value', size=64, required=True),
-    }
-product_attribute_value()
-
-
-
-
-#Inherits
-
-class product_attribute_group(osv.osv):
-    _name = 'product.attribute.group'
-    _inherit = 'product.attribute.group'
-    _columns = {
         'attribute_ids': fields.many2many(
             'product.attribute',
             'product_attribute_group_attribute',
@@ -93,8 +65,8 @@ class product_attribute(osv.osv):
         return res
 
     _name = 'product.attribute'
-    _inherit = 'product.attribute'
     _columns = {
+        'name': fields.char('Product attribute name', size=64, required=True),
         'type': fields.selection(
             (('string', 'String'), ('checkbox', 'Checkbox')),
             'Attribute type',
@@ -134,8 +106,8 @@ class product_attribute_value(osv.osv):
                                                            count=count)
     
     _name = 'product.attribute.value'
-    _inherit = 'product.attribute.value'
     _columns = {
+        'name': fields.char('Product attribute value', size=64, required=True),
         'attribute_id': fields.many2one('product.attribute', 'Product attribute', ondelete='cascade', required=True),
         'attribute_group_id': fields.many2one('product.attribute.group', 'Product attribute group', ondelete='restrict',
                                               required=True)
