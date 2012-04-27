@@ -21,6 +21,18 @@
 from osv import fields, osv
 
 class product_attribute_group(osv.osv):
+    def create(self, cr, uid, vals, context=None):
+        if context is None:
+            context = {}
+        name = vals.get('name')
+        if name:
+            for attribute_group in self.browse(cr, uid, ids, context):
+                
+            samename_ids = pool.get('product.attribute.group').search(cr, uid, [('name.lower()', '=', name.lower())], context=context)
+            print samename_ids
+        else:
+            print 'fuck'
+
     _name = 'product.attribute.group'
     _columns = {
         'name': fields.char('Product attribute group name', size=64, required=True),
