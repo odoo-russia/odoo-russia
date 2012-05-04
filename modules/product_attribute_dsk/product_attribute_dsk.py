@@ -21,6 +21,34 @@
 from osv import fields, osv
 
 class product_attribute_group(osv.osv):
+    def create(self, cr, uid, vals, context=None):
+        if context is None:
+            context = {}
+        vals['name'] = vals['name'].capitalize()
+        return super(product_attribute_group, self).create(cr, uid, vals, context)
+
+    def write(self, cr, uid, ids, vals, context=None):
+        if context is None:
+            context = {}
+        if 'name' in vals:
+            vals['name'] = vals['name'].capitalize()
+        return super(product_attribute_group, self).write(cr, uid, ids, vals, context)
+
+    def unlink(self, cr, uid, ids, context=None):
+        if context is None:
+            context = {}
+        for attribute_group in self.browse(cr, uid, ids):
+            attribute = self.pool.get('product.attribute')
+            attribute_ids = attribute.search(cr, uid, [('attribute_group_ids', 'in', attribute_group.id),])
+            if attribute_ids:
+                attribute_names = []
+                for attribute_element in attribute.browse(cr, uid, attribute_ids):
+                    attribute_names.append(attribute_element.name)
+                attribute_names_str = ', '.join(attribute_names)
+                raise osv.except_osv('Some attributes have references to this attribute group!', 'First remove these \
+                                                                                references: ' + attribute_names_str)
+        return super(product_attribute_group, self).unlink(cr, uid, ids)
+
     _name = 'product.attribute.group'
     _columns = {
         'name': fields.char('Product attribute group name', size=64, required=True),
@@ -35,6 +63,34 @@ class product_attribute_group(osv.osv):
 product_attribute_group()
 
 class product_attribute(osv.osv):
+    def create(self, cr, uid, vals, context=None):
+        if context is None:
+            context = {}
+        vals['name'] = vals['name'][0].upper() + vals['name'][1:]
+        return super(product_attribute, self).create(cr, uid, vals, context)
+
+    def write(self, cr, uid, ids, vals, context=None):
+        if context is None:
+            context = {}
+        if 'name' in vals:
+            vals['name'] = vals['name'][0].upper() + vals['name'][1:]
+        return super(product_attribute, self).write(cr, uid, ids, vals, context)
+
+    def unlink(self, cr, uid, ids, context=None):
+        if context is None:
+            context = {}
+        for attribute in self.browse(cr, uid, ids):
+            attribute_group = self.pool.get('product.attribute.group')
+            attribute_group_ids = attribute_group.search(cr, uid, [('attribute_ids', 'in', attribute.id),])
+            if attribute_group_ids:
+                attribute_group_names = []
+                for attribute_group_element in attribute_group.browse(cr, uid, attribute_group_ids):
+                    attribute_group_names.append(attribute_group_element.name)
+                attribute_group_names_str = ', '.join(attribute_group_names)
+                raise osv.except_osv('Some attribute groups have references to this attribute!', 'First remove these \
+                                                                            references: ' + attribute_group_names_str)
+        return super(product_attribute_group, self).unlink(cr, uid, ids)
+
     _name = 'product.attribute'
     _columns = {
         'name': fields.char('Product attribute name', size=64, required=True),
@@ -42,6 +98,12 @@ class product_attribute(osv.osv):
             (('string', 'String'), ('checkbox', 'Checkbox')),
             'Attribute type',
             required=True),
+        'attribute_group_ids': fields.many2many(
+            'product.attribute.group',
+            'product_attribute_group_attribute',
+            'attribute_id',
+            'attribute_group_id',
+            'Attribute groups'),
     }
     _order = 'type'
     _sql_constraints = [('attribute_name_unique','unique(name)','Attribute name must be unique!')]

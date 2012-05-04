@@ -54,7 +54,8 @@
                     <group colspan="2" col="2">
                         <field name="type"/>
                         <newline/>
-                        <label colspan="2" string="If already there are saved values of this attribute, this field will always be String. To change this field, first remove the attribute values."/>
+                        <label colspan="2" string="If already there are saved values of this attribute, this field will
+                            always be String. To change this field, first remove the attribute values."/>
                     </group>
                 </form>
             </field>
@@ -72,8 +73,11 @@
             <field name="view_mode">tree,form</field>
         </record>
         
-        <menuitem action="product_attribute_group_action_dsk" groups="eshop_base_dsk.group_eshop_manager" id="prod_groups" name="Product Attribute Groups" parent="eshop_base_dsk.settings"/>
-        <menuitem action="product_attribute_action_dsk" groups="eshop_base_dsk.group_eshop_manager" id="prod_attributes" name="Product Attributes" parent="eshop_base_dsk.settings"/>
+        <menuitem action="product_attribute_group_action_dsk" groups="eshop_base_dsk.group_eshop_manager"
+                  id="prod_groups" name="Product Attribute Groups" parent="eshop_base_dsk.settings"/>
+
+        <menuitem action="product_attribute_action_dsk" groups="eshop_base_dsk.group_eshop_manager"
+                  id="prod_attributes" name="Product Attributes" parent="eshop_base_dsk.settings"/>
 
     </data>
 </openerp>
