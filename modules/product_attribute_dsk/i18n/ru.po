@@ -82,7 +82,7 @@ msgstr "Тип характеристики"
 #: code:addons/product_attribute_dsk/product_attribute_dsk.py:49
 #, python-format
 msgid "Some attributes have references to the attribute group "
-msgstr "Некоторые характеристики связаны с этой группой характеристик "
+msgstr "Некоторые характеристики связаны с группой "
 
 #. module: product_attribute_dsk
 #: model:ir.model,name:product_attribute_dsk.model_product_attribute_value_product
@@ -142,5 +142,5 @@ msgstr "Ошибка: Неправильный штрих-код"
 #: code:addons/product_attribute_dsk/product_attribute_dsk.py:91
 #, python-format
 msgid "Some attribute groups have references to the attribute "
-msgstr "Некоторые группы характеристик связаны с этой характеристикой "
+msgstr "Некоторые группы характеристик связаны с характеристикой "
 
