@@ -19,6 +19,7 @@
 ##############################################################################
 
 from osv import fields, osv
+from tools.translate import _
 
 class product_attribute_group(osv.osv):
     def create(self, cr, uid, vals, context=None):
@@ -45,8 +46,8 @@ class product_attribute_group(osv.osv):
                 for attribute_element in attribute.browse(cr, uid, attribute_ids):
                     attribute_names.append(attribute_element.name)
                 attribute_names_str = ', '.join(attribute_names)
-                raise osv.except_osv('Some attributes have references to the attribute group ' + attribute_group.name +
-                                     '!', 'First remove these references: ' + attribute_names_str)
+                raise osv.except_osv(_('Some attributes have references to the attribute group ') + attribute_group.name +
+                                     '!', _('First remove these references: ') + attribute_names_str)
         return super(product_attribute_group, self).unlink(cr, uid, ids)
 
     _name = 'product.attribute.group'
@@ -87,8 +88,8 @@ class product_attribute(osv.osv):
                 for attribute_group_element in attribute_group.browse(cr, uid, attribute_group_ids):
                     attribute_group_names.append(attribute_group_element.name)
                 attribute_group_names_str = ', '.join(attribute_group_names)
-                raise osv.except_osv('Some attribute groups have references to the attribute ' + attribute.name + '!',
-                                     'First remove these  references: ' + attribute_group_names_str)
+                raise osv.except_osv(_('Some attribute groups have references to the attribute ') + attribute.name + '!',
+                                     _('First remove these  references: ') + attribute_group_names_str)
         return super(product_attribute_group, self).unlink(cr, uid, ids)
 
     _name = 'product.attribute'
