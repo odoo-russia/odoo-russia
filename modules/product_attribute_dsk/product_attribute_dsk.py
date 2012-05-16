@@ -67,14 +67,19 @@ class product_attribute(osv.osv):
     def create(self, cr, uid, vals, context=None):
         if context is None:
             context = {}
-        vals['name'] = vals['name'][0].upper() + vals['name'][1:]
+        if 'name' in vals and vals['name']:
+            vals['name'] = vals['name'][0].upper() + vals['name'][1:]
         return super(product_attribute, self).create(cr, uid, vals, context)
 
     def write(self, cr, uid, ids, vals, context=None):
         if context is None:
             context = {}
-        if 'name' in vals:
+        if 'name' in vals and vals['name']:
             vals['name'] = vals['name'][0].upper() + vals['name'][1:]
+
+#        for attribute in self.browse(cr, uid, ids, context):
+#            if attribute.attribute_value_ids:
+#                vals['type']='string'
         return super(product_attribute, self).write(cr, uid, ids, vals, context)
 
     def unlink(self, cr, uid, ids, context=None):
@@ -105,9 +110,22 @@ class product_attribute(osv.osv):
             'attribute_id',
             'attribute_group_id',
             'Attribute groups'),
+        'attribute_value_ids': fields.one2many('product.attribute.value', 'attribute_id', 'Attribute values'),
     }
     _order = 'type'
     _sql_constraints = [('attribute_name_unique','unique(name)','Attribute name must be unique!')]
 product_attribute()
+
+class product_attribute_value(osv.osv):
+    _name = 'product.attribute.value'
+    _columns = {
+        'name': fields.char('Product attribute value name', size=64, required=True),
+        'attribute_id': fields.many2one('product.attribute', 'Attribute', required=True, ondelete='restrict'),
+        'attribute_group_id': fields.many2one('product.attribute.group', 'Attribute group', required=True,
+                                              ondelete='restrict'),
+    }
+    _sql_constraints = [('name_attribute_group_unique', 'unique(name, attribute_id, attribute_group_id)',
+                         'Attribute value must be unique!')]
+product_attribute_value()
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
