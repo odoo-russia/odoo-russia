@@ -77,9 +77,9 @@ class product_attribute(osv.osv):
         if 'name' in vals and vals['name']:
             vals['name'] = vals['name'][0].upper() + vals['name'][1:]
 
-#        for attribute in self.browse(cr, uid, ids, context):
-#            if attribute.attribute_value_ids:
-#                vals['type']='string'
+        for attribute in self.browse(cr, uid, ids, context):
+            if attribute.attribute_value_ids:
+                vals['type']='string'
         return super(product_attribute, self).write(cr, uid, ids, vals, context)
 
     def unlink(self, cr, uid, ids, context=None):

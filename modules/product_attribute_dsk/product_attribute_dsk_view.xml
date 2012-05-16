@@ -44,7 +44,6 @@
             <field name="name">product.attribute.form</field>
             <field name="model">product.attribute</field>
             <field name="type">form</field>
-            <field name="priority" eval="1"/>
             <field name="arch" type="xml">
                 <form string="Attribute">
                     <separator string="Attribute" colspan="4"/>
@@ -56,6 +55,36 @@
                         <newline/>
                         <label colspan="2" string="If already there are saved values of this attribute, this field will
                             always be String. To change this field, first remove the attribute values."/>
+                    </group>
+                    <group colspan="4" col="4">
+                        <separator string="Values" colspan="4"/>
+                        <field name="attribute_value_ids" nolabel="1"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="product_attribute_value_tree_view_dsk" model="ir.ui.view">
+            <field name="name">product.attribute.value.tree</field>
+            <field name="model">product.attribute.value</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Attribute values">
+                    <field name="name"/>
+                    <field name="attribute_group_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="product_attibute_value_form_view_dsk" model="ir.ui.view">
+            <field name="name">product.attribute.value.form</field>
+            <field name="model">product.attribute.value</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Attribute value">
+                    <separator string="Attribute value" colspan="4"/>
+                    <group colspan="4" col="4">
+                        <field name="name"/>
                     </group>
                 </form>
             </field>
