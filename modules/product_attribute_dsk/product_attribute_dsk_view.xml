@@ -58,7 +58,7 @@
                     </group>
                     <group colspan="4" col="4">
                         <separator string="Values" colspan="4"/>
-                        <field name="attribute_value_ids" nolabel="1"/>
+                        <field name="attribute_value_ids" nolabel="1" attrs="{'invisible': [('type','=','checkbox')]}"/>
                     </group>
                 </form>
             </field>
