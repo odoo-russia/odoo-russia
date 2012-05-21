@@ -19,19 +19,36 @@
 ##############################################################################
 
 from osv import fields, osv
+from tools.translate import _
 
 class product_attribute_group(osv.osv):
     def create(self, cr, uid, vals, context=None):
         if context is None:
             context = {}
-        name = vals.get('name')
-        if name:
-            for attribute_group in self.browse(cr, uid, ids, context):
-                
-            samename_ids = pool.get('product.attribute.group').search(cr, uid, [('name.lower()', '=', name.lower())], context=context)
-            print samename_ids
-        else:
-            print 'fuck'
+        vals['name'] = vals['name'].capitalize()
+        return super(product_attribute_group, self).create(cr, uid, vals, context)
+
+    def write(self, cr, uid, ids, vals, context=None):
+        if context is None:
+            context = {}
+        if 'name' in vals:
+            vals['name'] = vals['name'].capitalize()
+        return super(product_attribute_group, self).write(cr, uid, ids, vals, context)
+
+    def unlink(self, cr, uid, ids, context=None):
+        if context is None:
+            context = {}
+        for attribute_group in self.browse(cr, uid, ids):
+            attribute = self.pool.get('product.attribute')
+            attribute_ids = attribute.search(cr, uid, [('attribute_group_ids', 'in', attribute_group.id),])
+            if attribute_ids:
+                attribute_names = []
+                for attribute_element in attribute.browse(cr, uid, attribute_ids):
+                    attribute_names.append(attribute_element.name)
+                attribute_names_str = ', '.join(attribute_names)
+                raise osv.except_osv(_('Some attributes have references to the attribute group ') + attribute_group.name +
+                                     '!', _('First remove these references: ') + attribute_names_str)
+        return super(product_attribute_group, self).unlink(cr, uid, ids)
 
     _name = 'product.attribute.group'
     _columns = {
@@ -50,31 +67,35 @@ class product_attribute(osv.osv):
     def create(self, cr, uid, vals, context=None):
         if context is None:
             context = {}
-        attribute_group_id = context.get('attribute_group_id')
-        if attribute_group_id:
-            vals['attribute_group_ids']=[(4, attribute_group_id)]
-        type = context.get('attribute_type');
-        if type:
-            vals['type']=type;
+        if 'name' in vals and vals['name']:
+            vals['name'] = vals['name'][0].upper() + vals['name'][1:]
         return super(product_attribute, self).create(cr, uid, vals, context)
 
     def write(self, cr, uid, ids, vals, context=None):
         if context is None:
             context = {}
+        if 'name' in vals and vals['name']:
+            vals['name'] = vals['name'][0].upper() + vals['name'][1:]
+
         for attribute in self.browse(cr, uid, ids, context):
             if attribute.attribute_value_ids:
                 vals['type']='string'
         return super(product_attribute, self).write(cr, uid, ids, vals, context)
 
-    def _get_parent_group_id(self, cr, uid, ids, name, arg, context=None):
+    def unlink(self, cr, uid, ids, context=None):
         if context is None:
             context = {}
-        res = {}
-        attribute_group_id = context.get('attribute_group_id')
-        if attribute_group_id:
-            for attribute in self.browse(cr, uid, ids, context):
-                res[attribute.id] = attribute_group_id
-        return res
+        for attribute in self.browse(cr, uid, ids):
+            attribute_group = self.pool.get('product.attribute.group')
+            attribute_group_ids = attribute_group.search(cr, uid, [('attribute_ids', 'in', attribute.id),])
+            if attribute_group_ids:
+                attribute_group_names = []
+                for attribute_group_element in attribute_group.browse(cr, uid, attribute_group_ids):
+                    attribute_group_names.append(attribute_group_element.name)
+                attribute_group_names_str = ', '.join(attribute_group_names)
+                raise osv.except_osv(_('Some attribute groups have references to the attribute ') + attribute.name + '!',
+                                     _('First remove these  references: ') + attribute_group_names_str)
+        return super(product_attribute_group, self).unlink(cr, uid, ids)
 
     _name = 'product.attribute'
     _columns = {
@@ -83,89 +104,28 @@ class product_attribute(osv.osv):
             (('string', 'String'), ('checkbox', 'Checkbox')),
             'Attribute type',
             required=True),
-        'attribute_value_ids': fields.one2many('product.attribute.value','attribute_id','Attribute values'),
         'attribute_group_ids': fields.many2many(
             'product.attribute.group',
             'product_attribute_group_attribute',
             'attribute_id',
             'attribute_group_id',
             'Attribute groups'),
-        'attribute_parent_group_id': fields.function(_get_parent_group_id, 'For context transfer', type='integer', method=True, store=False),
+        'attribute_value_ids': fields.one2many('product.attribute.value', 'attribute_id', 'Attribute values'),
     }
     _order = 'type'
     _sql_constraints = [('attribute_name_unique','unique(name)','Attribute name must be unique!')]
 product_attribute()
 
 class product_attribute_value(osv.osv):
-    def create(self, cr, uid, vals, context=None):
-        if context is None:
-            context = {}
-        attribute_id = context.get('attribute_id')
-        attribute_group_id = context.get('attribute_group_id')
-        if attribute_id:
-            vals['attribute_id'] = attribute_id
-        if attribute_group_id:
-            vals['attribute_group_id'] = attribute_group_id
-        return super(product_attribute_value, self).create(cr, uid, vals, context)
-
-    def search(self, cr, uid, ids, offset=0, limit=None, order=None, context=None, count=False):
-        if context is None:
-            context = {}
-        attribute_group_id = context.get('attribute_group_id')
-        if attribute_group_id:
-            ids.append(('attribute_group_id','=',attribute_group_id))
-        return super(product_attribute_value, self).search(cr, uid, ids, limit=limit, order=order, context=context,
-                                                           count=count)
-    
     _name = 'product.attribute.value'
     _columns = {
-        'name': fields.char('Product attribute value', size=64, required=True),
-        'attribute_id': fields.many2one('product.attribute', 'Product attribute', ondelete='cascade', required=True),
-        'attribute_group_id': fields.many2one('product.attribute.group', 'Product attribute group', ondelete='restrict',
-                                              required=True)
+        'name': fields.char('Product attribute value name', size=64, required=True),
+        'attribute_id': fields.many2one('product.attribute', 'Attribute', required=True, ondelete='restrict'),
+        'attribute_group_id': fields.many2one('product.attribute.group', 'Attribute group', required=True,
+                                              ondelete='restrict'),
     }
-    _sql_constraints = [('attribute_group_name_value_unique','unique(attribute_group_id, attribute_id, name)','Attribute value must be unique!')]
+    _sql_constraints = [('name_attribute_group_unique', 'unique(name, attribute_id, attribute_group_id)',
+                         'Attribute value must be unique!')]
 product_attribute_value()
-
-class product_attribute_value_product(osv.osv):
-    def onchange_attribute_id(self, cr, uid, ids, attribute_id, attribute_value_id):
-        return {'value': {'attribute_value_id': False}}
-
-    def _check_references(self, cr, uid, ids):
-        for avp in self.browse(cr, uid, ids):
-            if avp.attribute_value_id and avp.attribute_value_id.attribute_id != avp.attribute_id:
-                return False
-        return True
-
-    _name = 'product.attribute.value.product'
-    _columns = {
-        'name': fields.char('', size=64),
-        'attribute_id': fields.many2one('product.attribute', 'Product attribute', ondelete='restrict', required=True),
-        'checkbx_value': fields.boolean('Checkbox value'),
-        'attribute_value_id': fields.many2one('product.attribute.value', 'Product attribute value', ondelete='restrict'),
-        'product_id': fields.many2one('product.product', 'Product', ondelete='cascade', required=True),
-    }
-    _sql_constraints = [('attribute_name_product_unique','unique(attribute_id, product_id)','Attribute name must be unique!')]
-    _constraints = [(_check_references, "Value don't belong to selected attribute!", ['attribute_value_id'])]
-product_attribute_value_product()
-
-class product_product(osv.osv):
-    def _check_references(self, cr, uid, ids):
-        for product in self.browse(cr, uid, ids):
-            for product_avp in product.attribute_value_product_ids:
-                if product.attribute_group not in product_avp.attribute_id.attribute_group_ids:
-                    return False
-        return True
-
-    _name = 'product.product'
-    _inherit = 'product.product'
-    _columns = {
-        'attribute_group': fields.many2one('product.attribute.group','Product attribute group', ondelete='restrict', select=True),
-        'attribute_value_product_ids': fields.one2many('product.attribute.value.product', 'product_id', 'Attributes and their values', domain=[('attribute_id.type', '=', 'string')]),
-        'attribute_value_product_checkbx_ids': fields.one2many('product.attribute.value.product', 'product_id',
-                                                                'Attributes and theis values-checkboxes', domain=[('attribute_id.type', '=', 'checkbox')]),
-    }
-    _constraints = [(_check_references,'Attributes don\'t belong to selected group!',['attribute_group'])]
-product_product()
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
