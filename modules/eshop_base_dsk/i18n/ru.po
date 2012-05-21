@@ -1,0 +1,86 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* eshop_base_dsk
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.1-20120518-233345\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-21 10:19+0000\n"
+"PO-Revision-Date: 2012-05-21 10:19+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: eshop_base_dsk
+#: view:product.product:0
+msgid "Status"
+msgstr "Статус"
+
+#. module: eshop_base_dsk
+#: view:product.product:0
+msgid "Information"
+msgstr "Информация"
+
+#. module: eshop_base_dsk
+#: model:ir.model,name:eshop_base_dsk.model_product_product
+#: view:product.product:0
+msgid "Product"
+msgstr "Продукция"
+
+#. module: eshop_base_dsk
+#: view:product.product:0
+msgid "Weights"
+msgstr "Вес"
+
+#. module: eshop_base_dsk
+#: model:res.groups,name:eshop_base_dsk.group_eshop_manager
+msgid "Eshop Manager"
+msgstr "Менеджер Интернет-магазина"
+
+#. module: eshop_base_dsk
+#: model:ir.ui.menu,name:eshop_base_dsk.settings
+msgid "Settings"
+msgstr "Настройки"
+
+#. module: eshop_base_dsk
+#: model:ir.ui.menu,name:eshop_base_dsk.menu
+msgid "E-shop"
+msgstr "Интернет-магазин"
+
+#. module: eshop_base_dsk
+#: model:ir.actions.act_window,help:eshop_base_dsk.product_eshop_dsk_action
+msgid "You must define a Product for everything you buy or sell. Products can be raw materials, stockable products, consumables or services. The Product form contains detailed information about your products related to procurement logistics, sales price, product category, suppliers and so on."
+msgstr "Вы должны определить продукцию для всего, что вы покупаете или продаете. Продукция может быть сырьем, складируемым товаром, расходными материалами или услугами. Форма ввода продукции содержит подробную информацию о правилах снабжения, цене продажи, категории продукции, поставщиках и т.д."
+
+#. module: eshop_base_dsk
+#: constraint:product.product:0
+msgid "Error: Invalid ean code"
+msgstr "Ошибка: Неправильный штрих-код"
+
+#. module: eshop_base_dsk
+#: view:product.category:0
+msgid "Product Categories"
+msgstr "Категории продукции"
+
+#. module: eshop_base_dsk
+#: model:ir.actions.act_window,name:eshop_base_dsk.product_eshop_dsk_action
+#: model:ir.ui.menu,name:eshop_base_dsk.productlist
+#: model:ir.ui.menu,name:eshop_base_dsk.products
+#: view:product.product:0
+msgid "Products"
+msgstr "Продукция"
+
+#. module: eshop_base_dsk
+#: field:product.product,eshop_sync:0
+msgid "Synchronize with E-shop"
+msgstr "Синхронизировать с Интернет-магазином"
+
+#. module: eshop_base_dsk
+#: view:product.product:0
+msgid "Name"
+msgstr "Название"
+
