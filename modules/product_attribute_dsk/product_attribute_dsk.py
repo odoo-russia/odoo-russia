@@ -95,7 +95,7 @@ class product_attribute(osv.osv):
                 attribute_group_names_str = ', '.join(attribute_group_names)
                 raise osv.except_osv(_('Some attribute groups have references to the attribute ') + attribute.name + '!',
                                      _('First remove these  references: ') + attribute_group_names_str)
-        return super(product_attribute_group, self).unlink(cr, uid, ids)
+        return super(product_attribute, self).unlink(cr, uid, ids)
 
     _name = 'product.attribute'
     _columns = {
@@ -113,7 +113,7 @@ class product_attribute(osv.osv):
         'attribute_value_ids': fields.one2many('product.attribute.value', 'attribute_id', 'Attribute values'),
     }
     _defaults = {
-        type: lambda *a: 'string',
+        'type': lambda *a: 'string',
     }
     _order = 'type'
     _sql_constraints = [('attribute_name_unique','unique(name)','Attribute name must be unique!')]
