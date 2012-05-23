@@ -97,6 +97,18 @@ class product_attribute(osv.osv):
                                      _('First remove these  references: ') + attribute_group_names_str)
         return super(product_attribute, self).unlink(cr, uid, ids)
 
+    def _get_parent_group_id(self, cr, uid, ids, name, arg, context=None):
+        if context is None:
+            context = {}
+        res = {}
+        attribute_group_id = context.get('attribute_group_id')
+        for attribute in self.browse(cr, uid, ids, context):
+            if attribute_group_id:
+                res[attribute.id] = attribute_group_id
+            else:
+                res[attribute.id] = 0
+        return res
+
     _name = 'product.attribute'
     _columns = {
         'name': fields.char('Product attribute name', size=64, required=True),
@@ -110,6 +122,7 @@ class product_attribute(osv.osv):
             'attribute_id',
             'attribute_group_id',
             'Attribute groups'),
+        'attribute_parent_group_id': fields.function(_get_parent_group_id, 'For context transfer', type='integer', method=True, store=False),
         'attribute_value_ids': fields.one2many('product.attribute.value', 'attribute_id', 'Attribute values'),
     }
     _defaults = {
@@ -120,6 +133,18 @@ class product_attribute(osv.osv):
 product_attribute()
 
 class product_attribute_value(osv.osv):
+    def create(self, cr, uid, vals, context=None):
+        if context is None:
+            context = {}
+        attribute_group_id = context.get('attribute_group_id')
+        if attribute_group_id:
+            vals['attribute_group_id'] = attribute_group_id
+        else:
+            raise osv.except_osv(_('Attribute value creation error'),
+                                 _('New attribute value creation allowed only from menu Product Attribute Groups or \
+                                    from product form!'))
+        return super(product_attribute_value, self).create(cr, uid, vals, context)
+
     _name = 'product.attribute.value'
     _columns = {
         'name': fields.char('Product attribute value name', size=64, required=True),

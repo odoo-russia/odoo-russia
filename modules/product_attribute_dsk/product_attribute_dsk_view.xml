@@ -23,7 +23,7 @@
                     <field name="name"/>
 
                     <separator string="Attributes" colspan="4"/>
-                    <field colspan="4" name="attribute_ids" nolabel="1"/>
+                    <field colspan="4" name="attribute_ids" nolabel="1" context="{'attribute_group_id': active_id}"/>
                 </form>
             </field>
         </record>
@@ -46,6 +46,7 @@
             <field name="type">form</field>
             <field name="arch" type="xml">
                 <form string="Attribute">
+                    <field name="attribute_parent_group_id" invisible="1"/>
                     <separator string="Attribute" colspan="4"/>
                     <group colspan="2" col="2">
                         <field name="name"/>
@@ -58,7 +59,8 @@
                     </group>
                     <group colspan="4" col="4">
                         <separator string="Values" colspan="4"/>
-                        <field name="attribute_value_ids" nolabel="1" attrs="{'invisible': [('type','=','checkbox')]}"/>
+                        <field name="attribute_value_ids" nolabel="1" attrs="{'invisible': [('type','=','checkbox')]}"
+                               context="{'attribute_group_id': attribute_parent_group_id}"/>
                     </group>
                 </form>
             </field>
