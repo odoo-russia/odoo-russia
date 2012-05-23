@@ -112,6 +112,9 @@ class product_attribute(osv.osv):
             'Attribute groups'),
         'attribute_value_ids': fields.one2many('product.attribute.value', 'attribute_id', 'Attribute values'),
     }
+    _defaults = {
+        type: lambda *a: 'string',
+    }
     _order = 'type'
     _sql_constraints = [('attribute_name_unique','unique(name)','Attribute name must be unique!')]
 product_attribute()
