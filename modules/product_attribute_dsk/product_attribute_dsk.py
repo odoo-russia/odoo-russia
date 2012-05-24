@@ -34,8 +34,8 @@ class product_attribute_group(osv.osv):
         if 'name' in vals:
             vals['name'] = vals['name'].capitalize()
         print vals
-        #Protection from deleting links between product attribute groups and product attributes.
-        #It need because product attributes might have product attribute values with links to product attribute groups.
+        #Protection from deleting links between groups of product's attributes and product's attributes.
+        #It's needed because product's attributes may have values with links to groups of product's attributes.
         if 'attribute_ids' in vals:
             attribute_value_references={}
             for attribute_ids_act in vals['attribute_ids']:
