@@ -25,7 +25,8 @@ class product_attribute_group(osv.osv):
     def create(self, cr, uid, vals, context=None):
         if context is None:
             context = {}
-        vals['name'] = vals['name'].capitalize()
+        if 'name' in vals:
+            vals['name'] = vals['name'].capitalize()
         return super(product_attribute_group, self).create(cr, uid, vals, context)
 
     def write(self, cr, uid, ids, vals, context=None):
@@ -33,7 +34,6 @@ class product_attribute_group(osv.osv):
             context = {}
         if 'name' in vals:
             vals['name'] = vals['name'].capitalize()
-        print vals
         #Protection from deleting links between groups of product's attributes and product's attributes.
         #It's needed because product's attributes may have values with links to groups of product's attributes.
         if 'attribute_ids' in vals:
@@ -99,14 +99,14 @@ class product_attribute(osv.osv):
     def create(self, cr, uid, vals, context=None):
         if context is None:
             context = {}
-        if 'name' in vals and vals['name']:
+        if 'name' in vals and len(vals['name']) > 1:
             vals['name'] = vals['name'][0].upper() + vals['name'][1:]
         return super(product_attribute, self).create(cr, uid, vals, context)
 
     def write(self, cr, uid, ids, vals, context=None):
         if context is None:
             context = {}
-        if 'name' in vals and vals['name']:
+        if 'name' in vals and len(vals['name']) > 1:
             vals['name'] = vals['name'][0].upper() + vals['name'][1:]
 
         for attribute in self.browse(cr, uid, ids, context):
@@ -168,14 +168,16 @@ class product_attribute_value(osv.osv):
     def create(self, cr, uid, vals, context=None):
         if context is None:
             context = {}
-        attribute_group_id = context.get('attribute_group_id')
-        if attribute_group_id:
-            vals['attribute_group_id'] = attribute_group_id
-        else:
-            raise osv.except_osv(_('Attribute value creation error'),
-                                 _('New attribute value creation allowed only from menu Product Attribute Groups or \
-                                    from product form!'))
+        if 'name' in vals and len(vals['name']) > 1:
+            vals['name'] = vals['name'][0].upper() + vals['name'][1:]
         return super(product_attribute_value, self).create(cr, uid, vals, context)
+
+    def write(self, cr, uid, ids, vals, context=None):
+        if context is None:
+            context = {}
+        if 'name' in vals and len(vals['name']) > 1:
+            vals['name'] = vals['name'][0].upper() + vals['name'][1:]
+        return super(product_attribute_value, self).write(cr, uid, ids, vals, context)
 
     _name = 'product.attribute.value'
     _columns = {
@@ -184,6 +186,7 @@ class product_attribute_value(osv.osv):
         'attribute_group_id': fields.many2one('product.attribute.group', 'Attribute group', required=True,
                                               ondelete='restrict'),
     }
+    _order = 'attribute_group_id'
     _sql_constraints = [('name_attribute_group_unique', 'unique(name, attribute_id, attribute_group_id)',
                          'Attribute value must be unique!')]
 product_attribute_value()
