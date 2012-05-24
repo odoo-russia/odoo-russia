@@ -33,12 +33,39 @@ class product_attribute_group(osv.osv):
             context = {}
         if 'name' in vals:
             vals['name'] = vals['name'].capitalize()
+        print vals
+        #Protection from deleting links between product attribute groups and product attributes.
+        #It need because product attributes might have product attribute values with links to product attribute groups.
+        if 'attribute_ids' in vals:
+            attribute_value_references={}
+            for attribute_ids_act in vals['attribute_ids']:
+                if attribute_ids_act[0] == 6:
+                    for attribute_group in self.browse(cr, uid, ids, context):
+                        linked_attribute_value_ids = self.pool.get('product.attribute.value').search(cr, uid,
+                                                    [('attribute_group_id', '=', attribute_group.id)], context=context)
+                        for linked_attribute_value in self.pool.get('product.attribute.value').browse(cr, uid,
+                                                                                linked_attribute_value_ids, context):
+                            if linked_attribute_value.attribute_id.id not in attribute_ids_act[2]:
+                                linked_attribute_id_str = str(linked_attribute_value.attribute_id.id)
+                                if linked_attribute_id_str in attribute_value_references:
+                                    attribute_value_references[linked_attribute_id_str]['items'].append(linked_attribute_value.name)
+                                else:
+                                    attribute_value_references[linked_attribute_id_str]['name'] = linked_attribute_value.attribute_id.name
+                                    attribute_value_references[linked_attribute_id_str]['items'] = [linked_attribute_value.name,]
+            if attribute_value_references:
+                attribute_value_references_str = ''
+                for attribute_value_reference in attribute_value_references.values():
+                    attribute_values_str = ', '.join(attribute_value_reference['items'])
+                    attribute_value_reference_str = ': '.join((attribute_value_reference['name'], attribute_values_str))
+                    attribute_value_references_str = attribute_value_references_str + ', ' + attribute_value_reference_str
+                raise osv.except_osv(_('There is several product attribute values with links to this product attribute \
+                                        group.'), _('First remove these references: ') + attribute_value_references_str)
         return super(product_attribute_group, self).write(cr, uid, ids, vals, context)
 
     def unlink(self, cr, uid, ids, context=None):
         if context is None:
             context = {}
-        for attribute_group in self.browse(cr, uid, ids):
+        for attribute_group in self.browse(cr, uid, ids, context):
             attribute = self.pool.get('product.attribute')
             attribute_ids = attribute.search(cr, uid, [('attribute_group_ids', 'in', attribute_group.id),])
             if attribute_ids:
@@ -85,7 +112,7 @@ class product_attribute(osv.osv):
     def unlink(self, cr, uid, ids, context=None):
         if context is None:
             context = {}
-        for attribute in self.browse(cr, uid, ids):
+        for attribute in self.browse(cr, uid, ids, context):
             attribute_group = self.pool.get('product.attribute.group')
             attribute_group_ids = attribute_group.search(cr, uid, [('attribute_ids', 'in', attribute.id),])
             if attribute_group_ids:
