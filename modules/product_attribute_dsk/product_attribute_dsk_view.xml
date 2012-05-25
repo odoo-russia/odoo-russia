@@ -2,6 +2,39 @@
 <openerp>
     <data>
 
+        <record id="product_form_view_eshop_dsk_attribute" model="ir.ui.view">
+            <field name="name">product.normal.form</field>
+            <field name="model">product.product</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="eshop_base_dsk.product_normal_form_view_eshop_dsk" />
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Attributes">
+                        <separator string="Attribute group" colspan="4"/>
+                        <field name="attribute_group"/>
+
+                        <group col="4" colspan="4" attrs="{'invisible': [('attribute_group','=',False)]}">
+                            <separator string="Attributes and their values" colspan="4"/>
+                            <field name="attribute_value_product_ids" nolabel="1"/>
+                        </group>
+
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+        <record id="product_attribute_value_product_tree_view_dsk" model="ir.ui.view">
+            <field name="name">product.attribute.value.product.tree</field>
+            <field name="model">product.attribute.value.product</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Product attributes and values" editable="bottom">
+                    <field name="attribute_id"/>
+                    <field name="attribute_value_id"/>
+                </tree>
+            </field>
+        </record>
+
         <record id="product_attribute_group_tree_view_dsk" model="ir.ui.view">
             <field name="name">product.attribute.group.tree</field>
             <field name="model">product.attribute.group</field>

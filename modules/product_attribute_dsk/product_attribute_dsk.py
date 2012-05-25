@@ -191,4 +191,25 @@ class product_attribute_value(osv.osv):
                          'Attribute value must be unique!')]
 product_attribute_value()
 
+class product_attribute_value_product(osv.osv):
+    _name = 'product.attribute.value.product'
+    _columns = {
+        'name': fields.char('', size=64),
+        'attribute_id': fields.many2one('product.attribute', 'Product attribute', ondelete='restrict', required=True, readonly=True),
+        'attribute_value_id': fields.many2one('product.attribute.value', 'Product attribute value', ondelete='restrict'),
+        'product_id': fields.many2one('product.product', 'Product', ondelete='cascade', required=True),
+    }
+    _sql_constraints = [('attribute_name_product_unique','unique(attribute_id, product_id)','Attribute name must be unique!')]
+product_attribute_value_product()
+
+class product_product(osv.osv):
+    _name = 'product.product'
+    _inherit = 'product.product'
+    _columns = {
+        'name': fields.char('', size=64),
+        'attribute_group': fields.many2one('product.attribute.group','Product attribute group', ondelete='restrict', select=True),
+        'attribute_value_product_ids': fields.one2many('product.attribute.value.product', 'product_id', 'Attributes and their values'),
+        }
+product_product()
+
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
