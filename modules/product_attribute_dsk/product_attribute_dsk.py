@@ -196,7 +196,7 @@ class product_attribute_value_product(osv.osv):
         for avp in self.browse(cr, uid, ids):
             if avp.attribute_value_id and avp.attribute_value_id.attribute_id != avp.attribute_id:
                 return False
-    return True
+        return True
 
     _name = 'product.attribute.value.product'
     _columns = {
@@ -215,7 +215,7 @@ class product_product(osv.osv):
             for product_avp in product.attribute_value_product_ids:
                 if product.attribute_group not in product_avp.attribute_id.attribute_group_ids:
                     return False
-    return True
+        return True
 
     _name = 'product.product'
     _inherit = 'product.product'
