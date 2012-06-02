@@ -171,7 +171,7 @@
                 <notebook position="inside">
                     <page string="Attributes">
                         <separator string="Attribute group" colspan="4"/>
-                        <field name="attribute_group"/>
+                        <field name="attribute_group" required="1"/>
 
                         <group col="4" colspan="4" attrs="{'invisible': [('attribute_group','=',False)]}">
                             <separator string="Attributes and their values" colspan="4"/>
