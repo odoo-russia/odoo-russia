@@ -43,6 +43,7 @@
         <record id="product_attribute_form_view_dsk" model="ir.ui.view">
             <field name="name">product.attribute.form</field>
             <field name="model">product.attribute</field>
+            <field name="priority" eval="10"/>
             <field name="type">form</field>
             <field name="arch" type="xml">
                 <form string="Attribute">
@@ -62,6 +63,22 @@
                         <field name="attribute_value_ids" nolabel="1"
                                context="{'default_attribute_group_id': attribute_parent_group_id}"
                                domain="[('attribute_group_id', '=', attribute_parent_group_id)]"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="product_attribute_form_view_without_values_dsk" model="ir.ui.view">
+            <field name="name">product.attribute.form</field>
+            <field name="model">product.attribute</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Attribute">
+                    <field name="attribute_parent_group_id" invisible="1"/>
+                    <separator string="Attribute" colspan="4"/>
+                    <group colspan="2" col="2">
+                        <field name="name"/>
+                        <field name="type" invisible="1"/>
                     </group>
                 </form>
             </field>
@@ -102,11 +119,45 @@
         <record id="product_attribute_value_product_tree_view_dsk" model="ir.ui.view">
             <field name="name">product.attribute.value.product.tree</field>
             <field name="model">product.attribute.value.product</field>
+            <field name="priority" eval="10"/>
             <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Product attributes and values" editable="bottom">
-                    <field name="attribute_id"/>
-                    <field name="attribute_value_id"/>
+                    <field name="attribute_id" on_change="onchange_attribute_id(attribute_id, attribute_value_id)"
+                        context="
+                            {
+                                'form_view_ref': 'product_attribute_dsk.product_attribute_form_view_without_values_dsk',
+                                'attribute_group_id': parent.attribute_group,
+                            }"
+                        domain="[('attribute_group_ids','in',parent.attribute_group), ('type', '=', 'string')]"
+                    />
+                    <field name="attribute_value_id" required="1"
+                        domain="[('attribute_group_id','=',parent.attribute_group),
+                                 ('attribute_id','=',attribute_id)]"
+
+                        context="{'default_attribute_id': attribute_id,
+                                  'default_attribute_group_id': parent.attribute_group}"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="product_attribute_value_product_tree_view_checkbx_dsk" model="ir.ui.view">
+            <field name="name">product.attribute.value.product.tree</field>
+            <field name="model">product.attribute.value.product</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Product attributes and values-checkboxes" editable="bottom">
+                    <field name="attribute_id" on_change="onchange_attribute_id(attribute_id, attribute_value_id)"
+                           context="
+                            {
+                                'form_view_ref': 'product_attribute_dsk.product_attribute_form_view_without_values_dsk',
+                                'attribute_group_id': parent.attribute_group,
+                                'default_type': 'checkbox',
+                            }"
+                           domain="[('attribute_group_ids','in',parent.attribute_group), ('type', '=', 'checkbox')]"
+                            />
+
+                    <field name="checkbx_value"/>
                 </tree>
             </field>
         </record>
@@ -124,7 +175,13 @@
 
                         <group col="4" colspan="4" attrs="{'invisible': [('attribute_group','=',False)]}">
                             <separator string="Attributes and their values" colspan="4"/>
-                            <field name="attribute_value_product_ids" nolabel="1"/>
+                            <field name="attribute_value_product_ids" colspan="4" nolabel="1"/>
+                            <separator string="Attributes and their values-checkboxes" colspan="4"/>
+                            <field name="attribute_value_product_checkbx_ids" colspan="4" nolabel="1"
+                                context="
+                                {
+                                'tree_view_ref': 'product_attribute_dsk.product_attribute_value_product_tree_view_checkbx_dsk',
+                                }"/>
                         </group>
 
                     </page>

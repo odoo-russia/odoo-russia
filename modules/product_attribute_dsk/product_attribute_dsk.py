@@ -99,6 +99,9 @@ class product_attribute(osv.osv):
     def create(self, cr, uid, vals, context=None):
         if context is None:
             context = {}
+        attribute_group_id = context.get('attribute_group_id')
+        if attribute_group_id:
+            vals['attribute_group_ids']=[(4, attribute_group_id)]
         if 'name' in vals and len(vals['name']) > 1:
             vals['name'] = vals['name'][0].upper() + vals['name'][1:]
         return super(product_attribute, self).create(cr, uid, vals, context)
@@ -192,6 +195,9 @@ class product_attribute_value(osv.osv):
 product_attribute_value()
 
 class product_attribute_value_product(osv.osv):
+    def onchange_attribute_id(self, cr, uid, ids, attribute_id, attribute_value_id):
+        return {'value': {'attribute_value_id': False}}
+
     def _check_references(self, cr, uid, ids):
         for avp in self.browse(cr, uid, ids):
             if avp.attribute_value_id and avp.attribute_value_id.attribute_id != avp.attribute_id:
@@ -203,6 +209,7 @@ class product_attribute_value_product(osv.osv):
         'name': fields.char('', size=64),
         'attribute_id': fields.many2one('product.attribute', 'Product attribute', ondelete='restrict', required=True),
         'attribute_value_id': fields.many2one('product.attribute.value', 'Product attribute value', ondelete='restrict'),
+        'checkbx_value': fields.boolean('Checkbox value'),
         'product_id': fields.many2one('product.product', 'Product', ondelete='cascade', required=True),
     }
     _sql_constraints = [('attribute_name_product_unique','unique(attribute_id, product_id)','Attribute name must be unique!')]
@@ -213,18 +220,21 @@ class product_product(osv.osv):
     def _check_references(self, cr, uid, ids):
         for product in self.browse(cr, uid, ids):
             for product_avp in product.attribute_value_product_ids:
-                if product.attribute_group not in product_avp.attribute_id.attribute_group_ids:
+                if product.attribute_group not in product_avp.attribute_id.attribute_group_ids or \
+                   product.attribute_group != product_avp.attribute_value_id.attribute_group_id:
                     return False
         return True
 
     _name = 'product.product'
     _inherit = 'product.product'
     _columns = {
-        'name': fields.char('', size=64),
         'attribute_group': fields.many2one('product.attribute.group','Product attribute group', ondelete='restrict', select=True),
-        'attribute_value_product_ids': fields.one2many('product.attribute.value.product', 'product_id', 'Attributes and their values'),
+        'attribute_value_product_ids': fields.one2many('product.attribute.value.product', 'product_id',
+            'Attributes and their values', domain=[('attribute_id.type', '=', 'string')]),
+        'attribute_value_product_checkbx_ids': fields.one2many('product.attribute.value.product', 'product_id',
+            'Attributes and theis values-checkboxes', domain=[('attribute_id.type', '=', 'checkbox')]),
         }
-    _constraints = [(_check_references,'Attributes don\'t belong to selected group!',['attribute_group'])]
+    _constraints = [(_check_references,'Attributes or attribute values don\'t belong to selected group!',['attribute_group'])]
 product_product()
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
