@@ -143,7 +143,7 @@ class eshop_xml_report(report_int):
 
             xmlProductName = doc.createElement('name')
             xmlProduct.appendChild(xmlProductName)
-            xmlText = doc.createTextNode(product.name)
+            xmlText = doc.createTextNode(product.name_eshop)
             xmlProductName.appendChild(xmlText)
 
             xmlProductShortDesc = doc.createElement('description_short')
