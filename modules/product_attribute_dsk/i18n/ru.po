@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 6.1-20120419-233105\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-04 10:45+0000\n"
-"PO-Revision-Date: 2012-05-04 10:45+0000\n"
+"POT-Creation-Date: 2012-06-02 10:09+0000\n"
+"PO-Revision-Date: 2012-06-02 10:09+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,52 +16,82 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: product_attribute_dsk
+#: view:product.product:0
+#: field:product.product,attribute_value_product_ids:0
+msgid "Attributes and their values"
+msgstr "Характеристики и их значения"
+
+#. module: product_attribute_dsk
 #: model:ir.model,name:product_attribute_dsk.model_product_attribute
 msgid "product.attribute"
-msgstr "Характеристика товара"
+msgstr "Характеристика продукции"
 
 #. module: product_attribute_dsk
 #: model:ir.model,name:product_attribute_dsk.model_product_attribute_group
 msgid "product.attribute.group"
-msgstr "Группа характеристик товара"
+msgstr "Группа характеристик продукции"
 
 #. module: product_attribute_dsk
 #: model:ir.actions.act_window,name:product_attribute_dsk.product_attribute_action_dsk
 #: model:ir.ui.menu,name:product_attribute_dsk.prod_attributes
 msgid "Product Attributes"
-msgstr "Характеристики товара"
+msgstr "Характеристики продукции"
 
 #. module: product_attribute_dsk
 #: model:ir.actions.act_window,name:product_attribute_dsk.product_attribute_group_action_dsk
 #: model:ir.ui.menu,name:product_attribute_dsk.prod_groups
 msgid "Product Attribute Groups"
-msgstr "Группы характеристик товара"
+msgstr "Группы характеристик продукции"
 
 #. module: product_attribute_dsk
 #: field:product.attribute.group,name:0
 msgid "Product attribute group name"
-msgstr "Название группы характеристик товара"
+msgstr "Название группы характеристик продукции"
 
 #. module: product_attribute_dsk
 #: sql_constraint:product.attribute:0
+#: sql_constraint:product.attribute.value.product:0
 msgid "Attribute name must be unique!"
-msgstr "Название характеристики товара должно быть уникальным!"
+msgstr "Название характеристики продукции должно быть уникальным!"
+
+#. module: product_attribute_dsk
+#: code:addons/product_attribute_dsk/product_attribute_dsk.py:132
+#, python-format
+msgid "First remove these  references: "
+msgstr "Сначала удалите эти связи: "
+
+#. module: product_attribute_dsk
+#: field:product.attribute.value,name:0
+msgid "Product attribute value name"
+msgstr "Значение характеристики продукции"
+
+#. module: product_attribute_dsk
+#: sql_constraint:product.attribute.value:0
+msgid "Attribute value must be unique!"
+msgstr "Значение характеристики должно быть уникальным!"
+
+#. module: product_attribute_dsk
+#: view:product.attribute.value:0
+msgid "New attribute value creation allowed only from menu Product Attribute Groups or                                        from product form!"
+msgstr "Создание новых значений характеристик разрешено только из меню Группы характеристик продукции или из карточки продукции!"
 
 #. module: product_attribute_dsk
 #: model:ir.model,name:product_attribute_dsk.model_product_attribute_value
 msgid "product.attribute.value"
-msgstr "Значение характеристики товара"
+msgstr "Значение характеристики продукции"
 
 #. module: product_attribute_dsk
-#: code:addons/product_attribute_dsk/product_attribute_dsk.py:50
+#: code:addons/product_attribute_dsk/product_attribute_dsk.py:67
+#: code:addons/product_attribute_dsk/product_attribute_dsk.py:82
 #, python-format
 msgid "First remove these references: "
 msgstr "Сначала удалите эти связи: "
 
 #. module: product_attribute_dsk
 #: model:ir.model,name:product_attribute_dsk.model_product_product
+#: field:product.attribute.value.product,product_id:0
 msgid "Product"
-msgstr "ТМЦ"
+msgstr "Продукция"
 
 #. module: product_attribute_dsk
 #: selection:product.attribute,type:0
@@ -69,9 +99,26 @@ msgid "String"
 msgstr "Строка"
 
 #. module: product_attribute_dsk
+#: field:product.attribute.value.product,attribute_value_id:0
+msgid "Product attribute value"
+msgstr "Значение характеристики продукции"
+
+#. module: product_attribute_dsk
+#: view:product.attribute.value.product:0
+msgid "Product attributes and values"
+msgstr "Характеристики продукции и их значения"
+
+#. module: product_attribute_dsk
 #: view:product.attribute.group:0
+#: field:product.attribute.value,attribute_group_id:0
+#: view:product.product:0
 msgid "Attribute group"
-msgstr "Группа характеристик товара"
+msgstr "Группа характеристик продукции"
+
+#. module: product_attribute_dsk
+#: field:product.product,attribute_group:0
+msgid "Product attribute group"
+msgstr "Группа характеристик продукции"
 
 #. module: product_attribute_dsk
 #: field:product.attribute,type:0
@@ -79,7 +126,7 @@ msgid "Attribute type"
 msgstr "Тип характеристики"
 
 #. module: product_attribute_dsk
-#: code:addons/product_attribute_dsk/product_attribute_dsk.py:49
+#: code:addons/product_attribute_dsk/product_attribute_dsk.py:81
 #, python-format
 msgid "Some attributes have references to the attribute group "
 msgstr "Некоторые характеристики связаны с группой "
@@ -93,35 +140,56 @@ msgstr "product.attribute.value.product"
 #: field:product.attribute,attribute_group_ids:0
 #: view:product.attribute.group:0
 msgid "Attribute groups"
-msgstr "Группы характеристик товара"
+msgstr "Группы характеристик продукции"
 
 #. module: product_attribute_dsk
 #: field:product.attribute,name:0
 msgid "Product attribute name"
-msgstr "Название характеристики товара"
+msgstr "Название характеристики продукции"
 
 #. module: product_attribute_dsk
 #: sql_constraint:product.attribute.group:0
 msgid "Attribute group name must be unique!"
-msgstr "Название группы характеристик товара должно быть уникальным!"
+msgstr "Название группы характеристик продукции должно быть уникальным!"
 
 #. module: product_attribute_dsk
-#: code:addons/product_attribute_dsk/product_attribute_dsk.py:92
-#, python-format
-msgid "First remove these  references: "
-msgstr "Сначала удалите эти связи: "
+#: field:product.product,attribute_value_product_checkbx_ids:0
+msgid "Attributes and theis values-checkboxes"
+msgstr "Характеристики и их значения-флажки"
+
+#. module: product_attribute_dsk
+#: constraint:product.product:0
+msgid "Attributes or attribute values don't belong to selected group!"
+msgstr "Характеристики или их значения не принадлежат выбранной группе характеристик!"
+
+#. module: product_attribute_dsk
+#: view:product.attribute:0
+msgid "Values"
+msgstr "Значения"
 
 #. module: product_attribute_dsk
 #: view:product.attribute:0
 #: view:product.attribute.group:0
 #: field:product.attribute.group,attribute_ids:0
+#: view:product.product:0
 msgid "Attributes"
-msgstr "Характеристики товара"
+msgstr "Характеристики продукции"
 
 #. module: product_attribute_dsk
 #: view:product.attribute:0
-msgid "If already there are saved values of this attribute, this field will always be String. To change this field, first remove the attribute values."
-msgstr "Если уже есть сохраненные значения по этой характеристике, это поле всегда будет иметь тип Строка. Чтобы изменить это поле, сначала удалите все значения данной характеристики."
+msgid "If already there are saved values of this attribute, this field will                             always be String. To change this field, first remove the attribute values."
+msgstr "Если уже имеются сохраненные значения этой характеристики, значение этого поля всегда будет Строка. Чтобы изменить это поле, сначала удалите все значения этой характеристики."
+
+#. module: product_attribute_dsk
+#: constraint:product.attribute.value.product:0
+msgid "Value don't belong to selected attribute!"
+msgstr "Значение не принажлежит выбранной характеристике!"
+
+#. module: product_attribute_dsk
+#: field:product.attribute,attribute_value_ids:0
+#: view:product.attribute.value:0
+msgid "Attribute values"
+msgstr "Значения характеристики"
 
 #. module: product_attribute_dsk
 #: selection:product.attribute,type:0
@@ -129,9 +197,31 @@ msgid "Checkbox"
 msgstr "Флажок"
 
 #. module: product_attribute_dsk
+#: view:product.attribute.value:0
+msgid "Attribute value"
+msgstr "Значение характеристики"
+
+#. module: product_attribute_dsk
 #: view:product.attribute:0
+#: field:product.attribute.value,attribute_id:0
 msgid "Attribute"
-msgstr "Характеристика товара"
+msgstr "Характеристика продукции"
+
+#. module: product_attribute_dsk
+#: field:product.attribute.value.product,checkbx_value:0
+msgid "Checkbox value"
+msgstr "Значение-флажок"
+
+#. module: product_attribute_dsk
+#: view:product.attribute.value.product:0
+msgid "Product attributes and values-checkboxes"
+msgstr "Характеристики продукции и значения-флажки"
+
+#. module: product_attribute_dsk
+#: code:addons/product_attribute_dsk/product_attribute_dsk.py:66
+#, python-format
+msgid "There is several product attribute values with links to this product attribute                                         group."
+msgstr "Имеется несколько значений характеристик продукции со ссылкой на эту группу характеристик."
 
 #. module: product_attribute_dsk
 #: constraint:product.product:0
@@ -139,8 +229,23 @@ msgid "Error: Invalid ean code"
 msgstr "Ошибка: Неправильный штрих-код"
 
 #. module: product_attribute_dsk
-#: code:addons/product_attribute_dsk/product_attribute_dsk.py:91
+#: field:product.attribute,attribute_parent_group_id:0
+msgid "unknown"
+msgstr "unknown"
+
+#. module: product_attribute_dsk
+#: field:product.attribute.value.product,attribute_id:0
+msgid "Product attribute"
+msgstr "Характеристика продукции"
+
+#. module: product_attribute_dsk
+#: code:addons/product_attribute_dsk/product_attribute_dsk.py:131
 #, python-format
 msgid "Some attribute groups have references to the attribute "
 msgstr "Некоторые группы характеристик связаны с характеристикой "
+
+#. module: product_attribute_dsk
+#: view:product.product:0
+msgid "Attributes and their values-checkboxes"
+msgstr "Характеристики и их значения-флажки"
 
