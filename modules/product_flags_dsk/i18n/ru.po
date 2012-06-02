@@ -36,11 +36,6 @@ msgid "Error: Invalid ean code"
 msgstr "Ошибка: Неправильный штрих-код"
 
 #. module: product_flags_dsk
-#: constraint:product.product:0
-msgid "Attributes don't belong to selected group!"
-msgstr "Характеристики товара не принадлежат выбранной группе характеристик!"
-
-#. module: product_flags_dsk
 #: field:product.product,new:0
 msgid "New"
 msgstr "Новинка"

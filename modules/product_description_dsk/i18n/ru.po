@@ -16,11 +16,6 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: product_description_dsk
-#: constraint:product.product:0
-msgid "Attributes don't belong to selected group!"
-msgstr "Характеристики товара не принадлежат выбранной группе характеристик!"
-
-#. module: product_description_dsk
 #: view:product.product:0
 #: field:product.product,description_short:0
 msgid "Short description"

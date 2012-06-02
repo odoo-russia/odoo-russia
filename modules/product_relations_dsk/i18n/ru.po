@@ -66,11 +66,6 @@ msgid "Source product"
 msgstr "Исходный товар"
 
 #. module: product_relations_dsk
-#: constraint:product.product:0
-msgid "Attributes don't belong to selected group!"
-msgstr "Характеристики товара не принадлежат выбранной группе характеристик!"
-
-#. module: product_relations_dsk
 #: model:ir.model,name:product_relations_dsk.model_product_relation
 msgid "product.relation"
 msgstr "product.relation"

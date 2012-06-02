@@ -92,11 +92,6 @@ msgid "unknown"
 msgstr "unknown"
 
 #. module: product_images_dsk
-#: constraint:product.product:0
-msgid "Attributes don't belong to selected group!"
-msgstr "Характеристики товара не принадлежат выбранной группе характеристик!"
-
-#. module: product_images_dsk
 #: view:product.images:0
 #: field:product.product,image_ids:0
 msgid "Product Images"
