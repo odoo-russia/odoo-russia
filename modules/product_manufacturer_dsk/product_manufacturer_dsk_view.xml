@@ -43,7 +43,7 @@
                     <field name="product_code"/>
                     <field name="product_name"/>
                     <field name="product_brand_id" domain="[('partner_id','=',name)]" attrs="{'readonly': [('name','=',False)]}"
-                            context="{'default_partner_id': name}"/>
+                            context="{'default_partner_id': name}" required="1"/>
                 </form>
             </field>
         </record>
