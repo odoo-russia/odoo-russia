@@ -212,7 +212,7 @@ class eshop_xml_report(report_int):
 
             xmlProductWeight = doc.createElement('weight')
             xmlProduct.appendChild(xmlProductWeight)
-            xmlText = doc.createTextNode(str(product.weight))
+            xmlText = doc.createTextNode(str(product.weight_net))
             xmlProductWeight.appendChild(xmlText)
 
             xmlProductVolume = doc.createElement('volume')
