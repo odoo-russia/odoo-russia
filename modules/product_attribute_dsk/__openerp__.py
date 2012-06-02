@@ -22,7 +22,7 @@
     "version" : "1.0",
     "author" : "Denis Karataev",
     "category" : "Generic Modules",
-    "depends" : ["product"],
+    "depends" : ["product", "eshop_base_dsk"],
     "init_xml" : [],
     "demo_xml" : [],
     "description": "A module that add attributes to product",

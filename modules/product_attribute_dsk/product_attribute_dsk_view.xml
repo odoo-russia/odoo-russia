@@ -2,54 +2,6 @@
 <openerp>
     <data>
 
-        <record id="product_form_view_with_attribute_dsk" model="ir.ui.view">
-            <field name="name">product.normal.form</field>
-            <field name="model">product.product</field>
-            <field name="type">form</field>
-            <field name="inherit_id" ref="product.product_normal_form_view" />
-            <field name="arch" type="xml">
-                <xpath expr="//page[contains(@string,'Suppliers')]" position="after">
-                    <page string="Attributes">
-                        <separator string="Attribute group" colspan="4"/>
-                        <field name="attribute_group"/>
-
-                        <separator string="Attributes and their values" colspan="4"/>
-                        <field name="attribute_value_product_ids" colspan="4" nolabel="1">
-                            <tree string="Attributes and their values" editable="bottom">
-                                <field name="attribute_id" on_change="onchange_attribute_id(attribute_id, attribute_value_id)"
-                                       domain="[('attribute_group_ids','in',parent.attribute_group), ('type', '=', 'string')]"
-
-                                        context="{'attribute_group_id': parent.attribute_group,
-                                                  'attribute_type': 'string',
-                                                  'form_view_ref': 'product_attribute_dsk.product_attribute_form_view_dsk_without_values'}"/>
-                                
-                                <field name="attribute_value_id"
-                                       domain="[('attribute_group_id','=',parent.attribute_group),
-                                                ('attribute_id','=',parent.attribute_value_product_ids.attribute_id)]"
-                                       
-                                       context="{'default_attribute_id': parent.attribute_value_product_ids.attribute_id,
-                                                'default_attribute_group_id': parent.attribute_group}"/>
-                            </tree>
-                        </field>
-
-                        <separator string="Attributes and their values-checkboxes" colspan="4"/>
-                        <field name="attribute_value_product_checkbx_ids" colspan="4" nolabel="1">
-                            <tree string="Attributes and their values-checkboxes" editable="bottom">
-                                <field name="attribute_id" on_change="onchange_attribute_id(attribute_id, attribute_value_id)"
-                                       domain="[('attribute_group_ids','in',parent.attribute_group), ('type', '=', 'checkbox')]"
-
-                                       context="{'attribute_group_id': parent.attribute_group,
-                                                 'attribute_type': 'checkbox',
-                                                  'form_view_ref': 'product_attribute_dsk.product_attribute_form_view_dsk_without_values'}"/>
-
-                                <field name="checkbx_value"/>
-                            </tree>
-                        </field>
-                    </page>
-                </xpath>
-            </field>
-        </record>
-
         <record id="product_attribute_group_tree_view_dsk" model="ir.ui.view">
             <field name="name">product.attribute.group.tree</field>
             <field name="model">product.attribute.group</field>
@@ -68,11 +20,10 @@
             <field name="arch" type="xml">
                 <form string="Attribute group">
                     <separator string="Attribute group" colspan="4"/>
-                    <field name="id" invisible="1"/>
                     <field name="name"/>
 
                     <separator string="Attributes" colspan="4"/>
-                    <field colspan="4" name="attribute_ids" nolabel="1" context="{'attribute_group_id': id}"/>
+                    <field colspan="4" name="attribute_ids" nolabel="1" context="{'attribute_group_id': active_id}"/>
                 </form>
             </field>
         </record>
@@ -92,10 +43,11 @@
         <record id="product_attribute_form_view_dsk" model="ir.ui.view">
             <field name="name">product.attribute.form</field>
             <field name="model">product.attribute</field>
+            <field name="priority" eval="10"/>
             <field name="type">form</field>
-            <field name="priority" eval="1"/>
             <field name="arch" type="xml">
                 <form string="Attribute">
+                    <field name="attribute_parent_group_id" invisible="1"/>
                     <separator string="Attribute" colspan="4"/>
                     <group colspan="2" col="2">
                         <field name="name"/>
@@ -103,29 +55,31 @@
                     <group colspan="2" col="2">
                         <field name="type"/>
                         <newline/>
-                        <label colspan="2" string="If already there are saved values of this attribute, this field will always be String. To change this field, first remove the attribute values."/>
+                        <label colspan="2" string="If already there are saved values of this attribute, this field will
+                            always be String. To change this field, first remove the attribute values."/>
                     </group>
-                    <field name="attribute_parent_group_id" invisible="1"/>
-
-                    <separator string="Values" colspan="4"/>
-                    <field colspan="4" name="attribute_value_ids" nolabel="1"
-                           context="{'attribute_group_id': attribute_parent_group_id}"
-                           attrs="{'invisible': [('type','=','checkbox')]}"/>
+                    <group colspan="4" col="4" attrs="{'invisible': [('type','=','checkbox')]}">
+                        <separator string="Values" colspan="4"/>
+                        <field name="attribute_value_ids" nolabel="1"
+                               context="{'default_attribute_group_id': attribute_parent_group_id}"
+                               domain="[('attribute_group_id', '=', attribute_parent_group_id)]"/>
+                    </group>
                 </form>
             </field>
         </record>
 
-        <record id="product_attribute_form_view_dsk_without_values" model="ir.ui.view">
+        <record id="product_attribute_form_view_without_values_dsk" model="ir.ui.view">
             <field name="name">product.attribute.form</field>
             <field name="model">product.attribute</field>
             <field name="type">form</field>
-            <field name="priority" eval="2"/>
             <field name="arch" type="xml">
                 <form string="Attribute">
-                    <separator string="Attribute" colspan="4"/>
-                    <field name="name"/>
-                    <field name="type" invisible="1"/>
                     <field name="attribute_parent_group_id" invisible="1"/>
+                    <separator string="Attribute" colspan="4"/>
+                    <group colspan="2" col="2">
+                        <field name="name"/>
+                        <field name="type" invisible="1"/>
+                    </group>
                 </form>
             </field>
         </record>
@@ -137,18 +91,101 @@
             <field name="arch" type="xml">
                 <tree string="Attribute values">
                     <field name="name"/>
+                    <field name="attribute_group_id"/>
                 </tree>
             </field>
         </record>
 
-        <record id="product_attribute_value_form_view_dsk" model="ir.ui.view">
+        <record id="product_attibute_value_form_view_dsk" model="ir.ui.view">
             <field name="name">product.attribute.value.form</field>
             <field name="model">product.attribute.value</field>
             <field name="type">form</field>
             <field name="arch" type="xml">
                 <form string="Attribute value">
-                    <field name="name"/>
+                    <field name="attribute_group_id" invisible="1"/>
+                    <group colspan="4" col="4" attrs="{'invisible': [('attribute_group_id','=',False)]}">
+                        <separator string="Attribute value" colspan="4"/>
+                        <field name="name"/>
+                    </group>
+
+                    <group colspan="4" col="1" attrs="{'invisible': [('attribute_group_id','!=',False)]}">
+                        <label string="New attribute value creation allowed only from menu Product Attribute Groups or
+                                       from product form!"/>
+                    </group>
                 </form>
+            </field>
+        </record>
+
+        <record id="product_attribute_value_product_tree_view_dsk" model="ir.ui.view">
+            <field name="name">product.attribute.value.product.tree</field>
+            <field name="model">product.attribute.value.product</field>
+            <field name="priority" eval="10"/>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Product attributes and values" editable="bottom">
+                    <field name="attribute_id" on_change="onchange_attribute_id(attribute_id, attribute_value_id)"
+                        context="
+                            {
+                                'form_view_ref': 'product_attribute_dsk.product_attribute_form_view_without_values_dsk',
+                                'attribute_group_id': parent.attribute_group,
+                            }"
+                        domain="[('attribute_group_ids','in',parent.attribute_group), ('type', '=', 'string')]"
+                    />
+                    <field name="attribute_value_id" required="1"
+                        domain="[('attribute_group_id','=',parent.attribute_group),
+                                 ('attribute_id','=',attribute_id)]"
+
+                        context="{'default_attribute_id': attribute_id,
+                                  'default_attribute_group_id': parent.attribute_group}"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="product_attribute_value_product_tree_view_checkbx_dsk" model="ir.ui.view">
+            <field name="name">product.attribute.value.product.tree</field>
+            <field name="model">product.attribute.value.product</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Product attributes and values-checkboxes" editable="bottom">
+                    <field name="attribute_id" on_change="onchange_attribute_id(attribute_id, attribute_value_id)"
+                           context="
+                            {
+                                'form_view_ref': 'product_attribute_dsk.product_attribute_form_view_without_values_dsk',
+                                'attribute_group_id': parent.attribute_group,
+                                'default_type': 'checkbox',
+                            }"
+                           domain="[('attribute_group_ids','in',parent.attribute_group), ('type', '=', 'checkbox')]"
+                            />
+
+                    <field name="checkbx_value"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="product_form_view_eshop_dsk_attribute" model="ir.ui.view">
+            <field name="name">product.normal.form</field>
+            <field name="model">product.product</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="eshop_base_dsk.product_normal_form_view_eshop_dsk" />
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Attributes">
+                        <separator string="Attribute group" colspan="4"/>
+                        <field name="attribute_group"/>
+
+                        <group col="4" colspan="4" attrs="{'invisible': [('attribute_group','=',False)]}">
+                            <separator string="Attributes and their values" colspan="4"/>
+                            <field name="attribute_value_product_ids" colspan="4" nolabel="1"/>
+                            <separator string="Attributes and their values-checkboxes" colspan="4"/>
+                            <field name="attribute_value_product_checkbx_ids" colspan="4" nolabel="1"
+                                context="
+                                {
+                                'tree_view_ref': 'product_attribute_dsk.product_attribute_value_product_tree_view_checkbx_dsk',
+                                }"/>
+                        </group>
+
+                    </page>
+                </notebook>
             </field>
         </record>
 
@@ -164,8 +201,11 @@
             <field name="view_mode">tree,form</field>
         </record>
         
-        <menuitem action="product_attribute_group_action_dsk" groups="base.group_extended" id="prod_groups" name="Product Attribute Groups" parent="product.prod_config_main"/>
-        <menuitem action="product_attribute_action_dsk" groups="base.group_extended" id="prod_attributes" name="Product Attributes" parent="product.prod_config_main"/>
+        <menuitem action="product_attribute_group_action_dsk" groups="eshop_base_dsk.group_eshop_manager"
+                  id="prod_groups" name="Product Attribute Groups" parent="eshop_base_dsk.settings"/>
+
+        <menuitem action="product_attribute_action_dsk" groups="eshop_base_dsk.group_eshop_manager"
+                  id="prod_attributes" name="Product Attributes" parent="eshop_base_dsk.settings"/>
 
     </data>
 </openerp>
