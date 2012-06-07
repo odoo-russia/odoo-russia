@@ -32,6 +32,6 @@ msgstr "Ошибка! Вы не можете создавать рекурсив
 
 #. module: product_category_flags_dsk
 #: model:ir.actions.act_window,name:product_category_flags_dsk.product_eshop_dsk_category_action
-msgid "Product Categories"
+msgid "Categories"
 msgstr "Категории продукции"
 

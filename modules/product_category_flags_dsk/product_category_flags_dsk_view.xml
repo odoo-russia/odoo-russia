@@ -27,7 +27,7 @@
         </record>
 
         <menuitem action="product_eshop_dsk_category_action" groups="eshop_base_dsk.group_eshop_manager"
-                  id="eshop_base_dsk.categorylist" name="Product Categories" parent="eshop_base_dsk.settings" sequence="1"/>
+                  id="eshop_base_dsk.categorylist" name="Categories" parent="eshop_base_dsk.settings" sequence="1"/>
 
     </data>
 </openerp>
