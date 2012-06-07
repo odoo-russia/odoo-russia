@@ -202,10 +202,10 @@
         </record>
         
         <menuitem action="product_attribute_group_action_dsk" groups="eshop_base_dsk.group_eshop_manager"
-                  id="prod_groups" name="Product Attribute Groups" parent="eshop_base_dsk.settings"/>
+                  id="prod_groups" name="Product Attribute Groups" parent="eshop_base_dsk.settings" sequence="2"/>
 
         <menuitem action="product_attribute_action_dsk" groups="eshop_base_dsk.group_eshop_manager"
-                  id="prod_attributes" name="Product Attributes" parent="eshop_base_dsk.settings"/>
+                  id="prod_attributes" name="Product Attributes" parent="eshop_base_dsk.settings" sequence="3"/>
 
     </data>
 </openerp>

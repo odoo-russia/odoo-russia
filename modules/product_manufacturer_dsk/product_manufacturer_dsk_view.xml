@@ -93,7 +93,8 @@
             <field name="res_model">product.brand</field>
             <field name="view_mode">tree,form</field>
         </record>
-        <menuitem action="product_brand_action_dsk" groups="eshop_base_dsk.group_eshop_manager" id="prod_brands" name="Product Brands" parent="eshop_base_dsk.settings"/>
+        <menuitem action="product_brand_action_dsk" groups="eshop_base_dsk.group_eshop_manager" id="prod_brands"
+                  name="Product Brands" parent="eshop_base_dsk.settings" sequence="4"/>
 
     </data>
 </openerp>
