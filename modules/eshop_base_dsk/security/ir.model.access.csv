@@ -13,9 +13,5 @@
 "access_product_packaging_eshop_manager","product.packaging eshop_manager","product.model_product_packaging","group_eshop_manager",1,1,1,1
 "access_res_partner_eshop_user","res.partner eshop_user","base.model_res_partner","group_eshop_user",1,0,0,0
 "access_res_partner_eshop_manager","res.partner eshop_manager","base.model_res_partner","group_eshop_manager",1,1,1,1
-"access_mrp_bom_eshop_user","mrp.bom eshop_user","mrp.model_mrp_bom","group_eshop_user",1,0,0,0
-"access_mrp_bom_eshop_manager","mrp.bom eshop_manager","mrp.model_mrp_bom","group_eshop_manager",1,1,1,1
-"access_stock_warehouse_orderpoint_eshop_user","stock.warehouse.orderpoint eshop_user","procurement.model_stock_warehouse_orderpoint","group_eshop_user",1,0,0,0
-"access_stock_warehouse_orderpoint_eshop_manager","stock.warehouse.orderpoint eshop_manager","procurement.model_stock_warehouse_orderpoint","group_eshop_manager",1,1,1,1
 "access_ir_property_eshop_user","ir.property eshop_user","base.model_ir_property","group_eshop_user",1,0,0,0
 "access_ir_property_eshop_manager","ir.property eshop_manager","base.model_ir_property","group_eshop_manager",1,1,1,1
