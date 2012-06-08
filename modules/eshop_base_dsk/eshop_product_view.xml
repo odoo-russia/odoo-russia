@@ -13,6 +13,17 @@
             </field>
         </record>
 
+        <record id="res_partner_form_view_eshop_dsk" model="ir.ui.view">
+            <field name="name">res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Partner">
+                    <field name="name"/>
+                </form>
+            </field>
+        </record>
+
         <record id="product_normal_form_view_with_eshop_flag" model="ir.ui.view">
             <field name="name">product.normal.form</field>
             <field name="model">product.product</field>
@@ -40,12 +51,12 @@
 
                     <notebook colspan="4">
                         <page string="Information">
-                            <group colspan="2" col="2" groups="base.group_extended">
+                            <group colspan="2" col="2">
                                 <separator string="Weights" colspan="2"/>
                                 <field digits="(14, 3)" name="volume"/>
                                 <field name="weight_net"/>
                             </group>
-                            <group colspan="2" col="2" name="status" groups="base.group_extended">
+                            <group colspan="2" col="2" name="status">
                                 <separator string="Status" colspan="2"/>
                                 <field name="categ_id" context="{'form_view_ref': 'eshop_base_dsk.product_category_form_view_eshop_dsk'}"/>
                             </group>
