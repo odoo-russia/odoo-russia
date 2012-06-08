@@ -28,6 +28,7 @@
     "init_xml": [],
     "update_xml": [
         'product_images_view.xml',
+        'security/ir.model.access.csv',
     ],
     "installable": True,
     "active": False,
