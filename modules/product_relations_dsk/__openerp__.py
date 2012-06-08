@@ -26,7 +26,8 @@
     "init_xml" : [],
     "demo_xml" : [],
     "description": "A module that add relations between products",
-    "update_xml" : ["product_relations_dsk_view.xml"],
+    "update_xml" : ["product_relations_dsk_view.xml",
+                    "security/ir.model.access.csv"],
     "active": False,
     "installable": True,
 }

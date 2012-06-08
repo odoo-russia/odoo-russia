@@ -11,13 +11,17 @@
                     <page string="Product Relations">
                         <field name="relation_ids" colspan="4" nolabel="1">
                             <tree string="Product Relations" editable="bottom">
-                                <field name="linked_product_id" context="{'is_name_eshop': 1}"
-                                        domain="[('eshop_sync', '=', '1')]"/>
+                                <field name="linked_product_id" context="{'is_name_eshop': 1,
+                                        'form_view_ref': 'eshop_base_dsk.product_normal_form_view_eshop_dsk',
+                                        'default_eshop_sync': 1,
+                                        'default_categ_id': '',
+                                    }"
+                                    domain="[('eshop_sync', '=', '1')]"/>
                                 <field name="type" />
                             </tree>
 
                             <form string="Product Relations">
-                                <field name="linked_product_id" />
+                                <field name="linked_product_id"/>
                                 <field name="type" />
                             </form>
                         </field>
