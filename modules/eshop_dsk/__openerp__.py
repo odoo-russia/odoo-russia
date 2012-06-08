@@ -18,10 +18,10 @@
 #
 ##############################################################################
 {
-    "name" : "Product Additionals",
+    "name" : "E-Shop",
     "version" : "1.0",
     "author" : "Denis Karataev",
-    "category" : "Generic Modules",
+    "category" : "E-Shop",
     "depends" : [
         "eshop_base_dsk",
         "eshop_report_dsk",
@@ -38,9 +38,10 @@
     ],
     "init_xml" : [],
     "demo_xml" : [],
-    "description": "A module that expand standart product module",
+    "description": "Product additions for E-Shop",
     "update_xml" : [],
     "active": False,
     "installable": True,
+    'application': True,
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
