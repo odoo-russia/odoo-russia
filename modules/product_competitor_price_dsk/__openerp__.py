@@ -26,7 +26,8 @@
     "init_xml" : [],
     "demo_xml" : [],
     "description": "The module adds competitors prices for products",
-    "update_xml" : ["product_competitor_price_dsk_view.xml"],
+    "update_xml" : ["product_competitor_price_dsk_view.xml",
+                    "security/ir.model.access.csv"],
     "active": False,
     "installable": True,
 }

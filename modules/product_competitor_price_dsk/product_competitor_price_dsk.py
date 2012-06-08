@@ -23,7 +23,8 @@ from osv import fields, osv
 class product_competitor(osv.osv):
     _name = 'product.competitor'
     _columns = {
-        'name': fields.many2one('res.partner', 'Competitor', required=True, ondelete='restrict'),
+        'name': fields.many2one('res.partner', 'Competitor', required=True, ondelete='restrict',
+            context='{"form_view_ref": "eshop_base_dsk.res_partner_form_view_eshop_dsk"}'),
         'product_id': fields.many2one('product.product', 'Product Id', required=True, ondelete='cascade'),
         'similar_product_name': fields.char('Similar product name', size=128),
         'similar_product_url': fields.char('Similar product URL', size=128),
