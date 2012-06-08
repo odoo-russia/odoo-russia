@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 6.1-20120606-233343\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-08 06:34+0000\n"
-"PO-Revision-Date: 2012-06-08 06:34+0000\n"
+"POT-Creation-Date: 2012-06-08 07:17+0000\n"
+"PO-Revision-Date: 2012-06-08 07:17+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -23,15 +23,15 @@ msgstr "VIP"
 #. module: product_category_flags_dsk
 #: model:ir.model,name:product_category_flags_dsk.model_product_category
 msgid "Product Category"
-msgstr "Категория продукции"
+msgstr "Категория Продукции"
 
 #. module: product_category_flags_dsk
 #: constraint:product.category:0
 msgid "Error ! You cannot create recursive categories."
-msgstr "Ошибка! Категория не может ссылаться на саму себя."
+msgstr "Ошибка! Вы не можете создавать категории, которые ссылаются сами на себя."
 
 #. module: product_category_flags_dsk
 #: model:ir.actions.act_window,name:product_category_flags_dsk.product_eshop_dsk_category_action
-msgid "Product categories"
-msgstr "Категории продукции"
+msgid "Product Categories"
+msgstr "Категории Продукции"
 

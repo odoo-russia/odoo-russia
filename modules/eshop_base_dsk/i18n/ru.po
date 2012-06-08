@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 6.1-20120606-233343\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-08 06:40+0000\n"
-"PO-Revision-Date: 2012-06-08 06:40+0000\n"
+"POT-Creation-Date: 2012-06-08 07:14+0000\n"
+"PO-Revision-Date: 2012-06-08 07:14+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -62,6 +62,7 @@ msgid "Attributes or attribute values don't belong to selected group!"
 msgstr "Характеристики или их значения не принадлежат выбранной группе характеристик!"
 
 #. module: eshop_base_dsk
+#: model:ir.ui.menu,name:eshop_base_dsk.categorylist
 #: view:product.category:0
 msgid "Product Categories"
 msgstr "Категории Продукции"
@@ -78,11 +79,6 @@ msgstr "Продукция"
 #: field:product.product,eshop_sync:0
 msgid "Synchronize with E-shop"
 msgstr "Синхронизировать с Интернет-магазином"
-
-#. module: eshop_base_dsk
-#: model:ir.ui.menu,name:eshop_base_dsk.categorylist
-msgid "Product categories"
-msgstr "Категории продукции"
 
 #. module: eshop_base_dsk
 #: model:res.groups,name:eshop_base_dsk.group_eshop_manager

@@ -15,7 +15,7 @@
         </record>
 
         <record id="product_eshop_dsk_category_action" model="ir.actions.act_window">
-            <field name="name">Product categories</field>
+            <field name="name">Product Categories</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">product.category</field>
             <field name="view_mode">tree,kanban,form</field>
@@ -27,7 +27,7 @@
         </record>
 
         <menuitem action="product_eshop_dsk_category_action" groups="eshop_base_dsk.group_eshop_manager"
-                  id="eshop_base_dsk.categorylist" name="Product categories" parent="eshop_base_dsk.settings" sequence="1"/>
+                  id="eshop_base_dsk.categorylist" name="Product Categories" parent="eshop_base_dsk.settings" sequence="1"/>
 
     </data>
 </openerp>
