@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 6.1-20120606-233343\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-08 09:33+0000\n"
-"PO-Revision-Date: 2012-06-08 09:33+0000\n"
+"POT-Creation-Date: 2012-06-08 12:05+0000\n"
+"PO-Revision-Date: 2012-06-08 12:05+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -30,6 +30,11 @@ msgstr "Информация"
 #: view:product.product:0
 msgid "Product"
 msgstr "Продукция"
+
+#. module: eshop_base_dsk
+#: view:product.product:0
+msgid "Weights"
+msgstr "Вес"
 
 #. module: eshop_base_dsk
 #: view:product.product:0
@@ -85,9 +90,9 @@ msgid "Product additions for E-Shop"
 msgstr "Дополненительные поля у Продукции для Интернет-магазина"
 
 #. module: eshop_base_dsk
-#: view:product.product:0
-msgid "Weights"
-msgstr "Вес"
+#: view:res.partner:0
+msgid "Partner"
+msgstr "Партнер"
 
 #. module: eshop_base_dsk
 #: field:product.product,eshop_sync:0
@@ -95,6 +100,7 @@ msgid "Synchronize with E-shop"
 msgstr "Синхронизировать с Интернет-магазином"
 
 #. module: eshop_base_dsk
+#: model:ir.actions.act_window,name:eshop_base_dsk.product_eshop_dsk_category_action
 #: model:ir.ui.menu,name:eshop_base_dsk.categorylist
 #: view:product.category:0
 msgid "Product Categories"
