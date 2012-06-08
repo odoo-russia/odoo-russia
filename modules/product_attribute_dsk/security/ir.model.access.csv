@@ -1,0 +1,9 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_product_attribute_group_eshop_user","product.attribute.group eshop_user","model_product_attribute_group","eshop_base_dsk.group_eshop_user",1,0,0,0
+"access_product_attribute_eshop_user","product.attribute eshop_user","model_product_attribute","eshop_base_dsk.group_eshop_user",1,0,0,0
+"access_product_attribute_value_eshop_user","product.attribute.value eshop_user","model_product_attribute_value","eshop_base_dsk.group_eshop_user",1,0,0,0
+"access_product_attribute_value_product_eshop_user","product.attribute.value.product eshop_user","model_product_attribute_value_product","eshop_base_dsk.group_eshop_user",1,0,0,0
+"access_product_attribute_group_eshop_manager","product.attribute.group eshop_manager","model_product_attribute_group","eshop_base_dsk.group_eshop_manager",1,1,1,1
+"access_product_attribute_eshop_manager","product.attribute eshop_manager","model_product_attribute","eshop_base_dsk.group_eshop_manager",1,1,1,1
+"access_product_attribute_value_eshop_manager","product.attribute.value eshop_manager","model_product_attribute_value","eshop_base_dsk.group_eshop_manager",1,1,1,1
+"access_product_attribute_value_product_eshop_manager","product.attribute.value.product eshop_manager","model_product_attribute_value_product","eshop_base_dsk.group_eshop_manager",1,1,1,1
