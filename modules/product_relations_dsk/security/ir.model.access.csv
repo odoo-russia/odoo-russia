@@ -1,0 +1,3 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_product_relation_eshop_user","product.relation eshop_user","model_product_relation","eshop_base_dsk.group_eshop_user",1,0,0,0
+"access_product_relation_eshop_manager","product.relation eshop_manager","model_product_relation","eshop_base_dsk.group_eshop_manager",1,1,1,1
