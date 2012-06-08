@@ -1,3 +1,0 @@
-"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
-"access_product_category_eshop_user","product.category eshop_user","model_product_category","eshop_base_dsk.group_eshop_user",1,0,0,0
-"access_product_category_eshop_manager","product.category eshop_manager","model_product_category","eshop_base_dsk.group_eshop_manager",1,1,1,1
