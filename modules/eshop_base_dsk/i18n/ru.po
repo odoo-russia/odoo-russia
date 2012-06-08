@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenERP Server 6.1-20120518-233345\n"
+"Project-Id-Version: OpenERP Server 6.1-20120606-233343\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-21 10:19+0000\n"
-"PO-Revision-Date: 2012-05-21 10:19+0000\n"
+"POT-Creation-Date: 2012-06-08 06:40+0000\n"
+"PO-Revision-Date: 2012-06-08 06:40+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -37,9 +37,9 @@ msgid "Weights"
 msgstr "Вес"
 
 #. module: eshop_base_dsk
-#: model:res.groups,name:eshop_base_dsk.group_eshop_manager
-msgid "Eshop Manager"
-msgstr "Менеджер Интернет-магазина"
+#: view:product.product:0
+msgid "Name"
+msgstr "Название"
 
 #. module: eshop_base_dsk
 #: model:ir.ui.menu,name:eshop_base_dsk.settings
@@ -52,19 +52,19 @@ msgid "E-shop"
 msgstr "Интернет-магазин"
 
 #. module: eshop_base_dsk
-#: model:ir.actions.act_window,help:eshop_base_dsk.product_eshop_dsk_action
-msgid "You must define a Product for everything you buy or sell. Products can be raw materials, stockable products, consumables or services. The Product form contains detailed information about your products related to procurement logistics, sales price, product category, suppliers and so on."
-msgstr "Вы должны определить продукцию для всего, что вы покупаете или продаете. Продукция может быть сырьем, складируемым товаром, расходными материалами или услугами. Форма ввода продукции содержит подробную информацию о правилах снабжения, цене продажи, категории продукции, поставщиках и т.д."
-
-#. module: eshop_base_dsk
 #: constraint:product.product:0
 msgid "Error: Invalid ean code"
 msgstr "Ошибка: Неправильный штрих-код"
 
 #. module: eshop_base_dsk
+#: constraint:product.product:0
+msgid "Attributes or attribute values don't belong to selected group!"
+msgstr "Характеристики или их значения не принадлежат выбранной группе характеристик!"
+
+#. module: eshop_base_dsk
 #: view:product.category:0
 msgid "Product Categories"
-msgstr "Категории продукции"
+msgstr "Категории Продукции"
 
 #. module: eshop_base_dsk
 #: model:ir.actions.act_window,name:eshop_base_dsk.product_eshop_dsk_action
@@ -80,7 +80,12 @@ msgid "Synchronize with E-shop"
 msgstr "Синхронизировать с Интернет-магазином"
 
 #. module: eshop_base_dsk
-#: view:product.product:0
-msgid "Name"
-msgstr "Название"
+#: model:ir.ui.menu,name:eshop_base_dsk.categorylist
+msgid "Product categories"
+msgstr "Категории продукции"
+
+#. module: eshop_base_dsk
+#: model:res.groups,name:eshop_base_dsk.group_eshop_manager
+msgid "Eshop Manager"
+msgstr "Менеджер Интернет-магазина"
 
