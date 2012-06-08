@@ -63,7 +63,8 @@ class product_manufacturer(osv.osv):
 
     _name = 'product.manufacturer'
     _columns = {
-        'name': fields.many2one('res.partner', 'Manufacturer', required=True, ondelete='restrict'),
+        'name': fields.many2one('res.partner', 'Manufacturer', required=True, ondelete='restrict',
+                                context='{"form_view_ref": "eshop_base_dsk.res_partner_form_view_eshop_dsk"}'),
         'product_name': fields.char('Manufacturer Product Name', size=64),
         'product_code': fields.char('Manufacturer Product Code', size=64),
         'product_country_id': fields.many2one('res.country', 'Country', ondelete='restrict'),
