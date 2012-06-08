@@ -26,7 +26,8 @@
     "init_xml" : [],
     "demo_xml" : [],
     "description": "A module that add additional flags to product category",
-    "update_xml" : ["product_category_flags_dsk_view.xml"],
+    "update_xml" : ["product_category_flags_dsk_view.xml",
+                    "security/ir.model.access.csv"],
     "active": False,
     "installable": True,
 }
