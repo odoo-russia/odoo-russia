@@ -21,7 +21,7 @@
             <field name="view_mode">tree,kanban,form</field>
             <field name="view_type">form</field>
             <field name="context">{
-                'form_view_ref': 'product_category_flags.product_category_form_view_with_flags',
+                'form_view_ref': 'product_category_flags_dsk.product_category_form_view_with_flags',
             }</field>
             <field name="view_id" ref="product.product_category_list_view"/>
         </record>
