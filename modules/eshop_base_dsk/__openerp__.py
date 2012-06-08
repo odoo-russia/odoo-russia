@@ -29,7 +29,8 @@
     "demo_xml" : [],
     "description": "This module adds the product form view for eshop_dsk",
     "update_xml" : [
-        "security/eshop_security.xml",
+        "security/eshop_base_dsk_security.xml",
+        "security/ir.model.access.csv",
         "eshop_product_view.xml",
     ],
     "active": False,
