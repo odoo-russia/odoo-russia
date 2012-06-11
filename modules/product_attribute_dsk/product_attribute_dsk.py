@@ -164,7 +164,7 @@ class product_attribute(osv.osv):
         'type': lambda *a: 'string',
     }
     _order = 'type'
-    _sql_constraints = [('attribute_name_unique','unique(name)','Attribute name must be unique!')]
+    _sql_constraints = [('attribute_name_type_unique','unique(name, type)','Attribute name must be unique!')]
 product_attribute()
 
 class product_attribute_value(osv.osv):
