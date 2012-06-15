@@ -71,9 +71,9 @@ class eshop_xml_report(report_int):
         xmlCompetitors = doc.createElement('competitors')
 
         pool = pooler.get_pool(cr.dbname)
-        product_ids = pool.get('product.product').search(cr, uid, [], context=context)
-        products = pool.get('product.product').browse(cr, uid, product_ids, context)
-        for product in products:
+        product_ids = pool.get('product.product').search(cr, uid, [('eshop_sync', '=', True)], context=context)
+        for product_id in product_ids:
+            product = pool.get('product.product').browse(cr, uid, product_id, context)
             if product.categ_id and product.attribute_group and product.manufacturer_ids \
                 and product.manufacturer_ids[0] and product.manufacturer_ids[0].product_brand_id:
 
