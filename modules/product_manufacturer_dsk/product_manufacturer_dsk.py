@@ -68,7 +68,7 @@ class product_manufacturer(osv.osv):
         'product_name': fields.char('Manufacturer Product Name', size=64),
         'product_code': fields.char('Manufacturer Product Code', size=64),
         'product_country_id': fields.many2one('res.country', 'Country', ondelete='restrict'),
-        'product_brand_id': fields.many2one('product.brand', 'Brand', ondelete='restrict'),
+        'product_brand_id': fields.many2one('product.brand', 'Brand', required=True, ondelete='restrict'),
         'product_id': fields.many2one('product.product', 'Product', required=True, ondelete='cascade'),
     }
     _sql_constraints = [('manufacturer_product_id_unique','unique(product_id, name)', 'Each manufacturer can be \
