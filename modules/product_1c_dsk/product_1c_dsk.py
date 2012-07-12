@@ -26,7 +26,6 @@ class product_product(osv.osv):
     _columns = {
         'code_1c_torg': fields.char('The code from 1C torg', size=20),
         'code_1c_buh': fields.char('The code from 1C buh', size=20),
-        ''
     }
 product_product()
 
