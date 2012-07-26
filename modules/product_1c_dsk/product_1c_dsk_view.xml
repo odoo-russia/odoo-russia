@@ -1,6 +1,17 @@
 <?xml version="1.0" ?>
 <openerp>
     <data>
-        
+        <record id="product_form_view_with_1c_codes" model="ir.ui.view">
+            <field name="name">product.normal.form</field>
+            <field name="model">product.product</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="product.product_normal_form_view" />
+            <field name="arch" type="xml">
+                <xpath expr="//page[@string='Procurement &amp; Locations']/group[@name='misc']/field[@name='active']" position="before">
+                    <field name="code_1c_buh"/>
+                    <field name="code_1c_torg"/>
+                </xpath>
+            </field>
+        </record>
     </data>
 </openerp>
