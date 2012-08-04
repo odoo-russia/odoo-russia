@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+
+        <record id="product_form_view_eshop_dsk_supplier" model="ir.ui.view">
+            <field name="name">product.normal.form</field>
+            <field name="model">product.product</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="eshop_base_dsk.product_normal_form_view_eshop_dsk" />
+            <field name="arch" type="xml">
+                <xpath expr="//page[@string='Manufacturers']" position="replace">
+                    <page string="Suppliers and Manufacturers">
+                        <separator string="Suppliers" colspan="4"/>
+                        <field colspan="4" name="seller_ids" nolabel="1"/>
+
+                        <separator string="Manufacturers" colspan="4"/>
+                        <field colspan="4" name="manufacturer_ids" nolabel="1"/>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>
