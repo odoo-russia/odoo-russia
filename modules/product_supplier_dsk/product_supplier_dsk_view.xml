@@ -12,7 +12,8 @@
                     <page string="Suppliers and Manufacturers">
                         <separator string="Suppliers" colspan="4"/>
                         <field colspan="4" name="seller_ids" nolabel="1"
-                               context="{'form_view_ref': 'product_supplier_form_view_eshop_dsk', 'default_min_qty': 0.0}"/>
+                               context="{'form_view_ref': 'product_supplier_dsk.product_supplier_form_view_eshop_dsk',
+                                         'default_min_qty': 0.0}"/>
 
                         <separator string="Manufacturers" colspan="4"/>
                         <field colspan="4" name="manufacturer_ids" nolabel="1"/>
@@ -28,7 +29,9 @@
             <field name="type">form</field>
             <field name="arch" type="xml">
                 <form string="Supplier">
-                    <field name="name" context="{'form_view_ref': 'eshop_base_dsk.res_partner_form_view_eshop_dsk', 'default_customer': 0, 'search_default_supplier': 1, 'default_supplier': 1}" options='{"quick_create": false}'/>
+                    <field name="name" context="{'form_view_ref': 'eshop_base_dsk.res_partner_form_view_eshop_dsk',
+                                                 'default_customer': 0, 'search_default_supplier': 1,
+                                                 'default_supplier': 1}" options='{"quick_create": false}'/>
                     <field name="product_code" groups="base.group_extended"/>
                     <field name="min_qty" invisible="1"/>
                 </form>
