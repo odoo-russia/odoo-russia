@@ -35,6 +35,7 @@
         "product_manufacturer_dsk",
         "product_relations_dsk",
         "product_size_dsk",
+        "product_supplier_dsk",
     ],
     "init_xml" : [],
     "demo_xml" : [],
