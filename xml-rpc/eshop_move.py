@@ -427,4 +427,4 @@ try:
             new_brand_id, new_product_id, product_manufacturer_now, product_manufacturers_count)
         product_manufacturer_now += 1
 except Fault,e:
-    print e
+    print e.faultCode
