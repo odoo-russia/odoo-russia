@@ -81,29 +81,31 @@ class product_manufacturer(osv.osv):
 product_manufacturer()
 
 class product_product(osv.osv):
-    def create(self, cr, uid, vals, context=None):
-        if context is None:
-            context = {}
-        form_view_ref = context.get('form_view_ref')
-        manufacturer_ids = vals.get('manufacturer_ids')
-        if not manufacturer_ids and form_view_ref == 'eshop_base_dsk.product_normal_form_view_eshop_dsk':
-            raise osv.except_osv(_('Manufacturer error'), _('Add at least one manufacturer with brand!'))
-        return super(product_product, self).create(cr, uid, vals, context)
-
-    def write(self, cr, uid, ids, vals, context=None):
-        if context is None:
-            context = {}
-        form_view_ref = context.get('form_view_ref')
-        manufacturer_ids = vals.get('manufacturer_ids')
-        if manufacturer_ids and form_view_ref == 'eshop_base_dsk.product_normal_form_view_eshop_dsk':
-            manufacturers_count = len(manufacturer_ids)
-            manufacturers_for_remove = 0
-            for manufacturer in manufacturer_ids:
-                if manufacturer[0] == 2:
-                    manufacturers_for_remove += 1
-            if manufacturers_for_remove >= manufacturers_count:
-                raise osv.except_osv(_('Manufacturer error'), _('Add at least one manufacturer with brand!'))
-        return super(product_product, self).write(cr, uid, ids, vals, context)
+#===Uncomment if you want to do manufacturers required===
+#
+#    def create(self, cr, uid, vals, context=None):
+#        if context is None:
+#            context = {}
+#        form_view_ref = context.get('form_view_ref')
+#        manufacturer_ids = vals.get('manufacturer_ids')
+#        if not manufacturer_ids and form_view_ref == 'eshop_base_dsk.product_normal_form_view_eshop_dsk':
+#            raise osv.except_osv(_('Manufacturer error'), _('Add at least one manufacturer with brand!'))
+#        return super(product_product, self).create(cr, uid, vals, context)
+#
+#    def write(self, cr, uid, ids, vals, context=None):
+#        if context is None:
+#            context = {}
+#        form_view_ref = context.get('form_view_ref')
+#        manufacturer_ids = vals.get('manufacturer_ids')
+#        if manufacturer_ids and form_view_ref == 'eshop_base_dsk.product_normal_form_view_eshop_dsk':
+#            manufacturers_count = len(manufacturer_ids)
+#            manufacturers_for_remove = 0
+#            for manufacturer in manufacturer_ids:
+#                if manufacturer[0] == 2:
+#                    manufacturers_for_remove += 1
+#            if manufacturers_for_remove >= manufacturers_count:
+#                raise osv.except_osv(_('Manufacturer error'), _('Add at least one manufacturer with brand!'))
+#        return super(product_product, self).write(cr, uid, ids, vals, context)
 
     _name = 'product.product'
     _inherit = 'product.product'

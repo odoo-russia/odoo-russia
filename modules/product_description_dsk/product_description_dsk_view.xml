@@ -26,10 +26,10 @@
                 <page string="Information" position="after">
                     <page string="Descriptions">
                         <separator string="Short description"/>
-                        <field colspan="4" name="description_short" nolabel="1" required="1"/>
+                        <field colspan="4" name="description_short" nolabel="1"/>
 
                         <separator string="Description"/>
-                        <field colspan="4" name="description" nolabel="1" required="1"/>
+                        <field colspan="4" name="description" nolabel="1"/>
                     </page>
                 </page>
             </field>
