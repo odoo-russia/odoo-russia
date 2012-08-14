@@ -31,7 +31,7 @@ class eshop_xml_report(report_int):
 
     def _get_file_ext(self, file_name):
         (root, ext) = os.path.splitext(file_name)
-        return ext
+        return ext.lower()
 
     def _write_file(self, file_name, value):
         f = open(self.export_path + file_name, 'w')
