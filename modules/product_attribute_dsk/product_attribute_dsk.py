@@ -92,6 +92,7 @@ class product_attribute_group(osv.osv):
             'attribute_id',
             'Attributes'),
     }
+    _order = 'name'
     _sql_constraints = [('attribute_group_name_unique','unique(name)','Attribute group name must be unique!')]
 product_attribute_group()
 
@@ -163,7 +164,7 @@ class product_attribute(osv.osv):
     _defaults = {
         'type': lambda *a: 'string',
     }
-    _order = 'type'
+    _order = 'type desc, name'
     _sql_constraints = [('attribute_name_type_unique','unique(name, type)','Attribute name must be unique!')]
 product_attribute()
 
@@ -189,7 +190,7 @@ class product_attribute_value(osv.osv):
         'attribute_group_id': fields.many2one('product.attribute.group', 'Attribute group', required=True,
                                               ondelete='restrict'),
     }
-    _order = 'attribute_group_id'
+    _order = 'attribute_group_id, name'
     _sql_constraints = [('name_attribute_group_unique', 'unique(name, attribute_id, attribute_group_id)',
                          'Attribute value must be unique!')]
 product_attribute_value()
