@@ -50,6 +50,7 @@ class product_brand(osv.osv):
         'partner_id': fields.many2one('res.partner', 'Partner', help='Select partner for this Brand', required=True,
                                       ondelete='restrict'),
     }
+    _order = 'partner_id, name'
 product_brand()
 
 class product_manufacturer(osv.osv):
