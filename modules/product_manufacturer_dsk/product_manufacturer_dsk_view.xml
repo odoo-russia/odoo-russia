@@ -17,6 +17,23 @@
             </field>
         </record>
 
+        <record id="product_normal_form_view_dsk_manufacturer" model="ir.ui.view">
+            <field name="name">product.normal.form</field>
+            <field name="model">product.product</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="product.product_normal_form_view" />
+            <field name="arch" type="xml">
+                <xpath expr="//page[@string='Suppliers']" position="replace">
+                <page string="Suppliers and Manufacturers">
+                        <separator string="Suppliers" colspan="4"/>
+                        <field colspan="4" name="seller_ids" nolabel="1" context="{'uom_id': uom_id}"/>
+                        <separator string="Manufacturers" colspan="4"/>
+                        <field colspan="4" name="manufacturer_ids" nolabel="1"/>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
         <record id="product_manufacturer_tree_view" model="ir.ui.view">
             <field name="name">product.manufacturer.tree</field>
             <field name="model">product.manufacturer</field>
