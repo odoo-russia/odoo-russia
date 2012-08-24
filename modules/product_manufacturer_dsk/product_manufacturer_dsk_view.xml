@@ -28,7 +28,8 @@
                         <separator string="Suppliers" colspan="4"/>
                         <field colspan="4" name="seller_ids" nolabel="1" context="{'uom_id': uom_id}"/>
                         <separator string="Manufacturers" colspan="4"/>
-                        <field colspan="4" name="manufacturer_ids" nolabel="1"/>
+                        <field colspan="4" name="manufacturer_ids" nolabel="1"
+                               context="{'form_view_ref': 'product_manufacturer_dsk.product_manufacturer_sale_form_view'}"/>
                     </page>
                 </xpath>
             </field>
@@ -52,6 +53,7 @@
         <record id="product_manufacturer_form_view" model="ir.ui.view">
             <field name="name">product.manufacturer.form</field>
             <field name="model">product.manufacturer</field>
+            <field name="priority" eval="10"/>
             <field name="type">form</field>
             <field name="arch" type="xml">
                 <form string="Manufacturer">
@@ -61,6 +63,22 @@
                     <field name="product_name"/>
                     <field name="product_brand_id" domain="[('partner_id','=',name)]" attrs="{'readonly': [('name','=',False)]}"
                             context="{'default_partner_id': name}" required="1"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="product_manufacturer_sale_form_view" model="ir.ui.view">
+            <field name="name">product.manufacturer.form</field>
+            <field name="model">product.manufacturer</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Manufacturer">
+                    <field name="name" on_change="onchange_manufacturer(name)"/>
+                    <field name="product_country_id"/>
+                    <field name="product_code"/>
+                    <field name="product_name"/>
+                    <field name="product_brand_id" domain="[('partner_id','=',name)]" attrs="{'readonly': [('name','=',False)]}"
+                           context="{'default_partner_id': name}"/>
                 </form>
             </field>
         </record>
