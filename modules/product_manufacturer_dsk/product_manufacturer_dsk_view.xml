@@ -41,6 +41,7 @@
             <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Manufacturers">
+                    <field name="sequence" string="Seq"/>
                     <field name="name"/>
                     <field name="product_code"/>
                     <field name="product_name"/>
