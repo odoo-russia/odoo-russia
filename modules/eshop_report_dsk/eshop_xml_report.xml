@@ -6,7 +6,7 @@
             id="product_eshop_xml_report"
             model="product.product"
             name="eshop_xml_report"
-            string="XML выгрузка для интернет магазина"
+            string="Sync with E-Shop"
             />
     </data>
 </openerp>
