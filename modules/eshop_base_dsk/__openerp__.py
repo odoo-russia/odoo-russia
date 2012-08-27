@@ -24,6 +24,7 @@
     "category" : "Generic Modules",
     "depends" : [
         "product",
+        "product_base_dsk",
     ],
     "init_xml" : [],
     "demo_xml" : [],

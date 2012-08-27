@@ -20,7 +20,9 @@
     "version" : "1.0",
     "author" : "Denis Karataev",
     "category" : "Generic Modules",
-    "depends" : ["product", "eshop_base_dsk"],
+    "depends" : ["product",
+                 "product_base_dsk",
+                 "eshop_base_dsk"],
     "description": """
     This Module implements an Image Gallery for products.
     You can add images against every product.

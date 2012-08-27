@@ -18,17 +18,17 @@
 #
 ##############################################################################
 {
-    "name" : "Products Sizes",
+    "name" : "Base dsk module depends on product",
     "version" : "1.0",
     "author" : "Denis Karataev",
     "category" : "Generic Modules",
-    "depends" : ["product",
-                 "product_base_dsk",
-                 "eshop_base_dsk"],
+    "depends" : [
+        "product",
+    ],
     "init_xml" : [],
     "demo_xml" : [],
-    "description": "A module that add sizes to product",
-    "update_xml" : ["product_size_dsk_view.xml"],
+    "description": "",
+    "update_xml" : [],
     "active": False,
     "installable": True,
 }

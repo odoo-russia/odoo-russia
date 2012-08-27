@@ -23,9 +23,10 @@
     "author" : "Denis Karataev",
     "category" : "E-Shop",
     "depends" : [
+        "product",
+        "product_base_dsk",
         "eshop_base_dsk",
         "eshop_report_dsk",
-        "product",
         "product_attribute_dsk",
         "product_category_flags_dsk",
         "product_competitor_price_dsk",

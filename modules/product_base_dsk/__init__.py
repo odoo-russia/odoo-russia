@@ -17,19 +17,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-{
-    "name" : "Products Sizes",
-    "version" : "1.0",
-    "author" : "Denis Karataev",
-    "category" : "Generic Modules",
-    "depends" : ["product",
-                 "product_base_dsk",
-                 "eshop_base_dsk"],
-    "init_xml" : [],
-    "demo_xml" : [],
-    "description": "A module that add sizes to product",
-    "update_xml" : ["product_size_dsk_view.xml"],
-    "active": False,
-    "installable": True,
-}
+
+
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+

@@ -22,7 +22,8 @@
     "version" : "1.0",
     "author" : "Denis Karataev",
     "category" : "Generic Modules",
-    "depends" : ["product"],
+    "depends" : ["product"
+                 "product_base_dsk"],
     "init_xml" : [],
     "demo_xml" : [],
     "description": "The module switch off constraints of ean13's field",
