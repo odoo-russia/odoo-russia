@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenERP Server 6.1-20120722-233333\n"
+"Project-Id-Version: OpenERP Server 6.1-20120821-233337\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-26 07:46+0000\n"
-"PO-Revision-Date: 2012-07-26 07:46+0000\n"
+"POT-Creation-Date: 2012-08-27 09:56+0000\n"
+"PO-Revision-Date: 2012-08-27 09:56+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,6 +19,28 @@ msgstr ""
 #: model:ir.model,name:product_1c_dsk.model_product_product
 msgid "Product"
 msgstr "Продукция"
+
+#. module: product_1c_dsk
+#: sql_constraint:product.product:0
+msgid "EAN code must be unique!"
+msgstr "Штрих-код должен быть уникальным!"
+
+#. module: product_1c_dsk
+#: code:addons/product_1c_dsk/product_1c_dsk_to_buh_report.py:60
+#, python-format
+msgid "Add vat tax to the product: "
+msgstr "Добавьте ставку НДС к этому продукту: "
+
+#. module: product_1c_dsk
+#: constraint:product.product:0
+msgid "Error: Invalid ean code"
+msgstr "Ошибка: Неправильный штрих-код"
+
+#. module: product_1c_dsk
+#: code:addons/product_1c_dsk/product_1c_dsk_to_buh_report.py:60
+#, python-format
+msgid "Every product must have vat tax!"
+msgstr "Каждый продукт должен иметь ставку НДС!"
 
 #. module: product_1c_dsk
 #: constraint:product.product:0
@@ -36,7 +58,7 @@ msgid "The code from 1C buh"
 msgstr "Код в 1С:Бухгалтерия"
 
 #. module: product_1c_dsk
-#: constraint:product.product:0
-msgid "Error: Invalid ean code"
-msgstr "Ошибка: Неправильный штрих-код"
+#: model:ir.actions.report.xml,name:product_1c_dsk.product_1c_dsk_to_buh_report
+msgid "Sync with 1C Accounting"
+msgstr "Синхронизация с 1С Бухгалтерией"
 

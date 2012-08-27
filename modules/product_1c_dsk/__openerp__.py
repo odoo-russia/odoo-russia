@@ -27,7 +27,8 @@
     "init_xml" : [],
     "demo_xml" : [],
     "description": "The module add some fields for connecting with 1C",
-    "update_xml" : ["product_1c_dsk_view.xml"],
+    "update_xml" : ["product_1c_dsk_view.xml",
+                    "product_1c_dsk_to_buh_report.xml"],
     "active": False,
     "installable": True,
 }

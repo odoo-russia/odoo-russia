@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+        <report
+            auto="False"
+            id="product_1c_dsk_to_buh_report"
+            model="product.product"
+            name="product_1c_dsk_to_buh_report"
+            string="Sync with 1C Accounting"
+            />
+    </data>
+</openerp>
