@@ -26,21 +26,9 @@ msgid "EAN code must be unique!"
 msgstr "Штрих-код должен быть уникальным!"
 
 #. module: product_1c_dsk
-#: code:addons/product_1c_dsk/product_1c_dsk_to_buh_report.py:60
-#, python-format
-msgid "Add vat tax to the product: "
-msgstr "Добавьте ставку НДС к этому продукту: "
-
-#. module: product_1c_dsk
 #: constraint:product.product:0
 msgid "Error: Invalid ean code"
 msgstr "Ошибка: Неправильный штрих-код"
-
-#. module: product_1c_dsk
-#: code:addons/product_1c_dsk/product_1c_dsk_to_buh_report.py:60
-#, python-format
-msgid "Every product must have vat tax!"
-msgstr "Каждый продукт должен иметь ставку НДС!"
 
 #. module: product_1c_dsk
 #: constraint:product.product:0
@@ -56,9 +44,3 @@ msgstr "Код в 1С:Торговля"
 #: field:product.product,code_1c_buh:0
 msgid "The code from 1C buh"
 msgstr "Код в 1С:Бухгалтерия"
-
-#. module: product_1c_dsk
-#: model:ir.actions.report.xml,name:product_1c_dsk.product_1c_dsk_to_buh_report
-msgid "Sync with 1C Accounting"
-msgstr "Синхронизация с 1С Бухгалтерией"
-
