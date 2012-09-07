@@ -26,7 +26,8 @@
     "init_xml" : [],
     "demo_xml" : [],
     "description": "The module add some russian specific fields to the partner",
-    "update_xml" : [""],
+    "update_xml" : ["data/res.country.state.csv",
+                    "data/res.partner.title.csv"],
     "active": False,
     "installable": True,
 }
