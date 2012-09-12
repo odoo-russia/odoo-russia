@@ -24,6 +24,7 @@ class partner_business_type(osv.osv):
     _name = 'res.partner.business.type'
     _columns = {
         'name': fields.char('Business type', size=100),
+        'partner_ids': fields.many2many('res.partner', string='Partners'),
     }
 partner_business_type()
 
@@ -33,7 +34,7 @@ class res_partner(osv.osv):
     _columns = {
         'name_official': fields.char('Official name', size=200),
         'region': fields.many2one('res.country.state', 'Region', ondelete='restrict'),
-        'business_type': fields.many2one('res.partner.business.type', 'Business type', ondelete='restrict'),
+        'business_type_ids': fields.many2many('res.partner.business.type', string='Business types'),
         'inn': fields.char('INN', size=12),
         'kpp': fields.char('KPP', size=9),
         'okpo': fields.char('OKPO', size=14),
