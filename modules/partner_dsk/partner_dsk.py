@@ -20,12 +20,26 @@
 
 from osv import fields, osv
 
+class partner_business_type(osv.osv):
+    _name = 'res.partner.business.type'
+    _columns = {
+        'name': fields.char('Business type', size=100),
+    }
+partner_business_type()
+
 class res_partner(osv.osv):
     _name = 'res.partner'
     _inherit = 'res.partner'
     _columns = {
-
-        }
+        'name_official': fields.char('Official name', size=200),
+        'region': fields.many2one('res.country.state', 'Region', ondelete='restrict'),
+        'business_type': fields.many2one('res.partner.business.type', 'Business type', ondelete='restrict'),
+        'inn': fields.char('INN', size=12),
+        'kpp': fields.char('KPP', size=9),
+        'okpo': fields.char('OKPO', size=14),
+        'login': fields.char('Login', size=50),
+        'password': fields.char('Password', size=50),
+    }
 res_partner()
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
