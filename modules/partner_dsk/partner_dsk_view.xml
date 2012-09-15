@@ -10,15 +10,31 @@
             <field name="arch" type="xml">
                 <xpath expr="//page[@string='Accounting']/group[1]" position="before">
                     <group col="2" colspan="4">
+                        <separator string="Accounting details" colspan="2"/>
+                        <group col="2">
+                            <field name="name_official"/>
+                        </group>
                         <group col="4">
                             <field name="inn"/>
                             <field name="kpp"/>
-                        </group>
-                        <group col="2">
                             <field name="okpo"/>
                         </group>
                     </group>
                 </xpath>
+
+                <page string="Sales &amp; Purchases" position="inside">
+                    <group colspan="2" col="2">
+                        <separator string="Login and password" colspan="2"/>
+                        <field name="login"/>
+                        <newline/>
+                        <field name="password"/>
+                    </group>
+                </page>
+
+                <field name="address" position="before">
+
+                    <field name="region"/>
+                </field>
             </field>
         </record>
 
