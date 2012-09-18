@@ -31,10 +31,17 @@
                     </group>
                 </page>
 
-                <field name="address" position="before">
-
+                <field name="website" position="before">
                     <field name="region"/>
                 </field>
+
+                <page string="General" position="inside">
+                    <group>
+                        <separator colspan="4" string="Business types"/>
+                        <field colspan="4" name="business_type_ids" nolabel="1"/>
+                    </group>
+
+                </page>
             </field>
         </record>
 
