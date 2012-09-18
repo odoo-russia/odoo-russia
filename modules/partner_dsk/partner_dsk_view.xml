@@ -40,10 +40,19 @@
                         <separator colspan="4" string="Business types"/>
                         <field colspan="4" name="business_type_ids" nolabel="1"/>
                     </group>
-
                 </page>
             </field>
         </record>
+
+        <record id="action_partner_business_types" model="ir.actions.act_window">
+            <field name="name">Partner Business Types</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner.business.type</field>
+            <field name="view_type">form</field>
+        </record>
+
+        <menuitem action="action_partner_business_types" id="menu_partner_business_types" name="Partner Business Types"
+                  sequence="5" parent="base.menu_config_address_book" groups="base.group_extended"/>
 
     </data>
 </openerp>
