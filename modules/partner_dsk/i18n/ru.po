@@ -1,0 +1,135 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* partner_dsk
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.1-20120910-233309\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-09-18 09:56+0000\n"
+"PO-Revision-Date: 2012-09-18 09:56+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_dsk
+#: view:res.partner:0
+msgid "Login and password"
+msgstr "Логин и пароль"
+
+#. module: partner_dsk
+#: view:res.partner:0
+#: field:res.partner,business_type_ids:0
+msgid "Business types"
+msgstr "Виды деятельности"
+
+#. module: partner_dsk
+#: model:ir.actions.act_window,name:partner_dsk.action_partner_business_types
+#: model:ir.ui.menu,name:partner_dsk.menu_partner_business_types
+msgid "Partner Business Types"
+msgstr "Виды деятельности партнёров"
+
+#. module: partner_dsk
+#: model:res.partner.title,name:partner_dsk.res_partner_title_ip
+msgid "Индивидуальный предприниматель"
+msgstr "Индивидуальный предприниматель"
+
+#. module: partner_dsk
+#: model:res.partner.title,name:partner_dsk.res_partner_title_pvt_ltd
+msgid "Закрытое акционерное общество"
+msgstr "Закрытое акционерное общество"
+
+#. module: partner_dsk
+#: model:res.partner.title,name:partner_dsk.res_partner_title_oao
+msgid "Открытое акционерное общество"
+msgstr "Открытое акционерное общество"
+
+#. module: partner_dsk
+#: model:ir.model,name:partner_dsk.model_res_partner_business_type
+msgid "res.partner.business.type"
+msgstr "Виды деятельности партнеров"
+
+#. module: partner_dsk
+#: model:res.partner.title,shortcut:partner_dsk.res_partner_title_ip
+msgid "ИП"
+msgstr "ИП"
+
+#. module: partner_dsk
+#: field:res.partner.business.type,name:0
+msgid "Business type"
+msgstr "Вид деятельности"
+
+#. module: partner_dsk
+#: field:res.partner,password:0
+msgid "Password"
+msgstr "Пароль"
+
+#. module: partner_dsk
+#: field:res.partner,kpp:0
+msgid "KPP"
+msgstr "КПП"
+
+#. module: partner_dsk
+#: model:res.partner.title,shortcut:partner_dsk.res_partner_title_oao
+msgid "ОАО"
+msgstr "ОАО"
+
+#. module: partner_dsk
+#: field:res.partner,region:0
+msgid "Region"
+msgstr "Регион"
+
+#. module: partner_dsk
+#: field:res.partner,name_official:0
+msgid "Official name"
+msgstr "Официальное наименование"
+
+#. module: partner_dsk
+#: model:res.partner.title,name:partner_dsk.res_partner_title_madam
+#: model:res.partner.title,shortcut:partner_dsk.res_partner_title_madam
+msgid "Г-жа"
+msgstr "Г-жа"
+
+#. module: partner_dsk
+#: field:res.partner,login:0
+msgid "Login"
+msgstr "Логин"
+
+#. module: partner_dsk
+#: view:res.partner:0
+msgid "Accounting details"
+msgstr "Бухгалтерские реквизиты"
+
+#. module: partner_dsk
+#: model:res.partner.title,name:partner_dsk.res_partner_title_ltd
+msgid "Общество с ограниченной ответственностью"
+msgstr "Общество с ограниченной ответственностью"
+
+#. module: partner_dsk
+#: model:res.partner.title,shortcut:partner_dsk.res_partner_title_pvt_ltd
+msgid "ЗАО"
+msgstr "ЗАО"
+
+#. module: partner_dsk
+#: model:res.partner.title,name:partner_dsk.res_partner_title_sir
+#: model:res.partner.title,shortcut:partner_dsk.res_partner_title_sir
+msgid "Г-н"
+msgstr "Г-н"
+
+#. module: partner_dsk
+#: field:res.partner,okpo:0
+msgid "OKPO"
+msgstr "ОКПО"
+
+#. module: partner_dsk
+#: field:res.partner,inn:0
+msgid "INN"
+msgstr "ИНН"
+
+#. module: partner_dsk
+#: model:res.partner.title,shortcut:partner_dsk.res_partner_title_ltd
+msgid "ООО"
+msgstr "ООО"
