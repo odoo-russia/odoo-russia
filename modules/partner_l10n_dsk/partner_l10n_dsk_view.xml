@@ -2,7 +2,7 @@
 <openerp>
     <data>
 
-        <record id="view_partner_form_dsk" model="ir.ui.view">
+        <record id="view_partner_form_l10n_dsk" model="ir.ui.view">
             <field name="name">res.partner.form</field>
             <field name="model">res.partner</field>
             <field name="type">form</field>
