@@ -1,0 +1,94 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* partner_l10n_dsk
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.1-20120910-233309\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-09-26 22:53+0000\n"
+"PO-Revision-Date: 2012-09-26 22:53+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_l10n_dsk
+#: field:res.partner,kpp:0
+msgid "KPP"
+msgstr "КПП"
+
+#. module: partner_l10n_dsk
+#: model:res.partner.title,shortcut:partner_l10n_dsk.res_partner_title_oao
+msgid "ОАО"
+msgstr "ОАО"
+
+#. module: partner_l10n_dsk
+#: model:res.partner.title,name:partner_l10n_dsk.res_partner_title_sir
+#: model:res.partner.title,shortcut:partner_l10n_dsk.res_partner_title_sir
+msgid "Г-н"
+msgstr "Г-н"
+
+#. module: partner_l10n_dsk
+#: field:res.partner,okpo:0
+msgid "OKPO"
+msgstr "ОКПО"
+
+#. module: partner_l10n_dsk
+#: model:res.partner.title,name:partner_l10n_dsk.res_partner_title_ip
+msgid "Индивидуальный предприниматель"
+msgstr "Индивидуальный предприниматель"
+
+#. module: partner_l10n_dsk
+#: field:res.partner,name_official:0
+msgid "Official name"
+msgstr "Официальное наименование"
+
+#. module: partner_l10n_dsk
+#: model:res.partner.title,name:partner_l10n_dsk.res_partner_title_oao
+msgid "Открытое акционерное общество"
+msgstr "Открытое акционерное общество"
+
+#. module: partner_l10n_dsk
+#: field:res.partner,inn:0
+msgid "INN"
+msgstr "ИНН"
+
+#. module: partner_l10n_dsk
+#: model:res.partner.title,shortcut:partner_l10n_dsk.res_partner_title_ip
+msgid "ИП"
+msgstr "ИП"
+
+#. module: partner_l10n_dsk
+#: model:res.partner.title,name:partner_l10n_dsk.res_partner_title_madam
+#: model:res.partner.title,shortcut:partner_l10n_dsk.res_partner_title_madam
+msgid "Г-жа"
+msgstr "Г-жа"
+
+#. module: partner_l10n_dsk
+#: model:res.partner.title,shortcut:partner_l10n_dsk.res_partner_title_ltd
+msgid "ООО"
+msgstr "ООО"
+
+#. module: partner_l10n_dsk
+#: view:res.partner:0
+msgid "Accounting details"
+msgstr "Бухгалтерские реквизиты"
+
+#. module: partner_l10n_dsk
+#: model:res.partner.title,name:partner_l10n_dsk.res_partner_title_pvt_ltd
+msgid "Закрытое акционерное общество"
+msgstr "Закрытое акционерное общество"
+
+#. module: partner_l10n_dsk
+#: model:res.partner.title,name:partner_l10n_dsk.res_partner_title_ltd
+msgid "Общество с ограниченной ответственностью"
+msgstr "Общество с ограниченной ответственностью"
+
+#. module: partner_l10n_dsk
+#: model:res.partner.title,shortcut:partner_l10n_dsk.res_partner_title_pvt_ltd
+msgid "ЗАО"
+msgstr "ЗАО"
+
