@@ -22,13 +22,18 @@
     "version" : "1.0",
     "author" : "Denis Karataev",
     "category" : "Generic Modules",
-    "depends" : ["base"],
+    "depends" : [
+        "base",
+        "partner_base_dsk",
+        "partner_auth_dsk",
+        "partner_business_type_dsk",
+        "partner_l10n_dsk",
+        "partner_region_dsk"
+    ],
     "init_xml" : [],
     "demo_xml" : [],
-    "description": "The module add some russian specific fields to the partner",
-    "update_xml" : ["data/res.country.state.csv",
-                    "data/res.partner.title.csv",
-                    "partner_dsk_view.xml"],
+    "description": "The module is a pack with our several modules for partners",
+    "update_xml" : [],
     "active": False,
     "installable": True,
 }
