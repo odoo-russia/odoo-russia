@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+
+        <record id="view_partner_form_region_dsk" model="ir.ui.view">
+            <field name="name">res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <page string="Sales &amp; Purchases" position="inside">
+                    <group colspan="2" col="2">
+                        <separator string="Login and password" colspan="2"/>
+                        <field name="login"/>
+                        <newline/>
+                        <field name="password"/>
+                    </group>
+                </page>
+            </field>
+        </record>
+
+    </data>
+</openerp>
