@@ -60,5 +60,17 @@
             </field>
         </record>
 
+        <record id="view_partner_property_form_l10n_dsk" model="ir.ui.view">
+            <field name="name">res.partner.property.form.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="account.view_partner_property_form"/>
+            <field name="arch" type="xml">
+                <field name="bank_bic" position="after">
+                    <field name="bank_acc_corr"/>
+                </field>
+            </field>
+        </record>
+
     </data>
 </openerp>
