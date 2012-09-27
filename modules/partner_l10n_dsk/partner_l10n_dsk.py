@@ -62,6 +62,7 @@ class Bank(osv.osv):
     _columns = {
         'acc_corr': fields.char('Corr. account', size=64),
     }
+Bank()
 
 class res_partner_bank(osv.osv):
     _name = 'res.partner.bank'
@@ -78,5 +79,6 @@ class res_partner_bank(osv.osv):
             result['bank_bic'] = bank.bic
             result['bank_acc_corr'] = bank.acc_corr
         return {'value': result}
+res_partner_bank()
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
