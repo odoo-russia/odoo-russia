@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 6.1-20120910-233309\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-26 22:53+0000\n"
-"PO-Revision-Date: 2012-09-26 22:53+0000\n"
+"POT-Creation-Date: 2012-09-27 00:24+0000\n"
+"PO-Revision-Date: 2012-09-27 00:24+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -45,6 +45,12 @@ msgstr "Индивидуальный предприниматель"
 #: field:res.partner,name_official:0
 msgid "Official name"
 msgstr "Официальное наименование"
+
+#. module: partner_l10n_dsk
+#: field:res.bank,acc_corr:0
+#: field:res.partner.bank,bank_acc_corr:0
+msgid "Corr. account"
+msgstr "Корр. счет"
 
 #. module: partner_l10n_dsk
 #: model:res.partner.title,name:partner_l10n_dsk.res_partner_title_oao

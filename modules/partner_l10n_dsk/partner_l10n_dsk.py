@@ -56,4 +56,27 @@ class res_partner_address(osv.osv):
         return res
 res_partner_address()
 
+class Bank(osv.osv):
+    _name = 'res.bank'
+    _inherit = 'res.bank'
+    _columns = {
+        'acc_corr': fields.char('Corr. account', size=64),
+    }
+
+class res_partner_bank(osv.osv):
+    _name = 'res.partner.bank'
+    _inherit = 'res.partner.bank'
+    _columns = {
+        'bank_acc_corr': fields.char('Corr. account', size=64),
+    }
+
+    def onchange_bank_id(self, cr, uid, ids, bank_id, context=None):
+        result = {}
+        if bank_id:
+            bank = self.pool.get('res.bank').browse(cr, uid, bank_id, context=context)
+            result['bank_name'] = bank.name
+            result['bank_bic'] = bank.bic
+            result['bank_acc_corr'] = bank.acc_corr
+        return {'value': result}
+
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
