@@ -17,6 +17,36 @@
 from osv import osv,fields
 
 class product_product(osv.osv):
+    def images_count(self, cr, uid, ids, field_name, arg, context=None):
+        if context is None:
+            context = {}
+        res = {}
+        for product in self.browse(cr, uid, ids, context=context):
+            if product.image_ids:
+                count = 0
+                for product_image in product.image_ids:
+                    if product_image.type == 'image':
+                        count += 1
+                res[product.id] = count
+            else:
+                res[product.id] = 0
+        return res
+
+    def schemes_count(self, cr, uid, ids, field_name, arg, context=None):
+        if context is None:
+            context = {}
+        res = {}
+        for product in self.browse(cr, uid, ids, context=context):
+            if product.image_ids:
+                count = 0
+                for product_image in product.image_ids:
+                    if product_image.type == 'scheme':
+                        count += 1
+                res[product.id] = count
+            else:
+                res[product.id] = 0
+        return res
+
     _name = "product.product"
     _inherit = "product.product"
     _columns = {
@@ -25,5 +55,7 @@ class product_product(osv.osv):
                 'product_id',
                 'Product Images'
         ),
+        'images_count': fields.function(images_count, type='integer', store=False, string='Images'),
+        'schemes_count': fields.function(schemes_count, type='integer', store=False, string='Schemes'),
     }
 product_product()
