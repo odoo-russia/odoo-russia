@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenERP Server 6.0.3\n"
-"Report-Msgid-Bugs-To: support@openerp.com\n"
-"POT-Creation-Date: 2011-09-12 20:43+0000\n"
-"PO-Revision-Date: 2011-09-12 20:43+0000\n"
+"Project-Id-Version: OpenERP Server 6.1-20121101-003205\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-11-01 10:19+0000\n"
+"PO-Revision-Date: 2012-11-01 10:19+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -17,17 +17,43 @@ msgstr ""
 
 #. module: product_description_dsk
 #: view:product.product:0
+msgid "Information"
+msgstr "Информация"
+
+#. module: product_description_dsk
+#: model:ir.model,name:product_description_dsk.model_product_product
+msgid "Product"
+msgstr "Продукция"
+
+#. module: product_description_dsk
+#: sql_constraint:product.product:0
+msgid "EAN code must be unique!"
+msgstr "Штрих-код должен быть уникальным!"
+
+#. module: product_description_dsk
+#: view:product.product:0
+#: field:product.product,is_description:0
+msgid "Description"
+msgstr "Описание"
+
+#. module: product_description_dsk
+#: view:product.product:0
 #: field:product.product,description_short:0
 msgid "Short description"
 msgstr "Краткое описание"
 
 #. module: product_description_dsk
-#: model:ir.model,name:product_description_dsk.model_product_product
-msgid "Product"
-msgstr "Товар"
-
-#. module: product_description_dsk
 #: constraint:product.product:0
 msgid "Error: Invalid ean code"
 msgstr "Ошибка: Неправильный штрих-код"
+
+#. module: product_description_dsk
+#: constraint:product.product:0
+msgid "Attributes or attribute values don't belong to selected group!"
+msgstr "Характеристики или их значения не принадлежат выбранной группе характеристик!"
+
+#. module: product_description_dsk
+#: view:product.product:0
+msgid "Descriptions"
+msgstr "Описания"
 

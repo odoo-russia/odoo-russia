@@ -21,10 +21,22 @@
 from osv import fields, osv
 
 class product_product(osv.osv):
+    def is_description(self, cr, uid, ids, field_name, arg, context=None):
+        if context is None:
+            context = {}
+        res = {}
+        for product in self.browse(cr, uid, ids, context=context):
+            if product.description:
+                res[product.id] = True
+            else:
+                res[product.id] = False
+        return res
+
     _name = 'product.product'
     _inherit = 'product.product'
     _columns = {
         'description_short': fields.char('Short description', size=200),
+        'is_description': fields.function(is_description, type='boolean', store=False, string='Description'),
     }
 product_product()
 

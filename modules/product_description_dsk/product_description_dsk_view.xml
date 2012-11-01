@@ -43,6 +43,7 @@
             <field name="arch" type="xml">
                 <field name="categ_id" position="before">
                     <field name="description_short"/>
+                    <field name="is_description"/>
                 </field>
             </field>
         </record>
