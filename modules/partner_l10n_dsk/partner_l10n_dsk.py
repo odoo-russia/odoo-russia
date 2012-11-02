@@ -81,4 +81,26 @@ class res_partner_bank(osv.osv):
         return {'value': result}
 res_partner_bank()
 
+class res_bank_tmp(osv.osv_memory):
+    _name = 'res.bank.tmp'
+    _description= 'Changes in Banks'
+    _columns = {
+        'name': fields.char('Name', size=500, required=True),
+        'city': fields.char('City', size=100, required=True),
+        'bik': fields.char('BIK', size=64, required=True),
+        'acc_corr': fields.char('Corr. account', size=64, required=True),
+        'bank_id': fields.many2one('wizard.update.banks', required=True),
+    }
+res_bank_tmp()
+
+class wizard_update_banks(osv.osv_memory):
+    def update_banks(self, cr, uid, ids, context={}):
+        pass
+
+    _name = 'wizard.update.banks'
+    _columns = {
+        'banks': fields.one2many('res.bank.tmp', 'bank_id', 'Changes in Banks', required=True),
+    }
+wizard_update_banks()
+
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

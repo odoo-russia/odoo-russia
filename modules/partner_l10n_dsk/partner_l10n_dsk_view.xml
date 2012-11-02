@@ -72,5 +72,30 @@
             </field>
         </record>
 
+        <record id="view_wizard_update_banks" model="ir.ui.view">
+            <field name="name">wizard.update.banks.form</field>
+            <field name="model">wizard.update.banks</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <group colspan="4" col="4">
+                    <field name="banks" nolabel="1" colspan="4"/>
+                    <newline/>
+                    <button icon="gtk-cancel" special="cancel" type="object" string="Cancel"/>
+                    <button icon="gtk-ok" name="update_banks" string="Update" type="object"/>
+                </group>
+            </field>
+        </record>
+
+        <record id="action_wizard_update_banks" model="ir.actions.act_window">
+            <field name="name">Update Banks</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.update.banks</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+        </record>
+
+        <menuitem sequence="1" action="action_wizard_update_banks"
+                  id="menu_update_banks" parent="account.account_account_menu"/>
+
     </data>
 </openerp>
