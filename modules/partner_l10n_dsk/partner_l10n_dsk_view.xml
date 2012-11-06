@@ -78,10 +78,12 @@
             <field name="type">form</field>
             <field name="arch" type="xml">
                 <group colspan="4" col="4">
+                    <button name="load_banks" string="Load" type="object"/>
+                    <newline/>
                     <field name="banks" nolabel="1" colspan="4"/>
                     <newline/>
                     <button icon="gtk-cancel" special="cancel" type="object" string="Cancel"/>
-                    <button icon="gtk-ok" name="update_banks" string="Update" type="object"/>
+                    <button icon="gtk-ok" name="save_banks" string="Save" type="object"/>
                 </group>
             </field>
         </record>

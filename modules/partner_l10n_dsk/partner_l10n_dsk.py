@@ -94,7 +94,10 @@ class res_bank_tmp(osv.osv_memory):
 res_bank_tmp()
 
 class wizard_update_banks(osv.osv_memory):
-    def update_banks(self, cr, uid, ids, context={}):
+    def load_banks(self, cr, uid, ids, context={}):
+        pass
+
+    def save_banks(self, cr, uid, ids, context={}):
         pass
 
     _name = 'wizard.update.banks'
