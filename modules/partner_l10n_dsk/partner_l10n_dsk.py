@@ -20,6 +20,8 @@
 
 
 from osv import fields, osv
+from tools.translate import _
+from datetime import date
 from csv import reader
 import urllib2
 
@@ -75,6 +77,7 @@ class Bank(osv.osv):
     _inherit = 'res.bank'
     _columns = {
         'acc_corr': fields.char('Corr. account', size=64),
+        'last_updated': fields.char('Last updated', size=8)
     }
 Bank()
 
@@ -95,45 +98,70 @@ class res_partner_bank(osv.osv):
         return {'value': result}
 res_partner_bank()
 
-class res_bank_tmp(osv.osv):
-    _name = 'res.bank.tmp'
-    _description= 'Changes in Banks'
-    _columns = {
-        'name': fields.char('Name', size=500, required=True),
-        'city': fields.char('City', size=100, required=True),
-        'bik': fields.char('BIK', size=64, required=True),
-        'acc_corr': fields.char('Corr. account', size=64),
-        'bank_id': fields.many2one('wizard.update.banks'),
-    }
-res_bank_tmp()
-
 class wizard_update_banks(osv.osv_memory):
-    def load_banks(self, cr, uid, ids, context=None):
+    def update_banks(self, cr, uid, ids, context=None):
         if context is None:
             context = {}
-        banks_tmp = self.pool.get('res.bank.tmp')
-        ids = banks_tmp.search(cr, uid, [], context=context)
-        banks_tmp.unlink(cr, uid, ids, context=context)
-        bnkseek = urllib2.urlopen(csvBnkseekPath)
+        bank = self.pool.get('res.bank')
+        try:
+            bnkseek = urllib2.urlopen(context.get('location_bnkseek'))
+        except urllib2.HTTPError, err:
+            raise osv.except_osv(_('Bad URL for bnkseek.txt!'), 'Fix the URL and try again.')
         csv = csv_reader(bnkseek, csvEncoding, delimiter=csvDelimiter)
-        for row in csv:
-            values = {
-                'name': row[3].strip(),
-                'city': row[1].strip(),
-                'bik':  row[5].strip(),
-                'acc_corr': row[6].strip(),
-                'bank_id': 1,
-            }
-            self.pool.get('res.bank.tmp').create(cr, uid, values, context=context)
-        return {}
 
-    def save_banks(self, cr, uid, ids, context=None):
-        if context is None:
-            context = {}
+        today_str = date.today().strftime('%Y%m%d')
+        for row in csv:
+            name = row[3].strip()
+            city = row[1].strip()
+            bic = row[5].strip()
+            acc_corr = row[6].strip()
+
+            context['active_test'] = False
+            ids = bank.search(cr, uid, [('bic', '=', bic)], context=context)
+            if ids:
+                values = {
+                    'name': name,
+                    'city': city,
+                    'acc_corr': acc_corr,
+                    'active': True,
+                    'last_updated': today_str,
+                }
+                bank.write(cr, uid, ids, values, context=context)
+            else:
+                values = {
+                    'name': name,
+                    'city': city,
+                    'bic': bic,
+                    'acc_corr': acc_corr,
+                    'active': True,
+                    'last_updated': today_str,
+                }
+                bank.create(cr, uid, values, context=context)
+        try:
+            bnkdel = urllib2.urlopen(context.get('location_bnkdel'))
+        except urllib2.HTTPError, err:
+            raise osv.except_osv(_('Bad URL for bnkdel.txt!'), 'Fix the URL and try again.')
+        csv = csv_reader(bnkdel, csvEncoding, delimiter=csvDelimiter)
+        for row in csv:
+            bic = row[6].strip()
+            deleted = row[1].strip()
+
+            ids = bank.search(cr, uid, [('bic', '=', bic), ('last_updated', '<=', deleted)], context=context)
+            if ids:
+                values = {
+                    'active': False,
+                }
+                bank.write(cr, uid, ids, values, context=context)
+        return {}
 
     _name = 'wizard.update.banks'
     _columns = {
-        'banks': fields.one2many('res.bank.tmp', 'bank_id', 'Changes in Banks', required=True),
+        'location_bnkseek': fields.char('Location of bnkseek.txt', size=500),
+        'location_bnkdel': fields.char('Location of bnkdel.txt', size=500),
+    }
+    _defaults = {
+        'location_bnkseek': lambda *a: csvBnkseekPath,
+        'location_bnkdel': lambda *a: csvBnkdelPath,
     }
 wizard_update_banks()
 

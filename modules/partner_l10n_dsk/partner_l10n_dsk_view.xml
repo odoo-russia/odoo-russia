@@ -78,13 +78,12 @@
             <field name="type">form</field>
             <field name="arch" type="xml">
                 <group colspan="4" col="4">
-                    <button name="load_banks" string="Load" type="object"/>
-                    <label string="Press button Load to get updated list of banks"/>
+                    <field name="location_bnkseek" colspan="2"/>
+                    <field name="location_bnkdel" colspan="2"/>
                     <newline/>
-                    <field name="banks" nolabel="1" colspan="4"/>
-                    <newline/>
-                    <button icon="gtk-cancel" special="cancel" type="object" string="Cancel"/>
-                    <button icon="gtk-ok" name="save_banks" string="Approve" type="object"/>
+                    <button icon="gtk-cancel" special="cancel" type="object" string="Cancel" colspan="2"/>
+                    <button icon="gtk-ok" name="update_banks" string="Update" type="object" colspan="2"
+                            context="{'location_bnkseek': location_bnkseek, 'location_bnkdel': location_bnkdel}"/>
                 </group>
             </field>
         </record>
