@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenERP Server 6.1-20120910-233309\n"
+"Project-Id-Version: OpenERP Server 6.1-20121101-003205\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-27 00:24+0000\n"
-"PO-Revision-Date: 2012-09-27 00:24+0000\n"
+"POT-Creation-Date: 2012-11-07 11:45+0000\n"
+"PO-Revision-Date: 2012-11-07 11:45+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,30 +16,89 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: partner_l10n_dsk
-#: field:res.partner,kpp:0
-msgid "KPP"
-msgstr "КПП"
-
-#. module: partner_l10n_dsk
-#: model:res.partner.title,shortcut:partner_l10n_dsk.res_partner_title_oao
-msgid "ОАО"
-msgstr "ОАО"
-
-#. module: partner_l10n_dsk
-#: model:res.partner.title,name:partner_l10n_dsk.res_partner_title_sir
-#: model:res.partner.title,shortcut:partner_l10n_dsk.res_partner_title_sir
-msgid "Г-н"
-msgstr "Г-н"
-
-#. module: partner_l10n_dsk
-#: field:res.partner,okpo:0
-msgid "OKPO"
-msgstr "ОКПО"
+#: model:ir.actions.act_window,name:partner_l10n_dsk.action_wizard_update_banks
+#: model:ir.ui.menu,name:partner_l10n_dsk.menu_update_banks
+msgid "Update Banks"
+msgstr "Обновить банки"
 
 #. module: partner_l10n_dsk
 #: model:res.partner.title,name:partner_l10n_dsk.res_partner_title_ip
 msgid "Индивидуальный предприниматель"
 msgstr "Индивидуальный предприниматель"
+
+#. module: partner_l10n_dsk
+#: model:res.partner.title,name:partner_l10n_dsk.res_partner_title_pvt_ltd
+msgid "Закрытое акционерное общество"
+msgstr "Закрытое акционерное общество"
+
+#. module: partner_l10n_dsk
+#: model:res.partner.title,name:partner_l10n_dsk.res_partner_title_oao
+msgid "Открытое акционерное общество"
+msgstr "Открытое акционерное общество"
+
+#. module: partner_l10n_dsk
+#: code:addons/partner_l10n_dsk/partner_l10n_dsk.py:143
+#, python-format
+msgid "Bad URL for bnkdel.txt!"
+msgstr "Неправильный адрес файла bnkdel.txt!"
+
+#. module: partner_l10n_dsk
+#: field:wizard.update.banks,location_bnkseek:0
+msgid "Location of bnkseek.txt"
+msgstr "Местонахождение файла bnkseek.txt"
+
+#. module: partner_l10n_dsk
+#: model:res.partner.title,shortcut:partner_l10n_dsk.res_partner_title_ip
+msgid "ИП"
+msgstr "ИП"
+
+#. module: partner_l10n_dsk
+#: field:wizard.update.banks,location_bnkdel:0
+msgid "Location of bnkdel.txt"
+msgstr "Местонахождение файла bnkdel.txt"
+
+#. module: partner_l10n_dsk
+#: code:addons/partner_l10n_dsk/partner_l10n_dsk.py:109
+#, python-format
+msgid "Bad URL for bnkseek.txt!"
+msgstr "Неправильный адрес файла bnkseek.txt!"
+
+#. module: partner_l10n_dsk
+#: code:addons/partner_l10n_dsk/partner_l10n_dsk.py:109
+#: code:addons/partner_l10n_dsk/partner_l10n_dsk.py:143
+#, python-format
+msgid "Fix the URL and try again."
+msgstr "Исправьте адрес и попробуйте снова."
+
+#. module: partner_l10n_dsk
+#: view:wizard.update.banks:0
+msgid "Update"
+msgstr "Обновить"
+
+#. module: partner_l10n_dsk
+#: model:res.partner.title,name:partner_l10n_dsk.res_partner_title_ltd
+msgid "Общество с ограниченной ответственностью"
+msgstr "Общество с ограниченной ответственностью"
+
+#. module: partner_l10n_dsk
+#: model:ir.model,name:partner_l10n_dsk.model_res_bank
+msgid "Bank"
+msgstr "Банк"
+
+#. module: partner_l10n_dsk
+#: field:res.partner,kpp:0
+msgid "KPP"
+msgstr "КПП"
+
+#. module: partner_l10n_dsk
+#: model:ir.model,name:partner_l10n_dsk.model_wizard_update_banks
+msgid "Update list of banks"
+msgstr "Обновить список банков"
+
+#. module: partner_l10n_dsk
+#: model:res.partner.title,shortcut:partner_l10n_dsk.res_partner_title_oao
+msgid "ОАО"
+msgstr "ОАО"
 
 #. module: partner_l10n_dsk
 #: field:res.partner,name_official:0
@@ -53,19 +112,9 @@ msgid "Corr. account"
 msgstr "Корр. счет"
 
 #. module: partner_l10n_dsk
-#: model:res.partner.title,name:partner_l10n_dsk.res_partner_title_oao
-msgid "Открытое акционерное общество"
-msgstr "Открытое акционерное общество"
-
-#. module: partner_l10n_dsk
-#: field:res.partner,inn:0
-msgid "INN"
-msgstr "ИНН"
-
-#. module: partner_l10n_dsk
-#: model:res.partner.title,shortcut:partner_l10n_dsk.res_partner_title_ip
-msgid "ИП"
-msgstr "ИП"
+#: model:res.partner.title,shortcut:partner_l10n_dsk.res_partner_title_ltd
+msgid "ООО"
+msgstr "ООО"
 
 #. module: partner_l10n_dsk
 #: model:res.partner.title,name:partner_l10n_dsk.res_partner_title_madam
@@ -74,27 +123,53 @@ msgid "Г-жа"
 msgstr "Г-жа"
 
 #. module: partner_l10n_dsk
-#: model:res.partner.title,shortcut:partner_l10n_dsk.res_partner_title_ltd
-msgid "ООО"
-msgstr "ООО"
-
-#. module: partner_l10n_dsk
 #: view:res.partner:0
 msgid "Accounting details"
 msgstr "Бухгалтерские реквизиты"
 
 #. module: partner_l10n_dsk
-#: model:res.partner.title,name:partner_l10n_dsk.res_partner_title_pvt_ltd
-msgid "Закрытое акционерное общество"
-msgstr "Закрытое акционерное общество"
-
-#. module: partner_l10n_dsk
-#: model:res.partner.title,name:partner_l10n_dsk.res_partner_title_ltd
-msgid "Общество с ограниченной ответственностью"
-msgstr "Общество с ограниченной ответственностью"
-
-#. module: partner_l10n_dsk
 #: model:res.partner.title,shortcut:partner_l10n_dsk.res_partner_title_pvt_ltd
 msgid "ЗАО"
 msgstr "ЗАО"
+
+#. module: partner_l10n_dsk
+#: model:ir.model,name:partner_l10n_dsk.model_res_partner_bank
+msgid "Bank Accounts"
+msgstr "Банковские счета"
+
+#. module: partner_l10n_dsk
+#: model:res.partner.title,name:partner_l10n_dsk.res_partner_title_sir
+#: model:res.partner.title,shortcut:partner_l10n_dsk.res_partner_title_sir
+msgid "Г-н"
+msgstr "Г-н"
+
+#. module: partner_l10n_dsk
+#: field:res.partner,okpo:0
+msgid "OKPO"
+msgstr "ОКПО"
+
+#. module: partner_l10n_dsk
+#: field:res.partner,inn:0
+msgid "INN"
+msgstr "ИНН"
+
+#. module: partner_l10n_dsk
+#: field:res.bank,last_updated:0
+msgid "Last updated"
+msgstr "Последнее обновление"
+
+#. module: partner_l10n_dsk
+#: view:wizard.update.banks:0
+msgid "Cancel"
+msgstr "Отмена"
+
+#. module: partner_l10n_dsk
+#: model:ir.model,name:partner_l10n_dsk.model_res_partner
+msgid "Partner"
+msgstr "Партнер"
+
+#. module: partner_l10n_dsk
+#: model:ir.model,name:partner_l10n_dsk.model_res_partner_address
+msgid "Partner Addresses"
+msgstr "Адреса контрагентов"
 
