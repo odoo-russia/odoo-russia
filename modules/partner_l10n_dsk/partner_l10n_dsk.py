@@ -18,7 +18,21 @@
 #
 ##############################################################################
 
+
 from osv import fields, osv
+from csv import reader
+import urllib2
+
+csvBnkseekPath = 'http://openerp-russia.ru/bank/bnkseek.txt'
+csvBnkdelPath = 'http://openerp-russia.ru/bank/bnkdel.txt'
+csvDelimiter = '\t'
+csvEncoding = 'windows-1251'
+
+def csv_reader(iterable, encoding='utf-8', **kwargs):
+    csv_reader = reader(iterable, **kwargs)
+    for row in csv_reader:
+        # decode UTF-8 to Unicode, cell by cell:
+        yield [unicode(cell, encoding) for cell in row]
 
 class res_partner(osv.osv):
     _name = 'res.partner'
@@ -81,24 +95,41 @@ class res_partner_bank(osv.osv):
         return {'value': result}
 res_partner_bank()
 
-class res_bank_tmp(osv.osv_memory):
+class res_bank_tmp(osv.osv):
     _name = 'res.bank.tmp'
     _description= 'Changes in Banks'
     _columns = {
         'name': fields.char('Name', size=500, required=True),
         'city': fields.char('City', size=100, required=True),
         'bik': fields.char('BIK', size=64, required=True),
-        'acc_corr': fields.char('Corr. account', size=64, required=True),
-        'bank_id': fields.many2one('wizard.update.banks', required=True),
+        'acc_corr': fields.char('Corr. account', size=64),
+        'bank_id': fields.many2one('wizard.update.banks'),
     }
 res_bank_tmp()
 
 class wizard_update_banks(osv.osv_memory):
-    def load_banks(self, cr, uid, ids, context={}):
-        pass
+    def load_banks(self, cr, uid, ids, context=None):
+        if context is None:
+            context = {}
+        banks_tmp = self.pool.get('res.bank.tmp')
+        ids = banks_tmp.search(cr, uid, [], context=context)
+        banks_tmp.unlink(cr, uid, ids, context=context)
+        bnkseek = urllib2.urlopen(csvBnkseekPath)
+        csv = csv_reader(bnkseek, csvEncoding, delimiter=csvDelimiter)
+        for row in csv:
+            values = {
+                'name': row[3].strip(),
+                'city': row[1].strip(),
+                'bik':  row[5].strip(),
+                'acc_corr': row[6].strip(),
+                'bank_id': 1,
+            }
+            self.pool.get('res.bank.tmp').create(cr, uid, values, context=context)
+        return {}
 
-    def save_banks(self, cr, uid, ids, context={}):
-        pass
+    def save_banks(self, cr, uid, ids, context=None):
+        if context is None:
+            context = {}
 
     _name = 'wizard.update.banks'
     _columns = {
