@@ -157,7 +157,6 @@ class wizard_update_banks(osv.osv_memory):
             'view_mode': 'tree',
             'res_model': 'res.bank',
             'type': 'ir.actions.act_window',
-            'warning': 'Yes!',
         }
 
     _name = 'wizard.update.banks'
