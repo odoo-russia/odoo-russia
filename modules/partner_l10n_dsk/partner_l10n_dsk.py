@@ -106,7 +106,7 @@ class wizard_update_banks(osv.osv_memory):
         try:
             bnkseek = urllib2.urlopen(context.get('location_bnkseek'))
         except urllib2.HTTPError, err:
-            raise osv.except_osv(_('Bad URL for bnkseek.txt!'), 'Fix the URL and try again.')
+            raise osv.except_osv(_('Bad URL for bnkseek.txt!'), _('Fix the URL and try again.'))
         csv = csv_reader(bnkseek, csvEncoding, delimiter=csvDelimiter)
 
         today_str = date.today().strftime('%Y%m%d')
@@ -140,7 +140,7 @@ class wizard_update_banks(osv.osv_memory):
         try:
             bnkdel = urllib2.urlopen(context.get('location_bnkdel'))
         except urllib2.HTTPError, err:
-            raise osv.except_osv(_('Bad URL for bnkdel.txt!'), 'Fix the URL and try again.')
+            raise osv.except_osv(_('Bad URL for bnkdel.txt!'), _('Fix the URL and try again.'))
         csv = csv_reader(bnkdel, csvEncoding, delimiter=csvDelimiter)
         for row in csv:
             bic = row[6].strip()
@@ -152,7 +152,13 @@ class wizard_update_banks(osv.osv_memory):
                     'active': False,
                 }
                 bank.write(cr, uid, ids, values, context=context)
-        return {}
+        return {
+            'view_type': 'form,tree',
+            'view_mode': 'tree',
+            'res_model': 'res.bank',
+            'type': 'ir.actions.act_window',
+            'warning': 'Yes!',
+        }
 
     _name = 'wizard.update.banks'
     _columns = {
