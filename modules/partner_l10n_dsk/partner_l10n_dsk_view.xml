@@ -44,6 +44,7 @@
             <field name="arch" type="xml">
                 <field name="bic" position="after">
                     <field name="acc_corr"/>
+                    <field name="city"/>
                 </field>
             </field>
         </record>

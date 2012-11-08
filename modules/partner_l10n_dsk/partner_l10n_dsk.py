@@ -1,3 +1,4 @@
+#coding: utf-8
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -29,6 +30,8 @@ csvBnkseekPath = 'http://openerp-russia.ru/bank/bnkseek.txt'
 csvBnkdelPath = 'http://openerp-russia.ru/bank/bnkdel.txt'
 csvDelimiter = '\t'
 csvEncoding = 'windows-1251'
+
+our_country = u'Российская Федерация'
 
 def csv_reader(iterable, encoding='utf-8', **kwargs):
     csv_reader = reader(iterable, **kwargs)
@@ -110,6 +113,13 @@ class wizard_update_banks(osv.osv_memory):
         csv = csv_reader(bnkseek, csvEncoding, delimiter=csvDelimiter)
 
         today_str = date.today().strftime('%Y%m%d')
+
+        #Ищем нашу страну
+        country_ids = self.pool.get('res.country').search(cr, uid, [('name', '=', our_country)], context=context)
+        if not country_ids or len(country_ids) != 1:
+            raise osv.except_osv(_('Country Error: %s' % our_country))
+        our_country_id = country_ids[0]
+
         for row in csv:
             name = row[3].strip()
             city = row[1].strip()
@@ -122,6 +132,7 @@ class wizard_update_banks(osv.osv_memory):
                 values = {
                     'name': name,
                     'city': city,
+                    'country': our_country_id,
                     'acc_corr': acc_corr,
                     'active': True,
                     'last_updated': today_str,
@@ -131,6 +142,7 @@ class wizard_update_banks(osv.osv_memory):
                 values = {
                     'name': name,
                     'city': city,
+                    'country': our_country_id,
                     'bic': bic,
                     'acc_corr': acc_corr,
                     'active': True,
