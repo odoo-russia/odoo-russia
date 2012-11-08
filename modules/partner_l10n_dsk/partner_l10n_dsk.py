@@ -47,6 +47,8 @@ class res_partner(osv.osv):
         'inn': fields.char('INN', size=12),
         'kpp': fields.char('KPP', size=9),
         'okpo': fields.char('OKPO', size=14),
+        'contract_num': fields.char('Contract number', size=64),
+        'contract_date': fields.date('Contract date'),
     }
 res_partner()
 
@@ -117,7 +119,7 @@ class wizard_update_banks(osv.osv_memory):
         #Ищем нашу страну
         country_ids = self.pool.get('res.country').search(cr, uid, [('name', '=', our_country)], context=context)
         if not country_ids or len(country_ids) != 1:
-            raise osv.except_osv(_('Country Error: %s' % our_country))
+            raise osv.except_osv(_('Country Error: %s') % our_country)
         our_country_id = country_ids[0]
 
         for row in csv:
