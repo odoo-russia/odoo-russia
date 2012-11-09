@@ -100,6 +100,11 @@
             <field name="view_mode">form</field>
         </record>
 
+        <record id="account_configuration_update_banks_todo" model="ir.actions.todo">
+            <field name="action_id" ref="action_wizard_update_banks"/>
+            <field name="category_id" ref="account.category_accounting_configuration"/>
+        </record>
+
         <menuitem sequence="1" action="action_wizard_update_banks"
                   id="menu_update_banks" parent="account.account_account_menu"/>
 
