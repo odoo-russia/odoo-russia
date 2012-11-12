@@ -67,15 +67,16 @@ try:
         if userfile.file:
             #Парсим XML файл
             doc = etree.parse(userfile.file)
+            data = doc.xpath('/data')[0]
 
             #Получаем ответы о синхронизации продуктов
-            info = u'Журнал синхронизации с бухгалтерией:\r\n'
+            info = ''.join((u'Журнал синхронизации с бухгалтерией ', data.get('title'), ':\r\n'))
             errors = u'При синхронизации OpenERP с 1С Бухгалтерией произошли следующие ошибки:\r\n'
             is_errors = False
             products = doc.xpath('/data/products/product')
             for product in products:
                 if mail_log:
-                    info = '\r\n'.join((info, u'Продукт %s: %s' % (product.get('id'), product.text)))
+                    info = '\r\n'.join((info, u'Продукт %s: %s %s' % (product.get('id'), product.text, product.get('id_buh'))))
                 if product.text != u'Создан элемент' and product.text != u'Обновлен элемент':
                     is_errors = True
                     errors = '\r\n'.join((errors, u'Продукт %s: %s %s' % (product.get('id'), product.text,
