@@ -31,6 +31,8 @@ true_skey = '35c89a88133cfbd8fbd08e83a4454b1a'
 mailto = 'mail@gmail.com'
 smtp_server = 'smtp.gmail.com'
 smtp_password = 'password'
+#Логировать ли все обмены на почту
+mail_log = True
 
 def mail(message):
     msg = MIMEText(message)
@@ -67,27 +69,22 @@ try:
             doc = etree.parse(userfile.file)
 
             #Получаем ответы о синхронизации продуктов
-            update_ids_buh = []
+            info = u'Журнал синхронизации с бухгалтерией:\r\n'
             errors = u'При синхронизации OpenERP с 1С Бухгалтерией произошли следующие ошибки:\r\n'
             is_errors = False
             products = doc.xpath('/data/products/product')
             for product in products:
-                if product.text == u'Создан элемент':
-                    update_ids_buh.append({'id': product.get('id'), 'id_buh': product.get('id_buh')})
-                elif product.text != u'Обновлен элемент':
+                if mail_log:
+                    info = '\r\n'.join((info, u'Продукт %s: %s' % (product.get('id'), product.text)))
+                if product.text != u'Создан элемент' and product.text != u'Обновлен элемент':
                     is_errors = True
                     errors = '\r\n'.join((errors, u'Продукт %s: %s %s' % (product.get('id'), product.text,
                                                                                             u'(Ошибка на стороне 1С)')))
+            if mail_log:
+                mail(info.encode('UTF-8'))
             #Если имеются ошибки, высылаем письмо админу
             if is_errors:
                 mail(errors.encode('UTF-8'))
-            #Если имеются продукты для проставления code_1c_buh, проставляем
-            if update_ids_buh:
-                for update_id_buh in update_ids_buh:
-                    values = {
-                        'code_1c_buh': update_id_buh['id_buh']
-                    }
-                    sock.execute(db, uid, pwd, 'product.product', 'write', int(update_id_buh['id']), values)
             doc = Document()
             xmlAnswer = doc.createElement('answer')
             xmlAnswerText = doc.createTextNode('ok')
@@ -104,13 +101,11 @@ try:
 
         product_ids = sock.execute(db, uid, pwd, 'product.product', 'search', [], 0, None, None, context)
 
-        fields = ['id', 'code_1c_buh', 'name', 'taxes_id', 'uom_id']
+        fields = ['id', 'name', 'taxes_id', 'uom_id']
         products = sock.execute(db, uid, pwd, 'product.product', 'read', product_ids, fields, context)
         for product in products:
             xmlProduct = doc.createElement('product')
             xmlProduct.setAttribute('id', str(product['id']))
-            if product['code_1c_buh']:
-                xmlProduct.setAttribute('id_buh', product['code_1c_buh'])
 
             xmlProductName = doc.createElement('name')
             xmlProductNameText = doc.createTextNode(product['name'])
@@ -143,5 +138,5 @@ except Exception,e:
         error_message = e.faultCode.encode('UTF-8')
     else:
         error_message = e.message
-    mail(' '.join((error_message, '(Ошибка на стороне OpenERP)')))
+    mail(' '.join((error_message, '(OpenERP)')))
     print '<error>%s</error>' % error_message
