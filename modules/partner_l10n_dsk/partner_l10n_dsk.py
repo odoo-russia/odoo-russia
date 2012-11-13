@@ -75,6 +75,13 @@ class res_partner_address(osv.osv):
                 else:
                     res.append((r['id'], addr or '/'))
         return res
+
+    _columns = {
+        'type': fields.selection( [ ('default','Юридический (по умолчанию)'), ('actual', 'Фактический'),
+                                    ('invoice','Почтовый (для документов)'), ('delivery','Delivery'),
+                                    ('contact','Contact'), ('other','Other') ],'Address Type',
+            help="Used to select automatically the right address according to the context in sales and purchases documents."),
+    }
 res_partner_address()
 
 class Bank(osv.osv):

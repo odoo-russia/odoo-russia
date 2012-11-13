@@ -24,6 +24,7 @@
                         </group>
                     </group>
                 </xpath>
+                <field name="street2" position="replace"></field>
             </field>
         </record>
 
