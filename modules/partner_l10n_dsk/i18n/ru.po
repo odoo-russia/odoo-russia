@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 6.1-20121101-003205\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-08 08:56+0000\n"
-"PO-Revision-Date: 2012-11-08 08:56+0000\n"
+"POT-Creation-Date: 2012-11-13 10:59+0000\n"
+"PO-Revision-Date: 2012-11-13 10:59+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -37,7 +37,7 @@ msgid "Открытое акционерное общество"
 msgstr "Открытое акционерное общество"
 
 #. module: partner_l10n_dsk
-#: code:addons/partner_l10n_dsk/partner_l10n_dsk.py:157
+#: code:addons/partner_l10n_dsk/partner_l10n_dsk.py:172
 #, python-format
 msgid "Bad URL for bnkdel.txt!"
 msgstr "Неправильный адрес файла bnkdel.txt!"
@@ -63,14 +63,14 @@ msgid "Location of bnkdel.txt"
 msgstr "Местонахождение файла bnkdel.txt"
 
 #. module: partner_l10n_dsk
-#: code:addons/partner_l10n_dsk/partner_l10n_dsk.py:114
+#: code:addons/partner_l10n_dsk/partner_l10n_dsk.py:129
 #, python-format
 msgid "Bad URL for bnkseek.txt!"
 msgstr "Неправильный адрес файла bnkseek.txt!"
 
 #. module: partner_l10n_dsk
-#: code:addons/partner_l10n_dsk/partner_l10n_dsk.py:114
-#: code:addons/partner_l10n_dsk/partner_l10n_dsk.py:157
+#: code:addons/partner_l10n_dsk/partner_l10n_dsk.py:129
+#: code:addons/partner_l10n_dsk/partner_l10n_dsk.py:172
 #, python-format
 msgid "Fix the URL and try again."
 msgstr "Исправьте адрес и попробуйте снова."
@@ -106,7 +106,7 @@ msgid "ОАО"
 msgstr "ОАО"
 
 #. module: partner_l10n_dsk
-#: code:addons/partner_l10n_dsk/partner_l10n_dsk.py:122
+#: code:addons/partner_l10n_dsk/partner_l10n_dsk.py:137
 #, python-format
 msgid "Country Error: %s"
 msgstr "Ошибка страны: %s"
