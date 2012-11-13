@@ -146,72 +146,108 @@ try:
             xmlPartner.setAttribute('id', str(partner['id']))
 
             xmlPartnerName = doc.createElement('name')
-            xmlPartnerNameText = doc.createTextNode(partner['name'])
+            xmlPartnerNameText = doc.createTextNode(partner['name'] or '')
             xmlPartnerName.appendChild(xmlPartnerNameText)
             xmlPartner.appendChild(xmlPartnerName)
 
             xmlPartnerNameOfficial = doc.createElement('name_official')
-            xmlPartnerNameOfficialText = doc.createTextNode(partner['name_official'])
+            xmlPartnerNameOfficialText = doc.createTextNode(partner['name_official'] or '')
             xmlPartnerNameOfficial.appendChild(xmlPartnerNameOfficialText)
             xmlPartner.appendChild(xmlPartnerNameOfficial)
 
             xmlPartnerInn = doc.createElement('inn')
-            xmlPartnerInnText = doc.createTextNode(partner['inn'])
+            xmlPartnerInnText = doc.createTextNode(partner['inn'] or '')
             xmlPartnerInn.appendChild(xmlPartnerInnText)
             xmlPartner.appendChild(xmlPartnerInn)
 
             xmlPartnerKpp = doc.createElement('kpp')
-            xmlPartnerKppText = doc.createTextNode(partner['kpp'])
+            xmlPartnerKppText = doc.createTextNode(partner['kpp'] or '')
             xmlPartnerKpp.appendChild(xmlPartnerKppText)
             xmlPartner.appendChild(xmlPartnerKpp)
 
             xmlPartnerOkpo = doc.createElement('okpo')
-            xmlPartnerOkpoText = doc.createTextNode(partner['okpo'])
+            xmlPartnerOkpoText = doc.createTextNode(partner['okpo'] or '')
             xmlPartnerOkpo.appendChild(xmlPartnerOkpoText)
             xmlPartner.appendChild(xmlPartnerOkpo)
 
-            xmlPartnerContractName = doc.createElement('contract_name')
-            xmlPartnerContractNameText = doc.createTextNode(partner['contract_name'])
-            xmlPartnerContractName.appendChild(xmlPartnerContractNameText)
-            xmlPartner.appendChild(xmlPartnerContractName)
+            xmlPartnerContractNum = doc.createElement('contract_num')
+            xmlPartnerContractNumText = doc.createTextNode(partner['contract_num'] or '')
+            xmlPartnerContractNum.appendChild(xmlPartnerContractNumText)
+            xmlPartner.appendChild(xmlPartnerContractNum)
 
             xmlPartnerContractDate = doc.createElement('contract_date')
-            xmlPartnerContractDateText = doc.createTextNode(partner['contract_date'])
+            xmlPartnerContractDateText = doc.createTextNode(partner['contract_date'] or '')
             xmlPartnerContractDate.appendChild(xmlPartnerContractDateText)
             xmlPartner.appendChild(xmlPartnerContractDate)
 
-            fields = ['id', 'type', 'zip', 'country', 'state_id', 'city', 'street', 'phone']
+            fields = ['id', 'type', 'zip', 'country_id', 'state_id', 'city', 'street', 'phone']
             partner_address_default_ids = sock.execute(db, uid, pwd, 'res.partner.address', 'search',
                                                        [('type', '=', 'default')], 0, None, None, context)
             partner_address_actual_ids = sock.execute(db, uid, pwd, 'res.partner.address', 'search',
                                                        [('type', '=', 'actual')], 0, None, None, context)
             if partner_address_default_ids:
-                partner_address_default_id = [partner_address_default_ids[0]]
+                partner_address_default_id = partner_address_default_ids[0]
                 partner_address_default = sock.execute(db, uid, pwd, 'res.partner.address', 'read',
                                                        partner_address_default_id, fields, context)
-                xmlPartnerAddressDefault = doc.createElement('address_default')
-                xmlPartnerAddressDefaultText = doc.createTextNode('%s, %s, %s, %s, %s' %
-                    (partner_address_default['zip'],
-                     partner_address_default['country'] and partner_address_default['country'][1] or '',
-                     partner_address_default['state_id'] and partner_address_default['state_id'][1] or '',
-                     partner_address_default['city'],
-                     partner_address_default['street']))
-                xmlPartnerAddressDefault.appendChild(xmlPartnerAddressDefaultText)
-                xmlPartner.appendChild(xmlPartnerAddressDefault)
+                partner_address_default_str = partner_address_default['zip'] or ''
+                if partner_address_default['country_id']:
+                    if partner_address_default_str:
+                        partner_address_default_str = ', '.join((partner_address_default_str, partner_address_default['country_id'][1]))
+                    else:
+                        partner_address_default_str = partner_address_default['country_id'][1]
+                if partner_address_default['state_id']:
+                    if partner_address_default_str:
+                        partner_address_default_str = ', '.join((partner_address_default_str, partner_address_default['state_id'][1]))
+                    else:
+                        partner_address_default_str = partner_address_default['state_id'][1]
+                if partner_address_default['city']:
+                    if partner_address_default_str:
+                        partner_address_default_str = ', '.join((partner_address_default_str, partner_address_default['city']))
+                    else:
+                        partner_address_default_str = partner_address_default['city']
+                if partner_address_default['street']:
+                    if partner_address_default_str:
+                        partner_address_default_str = ', '.join((partner_address_default_str, partner_address_default['street']))
+                    else:
+                        partner_address_default_str = partner_address_default['street']
+            else:
+                partner_address_default_str = ''
+            xmlPartnerAddressDefault = doc.createElement('address_default')
+            xmlPartnerAddressDefaultText = doc.createTextNode(partner_address_default_str)
+            xmlPartnerAddressDefault.appendChild(xmlPartnerAddressDefaultText)
+            xmlPartner.appendChild(xmlPartnerAddressDefault)
 
             if partner_address_actual_ids:
-                partner_address_actual_id = [partner_address_actual_ids[0]]
+                partner_address_actual_id = partner_address_actual_ids[0]
                 partner_address_actual = sock.execute(db, uid, pwd, 'res.partner.address', 'read',
-                                                      partner_address_actual_id, fields, context)
-                xmlPartnerAddressActual = doc.createElement('address_actual')
-                xmlPartnerAddressActualText = doc.createTextNode('%s, %s, %s, %s, %s' %
-                    (partner_address_actual['zip'],
-                     partner_address_actual['country'] and partner_address_actual['country'][1] or '',
-                     partner_address_actual['state_id'] and partner_address_actual['state_id'][1] or '',
-                     partner_address_actual['city'],
-                     partner_address_actual['street']))
-                xmlPartnerAddressActual.appendChild(xmlPartnerAddressActualText)
-                xmlPartner.appendChild(xmlPartnerAddressActual)
+                    partner_address_actual_id, fields, context)
+                partner_address_actual_str = partner_address_actual['zip'] or ''
+                if partner_address_actual['country_id']:
+                    if partner_address_actual_str:
+                        partner_address_actual_str = ', '.join((partner_address_actual_str, partner_address_actual['country_id'][1]))
+                    else:
+                        partner_address_actual_str = partner_address_actual['country_id'][1]
+                if partner_address_actual['state_id']:
+                    if partner_address_actual_str:
+                        partner_address_actual_str = ', '.join((partner_address_actual_str, partner_address_actual['state_id'][1]))
+                    else:
+                        partner_address_actual_str = partner_address_actual['state_id'][1]
+                if partner_address_actual['city']:
+                    if partner_address_actual_str:
+                        partner_address_actual_str = ', '.join((partner_address_actual_str, partner_address_actual['city']))
+                    else:
+                        partner_address_actual_str = partner_address_actual['city']
+                if partner_address_actual['street']:
+                    if partner_address_actual_str:
+                        partner_address_actual_str = ', '.join((partner_address_actual_str, partner_address_actual['street']))
+                    else:
+                        partner_address_actual_str = partner_address_actual['street']
+            else:
+                partner_address_actual_str = ''
+            xmlPartnerAddressActual = doc.createElement('address_actual')
+            xmlPartnerAddressActualText = doc.createTextNode(partner_address_actual_str)
+            xmlPartnerAddressActual.appendChild(xmlPartnerAddressActualText)
+            xmlPartner.appendChild(xmlPartnerAddressActual)
 
             partner_phone = ''
             if partner_address_default_ids and partner_address_default['phone']:
@@ -222,6 +258,8 @@ try:
             xmlPartnerPhoneText = doc.createTextNode(partner_phone)
             xmlPartnerPhone.appendChild(xmlPartnerPhoneText)
             xmlPartner.appendChild(xmlPartnerPhone)
+
+            xmlPartners.appendChild(xmlPartner)
 
         print doc.toprettyxml(indent='  ', encoding='UTF-8')
 except Exception,e:
