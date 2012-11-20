@@ -182,9 +182,9 @@ try:
 
             fields = ['id', 'type', 'zip', 'country_id', 'state_id', 'city', 'street', 'phone']
             partner_address_default_ids = sock.execute(db, uid, pwd, 'res.partner.address', 'search',
-                                                       [('type', '=', 'default')], 0, None, None, context)
+                                [('partner_id', '=', partner['id']), ('type', '=', 'default')], 0, None, None, context)
             partner_address_actual_ids = sock.execute(db, uid, pwd, 'res.partner.address', 'search',
-                                                       [('type', '=', 'actual')], 0, None, None, context)
+                                [('partner_id', '=', partner['id']), ('type', '=', 'actual')], 0, None, None, context)
             if partner_address_default_ids:
                 partner_address_default_id = partner_address_default_ids[0]
                 partner_address_default = sock.execute(db, uid, pwd, 'res.partner.address', 'read',
@@ -258,6 +258,49 @@ try:
             xmlPartnerPhoneText = doc.createTextNode(partner_phone)
             xmlPartnerPhone.appendChild(xmlPartnerPhoneText)
             xmlPartner.appendChild(xmlPartnerPhone)
+
+            partner_bank_account_ids = sock.execute(db, uid, pwd, 'res.partner.bank', 'search',
+                                                        [('partner_id', '=', partner['id'])], 0, None, None, context)
+            if partner_bank_account_ids:
+                xmlPartnerBankAccounts = doc.createElement('bank_accounts')
+                xmlPartner.appendChild(xmlPartnerBankAccounts)
+                fields = ['id', 'acc_number', 'owner_name', 'bank_name', 'bank_bic', 'bank_acc_corr']
+                partner_bank_accounts = sock.execute(db, uid, pwd, 'res.partner.bank', 'read',
+                                                                            partner_bank_account_ids, fields, context)
+                for partner_bank_account in partner_bank_accounts:
+                    xmlPartnerBankAccount = doc.createElement('account')
+                    xmlPartnerBankAccounts.appendChild(xmlPartnerBankAccount)
+
+                    xmlPartnerBankAccountNumber = doc.createElement('number')
+                    xmlPartnerBankAccountNumberText = doc.createTextNode(partner_bank_account['acc_number'])
+                    xmlPartnerBankAccountNumber.appendChild(xmlPartnerBankAccountNumberText)
+                    xmlPartnerBankAccount.appendChild(xmlPartnerBankAccountNumber)
+
+                    xmlPartnerBankAccountOwner = doc.createElement('owner')
+                    xmlPartnerBankAccount.appendChild(xmlPartnerBankAccountOwner)
+
+                    xmlPartnerBankAccountOwnerName = doc.createElement('name')
+                    xmlPartnerBankAccountOwnerNameText = doc.createTextNode(partner_bank_account['owner_name'])
+                    xmlPartnerBankAccountOwnerName.appendChild(xmlPartnerBankAccountOwnerNameText)
+                    xmlPartnerBankAccountOwner.appendChild(xmlPartnerBankAccountOwnerName)
+
+                    xmlPartnerBankAccountBank = doc.createElement('bank')
+                    xmlPartnerBankAccount.appendChild(xmlPartnerBankAccountBank)
+
+                    xmlPartnerBankAccountBankName = doc.createElement('name')
+                    xmlPartnerBankAccountBankNameText = doc.createTextNode(partner_bank_account['bank_name'])
+                    xmlPartnerBankAccountBankName.appendChild(xmlPartnerBankAccountBankNameText)
+                    xmlPartnerBankAccountBank.appendChild(xmlPartnerBankAccountBankName)
+
+                    xmlPartnerBankAccountBankBic = doc.createElement('bic')
+                    xmlPartnerBankAccountBankBicText = doc.createTextNode(partner_bank_account['bank_bic'])
+                    xmlPartnerBankAccountBankBic.appendChild(xmlPartnerBankAccountBankBicText)
+                    xmlPartnerBankAccountBank.appendChild(xmlPartnerBankAccountBankBic)
+
+                    xmlPartnerBankAccountBankAccCorr = doc.createElement('acc_corr')
+                    xmlPartnerBankAccountBankAccCorrText = doc.createTextNode(partner_bank_account['bank_acc_corr'])
+                    xmlPartnerBankAccountBankAccCorr.appendChild(xmlPartnerBankAccountBankAccCorrText)
+                    xmlPartnerBankAccountBank.appendChild(xmlPartnerBankAccountBankAccCorr)
 
             xmlPartners.appendChild(xmlPartner)
 
