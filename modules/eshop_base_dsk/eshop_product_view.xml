@@ -30,9 +30,9 @@
             <field name="inherit_id" ref="product.product_normal_form_view" />
             <field name="type">form</field>
             <field name="arch" type="xml">
-                <xpath expr="//page[@string='Procurement &amp; Locations']/group[@name='misc']/field[@name='active']" position="after">
+                <field name="purchase_ok"/>
                     <field name="eshop_sync"/>
-                </xpath>
+                </field>
             </field>
         </record>
 
@@ -44,10 +44,20 @@
                 <form string="Product">
                     <field name="eshop_sync" invisible="1"/>
 
-                    <separator string="Name" colspan="4"/>
-                    <group colspan="4">
-                        <field name="name" colspan="4"/>
-                    </group>
+                    <div class="oe_title">
+                        <div class="oe_edit_only">
+                            <label for="name" string="Product Name"/>
+                        </div>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                        <label for="categ_id" class="oe_edit_only"/>
+                        <h2><field name="categ_id"/></h2>
+                        <div name="options" groups="base.group_user">
+                            <field name="sale_ok"/>
+                            <label for="sale_ok"/>
+                        </div>
+                    </div>
 
                     <notebook colspan="4">
                         <page string="Information">
@@ -58,7 +68,8 @@
                             </group>
                             <group colspan="2" col="2" name="status">
                                 <separator string="Status" colspan="2"/>
-                                <field name="categ_id" context="{'form_view_ref': 'eshop_base_dsk.product_category_form_view_eshop_dsk'}"/>
+                                <field name="categ_id"
+                                       context="{'form_view_ref': 'eshop_base_dsk.product_category_form_view_eshop_dsk'}"/>
                             </group>
                         </page>
                     </notebook>
@@ -123,6 +134,7 @@
                   parent="eshop_base_dsk.menu" sequence="2"/>
 
         <menuitem action="product_eshop_dsk_category_action" groups="eshop_base_dsk.group_eshop_manager"
-                  id="eshop_base_dsk.categorylist" name="Product Categories" parent="eshop_base_dsk.settings" sequence="1"/>
+                  id="eshop_base_dsk.categorylist" name="Product Categories" parent="eshop_base_dsk.settings"
+                  sequence="1"/>
     </data>
 </openerp>
