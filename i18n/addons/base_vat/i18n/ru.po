@@ -1,0 +1,128 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* base_vat
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.0dev\n"
+"Report-Msgid-Bugs-To: support@openerp.com\n"
+"POT-Creation-Date: 2012-02-08 00:36+0000\n"
+"PO-Revision-Date: 2010-12-05 07:36+0000\n"
+"Last-Translator: Chertykov Denis <chertykov@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2012-10-30 04:58+0000\n"
+"X-Generator: Launchpad (build 16206)\n"
+
+#. module: base_vat
+#: code:addons/base_vat/base_vat.py:141
+#, python-format
+msgid ""
+"This VAT number does not seem to be valid.\n"
+"Note: the expected format is %s"
+msgstr ""
+"Этот номер НДС не кажется действительным.\n"
+"Примечание: обнаруженный формат - %s"
+
+#. module: base_vat
+#: sql_constraint:res.company:0
+msgid "The company name must be unique !"
+msgstr "Название компании должно быть уникальным!"
+
+#. module: base_vat
+#: constraint:res.partner:0
+msgid "Error ! You cannot create recursive associated members."
+msgstr "Ошибка! Вы не можете создавать рекурсивные ссылки на участников."
+
+#. module: base_vat
+#: field:res.company,vat_check_vies:0
+msgid "VIES VAT Check"
+msgstr "Проверка VIES НДС"
+
+#. module: base_vat
+#: model:ir.model,name:base_vat.model_res_company
+msgid "Companies"
+msgstr "Компании"
+
+#. module: base_vat
+#: constraint:res.company:0
+msgid "Error! You can not create recursive companies."
+msgstr "Ошибка ! Нельзя создать рекурсивные организации."
+
+#. module: base_vat
+#: help:res.partner,vat_subjected:0
+msgid ""
+"Check this box if the partner is subjected to the VAT. It will be used for "
+"the VAT legal statement."
+msgstr ""
+"Отметьте, если контрагент — плательщик НДС. Используется для заявления НДС."
+
+#. module: base_vat
+#: model:ir.model,name:base_vat.model_res_partner
+msgid "Partner"
+msgstr "Контрагент"
+
+#. module: base_vat
+#: help:res.company,vat_check_vies:0
+msgid ""
+"If checked, Partners VAT numbers will be fully validated against EU's VIES "
+"service rather than via a simple format validation (checksum)."
+msgstr ""
+"Если помечено, номера НДС партнёров будут полностью проверены через службу "
+"VIES ЕС, а не с помощью простой проверки формата (контрольной суммы)."
+
+#. module: base_vat
+#: field:res.partner,vat_subjected:0
+msgid "VAT Legal Statement"
+msgstr "Заявление НДС"
+
+#~ msgid "VAT"
+#~ msgstr "Код налога"
+
+#~ msgid "Invalid XML for View Architecture!"
+#~ msgstr "Некорректный формат XML структуры для просмотра."
+
+#~ msgid ""
+#~ "Enable the VAT Number for the partner. Check the validity of that VAT Number."
+#~ msgstr ""
+#~ "Разрешить использование кода налога для партнера. Проверьте правильность "
+#~ "кода налога."
+
+#~ msgid "Error ! You can not create recursive associated members."
+#~ msgstr "Ошибка! Вы не можете создать рекурсивно связанных участников."
+
+#, python-format
+#~ msgid ""
+#~ "The Vat does not seems to be correct. You should have entered something like "
+#~ "this %s"
+#~ msgstr "Похоже, НДС указан неверно. Вы должны ввести что-то вроде %s"
+
+#~ msgid "Base VAT - To check VAT number validity"
+#~ msgstr "Базовый НДС. Проверка правильности номера НДС."
+
+#~ msgid ""
+#~ "\n"
+#~ "    Enable the VAT Number for the partner. Check the validity of that VAT "
+#~ "Number.\n"
+#~ "\n"
+#~ "    This module follows the methods stated at http://sima-pc.com/nif.php "
+#~ "for\n"
+#~ "    checking the validity of VAT Number assigned to partners in European "
+#~ "countries.\n"
+#~ "    "
+#~ msgstr ""
+#~ "\n"
+#~ "    Включить номер НДС для контрагента. Проверить правильность этого номера "
+#~ "НДС.\n"
+#~ "\n"
+#~ "    Этот модуль использует метод, описанный на http://sima-pc.com/nif.php "
+#~ "для\n"
+#~ "    проверки корректности номера НДС, назначенного контрагентам в "
+#~ "европейских странах.\n"
+#~ "    "
+
+#, python-format
+#~ msgid "The VAT is invalid, It should begin with the country code"
+#~ msgstr "НДС неверен, он должен начинаться с кода страны"
