@@ -139,11 +139,17 @@ try:
 
         partner_ids = sock.execute(db, uid, pwd, 'res.partner', 'search', [], 0, None, None, context)
 
-        fields = ['id', 'name', 'name_official', 'inn', 'kpp', 'okpo', 'contract_num', 'contract_date']
+        fields = ['id', 'name', 'name_official', 'inn', 'kpp', 'okpo', 'contract_num', 'contract_date',
+                  'supplier', 'customer']
         partners = sock.execute(db, uid, pwd, 'res.partner', 'read', partner_ids, fields, context)
         for partner in partners:
             xmlPartner = doc.createElement('partner')
             xmlPartner.setAttribute('id', str(partner['id']))
+
+            if partner['supplier']:
+                xmlPartner.setAttribute('supplier', '1')
+            else:
+                xmlPartner.setAttribute('customer', '1')
 
             xmlPartnerName = doc.createElement('name')
             xmlPartnerNameText = doc.createTextNode(partner['name'] or '')
@@ -176,7 +182,8 @@ try:
             xmlPartner.appendChild(xmlPartnerContractNum)
 
             xmlPartnerContractDate = doc.createElement('contract_date')
-            xmlPartnerContractDateText = doc.createTextNode(partner['contract_date'] or '')
+            xmlPartnerContractDateText = doc.createTextNode(partner['contract_date']
+                                                            and partner['contract_date'].replace('-', '') or '')
             xmlPartnerContractDate.appendChild(xmlPartnerContractDateText)
             xmlPartner.appendChild(xmlPartnerContractDate)
 
@@ -276,18 +283,10 @@ try:
                     xmlPartnerBankAccountNumber.appendChild(xmlPartnerBankAccountNumberText)
                     xmlPartnerBankAccount.appendChild(xmlPartnerBankAccountNumber)
 
-                    xmlPartnerBankAccountOwner = doc.createElement('owner')
-                    xmlPartnerBankAccount.appendChild(xmlPartnerBankAccountOwner)
-
-                    xmlPartnerBankAccountOwnerName = doc.createElement('name')
-                    xmlPartnerBankAccountOwnerNameText = doc.createTextNode(partner_bank_account['owner_name'])
-                    xmlPartnerBankAccountOwnerName.appendChild(xmlPartnerBankAccountOwnerNameText)
-                    xmlPartnerBankAccountOwner.appendChild(xmlPartnerBankAccountOwnerName)
-
                     xmlPartnerBankAccountBank = doc.createElement('bank')
                     xmlPartnerBankAccount.appendChild(xmlPartnerBankAccountBank)
 
-                    xmlPartnerBankAccountBankName = doc.createElement('name')
+                    xmlPartnerBankAccountBankName = doc.createElement('namebank')
                     xmlPartnerBankAccountBankNameText = doc.createTextNode(partner_bank_account['bank_name'])
                     xmlPartnerBankAccountBankName.appendChild(xmlPartnerBankAccountBankNameText)
                     xmlPartnerBankAccountBank.appendChild(xmlPartnerBankAccountBankName)
