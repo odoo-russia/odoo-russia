@@ -25,7 +25,6 @@
     "depends" : [
         "product",
         "product_base_dsk",
-        "purchase",
     ],
     "init_xml" : [],
     "demo_xml" : [],
