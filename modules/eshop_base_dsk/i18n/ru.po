@@ -64,7 +64,7 @@ msgstr "Продукция"
 #. module: eshop_base_dsk
 #: view:product.product:0
 msgid "Inventory"
-msgstr "Склад"
+msgstr "Запасы"
 
 #. module: eshop_base_dsk
 #: view:product.product:0
