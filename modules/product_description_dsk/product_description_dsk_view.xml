@@ -7,12 +7,11 @@
             <field name="type">form</field>
             <field name="inherit_id" ref="product.product_normal_form_view" />
             <field name="arch" type="xml">
-                <xpath expr="//page[@string='Descriptions']/separator[@string='Description']" position="before">
-                    <separator string="Short description"/>
-                    <field colspan="4" name="description_short" nolabel="1" readonly="1"/>
-                </xpath>
+                <field name="description" position="before">
+                    <field name="description_short" placeholder="describe the product in one string..." readonly="1"/>
+                </field>
                 <field name="description" position="replace">
-                    <field colspan="4" name="description" nolabel="1" readonly="1"/>
+                        <field name="description" placeholder="describe the product characteristics..." readonly="1"/>
                 </field>
             </field>
         </record>
@@ -23,13 +22,14 @@
             <field name="type">form</field>
             <field name="inherit_id" ref="eshop_base_dsk.product_normal_form_view_eshop_dsk" />
             <field name="arch" type="xml">
-                <page string="Information" position="after">
+                <page string="Inventory" position="after">
                     <page string="Descriptions">
-                        <separator string="Short description"/>
-                        <field colspan="4" name="description_short" nolabel="1"/>
-
-                        <separator string="Description"/>
-                        <field colspan="4" name="description" nolabel="1"/>
+                        <group>
+                            <field name="description_short" placeholder="describe the product in one string..."/>
+                        </group>
+                        <group>
+                            <field name="description" placeholder="describe the product characteristics..."/>
+                        </group>
                     </page>
                 </page>
             </field>
