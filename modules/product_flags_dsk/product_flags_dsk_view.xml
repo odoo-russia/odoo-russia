@@ -8,11 +8,12 @@
             <field name="inherit_id" ref="eshop_base_dsk.product_normal_form_view_eshop_dsk" />
             <field name="type">form</field>
             <field name="arch" type="xml">
-                <field name="categ_id" position="after">
+                <div name="options" position="inside">
                     <field name="hit"/>
-                    <newline/>
+                    <label for="hit"/>
                     <field name="new"/>
-                </field>
+                    <label for="new"/>
+                </div>
             </field>
         </record>
 
