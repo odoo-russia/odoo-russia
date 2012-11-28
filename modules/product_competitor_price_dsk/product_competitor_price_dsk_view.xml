@@ -10,15 +10,16 @@
             <field name="arch" type="xml">
                 <notebook position="inside">
                     <page string="Competitors">
-                        <separator string="Competitors" colspan="4"/>
-                        <field colspan="4" name="competitor_ids" nolabel="1">
-                            <tree string="Competitors">
-                                <field name="name"/>
-                                <field name="similar_product_name"/>
-                                <field name="similar_product_url"/>
-                                <field name="similar_product_price"/>
-                            </tree>
-                        </field>
+                        <group>
+                            <field colspan="4" name="competitor_ids" nolabel="1">
+                                <tree string="Competitors">
+                                    <field name="name"/>
+                                    <field name="similar_product_name"/>
+                                    <field name="similar_product_url"/>
+                                    <field name="similar_product_price"/>
+                                </tree>
+                            </field>
+                        </group>
                     </page>
                 </notebook>
             </field>
@@ -29,13 +30,20 @@
             <field name="model">product.competitor</field>
             <field name="type">form</field>
             <field name="arch" type="xml">
-                <form string="Competitor">
-                    <separator string="Competitor" colspan="4"/>
-                    <field colspan="4" name="name"/>
-                    <newline/>
-                    <field name="similar_product_name"/>
-                    <field name="similar_product_url"/>
-                    <field name="similar_product_price"/>
+                <form string="Competitor" version="7.0">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <field name="similar_product_name"/>
+                            <field name="similar_product_url"/>
+                            <field name="similar_product_price"/>
+                        </group>
+                    </sheet>
                 </form>
             </field>
         </record>
