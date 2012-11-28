@@ -8,9 +8,11 @@
             <field name="inherit_id" ref="eshop_base_dsk.product_category_form_view_eshop_dsk" />
             <field name="type">form</field>
             <field name="arch" type="xml">
-                <field name="parent_id" position="after">
-                    <field name="vip"/>
-                </field>
+                <group name="parent" position="after">
+                    <group name="flags">
+                        <field name="vip"/>
+                    </group>
+                </group>
             </field>
         </record>
 
