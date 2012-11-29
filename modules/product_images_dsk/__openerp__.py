@@ -20,7 +20,7 @@
     "version" : "1.0",
     "author" : "Denis Karataev",
     "category" : "Generic Modules",
-    "depends" : ["web_avatar_big",
+    "depends" : ["web_avatar_big_dsk",
                  "product",
                  "product_base_dsk",
                  "eshop_base_dsk"],
