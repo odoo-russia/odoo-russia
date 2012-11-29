@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenERP Server 6.1-20121101-003205\n"
+"Project-Id-Version: OpenERP Server 6.2dev-20121127-000102\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-01 10:39+0000\n"
-"PO-Revision-Date: 2012-11-01 10:39+0000\n"
+"POT-Creation-Date: 2012-11-29 15:08+0000\n"
+"PO-Revision-Date: 2012-11-29 15:08+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -32,6 +32,11 @@ msgid "product.images"
 msgstr "Изображения"
 
 #. module: product_images_dsk
+#: view:product.images:0
+msgid "Image Name"
+msgstr "Название изображения"
+
+#. module: product_images_dsk
 #: field:product.images,sequence:0
 msgid "Sequence"
 msgstr "Последовательность"
@@ -42,42 +47,36 @@ msgid "Image filename"
 msgstr "Имя файла изображения"
 
 #. module: product_images_dsk
-#: view:product.images:0
 #: field:product.images,image:0
 #: selection:product.images,type:0
 msgid "Image"
 msgstr "Изображение"
 
 #. module: product_images_dsk
-#: selection:product.images,type:0
-msgid "Scheme"
-msgstr "Схема/Чертеж"
+#: view:product.images:0
+msgid "Product Image"
+msgstr "Изображение продукции"
 
 #. module: product_images_dsk
-#: view:product.images:0
 #: field:product.images,comments:0
 msgid "Comments"
 msgstr "Комментарий"
 
 #. module: product_images_dsk
-#: constraint:product.product:0
-msgid "Error: Invalid ean code"
-msgstr "Ошибка: Неправильный штрих-код"
-
-#. module: product_images_dsk
-#: constraint:product.product:0
-msgid "Attributes or attribute values don't belong to selected group!"
-msgstr "Характеристики или их значения не принадлежат выбранной группе характеристик!"
-
-#. module: product_images_dsk
-#: field:product.images,name:0
-msgid "Image title"
-msgstr "Название изображения"
+#: view:product.images:0
+#: field:product.product,image_ids:0
+msgid "Product Images"
+msgstr "Изображения продукции"
 
 #. module: product_images_dsk
 #: field:product.product,schemes_count:0
 msgid "Schemes"
 msgstr "Схемы/Чертежи"
+
+#. module: product_images_dsk
+#: field:product.images,name:0
+msgid "Image title"
+msgstr "Название изображения"
 
 #. module: product_images_dsk
 #: view:product.product:0
@@ -86,15 +85,9 @@ msgid "Images"
 msgstr "Изображения"
 
 #. module: product_images_dsk
-#: view:product.images:0
-#: field:product.product,image_ids:0
-msgid "Product Images"
-msgstr "Изображения товара"
-
-#. module: product_images_dsk
-#: sql_constraint:product.product:0
-msgid "EAN code must be unique!"
-msgstr "Штрих-код должен быть уникальным!"
+#: selection:product.images,type:0
+msgid "Scheme"
+msgstr "Схема/Чертеж"
 
 #. module: product_images_dsk
 #: help:product.images,sequence:0
