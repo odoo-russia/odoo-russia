@@ -1,0 +1,15 @@
+.openerp .oe_avatar_big > img {
+    max-height: 250px;
+    max-width: 250px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    border: none;
+    margin-bottom: 10px;
+}
+.openerp .oe_avatar_big + div {
+    margin-left: 5px;
+}
