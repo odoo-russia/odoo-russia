@@ -6,23 +6,22 @@
 			<field name="model">product.images</field>
 			<field name="type">form</field>
 			<field name="arch" type="xml">
-				<form string="Product Images">
-					<notebook colspan="4">
-						<page string="Image">
-							<group col="2" colspan="2">
-								<field name="name" colspan="2" />
-                                <newline/>
-                                <field name="image_filename" invisible="1"/>
-                                <field name="image" widget="image" filename="image_filename" nolabel="1"/>
-							</group>
-                            <group col="2" colspan="2">
-								<field name="type"/>
-							</group>
-						</page>
-						<page string="Comments">
-							<field name="comments" nolabel="1" colspan="4" />
-						</page>
-					</notebook>
+				<form string="Product Image" version="7.0">
+                    <sheet>
+                        <field name="image_filename" invisible="1"/>
+                        <field name="image" widget="image" filename="image_filename" class="oe_avatar_big oe_left"/>
+                        <div class="oe_title">
+                            <div class="oe_edit_only">
+                                <label for="name" string="Image Name"/>
+                            </div>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                            <label for="type" class="oe_edit_only"/>
+                            <field name="type"/>
+                        </div>
+                        <field name="comments"  placeholder="write comments..."/>
+                    </sheet>
 				</form>
 			</field>
 		</record>
@@ -32,11 +31,11 @@
 			<field name="model">product.images</field>
 			<field name="type">tree</field>
 			<field name="arch" type="xml">
-				<tree string="Product Images">
-					<field name="name" select="1" />
+				<tree string="Product Images" version="7.0">
+					<field name="name" select="1"/>
                     <field name="sequence"/>
-                    <field name="type" select="2" />
-                    <field name="comments" select="2" />
+                    <field name="type" select="2"/>
+                    <field name="comments" select="2"/>
 				</tree>
 			</field>
 		</record>
@@ -44,14 +43,13 @@
 		<record id="view_product_form_img_inh" model="ir.ui.view">
 			<field name="name">product.product.images</field>
 			<field name="model">product.product</field>
-			<field name="inherit_id" ref="product.product_normal_form_view" />
+			<field name="inherit_id" ref="product.product_normal_form_view"/>
 			<field name="type">tree</field>
 			<field name="arch" type="xml">
 				<notebook position="inside">
 					<page string="Images">
                         <field name="id" invisible="1"/>
-                        <separator string="Images" colspan="4"/>
-						<field name="image_ids" nolabel="1" colspan="4" context="{'product_id': id}" />
+                        <field name="image_ids" context="{'product_id': id}"/>
 					</page>
 				</notebook>
 			</field>
@@ -61,12 +59,11 @@
             <field name="name">product.normal.form</field>
             <field name="model">product.product</field>
             <field name="type">form</field>
-            <field name="inherit_id" ref="eshop_base_dsk.product_normal_form_view_eshop_dsk" />
+            <field name="inherit_id" ref="eshop_base_dsk.product_normal_form_view_eshop_dsk"/>
             <field name="arch" type="xml">
                 <notebook position="inside">
                     <page string="Images">
-                        <separator string="Images" colspan="4"/>
-                        <field name="image_ids" nolabel="1" colspan="4"/>
+                        <field name="image_ids"/>
                     </page>
                 </notebook>
             </field>

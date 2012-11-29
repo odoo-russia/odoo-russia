@@ -47,6 +47,43 @@ class product_product(osv.osv):
                 res[product.id] = 0
         return res
 
+    def create(self, cr, uid, vals, context=None):
+        if context is None:
+            context = {}
+        if 'image_ids' in vals and vals['image_ids']:
+            if 'sequence' in vals['image_ids'][0][2]:
+                min_sec = None
+                min_index = None
+                count = -1
+                for image in vals['image_ids']:
+                    count += 1
+                    if min_sec is None:
+                        min_sec = image[2]['sequence']
+                        min_index = count
+                    if image[2]['sequence'] < min_sec:
+                        min_sec = image[2]['sequence']
+                        min_index = count
+                vals['image_medium'] = vals['image_ids'][min_index][2]['image']
+            else:
+                vals['image_medium'] = vals['image_ids'][0][2]['image']
+        return super(product_product, self).create(cr, uid, vals, context)
+
+    def write(self, cr, uid, ids, vals, context=None):
+        if context is None:
+            context = {}
+        res = super(product_product, self).write(cr, uid, ids, vals, context)
+        if 'image_ids' in vals and vals['image_ids']:
+            for product_id in ids:
+                image_ids = self.pool.get('product.images').search(cr, uid, [('product_id', '=', product_id)],
+                                                                   order='sequence', limit=1, context=context)
+                if image_ids:
+                    image = self.pool.get('product.images').browse(cr, uid, image_ids[0], context=context)
+                    vals = {
+                        'image_medium': image.image,
+                    }
+                    self.write(cr, uid, product_id, vals, context=context)
+        return res
+
     _name = "product.product"
     _inherit = "product.product"
     _columns = {

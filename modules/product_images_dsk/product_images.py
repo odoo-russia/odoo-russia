@@ -26,9 +26,6 @@ class product_images(osv.osv):
         image_path = vals.get('image_filename')
         if image_path:
             vals['image_filename'] =  self._get_filename(image_path)
-
-        #TODO: update main product image
-
         return super(product_images, self).create(cr, uid, vals, context)
 
     def write(self, cr, uid, ids, vals, context=None):
@@ -37,9 +34,6 @@ class product_images(osv.osv):
         image_path = vals.get('image_filename')
         if image_path:
             vals['image_filename'] =  self._get_filename(image_path)
-
-        #TODO: update main product image
-
         return super(product_images, self).write(cr, uid, ids, vals, context)
 
     _name = "product.images"
