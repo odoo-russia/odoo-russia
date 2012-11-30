@@ -18,12 +18,20 @@
             <field name="model">product.attribute.group</field>
             <field name="type">form</field>
             <field name="arch" type="xml">
-                <form string="Attribute group">
-                    <separator string="Attribute group" colspan="4"/>
-                    <field name="name"/>
-
-                    <separator string="Attributes" colspan="4"/>
-                    <field colspan="4" name="attribute_ids" nolabel="1" context="{'attribute_group_id': active_id}"/>
+                <form string="Attribute group" version="7.0">
+                    <sheet>
+                        <div class="oe_title">
+                            <div class="oe_edit_only">
+                                <label for="name"/>
+                            </div>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <field colspan="4" name="attribute_ids" context="{'attribute_group_id': active_id}"/>
+                        </group>
+                    </sheet>
                 </form>
             </field>
         </record>
@@ -46,24 +54,27 @@
             <field name="priority" eval="10"/>
             <field name="type">form</field>
             <field name="arch" type="xml">
-                <form string="Attribute">
-                    <field name="attribute_parent_group_id" invisible="1"/>
-                    <separator string="Attribute" colspan="4"/>
-                    <group colspan="2" col="2">
-                        <field name="name"/>
-                    </group>
-                    <group colspan="2" col="2">
-                        <field name="type"/>
-                        <newline/>
-                        <label colspan="2" string="If already there are saved values of this attribute, this field will
-                            always be String. To change this field, first remove the attribute values."/>
-                    </group>
-                    <group colspan="4" col="4" attrs="{'invisible': [('type','=','checkbox')]}">
-                        <separator string="Values" colspan="4"/>
-                        <field name="attribute_value_ids" nolabel="1"
-                               context="{'default_attribute_group_id': attribute_parent_group_id}"
-                               domain="[('attribute_group_id', '=', attribute_parent_group_id)]"/>
-                    </group>
+                <form string="Attribute" version="7.0">
+                    <sheet>
+                        <field name="attribute_parent_group_id" invisible="1"/>
+                        <div class="oe_title">
+                            <div class="oe_edit_only">
+                                <label for="name"/>
+                            </div>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                            <label for="type" class="oe_edit_only"/>
+                            <field name="type"/>
+                            <label colspan="2" string="If already there are saved values of this attribute, this field will
+                                always be String. To change this field, first remove the attribute values."/>
+                        </div>
+                        <group>
+                            <field name="attribute_value_ids"
+                                   context="{'default_attribute_group_id': attribute_parent_group_id}"
+                                   domain="[('attribute_group_id', '=', attribute_parent_group_id)]"/>
+                        </group>
+                    </sheet>
                 </form>
             </field>
         </record>
@@ -73,13 +84,20 @@
             <field name="model">product.attribute</field>
             <field name="type">form</field>
             <field name="arch" type="xml">
-                <form string="Attribute">
-                    <field name="attribute_parent_group_id" invisible="1"/>
-                    <separator string="Attribute" colspan="4"/>
-                    <group colspan="2" col="2">
-                        <field name="name"/>
-                        <field name="type" invisible="1"/>
-                    </group>
+                <form string="Attribute" version="7.0">
+                    <sheet>
+                        <field name="attribute_parent_group_id" invisible="1"/>
+                        <div class="oe_title">
+                            <div class="oe_edit_only">
+                                <label for="name"/>
+                            </div>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                            <label for="type" class="oe_edit_only"/>
+                            <field name="type"/>
+                        </div>
+                    </sheet>
                 </form>
             </field>
         </record>
@@ -101,17 +119,22 @@
             <field name="model">product.attribute.value</field>
             <field name="type">form</field>
             <field name="arch" type="xml">
-                <form string="Attribute value">
-                    <field name="attribute_group_id" invisible="1"/>
-                    <group colspan="4" col="4" attrs="{'invisible': [('attribute_group_id','=',False)]}">
-                        <separator string="Attribute value" colspan="4"/>
-                        <field name="name"/>
-                    </group>
-
-                    <group colspan="4" col="1" attrs="{'invisible': [('attribute_group_id','!=',False)]}">
-                        <label string="New attribute value creation allowed only from menu Product Attribute Groups or
-                                       from product form!"/>
-                    </group>
+                <form string="Attribute value" version="7.0">
+                    <sheet>
+                        <field name="attribute_group_id" invisible="1"/>
+                        <div class="oe_title">
+                            <div class="oe_edit_only">
+                                <label for="name"/>
+                            </div>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group attrs="{'invisible': [('attribute_group_id','!=',False)]}">
+                            <label string="New attribute value creation allowed only from menu Product Attribute Groups or
+                                           from product form!"/>
+                        </group>
+                    </sheet>
                 </form>
             </field>
         </record>
@@ -123,7 +146,7 @@
             <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Product attributes and values" editable="bottom">
-                    <field name="attribute_id" on_change="onchange_attribute_id(attribute_id, attribute_value_id)"
+                    <field name="attribute_id" on_change="onchange_attribute_id()"
                         context="
                             {
                                 'form_view_ref': 'product_attribute_dsk.product_attribute_form_view_without_values_dsk',
@@ -147,7 +170,7 @@
             <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Product attributes and values-checkboxes" editable="bottom">
-                    <field name="attribute_id" on_change="onchange_attribute_id(attribute_id, attribute_value_id)"
+                    <field name="attribute_id" on_change="onchange_attribute_id()"
                            context="
                             {
                                 'form_view_ref': 'product_attribute_dsk.product_attribute_form_view_without_values_dsk',
@@ -170,20 +193,16 @@
             <field name="arch" type="xml">
                 <notebook position="inside">
                     <page string="Attributes">
-                        <separator string="Attribute group" colspan="4"/>
+                        <label for="attribute_group"/>
                         <field name="attribute_group"/>
-
-                        <group col="4" colspan="4" attrs="{'invisible': [('attribute_group','=',False)]}">
-                            <separator string="Attributes and their values" colspan="4"/>
+                        <group attrs="{'invisible': [('attribute_group','=',False)]}">
                             <field name="attribute_value_product_ids" colspan="4" nolabel="1"/>
-                            <separator string="Attributes and their values-checkboxes" colspan="4"/>
                             <field name="attribute_value_product_checkbx_ids" colspan="4" nolabel="1"
                                 context="
                                 {
                                 'tree_view_ref': 'product_attribute_dsk.product_attribute_value_product_tree_view_checkbx_dsk',
                                 }"/>
                         </group>
-
                     </page>
                 </notebook>
             </field>

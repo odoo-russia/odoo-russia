@@ -196,7 +196,7 @@ class product_attribute_value(osv.osv):
 product_attribute_value()
 
 class product_attribute_value_product(osv.osv):
-    def onchange_attribute_id(self, cr, uid, ids, attribute_id, attribute_value_id):
+    def onchange_attribute_id(self, cr, uid, ids):
         return {'value': {'attribute_value_id': False}}
 
     def _check_references(self, cr, uid, ids):
