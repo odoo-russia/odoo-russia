@@ -9,7 +9,7 @@
             <field name="arch" type="xml">
                 <notebook position="inside">
                     <page string="Product Relations">
-                        <field name="relation_ids" colspan="4" nolabel="1">
+                        <field name="relation_ids">
                             <tree string="Product Relations" editable="bottom">
                                 <field name="linked_product_id" context="{
                                         'form_view_ref': 'eshop_base_dsk.product_normal_form_view_eshop_dsk',
@@ -29,6 +29,5 @@
                 </notebook>
             </field>
         </record>
-
     </data>
 </openerp>
