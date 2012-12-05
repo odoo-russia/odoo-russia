@@ -27,8 +27,7 @@
         "partner_base_dsk",
         "partner_auth_dsk",
         "partner_business_type_dsk",
-        "partner_l10n_dsk",
-        "partner_region_dsk"
+        "partner_l10n_dsk"
     ],
     "init_xml" : [],
     "demo_xml" : [],
