@@ -7,10 +7,10 @@
             <field name="type">form</field>
             <field name="inherit_id" ref="product.product_normal_form_view" />
             <field name="arch" type="xml">
-                <xpath expr="//page[@string='Procurement &amp; Locations']/group[@name='misc']/field[@name='active']" position="before">
+                <div name="ean" position="after">
                     <field name="code_1c_buh"/>
                     <field name="code_1c_torg"/>
-                </xpath>
+                </div>
             </field>
         </record>
     </data>
