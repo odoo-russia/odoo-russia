@@ -48,8 +48,7 @@
 			<field name="arch" type="xml">
 				<notebook position="inside">
 					<page string="Images">
-                        <field name="id" invisible="1"/>
-                        <field name="image_ids" context="{'product_id': id}"/>
+                        <field name="image_ids"/>
 					</page>
 				</notebook>
 			</field>
