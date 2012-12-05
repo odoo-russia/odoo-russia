@@ -8,14 +8,12 @@
             <field name="type">form</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
-                <page string="Sales &amp; Purchases" position="inside">
-                    <group colspan="2" col="2">
-                        <separator string="Login and password" colspan="2"/>
+                <xpath expr="//page[@string='Sales &amp; Purchases']/group" position="inside">
+                    <group>
                         <field name="login"/>
-                        <newline/>
                         <field name="password"/>
                     </group>
-                </page>
+                </xpath>
             </field>
         </record>
 
