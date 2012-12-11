@@ -6,21 +6,20 @@
             <field name="name">res.partner.form</field>
             <field name="model">res.partner</field>
             <field name="type">form</field>
-            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="inherit_id" ref="account.view_partner_property_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//page[@string='Accounting']/group[1]" position="before">
-                    <group col="2" colspan="4">
-                        <separator string="Accounting details" colspan="2"/>
-                        <group col="4">
-                            <field name="name_official" colspan="4"/>
-                            <newline/>
-                            <field name="contract_num"/>
-                            <field name="contract_date"/>
-                        </group>
-                        <group col="4">
+                    <label for="name_official"/>
+                    <group>
+                        <field name="name_official" colspan="4" nolabel="1"/>
+                        <group>
                             <field name="inn"/>
                             <field name="kpp"/>
                             <field name="okpo"/>
+                        </group>
+                        <group>
+                            <field name="contract_num"/>
+                            <field name="contract_date"/>
                         </group>
                     </group>
                 </xpath>
@@ -65,46 +64,31 @@
             </field>
         </record>
 
-        <record id="view_partner_property_form_l10n_dsk" model="ir.ui.view">
-            <field name="name">res.partner.property.form.inherit</field>
-            <field name="model">res.partner</field>
-            <field name="type">form</field>
-            <field name="inherit_id" ref="account.view_partner_property_form"/>
-            <field name="arch" type="xml">
-                <field name="bank_bic" position="after">
-                    <field name="bank_acc_corr"/>
-                </field>
-            </field>
-        </record>
-
         <record id="view_wizard_update_banks" model="ir.ui.view">
             <field name="name">wizard.update.banks.form</field>
             <field name="model">wizard.update.banks</field>
             <field name="type">form</field>
             <field name="arch" type="xml">
-                <group colspan="4" col="4">
-                    <field name="location_bnkseek" colspan="2"/>
-                    <field name="location_bnkdel" colspan="2"/>
-                    <newline/>
-                    <button icon="gtk-cancel" special="cancel" type="object" string="Cancel" colspan="2"/>
-                    <button icon="gtk-ok" name="update_banks" string="Update" type="object" colspan="2"
-                            context="{'location_bnkseek': location_bnkseek, 'location_bnkdel': location_bnkdel}"/>
-                </group>
+                <form string="Create Account" version="7.0">
+                    <header>
+                        <button name="update_banks" string="Update" type="object"
+                                context="{'location_bnkseek': location_bnkseek, 'location_bnkdel': location_bnkdel}"/>
+                        <button special="cancel" type="object" string="Cancel"/>
+                    </header>
+                    <group>
+                        <field name="location_bnkseek"/>
+                        <field name="location_bnkdel"/>
+                    </group>
+                </form>
             </field>
         </record>
 
-        <record id="action_wizard_update_banks" model="ir.actions.act_window">
-            <field name="name">Update Banks</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">wizard.update.banks</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">form</field>
-        </record>
-
-        <record id="account_configuration_update_banks_todo" model="ir.actions.todo">
-            <field name="action_id" ref="action_wizard_update_banks"/>
-            <field name="category_id" ref="account.category_accounting_configuration"/>
-        </record>
+        <act_window id="action_wizard_update_banks"
+                    name="Update Banks"
+                    target="new"
+                    res_model="wizard.update.banks"
+                    src_model="res.bank"
+                    view_type="form" view_mode="form"/>
 
         <menuitem sequence="1" action="action_wizard_update_banks"
                   id="menu_update_banks" parent="account.account_account_menu"/>
