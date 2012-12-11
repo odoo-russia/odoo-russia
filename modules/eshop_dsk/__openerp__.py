@@ -34,6 +34,7 @@
         "product_flags_dsk",
         "product_images_dsk",
         "product_manufacturer_dsk",
+        "product_name_dsk",
         "product_relations_dsk",
         "product_size_dsk",
         "product_supplier_dsk",

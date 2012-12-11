@@ -24,6 +24,7 @@
     "category" : "Generic Modules",
     "depends" : [
         "base",
+        "account",
         "partner_base_dsk"
     ],
     "init_xml" : [],
