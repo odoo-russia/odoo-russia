@@ -18,7 +18,7 @@
 #
 ##############################################################################
 {
-    "name" : "Partner additions",
+    "name" : "Product additions",
     "version" : "1.0",
     "author" : "Denis Karataev",
     "category" : "Generic Modules",
@@ -29,7 +29,7 @@
         "product_1c_dsk",
         "product_attribute_dsk",
         "product_category_flags_dsk",
-        "product_competitor_dsk",
+        "product_competitor_price_dsk",
         "product_description_dsk",
         "product_ean13_dsk",
         "product_flags_dsk",
