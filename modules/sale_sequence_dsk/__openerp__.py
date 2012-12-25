@@ -27,7 +27,8 @@
         "sale_base_dsk",
     ],
     "data": [
-        "sale_sequence_dsk.xml",
+        "sale_sequence_dsk_data.xml",
+        "sale_sequence_dsk_view.xml",
     ],
     "description": "",
     "active": False,
