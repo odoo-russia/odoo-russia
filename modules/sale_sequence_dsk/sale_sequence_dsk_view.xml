@@ -8,7 +8,7 @@
             <field name="inherit_id" ref="sale.view_order_form" />
             <field name="arch" type="xml">
                 <field name="date_order" position="after">
-                    <field name="is_pay_cash"/>
+                    <field name="is_cash_payment"/>
                 </field>
             </field>
         </record>
