@@ -35,18 +35,26 @@ class sale_order(osv.osv):
 
     def create(self, cr, uid, vals, context=None):
         if vals.get('name','/')=='/':
-            print 'yes'
             if vals.get('is_pay_cash'):
                 sale_order_sequence_code = 'sale.order.cash'
-                print 'yes1'
             else:
                 sale_order_sequence_code = 'sale.order.bank'
-                print 'yes2'
             vals['name'] = self.pool.get('ir.sequence').get(cr, uid, sale_order_sequence_code) or '/'
         order =  super(sale_order, self).create(cr, uid, vals, context=context)
         if order:
             self.create_send_note(cr, uid, [order], context=context)
         return order
+
+    def write(self, cr, uid, ids, vals, context=None):
+        if context is None:
+            context = {}
+        if 'is_pay_cash' in vals and len(ids) == 1:
+            if vals['is_pay_cash']:
+                sale_order_sequence_code = 'sale.order.cash'
+            else:
+                sale_order_sequence_code = 'sale.order.bank'
+            vals['name'] = self.pool.get('ir.sequence').get(cr, uid, sale_order_sequence_code)
+        return super(sale_order, self).write(cr, uid, ids, vals, context=context)
 
     _name = 'sale.order'
     _inherit = 'sale.order'
