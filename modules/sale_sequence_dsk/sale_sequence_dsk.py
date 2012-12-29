@@ -52,10 +52,8 @@ class sale_order(osv.osv):
             else:
                 sale_order_sequence_code = 'sale.order.bank'
             vals['name'] = self.pool.get('ir.sequence').get(cr, uid, sale_order_sequence_code) or '/'
-        order =  super(sale_order, self).create(cr, uid, vals, context=context)
-        if order:
-            self.create_send_note(cr, uid, [order], context=context)
-        return order
+        return super(sale_order, self).create(cr, uid, vals, context=context)
+
 
     def write(self, cr, uid, ids, vals, context=None):
         if context is None:
