@@ -13,6 +13,7 @@
                     <field name="contract_expiration_date"/>
                     <field name="credit_limit"/>
                     <field name="payment_deferment"/>
+                    <field name="prepayment_percentage"/>
                 </field>
             </field>
         </record>
