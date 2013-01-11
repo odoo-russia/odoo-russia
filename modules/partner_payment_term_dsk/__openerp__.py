@@ -26,6 +26,7 @@
         "base",
         "partner_base_dsk",
         "partner_l10n_dsk",
+        "sale_base_dsk",
     ],
     "init_xml" : [],
     "demo_xml" : [],

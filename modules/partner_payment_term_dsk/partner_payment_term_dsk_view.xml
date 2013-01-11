@@ -9,11 +9,25 @@
             <field name="inherit_id" ref="partner_l10n_dsk.view_partner_form_l10n_dsk"/>
             <field name="arch" type="xml">
                 <field name="credit_limit" position="replace"/>
+                <field name="property_payment_term" position="replace">
+                    <field name="property_payment_term" widget="selection" readonly="1"/>
+                </field>
                 <field name="contract_date" position="after">
                     <field name="contract_expiration_date"/>
                     <field name="credit_limit"/>
                     <field name="payment_deferment"/>
                     <field name="prepayment_percentage"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_order_form_payment_term_dsk" model="ir.ui.view">
+            <field name="name">sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <field name="payment_term" position="replace">
+                    <field name="payment_term" widget="selection" readonly="1"/>
                 </field>
             </field>
         </record>
