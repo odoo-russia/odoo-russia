@@ -1,0 +1,37 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* partner_payment_term_dsk
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20130108-001542\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-01-11 13:28+0000\n"
+"PO-Revision-Date: 2013-01-11 13:28+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_payment_term_dsk
+#: field:res.partner,prepayment_percentage:0
+msgid "Prepayment percentage"
+msgstr "Процент предоплаты"
+
+#. module: partner_payment_term_dsk
+#: field:res.partner,payment_deferment:0
+msgid "Deferment of payment"
+msgstr "Отсрочка платежа"
+
+#. module: partner_payment_term_dsk
+#: field:res.partner,contract_expiration_date:0
+msgid "Contract expiration date"
+msgstr "Дата истечения договора"
+
+#. module: partner_payment_term_dsk
+#: model:ir.model,name:partner_payment_term_dsk.model_res_partner
+msgid "Partner"
+msgstr "Партнер"
+
