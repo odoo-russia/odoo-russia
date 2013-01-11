@@ -22,11 +22,16 @@
 from osv import fields, osv
 
 class res_partner(osv.osv):
+    def write(self, cr, uid, ids, vals, context=None):
+        if context is None:
+            context = {}
+        for partner in self.browse(cr, uid, ids, context=context):
+            #TODO: create or update payment terms
+
     _name = 'res.partner'
     _inherit = 'res.partner'
     _columns = {
         'contract_expiration_date': fields.date('Contract expiration date'),
-        'payment_credit': fields.float('Amount of credit', digits=(16,2)),
         'payment_deferment': fields.integer('Deferment of payment'),
     }
 res_partner()

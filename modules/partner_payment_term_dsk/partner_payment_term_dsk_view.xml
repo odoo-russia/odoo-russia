@@ -8,9 +8,10 @@
             <field name="type">form</field>
             <field name="inherit_id" ref="partner_l10n_dsk.view_partner_form_l10n_dsk"/>
             <field name="arch" type="xml">
+                <field name="credit_limit" position="replace"/>
                 <field name="contract_date" position="after">
                     <field name="contract_expiration_date"/>
-                    <field name="payment_credit"/>
+                    <field name="credit_limit"/>
                     <field name="payment_deferment"/>
                 </field>
             </field>
