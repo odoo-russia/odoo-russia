@@ -75,7 +75,8 @@
                         <field name="location_bnkdel"/>
                     </group>
                     <footer>
-                        <button name="update_banks" string="Update" type="object" class="oe_highlight"/>
+                        <button name="update_banks" string="Update" type="object" class="oe_highlight"
+                                context="{'location_bnkseek': location_bnkseek, 'location_bnkdel': location_bnkdel}"/>
                         or
                         <button special="cancel" string="Cancel" type="object" class="oe_link"/>
                     </footer>
