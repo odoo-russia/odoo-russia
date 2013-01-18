@@ -49,6 +49,9 @@ class res_partner(osv.osv):
         'okpo': fields.char('OKPO', size=14),
         'contract_num': fields.char('Contract number', size=64),
         'contract_date': fields.date('Contract date'),
+        'contract_date_end': fields.date('Contract end date'),
+        'contract_scan': fields.binary('Contract scan'),
+        'contract_valid': fields.boolean('Contract is validated'),
     }
 res_partner()
 
