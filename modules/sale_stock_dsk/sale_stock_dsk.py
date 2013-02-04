@@ -20,6 +20,7 @@
 ##############################################################################
 
 from osv import fields, osv, orm
+from tools.translate import _
 
 class product_product(osv.osv):
     def name_get(self, cr, uid, ids, context=None):
@@ -36,7 +37,7 @@ class product_product(osv.osv):
         result = self.browse(cr, uid, ids, context=context)
         res = []
         for rs in result:
-            res.append((rs.id, '%s (%s on hand, %s forecasted)' % (rs.name, rs.qty_available, rs.virtual_available)))
+            res.append((rs.id, _('%s (%s on hand, %s forecasted)' % (rs.name, rs.qty_available, rs.virtual_available))))
         return res
 
     _name = 'product.product'
