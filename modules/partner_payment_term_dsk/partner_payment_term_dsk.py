@@ -62,8 +62,10 @@ class res_partner(osv.osv):
     def create(self, cr, uid, vals, context=None):
         if context is None:
             context = {}
+        payment_deferment = vals.get('payment_deferment', False)
+        prepayment_percentage = vals.get('prepayment_percentage', False)
         vals['property_payment_term'] = self.get_payment_term_id(cr, uid, vals, vals['payment_deferment'],
-                                                                 vals['prepayment_percentage'], context=context)
+                                                                     vals['prepayment_percentage'], context=context)
         return super(res_partner, self).create(cr, uid, vals, context=context)
 
     def write(self, cr, uid, ids, vals, context=None):
