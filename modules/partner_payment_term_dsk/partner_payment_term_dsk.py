@@ -64,25 +64,28 @@ class res_partner(osv.osv):
             context = {}
         payment_deferment = vals.get('payment_deferment', False)
         prepayment_percentage = vals.get('prepayment_percentage', False)
-        vals['property_payment_term'] = self.get_payment_term_id(cr, uid, vals, vals['payment_deferment'],
-                                                                     vals['prepayment_percentage'], context=context)
+        vals['property_payment_term'] = self.get_payment_term_id(cr, uid, vals, payment_deferment,
+                                                                     prepayment_percentage, context=context)
         return super(res_partner, self).create(cr, uid, vals, context=context)
 
     def write(self, cr, uid, ids, vals, context=None):
         if context is None:
             context = {}
         res_common = True
+        if isinstance(ids, (int, long)):
+            ids = [ids]
         for partner in self.browse(cr, uid, ids, context):
             payment_deferment = vals.get('payment_deferment')
             prepayment_percentage = vals.get('prepayment_percentage')
-            if payment_deferment is None:
-                payment_deferment = self.browse(cr, uid, partner.id, context).payment_deferment
-            if prepayment_percentage is None:
-                prepayment_percentage = self.browse(cr, uid, partner.id, context).prepayment_percentage
-            vals['property_payment_term'] = self.get_payment_term_id(cr, uid, vals, payment_deferment,
-                                                                     prepayment_percentage, context=context)
-            res = super(res_partner, self).write(cr, uid, partner.id, vals, context=context)
-            res_common = res_common and res
+            if payment_deferment or prepayment_percentage:
+                if payment_deferment is None:
+                    payment_deferment = self.browse(cr, uid, partner.id, context).payment_deferment
+                if prepayment_percentage is None:
+                    prepayment_percentage = self.browse(cr, uid, partner.id, context).prepayment_percentage
+                vals['property_payment_term'] = self.get_payment_term_id(cr, uid, vals, payment_deferment,
+                                                                         prepayment_percentage, context=context)
+                res = super(res_partner, self).write(cr, uid, partner.id, vals, context=context)
+                res_common = res_common and res
         return res_common
 
 
