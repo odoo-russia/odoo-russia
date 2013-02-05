@@ -1,27 +1,6 @@
 <?xml version="1.0" ?>
 <openerp>
     <data>
-        <record id="product_form_view_with_description_dsk" model="ir.ui.view">
-            <field name="name">product.normal.form</field>
-            <field name="model">product.product</field>
-            <field name="type">form</field>
-            <field name="inherit_id" ref="product.product_normal_form_view" />
-            <field name="arch" type="xml">
-                <field name="description" position="replace">
-                </field>
-                <page string="Information" position="after">
-                    <page string="Descriptions">
-                        <group>
-                            <field name="description_short" placeholder="describe the product in one string..." readonly="1"/>
-                        </group>
-                        <group>
-                            <field name="description" placeholder="describe the product characteristics..." readonly="1"/>
-                        </group>
-                    </page>
-                </page>
-            </field>
-        </record>
-
         <record id="product_form_view_eshop_dsk_description" model="ir.ui.view">
             <field name="name">product.normal.form</field>
             <field name="model">product.product</field>
