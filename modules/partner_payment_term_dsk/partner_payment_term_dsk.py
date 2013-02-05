@@ -84,8 +84,8 @@ class res_partner(osv.osv):
                     prepayment_percentage = self.browse(cr, uid, partner.id, context).prepayment_percentage
                 vals['property_payment_term'] = self.get_payment_term_id(cr, uid, vals, payment_deferment,
                                                                          prepayment_percentage, context=context)
-                res = super(res_partner, self).write(cr, uid, partner.id, vals, context=context)
-                res_common = res_common and res
+            res = super(res_partner, self).write(cr, uid, partner.id, vals, context=context)
+            res_common = res_common and res
         return res_common
 
 
