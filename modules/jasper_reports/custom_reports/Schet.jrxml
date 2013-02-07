@@ -2,12 +2,18 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="nk_ex60_rus" pageWidth="595" pageHeight="841" columnWidth="456" leftMargin="51" rightMargin="88" topMargin="42" bottomMargin="28">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
-	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.zoom" value="2.357947691000002"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="89"/>
-	<import value="net.sf.jasperreports.engine.*"/>
-	<import value="java.util.*"/>
-	<import value="net.sf.jasperreports.engine.data.*"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="xPath">
+		<![CDATA[/data/record]]>
+	</queryString>
+	<field name="inn" class="java.lang.String">
+		<fieldDescription><![CDATA[inn]]></fieldDescription>
+	</field>
+	<field name="kpp" class="java.lang.String">
+		<fieldDescription><![CDATA[kpp]]></fieldDescription>
+	</field>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -107,7 +113,7 @@
 				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arialbd.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA['ИНН ' + $F{inn}]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="false">
 				<reportElement key="textField-27" mode="Transparent" x="142" y="65" width="117" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -120,7 +126,7 @@
 				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arialbd.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA['КПП ' + $F{kpp}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement key="staticText-65" mode="Transparent" x="0" y="117" width="259" height="13" forecolor="#000000" backcolor="#FFFFFF"/>

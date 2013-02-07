@@ -16,7 +16,14 @@ class create_data_template(osv.osv_memory):
                 'data' : base64.encodestring( xml ), 
                 'filename': 'template.xml'
             })
-        return True
+        return {
+            'view_type': 'form,tree',
+            'view_mode': 'form',
+            'res_model': 'jasper.create.data.template',
+            'res_id': ids[0],
+            'targer': 'new',
+            'type': 'ir.actions.act_window',
+            }
 
     _columns = {
         'model': fields.many2one('ir.model', 'Model', required=True),
