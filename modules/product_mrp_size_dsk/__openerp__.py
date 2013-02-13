@@ -27,7 +27,10 @@
     "init_xml" : [],
     "demo_xml" : [],
     "description": "A module that add sizes as width and height for materials and details",
-    "update_xml" : ["product_mrp_size_dsk_view.xml"],
+    "update_xml" : [
+        "security/product_mrp_size_dsk_security.xml",
+        "product_mrp_size_dsk_view.xml"
+    ],
     "active": False,
     "installable": True,
 }

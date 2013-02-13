@@ -21,12 +21,35 @@
 from osv import fields, osv
 
 class product_product(osv.osv):
+    def create(self, cr, uid, vals, context=None):
+        if context is None:
+            context = {}
+        mrp_width = vals.get('mrp_width', 0)
+        mrp_height = vals.get('mrp_height', 0)
+        if mrp_height > mrp_width:
+            mrp_width, mrp_height = mrp_height, mrp_width
+            vals['mrp_width'] = mrp_width
+            vals['mrp_height'] = mrp_height
+        return super(product_product, self).create(cr, uid, vals, context=context)
+
+    def write(self, cr, uid, ids, vals, context=None):
+        if context is None:
+            context = {}
+        mrp_width = vals.get('mrp_width', 0)
+        mrp_height = vals.get('mrp_height', 0)
+        if mrp_height > mrp_width:
+            mrp_width, mrp_height = mrp_height, mrp_width
+            vals['mrp_width'] = mrp_width
+            vals['mrp_height'] = mrp_height
+        return super(product_product, self).write(cr, uid, ids, vals, context=context)
+
+
     _name = 'product.product'
     _inherit = 'product.product'
     _columns = {
         'mrp_width': fields.integer('Width, mm', size=5, help="Width in mm"),
         'mrp_height': fields.integer('Height, mm', size=5, help="Height in mm"),
-        'mrp_has_pattern': fields.boolean('Has a pattern (only for materials)')
+        'mrp_has_pattern': fields.boolean('Has a pattern (only for materials)'),
         'mrp_across_pattern': fields.boolean('Across the pattern (only for details)'),
 
     }

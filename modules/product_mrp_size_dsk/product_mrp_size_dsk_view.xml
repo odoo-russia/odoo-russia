@@ -9,13 +9,14 @@
             <field name="inherit_id" ref="product.product_normal_form_view" />
             <field name="arch" type="xml">
                 <group name="Weights" position="after">
-                    <group name="Sizes of material" groups="product_mrp_size_dsk.group_product_mrp_sizes">
+                    <group name="Sizes of material" groups="product_mrp_size_dsk.group_product_mrp_sizes"
+                           string="Sizes of material">
                         <field name="mrp_width"/>
                         <field name="mrp_height"/>
                         <field name="mrp_has_pattern"/>
                         <field name="mrp_across_pattern"/>
                     </group>
-                </field>
+                </group>
             </field>
         </record>
 
