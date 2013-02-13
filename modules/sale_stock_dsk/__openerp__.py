@@ -25,6 +25,7 @@
     "depends" : [
         "sale",
         "sale_base_dsk",
+        "web_autocomplete_width_dsk",
     ],
     "data": [
       'sale_stock_dsk_view.xml'
