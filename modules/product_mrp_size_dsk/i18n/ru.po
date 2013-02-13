@@ -7,56 +7,56 @@ msgstr ""
 "Project-Id-Version: OpenERP Server 7.0-20130213-002107\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-02-13 18:32+0000\n"
-"PO-Revision-Date: 2013-02-13 18:32+0000\n"
-"Last-Translator: <>\n"
+"PO-Revision-Date: 2013-02-13 22:35+0300\n"
+"Last-Translator: Denis Karataev <dskarataev@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
 
 #. module: product_mrp_size_dsk
 #: field:product.product,mrp_height:0
 msgid "Height, mm"
-msgstr "Height, mm"
+msgstr "Ширина, мм"
 
 #. module: product_mrp_size_dsk
 #: model:ir.model,name:product_mrp_size_dsk.model_product_product
 msgid "Product"
-msgstr "ТМЦ"
+msgstr "Продукт"
 
 #. module: product_mrp_size_dsk
 #: field:product.product,mrp_across_pattern:0
 msgid "Across the pattern (only for details)"
-msgstr "Across the pattern (only for details)"
+msgstr "Поперек узора (только для деталей)"
 
 #. module: product_mrp_size_dsk
 #: model:res.groups,name:product_mrp_size_dsk.group_product_mrp_sizes
 msgid "Manager of product sizes for MRP"
-msgstr "Manager of product sizes for MRP"
+msgstr "Управляющий размерами продуктов для производства"
 
 #. module: product_mrp_size_dsk
 #: field:product.product,mrp_has_pattern:0
 msgid "Has a pattern (only for materials)"
-msgstr "Has a pattern (only for materials)"
+msgstr "Имеет узор (только для материалов)"
 
 #. module: product_mrp_size_dsk
 #: help:product.product,mrp_height:0
 msgid "Height in mm"
-msgstr "Height in mm"
+msgstr "Ширина в мм"
 
 #. module: product_mrp_size_dsk
 #: help:product.product,mrp_width:0
 msgid "Width in mm"
-msgstr "Width in mm"
+msgstr "Длина в мм"
 
 #. module: product_mrp_size_dsk
 #: field:product.product,mrp_width:0
 msgid "Width, mm"
-msgstr "Width, mm"
+msgstr "Длина, мм"
 
 #. module: product_mrp_size_dsk
 #: view:product.product:0
 msgid "Sizes of material"
-msgstr "Sizes of material"
+msgstr "Размеры материала"
 
