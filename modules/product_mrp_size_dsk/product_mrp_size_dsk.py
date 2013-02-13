@@ -35,8 +35,14 @@ class product_product(osv.osv):
     def write(self, cr, uid, ids, vals, context=None):
         if context is None:
             context = {}
-        mrp_width = vals.get('mrp_width', 0)
-        mrp_height = vals.get('mrp_height', 0)
+        if isinstance(ids, (list)):
+            if len(ids) > 1:
+                raise osv.except_osv(_('Error'), _('There is more than one product to update MRP sizes.\
+                                                    Please ask your programmer to fix the error!'))
+            else:
+                ids = ids[0]
+        mrp_width = vals.get('mrp_width', self.browse(cr, uid, ids, context).mrp_width)
+        mrp_height = vals.get('mrp_height', self.browse(cr, uid, ids, context).mrp_height)
         if mrp_height > mrp_width:
             mrp_width, mrp_height = mrp_height, mrp_width
             vals['mrp_width'] = mrp_width
