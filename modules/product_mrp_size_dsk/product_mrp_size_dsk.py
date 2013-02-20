@@ -57,7 +57,7 @@ class product_product(osv.osv):
         'mrp_height': fields.integer('Height, mm', size=5, help="Height in mm"),
         'mrp_has_pattern': fields.boolean('Has a pattern (only for materials)'),
         'mrp_across_pattern': fields.boolean('Across the pattern (only for details)'),
-
+        'mrp_category_id': fields.many2one(),
     }
 product_product()
 
