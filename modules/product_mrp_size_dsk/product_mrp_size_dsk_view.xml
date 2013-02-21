@@ -15,6 +15,7 @@
                         <field name="mrp_height"/>
                         <field name="mrp_has_pattern"/>
                         <field name="mrp_across_pattern"/>
+                        <field name="mrp_category_id"/>
                     </group>
                 </group>
             </field>
