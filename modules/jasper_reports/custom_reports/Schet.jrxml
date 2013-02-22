@@ -9,10 +9,19 @@
 		<![CDATA[/data/record]]>
 	</queryString>
 	<field name="inn" class="java.lang.String">
-		<fieldDescription><![CDATA[inn]]></fieldDescription>
+		<fieldDescription><![CDATA[Company-company_id/Partner-partner_id/INN-inn]]></fieldDescription>
 	</field>
 	<field name="kpp" class="java.lang.String">
-		<fieldDescription><![CDATA[kpp]]></fieldDescription>
+		<fieldDescription><![CDATA[Company-company_id/Partner-partner_id/KPP-kpp]]></fieldDescription>
+	</field>
+	<field name="name_official" class="java.lang.String">
+		<fieldDescription><![CDATA[Company-company_id/Partner-partner_id/Official_name-name_official]]></fieldDescription>
+	</field>
+	<field name="contact_address" class="java.lang.String">
+		<fieldDescription><![CDATA[Company-company_id/Partner-partner_id/Complete_Address-contact_address]]></fieldDescription>
+	</field>
+	<field name="phone" class="java.lang.String">
+		<fieldDescription><![CDATA[Company-company_id/Partner-partner_id/Phone-phone]]></fieldDescription>
 	</field>
 	<background>
 		<band splitType="Stretch"/>
@@ -232,7 +241,7 @@
 				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="Arial" size="10" isBold="true" isItalic="false" isUnderline="true" isStrikeThrough="false" pdfFontName="arialbd.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{name_official}]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="false">
 				<reportElement key="textField-31" mode="Transparent" x="0" y="26" width="420" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -242,7 +251,7 @@
 				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="Arial" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arialbd.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA['Адрес: ' + $F{contact_address} + ', тел: ' + $F{phone}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement key="staticText-43" mode="Transparent" x="0" y="78" width="259" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
