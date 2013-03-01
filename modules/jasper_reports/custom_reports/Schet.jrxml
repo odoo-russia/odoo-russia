@@ -343,7 +343,7 @@
 			</staticText>
 			<image onErrorType="Blank">
 				<reportElement x="349" y="0" width="107" height="35"/>
-				<imageExpression class="java.lang.String"><![CDATA[$F{image_small}]]></imageExpression>
+				<imageExpression class="java.lang.String"><![CDATA['sunlogo.jpg']]></imageExpression>
 			</image>
 		</band>
 	</pageHeader>
