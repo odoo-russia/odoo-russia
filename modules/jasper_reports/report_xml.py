@@ -37,7 +37,7 @@ from tools.translate import _
 import unicodedata
 from xml.dom.minidom import getDOMImplementation
 
-src_chars = """ '"()/*-+?Â¿!&$[]{}@#`'^:;<>=~%,\\""" 
+src_chars = """ '"()/*-+?¿!&$[]{}@#`'^:;<>=~%,\\""" 
 src_chars = unicode( src_chars, 'iso-8859-1' )
 dst_chars = """________________________________"""
 dst_chars = unicode( dst_chars, 'iso-8859-1' )
@@ -172,9 +172,9 @@ class report_xml(osv.osv):
         parentNode.appendChild( fieldNode )
         valueNode = document.createTextNode( '1' )
         fieldNode.appendChild( valueNode )
-        language = context.get('lang')
-        if language == 'en_US':
-            language = False
+        #language = context.get('lang')
+        # if language == 'en_US':
+        language = False
 
         # Then add all fields in alphabetical order
         model = pool.get(modelName)
@@ -184,24 +184,25 @@ class report_xml(osv.osv):
         # same name as it's parent
         fields = sorted( list( set( fields ) ) )
         for field in fields:
-            name = False
-            if language:
-                # Obtain field string for user's language.
-                name = pool.get('ir.translation')._get_source(cr, uid, modelName + ',' + field, 'field', language)
-            if not name:
-                # If there's not description in user's language, use default (english) one.
-                if field  in model._columns.keys():
-                    name = model._columns[field].string
-                else:
-                    name = model._inherit_fields[field][2].string
-
-            if name:
-                name = self.unaccent( name )
-            # After unaccent the name might result in an empty string
-            if name:
-                name = '%s-%s' % (self.unaccent( name ), field )
-            else:
-                name = field
+            # name = False
+            # if language:
+            #     # Obtain field string for user's language.
+            #     name = pool.get('ir.translation')._get_source(cr, uid, modelName + ',' + field, 'field', language)
+            # if not name:
+            #     # If there's not description in user's language, use default (english) one.
+            #     if field  in model._columns.keys():
+            #         name = model._columns[field].string
+            #     else:
+            #         name = model._inherit_fields[field][2].string
+            #
+            # if name:
+            #     name = self.unaccent( name )
+            # # After unaccent the name might result in an empty string
+            # if name:
+            #     name = '%s-%s' % (self.unaccent( name ), field )
+            # else:
+            #     name = field
+            name = field
             fieldNode = document.createElement( name )
 
             parentNode.appendChild( fieldNode )
