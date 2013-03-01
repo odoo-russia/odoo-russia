@@ -8,7 +8,9 @@
             <field name="inherit_id" ref="sale.view_order_form" />
             <field name="arch" type="xml">
                 <field name="date_order" position="after">
-                    <field name="is_cash_payment"/>
+                    <field name="payment_method"/>
+                    <field name="company_bank_id" attrs="{'invisible': [('payment_method', '!=', 'bank')],
+                                                          'required': [('payment_method', '=', 'bank')]}"/>
                 </field>
             </field>
         </record>

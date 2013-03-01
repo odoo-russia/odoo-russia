@@ -25,6 +25,10 @@ class sale_order(osv.osv):
     _name = 'sale.order'
     _inherit = 'sale.order'
     _columns = {
-        'is_cash_payment': fields.boolean('Cash Payment'),
+        'payment_method': fields.selection([('bank', 'Bank'), ('cash', 'Cash')], 'Payment method', required=True),
+        'company_bank_id': fields.many2one('res.partner.bank', 'Bank account', ondelete='restrict'),
+    }
+    _defaults = {
+        'payment_method': 'bank',
     }
 sale_order()
