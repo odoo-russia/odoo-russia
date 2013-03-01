@@ -4,7 +4,7 @@
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="2.357947691000002"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="480"/>
+	<property name="ireport.y" value="0"/>
 	<queryString language="xPath">
 		<![CDATA[/data/record]]>
 	</queryString>
@@ -49,6 +49,15 @@
 	</field>
 	<field name="product_uom_qty" class="java.lang.String">
 		<fieldDescription><![CDATA[order_line/product_uom_qty]]></fieldDescription>
+	</field>
+	<field name="amount_total" class="java.lang.String">
+		<fieldDescription><![CDATA[amount_total]]></fieldDescription>
+	</field>
+	<field name="amount_untaxed" class="java.lang.String">
+		<fieldDescription><![CDATA[amount_untaxed]]></fieldDescription>
+	</field>
+	<field name="image_small" class="java.lang.String">
+		<fieldDescription><![CDATA[company_id/partner_id/image_small]]></fieldDescription>
 	</field>
 	<background>
 		<band splitType="Stretch"/>
@@ -332,9 +341,9 @@
 				</textElement>
 				<text><![CDATA[]]></text>
 			</staticText>
-			<image>
+			<image onErrorType="Blank">
 				<reportElement x="349" y="0" width="107" height="35"/>
-				<imageExpression class="java.lang.String"><![CDATA["sunlogo.jpg"]]></imageExpression>
+				<imageExpression class="java.lang.String"><![CDATA[$F{image_small}]]></imageExpression>
 			</image>
 		</band>
 	</pageHeader>
@@ -554,7 +563,6 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
 					<font fontName="Arial" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement key="staticText-58" mode="Transparent" x="262" y="13" width="118" height="13" isPrintWhenDetailOverflows="true" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -586,7 +594,7 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="Arial" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[' ' + $F{amount_total}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement key="staticText-4" mode="Transparent" x="0" y="158" width="93" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -621,9 +629,9 @@
 					<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arialbd.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[' ' + $F{amount_untaxed}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement key="staticText-58" mode="Transparent" x="262" y="0" width="118" height="13" isPrintWhenDetailOverflows="true" forecolor="#000000" backcolor="#FFFFFF"/>
