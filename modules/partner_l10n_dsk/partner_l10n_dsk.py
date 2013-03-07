@@ -44,6 +44,8 @@ class res_partner(osv.osv):
     _inherit = 'res.partner'
     _columns = {
         'name_official': fields.char('Official name', size=200),
+        'ceo': fields.char('CEO', size=200),
+        'accountant': fields.char('Accountant', size=200),
         'inn': fields.char('INN', size=12),
         'kpp': fields.char('KPP', size=9),
         'okpo': fields.char('OKPO', size=14),

@@ -16,6 +16,8 @@
                             <field name="inn"/>
                             <field name="kpp"/>
                             <field name="okpo"/>
+                            <field name="ceo"/>
+                            <field name="accountant"/>
                         </group>
                         <group>
                             <field name="contract_num"/>

@@ -4,7 +4,7 @@
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="2.357947691000002"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="416"/>
+	<property name="ireport.y" value="704"/>
 	<queryString language="xPath">
 		<![CDATA[/data/record]]>
 	</queryString>
@@ -70,6 +70,12 @@
 	</field>
 	<field name="bank_acc_corr" class="java.lang.String">
 		<fieldDescription><![CDATA[company_bank_id/bank_acc_corr]]></fieldDescription>
+	</field>
+	<field name="accountant" class="java.lang.String">
+		<fieldDescription><![CDATA[company_id/partner_id/accountant]]></fieldDescription>
+	</field>
+	<field name="ceo" class="java.lang.String">
+		<fieldDescription><![CDATA[company_id/partner_id/ceo]]></fieldDescription>
 	</field>
 	<background>
 		<band splitType="Stretch"/>
@@ -262,7 +268,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="Arial" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arialbd.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA['СЧЕТ № ' + $F{name} + ' от ' + (new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse($F{create_date})).format('dd.MM.yyyy')]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA['СЧЕТ № ' + $F{name}.substring(2) + ' от ' + (new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse($F{create_date})).format('dd.MM.yyyy')]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="false">
 				<reportElement key="textField-31" mode="Transparent" x="86" y="194" width="370" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -470,7 +476,7 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{price_unit}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[new DecimalFormat("###0.00").format($F{price_unit}.toDouble())]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="###0.000" isBlankWhenNull="true">
 				<reportElement key="textField-20" stretchType="RelativeToTallestObject" mode="Transparent" x="259" y="0" width="43" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -483,7 +489,7 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[(new DecimalFormat("###0.000").format($F{product_uom_qty}.doubleValue()).toString())]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[new DecimalFormat("###0.###").format($F{product_uom_qty}.toDouble())]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
 				<reportElement key="textField-23" stretchType="RelativeToTallestObject" x="0" y="0" width="20" height="13"/>
@@ -522,7 +528,7 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{price_subtotal}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[new DecimalFormat("###0.00").format($F{price_subtotal}.toDouble())]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
@@ -546,7 +552,7 @@
 				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ceo}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement key="textField-5" x="0" y="80" width="456" height="13"/>
@@ -565,7 +571,7 @@
 				</textElement>
 				<text><![CDATA[]]></text>
 			</staticText>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement key="staticText-58" mode="Transparent" x="380" y="13" width="76" height="13" isPrintWhenDetailOverflows="true" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<topPen lineWidth="0.75" lineStyle="Solid"/>
@@ -577,7 +583,7 @@
 					<font fontName="Arial" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement key="staticText-58" mode="Transparent" x="262" y="13" width="118" height="13" isPrintWhenDetailOverflows="true" forecolor="#000000" backcolor="#FFFFFF"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
 					<font fontName="Arial" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
@@ -605,9 +611,9 @@
 					<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arialbd.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{amount_total}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[new DecimalFormat("###0.00").format($F{amount_total}.toDouble())]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement key="staticText-4" mode="Transparent" x="0" y="158" width="93" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -631,7 +637,7 @@
 				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{accountant}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 				<reportElement key="textField-7" mode="Transparent" x="380" y="0" width="76" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -644,7 +650,7 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="Arial" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arialbd.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{amount_untaxed}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[new DecimalFormat("###0.00").format($F{amount_untaxed}.toDouble())]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement key="staticText-58" mode="Transparent" x="262" y="0" width="118" height="13" isPrintWhenDetailOverflows="true" forecolor="#000000" backcolor="#FFFFFF"/>
