@@ -2,46 +2,36 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="NK_EX12p" printOrder="Horizontal" pageWidth="841" pageHeight="595" orientation="Landscape" whenNoDataType="NoDataSection" columnWidth="841" leftMargin="0" rightMargin="0" topMargin="3" bottomMargin="0" isFloatColumnFooter="true" whenResourceMissingType="Empty">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
-	<property name="ireport.zoom" value="4.0"/>
-	<property name="ireport.x" value="628"/>
-	<property name="ireport.y" value="1780"/>
+	<property name="ireport.zoom" value="2.0526324729228267"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="47"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
-	<field name="f_sumbnds" class="java.lang.Double">
-		<fieldDescription><![CDATA[RoCena*RKol]]></fieldDescription>
+	<queryString language="xPath">
+		<![CDATA[/data/record]]>
+	</queryString>
+	<field name="name_official" class="java.lang.String">
+		<fieldDescription><![CDATA[company_id/partner_id/name_official]]></fieldDescription>
 	</field>
-	<field name="f_sumnds" class="java.lang.Double">
-		<fieldDescription><![CDATA[XNMK(RTNMK, "_NDS") == 0 ? 0 : ROCENA*RKOL*(1+XNMK(RTNMK, "_NDS")/100)]]></fieldDescription>
+	<field name="zip" class="java.lang.String">
+		<fieldDescription><![CDATA[company_id/partner_id/zip]]></fieldDescription>
 	</field>
-	<field name="f_sumkol" class="java.lang.Double">
-		<fieldDescription><![CDATA[RKOL]]></fieldDescription>
+	<field name="inn" class="java.lang.String">
+		<fieldDescription><![CDATA[company_id/partner_id/inn]]></fieldDescription>
 	</field>
-	<field name="f_sumsnds" class="java.lang.Double">
-		<fieldDescription><![CDATA[RoCena*RKol*(1+XNMK(RTNMK, "_NDS")/100)]]></fieldDescription>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[company_id/partner_id/state_id/name]]></fieldDescription>
 	</field>
-	<field name="ROWNUM" class="java.lang.Integer"/>
-	<field name="AAA" class="java.lang.String">
-		<fieldDescription><![CDATA[SUMR("1")]]></fieldDescription>
+	<field name="city" class="java.lang.String">
+		<fieldDescription><![CDATA[company_id/partner_id/city]]></fieldDescription>
 	</field>
-	<variable name="v_sumkol" class="java.lang.Double" resetType="Page" calculation="Sum">
-		<variableExpression><![CDATA[$F{f_sumkol}]]></variableExpression>
-	</variable>
-	<variable name="v_sumbnds" class="java.lang.Double" resetType="Page" calculation="Sum">
-		<variableExpression><![CDATA[$F{f_sumbnds}]]></variableExpression>
-	</variable>
-	<variable name="v_sumnds" class="java.lang.Double" resetType="Page" calculation="Sum">
-		<variableExpression><![CDATA[$F{f_sumnds}]]></variableExpression>
-	</variable>
-	<variable name="v_totalkol" class="java.lang.Double" calculation="Sum">
-		<variableExpression><![CDATA[$F{f_sumkol}]]></variableExpression>
-	</variable>
-	<variable name="v_sumsnds" class="java.lang.Double" resetType="Page" calculation="Sum">
-		<variableExpression><![CDATA[$F{f_sumsnds}]]></variableExpression>
-	</variable>
-	<variable name="hui" class="java.lang.String">
-		<variableExpression><![CDATA[$V{REPORT_COUNT}.toString()]]></variableExpression>
-	</variable>
+	<field name="street" class="java.lang.String">
+		<fieldDescription><![CDATA[company_id/partner_id/street]]></fieldDescription>
+	</field>
+	<field name="okpo" class="java.lang.String">
+		<fieldDescription><![CDATA[company_id/partner_id/okpo]]></fieldDescription>
+	</field>
 	<variable name="ROWNUM" class="java.lang.Integer" calculation="Sum">
 		<variableExpression><![CDATA[1]]></variableExpression>
 	</variable>
@@ -56,22 +46,21 @@
 					<bottomPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[tforg('TXT',HORG0)+', '+tforg('ZIP',HORG0)+', '+tforg('LOCATE',HORG0)+', '+tforg('ADDR',HORG0)+', '+tforg('BLD',HORG0)+', '+tforg('APART',HORG0)+', тел.:('+tforg('CALLCOD',HORG0)+') '+tforg('PHONE',HORG0)+', p/c '+tforg('RSC',HORG0)+' в '
-+tforg('BNK',HORG0)+', БИК '+tforg('MFO',HORG0)+', корр/с '+gt_rassc('COR_SC')]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{name_official} + ', ИНН ' + $F{inn} + ', ' + $F{zip} + ', ' + $F{name} + ', ' + $F{city} + ', ' + $F{street}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement key="staticText-10" mode="Transparent" x="159" y="225" width="142" height="14" forecolor="#000000" backcolor="#FFFFFF"/>
 				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[ТОВАРНАЯ НАКЛАДНАЯ   ]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-39" x="51" y="177" width="69" height="26"/>
 				<textElement textAlignment="Right" verticalAlignment="Bottom">
-					<font fontName="Arial" size="8" isBold="false" pdfFontName="Helvetica"/>
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf"/>
 				</textElement>
 				<text><![CDATA[Основание  ]]></text>
 			</staticText>
@@ -86,21 +75,21 @@
 			<staticText>
 				<reportElement key="staticText-41" mode="Transparent" x="51" y="93" width="69" height="26" forecolor="#000000" backcolor="#FFFFFF"/>
 				<textElement textAlignment="Right" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[Грузополучатель  ]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-42" mode="Transparent" x="51" y="148" width="69" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
 				<textElement textAlignment="Right" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[Плательщик  ]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-43" mode="Transparent" x="51" y="119" width="69" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
 				<textElement textAlignment="Right" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[Поставщик  ]]></text>
 			</staticText>
@@ -404,9 +393,8 @@
 					<rightPen lineWidth="1.75"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+					<font fontName="Arial" size="9" isBold="true" pdfFontName="arial.ttf"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[document["NN"] = 0,HNOM]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
 				<reportElement key="textField-6" x="375" y="225" width="70" height="14"/>
@@ -418,9 +406,8 @@
 					<rightPen lineWidth="1.75"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+					<font fontName="Arial" size="9" isBold="true" pdfFontName="arial.ttf"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[dtoc(HDAT)]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement key="staticText-135" x="51" y="79" width="498" height="14"/>
@@ -469,9 +456,9 @@
 					<rightPen lineWidth="1.75"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Bottom">
-					<font fontName="Arial" size="8" isBold="false" pdfFontName="Helvetica-Bold"/>
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[OOKPO ? OOKPO : ""]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{okpo}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement key="staticText-166" x="51" y="203" width="551" height="7"/>
@@ -486,7 +473,7 @@
 					<bottomPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA['']]></textFieldExpression>
 			</textField>
@@ -526,9 +513,8 @@
 					<rightPen lineWidth="1.75"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="8" isBold="false" pdfFontName="Helvetica-Bold"/>
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[OOKPO ? OOKPO : ""]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 				<reportElement key="textField" mode="Transparent" x="120" y="119" width="482" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -536,10 +522,8 @@
 					<bottomPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[tforg('TXT',HORG0)+', '+tforg('ZIP',HORG0)+', '+tforg('LOCATE',HORG0)+', '+tforg('ADDR',HORG0)+', '+tforg('BLD',HORG0)+', '+tforg('APART',HORG0)+', тел.:('+tforg('CALLCOD',HORG0)+') '+tforg('PHONE',HORG0)+', p/c '+tforg('RSC',HORG0)+' в '
-+tforg('BNK',HORG0)+', БИК '+tforg('MFO',HORG0)+', корр/с '+gt_rassc('COR_SC')]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 				<reportElement key="textField" mode="Transparent" x="120" y="93" width="482" height="26" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -547,10 +531,8 @@
 					<bottomPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[tforg('TXT',HORG)+', '+tforg('ZIP',HORG)+', '+tforg('LOCATE',HORG)+', '+tforg('ADDR',HORG)+', '+tforg('BLD',HORG)+', '+tforg('APART',HORG)+', тел.:('+tforg('CALLCOD',HORG)+') '+tforg('PHONE',HORG)+', p/c '+tforg('RSC',HORG)+' в '
-+tforg('BNK',HORG)+', БИК '+tforg('MFO',HORG)+', корр/с '+gt_rassc('COR_SC')]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 				<reportElement key="textField" mode="Transparent" x="120" y="148" width="482" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -558,10 +540,8 @@
 					<bottomPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[tforg('TXT',HORG)+', '+tforg('ZIP',HORG)+', '+tforg('LOCATE',HORG)+', '+tforg('ADDR',HORG)+', '+tforg('BLD',HORG)+', '+tforg('APART',HORG)+', тел.:('+tforg('CALLCOD',HORG)+') '+tforg('PHONE',HORG)+', p/c '+tforg('RSC',HORG)+' в '
-+tforg('BNK',HORG)+', БИК '+tforg('MFO',HORG)+', корр/с '+gt_rassc('COR_SC')]]></textFieldExpression>
 			</textField>
 		</band>
 	</title>
@@ -857,7 +837,7 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[1]]></text>
 			</staticText>
@@ -871,7 +851,7 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[2]]></text>
 			</staticText>
@@ -885,7 +865,7 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[3]]></text>
 			</staticText>
@@ -899,7 +879,7 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[4]]></text>
 			</staticText>
@@ -913,7 +893,7 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[5]]></text>
 			</staticText>
@@ -927,7 +907,7 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[6]]></text>
 			</staticText>
@@ -941,7 +921,7 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[7]]></text>
 			</staticText>
@@ -955,7 +935,7 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[8]]></text>
 			</staticText>
@@ -969,7 +949,7 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[9]]></text>
 			</staticText>
@@ -983,7 +963,7 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[10]]></text>
 			</staticText>
@@ -997,7 +977,7 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[11]]></text>
 			</staticText>
@@ -1011,7 +991,7 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[12]]></text>
 			</staticText>
@@ -1025,7 +1005,7 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[13]]></text>
 			</staticText>
@@ -1039,7 +1019,7 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[14]]></text>
 			</staticText>
@@ -1053,7 +1033,7 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[15]]></text>
 			</staticText>
@@ -1074,9 +1054,8 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[' '+tfnmk('TXT+',Rtnmk)]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement key="textField" stretchType="RelativeToTallestObject" mode="Transparent" x="217" y="0" width="41" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -1088,9 +1067,8 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[tcl("NMK","EDI",RTnmk)]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 				<reportElement key="textField" stretchType="RelativeToTallestObject" mode="Transparent" x="445" y="0" width="43" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -1102,9 +1080,8 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[format('#,000',Rkol)+' ']]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement key="textField" stretchType="RelativeToTallestObject" mode="Transparent" x="627" y="0" width="48" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -1116,9 +1093,8 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[format('#,00',RoCena*RKol*(TFNMK("NDS",RTNMK)/100))+' ']]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 				<reportElement key="textField" stretchType="RelativeToTallestObject" mode="Transparent" x="675" y="0" width="65" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -1130,9 +1106,8 @@
 					<rightPen lineWidth="1.75"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[format('#,00',RoCena*RKol*(1+TFNMK("NDS",RTNMK)/100))+' ']]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 				<reportElement key="textField-7" stretchType="RelativeToTallestObject" mode="Transparent" x="488" y="0" width="45" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -1144,9 +1119,8 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[format('#,00',RoCena)+' ']]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 				<reportElement key="textField-8" stretchType="RelativeToTallestObject" mode="Transparent" x="533" y="0" width="57" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -1158,9 +1132,8 @@
 					<rightPen lineWidth="1.75"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[format('#,00',RoCena*RKol)+' ']]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 				<reportElement key="textField-9" stretchType="RelativeToTallestObject" mode="Transparent" x="590" y="0" width="37" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -1172,9 +1145,8 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[format('#{0: }',TFNMK("NDS",RTNMK))]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement key="textField-10" stretchType="RelativeToTallestObject" mode="Transparent" x="187" y="0" width="30" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -1186,9 +1158,8 @@
 					<rightPen lineWidth="1.75"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement key="textField-11" stretchType="RelativeToTallestObject" mode="Transparent" x="258" y="0" width="43" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -1200,9 +1171,8 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[796]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement key="textField-12" stretchType="RelativeToTallestObject" mode="Transparent" x="301" y="0" width="42" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -1214,7 +1184,7 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
 			</textField>
@@ -1230,7 +1200,6 @@
 				<textElement textAlignment="Right" verticalAlignment="Top">
 					<font fontName="Arial" size="8" isBold="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[++NN+' ']]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement key="textField-14" stretchType="RelativeToTallestObject" mode="Transparent" x="375" y="0" width="31" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -1242,7 +1211,7 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
 			</textField>
@@ -1256,7 +1225,7 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
 			</textField>
@@ -1270,7 +1239,7 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
 			</textField>
@@ -1280,7 +1249,7 @@
 		<band height="11" splitType="Prevent">
 			<textField pattern="###0.000" isBlankWhenNull="false">
 				<reportElement key="textField-16" mode="Transparent" x="445" y="0" width="41" height="11" isRemoveLineWhenBlank="true">
-					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue() < java.lang.Integer.valueOf($F{AAA}).intValue()]]></printWhenExpression>
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue()]]></printWhenExpression>
 				</reportElement>
 				<box>
 					<pen lineWidth="0.25"/>
@@ -1290,25 +1259,25 @@
 					<rightPen lineWidth="0.0"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Arial" size="8" isBold="false" pdfFontName="Helvetica-Bold"/>
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf"/>
 				</textElement>
-				<textFieldExpression class="java.lang.Double"><![CDATA[$V{v_sumkol}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.Double"><![CDATA[]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement key="staticText-99" x="258" y="0" width="117" height="11">
-					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue() < java.lang.Integer.valueOf($F{AAA}).intValue()]]></printWhenExpression>
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue()]]></printWhenExpression>
 				</reportElement>
 				<box>
 					<topPen lineWidth="1.75"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Arial" size="8" isBold="false" pdfFontName="Helvetica-Bold"/>
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf"/>
 				</textElement>
 				<text><![CDATA[Итого]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-102" positionType="FixRelativeToBottom" isPrintRepeatedValues="false" mode="Transparent" x="406" y="0" width="39" height="11" isPrintInFirstWholeBand="true" forecolor="#000000" backcolor="#FFFFFF">
-					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue() < java.lang.Integer.valueOf($F{AAA}).intValue()]]></printWhenExpression>
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue()]]></printWhenExpression>
 				</reportElement>
 				<box>
 					<pen lineWidth="0.25"/>
@@ -1318,13 +1287,13 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-103" mode="Transparent" x="488" y="0" width="45" height="11" forecolor="#000000" backcolor="#FFFFFF">
-					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue() < java.lang.Integer.valueOf($F{AAA}).intValue()]]></printWhenExpression>
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue()]]></printWhenExpression>
 				</reportElement>
 				<box>
 					<pen lineWidth="0.25"/>
@@ -1334,13 +1303,13 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[X]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-104" mode="Transparent" x="590" y="0" width="37" height="11" forecolor="#000000" backcolor="#FFFFFF">
-					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue() < java.lang.Integer.valueOf($F{AAA}).intValue()]]></printWhenExpression>
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue()]]></printWhenExpression>
 				</reportElement>
 				<box>
 					<pen lineWidth="0.25"/>
@@ -1350,13 +1319,13 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[X]]></text>
 			</staticText>
 			<textField pattern="##0.00" isBlankWhenNull="false">
 				<reportElement key="textField" x="533" y="0" width="55" height="11">
-					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue() < java.lang.Integer.valueOf($F{AAA}).intValue()]]></printWhenExpression>
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue()]]></printWhenExpression>
 				</reportElement>
 				<box>
 					<pen lineWidth="0.25"/>
@@ -1366,13 +1335,13 @@
 					<rightPen lineWidth="0.0"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Arial" size="8" isBold="false" pdfFontName="Helvetica-Bold"/>
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf"/>
 				</textElement>
-				<textFieldExpression class="java.lang.Double"><![CDATA[$V{v_sumbnds}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.Double"><![CDATA[]]></textFieldExpression>
 			</textField>
 			<textField pattern="##0.00" isBlankWhenNull="false">
 				<reportElement key="textField" x="627" y="0" width="46" height="11">
-					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue() < java.lang.Integer.valueOf($F{AAA}).intValue()]]></printWhenExpression>
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue()]]></printWhenExpression>
 				</reportElement>
 				<box>
 					<pen lineWidth="0.25"/>
@@ -1382,13 +1351,13 @@
 					<rightPen lineWidth="0.0"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Arial" size="8" isBold="false" pdfFontName="Helvetica-Bold"/>
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf"/>
 				</textElement>
-				<textFieldExpression class="java.lang.Double"><![CDATA[$V{v_sumnds}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.Double"><![CDATA[]]></textFieldExpression>
 			</textField>
 			<textField pattern="##0.00" isBlankWhenNull="false">
 				<reportElement key="textField" x="675" y="0" width="63" height="11">
-					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue() < java.lang.Integer.valueOf($F{AAA}).intValue()]]></printWhenExpression>
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue()]]></printWhenExpression>
 				</reportElement>
 				<box>
 					<pen lineWidth="0.25"/>
@@ -1398,25 +1367,25 @@
 					<rightPen lineWidth="0.0"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Arial" size="8" isBold="false" pdfFontName="Helvetica-Bold"/>
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf"/>
 				</textElement>
-				<textFieldExpression class="java.lang.Double"><![CDATA[$V{v_sumsnds}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.Double"><![CDATA[]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement key="staticText-127" mode="Transparent" x="187" y="0" width="30" height="11" forecolor="#000000" backcolor="#FFFFFF">
-					<printWhenExpression><![CDATA[java.lang.Boolean.valueOf($F{AAA})]]></printWhenExpression>
+					<printWhenExpression><![CDATA[]]></printWhenExpression>
 				</reportElement>
 				<box>
 					<topPen lineWidth="1.75"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-101" positionType="FixRelativeToBottom" isPrintRepeatedValues="false" mode="Transparent" x="375" y="0" width="31" height="11" isPrintInFirstWholeBand="true" forecolor="#000000" backcolor="#FFFFFF">
-					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue() < java.lang.Integer.valueOf($F{AAA}).intValue()]]></printWhenExpression>
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue()]]></printWhenExpression>
 				</reportElement>
 				<box>
 					<pen lineWidth="0.25"/>
@@ -1426,13 +1395,13 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="580" y="0" width="10" height="11">
-					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue() < java.lang.Integer.valueOf($F{AAA}).intValue()]]></printWhenExpression>
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue()]]></printWhenExpression>
 				</reportElement>
 				<box>
 					<topPen lineWidth="2.0"/>
@@ -1444,7 +1413,7 @@
 			</textField>
 			<textField>
 				<reportElement x="478" y="0" width="10" height="11">
-					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue() < java.lang.Integer.valueOf($F{AAA}).intValue()]]></printWhenExpression>
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue()]]></printWhenExpression>
 				</reportElement>
 				<box>
 					<topPen lineWidth="2.0"/>
@@ -1456,7 +1425,7 @@
 			</textField>
 			<textField>
 				<reportElement x="665" y="0" width="10" height="11">
-					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue() < java.lang.Integer.valueOf($F{AAA}).intValue()]]></printWhenExpression>
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue()]]></printWhenExpression>
 				</reportElement>
 				<box>
 					<topPen lineWidth="2.0"/>
@@ -1468,7 +1437,7 @@
 			</textField>
 			<textField>
 				<reportElement x="730" y="0" width="10" height="11">
-					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue() < java.lang.Integer.valueOf($F{AAA}).intValue()]]></printWhenExpression>
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue()]]></printWhenExpression>
 				</reportElement>
 				<box>
 					<topPen lineWidth="2.0"/>
@@ -1495,7 +1464,7 @@
 			<staticText>
 				<reportElement key="staticText-110" x="51" y="11" width="324" height="11"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Arial" size="8" isBold="false" pdfFontName="Helvetica-Bold"/>
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf"/>
 				</textElement>
 				<text><![CDATA[Всего по накладной ]]></text>
 			</staticText>
@@ -1509,7 +1478,7 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[]]></text>
 			</staticText>
@@ -1523,7 +1492,7 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[]]></text>
 			</staticText>
@@ -1537,7 +1506,7 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[X]]></text>
 			</staticText>
@@ -1551,7 +1520,7 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[X]]></text>
 			</staticText>
@@ -1565,9 +1534,8 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[format('#,00',HSUM+HSNDS)+' ']]></textFieldExpression>
 			</textField>
 			<textField pattern="###0.000" isBlankWhenNull="false">
 				<reportElement key="textField" x="445" y="11" width="41" height="11"/>
@@ -1578,9 +1546,9 @@
 					<rightPen lineWidth="0.0"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Arial" size="8" isBold="false" pdfFontName="Helvetica-Bold"/>
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf"/>
 				</textElement>
-				<textFieldExpression class="java.lang.Double"><![CDATA[$V{v_totalkol}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.Double"><![CDATA[]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 				<reportElement key="textField-31" stretchType="RelativeToTallestObject" mode="Transparent" x="533" y="11" width="57" height="11" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -1592,9 +1560,8 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[format('#,00',HSUM)+' ']]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 				<reportElement key="textField-32" stretchType="RelativeToTallestObject" mode="Transparent" x="627" y="11" width="48" height="11" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -1606,9 +1573,8 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[format('#,00',HSNDS)+' ']]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement key="staticText-115" x="533" y="22" width="57" height="11"/>
@@ -1653,7 +1619,6 @@
 				<textElement textAlignment="Center" verticalAlignment="Bottom">
 					<font fontName="Arial" size="8" isBold="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[(t3(HNR).left(1)).toUpperCase()+substr(t3(HNR),2)]]></textFieldExpression>
 			</textField>
 			<textField evaluationTime="Report" isBlankWhenNull="false">
 				<reportElement key="textField" x="301" y="22" width="232" height="11"/>
@@ -1663,7 +1628,6 @@
 				<textElement textAlignment="Center" verticalAlignment="Bottom">
 					<font fontName="Arial" size="8" isBold="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[(((org.debet.print.DpJrDataSource)($P{REPORT_DATA_SOURCE})).evalScript("t3(" + $V{PAGE_NUMBER} +  ")")).toString().substring(0,1).toUpperCase() + (((org.debet.print.DpJrDataSource)($P{REPORT_DATA_SOURCE})).evalScript("t3(" + $V{PAGE_NUMBER} +  ")")).toString().substring(1)]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement key="staticText-128" x="675" y="51" width="66" height="17"/>
@@ -1732,7 +1696,7 @@
 				<textElement verticalAlignment="Top">
 					<font fontName="Arial" size="8" isBold="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA['Всего отпущено на сумму  '+TMoney(HSUM+HSNDS)]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA['Всего отпущено на сумму  ']]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement key="staticText-137" x="24" y="125" width="87" height="17"/>
@@ -1759,7 +1723,6 @@
 				<textElement verticalAlignment="Bottom">
 					<font fontName="Arial" size="8" isBold="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[OBOSS ? initials(OBOSS) : ""]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement key="textField-45" x="302" y="149" width="90" height="14"/>
@@ -1769,7 +1732,6 @@
 				<textElement verticalAlignment="Bottom">
 					<font fontName="Arial" size="8" isBold="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[OBUCH ? initials(OBUCH) : ""]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
 				<reportElement key="textField-46" x="53" y="149" width="144" height="14"/>
@@ -1936,9 +1898,9 @@
 					<rightPen lineWidth="0.0"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Arial" size="8" isBold="false" pdfFontName="Helvetica-Bold"/>
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf"/>
 				</textElement>
-				<textFieldExpression class="java.lang.Double"><![CDATA[$V{v_sumkol}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.Double"><![CDATA[]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement key="staticText-167" x="258" y="0" width="117" height="11"/>
@@ -1946,7 +1908,7 @@
 					<topPen lineWidth="1.75"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Arial" size="8" isBold="false" pdfFontName="Helvetica-Bold"/>
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf"/>
 				</textElement>
 				<text><![CDATA[Итого ]]></text>
 			</staticText>
@@ -1960,7 +1922,7 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[]]></text>
 			</staticText>
@@ -1974,7 +1936,7 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[]]></text>
 			</staticText>
@@ -1988,7 +1950,7 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[X]]></text>
 			</staticText>
@@ -2002,7 +1964,7 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[X]]></text>
 			</staticText>
@@ -2016,9 +1978,9 @@
 					<rightPen lineWidth="0.0"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Arial" size="8" isBold="false" pdfFontName="Helvetica-Bold"/>
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf"/>
 				</textElement>
-				<textFieldExpression class="java.lang.Double"><![CDATA[$V{v_sumbnds}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.Double"><![CDATA[]]></textFieldExpression>
 			</textField>
 			<textField pattern="##0.00" isBlankWhenNull="false">
 				<reportElement key="textField-55" x="627" y="0" width="46" height="11"/>
@@ -2030,9 +1992,9 @@
 					<rightPen lineWidth="0.0"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Arial" size="8" isBold="false" pdfFontName="Helvetica-Bold"/>
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf"/>
 				</textElement>
-				<textFieldExpression class="java.lang.Double"><![CDATA[$V{v_sumnds}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.Double"><![CDATA[]]></textFieldExpression>
 			</textField>
 			<textField pattern="##0.00" isBlankWhenNull="false">
 				<reportElement key="textField-56" x="675" y="0" width="63" height="11"/>
@@ -2044,9 +2006,9 @@
 					<rightPen lineWidth="0.0"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Arial" size="8" isBold="false" pdfFontName="Helvetica-Bold"/>
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf"/>
 				</textElement>
-				<textFieldExpression class="java.lang.Double"><![CDATA[$V{v_sumsnds}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.Double"><![CDATA[]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement key="staticText-172" mode="Transparent" x="187" y="0" width="30" height="11" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -2054,7 +2016,7 @@
 					<topPen lineWidth="1.75"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[]]></text>
 			</staticText>
@@ -2265,7 +2227,6 @@
 				<textElement verticalAlignment="Bottom">
 					<font fontName="Arial" size="8" isBold="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA['  '+tcl('CL','',24,101)]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement key="textField-44" x="302" y="170" width="90" height="14"/>
@@ -2275,7 +2236,6 @@
 				<textElement verticalAlignment="Bottom">
 					<font fontName="Arial" size="8" isBold="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[tcl('CL','',11,1)]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement key="textField-44" x="114" y="170" width="83" height="14"/>
@@ -2285,7 +2245,6 @@
 				<textElement verticalAlignment="Bottom">
 					<font fontName="Arial" size="8" isBold="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA['  '+tcl('CL','',24,312)]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement key="staticText-153" x="489" y="110" width="45" height="11"/>
