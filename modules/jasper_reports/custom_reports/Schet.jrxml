@@ -4,7 +4,8 @@
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="2.357947691000002"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="704"/>
+	<property name="ireport.y" value="144"/>
+	<property name="OPENERP_RELATIONS" value="[&apos;order_line&apos;]"/>
 	<queryString language="xPath">
 		<![CDATA[/data/record]]>
 	</queryString>
@@ -81,9 +82,6 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band splitType="Stretch"/>
-	</title>
-	<pageHeader>
 		<band height="233" splitType="Stretch">
 			<staticText>
 				<reportElement key="staticText-1" mode="Transparent" x="115" y="50" width="234" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -364,6 +362,9 @@
 				<imageExpression class="java.lang.String"><![CDATA['sunlogo.jpg']]></imageExpression>
 			</image>
 		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
 		<band height="32" splitType="Stretch">
