@@ -80,6 +80,7 @@ class res_partner_bank(osv.osv):
     _inherit = 'res.partner.bank'
     _columns = {
         'bank_acc_corr': fields.char('Corr. account', size=64),
+        'is_default': fields.boolean('Default'),
     }
 
     def onchange_bank_id(self, cr, uid, ids, bank_id, context=None):
@@ -90,6 +91,34 @@ class res_partner_bank(osv.osv):
             result['bank_bic'] = bank.bic
             result['bank_acc_corr'] = bank.acc_corr
         return {'value': result}
+
+    def create(self, cr, uid, vals, context=None):
+        if context is None:
+            context = {}
+        res = super(res_partner_bank, self).create(cr, uid, vals, context=context)
+
+        #Set default flag of other accounts to False
+        is_default = vals.get('is_default')
+        partner_id = vals.get('partner_id')
+        if is_default and partner_id:
+            #TODO: reset default flag from other partner's bank accounts
+            partner_bank_obj = self.pool.get('res.partner.bank')
+            partner_bank_ids = partner_bank_obj.search(cr, uid, [('partner_id', '=', partner_id)], context=context)
+            for partner_bank in partner_bank_obj.browse(cr, uid, partner_bank_ids, context=context):
+                if partner_bank['is_default']:
+                    partner_bank_obj.write(cr, uid, partner_bank['id'], {'is_default': False}, context=context)
+        return res
+
+    def write(self, cr, uid, ids, vals, context=None):
+        if context is None:
+            context = {}
+        res = super(res_partner_bank, self).write(cr, uid, ids, vals, context=context)
+
+        #Set default flag of other accounts to False
+        is_default = vals.get('is_default')]
+        
+
+
 res_partner_bank()
 
 class wizard_update_banks(osv.osv_memory):

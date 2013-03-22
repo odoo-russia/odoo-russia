@@ -63,6 +63,9 @@
                 <field name="bank_bic" position="after">
                     <field name="bank_acc_corr"/>
                 </field>
+                <field name="acc_number" position="after">
+                    <field name="is_default"/>
+                </field>
             </field>
         </record>
 
