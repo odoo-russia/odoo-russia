@@ -28,6 +28,7 @@
 from jasper_report import *
 from report_xml import *
 import wizard
+import account_invoice
 
 import release
 if release.major_version != '5.0':
