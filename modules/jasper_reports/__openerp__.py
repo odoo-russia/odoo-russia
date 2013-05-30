@@ -32,7 +32,7 @@
     "description" : "This module integrates Jasper Reports with OpenERP.",
     "author" : "NaN·tic",
     "website" : "http://www.nan-tic.com",
-    "depends" : ["base", "account", "sale", "product"],
+    "depends" : ["base"],
     "category" : "Generic Modules/Jasper Reports",
     "init_xml" : [],
     "demo_xml" : [ 

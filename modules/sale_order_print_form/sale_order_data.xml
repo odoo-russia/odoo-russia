@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+        <report auto="False"
+                id="sale_order_id"
+                model="sale.order"
+                name="sale.order.new_report"
+                rml="sale_order_print_form/Schet.jrxml"
+                string="Счёт"
+        />
+
+        <report auto="False"
+                id="account_invoice_id"
+                model="account.invoice"
+                name="account.invoice.new_report"
+                rml="sale_order_print_form/Schet.jrxml"
+                string="Счёт"
+        />
+    </data>
+</openerp>

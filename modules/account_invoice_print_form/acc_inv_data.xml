@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+        <report auto="False"
+                id="new_report_id"
+                model="account.invoice"
+                name="account.invoice"
+                rml="account_invoice_print_form/Akt.jrxml"
+                string="Акт выполненных работ"
+        />
+    </data>
+</openerp>
