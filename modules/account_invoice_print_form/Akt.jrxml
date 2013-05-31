@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Schet2" language="groovy" pageWidth="595" pageHeight="842" columnWidth="539" leftMargin="28" rightMargin="28" topMargin="28" bottomMargin="28">
 	<property name="ireport.zoom" value="2.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="480"/>
+	<property name="ireport.y" value="48"/>
 	<property name="OPENERP_RELATIONS" value="[&apos;invoice_line&apos;]"/>
 	<subDataset name="Table Dataset 1">
 		<queryString language="SQL">
@@ -132,6 +132,9 @@
 	<field name="number" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/number]]></fieldDescription>
 	</field>
+	<field name="number_only" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/number_only]]></fieldDescription>
+	</field>
 	<title>
 		<band height="70" splitType="Stretch">
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
@@ -142,7 +145,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="SansSerif" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arialbd.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[String.format("АКТ №%s от %s", $F{number}, (new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse($F{date_invoice})).format("dd.MM.yyyy"))]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[String.format("АКТ № %s от %s", $F{number_only}, (new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse($F{date_invoice})).format("dd.MM.yyyy"))]]></textFieldExpression>
 			</textField>
 			<elementGroup>
 				<elementGroup>

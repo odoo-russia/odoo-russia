@@ -4,7 +4,7 @@
         <report auto="False"
                 id="sale_order_id"
                 model="sale.order"
-                name="sale.order.new_report"
+                name="report.new_sale_order_report"
                 rml="sale_order_print_form/Schet.jrxml"
                 string="Счёт"
         />
