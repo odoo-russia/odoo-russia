@@ -1,0 +1,2271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="NK_EX12p" printOrder="Horizontal" pageWidth="841" pageHeight="595" orientation="Landscape" whenNoDataType="NoDataSection" columnWidth="841" leftMargin="0" rightMargin="0" topMargin="3" bottomMargin="0" isFloatColumnFooter="true" whenResourceMissingType="Empty">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="2.0526324729228267"/>
+	<property name="ireport.x" value="104"/>
+	<property name="ireport.y" value="0"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<queryString language="xPath">
+		<![CDATA[/data/record]]>
+	</queryString>
+	<field name="name_official" class="java.lang.String">
+		<fieldDescription><![CDATA[company_id/partner_id/name_official]]></fieldDescription>
+	</field>
+	<field name="zip" class="java.lang.String">
+		<fieldDescription><![CDATA[company_id/partner_id/zip]]></fieldDescription>
+	</field>
+	<field name="inn" class="java.lang.String">
+		<fieldDescription><![CDATA[company_id/partner_id/inn]]></fieldDescription>
+	</field>
+	<field name="state" class="java.lang.String">
+		<fieldDescription><![CDATA[company_id/partner_id/state_id/name]]></fieldDescription>
+	</field>
+	<field name="city" class="java.lang.String">
+		<fieldDescription><![CDATA[company_id/partner_id/city]]></fieldDescription>
+	</field>
+	<field name="street" class="java.lang.String">
+		<fieldDescription><![CDATA[company_id/partner_id/street]]></fieldDescription>
+	</field>
+	<field name="okpo" class="java.lang.String">
+		<fieldDescription><![CDATA[company_id/partner_id/okpo]]></fieldDescription>
+	</field>
+	<field name="date_invoice" class="java.lang.String">
+		<fieldDescription><![CDATA[date_invoice]]></fieldDescription>
+	</field>
+	<field name="number" class="java.lang.String">
+		<fieldDescription><![CDATA[number]]></fieldDescription>
+	</field>
+	<variable name="ROWNUM" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[1]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Prevent"/>
+	</background>
+	<title>
+		<band height="261" splitType="Prevent">
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement key="textField" mode="Transparent" x="51" y="37" width="551" height="28" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{name_official} + ', ИНН ' + $F{inn} + ', ' + $F{zip} + ', ' + $F{state} + ', ' + $F{city} + ', ' + $F{street}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-10" mode="Transparent" x="159" y="225" width="142" height="14" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box rightPadding="3"/>
+				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arialbd.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[ТОВАРНАЯ НАКЛАДНАЯ   ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-39" x="51" y="177" width="69" height="26"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[Основание  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-40" x="513" y="9" width="227" height="17"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="Arial" size="7" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[Унифицированная форма № Торг-12
+Утверждена постановлением Госкомстата России от 25.12.98 №132]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-41" mode="Transparent" x="51" y="93" width="69" height="26" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[Грузополучатель  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-42" mode="Transparent" x="51" y="148" width="69" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[Плательщик  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-43" mode="Transparent" x="51" y="119" width="69" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[Поставщик  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-44" x="675" y="37" width="65" height="14"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Arial" size="8" isBold="true" pdfFontName="arialbd.ttf"/>
+				</textElement>
+				<text><![CDATA[0330212]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-45" x="675" y="26" width="65" height="11"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[Коды]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-47" x="675" y="79" width="65" height="14"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7" isBold="true" pdfFontName="arialbd.ttf"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-48" x="675" y="65" width="65" height="14"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7" isBold="true" pdfFontName="arialbd.ttf"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-49" x="675" y="93" width="65" height="26"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7" isBold="true" pdfFontName="arialbd.ttf"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-51" x="675" y="148" width="65" height="29"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7" isBold="true" pdfFontName="arialbd.ttf"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-52" x="675" y="203" width="65" height="11"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7" isBold="true" pdfFontName="arialbd.ttf"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-53" x="675" y="214" width="65" height="11"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7" isBold="true" pdfFontName="arialbd.ttf"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-54" x="675" y="177" width="65" height="26"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7" isBold="true" pdfFontName="arialbd.ttf"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-55" x="675" y="225" width="65" height="14"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7" isBold="true" pdfFontName="arialbd.ttf"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-56" x="675" y="239" width="65" height="12"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-57" x="605" y="51" width="70" height="14"/>
+				<box rightPadding="3"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[по ОКПО  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-58" x="605" y="37" width="70" height="14"/>
+				<box rightPadding="3"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[Форма по ОКУД  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-59" x="549" y="79" width="126" height="14"/>
+				<box rightPadding="3"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[Вид деятельности по ОКДП  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-60" x="626" y="93" width="49" height="26"/>
+				<box rightPadding="3"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[по ОКПО  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-61" x="626" y="119" width="49" height="29"/>
+				<box rightPadding="3"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[по ОКПО  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-62" x="626" y="148" width="49" height="29"/>
+				<box rightPadding="3"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[по ОКПО  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-63" x="626" y="177" width="49" height="26"/>
+				<box rightPadding="3"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[номер  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-64" x="626" y="203" width="49" height="11"/>
+				<box rightPadding="3"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[дата  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-65" x="626" y="214" width="49" height="11"/>
+				<box rightPadding="3"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[номер  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-66" x="626" y="225" width="49" height="14"/>
+				<box rightPadding="3"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[дата  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-67" x="523" y="239" width="152" height="11"/>
+				<box rightPadding="3"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[Вид операции  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-68" x="523" y="214" width="103" height="11"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[Транспортная накладная  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-69" stretchType="RelativeToBandHeight" mode="Transparent" x="301" y="214" width="74" height="11"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="6" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[Номер документа]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-70" stretchType="RelativeToBandHeight" mode="Transparent" x="375" y="214" width="70" height="11"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="6" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[Дата составления]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-5" x="301" y="225" width="74" height="14"/>
+				<box>
+					<pen lineWidth="1.75"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true" pdfFontName="arial.ttf"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{number}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-6" x="375" y="225" width="70" height="14"/>
+				<box>
+					<pen lineWidth="1.75"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true" pdfFontName="arial.ttf"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse($F{date_invoice})).format('dd.MM.yyyy')]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-135" x="51" y="79" width="498" height="14"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial" size="7" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[структурное подразделение]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-136" x="51" y="65" width="516" height="14"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial" size="7" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[организация-грузоотправитель, адрес, телефон, факс, банковские реквизиты]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-164" x="51" y="177" width="551" height="9"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[организация, адрес, телефон, факс, банковские]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-165" x="51" y="119" width="539" height="9"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[организация, адрес, телефон, факс, банковские]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-166" x="51" y="148" width="551" height="9"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[организация, адрес, телефон, факс, банковские]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-52" x="675" y="51" width="65" height="14"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Arial" size="8" isBold="true" pdfFontName="arialbd.ttf"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{okpo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-166" x="51" y="203" width="551" height="7"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial" size="6" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[наименование документа (договор, контракт, заказ-наряд)]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement key="textField-3" mode="Transparent" x="120" y="177" width="482" height="26" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA['']]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-57" x="570" y="65" width="105" height="14"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-62" x="602" y="148" width="24" height="29"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-62" x="602" y="177" width="24" height="26"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-52" x="675" y="119" width="65" height="29"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="true" pdfFontName="arialbd.ttf"/>
+				</textElement>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement key="textField" mode="Transparent" x="120" y="119" width="482" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement key="textField" mode="Transparent" x="120" y="93" width="482" height="26" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement key="textField" mode="Transparent" x="120" y="148" width="482" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="48" splitType="Prevent">
+			<staticText>
+				<reportElement key="staticText-71" x="24" y="0" width="27" height="37"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[Но-
+мер по
+по-
+рядку]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-72" x="51" y="11" width="136" height="26"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[наименование, характеристика,
+сорт, артикул товара]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-73" x="187" y="11" width="30" height="26"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[код]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-74" x="51" y="0" width="166" height="11"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[Товар]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-75" x="217" y="11" width="41" height="26"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[наиме-
+нование]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-76" x="258" y="11" width="43" height="26"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[код по
+ОКЕИ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-77" x="217" y="0" width="84" height="11"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[Единица измерения]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-78" x="301" y="0" width="42" height="37"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[Вид
+упаковки]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-79" x="406" y="0" width="39" height="37"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[Масса
+брутто]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-80" x="343" y="10" width="32" height="28"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[в
+одном
+месте]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-81" x="375" y="11" width="31" height="26"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[мест,
+штук]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-82" x="343" y="0" width="63" height="11"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[Количество]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-83" x="445" y="0" width="43" height="37"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[Количе-
+ство
+(масса
+нетто)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-84" x="488" y="0" width="45" height="37"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[Цена,
+руб. коп.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-85" x="533" y="0" width="57" height="37"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[Сумма без
+учета НДС,
+руб. коп.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-86" x="675" y="0" width="65" height="37"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[Сумма с учетом
+НДС,
+руб. коп.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-87" x="627" y="11" width="48" height="26"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[сумма,
+руб. коп.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-88" x="590" y="11" width="37" height="26"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[ставка,
+%]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-89" x="590" y="0" width="85" height="11"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[НДС]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-18" mode="Transparent" x="24" y="37" width="27" height="11" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-19" mode="Transparent" x="51" y="37" width="136" height="11" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-20" mode="Transparent" x="187" y="37" width="30" height="11" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-21" mode="Transparent" x="217" y="37" width="41" height="11" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[4]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-22" mode="Transparent" x="258" y="37" width="43" height="11" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[5]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-23" mode="Transparent" x="301" y="37" width="42" height="11" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[6]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-90" mode="Transparent" x="343" y="37" width="32" height="11" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[7]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-91" positionType="FixRelativeToBottom" isPrintRepeatedValues="false" mode="Transparent" x="375" y="37" width="31" height="11" isPrintInFirstWholeBand="true" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[8]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-92" mode="Transparent" x="406" y="37" width="39" height="11" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[9]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-93" mode="Transparent" x="445" y="37" width="43" height="11" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[10]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-94" mode="Transparent" x="488" y="37" width="45" height="11" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[11]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-95" mode="Transparent" x="533" y="37" width="57" height="11" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[12]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-96" mode="Transparent" x="590" y="37" width="37" height="11" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[13]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-97" mode="Transparent" x="627" y="37" width="48" height="11" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[14]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-98" mode="Transparent" x="675" y="37" width="65" height="11" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[15]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Prevent"/>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Prevent">
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToTallestObject" mode="Transparent" x="51" y="0" width="136" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToTallestObject" mode="Transparent" x="217" y="0" width="41" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToTallestObject" mode="Transparent" x="445" y="0" width="43" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToTallestObject" mode="Transparent" x="627" y="0" width="48" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToTallestObject" mode="Transparent" x="675" y="0" width="65" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement key="textField-7" stretchType="RelativeToTallestObject" mode="Transparent" x="488" y="0" width="45" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement key="textField-8" stretchType="RelativeToTallestObject" mode="Transparent" x="533" y="0" width="57" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement key="textField-9" stretchType="RelativeToTallestObject" mode="Transparent" x="590" y="0" width="37" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-10" stretchType="RelativeToTallestObject" mode="Transparent" x="187" y="0" width="30" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-11" stretchType="RelativeToTallestObject" mode="Transparent" x="258" y="0" width="43" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-12" stretchType="RelativeToTallestObject" mode="Transparent" x="301" y="0" width="42" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+				<reportElement key="textField" mode="Opaque" x="24" y="0" width="27" height="21"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font fontName="Arial" size="8" isBold="false"/>
+				</textElement>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-14" stretchType="RelativeToTallestObject" mode="Transparent" x="375" y="0" width="31" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-15" stretchType="RelativeToTallestObject" mode="Transparent" x="406" y="0" width="39" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-13" stretchType="RelativeToTallestObject" mode="Transparent" x="343" y="0" width="32" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="11" splitType="Prevent">
+			<textField pattern="###0.000" isBlankWhenNull="false">
+				<reportElement key="textField-16" mode="Transparent" x="445" y="0" width="41" height="11" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue()]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-99" x="258" y="0" width="117" height="11">
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue()]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.75"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[Итого]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-102" positionType="FixRelativeToBottom" isPrintRepeatedValues="false" mode="Transparent" x="406" y="0" width="39" height="11" isPrintInFirstWholeBand="true" forecolor="#000000" backcolor="#FFFFFF">
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue()]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-103" mode="Transparent" x="488" y="0" width="45" height="11" forecolor="#000000" backcolor="#FFFFFF">
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue()]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[X]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-104" mode="Transparent" x="590" y="0" width="37" height="11" forecolor="#000000" backcolor="#FFFFFF">
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue()]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[X]]></text>
+			</staticText>
+			<textField pattern="##0.00" isBlankWhenNull="false">
+				<reportElement key="textField" x="533" y="0" width="55" height="11">
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue()]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[]]></textFieldExpression>
+			</textField>
+			<textField pattern="##0.00" isBlankWhenNull="false">
+				<reportElement key="textField" x="627" y="0" width="46" height="11">
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue()]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[]]></textFieldExpression>
+			</textField>
+			<textField pattern="##0.00" isBlankWhenNull="false">
+				<reportElement key="textField" x="675" y="0" width="63" height="11">
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue()]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-127" mode="Transparent" x="187" y="0" width="30" height="11" forecolor="#000000" backcolor="#FFFFFF">
+					<printWhenExpression><![CDATA[]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-101" positionType="FixRelativeToBottom" isPrintRepeatedValues="false" mode="Transparent" x="375" y="0" width="31" height="11" isPrintInFirstWholeBand="true" forecolor="#000000" backcolor="#FFFFFF">
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue()]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="580" y="0" width="10" height="11">
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue()]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="2.0"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA['']]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="478" y="0" width="10" height="11">
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue()]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="2.0"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA['']]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="665" y="0" width="10" height="11">
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue()]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="2.0"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA['']]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="730" y="0" width="10" height="11">
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue()]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="2.0"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA['']]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Prevent"/>
+	</pageFooter>
+	<summary>
+		<band height="214" splitType="Prevent">
+			<staticText>
+				<reportElement key="staticText-100" x="122" y="22" width="179" height="11"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[Товарная накладная имеет приложение на]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-110" x="51" y="11" width="324" height="11"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[Всего по накладной ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-111" positionType="FixRelativeToBottom" isPrintRepeatedValues="false" mode="Transparent" x="375" y="11" width="31" height="11" isPrintInFirstWholeBand="true" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-112" positionType="FixRelativeToBottom" isPrintRepeatedValues="false" mode="Transparent" x="406" y="11" width="39" height="11" isPrintInFirstWholeBand="true" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-113" mode="Transparent" x="488" y="11" width="45" height="11" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[X]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-114" mode="Transparent" x="590" y="11" width="37" height="11" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[X]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement key="textField-30" stretchType="RelativeToTallestObject" mode="Transparent" x="675" y="11" width="65" height="11" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+			</textField>
+			<textField pattern="###0.000" isBlankWhenNull="false">
+				<reportElement key="textField" x="445" y="11" width="41" height="11"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement key="textField-31" stretchType="RelativeToTallestObject" mode="Transparent" x="533" y="11" width="57" height="11" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement key="textField-32" stretchType="RelativeToTallestObject" mode="Transparent" x="627" y="11" width="48" height="11" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-115" x="533" y="22" width="57" height="11"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[листах]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-116" x="122" y="38" width="65" height="11"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[и содержит]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-117" x="533" y="38" width="142" height="11"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[порядковых номеров записей]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-118" x="122" y="68" width="72" height="17"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[Всего мест]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-119" x="301" y="51" width="105" height="17"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[Масса груза(нетто)]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="187" y="38" width="346" height="11"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Arial" size="8" isBold="false"/>
+				</textElement>
+			</textField>
+			<textField evaluationTime="Report" isBlankWhenNull="false">
+				<reportElement key="textField" x="301" y="22" width="232" height="11"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Arial" size="8" isBold="false"/>
+				</textElement>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-128" x="675" y="51" width="66" height="17"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-129" x="24" y="85" width="170" height="17"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[Приложение (паспорта, сертификаты и т.п.) на]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-130" x="301" y="85" width="28" height="17"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[листах]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-131" x="301" y="68" width="105" height="17"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[Масса груза(брутто)]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-39" x="406" y="68" width="269" height="17"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-132" x="675" y="68" width="66" height="17"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="406" y="99" width="1" height="100"/>
+			</line>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-40" x="24" y="110" width="285" height="19"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA['Всего отпущено на сумму  ']]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-137" x="24" y="125" width="87" height="17"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[Отпуск груза разрешил]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-138" x="205" y="128" width="84" height="14"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-44" x="302" y="128" width="90" height="14"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="8" isBold="false"/>
+				</textElement>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-45" x="302" y="149" width="90" height="14"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="8" isBold="false"/>
+				</textElement>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-46" x="53" y="149" width="144" height="14"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="9" isBold="true" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Главный (старший) бухгалтер"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-141" x="24" y="170" width="87" height="14"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[Отпуск груза произвел]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-143" x="78" y="192" width="301" height="11"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[М.П.           "       " ___________________ 20__ года]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-146" x="114" y="184" width="83" height="7"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial" size="6" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[должность]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-144" x="114" y="142" width="83" height="7"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial" size="6" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[должность]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-147" x="205" y="142" width="84" height="7"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial" size="6" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[подпись]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-150" x="302" y="142" width="90" height="7"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial" size="6" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[расшифровка подписи]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-151" x="302" y="163" width="90" height="7"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial" size="6" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[расшифровка подписи]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-152" x="302" y="184" width="90" height="7"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial" size="6" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[расшифровка подписи]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-153" x="407" y="110" width="78" height="11"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[ По доверенности №]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-154" x="407" y="121" width="333" height="11"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[ выданной ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-155" x="407" y="131" width="333" height="7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="6" isBold="false"/>
+				</textElement>
+				<text><![CDATA[кем, кому (организация, место работы, должность, фамилия, и. о.)]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-49" x="449" y="132" width="291" height="10"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA['']]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-156" x="408" y="141" width="332" height="11"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[ Груз принял ]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-51" x="489" y="179" width="75" height="13"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-157" x="408" y="167" width="63" height="25"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[ Груз получил
+грузополучатель]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-158" x="461" y="188" width="309" height="12"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[М.П.                           "      " ___________________ 20      года]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-159" x="406" y="68" width="269" height="7"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial" size="6" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[прописью]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-160" x="406" y="85" width="269" height="7"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial" size="6" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[прописью]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-161" x="187" y="49" width="346" height="13"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial" size="6" isBold="false"/>
+				</textElement>
+				<text><![CDATA[прописью]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-162" x="208" y="85" width="87" height="7"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial" size="6" isBold="false"/>
+				</textElement>
+				<text><![CDATA[прописью]]></text>
+			</staticText>
+			<textField pattern="###0.000" isBlankWhenNull="false">
+				<reportElement key="textField-53" mode="Transparent" x="445" y="0" width="41" height="11" isRemoveLineWhenBlank="true"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-167" x="258" y="0" width="117" height="11"/>
+				<box>
+					<topPen lineWidth="1.75"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[Итого ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-168" positionType="FixRelativeToBottom" isPrintRepeatedValues="false" mode="Transparent" x="375" y="0" width="31" height="11" isPrintInFirstWholeBand="true" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-169" positionType="FixRelativeToBottom" isPrintRepeatedValues="false" mode="Transparent" x="406" y="0" width="39" height="11" isPrintInFirstWholeBand="true" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-170" mode="Transparent" x="488" y="0" width="45" height="11" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[X]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-171" mode="Transparent" x="590" y="0" width="37" height="11" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[X]]></text>
+			</staticText>
+			<textField pattern="##0.00" isBlankWhenNull="false">
+				<reportElement key="textField-54" x="533" y="0" width="55" height="11"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[]]></textFieldExpression>
+			</textField>
+			<textField pattern="##0.00" isBlankWhenNull="false">
+				<reportElement key="textField-55" x="627" y="0" width="46" height="11"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[]]></textFieldExpression>
+			</textField>
+			<textField pattern="##0.00" isBlankWhenNull="false">
+				<reportElement key="textField-56" x="675" y="0" width="63" height="11"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-172" mode="Transparent" x="187" y="0" width="30" height="11" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<topPen lineWidth="1.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-161" x="301" y="33" width="232" height="13"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial" size="6" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[прописью]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-155" x="489" y="179" width="75" height="7"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial" size="6" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[должность]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-155" x="545" y="151" width="80" height="7"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial" size="6" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[подпись]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-155" x="646" y="179" width="81" height="7"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial" size="6" isBold="false"/>
+				</textElement>
+				<text><![CDATA[расшифровка подписи]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-51" x="573" y="179" width="64" height="13"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-51" x="646" y="179" width="81" height="13"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-155" x="457" y="151" width="76" height="7"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial" size="6" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[должность]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-155" x="573" y="179" width="64" height="7"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial" size="6" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[подпись]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-155" x="637" y="151" width="90" height="7"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial" size="6" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[расшифровка подписи]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-128" x="406" y="51" width="269" height="17"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="580" y="0" width="10" height="11"/>
+				<box>
+					<topPen lineWidth="2.0"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA['']]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="478" y="0" width="10" height="11"/>
+				<box>
+					<topPen lineWidth="2.0"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA['']]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="478" y="11" width="10" height="11"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA['']]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="665" y="0" width="10" height="11"/>
+				<box>
+					<topPen lineWidth="2.0"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA['']]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="730" y="0" width="10" height="11"/>
+				<box>
+					<topPen lineWidth="2.0"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA['']]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-39" x="208" y="68" width="87" height="17"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-39" x="208" y="85" width="87" height="17"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-162" x="208" y="102" width="87" height="7"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial" size="6" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[прописью]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-147" x="205" y="163" width="84" height="7"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial" size="6" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[подпись]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-138" x="205" y="149" width="84" height="14"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-147" x="205" y="184" width="84" height="7"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial" size="6" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[подпись]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-138" x="205" y="170" width="84" height="14"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-44" x="114" y="128" width="83" height="14"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="8" isBold="false"/>
+				</textElement>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-44" x="302" y="170" width="90" height="14"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="8" isBold="false"/>
+				</textElement>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-44" x="114" y="170" width="83" height="14"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="8" isBold="false"/>
+				</textElement>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-153" x="489" y="110" width="45" height="11"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-153" x="534" y="110" width="57" height="11"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[от      "       "]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-153" x="591" y="110" width="86" height="11"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-153" x="677" y="110" width="63" height="11"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[  20     года]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
