@@ -36,8 +36,6 @@ class account_invoice(osv.osv):
         res = {}
 
         for row in self.browse(cr, uid, ids, context):
-            print 'some'
-            #jasper_reports.numeral.rubles()
             res[row.id] = numeral.rubles(row.amount_total)
 
         return res
@@ -46,6 +44,6 @@ class account_invoice(osv.osv):
     _inherit = 'account.invoice'
     _columns = {
         'number_only': fields.function(_get_number_only, type='char'),
-        'price_in_words':fields.function(_get_price_in_words, type='char')
+        'price_in_words':fields.function(_get_price_in_words, type='char'),
     }
 account_invoice()

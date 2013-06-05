@@ -1,12 +1,10 @@
 # -*- coding: utf-8 -*-
 
 import time
-import logging
 from openerp.addons.pad import pad
 from openerp.report import report_sxw
 from osv import orm, osv, fields
-
-_logger = logging.getLogger(__name__)
+from openerp.addons.jasper_reports.pytils import numeral
 
 ###------ Rgister Sale Order Report ----------###
 class sale_order_report(report_sxw.rml_parse):
@@ -57,9 +55,18 @@ class sale_order(osv.osv):
 
         return res
 
+    def _get_price_in_words(self, cr, uid, ids, field_name, arg, context):
+        res = {}
+
+        for row in self.browse(cr, uid, ids, context):
+            res[row.id] = numeral.rubles(row.amount_total)
+
+        return res
+
     _columns = {
         'is_invoice': fields.function(_is_invoice, type='boolean'),
         'number_only': fields.function(_get_number_only, type='char'),
+        'price_in_words':fields.function(_get_price_in_words, type='char'),
     }
 sale_order()
 
@@ -87,11 +94,20 @@ class account_invoice(osv.osv):
             res[row.id] = True
         return res
 
+    def _get_price_in_words(self, cr, uid, ids, field_name, arg, context):
+        res = {}
+
+        for row in self.browse(cr, uid, ids, context):
+            res[row.id] = numeral.rubles(row.amount_total)
+
+        return res
+
     _name = 'account.invoice'
     _inherit = 'account.invoice'
     _columns = {
         'is_invoice': fields.function(_is_invoice, type='boolean'),
         'number_only': fields.function(_get_number_only, type='char'),
+        'price_in_words':fields.function(_get_price_in_words, type='char'),
     }
 account_invoice()
 
