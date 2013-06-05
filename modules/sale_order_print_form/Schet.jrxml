@@ -523,19 +523,6 @@ $F{performer_bank_name}]]></textFieldExpression>
 				</textElement>
 				<text><![CDATA[Руководитель предприятия:]]></text>
 			</staticText>
-			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-				<reportElement key="textField-7" mode="Transparent" x="463" y="26" width="76" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
-				<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="2">
-					<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.75" lineColor="#000000"/>
-					<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-					<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arialbd.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[new DecimalFormat("###0.00").format($F{amount_total}.toDouble())]]></textFieldExpression>
-			</textField>
 			<staticText>
 				<reportElement key="staticText-58" mode="Transparent" x="345" y="0" width="103" height="13" isPrintWhenDetailOverflows="true" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
@@ -595,19 +582,6 @@ $F{performer_bank_name}]]></textFieldExpression>
 				</textElement>
 				<text><![CDATA[НДС: ]]></text>
 			</staticText>
-			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-				<reportElement key="textField-7" mode="Transparent" x="463" y="13" width="76" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
-				<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="2">
-					<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.75" lineColor="#000000"/>
-					<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-					<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arialbd.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[($F{amount_tax}.equals("")) ? " - " : String.format("%5.2f", $F{amount_tax}.toDouble())]]></textFieldExpression>
-			</textField>
 			<textField pattern="" isBlankWhenNull="false">
 				<reportElement key="textField-1" mode="Transparent" x="161" y="107" width="250" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
