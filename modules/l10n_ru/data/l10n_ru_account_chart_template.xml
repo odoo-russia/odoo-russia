@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+
+		<record id="l10n_ru_account_chart_template" model="account.chart.template">
+			<field name="name">План счетов Российской Федерации</field>
+			<field name="account_root_id" ref="chart_ru_0" />
+			<field name="tax_code_root_id" ref="tax_code_ru_root"/>
+			<field name="bank_account_view_id" ref="chart_ru_51"/>
+			<field name="property_account_receivable" ref="chart_ru_62"/>
+			<field name="property_account_payable" ref="chart_ru_60" />
+		</record>
+	
+	</data>
+	
+</openerp>
