@@ -3,43 +3,131 @@
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="2.0526324729228267"/>
-	<property name="ireport.x" value="104"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.x" value="301"/>
+	<property name="ireport.y" value="288"/>
+	<property name="OPENER_PRELATIONS" value="[&apos;invoice_line&apos;]"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
 	<queryString language="xPath">
 		<![CDATA[/data/record]]>
 	</queryString>
-	<field name="name_official" class="java.lang.String">
+	<field name="shipping_name_official" class="java.lang.String">
 		<fieldDescription><![CDATA[company_id/partner_id/name_official]]></fieldDescription>
 	</field>
-	<field name="zip" class="java.lang.String">
+	<field name="shipping_zip" class="java.lang.String">
 		<fieldDescription><![CDATA[company_id/partner_id/zip]]></fieldDescription>
 	</field>
-	<field name="inn" class="java.lang.String">
+	<field name="shipping_inn" class="java.lang.String">
 		<fieldDescription><![CDATA[company_id/partner_id/inn]]></fieldDescription>
 	</field>
-	<field name="state" class="java.lang.String">
-		<fieldDescription><![CDATA[company_id/partner_id/state_id/name]]></fieldDescription>
+	<field name="shipping_country" class="java.lang.String">
+		<fieldDescription><![CDATA[company_id/country_id/name]]></fieldDescription>
 	</field>
-	<field name="city" class="java.lang.String">
+	<field name="shipping_city" class="java.lang.String">
 		<fieldDescription><![CDATA[company_id/partner_id/city]]></fieldDescription>
 	</field>
-	<field name="street" class="java.lang.String">
+	<field name="shipping_street" class="java.lang.String">
 		<fieldDescription><![CDATA[company_id/partner_id/street]]></fieldDescription>
 	</field>
-	<field name="okpo" class="java.lang.String">
+	<field name="shipping_okpo" class="java.lang.String">
 		<fieldDescription><![CDATA[company_id/partner_id/okpo]]></fieldDescription>
+	</field>
+	<field name="shipping_kpp" class="java.lang.String">
+		<fieldDescription><![CDATA[company_id/partner_id/kpp]]></fieldDescription>
+	</field>
+	<field name="shipping_home" class="java.lang.String">
+		<fieldDescription><![CDATA[company_id/partner_id/street2]]></fieldDescription>
+	</field>
+	<field name="shipping_phone" class="java.lang.String">
+		<fieldDescription><![CDATA[company_id/partner_id/phone]]></fieldDescription>
+	</field>
+	<field name="shipping_acc_number" class="java.lang.String">
+		<fieldDescription><![CDATA[company_id/bank_ids/acc_number]]></fieldDescription>
+	</field>
+	<field name="shipping_bank_name" class="java.lang.String">
+		<fieldDescription><![CDATA[company_id/bank_ids/bank_name]]></fieldDescription>
+	</field>
+	<field name="shipping_bank_bic" class="java.lang.String">
+		<fieldDescription><![CDATA[company_id/bank_ids/bank_bic]]></fieldDescription>
+	</field>
+	<field name="shipping_bank_acc_corr" class="java.lang.String">
+		<fieldDescription><![CDATA[company_id/bank_ids/bank_acc_corr]]></fieldDescription>
+	</field>
+	<field name="supplier_name_official" class="java.lang.String">
+		<fieldDescription><![CDATA[partner_id/name_official]]></fieldDescription>
+	</field>
+	<field name="supplier_zip" class="java.lang.String">
+		<fieldDescription><![CDATA[partner_id/zip]]></fieldDescription>
+	</field>
+	<field name="supplier_country" class="java.lang.String">
+		<fieldDescription><![CDATA[partner_id/country_id/name]]></fieldDescription>
+	</field>
+	<field name="supplier_city" class="java.lang.String">
+		<fieldDescription><![CDATA[partner_id/city]]></fieldDescription>
+	</field>
+	<field name="supplier_street" class="java.lang.String">
+		<fieldDescription><![CDATA[partner_id/street]]></fieldDescription>
+	</field>
+	<field name="supplier_home" class="java.lang.String">
+		<fieldDescription><![CDATA[partner_id/street2]]></fieldDescription>
+	</field>
+	<field name="supplier_phone" class="java.lang.String">
+		<fieldDescription><![CDATA[partner_id/phone]]></fieldDescription>
+	</field>
+	<field name="supplier_okpo" class="java.lang.String">
+		<fieldDescription><![CDATA[partner_id/okpo]]></fieldDescription>
+	</field>
+	<field name="supplier_inn" class="java.lang.String">
+		<fieldDescription><![CDATA[partner_id/inn]]></fieldDescription>
+	</field>
+	<field name="supplier_kpp" class="java.lang.String">
+		<fieldDescription><![CDATA[partner_id/kpp]]></fieldDescription>
+	</field>
+	<field name="supplier_acc_number" class="java.lang.String">
+		<fieldDescription><![CDATA[partner_id/bank_ids/acc_number]]></fieldDescription>
+	</field>
+	<field name="supplier_bank_name" class="java.lang.String">
+		<fieldDescription><![CDATA[partner_id/bank_ids/bank_name]]></fieldDescription>
+	</field>
+	<field name="supplier_bank_bic" class="java.lang.String">
+		<fieldDescription><![CDATA[partner_id/bank_ids/bank_bic]]></fieldDescription>
+	</field>
+	<field name="supplier_bank_acc_corr" class="java.lang.String">
+		<fieldDescription><![CDATA[partner_id/bank_ids/bank_acc_corr]]></fieldDescription>
 	</field>
 	<field name="date_invoice" class="java.lang.String">
 		<fieldDescription><![CDATA[date_invoice]]></fieldDescription>
 	</field>
+	<field name="origin" class="java.lang.String">
+		<fieldDescription><![CDATA[origin]]></fieldDescription>
+	</field>
 	<field name="number" class="java.lang.String">
 		<fieldDescription><![CDATA[number]]></fieldDescription>
 	</field>
+	<field name="date_due" class="java.lang.String">
+		<fieldDescription><![CDATA[date_due]]></fieldDescription>
+	</field>
+	<field name="line_name" class="java.lang.String">
+		<fieldDescription><![CDATA[invoice_line/name]]></fieldDescription>
+	</field>
+	<field name="line_uos_name" class="java.lang.String">
+		<fieldDescription><![CDATA[invoice_line/uos_id/name]]></fieldDescription>
+	</field>
+	<field name="line_quantity" class="java.lang.String">
+		<fieldDescription><![CDATA[invoice_line/quantity]]></fieldDescription>
+	</field>
 	<variable name="ROWNUM" class="java.lang.Integer" calculation="Sum">
 		<variableExpression><![CDATA[1]]></variableExpression>
+	</variable>
+	<variable name="PAGE_QUANTITY" class="java.lang.Integer" incrementType="Column" calculation="Sum">
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="line_quantity_1" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{line_quantity}]]></variableExpression>
+	</variable>
+	<variable name="line_quantity_2" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{line_quantity}]]></variableExpression>
 	</variable>
 	<background>
 		<band splitType="Prevent"/>
@@ -48,13 +136,13 @@
 		<band height="261" splitType="Prevent">
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 				<reportElement key="textField" mode="Transparent" x="51" y="37" width="551" height="28" forecolor="#000000" backcolor="#FFFFFF"/>
-				<box>
+				<box leftPadding="5">
 					<bottomPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
 					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{name_official} + ', ИНН ' + $F{inn} + ', ' + $F{zip} + ', ' + $F{state} + ', ' + $F{city} + ', ' + $F{street}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{shipping_name_official} + ", ИНН\\КПП " + $F{shipping_inn} + ", " + $F{shipping_zip} + ", " + $F{shipping_country} + ", " + $F{shipping_city} + ", " + $F{shipping_street} + ", тел.:" + $F{shipping_phone} + ", р/с " + $F{shipping_acc_number} + " в " + $F{shipping_bank_name} + ", БИК " + $F{shipping_bank_bic} + ", корр/с " + $F{shipping_bank_acc_corr}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement key="staticText-10" mode="Transparent" x="159" y="225" width="142" height="14" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -141,32 +229,6 @@
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-48" x="675" y="65" width="65" height="14"/>
-				<box>
-					<pen lineWidth="0.25"/>
-					<topPen lineWidth="0.25"/>
-					<leftPen lineWidth="1.75"/>
-					<rightPen lineWidth="1.75"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="7" isBold="true" pdfFontName="arialbd.ttf"/>
-				</textElement>
-				<text><![CDATA[]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="staticText-49" x="675" y="93" width="65" height="26"/>
-				<box>
-					<pen lineWidth="0.25"/>
-					<topPen lineWidth="0.25"/>
-					<leftPen lineWidth="1.75"/>
-					<rightPen lineWidth="1.75"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="7" isBold="true" pdfFontName="arialbd.ttf"/>
-				</textElement>
-				<text><![CDATA[]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="staticText-51" x="675" y="148" width="65" height="29"/>
 				<box>
 					<pen lineWidth="0.25"/>
 					<topPen lineWidth="0.25"/>
@@ -396,7 +458,7 @@
 				<textFieldExpression class="java.lang.String"><![CDATA[(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse($F{date_invoice})).format('dd.MM.yyyy')]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-135" x="51" y="79" width="498" height="14"/>
+				<reportElement key="staticText-135" x="51" y="80" width="498" height="14"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 				</box>
@@ -415,21 +477,21 @@
 			<staticText>
 				<reportElement key="staticText-164" x="51" y="177" width="551" height="9"/>
 				<textElement textAlignment="Center" verticalAlignment="Top">
-					<font fontName="Arial" size="7" isBold="false"/>
+					<font fontName="Arial" size="7" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
 				</textElement>
 				<text><![CDATA[организация, адрес, телефон, факс, банковские]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-165" x="51" y="119" width="539" height="9"/>
 				<textElement textAlignment="Center" verticalAlignment="Top">
-					<font fontName="Arial" size="7" isBold="false"/>
+					<font fontName="Arial" size="7" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
 				</textElement>
 				<text><![CDATA[организация, адрес, телефон, факс, банковские]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-166" x="51" y="148" width="551" height="9"/>
 				<textElement textAlignment="Center" verticalAlignment="Top">
-					<font fontName="Arial" size="7" isBold="false"/>
+					<font fontName="Arial" size="7" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
 				</textElement>
 				<text><![CDATA[организация, адрес, телефон, факс, банковские]]></text>
 			</staticText>
@@ -444,7 +506,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Bottom">
 					<font fontName="Arial" size="8" isBold="true" pdfFontName="arialbd.ttf"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{okpo}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{shipping_okpo}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement key="staticText-166" x="51" y="203" width="551" height="7"/>
@@ -454,14 +516,14 @@
 				<text><![CDATA[наименование документа (договор, контракт, заказ-наряд)]]></text>
 			</staticText>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-				<reportElement key="textField-3" mode="Transparent" x="120" y="177" width="482" height="26" forecolor="#000000" backcolor="#FFFFFF"/>
-				<box>
+				<reportElement key="textField-3" mode="Transparent" x="120" y="186" width="482" height="17" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box leftPadding="5">
 					<bottomPen lineWidth="0.25"/>
 				</box>
-				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
+				<textElement verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
 					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA['']]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{origin}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement key="staticText-57" x="570" y="65" width="105" height="14"/>
@@ -501,34 +563,92 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="8" isBold="true" pdfFontName="arialbd.ttf"/>
 				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{shipping_okpo}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-				<reportElement key="textField" mode="Transparent" x="120" y="119" width="482" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
-				<box>
+				<reportElement key="textField" mode="Transparent" x="120" y="128" width="482" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box leftPadding="5">
 					<bottomPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
 					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{shipping_name_official} + ", ИНН\\КПП " + $F{shipping_inn} + ", " + $F{shipping_zip} + ", " + $F{shipping_country} + ", " + $F{shipping_city} + ", " + $F{shipping_street} + ", тел.:" + $F{shipping_phone} + ", р/с " + $F{shipping_acc_number} + " в " + $F{shipping_bank_name} + ", БИК " + $F{shipping_bank_bic} + ", корр/с " + $F{shipping_bank_acc_corr}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 				<reportElement key="textField" mode="Transparent" x="120" y="93" width="482" height="26" forecolor="#000000" backcolor="#FFFFFF"/>
-				<box>
+				<box leftPadding="5">
 					<bottomPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
 					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{supplier_name_official} + ", ИНН\\КПП " + $F{supplier_inn} + ", " + $F{supplier_zip} + ", " + $F{supplier_country} + ", " + $F{supplier_city} + ", " + $F{supplier_street} + ", тел.:" + $F{supplier_phone} + ", р/с " + $F{supplier_acc_number} + " в " + $F{supplier_bank_name} + ", БИК " + $F{supplier_bank_bic} + ", корр/с " + $F{supplier_bank_acc_corr}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-				<reportElement key="textField" mode="Transparent" x="120" y="148" width="482" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
-				<box>
+				<reportElement key="textField" mode="Transparent" x="120" y="157" width="482" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box leftPadding="5">
 					<bottomPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
 					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{supplier_name_official} + ", ИНН\\КПП " + $F{supplier_inn} + ", " + $F{supplier_zip} + ", " + $F{supplier_country} + ", " + $F{supplier_city} + ", " + $F{supplier_street} + ", тел.:" + $F{supplier_phone} + ", р/с " + $F{supplier_acc_number} + " в " + $F{supplier_bank_name} + ", БИК " + $F{supplier_bank_bic} + ", корр/с " + $F{supplier_bank_acc_corr}]]></textFieldExpression>
 			</textField>
+			<textField>
+				<reportElement x="675" y="148" width="65" height="29"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="true" pdfFontName="arialbd.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{supplier_okpo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="675" y="93" width="65" height="26"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="true" pdfFontName="arialbd.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{supplier_okpo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-6" x="445" y="225" width="70" height="14"/>
+				<box>
+					<pen lineWidth="1.75"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true" pdfFontName="arial.ttf"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse($F{date_due})).format('dd.MM.yyyy')]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-70" stretchType="RelativeToBandHeight" mode="Transparent" x="445" y="214" width="70" height="11"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="6" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[Дата доставки]]></text>
+			</staticText>
 		</band>
 	</title>
 	<pageHeader>
@@ -1042,6 +1162,7 @@
 				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" lineSpacing="Single">
 					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{line_name}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement key="textField" stretchType="RelativeToTallestObject" mode="Transparent" x="217" y="0" width="41" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -1055,6 +1176,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" lineSpacing="Single">
 					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{line_uos_name}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 				<reportElement key="textField" stretchType="RelativeToTallestObject" mode="Transparent" x="445" y="0" width="43" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -1068,6 +1190,7 @@
 				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" lineSpacing="Single">
 					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%d", (int)$F{line_quantity}.toDouble())]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement key="textField" stretchType="RelativeToTallestObject" mode="Transparent" x="627" y="0" width="48" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -1186,6 +1309,7 @@
 				<textElement textAlignment="Right" verticalAlignment="Top">
 					<font fontName="Arial" size="8" isBold="false"/>
 				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement key="textField-14" stretchType="RelativeToTallestObject" mode="Transparent" x="375" y="0" width="31" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -1233,22 +1357,6 @@
 	</detail>
 	<columnFooter>
 		<band height="11" splitType="Prevent">
-			<textField pattern="###0.000" isBlankWhenNull="false">
-				<reportElement key="textField-16" mode="Transparent" x="445" y="0" width="41" height="11" isRemoveLineWhenBlank="true">
-					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue()]]></printWhenExpression>
-				</reportElement>
-				<box>
-					<pen lineWidth="0.25"/>
-					<topPen lineWidth="1.75"/>
-					<leftPen lineWidth="0.25"/>
-					<bottomPen lineWidth="0.25"/>
-					<rightPen lineWidth="0.0"/>
-				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf"/>
-				</textElement>
-				<textFieldExpression class="java.lang.Double"><![CDATA[]]></textFieldExpression>
-			</textField>
 			<staticText>
 				<reportElement key="staticText-99" x="258" y="0" width="117" height="11">
 					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue()]]></printWhenExpression>
@@ -1420,6 +1528,18 @@
 				</box>
 				<textElement/>
 				<textFieldExpression class="java.lang.String"><![CDATA['']]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="445" y="0" width="41" height="11"/>
+				<box>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{line_quantity_2}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="730" y="0" width="10" height="11">
@@ -2007,7 +2127,7 @@
 				<text><![CDATA[]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-161" x="301" y="33" width="232" height="13"/>
+				<reportElement key="staticText-161" x="301" y="33" width="232" height="16"/>
 				<textElement textAlignment="Center" verticalAlignment="Top">
 					<font fontName="Arial" size="6" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
 				</textElement>

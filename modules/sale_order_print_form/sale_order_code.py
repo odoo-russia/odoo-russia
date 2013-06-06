@@ -4,6 +4,7 @@ import time
 from openerp.report import report_sxw
 from osv import orm, osv, fields
 
+
 class sale_order_report(report_sxw.rml_parse):
     name = 'sale.order.new_report'
     def __init__(self, cr, uid, name, context):
@@ -54,4 +55,3 @@ class account_invoice(osv.osv):
         'is_invoice': fields.function(_is_invoice, type='boolean'),
     }
 account_invoice()
-
