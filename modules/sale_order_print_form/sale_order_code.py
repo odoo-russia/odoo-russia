@@ -59,7 +59,10 @@ class sale_order(osv.osv):
         res = {}
 
         for row in self.browse(cr, uid, ids, context):
-            res[row.id] = numeral.rubles(row.amount_total)
+            rubles = numeral.rubles(int(row.amount_total))
+            copek_num = round((row.amount_total - int(row.amount_total))*100)
+            copek = numeral.choose_plural(int(copek_num), (u"копейка", u"копейки", u"копеек"))
+            res[row.id] = ("%s %02d %s")%(rubles, copek_num, copek)
 
         return res
 
@@ -98,7 +101,10 @@ class account_invoice(osv.osv):
         res = {}
 
         for row in self.browse(cr, uid, ids, context):
-            res[row.id] = numeral.rubles(row.amount_total)
+            rubles = numeral.rubles(int(row.amount_total))
+            copek_num = round((row.amount_total - int(row.amount_total))*100)
+            copek = numeral.choose_plural(int(copek_num), (u"копейка", u"копейки", u"копеек"))
+            res[row.id] = ("%s %02d %s")%(rubles, copek_num, copek)
 
         return res
 

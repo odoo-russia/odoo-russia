@@ -36,7 +36,11 @@ class account_invoice(osv.osv):
         res = {}
 
         for row in self.browse(cr, uid, ids, context):
-            res[row.id] = numeral.rubles(row.amount_total)
+            #rubles = numeral.rubles(int(row.amount_total))
+            #copek_num = round(row.amount_total - int(row.amount_total))
+            #copek = numeral.choose_plural(int(copek_num), (u"копейка", u"копейки", u"копеек"))
+            #str = ("%s %02d %s")%(rubles, copek_num, copek)
+            res[row.id] = 'string'#("%s %02d %s")%(rubles, copek_num, copek)
 
         return res
 
