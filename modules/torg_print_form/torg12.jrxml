@@ -3,8 +3,8 @@
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="2.0526324729228267"/>
-	<property name="ireport.x" value="121"/>
-	<property name="ireport.y" value="598"/>
+	<property name="ireport.x" value="330"/>
+	<property name="ireport.y" value="502"/>
 	<property name="OPENER_PRELATIONS" value="[&apos;invoice_line&apos;]"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
@@ -122,6 +122,9 @@
 	</field>
 	<field name="pos_in_words" class="java.lang.String">
 		<fieldDescription><![CDATA[pos_in_words]]></fieldDescription>
+	</field>
+	<field name="amount" class="java.lang.String">
+		<fieldDescription><![CDATA[invoice_line/invoice_line_tax_id/amount]]></fieldDescription>
 	</field>
 	<variable name="ROWNUM" class="java.lang.Integer" calculation="Sum">
 		<variableExpression><![CDATA[1]]></variableExpression>
