@@ -20,7 +20,7 @@ class account_invoice(osv.osv):
         res = {}
 
         for row in self.browse(cr, uid, ids, context):
-            res[row.id] = numeral.in_words(row.invoice_line.quantity)
+            res[row.id] = numeral.in_words(len(row.invoice_line))
 
         return res
 

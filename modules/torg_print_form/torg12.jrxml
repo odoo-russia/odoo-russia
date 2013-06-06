@@ -3,7 +3,7 @@
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="2.0526324729228267"/>
-	<property name="ireport.x" value="85"/>
+	<property name="ireport.x" value="121"/>
 	<property name="ireport.y" value="598"/>
 	<property name="OPENER_PRELATIONS" value="[&apos;invoice_line&apos;]"/>
 	<import value="net.sf.jasperreports.engine.*"/>
@@ -119,6 +119,9 @@
 	</field>
 	<field name="price_in_words" class="java.lang.String">
 		<fieldDescription><![CDATA[price_in_words]]></fieldDescription>
+	</field>
+	<field name="pos_in_words" class="java.lang.String">
+		<fieldDescription><![CDATA[pos_in_words]]></fieldDescription>
 	</field>
 	<variable name="ROWNUM" class="java.lang.Integer" calculation="Sum">
 		<variableExpression><![CDATA[1]]></variableExpression>
@@ -1726,8 +1729,9 @@
 					<bottomPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Bottom">
-					<font fontName="Arial" size="8" isBold="false"/>
+					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
 				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{pos_in_words}.substring(0, 1).toUpperCase() + $F{pos_in_words}.substring(1, $F{pos_in_words}.length())]]></textFieldExpression>
 			</textField>
 			<textField evaluationTime="Report" isBlankWhenNull="false">
 				<reportElement key="textField" x="301" y="22" width="232" height="11"/>
@@ -1737,6 +1741,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Bottom">
 					<font fontName="Arial" size="8" isBold="false"/>
 				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement key="staticText-128" x="675" y="51" width="66" height="17"/>
@@ -1805,7 +1810,7 @@
 				<textElement verticalAlignment="Top">
 					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["Всего отпущено на сумму  " + $F{price_in_words}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA["Всего отпущено на сумму  " + ($F{price_in_words}.substring(0, 1).toUpperCase() + $F{price_in_words}.substring(1, $F{price_in_words}.length()))]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement key="staticText-137" x="24" y="125" width="87" height="17"/>
