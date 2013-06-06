@@ -3,8 +3,8 @@
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="2.0526324729228267"/>
-	<property name="ireport.x" value="301"/>
-	<property name="ireport.y" value="288"/>
+	<property name="ireport.x" value="85"/>
+	<property name="ireport.y" value="598"/>
 	<property name="OPENER_PRELATIONS" value="[&apos;invoice_line&apos;]"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
@@ -116,6 +116,9 @@
 	</field>
 	<field name="line_quantity" class="java.lang.String">
 		<fieldDescription><![CDATA[invoice_line/quantity]]></fieldDescription>
+	</field>
+	<field name="price_in_words" class="java.lang.String">
+		<fieldDescription><![CDATA[price_in_words]]></fieldDescription>
 	</field>
 	<variable name="ROWNUM" class="java.lang.Integer" calculation="Sum">
 		<variableExpression><![CDATA[1]]></variableExpression>
@@ -1309,7 +1312,7 @@
 				<textElement textAlignment="Right" verticalAlignment="Top">
 					<font fontName="Arial" size="8" isBold="false"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement key="textField-14" stretchType="RelativeToTallestObject" mode="Transparent" x="375" y="0" width="31" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -1802,7 +1805,7 @@
 				<textElement verticalAlignment="Top">
 					<font fontName="Arial" size="8" isBold="false" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA['Всего отпущено на сумму  ']]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA["Всего отпущено на сумму  " + $F{price_in_words}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement key="staticText-137" x="24" y="125" width="87" height="17"/>

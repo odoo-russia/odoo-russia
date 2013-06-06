@@ -20,13 +20,25 @@ class account_invoice(osv.osv):
         res = {}
 
         for row in self.browse(cr, uid, ids, context):
-
-            print 1
+            res[row.id] = numeral.in_words(row.invoice_line.quantity)
 
         return res
+
+    def _get_price_in_words(self,cr,uid,ids,field,arg,context=None):
+        res = {}
+
+        for row in self.browse(cr, uid, ids, context):
+            rubles = numeral.rubles(int(row.amount_total))
+            copek_tmp = round(row.amount_total - int(row.amount_total))
+            copek = numeral.choose_plural(int(copek_tmp), (u"копейка", u"копейки", u"копеек"))
+            res[row.id] = ("%s %02d %s")%(rubles, copek_tmp, copek)
+
+        return res
+
     _name = 'account.invoice'
     _inherit = 'account.invoice'
     _columns = {
+        'price_in_words': fields.function(_get_price_in_words, type='char'),
         'pos_in_words': fields.function(_get_pos_in_words, type='char'),
     }
 account_invoice()
