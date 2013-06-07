@@ -42,3 +42,10 @@ class account_invoice(osv.osv):
         'pos_in_words': fields.function(_get_pos_in_words, type='char'),
     }
 account_invoice()
+
+class product_uom(osv.osv):
+    _name = 'product.uom'
+    _inherit = 'product.uom'
+    _columns = {
+        'OKEI' : fields.integer('Код по ОКЕИ'),
+    }
