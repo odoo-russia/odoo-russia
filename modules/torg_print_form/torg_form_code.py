@@ -49,3 +49,44 @@ class product_uom(osv.osv):
     _columns = {
         'OKEI' : fields.integer('Код по ОКЕИ'),
     }
+product_uom()
+
+class invoice_line(osv.osv):
+    def _get_line_tax(self,cr,uid,ids,field,arg,context=None):
+        res = {}
+
+        for row in self.browse(cr, uid, ids, context):
+            #invoice_line/invoice_line_tax_id/amount
+            res[row.id] = 0
+
+            for line in row.invoice_line_tax_id:
+                res[row.id] += line.amount
+
+            #print row.invoice_line.tax
+        print res
+        return res
+
+    def _get_tax_total(self,cr,uid,ids,field,arg,context=None):
+        res = {}
+
+        for row in self.browse(cr, uid, ids, context):
+            res[row.id] = row.line_tax_amount * row.price_subtotal
+
+        return res
+
+    def _get_taxed_subtotal(self,cr,uid,ids,field,arg,context=None):
+        res = {}
+
+        for row in self.browse(cr, uid, ids, context):
+            res[row.id] = row.line_tax_total + row.price_subtotal
+
+        print '\n\n', res, '\n\n'
+        return res
+
+    _name = 'account.invoice.line'
+    _inherit = 'account.invoice.line'
+    _columns = {
+        'line_tax_amount': fields.function(_get_line_tax, type='double'),
+        'line_tax_total': fields.function(_get_tax_total, type='double'),
+        'line_taxed_subtotal': fields.function(_get_taxed_subtotal, type='double'),
+    }
