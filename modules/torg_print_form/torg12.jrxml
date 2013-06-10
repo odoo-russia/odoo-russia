@@ -2,9 +2,9 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="NK_EX12p" printOrder="Horizontal" pageWidth="841" pageHeight="595" orientation="Landscape" whenNoDataType="NoDataSection" columnWidth="841" leftMargin="0" rightMargin="0" topMargin="3" bottomMargin="0" isFloatColumnFooter="true" whenResourceMissingType="Empty">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
-	<property name="ireport.zoom" value="2.9230756500000066"/>
-	<property name="ireport.x" value="1247"/>
-	<property name="ireport.y" value="1101"/>
+	<property name="ireport.zoom" value="1.6500000000000032"/>
+	<property name="ireport.x" value="187"/>
+	<property name="ireport.y" value="245"/>
 	<property name="OPENERP_RELATIONS" value="[&apos;invoice_line&apos;, &apos;invoice_line_tax_id&apos;]"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
@@ -155,6 +155,12 @@
 	</field>
 	<field name="invoices_count" class="java.lang.Integer">
 		<fieldDescription><![CDATA[invoices_count]]></fieldDescription>
+	</field>
+	<field name="line_uom_rounding" class="java.lang.Integer">
+		<fieldDescription><![CDATA[invoice_line/product_id/uom_id/rounding]]></fieldDescription>
+	</field>
+	<field name="line_uom_name" class="java.lang.String">
+		<fieldDescription><![CDATA[invoice_line/product_id/uom_id/name]]></fieldDescription>
 	</field>
 	<variable name="ROWNUM" class="java.lang.Integer" calculation="Sum">
 		<variableExpression><![CDATA[1]]></variableExpression>
@@ -1204,7 +1210,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{line_uos_name}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{line_uom_name}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 				<reportElement key="textField" stretchType="RelativeToTallestObject" mode="Transparent" x="445" y="0" width="43" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -1474,7 +1480,7 @@
 				</textElement>
 				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{quantity_page}]]></textFieldExpression>
 			</textField>
-			<textField isBlankWhenNull="true">
+			<textField pattern="###0.00" isBlankWhenNull="true">
 				<reportElement x="406" y="0" width="39" height="11">
 					<printWhenExpression><![CDATA[$F{invoices_count} != $V{REPORT_COUNT}]]></printWhenExpression>
 				</reportElement>
@@ -1486,7 +1492,7 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font fontName="Arial" size="8" pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
 				</textElement>
-				<textFieldExpression class="java.lang.Double"><![CDATA[Math.round($V{weight_page})]]></textFieldExpression>
+				<textFieldExpression class="java.lang.Double"><![CDATA[(Math.round($V{weight_page}*100))/100]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement x="675" y="0" width="65" height="11">
@@ -1558,7 +1564,7 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
 					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%.2f", $V{weight_report})]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%.2f", (Math.round($V{weight_report}*100))/100)]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement key="staticText-113" mode="Transparent" x="488" y="11" width="45" height="11" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -2236,7 +2242,7 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
 					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.Double"><![CDATA[Math.round($V{weight_page})]]></textFieldExpression>
+				<textFieldExpression class="java.lang.Double"><![CDATA[(Math.round($V{weight_page}*100))/100]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement x="675" y="0" width="65" height="11"/>
