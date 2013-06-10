@@ -3,8 +3,8 @@
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.6500000000000032"/>
-	<property name="ireport.x" value="187"/>
-	<property name="ireport.y" value="245"/>
+	<property name="ireport.x" value="301"/>
+	<property name="ireport.y" value="317"/>
 	<property name="OPENERP_RELATIONS" value="[&apos;invoice_line&apos;, &apos;invoice_line_tax_id&apos;]"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
@@ -161,6 +161,9 @@
 	</field>
 	<field name="line_uom_name" class="java.lang.String">
 		<fieldDescription><![CDATA[invoice_line/product_id/uom_id/name]]></fieldDescription>
+	</field>
+	<field name="number_only" class="java.lang.String">
+		<fieldDescription><![CDATA[number_only]]></fieldDescription>
 	</field>
 	<variable name="ROWNUM" class="java.lang.Integer" calculation="Sum">
 		<variableExpression><![CDATA[1]]></variableExpression>
@@ -507,7 +510,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="9" isBold="true" pdfFontName="arial.ttf"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{number}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{number_only}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
 				<reportElement key="textField-6" x="375" y="225" width="70" height="14"/>

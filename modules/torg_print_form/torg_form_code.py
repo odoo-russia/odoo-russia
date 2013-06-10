@@ -15,6 +15,21 @@ report_sxw.report_sxw('report.new_torg_form_report', 'account.invoice',
                       parser=torg_form)
 
 class account_invoice(osv.osv):
+    def _get_number_only(self, cr, uid, ids, field_name, arg, context):
+        res = {}
+
+        for row in self.browse(cr, uid, ids, context):
+            if not row.number:
+                raise osv.except_osv('Error!', 'You must confirm invoice!')
+
+            seq_id = self.pool.get('ir.sequence').search(cr, uid, [('code', '=', 'sale.order')])
+            sequence = self.pool.get('ir.sequence').read(cr, uid, seq_id, ['padding', 'active'])[0]
+            if sequence and sequence.get('active'):
+                padding = sequence.get('padding')
+                padding = 0 - int(padding)
+                res[row.id] = row.number[padding:].lstrip('0')
+
+        return res
 
     def _get_pos_in_words(self,cr,uid,ids,field,arg,context=None):
         res = {}
@@ -46,6 +61,7 @@ class account_invoice(osv.osv):
     _name = 'account.invoice'
     _inherit = 'account.invoice'
     _columns = {
+        'number_only': fields.function(_get_number_only, type='char'),
         'price_in_words': fields.function(_get_price_in_words, type='char'),
         'pos_in_words': fields.function(_get_pos_in_words, type='char'),
         'invoices_count': fields.function(_get_invoices_count, type='integer'),
