@@ -81,14 +81,11 @@ class invoice_line(osv.osv):
         res = {}
 
         for row in self.browse(cr, uid, ids, context):
-            #invoice_line/invoice_line_tax_id/amount
             res[row.id] = 0
 
             for line in row.invoice_line_tax_id:
                 res[row.id] += line.amount
 
-            #print row.invoice_line.tax
-        print res
         return res
 
     def _get_tax_total(self,cr,uid,ids,field,arg,context=None):
@@ -105,7 +102,6 @@ class invoice_line(osv.osv):
         for row in self.browse(cr, uid, ids, context):
             res[row.id] = row.line_tax_total + row.price_subtotal
 
-        print '\n\n', res, '\n\n'
         return res
 
     _name = 'account.invoice.line'
