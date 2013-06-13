@@ -4,7 +4,7 @@
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.6500000000000028"/>
 	<property name="ireport.x" value="15"/>
-	<property name="ireport.y" value="157"/>
+	<property name="ireport.y" value="79"/>
 	<property name="OPENERP_RELATIONS" value="[&apos;invoice_line&apos;, &apos;invoice_line_tax_id&apos;]"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
@@ -103,7 +103,7 @@
 	<field name="supplier_bank_acc_corr" class="java.lang.String">
 		<fieldDescription><![CDATA[partner_id/bank_ids/bank_acc_corr]]></fieldDescription>
 	</field>
-	<field name="date_invoice" class="java.lang.String">
+	<field name="date_invoice" class="java.util.Date">
 		<fieldDescription><![CDATA[date_invoice]]></fieldDescription>
 	</field>
 	<field name="origin" class="java.lang.String">
@@ -537,7 +537,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="9" isBold="true" pdfFontName="arial.ttf"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{date_invoice}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[new SimpleDateFormat("dd.MM.yyyy").format($F{date_invoice})]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement key="staticText-135" x="51" y="80" width="498" height="14"/>
