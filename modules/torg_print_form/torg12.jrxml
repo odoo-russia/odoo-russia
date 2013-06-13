@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="NK_EX12p" printOrder="Horizontal" pageWidth="841" pageHeight="595" orientation="Landscape" whenNoDataType="NoDataSection" columnWidth="841" leftMargin="0" rightMargin="0" topMargin="3" bottomMargin="0" isFloatColumnFooter="true" whenResourceMissingType="Empty">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="NK_EX12p" language="groovy" printOrder="Horizontal" pageWidth="841" pageHeight="595" orientation="Landscape" whenNoDataType="NoDataSection" columnWidth="841" leftMargin="0" rightMargin="0" topMargin="3" bottomMargin="0" isFloatColumnFooter="true" whenResourceMissingType="Empty">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.6500000000000028"/>
-	<property name="ireport.x" value="15"/>
-	<property name="ireport.y" value="79"/>
+	<property name="ireport.x" value="101"/>
+	<property name="ireport.y" value="367"/>
 	<property name="OPENERP_RELATIONS" value="[&apos;invoice_line&apos;, &apos;invoice_line_tax_id&apos;]"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
@@ -206,7 +206,8 @@
 		<variableExpression><![CDATA[$F{line_weight}]]></variableExpression>
 	</variable>
 	<variable name="carry_flag" class="java.lang.Boolean" resetType="Page">
-		<variableExpression><![CDATA[$F{invoices_count} > 2 && $F{invoices_count} < 13 && $V{PAGE_COUNT} == $F{invoices_count}]]></variableExpression>
+		<variableExpression><![CDATA[($V{PAGE_NUMBER} == 1 && $F{invoices_count} > 2 && $F{invoices_count} < 13 && $F{invoices_count} == $V{REPORT_COUNT}) ||
+($V{PAGE_COUNT} > 12 && $V{PAGE_COUNT} < 24 && $V{REPORT_COUNT} == $F{invoices_count})]]></variableExpression>
 	</variable>
 	<group name="table" isStartNewPage="true">
 		<groupExpression><![CDATA[$V{carry_flag}]]></groupExpression>
