@@ -66,10 +66,19 @@ class sale_order(osv.osv):
 
         return res
 
+    def _get_orders_count(self,cr,uid,ids,field,arg,context=None):
+        res = {}
+
+        for row in self.browse(cr, uid, ids, context):
+            res[row.id] = len(row.order_line)
+
+        return res
+
     _columns = {
         'is_invoice': fields.function(_is_invoice, type='boolean'),
         'number_only': fields.function(_get_number_only, type='char'),
         'price_in_words':fields.function(_get_price_in_words, type='char'),
+        'orders_count': fields.function(_get_orders_count, type='integer'),
     }
 sale_order()
 
@@ -108,12 +117,21 @@ class account_invoice(osv.osv):
 
         return res
 
+    def _get_invoices_count(self,cr,uid,ids,field,arg,context=None):
+        res = {}
+
+        for row in self.browse(cr, uid, ids, context):
+            res[row.id] = len(row.invoice_line)
+
+        return res
+
     _name = 'account.invoice'
     _inherit = 'account.invoice'
     _columns = {
         'is_invoice': fields.function(_is_invoice, type='boolean'),
         'number_only': fields.function(_get_number_only, type='char'),
         'price_in_words':fields.function(_get_price_in_words, type='char'),
+        'invoices_count': fields.function(_get_invoices_count, type='integer'),
     }
 account_invoice()
 

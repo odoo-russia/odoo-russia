@@ -43,10 +43,19 @@ class account_invoice(osv.osv):
 
         return res
 
+    def _get_invoices_count(self,cr,uid,ids,field,arg,context=None):
+        res = {}
+
+        for row in self.browse(cr, uid, ids, context):
+            res[row.id] = len(row.invoice_line)
+
+        return res
+
     _name = 'account.invoice'
     _inherit = 'account.invoice'
     _columns = {
         'number_only': fields.function(_get_number_only, type='char'),
         'price_in_words':fields.function(_get_price_in_words, type='char'),
+        'invoices_count': fields.function(_get_invoices_count, type='integer'),
     }
 account_invoice()
