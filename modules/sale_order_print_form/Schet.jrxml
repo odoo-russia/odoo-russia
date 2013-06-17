@@ -151,7 +151,7 @@
 		<initialValueExpression><![CDATA[($F{is_invoice})?$F{invoices_count}:$F{orders_count}]]></initialValueExpression>
 	</variable>
 	<variable name="carry_flag" class="java.lang.Boolean">
-		<variableExpression><![CDATA[($V{PAGE_NUMBER} == 1 && $V{lines_count} > 20 && $V{lines_count} < 30 && $V{lines_count} == $V{REPORT_COUNT}) ||
+		<variableExpression><![CDATA[($V{PAGE_NUMBER} == 1 && $V{PAGE_COUNT} > 24 && $V{lines_count} - 1 == $V{REPORT_COUNT}) ||
 ($V{PAGE_NUMBER} != 1 && $V{PAGE_COUNT} > 45 && $V{REPORT_COUNT} == $V{lines_count})]]></variableExpression>
 	</variable>
 	<group name="Group1" isStartNewPage="true">
