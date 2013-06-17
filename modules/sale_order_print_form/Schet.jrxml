@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Schet2" language="groovy" pageWidth="595" pageHeight="842" columnWidth="539" leftMargin="28" rightMargin="28" topMargin="28" bottomMargin="28">
-	<property name="ireport.zoom" value="1.652892561983472"/>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Schet2" language="groovy" pageWidth="595" pageHeight="842" columnWidth="539" leftMargin="28" rightMargin="28" topMargin="28" bottomMargin="28" isFloatColumnFooter="true">
+	<property name="ireport.zoom" value="1.5026296018031604"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="347"/>
+	<property name="ireport.y" value="288"/>
 	<property name="OPENERP_RELATIONS" value="[&apos;order_line&apos;, &apos;invoice_line&apos;]"/>
 	<property name="OPENERP_RELATIONS0" value="[&apos;order_line&apos;]"/>
 	<subDataset name="Table Dataset 1">
@@ -12,7 +12,7 @@
 	</subDataset>
 	<parameter name="Quantity" class="java.lang.Double" isForPrompting="false">
 		<parameterDescription><![CDATA[]]></parameterDescription>
-		<defaultValueExpression><![CDATA[($F{is_invoice}.equals("True"))?$F{invoice_quantity}:$F{order_product_number}]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA[($F{is_invoice})?$F{invoice_quantity}:$F{order_product_number}]]></defaultValueExpression>
 	</parameter>
 	<queryString language="xPath">
 		<![CDATA[]]>
@@ -80,13 +80,13 @@
 	<field name="partner_shipping_name_off" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/partner_shipping_id/name_official]]></fieldDescription>
 	</field>
-	<field name="order_price_unit" class="java.lang.String">
+	<field name="order_price_unit" class="java.lang.Double">
 		<fieldDescription><![CDATA[/data/record/order_line/price_unit]]></fieldDescription>
 	</field>
 	<field name="order_line_name" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/order_line/name]]></fieldDescription>
 	</field>
-	<field name="order_price_subtotal" class="java.lang.String">
+	<field name="order_price_subtotal" class="java.lang.Double">
 		<fieldDescription><![CDATA[/data/record/order_line/price_subtotal]]></fieldDescription>
 	</field>
 	<field name="order_product_number" class="java.lang.String">
@@ -98,13 +98,13 @@
 	<field name="date_order" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/date_order]]></fieldDescription>
 	</field>
-	<field name="invoice_price_unit" class="java.lang.String">
+	<field name="invoice_price_unit" class="java.lang.Double">
 		<fieldDescription><![CDATA[/data/record/invoice_line/price_unit]]></fieldDescription>
 	</field>
 	<field name="invoice_line_name" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/invoice_line/name]]></fieldDescription>
 	</field>
-	<field name="invoice_price_subtotal" class="java.lang.String">
+	<field name="invoice_price_subtotal" class="java.lang.Double">
 		<fieldDescription><![CDATA[/data/record/invoice_line/price_subtotal]]></fieldDescription>
 	</field>
 	<field name="invoice_quantity" class="java.lang.String">
@@ -131,7 +131,7 @@
 	<field name="amount_total" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/amount_total]]></fieldDescription>
 	</field>
-	<field name="is_invoice" class="java.lang.String">
+	<field name="is_invoice" class="java.lang.Boolean">
 		<fieldDescription><![CDATA[/data/record/is_invoice]]></fieldDescription>
 	</field>
 	<field name="number_only" class="java.lang.String">
@@ -140,140 +140,25 @@
 	<field name="price_in_words" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/price_in_words]]></fieldDescription>
 	</field>
-	<group name="Group1" keepTogether="true">
+	<field name="invoices_count" class="java.lang.Integer">
+		<fieldDescription><![CDATA[/data/record/invoices_count]]></fieldDescription>
+	</field>
+	<field name="orders_count" class="java.lang.Integer">
+		<fieldDescription><![CDATA[/data/record/orders_count]]></fieldDescription>
+	</field>
+	<variable name="lines_count" class="java.lang.Integer">
+		<variableExpression><![CDATA[]]></variableExpression>
+		<initialValueExpression><![CDATA[($F{is_invoice})?$F{invoices_count}:$F{orders_count}]]></initialValueExpression>
+	</variable>
+	<variable name="carry_flag" class="java.lang.Boolean">
+		<variableExpression><![CDATA[($V{PAGE_NUMBER} == 1 && $V{PAGE_COUNT} > 22 && $V{lines_count} == $V{REPORT_COUNT}) ||
+($V{PAGE_NUMBER} != 1 && $V{PAGE_COUNT} > 40 && $V{lines_count} == $V{REPORT_COUNT})]]></variableExpression>
+	</variable>
+	<group name="Group1" isStartNewPage="true">
+		<groupExpression><![CDATA[($V{PAGE_NUMBER} == 1 && $V{lines_count} > 2 && $V{lines_count} < 30 && $V{lines_count} == $V{REPORT_COUNT}) ||
+($V{PAGE_COUNT} > 45 && $V{REPORT_COUNT} == $V{lines_count} - 1)]]></groupExpression>
 		<groupFooter>
-			<band height="167" splitType="Immediate">
-				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-					<reportElement key="textField-7" mode="Transparent" x="463" y="26" width="76" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
-					<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="2">
-						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
-						<leftPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
-						<bottomPen lineWidth="0.75" lineColor="#000000"/>
-						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
-					</box>
-					<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-						<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arialbd.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
-					</textElement>
-					<textFieldExpression class="java.lang.String"><![CDATA[new DecimalFormat("###0.00").format($F{amount_total}.toDouble())]]></textFieldExpression>
-				</textField>
-				<staticText>
-					<reportElement key="staticText-58" mode="Transparent" x="345" y="0" width="103" height="13" isPrintWhenDetailOverflows="true" forecolor="#000000" backcolor="#FFFFFF"/>
-					<box>
-						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-						<bottomPen lineWidth="0.0" lineColor="#000000"/>
-						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					</box>
-					<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-						<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arialbd.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
-					</textElement>
-					<text><![CDATA[Итого: ]]></text>
-				</staticText>
-				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-					<reportElement key="textField-7" mode="Transparent" x="463" y="0" width="76" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
-					<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="2">
-						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
-						<leftPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
-						<bottomPen lineWidth="0.75" lineColor="#000000"/>
-						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
-					</box>
-					<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-						<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arialbd.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
-					</textElement>
-					<textFieldExpression class="java.lang.String"><![CDATA[new DecimalFormat("###0.00").format($F{amount_untaxed}.toDouble())]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-					<reportElement key="textField-7" mode="Transparent" x="463" y="13" width="76" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
-					<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="2">
-						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
-						<leftPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
-						<bottomPen lineWidth="0.75" lineColor="#000000"/>
-						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
-					</box>
-					<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-						<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arialbd.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
-					</textElement>
-					<textFieldExpression class="java.lang.String"><![CDATA[($F{amount_tax}.equals("")) ? " - " : String.format("%8.2f", $F{amount_tax}.toDouble())]]></textFieldExpression>
-				</textField>
-				<staticText>
-					<reportElement key="staticText-58" mode="Transparent" x="345" y="13" width="103" height="13" isPrintWhenDetailOverflows="true" forecolor="#000000" backcolor="#FFFFFF"/>
-					<box>
-						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-						<bottomPen lineWidth="0.0" lineColor="#000000"/>
-						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					</box>
-					<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-						<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arialbd.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
-					</textElement>
-					<text><![CDATA[НДС: ]]></text>
-				</staticText>
-				<staticText>
-					<reportElement key="staticText-58" mode="Transparent" x="345" y="26" width="103" height="13" isPrintWhenDetailOverflows="true" forecolor="#000000" backcolor="#FFFFFF"/>
-					<box>
-						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-						<bottomPen lineWidth="0.0" lineColor="#000000"/>
-						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					</box>
-					<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-						<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arialbd.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
-					</textElement>
-					<text><![CDATA[Всего к оплате: ]]></text>
-				</staticText>
-				<staticText>
-					<reportElement key="staticText-4" mode="Transparent" x="0" y="109" width="161" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
-					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-						<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
-					</textElement>
-					<text><![CDATA[Руководитель предприятия:]]></text>
-				</staticText>
-				<staticText>
-					<reportElement key="staticText-4" mode="Transparent" x="0" y="148" width="108" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
-					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-						<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
-					</textElement>
-					<text><![CDATA[Главный бухгалтер:]]></text>
-				</staticText>
-				<textField pattern="" isBlankWhenNull="false">
-					<reportElement key="textField-1" mode="Transparent" x="161" y="109" width="250" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
-					<box>
-						<bottomPen lineWidth="0.75"/>
-					</box>
-					<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-						<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
-					</textElement>
-					<textFieldExpression class="java.lang.String"><![CDATA[$F{performer_ceo}]]></textFieldExpression>
-				</textField>
-				<textField pattern="" isBlankWhenNull="false">
-					<reportElement key="textField-1" mode="Transparent" x="163" y="148" width="250" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
-					<box>
-						<pen lineWidth="0.0"/>
-						<topPen lineWidth="0.0"/>
-						<leftPen lineWidth="0.0"/>
-						<bottomPen lineWidth="0.75"/>
-						<rightPen lineWidth="0.0"/>
-					</box>
-					<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-						<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
-					</textElement>
-					<textFieldExpression class="java.lang.String"><![CDATA[$F{performer_accountant}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true">
-					<reportElement x="0" y="41" width="539" height="23"/>
-					<textElement verticalAlignment="Middle">
-						<font pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
-					</textElement>
-					<textFieldExpression class="java.lang.String"><![CDATA["Всего наименований " + $V{REPORT_COUNT} + ", на сумму " + String.format("%.2f", $F{amount_total}.toDouble()) + "р."]]></textFieldExpression>
-				</textField>
-				<textField>
-					<reportElement positionType="Float" x="0" y="63" width="539" height="20"/>
-					<textElement verticalAlignment="Middle">
-						<font isBold="false" pdfFontName="arialbd.ttf" pdfEncoding="cp1251"/>
-					</textElement>
-					<textFieldExpression class="java.lang.String"><![CDATA[$F{price_in_words}.substring(0, 1).toUpperCase() + $F{price_in_words}.substring(1, $F{price_in_words}.length())]]></textFieldExpression>
-				</textField>
-			</band>
+			<band splitType="Prevent"/>
 		</groupFooter>
 	</group>
 	<title>
@@ -465,7 +350,7 @@ $F{performer_bank_name}]]></textFieldExpression>
 				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[($F{is_invoice}.equals("True"))?($F{partner_name_off}.equals(""))?$F{partner_name}:$F{partner_name_off}:($F{partner_shipping_name_off}.equals(""))?$F{partner_shipping_name}:$F{partner_shipping_name_off}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{is_invoice})?($F{partner_name_off}.equals(""))?$F{partner_name}:$F{partner_name_off}:($F{partner_shipping_name_off}.equals(""))?$F{partner_shipping_name}:$F{partner_shipping_name_off}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 				<reportElement key="textField-31" mode="Transparent" x="52" y="223" width="456" height="17" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -475,7 +360,7 @@ $F{performer_bank_name}]]></textFieldExpression>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="SansSerif" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arialbd.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[String.format("СЧЕТ № %s от %s", $F{number_only}, (new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(($F{is_invoice}.equals("True"))?$F{date_invoice}:$F{date_order})).format("dd.MM.yyyy"))]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[String.format("СЧЕТ № %s от %s", $F{number_only}, (new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(($F{is_invoice})?$F{date_invoice}:$F{date_order})).format("dd.MM.yyyy"))]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement key="staticText-52" mode="Transparent" x="3" y="242" width="96" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -584,7 +469,7 @@ $F{performer_bank_name}]]></textFieldExpression>
 				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[new DecimalFormat("###0.00").format(($F{is_invoice}.equals("True"))?$F{invoice_price_unit}.toDouble():$F{order_price_unit}.toDouble())]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%.2f", ($F{is_invoice})?$F{invoice_price_unit}:$F{order_price_unit})]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="###0.00" isBlankWhenNull="true">
 				<reportElement key="textField-22" mode="Transparent" x="463" y="0" width="76" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -597,11 +482,11 @@ $F{performer_bank_name}]]></textFieldExpression>
 				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[new DecimalFormat("###0.00").format(($F{is_invoice}.equals("True"))?$F{invoice_price_subtotal}.toDouble():$F{order_price_subtotal}.toDouble())]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%.2f", ($F{is_invoice})?$F{invoice_price_subtotal}:$F{order_price_subtotal})]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 				<reportElement key="textField-18" mode="Transparent" x="29" y="0" width="260" height="13" isPrintWhenDetailOverflows="true" forecolor="#000000" backcolor="#FFFFFF"/>
-				<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="2">
+				<box topPadding="0" leftPadding="3" bottomPadding="0" rightPadding="3">
 					<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.75" lineColor="#000000"/>
@@ -610,7 +495,7 @@ $F{performer_bank_name}]]></textFieldExpression>
 				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[($F{is_invoice}.equals("True"))?$F{invoice_line_name}:$F{order_line_name}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{is_invoice})?$F{invoice_line_name}:$F{order_line_name}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 				<reportElement key="textField-19" mode="Transparent" x="289" y="0" width="53" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -623,11 +508,11 @@ $F{performer_bank_name}]]></textFieldExpression>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[($F{is_invoice}.equals("True"))?$F{invoice_product_uom}:$F{order_product_uom}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{is_invoice})?$F{invoice_product_uom}:$F{order_product_uom}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="false">
 				<reportElement key="textField-23" x="0" y="0" width="29" height="13"/>
-				<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="2">
+				<box topPadding="0" leftPadding="3" bottomPadding="0" rightPadding="3">
 					<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.75" lineColor="#000000"/>
@@ -649,13 +534,142 @@ $F{performer_bank_name}]]></textFieldExpression>
 				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%5.2f", ($F{is_invoice}.equals("True"))?$F{invoice_quantity}.toDouble():$F{order_product_number}.toDouble())]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%5.2f", ($F{is_invoice})?$F{invoice_quantity}.toDouble():$F{order_product_number}.toDouble())]]></textFieldExpression>
 			</textField>
-			<break>
-				<reportElement x="0" y="12" width="100" height="1">
-					<printWhenExpression><![CDATA[$V{PAGE_COUNT} > 21]]></printWhenExpression>
-				</reportElement>
-			</break>
 		</band>
 	</detail>
+	<summary>
+		<band height="165">
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement key="textField-7" mode="Transparent" x="463" y="26" width="76" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="2">
+					<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.75" lineColor="#000000"/>
+					<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arialbd.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[new DecimalFormat("###0.00").format($F{amount_total}.toDouble())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-58" mode="Transparent" x="345" y="0" width="103" height="13" isPrintWhenDetailOverflows="true" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arialbd.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[Итого: ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement key="textField-7" mode="Transparent" x="463" y="0" width="76" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="2">
+					<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.75" lineColor="#000000"/>
+					<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arialbd.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[new DecimalFormat("###0.00").format($F{amount_untaxed}.toDouble())]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement key="textField-7" mode="Transparent" x="463" y="13" width="76" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="2">
+					<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.75" lineColor="#000000"/>
+					<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arialbd.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{amount_tax}.equals("")) ? " - " : String.format("%8.2f", $F{amount_tax}.toDouble())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-58" mode="Transparent" x="345" y="13" width="103" height="13" isPrintWhenDetailOverflows="true" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arialbd.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[НДС: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-58" mode="Transparent" x="345" y="26" width="103" height="13" isPrintWhenDetailOverflows="true" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arialbd.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[Всего к оплате: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" mode="Transparent" x="0" y="109" width="161" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[Руководитель предприятия:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" mode="Transparent" x="0" y="148" width="108" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[Главный бухгалтер:]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="textField-1" mode="Transparent" x="161" y="109" width="250" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<bottomPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{performer_ceo}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="textField-1" mode="Transparent" x="163" y="148" width="250" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{performer_accountant}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="41" width="539" height="23"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="arial.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Всего наименований " + $V{REPORT_COUNT} + ", на сумму " + String.format("%.2f", $F{amount_total}.toDouble()) + "р."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="0" y="63" width="539" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false" pdfFontName="arialbd.ttf" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{price_in_words}.substring(0, 1).toUpperCase() + $F{price_in_words}.substring(1, $F{price_in_words}.length())]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
 </jasperReport>

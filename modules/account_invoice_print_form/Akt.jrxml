@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Schet2" language="groovy" pageWidth="595" pageHeight="842" columnWidth="539" leftMargin="28" rightMargin="28" topMargin="28" bottomMargin="28" isFloatColumnFooter="true">
 	<property name="ireport.zoom" value="1.6528925619834718"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="96"/>
+	<property name="ireport.y" value="465"/>
 	<property name="OPENERP_RELATIONS" value="[&apos;invoice_line&apos;]"/>
 	<subDataset name="Table Dataset 1">
 		<queryString language="SQL">
@@ -377,7 +377,7 @@
 		</band>
 	</detail>
 	<summary>
-		<band height="398">
+		<band height="318">
 			<staticText>
 				<reportElement x="0" y="70" width="539" height="74"/>
 				<textElement verticalAlignment="Middle">
