@@ -30,7 +30,7 @@ class account_invoice(osv.osv):
                 padding = sequence.get('padding')
                 padding = 0 - int(padding)
                 res[row.id] = row.number[padding:].lstrip('0')
-
+        
         return res
 
     def _get_invoices_count(self,cr,uid,ids,field,arg,context=None):
