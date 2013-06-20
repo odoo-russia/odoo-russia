@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+
+        <report auto="False"
+                id="bill_of_product_id"
+                model="account.invoice"
+                name="account.invoice.new_bill_of_product_report"
+                rml="bill_of_product_form/bill_of_product.jrxml"
+                string="Товарная накладная"
+        />
+
+    </data>
+</openerp>
