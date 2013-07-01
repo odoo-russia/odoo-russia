@@ -5,8 +5,8 @@
                 id="new_torg_report_id"
                 model="account.invoice"
                 name="account.invoice.torg_form"
-                rml="torg_print_form/torg12.jrxml"
-                string="Торг 12"
+                rml="tt_print_form_torg12/torg12.jrxml"
+                string="Torg12"
         />
 
         <record id="product_uom_new_form" model="ir.ui.view">

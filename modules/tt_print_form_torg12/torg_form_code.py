@@ -4,6 +4,7 @@ import time
 from openerp.report import report_sxw
 from osv import orm, osv, fields
 from openerp.addons.jasper_reports.pytils import numeral
+from tools.translate import _
 
 class torg_form(report_sxw.rml_parse):
     def __init__(self, cr, uid, name, context):
@@ -11,7 +12,7 @@ class torg_form(report_sxw.rml_parse):
         self.localcontext.update( {'time': time,})
 
 report_sxw.report_sxw('report.new_torg_form_report', 'account.invoice',
-                      'torg_print_form/torg12.jrxml',
+                      'tt_print_form_torg12/torg12.jrxml',
                       parser=torg_form)
 
 class account_invoice(osv.osv):
@@ -20,7 +21,7 @@ class account_invoice(osv.osv):
 
         for row in self.browse(cr, uid, ids, context):
             if not row.number:
-                raise osv.except_osv('Error!', 'You must confirm invoice!')
+                raise osv.except_osv(_('Error!'), _('You must confirm invoice!'))
 
             seq_id = self.pool.get('ir.sequence').search(cr, uid, [('code', '=', 'sale.order')])
             sequence = self.pool.get('ir.sequence').read(cr, uid, seq_id, ['padding', 'active'])[0]
@@ -72,7 +73,7 @@ class product_uom(osv.osv):
     _name = 'product.uom'
     _inherit = 'product.uom'
     _columns = {
-        'OKEI': fields.integer('Код по ОКЕИ'),
+        'OKEI': fields.integer('OKEI'),
     }
 product_uom()
 
