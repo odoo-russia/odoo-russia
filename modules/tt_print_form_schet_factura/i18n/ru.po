@@ -1,0 +1,55 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* tt_print_form_schet_factura
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20130617-231055\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-07-01 12:59+0000\n"
+"PO-Revision-Date: 2013-07-01 12:59+0000\n"
+"Last-Translator: Transparent Technologies\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: tt_print_form_schet_factura
+#: code:addons/tt_print_form_schet_factura/invoice_form_code.py:24
+#, python-format
+msgid "Error!"
+msgstr "Ошибка!"
+
+#. module: tt_print_form_schet_factura
+#: model:ir.model,name:tt_print_form_schet_factura.model_product_product
+msgid "Product"
+msgstr "Продукт"
+
+#. module: tt_print_form_schet_factura
+#: model:ir.model,name:tt_print_form_schet_factura.model_product_uom
+msgid "Product Unit of Measure"
+msgstr "Ед. изм. продукции"
+
+#. module: tt_print_form_schet_factura
+#: model:ir.model,name:tt_print_form_schet_factura.model_account_invoice_line
+msgid "Invoice Line"
+msgstr "Позиция счета"
+
+#. module: tt_print_form_schet_factura
+#: model:ir.model,name:tt_print_form_schet_factura.model_res_currency
+msgid "Currency"
+msgstr "Валюта"
+
+#. module: tt_print_form_schet_factura
+#: model:ir.actions.report.xml,name:tt_print_form_schet_factura.new_invoice_report_id
+#: model:ir.model,name:tt_print_form_schet_factura.model_account_invoice
+msgid "Invoice"
+msgstr "Счет-фактура"
+
+#. module: tt_print_form_schet_factura
+#: code:addons/tt_print_form_schet_factura/invoice_form_code.py:24
+#, python-format
+msgid "You must confirm invoice!"
+msgstr "Вы должны подтвердить счёт перед печатью!"
+

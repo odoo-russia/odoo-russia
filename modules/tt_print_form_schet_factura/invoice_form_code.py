@@ -4,6 +4,7 @@ import time
 from openerp.report import report_sxw
 from osv import orm, osv, fields
 from openerp.addons.jasper_reports.pytils import numeral
+from tools.translate import _
 
 class invoice_form(report_sxw.rml_parse):
     def __init__(self, cr, uid, name, context):
@@ -11,7 +12,7 @@ class invoice_form(report_sxw.rml_parse):
         self.localcontext.update( {'time': time,})
 
 report_sxw.report_sxw('report.new_invoice_form_report', 'account.invoice',
-                      'invoice_print_form/invoice.jrxml',
+                      'tt_print_form_schet_factura/invoice.jrxml',
                       parser=invoice_form)
 
 class account_invoice(osv.osv):
@@ -20,7 +21,7 @@ class account_invoice(osv.osv):
 
         for row in self.browse(cr, uid, ids, context):
             if not row.number:
-                raise osv.except_osv('Error!', 'You must confirm invoice!')
+                raise osv.except_osv(_('Error!'), _('You must confirm invoice!'))
 
             seq_id = self.pool.get('ir.sequence').search(cr, uid, [('code', '=', 'sale.order')])
             sequence = self.pool.get('ir.sequence').read(cr, uid, seq_id, ['padding', 'active'])[0]

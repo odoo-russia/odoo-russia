@@ -5,8 +5,8 @@
                 id="new_invoice_report_id"
                 model="account.invoice"
                 name="account.invoice.invoice_form"
-                rml="invoice_print_form/invoice.jrxml"
-                string="Счёт-фактура"
+                rml="tt_print_form_schet_factura/invoice.jrxml"
+                string="Invoice"
         />
 
         <record id="product_uom_new_form" model="ir.ui.view">
