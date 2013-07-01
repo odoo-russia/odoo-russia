@@ -3,6 +3,7 @@
 import time
 from openerp.report import report_sxw
 from osv import orm, osv, fields
+from tools.translate import _
 
 
 class bill_of_product_report(report_sxw.rml_parse):
@@ -22,7 +23,7 @@ class account_invoice(osv.osv):
 
         for row in self.browse(cr, uid, ids, context):
             if not row.number:
-                raise osv.except_osv('Error!', 'You must confirm invoice!')
+                raise osv.except_osv(_('Error!'), _('You must confirm invoice!'))
 
             seq_id = self.pool.get('ir.sequence').search(cr, uid, [('code', '=', 'sale.order')])
             sequence = self.pool.get('ir.sequence').read(cr, uid, seq_id, ['padding', 'active'])[0]
@@ -33,7 +34,7 @@ class account_invoice(osv.osv):
         
         return res
 
-    def _get_invoices_count(self,cr,uid,ids,field,arg,context=None):
+    def _get_invoices_count(self, cr, uid, ids, field, arg, context=None):
         res = {}
 
         for row in self.browse(cr, uid, ids, context):

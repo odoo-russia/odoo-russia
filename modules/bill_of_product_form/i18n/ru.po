@@ -1,0 +1,405 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* bill_of_product_form
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20130617-231055\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-07-01 12:25+0000\n"
+"PO-Revision-Date: 2013-07-01 12:25+0000\n"
+"Last-Translator: Transparent Technologies\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "$F{invoice_product_uom}"
+msgstr "$F{invoice_product_uom}"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/order_line/price_subtotal"
+msgstr "/data/record/order_line/price_subtotal"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "Покупатель:"
+msgstr "Покупатель:"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/company_id/street2"
+msgstr "/data/record/company_id/street2"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "(расшифровка)"
+msgstr "(расшифровка)"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "Единица изм."
+msgstr "Единица изм."
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/company_id/partner_id/name"
+msgstr "/data/record/company_id/partner_id/name"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "String.format(\"Накладная №%s от %sг.\", $F{number_only}, (new SimpleDateFormat(\"yyyy-MM-dd HH:mm:ss\").parse($F{date_invoice}).format(\"dd.MM.yyyy\")))"
+msgstr "String.format(\"Накладная №%s от %sг.\", $F{number_only}, (new SimpleDateFormat(\"yyyy-MM-dd HH:mm:ss\").parse($F{date_invoice}).format(\"dd.MM.yyyy\")))"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "new DecimalFormat(\"###0.00\").format($F{amount_untaxed}.toDouble())"
+msgstr "new DecimalFormat(\"###0.00\").format($F{amount_untaxed}.toDouble())"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/date_invoice"
+msgstr "/data/record/date_invoice"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "String.format(\"%5.2f\", $F{invoice_quantity}.toDouble())"
+msgstr "String.format(\"%5.2f\", $F{invoice_quantity}.toDouble())"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/invoices_count"
+msgstr "/data/record/invoices_count"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/company_id/partner_id/name_official"
+msgstr "/data/record/company_id/partner_id/name_official"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/invoice_line/price_subtotal"
+msgstr "/data/record/invoice_line/price_subtotal"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/name"
+msgstr "/data/record/name"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "Поставщик:"
+msgstr "Поставщик:"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "$V{REPORT_COUNT}"
+msgstr "$V{REPORT_COUNT}"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/number_only"
+msgstr "/data/record/number_only"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/company_id/bank_ids/bank_name"
+msgstr "/data/record/company_id/bank_ids/bank_name"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "($F{amount_tax}.equals(\"\")) ? \" - \" : String.format(\"%5.2f\", $F{amount_tax}.toDouble())"
+msgstr "($F{amount_tax}.equals(\"\")) ? \" - \" : String.format(\"%5.2f\", $F{amount_tax}.toDouble())"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/partner_shipping_id/name_official"
+msgstr "/data/record/partner_shipping_id/name_official"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/order_line/price_unit"
+msgstr "/data/record/order_line/price_unit"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/invoice_line/product_id/uom_id/name"
+msgstr "/data/record/invoice_line/product_id/uom_id/name"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/order_line/name"
+msgstr "/data/record/order_line/name"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/invoice_line/name"
+msgstr "/data/record/invoice_line/name"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/company_id/partner_id/kpp"
+msgstr "/data/record/company_id/partner_id/kpp"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "Цена"
+msgstr "Цена"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/order_line/product_uom/name"
+msgstr "/data/record/order_line/product_uom/name"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/company_id/partner_id/ceo"
+msgstr "/data/record/company_id/partner_id/ceo"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/date_order"
+msgstr "/data/record/date_order"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "№"
+msgstr "№"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/partner_id/name"
+msgstr "/data/record/partner_id/name"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "(подпись)"
+msgstr "(подпись)"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/company_id/street"
+msgstr "/data/record/company_id/street"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/company_id/country_id/name"
+msgstr "/data/record/company_id/country_id/name"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/company_id/zip"
+msgstr "/data/record/company_id/zip"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "new DecimalFormat(\"###0.00\").format($F{invoice_price_unit}.toDouble())"
+msgstr "new DecimalFormat(\"###0.00\").format($F{invoice_price_unit}.toDouble())"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "$F{partner_name}"
+msgstr "$F{partner_name}"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/company_id/bank_ids/bank_bic"
+msgstr "/data/record/company_id/bank_ids/bank_bic"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "new DecimalFormat(\"###0.00\").format($F{invoice_price_subtotal}.toDouble())"
+msgstr "new DecimalFormat(\"###0.00\").format($F{invoice_price_subtotal}.toDouble())"
+
+#. module: bill_of_product_form
+#: model:ir.actions.report.xml,name:bill_of_product_form.bill_of_product_id
+msgid "Invoice for warehouse"
+msgstr "Накладная для склада"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "Принял:"
+msgstr "Принял:"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/company_id/bank_ids/acc_number"
+msgstr "/data/record/company_id/bank_ids/acc_number"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/order_line/product_uom_qty"
+msgstr "/data/record/order_line/product_uom_qty"
+
+#. module: bill_of_product_form
+#: code:addons/bill_of_product_form/bill_of_product_code.py:25
+#, python-format
+msgid "Error!"
+msgstr "Ошибка!"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/is_invoice"
+msgstr "/data/record/is_invoice"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/partner_id/name_official"
+msgstr "/data/record/partner_id/name_official"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/amount_total"
+msgstr "/data/record/amount_total"
+
+#. module: bill_of_product_form
+#: code:addons/bill_of_product_form/bill_of_product_code.py:25
+#, python-format
+msgid "You must confirm invoice!"
+msgstr "Вы должны подтвердить счёт!"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/partner_shipping_id/name"
+msgstr "/data/record/partner_shipping_id/name"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "Итого:"
+msgstr "Итого:"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "$F{performer_name}"
+msgstr "$F{performer_name}"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "$V{carry_flag}"
+msgstr "$V{carry_flag}"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "НДС:"
+msgstr "НДС:"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/invoice_line/product_id/name_template"
+msgstr "/data/record/invoice_line/product_id/name_template"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "Сдал:"
+msgstr "Сдал:"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/company_id/city"
+msgstr "/data/record/company_id/city"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/number"
+msgstr "/data/record/number"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "new DecimalFormat(\"###0.00\").format($F{amount_total}.toDouble())"
+msgstr "new DecimalFormat(\"###0.00\").format($F{amount_total}.toDouble())"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/invoice_line/product_id/name"
+msgstr "/data/record/invoice_line/product_id/name"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "К комплектности и качеству товара претензий не имею."
+msgstr "К комплектности и качеству товара претензий не имею."
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/invoice_line/price_unit"
+msgstr "/data/record/invoice_line/price_unit"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "Наименование товара"
+msgstr "Наименование товара"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/company_id/partner_id/accountant"
+msgstr "/data/record/company_id/partner_id/accountant"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "Сумма"
+msgstr "Сумма"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "$F{invoice_line_name}"
+msgstr "$F{invoice_line_name}"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/company_id/phone"
+msgstr "/data/record/company_id/phone"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "Коли- чество"
+msgstr "Коли- чество"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/amount_untaxed"
+msgstr "/data/record/amount_untaxed"
+
+#. module: bill_of_product_form
+#: model:ir.model,name:bill_of_product_form.model_account_invoice
+msgid "Invoice"
+msgstr "Счет"
+
+#. module: bill_of_product_form
+#: field:account.invoice,invoices_count:0
+#: field:account.invoice,number_only:0
+msgid "unknown"
+msgstr "unknown"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/invoice_line/quantity"
+msgstr "/data/record/invoice_line/quantity"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/amount_tax"
+msgstr "/data/record/amount_tax"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/company_id/partner_id/inn"
+msgstr "/data/record/company_id/partner_id/inn"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "($V{PAGE_NUMBER} == 1 && $V{PAGE_COUNT} > 42 && $V{REPORT_COUNT} == $F{invoices_count}) || ($V{PAGE_NUMBER} != 1 && $V{PAGE_COUNT} > 45 && $V{REPORT_COUNT} == $F{invoices_count})"
+msgstr "($V{PAGE_NUMBER} == 1 && $V{PAGE_COUNT} > 42 && $V{REPORT_COUNT} == $F{invoices_count}) || ($V{PAGE_NUMBER} != 1 && $V{PAGE_COUNT} > 45 && $V{REPORT_COUNT} == $F{invoices_count})"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/company_id/bank_ids/bank_acc_corr"
+msgstr "/data/record/company_id/bank_ids/bank_acc_corr"
+
+#. module: bill_of_product_form
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "Всего к оплате:"
+msgstr "Всего к оплате:"
+
