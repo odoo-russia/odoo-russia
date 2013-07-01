@@ -6,7 +6,7 @@
                 id="bill_of_product_id"
                 model="account.invoice"
                 name="account.invoice.new_bill_of_product_report"
-                rml="bill_of_product_form/bill_of_product.jrxml"
+                rml="tt_print_form_nakl_sklad/bill_of_product.jrxml"
                 string="Invoice for warehouse"
         />
 

@@ -13,7 +13,7 @@ class bill_of_product_report(report_sxw.rml_parse):
         self.localcontext.update( {'time': time,})
 
 report_sxw.report_sxw('report.new_bill_of_product_report', 'account_invoice',
-                      'bill_of_product_form/bill_of_product.jrxml',
+                      'tt_print_form_nakl_sklad/bill_of_product.jrxml',
                       parser=bill_of_product_report)
 
 
