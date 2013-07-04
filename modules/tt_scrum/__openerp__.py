@@ -18,17 +18,15 @@
 #
 ##############################################################################
 {
-    "name" : "Info about stock in Sale Order",
+    "name" : "Scrum workflow management",
     "version" : "1.0",
-    "author" : "Denis Karataev",
-    "category" : "Generic Modules",
+    "author" : "Transparent Technologies",
+    "category" : "Developers Team Tools",
     "depends" : [
-        "sale",
-        "sale_base_dsk",
-        "web_autocomplete_width_dsk",
+        "project",
     ],
     "data": [
-      'sale_stock_dsk_view.xml'
+      'tt_scrum_view.xml'
     ],
     "description": "",
     "active": False,

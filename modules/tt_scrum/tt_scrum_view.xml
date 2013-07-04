@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-        <!--<record id="view_order_form_sale_stock_dsk" model="ir.ui.view">-->
-            <!--<field name="name">sale.order.form</field>-->
-            <!--<field name="model">sale.order</field>-->
-            <!--<field name="type">form</field>-->
-            <!--<field name="inherit_id" ref="sale.view_order_form" />-->
-            <!--<field name="arch" type="xml">-->
-                <!--<xpath expr="//">-->
-
-                <!--</xpath>-->
-                <!--<field name="date_order" position="after">-->
-                    <!--<field name="is_cash_payment"/>-->
-                <!--</field>-->
-            <!--</field>-->
-        <!--</record>-->
+        
     </data>
 </openerp>
