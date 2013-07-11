@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+
+        <report auto="False"
+                id="bill_of_product_id"
+                model="account.invoice"
+                name="account.invoice.new_bill_of_product_report"
+                rml="tt_print_form_nakl_sklad/bill_of_product.jrxml"
+                string="Invoice for warehouse"
+        />
+
+    </data>
+</openerp>

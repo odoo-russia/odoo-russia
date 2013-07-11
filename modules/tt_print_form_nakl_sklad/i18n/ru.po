@@ -1,0 +1,405 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* tt_print_form_nakl_sklad
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20130617-231055\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-07-01 13:18+0000\n"
+"PO-Revision-Date: 2013-07-01 13:18+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "$F{invoice_product_uom}"
+msgstr "$F{invoice_product_uom}"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/order_line/price_subtotal"
+msgstr "/data/record/order_line/price_subtotal"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "Покупатель:"
+msgstr "Покупатель:"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/company_id/street2"
+msgstr "/data/record/company_id/street2"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "(расшифровка)"
+msgstr "(расшифровка)"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "Единица изм."
+msgstr "Единица изм."
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/company_id/partner_id/name"
+msgstr "/data/record/company_id/partner_id/name"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "String.format(\"Накладная №%s от %sг.\", $F{number_only}, (new SimpleDateFormat(\"yyyy-MM-dd HH:mm:ss\").parse($F{date_invoice}).format(\"dd.MM.yyyy\")))"
+msgstr "String.format(\"Накладная №%s от %sг.\", $F{number_only}, (new SimpleDateFormat(\"yyyy-MM-dd HH:mm:ss\").parse($F{date_invoice}).format(\"dd.MM.yyyy\")))"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "new DecimalFormat(\"###0.00\").format($F{amount_untaxed}.toDouble())"
+msgstr "new DecimalFormat(\"###0.00\").format($F{amount_untaxed}.toDouble())"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/date_invoice"
+msgstr "/data/record/date_invoice"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "String.format(\"%5.2f\", $F{invoice_quantity}.toDouble())"
+msgstr "String.format(\"%5.2f\", $F{invoice_quantity}.toDouble())"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/invoices_count"
+msgstr "/data/record/invoices_count"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/company_id/partner_id/name_official"
+msgstr "/data/record/company_id/partner_id/name_official"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/invoice_line/price_subtotal"
+msgstr "/data/record/invoice_line/price_subtotal"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/name"
+msgstr "/data/record/name"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "Поставщик:"
+msgstr "Поставщик:"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "$V{REPORT_COUNT}"
+msgstr "$V{REPORT_COUNT}"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/number_only"
+msgstr "/data/record/number_only"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/company_id/bank_ids/bank_name"
+msgstr "/data/record/company_id/bank_ids/bank_name"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "($F{amount_tax}.equals(\"\")) ? \" - \" : String.format(\"%5.2f\", $F{amount_tax}.toDouble())"
+msgstr "($F{amount_tax}.equals(\"\")) ? \" - \" : String.format(\"%5.2f\", $F{amount_tax}.toDouble())"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/partner_shipping_id/name_official"
+msgstr "/data/record/partner_shipping_id/name_official"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/order_line/price_unit"
+msgstr "/data/record/order_line/price_unit"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/invoice_line/product_id/uom_id/name"
+msgstr "/data/record/invoice_line/product_id/uom_id/name"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/order_line/name"
+msgstr "/data/record/order_line/name"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/invoice_line/name"
+msgstr "/data/record/invoice_line/name"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/company_id/partner_id/kpp"
+msgstr "/data/record/company_id/partner_id/kpp"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "Цена"
+msgstr "Цена"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/order_line/product_uom/name"
+msgstr "/data/record/order_line/product_uom/name"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/company_id/partner_id/ceo"
+msgstr "/data/record/company_id/partner_id/ceo"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/date_order"
+msgstr "/data/record/date_order"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "№"
+msgstr "№"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/partner_id/name"
+msgstr "/data/record/partner_id/name"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "(подпись)"
+msgstr "(подпись)"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/company_id/street"
+msgstr "/data/record/company_id/street"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/company_id/country_id/name"
+msgstr "/data/record/company_id/country_id/name"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/company_id/zip"
+msgstr "/data/record/company_id/zip"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "new DecimalFormat(\"###0.00\").format($F{invoice_price_unit}.toDouble())"
+msgstr "new DecimalFormat(\"###0.00\").format($F{invoice_price_unit}.toDouble())"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "$F{partner_name}"
+msgstr "$F{partner_name}"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/company_id/bank_ids/bank_bic"
+msgstr "/data/record/company_id/bank_ids/bank_bic"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "new DecimalFormat(\"###0.00\").format($F{invoice_price_subtotal}.toDouble())"
+msgstr "new DecimalFormat(\"###0.00\").format($F{invoice_price_subtotal}.toDouble())"
+
+#. module: tt_print_form_nakl_sklad
+#: model:ir.actions.report.xml,name:tt_print_form_nakl_sklad.bill_of_product_id
+msgid "Invoice for warehouse"
+msgstr "Накладная для склада"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "Принял:"
+msgstr "Принял:"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/company_id/bank_ids/acc_number"
+msgstr "/data/record/company_id/bank_ids/acc_number"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/order_line/product_uom_qty"
+msgstr "/data/record/order_line/product_uom_qty"
+
+#. module: tt_print_form_nakl_sklad
+#: code:addons/tt_print_form_nakl_sklad/bill_of_product_code.py:26
+#, python-format
+msgid "Error!"
+msgstr "Ошибка!"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/is_invoice"
+msgstr "/data/record/is_invoice"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/partner_id/name_official"
+msgstr "/data/record/partner_id/name_official"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/amount_total"
+msgstr "/data/record/amount_total"
+
+#. module: tt_print_form_nakl_sklad
+#: code:addons/tt_print_form_nakl_sklad/bill_of_product_code.py:26
+#, python-format
+msgid "You must confirm invoice!"
+msgstr "Вы должны подтвердить счёт перед печатью!"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/partner_shipping_id/name"
+msgstr "/data/record/partner_shipping_id/name"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "Итого:"
+msgstr "Итого:"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "$F{performer_name}"
+msgstr "$F{performer_name}"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "$V{carry_flag}"
+msgstr "$V{carry_flag}"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "НДС:"
+msgstr "НДС:"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/invoice_line/product_id/name_template"
+msgstr "/data/record/invoice_line/product_id/name_template"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "Сдал:"
+msgstr "Сдал:"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/company_id/city"
+msgstr "/data/record/company_id/city"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/number"
+msgstr "/data/record/number"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "new DecimalFormat(\"###0.00\").format($F{amount_total}.toDouble())"
+msgstr "new DecimalFormat(\"###0.00\").format($F{amount_total}.toDouble())"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/invoice_line/product_id/name"
+msgstr "/data/record/invoice_line/product_id/name"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "К комплектности и качеству товара претензий не имею."
+msgstr "К комплектности и качеству товара претензий не имею."
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/invoice_line/price_unit"
+msgstr "/data/record/invoice_line/price_unit"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "Наименование товара"
+msgstr "Наименование товара"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/company_id/partner_id/accountant"
+msgstr "/data/record/company_id/partner_id/accountant"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "Сумма"
+msgstr "Сумма"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "$F{invoice_line_name}"
+msgstr "$F{invoice_line_name}"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/company_id/phone"
+msgstr "/data/record/company_id/phone"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "Коли- чество"
+msgstr "Коли- чество"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/amount_untaxed"
+msgstr "/data/record/amount_untaxed"
+
+#. module: tt_print_form_nakl_sklad
+#: model:ir.model,name:tt_print_form_nakl_sklad.model_account_invoice
+msgid "Invoice"
+msgstr "Счет-фактура"
+
+#. module: tt_print_form_nakl_sklad
+#: field:account.invoice,invoices_count:0
+#: field:account.invoice,number_only:0
+msgid "unknown"
+msgstr "unknown"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/invoice_line/quantity"
+msgstr "/data/record/invoice_line/quantity"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/amount_tax"
+msgstr "/data/record/amount_tax"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/company_id/partner_id/inn"
+msgstr "/data/record/company_id/partner_id/inn"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "($V{PAGE_NUMBER} == 1 && $V{PAGE_COUNT} > 42 && $V{REPORT_COUNT} == $F{invoices_count}) || ($V{PAGE_NUMBER} != 1 && $V{PAGE_COUNT} > 45 && $V{REPORT_COUNT} == $F{invoices_count})"
+msgstr "($V{PAGE_NUMBER} == 1 && $V{PAGE_COUNT} > 42 && $V{REPORT_COUNT} == $F{invoices_count}) || ($V{PAGE_NUMBER} != 1 && $V{PAGE_COUNT} > 45 && $V{REPORT_COUNT} == $F{invoices_count})"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "/data/record/company_id/bank_ids/bank_acc_corr"
+msgstr "/data/record/company_id/bank_ids/bank_acc_corr"
+
+#. module: tt_print_form_nakl_sklad
+#: report:account.invoice.new_bill_of_product_report:0
+msgid "Всего к оплате:"
+msgstr "Всего к оплате:"
+
