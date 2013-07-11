@@ -5,7 +5,7 @@ Simple transliteration
 """
 
 import re
-from pytils.utils import takes, returns
+from utils import takes, returns
 
 TRANSTABLE = (
         (u"'", u"'"),

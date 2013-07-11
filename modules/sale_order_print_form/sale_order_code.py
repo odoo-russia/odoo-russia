@@ -6,7 +6,6 @@ from openerp.report import report_sxw
 from osv import orm, osv, fields
 from openerp.addons.jasper_reports.pytils import numeral
 
-###------ Rgister Sale Order Report ----------###
 class sale_order_report(report_sxw.rml_parse):
     def __init__(self, cr, uid, name, context):
         super(sale_order_report, self).__init__(cr, uid, name, context=context)
@@ -134,4 +133,3 @@ class account_invoice(osv.osv):
         'invoices_count': fields.function(_get_invoices_count, type='integer'),
     }
 account_invoice()
-

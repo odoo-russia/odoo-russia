@@ -4,4 +4,4 @@ Custom exceptions for pytils
 """
 
 # TypeError children
-from pytils.third.aspn426123 import InputParameterError
+from third.aspn426123 import InputParameterError

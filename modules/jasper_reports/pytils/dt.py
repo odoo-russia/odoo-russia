@@ -6,8 +6,8 @@ Russian dates without locales
 
 import datetime
 
-from pytils import numeral
-from pytils.utils import takes, returns, optional, check_positive
+import numeral
+from utils import takes, returns, optional, check_positive
 
 DAY_ALTERNATIVES = {
     1: (u"вчера", u"завтра"),
