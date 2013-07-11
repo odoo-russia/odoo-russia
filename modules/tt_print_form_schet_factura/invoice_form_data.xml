@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+        <report auto="False"
+                id="new_invoice_report_id"
+                model="account.invoice"
+                name="account.invoice.invoice_form"
+                rml="tt_print_form_schet_factura/invoice.jrxml"
+                string="Invoice"
+        />
+
+        <record id="product_uom_new_form" model="ir.ui.view">
+            <field name="name">product.uom.form</field>
+            <field name="model">product.uom</field>
+            <field name="inherit_id" ref="product.product_uom_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/group//field[@name='rounding']" position="after">
+                    <field name="OKEI"/>
+                </xpath>
+
+            </field>
+        </record>
+
+
+        <record id="view_currency_form_new" model="ir.ui.view">
+            <field name="name">res.currency.form_new</field>
+            <field name="model">res.currency</field>
+            <field name="inherit_id" ref="base.view_currency_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/group//field[@name='active']" position="after">
+                    <field name="code"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="product_normal_form_view_new" model="ir.ui.view">
+            <field name="name">product.normal.form</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form//field[@name='list_price']" position="after">
+                    <field name="country_origin"/>
+                    <field name="country_code"/>
+                    <field name="declaration_code"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>
