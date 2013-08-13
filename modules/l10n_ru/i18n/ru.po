@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenERP Server 6.1-20121101-003205\n"
+"Project-Id-Version: OpenERP Server 7.0-20130717-231254\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-08 08:56+0000\n"
-"PO-Revision-Date: 2012-11-08 08:56+0000\n"
+"POT-Creation-Date: 2013-08-12 20:00+0000\n"
+"PO-Revision-Date: 2013-08-12 20:00+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -32,12 +32,17 @@ msgid "Закрытое акционерное общество"
 msgstr "Закрытое акционерное общество"
 
 #. module: l10n_ru
+#: field:res.partner,accountant:0
+msgid "Accountant"
+msgstr "Бухгалтер"
+
+#. module: l10n_ru
 #: model:res.partner.title,name:l10n_ru.res_partner_title_oao
 msgid "Открытое акционерное общество"
 msgstr "Открытое акционерное общество"
 
 #. module: l10n_ru
-#: code:addons/l10n_ru/l10n_ru.py:157
+#: code:addons/l10n_ru/l10n_ru.py:123
 #, python-format
 msgid "Bad URL for bnkdel.txt!"
 msgstr "Неправильный адрес файла bnkdel.txt!"
@@ -48,14 +53,9 @@ msgid "Location of bnkseek.txt"
 msgstr "Местонахождение файла bnkseek.txt"
 
 #. module: l10n_ru
-#: model:ir.model,name:l10n_ru.model_res_bank_tmp
-msgid "res.bank.tmp"
-msgstr "res.bank.tmp"
-
-#. module: l10n_ru
-#: view:res.partner:0
-msgid "Accounting details"
-msgstr "Бухгалтерские реквизиты"
+#: model:res.partner.title,shortcut:l10n_ru.res_partner_title_ip
+msgid "ИП"
+msgstr "ИП"
 
 #. module: l10n_ru
 #: field:wizard.update.banks,location_bnkdel:0
@@ -63,14 +63,19 @@ msgid "Location of bnkdel.txt"
 msgstr "Местонахождение файла bnkdel.txt"
 
 #. module: l10n_ru
-#: code:addons/l10n_ru/l10n_ru.py:114
+#: code:addons/l10n_ru/l10n_ru.py:80
 #, python-format
 msgid "Bad URL for bnkseek.txt!"
 msgstr "Неправильный адрес файла bnkseek.txt!"
 
 #. module: l10n_ru
-#: code:addons/l10n_ru/l10n_ru.py:114
-#: code:addons/l10n_ru/l10n_ru.py:157
+#: field:res.partner,ceo:0
+msgid "CEO"
+msgstr "Генеральный директор"
+
+#. module: l10n_ru
+#: code:addons/l10n_ru/l10n_ru.py:80
+#: code:addons/l10n_ru/l10n_ru.py:123
 #, python-format
 msgid "Fix the URL and try again."
 msgstr "Исправьте адрес и попробуйте снова."
@@ -81,9 +86,9 @@ msgid "Update"
 msgstr "Обновить"
 
 #. module: l10n_ru
-#: model:res.partner.title,name:l10n_ru.res_partner_title_ltd
-msgid "Общество с ограниченной ответственностью"
-msgstr "Общество с ограниченной ответственностью"
+#: model:res.partner.title,shortcut:l10n_ru.res_partner_title_pvt_ltd
+msgid "ЗАО"
+msgstr "ЗАО"
 
 #. module: l10n_ru
 #: field:res.partner,contract_num:0
@@ -96,17 +101,12 @@ msgid "KPP"
 msgstr "КПП"
 
 #. module: l10n_ru
-#: model:ir.model,name:l10n_ru.model_wizard_update_banks
-msgid "Update list of banks"
-msgstr "Обновить список банков"
-
-#. module: l10n_ru
 #: model:res.partner.title,shortcut:l10n_ru.res_partner_title_oao
 msgid "ОАО"
 msgstr "ОАО"
 
 #. module: l10n_ru
-#: code:addons/l10n_ru/l10n_ru.py:122
+#: code:addons/l10n_ru/l10n_ru.py:88
 #, python-format
 msgid "Country Error: %s"
 msgstr "Ошибка страны: %s"
@@ -128,11 +128,6 @@ msgid "ООО"
 msgstr "ООО"
 
 #. module: l10n_ru
-#: model:res.partner.title,shortcut:l10n_ru.res_partner_title_ip
-msgid "ИП"
-msgstr "ИП"
-
-#. module: l10n_ru
 #: model:res.partner.title,name:l10n_ru.res_partner_title_madam
 #: model:res.partner.title,shortcut:l10n_ru.res_partner_title_madam
 msgid "Г-жа"
@@ -144,9 +139,19 @@ msgid "Contract date"
 msgstr "Дата договора"
 
 #. module: l10n_ru
-#: model:res.partner.title,shortcut:l10n_ru.res_partner_title_pvt_ltd
-msgid "ЗАО"
-msgstr "ЗАО"
+#: model:res.partner.title,name:l10n_ru.res_partner_title_ltd
+msgid "Общество с ограниченной ответственностью"
+msgstr "Общество с ограниченной ответственностью"
+
+#. module: l10n_ru
+#: model:account.account.type,name:l10n_ru.view
+msgid "View"
+msgstr "Вид"
+
+#. module: l10n_ru
+#: model:ir.model,name:l10n_ru.model_wizard_update_banks
+msgid "wizard.update.banks"
+msgstr "Мастер обновления банков"
 
 #. module: l10n_ru
 #: model:ir.model,name:l10n_ru.model_res_partner_bank
@@ -190,7 +195,7 @@ msgid "Partner"
 msgstr "Партнер"
 
 #. module: l10n_ru
-#: model:ir.model,name:l10n_ru.model_res_partner_address
-msgid "Partner Addresses"
-msgstr "Адреса контрагентов"
+#: view:wizard.update.banks:0
+msgid "Create Account"
+msgstr "Создать счет"
 
