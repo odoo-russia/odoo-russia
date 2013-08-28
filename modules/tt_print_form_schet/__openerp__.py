@@ -1,5 +1,5 @@
 {
-    'name' : 'Sale Order Print Form',
+    'name' : 'Schet Print Form',
     'version' : '1.0',
     'category' : 'Extra Reports',
     'author'  : 'Transparent Technologies Ltd.',

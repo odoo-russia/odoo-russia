@@ -5,7 +5,7 @@
                 id="new_report_id"
                 model="account.invoice"
                 name="account.invoice"
-                rml="account_invoice_print_form/Akt.jrxml"
+                rml="tt_print_form_akt_rabot/Akt.jrxml"
                 string="Акт выполненных работ"
         />
     </data>

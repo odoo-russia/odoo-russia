@@ -12,7 +12,7 @@ class acc_inv(report_sxw.rml_parse):
         self.localcontext.update( {'time': time,})
 
 report_sxw.report_sxw('report.new_report', 'account.invoice',
-                      'account_invoice_print_form/Akt.jrxml',
+                      'tt_print_form_akt_rabot/Akt.jrxml',
                       parser=acc_inv)
 
 class account_invoice(osv.osv):

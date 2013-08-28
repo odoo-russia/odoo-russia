@@ -12,7 +12,7 @@ class sale_order_report(report_sxw.rml_parse):
         self.localcontext.update( {'time': time,})
 
 report_sxw.report_sxw('report.sale.order.new_report', 'sale.order',
-                      'sale_order_print_form/Schet.jrxml',
+                      'tt_print_form_schet/Schet.jrxml',
                       parser=sale_order_report)
 
 
@@ -23,7 +23,7 @@ class account_invoice_report(report_sxw.rml_parse):
         self.localcontext.update( {'time': time,})
 
 report_sxw.report_sxw('report.new_account_invoice_report', 'account_invoice',
-                      'sale_order_print_form/Schet.jrxml',
+                      'tt_print_form_schet/Schet.jrxml',
                       parser=account_invoice_report)
 
 

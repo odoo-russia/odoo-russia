@@ -1,5 +1,5 @@
 {
-    'name' : 'Account Invoice Print Form',
+    'name' : 'Akt vypolnennykh rabot',
     'version' : '1.0',
     'category' : 'Extra Reports',
     'author'  : 'Transparent Technologies Ltd.',
