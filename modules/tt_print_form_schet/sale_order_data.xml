@@ -5,7 +5,7 @@
                 id="sale_order_id"
                 model="sale.order"
                 name="report.new_sale_order_report"
-                rml="sale_order_print_form/Schet.jrxml"
+                rml="tt_print_form_schet/Schet.jrxml"
                 string="Счёт"
         />
 
@@ -13,7 +13,7 @@
                 id="account_invoice_id"
                 model="account.invoice"
                 name="account.invoice.new_report"
-                rml="sale_order_print_form/Schet.jrxml"
+                rml="tt_print_form_schet/Schet.jrxml"
                 string="Счёт"
         />
     </data>
