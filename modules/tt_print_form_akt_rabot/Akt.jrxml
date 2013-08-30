@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Schet2" language="groovy" pageWidth="595" pageHeight="842" columnWidth="539" leftMargin="28" rightMargin="28" topMargin="28" bottomMargin="28" isFloatColumnFooter="true">
 	<property name="ireport.zoom" value="1.128947860107556"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="96"/>
 	<property name="OPENERP_RELATIONS" value="[&apos;invoice_line&apos;]"/>
 	<subDataset name="Table Dataset 1">
 		<queryString language="SQL">
@@ -28,7 +28,7 @@
 		<fieldDescription><![CDATA[/data/record/company_id/phone]]></fieldDescription>
 	</field>
 	<field name="performer_official_name" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/company_id/partner_id/name_official]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/company_id/name]]></fieldDescription>
 	</field>
 	<field name="performer_inn" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/company_id/partner_id/inn]]></fieldDescription>
@@ -180,7 +180,7 @@
 						<textElement verticalAlignment="Middle">
 							<font fontName="DejaVu Sans" isPdfEmbedded="true"/>
 						</textElement>
-						<textFieldExpression class="java.lang.String"><![CDATA[$F{partner_name_official} + ", " + $F{partner_zip} + ", " + $F{partner_country} + ", г. " + $F{partner_city} + ", ул. " + $F{partner_street} + ", д. " + $F{partner_home} + ", ИНН " + $F{partner_inn} + ", КПП " + $F{partner_kpp} + ", р/сч " + $F{partner_acc_number} + ", банк " + $F{partner_bank_name} + ", корр. счет " + $F{partner_bank_acc_corr} + ", БИК " + $F{partner_bank_bic}]]></textFieldExpression>
+						<textFieldExpression class="java.lang.String"><![CDATA[$F{partner_name} + ", " + $F{partner_zip} + ", " + $F{partner_country} + ", г. " + $F{partner_city} + ", ул. " + $F{partner_street} + ", д. " + $F{partner_home} + ", ИНН " + $F{partner_inn} + ", КПП " + $F{partner_kpp} + ", р/сч " + $F{partner_acc_number} + ", банк " + $F{partner_bank_name} + ", корр. счет " + $F{partner_bank_acc_corr} + ", БИК " + $F{partner_bank_bic}]]></textFieldExpression>
 					</textField>
 				</elementGroup>
 			</elementGroup>
@@ -411,7 +411,7 @@
 				<textElement verticalAlignment="Top">
 					<font fontName="DejaVu Sans" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{partner_name_official}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{partner_name}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement positionType="Float" x="0" y="226" width="97" height="13"/>

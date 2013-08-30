@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Schet2" language="groovy" pageWidth="595" pageHeight="842" columnWidth="539" leftMargin="28" rightMargin="28" topMargin="28" bottomMargin="28" isFloatColumnFooter="true">
 	<property name="ireport.zoom" value="1.2418426461183165"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="279"/>
+	<property name="ireport.y" value="0"/>
 	<property name="OPENERP_RELATIONS" value="[&apos;order_line&apos;, &apos;invoice_line&apos;]"/>
 	<property name="OPENERP_RELATIONS0" value="[&apos;order_line&apos;]"/>
 	<subDataset name="Table Dataset 1">
@@ -39,7 +39,7 @@
 		<fieldDescription><![CDATA[/data/record/company_id/phone]]></fieldDescription>
 	</field>
 	<field name="performer_official_name" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/company_id/partner_id/name_official]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/company_id/name]]></fieldDescription>
 	</field>
 	<field name="performer_inn" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/company_id/partner_id/inn]]></fieldDescription>
@@ -342,14 +342,14 @@ $F{performer_bank_name}]]></textFieldExpression>
 				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[($F{partner_name_off}.equals(""))?$F{partner_name}:$F{partner_name_off}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{partner_name}]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="false">
 				<reportElement key="textField-31" mode="Transparent" x="113" y="255" width="338" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[($F{is_invoice})?($F{partner_name_off}.equals(""))?$F{partner_name}:$F{partner_name_off}:($F{partner_shipping_name_off}.equals(""))?$F{partner_shipping_name}:$F{partner_shipping_name_off}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{is_invoice})?$F{partner_name}:$F{partner_shipping_name}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 				<reportElement key="textField-31" mode="Transparent" x="52" y="223" width="456" height="17" forecolor="#000000" backcolor="#FFFFFF"/>
