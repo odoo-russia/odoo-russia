@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="NK_EX12p" language="groovy" printOrder="Horizontal" pageWidth="841" pageHeight="595" orientation="Landscape" whenNoDataType="NoDataSection" columnWidth="841" leftMargin="0" rightMargin="0" topMargin="3" bottomMargin="0" isFloatColumnFooter="true" whenResourceMissingType="Empty">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="NK_EX12p" language="groovy" printOrder="Horizontal" pageWidth="841" pageHeight="595" orientation="Landscape" whenNoDataType="NoDataSection" columnWidth="841" leftMargin="0" rightMargin="0" topMargin="4" bottomMargin="0" isFloatColumnFooter="true" whenResourceMissingType="Empty">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
-	<property name="ireport.zoom" value="1.126972201352371"/>
-	<property name="ireport.x" value="7"/>
-	<property name="ireport.y" value="248"/>
+	<property name="ireport.zoom" value="1.6500000000000123"/>
+	<property name="ireport.x" value="437"/>
+	<property name="ireport.y" value="626"/>
 	<property name="OPENERP_RELATIONS" value="[&apos;invoice_line&apos;, &apos;invoice_line_tax_id&apos;]"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
@@ -13,8 +13,8 @@
 	<queryString language="xPath">
 		<![CDATA[/data/record]]>
 	</queryString>
-	<field name="shipping_name_official" class="java.lang.String">
-		<fieldDescription><![CDATA[company_id/partner_id/name_official]]></fieldDescription>
+	<field name="shipping_name" class="java.lang.String">
+		<fieldDescription><![CDATA[company_id/name]]></fieldDescription>
 	</field>
 	<field name="shipping_zip" class="java.lang.String">
 		<fieldDescription><![CDATA[company_id/partner_id/zip]]></fieldDescription>
@@ -55,8 +55,8 @@
 	<field name="shipping_bank_acc_corr" class="java.lang.String">
 		<fieldDescription><![CDATA[company_id/partner_id/bank_ids/bank_acc_corr]]></fieldDescription>
 	</field>
-	<field name="supplier_name_official" class="java.lang.String">
-		<fieldDescription><![CDATA[partner_id/name_official]]></fieldDescription>
+	<field name="supplier_name" class="java.lang.String">
+		<fieldDescription><![CDATA[partner_id/name]]></fieldDescription>
 	</field>
 	<field name="shipping_accountant" class="java.lang.String">
 		<fieldDescription><![CDATA[company_id/partner_id/accountant]]></fieldDescription>
@@ -206,8 +206,8 @@
 		<variableExpression><![CDATA[$F{line_weight}]]></variableExpression>
 	</variable>
 	<variable name="carry_flag" class="java.lang.Boolean" resetType="Page">
-		<variableExpression><![CDATA[($V{PAGE_NUMBER} == 1 && $F{invoices_count} > 2 && $F{invoices_count} < 13 && $F{invoices_count} == $V{REPORT_COUNT}) ||
-($V{PAGE_COUNT} > 12 && $V{PAGE_COUNT} < 24 && $V{REPORT_COUNT} == $F{invoices_count})]]></variableExpression>
+		<variableExpression><![CDATA[($V{PAGE_NUMBER} == 1 && $F{invoices_count} > 1 && $F{invoices_count} < 12 && $F{invoices_count} == $V{REPORT_COUNT}) ||
+($V{PAGE_COUNT} > 11 && $V{PAGE_COUNT} < 23 && $V{REPORT_COUNT} == $F{invoices_count})]]></variableExpression>
 	</variable>
 	<group name="table" isStartNewPage="true">
 		<groupExpression><![CDATA[$V{carry_flag}]]></groupExpression>
@@ -218,14 +218,14 @@
 	<title>
 		<band height="261" splitType="Prevent">
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-				<reportElement key="textField" mode="Transparent" x="51" y="37" width="551" height="28" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement key="textField" mode="Transparent" x="51" y="37" width="498" height="28" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box leftPadding="5">
 					<bottomPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{shipping_name_official} + ", ИНН\\КПП " + $F{shipping_inn} + ", " + $F{shipping_zip} + ", " + $F{shipping_country} + ", " + $F{shipping_city} + ", " + $F{shipping_street} + ", тел.:" + $F{shipping_phone} + ", р/с " + $F{shipping_acc_number} + " в " + $F{shipping_bank_name} + ", БИК " + $F{shipping_bank_bic} + ", корр/с " + $F{shipping_bank_acc_corr}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{shipping_name} + ", ИНН\\КПП " + $F{shipping_inn} + ", " + $F{shipping_zip} + ", " + $F{shipping_country} + ", " + $F{shipping_city} + ", " + $F{shipping_street} + ", тел.:" + $F{shipping_phone} + ", р/с " + $F{shipping_acc_number} + " в " + $F{shipping_bank_name} + ", БИК " + $F{shipping_bank_bic} + ", корр/с " + $F{shipping_bank_acc_corr}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement key="staticText-10" mode="Transparent" x="159" y="225" width="142" height="14" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -236,7 +236,7 @@
 				<text><![CDATA[ТОВАРНАЯ НАКЛАДНАЯ   ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-39" x="51" y="177" width="69" height="26"/>
+				<reportElement key="staticText-39" x="51" y="186" width="69" height="17"/>
 				<textElement textAlignment="Right" verticalAlignment="Bottom">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
@@ -258,14 +258,14 @@
 				<text><![CDATA[Грузополучатель  ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-42" mode="Transparent" x="51" y="148" width="69" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement key="staticText-42" mode="Transparent" x="51" y="157" width="69" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
 				<textElement textAlignment="Right" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[Плательщик  ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-43" mode="Transparent" x="51" y="119" width="69" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement key="staticText-43" mode="Transparent" x="51" y="128" width="69" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
 				<textElement textAlignment="Right" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
 				</textElement>
@@ -275,7 +275,7 @@
 				<reportElement key="staticText-44" x="675" y="37" width="65" height="14"/>
 				<box>
 					<pen lineWidth="0.25"/>
-					<topPen lineWidth="0.25"/>
+					<topPen lineWidth="1.75"/>
 					<leftPen lineWidth="1.75"/>
 					<rightPen lineWidth="1.75"/>
 				</box>
@@ -288,9 +288,10 @@
 				<reportElement key="staticText-45" x="675" y="26" width="65" height="11"/>
 				<box>
 					<pen lineWidth="0.25"/>
-					<topPen lineWidth="0.25"/>
-					<leftPen lineWidth="1.75"/>
-					<rightPen lineWidth="1.75"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
@@ -439,7 +440,11 @@
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-63" x="626" y="177" width="49" height="26"/>
-				<box rightPadding="3"/>
+				<box rightPadding="3">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
@@ -447,7 +452,11 @@
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-64" x="626" y="203" width="49" height="11"/>
-				<box rightPadding="3"/>
+				<box rightPadding="3">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
@@ -455,7 +464,11 @@
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-65" x="626" y="214" width="49" height="11"/>
-				<box rightPadding="3"/>
+				<box rightPadding="3">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
@@ -463,14 +476,18 @@
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-66" x="626" y="225" width="49" height="14"/>
-				<box rightPadding="3"/>
+				<box rightPadding="3">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[дата  ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-67" x="523" y="239" width="152" height="11"/>
+				<reportElement key="staticText-67" x="549" y="239" width="126" height="11"/>
 				<box rightPadding="3"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
@@ -478,7 +495,8 @@
 				<text><![CDATA[Вид операции  ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-68" x="523" y="214" width="103" height="11"/>
+				<reportElement key="staticText-68" x="549" y="177" width="76" height="62"/>
+				<box rightPadding="1"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
@@ -516,10 +534,10 @@
 				<reportElement key="textField-5" x="301" y="225" width="74" height="14"/>
 				<box>
 					<pen lineWidth="1.75"/>
-					<topPen lineWidth="1.75"/>
-					<leftPen lineWidth="1.75"/>
-					<bottomPen lineWidth="1.75"/>
-					<rightPen lineWidth="1.75"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" size="8" isBold="true" isPdfEmbedded="true"/>
@@ -530,10 +548,10 @@
 				<reportElement key="textField-6" x="375" y="225" width="70" height="14"/>
 				<box>
 					<pen lineWidth="1.75"/>
-					<topPen lineWidth="1.75"/>
-					<leftPen lineWidth="1.75"/>
-					<bottomPen lineWidth="1.75"/>
-					<rightPen lineWidth="1.75"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" size="8" isBold="true" isPdfEmbedded="true"/>
@@ -551,28 +569,28 @@
 				<text><![CDATA[структурное подразделение]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-136" x="51" y="65" width="516" height="14"/>
+				<reportElement key="staticText-136" x="51" y="65" width="498" height="14"/>
 				<textElement textAlignment="Center" verticalAlignment="Top">
 					<font fontName="DejaVu Sans" size="6" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[организация-грузоотправитель, адрес, телефон, факс, банковские реквизиты]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-164" x="51" y="177" width="551" height="9"/>
+				<reportElement key="staticText-164" x="51" y="177" width="498" height="9"/>
 				<textElement textAlignment="Center" verticalAlignment="Top">
 					<font fontName="DejaVu Sans" size="6" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[организация, адрес, телефон, факс, банковские]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-165" x="51" y="119" width="539" height="9"/>
+				<reportElement key="staticText-165" x="51" y="119" width="498" height="9"/>
 				<textElement textAlignment="Center" verticalAlignment="Top">
 					<font fontName="DejaVu Sans" size="6" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[организация, адрес, телефон, факс, банковские]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-166" x="51" y="148" width="551" height="9"/>
+				<reportElement key="staticText-166" x="51" y="148" width="498" height="9"/>
 				<textElement textAlignment="Center" verticalAlignment="Top">
 					<font fontName="DejaVu Sans" size="6" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
@@ -592,14 +610,14 @@
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{shipping_okpo}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-166" x="51" y="203" width="551" height="7"/>
+				<reportElement key="staticText-166" x="51" y="203" width="498" height="7"/>
 				<textElement textAlignment="Center" verticalAlignment="Top">
 					<font fontName="DejaVu Sans" size="5" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[наименование документа (договор, контракт, заказ-наряд)]]></text>
 			</staticText>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-				<reportElement key="textField-3" mode="Transparent" x="120" y="186" width="482" height="17" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement key="textField-3" mode="Transparent" x="120" y="186" width="429" height="17" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box leftPadding="5">
 					<bottomPen lineWidth="0.25"/>
 				</box>
@@ -610,26 +628,6 @@
 			</textField>
 			<staticText>
 				<reportElement key="staticText-57" x="570" y="65" width="105" height="14"/>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
-				</textElement>
-				<text><![CDATA[]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="staticText-62" x="602" y="148" width="24" height="29"/>
-				<box>
-					<bottomPen lineWidth="0.25"/>
-				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
-				</textElement>
-				<text><![CDATA[]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="staticText-62" x="602" y="177" width="24" height="26"/>
-				<box>
-					<bottomPen lineWidth="0.25"/>
-				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
@@ -649,34 +647,34 @@
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{shipping_okpo}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-				<reportElement key="textField" mode="Transparent" x="120" y="128" width="482" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement key="textField" mode="Transparent" x="120" y="128" width="429" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box leftPadding="5">
 					<bottomPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{shipping_name_official} + ", ИНН\\КПП " + $F{shipping_inn} + ", " + $F{shipping_zip} + ", " + $F{shipping_country} + ", " + $F{shipping_city} + ", " + $F{shipping_street} + ", тел.:" + $F{shipping_phone} + ", р/с " + $F{shipping_acc_number} + " в " + $F{shipping_bank_name} + ", БИК " + $F{shipping_bank_bic} + ", корр/с " + $F{shipping_bank_acc_corr}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{shipping_name} + ", ИНН\\КПП " + $F{shipping_inn} + ", " + $F{shipping_zip} + ", " + $F{shipping_country} + ", " + $F{shipping_city} + ", " + $F{shipping_street} + ", тел.:" + $F{shipping_phone} + ", р/с " + $F{shipping_acc_number} + " в " + $F{shipping_bank_name} + ", БИК " + $F{shipping_bank_bic} + ", корр/с " + $F{shipping_bank_acc_corr}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-				<reportElement key="textField" mode="Transparent" x="120" y="93" width="482" height="26" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement key="textField" mode="Transparent" x="120" y="93" width="429" height="26" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box leftPadding="5">
 					<bottomPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{supplier_name_official} + ", ИНН\\КПП " + $F{supplier_inn} + ", " + $F{supplier_zip} + ", " + $F{supplier_country} + ", " + $F{supplier_city} + ", " + $F{supplier_street} + ", тел.:" + $F{supplier_phone} + ", р/с " + $F{supplier_acc_number} + " в " + $F{supplier_bank_name} + ", БИК " + $F{supplier_bank_bic} + ", корр/с " + $F{supplier_bank_acc_corr}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{supplier_name} + ", ИНН\\КПП " + $F{supplier_inn} + ", " + $F{supplier_zip} + ", " + $F{supplier_country} + ", " + $F{supplier_city} + ", " + $F{supplier_street} + ", тел.:" + $F{supplier_phone} + ", р/с " + $F{supplier_acc_number} + " в " + $F{supplier_bank_name} + ", БИК " + $F{supplier_bank_bic} + ", корр/с " + $F{supplier_bank_acc_corr}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-				<reportElement key="textField" mode="Transparent" x="120" y="157" width="482" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement key="textField" mode="Transparent" x="120" y="157" width="429" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box leftPadding="5">
 					<bottomPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{supplier_name_official} + ", ИНН\\КПП " + $F{supplier_inn} + ", " + $F{supplier_zip} + ", " + $F{supplier_country} + ", " + $F{supplier_city} + ", " + $F{supplier_street} + ", тел.:" + $F{supplier_phone} + ", р/с " + $F{supplier_acc_number} + " в " + $F{supplier_bank_name} + ", БИК " + $F{supplier_bank_bic} + ", корр/с " + $F{supplier_bank_acc_corr}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{supplier_name} + ", ИНН\\КПП " + $F{supplier_inn} + ", " + $F{supplier_zip} + ", " + $F{supplier_country} + ", " + $F{supplier_city} + ", " + $F{supplier_street} + ", тел.:" + $F{supplier_phone} + ", р/с " + $F{supplier_acc_number} + " в " + $F{supplier_bank_name} + ", БИК " + $F{supplier_bank_bic} + ", корр/с " + $F{supplier_bank_acc_corr}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="675" y="148" width="65" height="29"/>
@@ -1538,61 +1536,61 @@
 		</band>
 	</columnFooter>
 	<summary>
-		<band height="214" splitType="Prevent">
+		<band height="258" splitType="Prevent">
 			<staticText>
-				<reportElement key="staticText-100" x="122" y="22" width="179" height="11"/>
+				<reportElement key="staticText-100" x="24" y="22" width="177" height="11"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[Товарная накладная имеет приложение на]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-115" x="533" y="22" width="57" height="11"/>
+				<reportElement key="staticText-115" x="502" y="22" width="57" height="11"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[листах]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-116" x="122" y="38" width="65" height="11"/>
+				<reportElement key="staticText-116" x="24" y="38" width="65" height="11"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[и содержит]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-117" x="533" y="38" width="142" height="11"/>
+				<reportElement key="staticText-117" x="502" y="38" width="173" height="11"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[порядковых номеров записей]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-118" x="122" y="68" width="72" height="17"/>
+				<reportElement key="staticText-118" x="24" y="55" width="54" height="17"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[Всего мест]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-119" x="301" y="51" width="105" height="17"/>
+				<reportElement key="staticText-119" x="341" y="55" width="90" height="17"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[Масса груза(нетто)]]></text>
 			</staticText>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="187" y="38" width="346" height="11"/>
+				<reportElement key="textField" x="89" y="38" width="413" height="11"/>
 				<box>
 					<bottomPen lineWidth="0.25"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Bottom">
+				<textElement verticalAlignment="Bottom">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{pos_in_words}.substring(0, 1).toUpperCase() + $F{pos_in_words}.substring(1, $F{pos_in_words}.length())]]></textFieldExpression>
 			</textField>
 			<textField evaluationTime="Report" isBlankWhenNull="true">
-				<reportElement key="textField" x="301" y="22" width="232" height="11"/>
+				<reportElement key="textField" x="201" y="22" width="301" height="11"/>
 				<box>
 					<bottomPen lineWidth="0.25"/>
 				</box>
@@ -1602,7 +1600,7 @@
 				<textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-128" x="675" y="51" width="66" height="17"/>
+				<reportElement key="staticText-128" x="605" y="55" width="101" height="17"/>
 				<box>
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.75"/>
@@ -1616,30 +1614,31 @@
 				<text><![CDATA[]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-129" x="24" y="85" width="170" height="17"/>
+				<reportElement key="staticText-129" x="24" y="88" width="188" height="17"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[Приложение (паспорта, сертификаты и т.п.) на]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-130" x="301" y="85" width="28" height="17"/>
+				<reportElement key="staticText-130" x="335" y="92" width="28" height="13"/>
+				<box leftPadding="1"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[листах]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-131" x="301" y="68" width="105" height="17"/>
+				<reportElement key="staticText-131" x="341" y="72" width="90" height="17"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[Масса груза(брутто)]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement key="textField-39" x="406" y="68" width="269" height="17"/>
+				<reportElement key="textField-39" x="431" y="72" width="174" height="17"/>
 				<box>
-					<bottomPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.25"/>
 				</box>
 				<textElement>
 					<font fontName="DejaVu Sans" size="8" isBold="false" isPdfEmbedded="true"/>
@@ -1647,7 +1646,7 @@
 				<textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-132" x="675" y="68" width="66" height="17"/>
+				<reportElement key="staticText-132" x="605" y="72" width="101" height="17"/>
 				<box>
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0"/>
@@ -1661,26 +1660,32 @@
 				<text><![CDATA[]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="406" y="99" width="1" height="100"/>
+				<reportElement key="line-1" x="375" y="113" width="1" height="100"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
 			</line>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField-40" x="122" y="110" width="270" height="19"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
+				<reportElement key="textField-40" x="130" y="110" width="239" height="19"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="DejaVu Sans" size="7" isBold="false" isUnderline="false" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[($F{price_in_words}.substring(0, 1).toUpperCase() + $F{price_in_words}.substring(1, $F{price_in_words}.length()))]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-137" x="24" y="129" width="90" height="13"/>
+				<reportElement key="staticText-137" x="24" y="139" width="96" height="13"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[Отпуск груза разрешил]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-138" x="205" y="128" width="84" height="14"/>
+				<reportElement key="staticText-138" x="217" y="138" width="57" height="14"/>
 				<box>
-					<bottomPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.25"/>
 				</box>
 				<textElement>
 					<font fontName="DejaVu Sans" size="8" isBold="false" isPdfEmbedded="true"/>
@@ -1688,9 +1693,9 @@
 				<text><![CDATA[]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement key="textField-44" x="302" y="128" width="90" height="14"/>
+				<reportElement key="textField-44" x="279" y="138" width="90" height="14"/>
 				<box>
-					<bottomPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Bottom">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
@@ -1698,9 +1703,9 @@
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{shipping_ceo}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement key="textField-45" x="302" y="149" width="90" height="14"/>
+				<reportElement key="textField-45" x="279" y="159" width="90" height="14"/>
 				<box>
-					<bottomPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Bottom">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
@@ -1708,210 +1713,172 @@
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{shipping_accountant}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField-46" x="24" y="149" width="152" height="14"/>
+				<reportElement key="textField-46" x="24" y="159" width="152" height="14"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="DejaVu Sans" size="8" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA["Главный (старший) бухгалтер"]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-141" x="24" y="170" width="87" height="14"/>
+				<reportElement key="staticText-141" x="24" y="180" width="96" height="14"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[Отпуск груза произвел]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-143" x="78" y="192" width="301" height="11"/>
+				<reportElement key="staticText-143" x="78" y="202" width="33" height="11"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
-				<text><![CDATA[М.П.           "       " ___________________ 20__ года]]></text>
+				<text><![CDATA[М.П. ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-146" x="114" y="184" width="83" height="7"/>
+				<reportElement key="staticText-146" x="120" y="195" width="92" height="7"/>
 				<textElement textAlignment="Center" verticalAlignment="Top">
 					<font fontName="DejaVu Sans" size="6" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[должность]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-144" x="114" y="142" width="83" height="7"/>
+				<reportElement key="staticText-144" x="120" y="152" width="92" height="7"/>
 				<textElement textAlignment="Center" verticalAlignment="Top">
 					<font fontName="DejaVu Sans" size="6" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[должность]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-147" x="205" y="142" width="84" height="7"/>
+				<reportElement key="staticText-147" x="217" y="152" width="57" height="7"/>
 				<textElement textAlignment="Center" verticalAlignment="Top">
 					<font fontName="DejaVu Sans" size="6" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[подпись]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-150" x="302" y="142" width="90" height="7"/>
+				<reportElement key="staticText-150" x="279" y="153" width="90" height="7"/>
 				<textElement textAlignment="Center" verticalAlignment="Top">
 					<font fontName="DejaVu Sans" size="6" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[расшифровка подписи]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-151" x="302" y="163" width="90" height="7"/>
+				<reportElement key="staticText-151" x="279" y="173" width="90" height="7"/>
 				<textElement textAlignment="Center" verticalAlignment="Top">
 					<font fontName="DejaVu Sans" size="6" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[расшифровка подписи]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-152" x="302" y="184" width="90" height="7"/>
+				<reportElement key="staticText-152" x="279" y="195" width="90" height="7"/>
 				<textElement textAlignment="Center" verticalAlignment="Top">
 					<font fontName="DejaVu Sans" size="6" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[расшифровка подписи]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-153" x="407" y="110" width="78" height="11"/>
+				<reportElement key="staticText-153" x="383" y="118" width="78" height="11"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[ По доверенности №]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-154" x="407" y="121" width="333" height="11"/>
+				<reportElement key="staticText-154" x="383" y="137" width="330" height="11"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
-				<text><![CDATA[ выданной ]]></text>
+				<text><![CDATA[ Выданной ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-155" x="407" y="131" width="333" height="7"/>
+				<reportElement key="staticText-155" x="445" y="148" width="268" height="7"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" size="6" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[кем, кому (организация, место работы, должность, фамилия, и. о.)]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-156" x="408" y="141" width="332" height="11"/>
+				<reportElement key="staticText-156" x="383" y="164" width="330" height="11"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[ Груз принял ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-157" x="408" y="167" width="63" height="25"/>
+				<reportElement key="staticText-157" x="383" y="184" width="330" height="11"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
-				<text><![CDATA[ Груз получил
-грузополучатель]]></text>
+				<text><![CDATA[ Груз получил грузополучатель]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-158" x="461" y="188" width="309" height="12"/>
+				<reportElement key="staticText-158" x="461" y="205" width="252" height="12"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[М.П.                           "      " ___________________ 20      года]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-159" x="406" y="68" width="269" height="7"/>
+				<reportElement key="staticText-159" x="431" y="72" width="174" height="7"/>
 				<textElement textAlignment="Center" verticalAlignment="Top">
 					<font fontName="DejaVu Sans" size="6" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[прописью]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-160" x="406" y="85" width="269" height="7"/>
+				<reportElement key="staticText-160" x="431" y="89" width="174" height="7"/>
 				<textElement textAlignment="Center" verticalAlignment="Top">
 					<font fontName="DejaVu Sans" size="6" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[прописью]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-161" x="187" y="49" width="346" height="13"/>
+				<reportElement key="staticText-161" x="89" y="49" width="413" height="8"/>
 				<textElement textAlignment="Center" verticalAlignment="Top">
 					<font fontName="DejaVu Sans" size="6" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[прописью]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-162" x="208" y="85" width="87" height="7"/>
+				<reportElement key="staticText-162" x="78" y="72" width="251" height="7"/>
 				<textElement textAlignment="Center" verticalAlignment="Top">
 					<font fontName="DejaVu Sans" size="6" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[прописью]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-161" x="301" y="33" width="232" height="16"/>
+				<reportElement key="staticText-161" x="201" y="33" width="301" height="16"/>
 				<textElement textAlignment="Center" verticalAlignment="Top">
 					<font fontName="DejaVu Sans" size="6" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[прописью]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-155" x="489" y="179" width="75" height="7"/>
+				<reportElement key="staticText-155" x="509" y="195" width="204" height="7"/>
 				<box>
-					<topPen lineWidth="1.0"/>
+					<topPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Top">
 					<font fontName="DejaVu Sans" size="6" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
-				<text><![CDATA[должность]]></text>
+				<text><![CDATA[]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-155" x="545" y="151" width="80" height="7"/>
+				<reportElement key="staticText-155" x="445" y="175" width="268" height="7"/>
 				<box>
-					<topPen lineWidth="1.0"/>
+					<topPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Top">
 					<font fontName="DejaVu Sans" size="6" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
-				<text><![CDATA[подпись]]></text>
+				<text><![CDATA[]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-155" x="646" y="179" width="81" height="7"/>
+				<reportElement key="staticText-128" x="431" y="55" width="174" height="17"/>
 				<box>
-					<topPen lineWidth="1.0"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Top">
-					<font fontName="DejaVu Sans" size="6" isBold="false" isPdfEmbedded="true"/>
-				</textElement>
-				<text><![CDATA[расшифровка подписи]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="staticText-155" x="457" y="151" width="76" height="7"/>
-				<box>
-					<topPen lineWidth="1.0"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Top">
-					<font fontName="DejaVu Sans" size="6" isBold="false" isPdfEmbedded="true"/>
-				</textElement>
-				<text><![CDATA[должность]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="staticText-155" x="573" y="179" width="64" height="7"/>
-				<box>
-					<topPen lineWidth="1.0"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Top">
-					<font fontName="DejaVu Sans" size="6" isBold="false" isPdfEmbedded="true"/>
-				</textElement>
-				<text><![CDATA[подпись]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="staticText-155" x="637" y="151" width="90" height="7"/>
-				<box>
-					<topPen lineWidth="1.0"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Top">
-					<font fontName="DejaVu Sans" size="6" isBold="false" isPdfEmbedded="true"/>
-				</textElement>
-				<text><![CDATA[расшифровка подписи]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="staticText-128" x="406" y="51" width="269" height="17"/>
-				<box>
-					<bottomPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.25"/>
 				</box>
 				<textElement>
 					<font fontName="DejaVu Sans" isBold="false" isPdfEmbedded="true"/>
@@ -1919,9 +1886,9 @@
 				<text><![CDATA[]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement key="textField-39" x="208" y="68" width="87" height="17"/>
+				<reportElement key="textField-39" x="78" y="55" width="251" height="17"/>
 				<box>
-					<bottomPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.25"/>
 				</box>
 				<textElement>
 					<font fontName="DejaVu Sans" size="8" isBold="false" isPdfEmbedded="true"/>
@@ -1929,9 +1896,9 @@
 				<textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement key="textField-39" x="208" y="85" width="87" height="17"/>
+				<reportElement key="textField-39" x="212" y="95" width="123" height="10"/>
 				<box>
-					<bottomPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.25"/>
 				</box>
 				<textElement>
 					<font fontName="DejaVu Sans" size="8" isBold="false" isPdfEmbedded="true"/>
@@ -1939,23 +1906,23 @@
 				<textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-162" x="208" y="102" width="87" height="7"/>
+				<reportElement key="staticText-162" x="212" y="105" width="123" height="7"/>
 				<textElement textAlignment="Center" verticalAlignment="Top">
 					<font fontName="DejaVu Sans" size="6" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[прописью]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-147" x="205" y="163" width="84" height="7"/>
+				<reportElement key="staticText-147" x="217" y="173" width="57" height="7"/>
 				<textElement textAlignment="Center" verticalAlignment="Top">
 					<font fontName="DejaVu Sans" size="6" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[подпись]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-138" x="205" y="149" width="84" height="14"/>
+				<reportElement key="staticText-138" x="217" y="159" width="57" height="14"/>
 				<box>
-					<bottomPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.25"/>
 				</box>
 				<textElement>
 					<font fontName="DejaVu Sans" size="8" isBold="false" isPdfEmbedded="true"/>
@@ -1963,16 +1930,16 @@
 				<text><![CDATA[]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-147" x="205" y="184" width="84" height="7"/>
+				<reportElement key="staticText-147" x="217" y="195" width="57" height="7"/>
 				<textElement textAlignment="Center" verticalAlignment="Top">
 					<font fontName="DejaVu Sans" size="6" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[подпись]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-138" x="205" y="170" width="84" height="14"/>
+				<reportElement key="staticText-138" x="217" y="180" width="57" height="14"/>
 				<box>
-					<bottomPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.25"/>
 				</box>
 				<textElement>
 					<font fontName="DejaVu Sans" size="8" isBold="false" isPdfEmbedded="true"/>
@@ -1980,18 +1947,18 @@
 				<text><![CDATA[]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement key="textField-44" x="114" y="128" width="83" height="14"/>
+				<reportElement key="textField-44" x="120" y="138" width="92" height="14"/>
 				<box>
-					<bottomPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.25"/>
 				</box>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="DejaVu Sans" size="8" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement key="textField-44" x="302" y="170" width="90" height="14"/>
+				<reportElement key="textField-44" x="279" y="180" width="90" height="14"/>
 				<box>
-					<bottomPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Bottom">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
@@ -1999,18 +1966,18 @@
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{shipping_ceo}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement key="textField-44" x="114" y="170" width="83" height="14"/>
+				<reportElement key="textField-44" x="120" y="181" width="92" height="14"/>
 				<box>
-					<bottomPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.25"/>
 				</box>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="DejaVu Sans" size="8" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-153" x="489" y="110" width="45" height="11"/>
+				<reportElement key="staticText-153" x="461" y="118" width="45" height="11"/>
 				<box>
-					<bottomPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.25"/>
 				</box>
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" size="8" isBold="false" isPdfEmbedded="true"/>
@@ -2018,16 +1985,16 @@
 				<text><![CDATA[]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-153" x="534" y="110" width="57" height="11"/>
+				<reportElement key="staticText-153" x="507" y="118" width="57" height="11"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[от      "       "]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-153" x="591" y="110" width="86" height="11"/>
+				<reportElement key="staticText-153" x="564" y="118" width="86" height="11"/>
 				<box>
-					<bottomPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.25"/>
 				</box>
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" size="8" isBold="false" isPdfEmbedded="true"/>
@@ -2035,15 +2002,15 @@
 				<text><![CDATA[]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-153" x="677" y="110" width="63" height="11"/>
+				<reportElement key="staticText-153" x="650" y="118" width="63" height="11"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[  20     года]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="24" y="110" width="98" height="20"/>
-				<textElement verticalAlignment="Middle">
+				<reportElement x="24" y="113" width="106" height="16"/>
+				<textElement verticalAlignment="Bottom">
 					<font fontName="DejaVu Sans" size="7" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[Всего отпущено на сумму]]></text>
@@ -2276,6 +2243,12 @@
 				</textElement>
 				<textFieldExpression class="java.lang.Double"><![CDATA[$V{taxed_sum_page}]]></textFieldExpression>
 			</textField>
+			<line>
+				<reportElement key="line-1" x="24" y="136" width="345" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
 		</band>
 	</summary>
 </jasperReport>
