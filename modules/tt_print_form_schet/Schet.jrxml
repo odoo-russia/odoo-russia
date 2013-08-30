@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Schet2" language="groovy" pageWidth="595" pageHeight="842" columnWidth="539" leftMargin="28" rightMargin="28" topMargin="28" bottomMargin="28" isFloatColumnFooter="true">
 	<property name="ireport.zoom" value="1.2418426461183165"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="279"/>
 	<property name="OPENERP_RELATIONS" value="[&apos;order_line&apos;, &apos;invoice_line&apos;]"/>
 	<property name="OPENERP_RELATIONS0" value="[&apos;order_line&apos;]"/>
 	<subDataset name="Table Dataset 1">
@@ -627,14 +627,14 @@ $F{performer_bank_name}]]></textFieldExpression>
 			<staticText>
 				<reportElement key="staticText-4" mode="Transparent" x="0" y="109" width="108" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-					<font fontName="DejaVu Sans" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+					<font fontName="DejaVu Sans" size="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[Руководитель предприятия:]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-4" mode="Transparent" x="0" y="148" width="108" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
-					<font fontName="DejaVu Sans" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+					<font fontName="DejaVu Sans" size="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[Главный бухгалтер:]]></text>
 			</staticText>
