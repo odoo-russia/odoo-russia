@@ -2,9 +2,9 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="NK_EX12p" language="groovy" printOrder="Horizontal" pageWidth="841" pageHeight="595" orientation="Landscape" whenNoDataType="NoDataSection" columnWidth="841" leftMargin="0" rightMargin="0" topMargin="4" bottomMargin="0" isFloatColumnFooter="true" whenResourceMissingType="Empty">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
-	<property name="ireport.zoom" value="1.6500000000000123"/>
-	<property name="ireport.x" value="33"/>
-	<property name="ireport.y" value="98"/>
+	<property name="ireport.zoom" value="1.2396694214876125"/>
+	<property name="ireport.x" value="10"/>
+	<property name="ireport.y" value="316"/>
 	<property name="OPENERP_RELATIONS" value="[&apos;invoice_line&apos;, &apos;invoice_line_tax_id&apos;]"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
@@ -206,8 +206,8 @@
 		<variableExpression><![CDATA[$F{line_weight}]]></variableExpression>
 	</variable>
 	<variable name="carry_flag" class="java.lang.Boolean" resetType="Page">
-		<variableExpression><![CDATA[($V{PAGE_NUMBER} == 1 && $F{invoices_count} > 1 && $F{invoices_count} < 12 && $F{invoices_count} == $V{REPORT_COUNT}) ||
-($V{PAGE_COUNT} > 11 && $V{PAGE_COUNT} < 23 && $V{REPORT_COUNT} == $F{invoices_count})]]></variableExpression>
+		<variableExpression><![CDATA[($V{PAGE_NUMBER} == 1 && $F{invoices_count} > 2 && $F{invoices_count} < 13 && $F{invoices_count} == $V{REPORT_COUNT}) ||
+($V{PAGE_COUNT} > 12 && $V{PAGE_COUNT} < 24 && $V{REPORT_COUNT} == $F{invoices_count})]]></variableExpression>
 	</variable>
 	<group name="table" isStartNewPage="true">
 		<groupExpression><![CDATA[$V{carry_flag}]]></groupExpression>
@@ -1536,7 +1536,7 @@
 		</band>
 	</columnFooter>
 	<summary>
-		<band height="258" splitType="Prevent">
+		<band height="221" splitType="Prevent">
 			<staticText>
 				<reportElement key="staticText-100" x="24" y="22" width="177" height="11"/>
 				<textElement verticalAlignment="Middle">

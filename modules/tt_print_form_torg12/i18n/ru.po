@@ -464,8 +464,8 @@ msgstr "$V{REPORT_COUNT}"
 
 #. module: tt_print_form_torg12
 #: model:ir.actions.report.xml,name:tt_print_form_torg12.new_torg_report_id
-msgid "Torg12"
-msgstr "Торг12"
+msgid "Torg-12"
+msgstr "Торг-12"
 
 #. module: tt_print_form_torg12
 #: report:account.invoice.torg_form:0

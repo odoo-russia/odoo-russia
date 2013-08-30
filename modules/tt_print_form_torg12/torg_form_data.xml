@@ -6,7 +6,7 @@
                 model="account.invoice"
                 name="account.invoice.torg_form"
                 rml="tt_print_form_torg12/torg12.jrxml"
-                string="Torg12"
+                string="Torg-12"
         />
 
         <record id="product_uom_new_form" model="ir.ui.view">
