@@ -3,8 +3,8 @@
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.6500000000000123"/>
-	<property name="ireport.x" value="437"/>
-	<property name="ireport.y" value="626"/>
+	<property name="ireport.x" value="33"/>
+	<property name="ireport.y" value="98"/>
 	<property name="OPENERP_RELATIONS" value="[&apos;invoice_line&apos;, &apos;invoice_line_tax_id&apos;]"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
@@ -237,7 +237,7 @@
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-39" x="51" y="186" width="69" height="17"/>
-				<textElement textAlignment="Right" verticalAlignment="Bottom">
+				<textElement verticalAlignment="Bottom">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[Основание  ]]></text>
@@ -252,21 +252,21 @@
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-41" mode="Transparent" x="51" y="93" width="69" height="26" forecolor="#000000" backcolor="#FFFFFF"/>
-				<textElement textAlignment="Right" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
+				<textElement verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[Грузополучатель  ]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-42" mode="Transparent" x="51" y="157" width="69" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
-				<textElement textAlignment="Right" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
+				<textElement verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[Плательщик  ]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-43" mode="Transparent" x="51" y="128" width="69" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
-				<textElement textAlignment="Right" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
+				<textElement verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[Поставщик  ]]></text>
