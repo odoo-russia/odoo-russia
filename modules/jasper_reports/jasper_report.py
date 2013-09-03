@@ -91,11 +91,12 @@ class Report:
 
         # Create temporary input (XML) and output (PDF) files 
         fd, dataFile = tempfile.mkstemp()
-        os.chmod(dataFile,511)
+        os.chmod(dataFile, 0777)
         os.close(fd)
         fd, outputFile = tempfile.mkstemp()
-        os.chmod(outputFile,511)
+        os.chmod(outputFile, 0777)
         os.close(fd)
+
         self.temporaryFiles.append( dataFile )
         self.temporaryFiles.append( outputFile )
         logger.info("Temporary data file: '%s'" % dataFile)
