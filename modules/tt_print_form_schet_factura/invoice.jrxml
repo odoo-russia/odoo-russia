@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="invoice" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="770" leftMargin="36" rightMargin="36" topMargin="36" bottomMargin="36" isFloatColumnFooter="true">
 	<property name="OPENERP_RELATIONS" value="[&apos;invoice_line&apos;]"/>
-	<property name="ireport.zoom" value="1.2100000000000146"/>
-	<property name="ireport.x" value="71"/>
-	<property name="ireport.y" value="147"/>
+	<property name="ireport.zoom" value="1.771561000000023"/>
+	<property name="ireport.x" value="294"/>
+	<property name="ireport.y" value="391"/>
 	<queryString language="xPath">
 		<![CDATA[]]>
 	</queryString>
@@ -302,19 +302,19 @@
 				<text><![CDATA[ИНН/КПП покупателя:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="173" y="209" width="597" height="15"/>
+				<reportElement x="47" y="209" width="723" height="15"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{currency_name} + ", " + $F{currency_code}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA["наименование " + $F{currency_name} + ", код " + $F{currency_code}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="209" width="173" height="15"/>
+				<reportElement x="0" y="209" width="47" height="15"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" isBold="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
-				<text><![CDATA[Валюта: наименование, код]]></text>
+				<text><![CDATA[Валюта: ]]></text>
 			</staticText>
 		</band>
 	</title>
@@ -805,7 +805,7 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
-					<font fontName="DejaVu Sans" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
+					<font fontName="DejaVu Sans" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA["Без\nакциза"]]></textFieldExpression>
 			</textField>
@@ -892,7 +892,7 @@
 	<columnFooter>
 		<band height="12" splitType="Prevent">
 			<staticText>
-				<reportElement mode="Transparent" x="0" y="0" width="326" height="12" forecolor="#000000" backcolor="#FFFFFF">
+				<reportElement mode="Transparent" x="0" y="0" width="303" height="12" forecolor="#000000" backcolor="#FFFFFF">
 					<printWhenExpression><![CDATA[$V{REPORT_COUNT} != $F{invoices_count}]]></printWhenExpression>
 				</reportElement>
 				<box leftPadding="5">
@@ -907,7 +907,7 @@
 				<text><![CDATA[Всего к оплате:]]></text>
 			</staticText>
 			<textField pattern="" isBlankWhenNull="true">
-				<reportElement mode="Transparent" x="326" y="0" width="81" height="12" forecolor="#000000" backcolor="#FFFFFF">
+				<reportElement mode="Transparent" x="303" y="0" width="65" height="12" forecolor="#000000" backcolor="#FFFFFF">
 					<printWhenExpression><![CDATA[$V{REPORT_COUNT} != $F{invoices_count}]]></printWhenExpression>
 				</reportElement>
 				<box rightPadding="4">
@@ -922,7 +922,7 @@
 				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%.2f", $V{price_suntotal_page})]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="true">
-				<reportElement mode="Transparent" x="407" y="0" width="81" height="12" forecolor="#000000" backcolor="#FFFFFF">
+				<reportElement mode="Transparent" x="368" y="0" width="69" height="12" forecolor="#000000" backcolor="#FFFFFF">
 					<printWhenExpression><![CDATA[$V{REPORT_COUNT} != $F{invoices_count}]]></printWhenExpression>
 				</reportElement>
 				<box>
@@ -937,7 +937,7 @@
 				<textFieldExpression class="java.lang.String"><![CDATA["X"]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="true">
-				<reportElement mode="Transparent" x="488" y="0" width="43" height="12" forecolor="#000000" backcolor="#FFFFFF">
+				<reportElement mode="Transparent" x="437" y="0" width="40" height="12" forecolor="#000000" backcolor="#FFFFFF">
 					<printWhenExpression><![CDATA[$V{REPORT_COUNT} != $F{invoices_count}]]></printWhenExpression>
 				</reportElement>
 				<box rightPadding="4">
@@ -952,7 +952,7 @@
 				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%.2f", $V{tax_value_page})]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="true">
-				<reportElement mode="Transparent" x="531" y="0" width="78" height="12" forecolor="#000000" backcolor="#FFFFFF">
+				<reportElement mode="Transparent" x="477" y="0" width="70" height="12" forecolor="#000000" backcolor="#FFFFFF">
 					<printWhenExpression><![CDATA[$V{REPORT_COUNT} != $F{invoices_count}]]></printWhenExpression>
 				</reportElement>
 				<box rightPadding="4">
@@ -1066,7 +1066,7 @@
 предпринимателя)]]></text>
 			</staticText>
 			<textField pattern="" isBlankWhenNull="true">
-				<reportElement mode="Transparent" x="407" y="0" width="81" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="368" y="0" width="69" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -1079,7 +1079,7 @@
 				<textFieldExpression class="java.lang.String"><![CDATA["X"]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="true">
-				<reportElement mode="Transparent" x="531" y="0" width="78" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="477" y="0" width="70" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box rightPadding="4">
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -1092,7 +1092,7 @@
 				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%.2f", $V{tax_sum_page})]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="true">
-				<reportElement mode="Transparent" x="326" y="0" width="81" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="303" y="0" width="65" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box rightPadding="4">
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -1105,7 +1105,7 @@
 				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%.2f", $V{price_suntotal_page})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement mode="Transparent" x="0" y="0" width="326" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="0" y="0" width="303" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box leftPadding="5">
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -1118,7 +1118,7 @@
 				<text><![CDATA[Всего к оплате:]]></text>
 			</staticText>
 			<textField pattern="" isBlankWhenNull="true">
-				<reportElement mode="Transparent" x="488" y="0" width="43" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="437" y="0" width="40" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box rightPadding="4">
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -1145,7 +1145,7 @@
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{comapny_ceo}]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="true">
-				<reportElement mode="Transparent" x="488" y="12" width="43" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="437" y="12" width="40" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box rightPadding="4">
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -1158,7 +1158,7 @@
 				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%.2f", $V{tax_value_report})]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="true">
-				<reportElement mode="Transparent" x="531" y="12" width="78" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="477" y="12" width="70" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box rightPadding="4">
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -1171,7 +1171,7 @@
 				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%.2f", $V{tax_sum_report})]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="true">
-				<reportElement mode="Transparent" x="326" y="12" width="81" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="303" y="12" width="65" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box rightPadding="4">
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -1184,7 +1184,7 @@
 				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%.2f", $V{price_suntotal_report})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement mode="Transparent" x="0" y="12" width="326" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="0" y="12" width="303" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box leftPadding="5">
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -1197,7 +1197,7 @@
 				<text><![CDATA[Итого:]]></text>
 			</staticText>
 			<textField pattern="" isBlankWhenNull="true">
-				<reportElement mode="Transparent" x="407" y="12" width="81" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="368" y="12" width="69" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
