@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Schet2" language="groovy" pageWidth="595" pageHeight="842" columnWidth="539" leftMargin="28" rightMargin="28" topMargin="28" bottomMargin="28" isFloatColumnFooter="true">
 	<property name="ireport.zoom" value="1.128947860107556"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="96"/>
+	<property name="ireport.y" value="0"/>
 	<property name="OPENERP_RELATIONS" value="[&apos;invoice_line&apos;]"/>
 	<subDataset name="Table Dataset 1">
 		<queryString language="SQL">
@@ -13,22 +13,22 @@
 		<![CDATA[]]>
 	</queryString>
 	<field name="performer_zip" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/company_id/zip]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/company_id/partner_id/zip]]></fieldDescription>
 	</field>
 	<field name="performer_city" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/company_id/city]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/company_id/partner_id/city]]></fieldDescription>
 	</field>
 	<field name="performer_street" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/company_id/street]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/company_id/partner_id/street]]></fieldDescription>
 	</field>
 	<field name="performer_home" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/company_id/street2]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/company_id/partner_id/street2]]></fieldDescription>
 	</field>
 	<field name="performer_phone" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/company_id/phone]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/company_id/partner_id/phone]]></fieldDescription>
 	</field>
 	<field name="performer_official_name" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/company_id/name]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/company_id/partner_id/name]]></fieldDescription>
 	</field>
 	<field name="performer_inn" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/company_id/partner_id/inn]]></fieldDescription>
@@ -37,19 +37,19 @@
 		<fieldDescription><![CDATA[/data/record/company_id/partner_id/kpp]]></fieldDescription>
 	</field>
 	<field name="performer_country" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/company_id/country_id/name]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/company_id/partner_id/country_id/name]]></fieldDescription>
 	</field>
 	<field name="performer_acc_number" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/company_id/bank_ids/acc_number]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/company_id/partner_id/bank_ids/acc_number]]></fieldDescription>
 	</field>
 	<field name="performer_bank_name" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/company_id/bank_ids/bank_name]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/company_id/partner_id/bank_ids/bank_name]]></fieldDescription>
 	</field>
 	<field name="performer_name" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/company_id/bank_ids/name]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/company_id/partner_id/bank_ids/name]]></fieldDescription>
 	</field>
 	<field name="performer_bank_acc_corr" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/company_id/bank_ids/bank_acc_corr]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/company_id/partner_id/bank_ids/bank_acc_corr]]></fieldDescription>
 	</field>
 	<field name="performer_bank_bic" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/company_id/bank_ids/bank_bic]]></fieldDescription>
