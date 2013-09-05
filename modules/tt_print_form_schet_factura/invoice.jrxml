@@ -2,8 +2,8 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="invoice" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="770" leftMargin="36" rightMargin="36" topMargin="36" bottomMargin="36" isFloatColumnFooter="true">
 	<property name="OPENERP_RELATIONS" value="[&apos;invoice_line&apos;]"/>
 	<property name="ireport.zoom" value="1.771561000000023"/>
-	<property name="ireport.x" value="294"/>
-	<property name="ireport.y" value="391"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="125"/>
 	<queryString language="xPath">
 		<![CDATA[]]>
 	</queryString>
@@ -146,6 +146,21 @@
 		<variableExpression><![CDATA[($V{PAGE_NUMBER} == 1 && $V{PAGE_COUNT} > 3 && $F{invoices_count} == $V{REPORT_COUNT}) ||
 ($V{PAGE_NUMBER} != 1 && $V{PAGE_COUNT} > 11 && $V{PAGE_COUNT} < 20 && $V{REPORT_COUNT} == $F{invoices_count})]]></variableExpression>
 	</variable>
+	<variable name="company_address" class="java.lang.String">
+		<variableExpression><![CDATA[]]></variableExpression>
+		<initialValueExpression><![CDATA[$F{company_zip} +
+(($F{company_country})?" " + $F{company_country}:"") +
+(($F{company_city})?", г. " + $F{company_city}:"") +
+(($F{company_street})?", ул. " + $F{company_street}:"") +
+(($F{company_home})?", д. " + $F{company_home}:"")]]></initialValueExpression>
+	</variable>
+	<variable name="partner_address" class="java.lang.String">
+		<initialValueExpression><![CDATA[$F{partner_zip} +
+(($F{partner_country})?" " + $F{partner_country}:"") +
+(($F{partner_city})?", г. " + $F{partner_city}:"") +
+(($F{partner_street})?", ул. " + $F{partner_street}:"") +
+(($F{partner_home})?", д. " + $F{partner_home}:"")]]></initialValueExpression>
+	</variable>
 	<group name="table" isStartNewPage="true">
 		<groupExpression><![CDATA[$V{carry_flag}]]></groupExpression>
 	</group>
@@ -194,7 +209,7 @@
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{company_zip} + " " + $F{company_country} + ", г. " + $F{company_city} + ", ул. " + $F{company_street} + ", д. " + $F{company_home}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{company_address}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="89" width="43" height="15"/>
@@ -222,7 +237,7 @@
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{company_zip} + " " + $F{company_country} + ", г. " + $F{company_city} + ", ул. " + $F{company_street} + ", д. " + $F{company_home}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{company_address}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="119" width="175" height="15"/>
@@ -236,7 +251,7 @@
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{partner_zip} + " " + $F{partner_country} + ", г. " + $F{partner_city} + ", ул. " + $F{partner_street} + ", д. " + $F{partner_home}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{partner_address}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="134" width="175" height="15"/>
@@ -278,7 +293,7 @@
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{partner_zip} + " " + $F{partner_country} + ", г. " + $F{partner_city} + ", ул. " + $F{partner_street} + ", д. " + $F{partner_home}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{partner_address}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="179" width="42" height="15"/>

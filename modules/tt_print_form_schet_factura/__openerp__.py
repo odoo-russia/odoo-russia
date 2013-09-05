@@ -1,5 +1,5 @@
 {
-    'name' : 'Invoice Print Form',
+    'name' : 'Schet Factura Print Form',
     'version' : '1.0',
     'category' : 'Extra Reports',
     'author'  : 'Transparent Technologies',
