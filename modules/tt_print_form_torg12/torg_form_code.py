@@ -69,13 +69,6 @@ class account_invoice(osv.osv):
     }
 account_invoice()
 
-class product_uom(osv.osv):
-    _name = 'product.uom'
-    _inherit = 'product.uom'
-    _columns = {
-        'OKEI': fields.integer('OKEI'),
-    }
-product_uom()
 
 class invoice_line(osv.osv):
     def _get_line_tax(self,cr,uid,ids,field,arg,context=None):

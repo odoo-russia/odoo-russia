@@ -69,13 +69,6 @@ class account_invoice(osv.osv):
     }
 account_invoice()
 
-class product_uom(osv.osv):
-    _name = 'product.uom'
-    _inherit = 'product.uom'
-    _columns = {
-        'OKEI': fields.integer('Код по ОКЕИ'),
-    }
-product_uom()
 
 class invoice_line(osv.osv):
     def _get_line_tax(self,cr,uid,ids,field,arg,context=None):
@@ -111,20 +104,4 @@ class invoice_line(osv.osv):
         'line_tax_amount': fields.function(_get_line_tax, type='double'),
         'line_tax_total': fields.function(_get_tax_total, type='double'),
         'line_taxed_subtotal': fields.function(_get_taxed_subtotal, type='double'),
-    }
-
-class res_currency(osv.osv):
-    _name = 'res.currency'
-    _inherit = 'res.currency'
-    _columns = {
-        'code': fields.integer("Code"),
-    }
-
-class product_product(osv.osv):
-    _inherit = 'product.product'
-    _name = 'product.product'
-    _columns = {
-        'country_origin': fields.char('Country of origin', size=64),
-        'country_code': fields.integer('Country code'),
-        'declaration_code': fields.char('Declaration code'),
     }

@@ -149,3 +149,36 @@ class wizard_update_banks(osv.osv_memory):
         'location_bnkdel': lambda *a: csvBnkdelPath,
     }
 wizard_update_banks()
+
+
+class product_product(osv.osv):
+    _inherit = 'product.product'
+    _name = 'product.product'
+    _columns = {
+        'country_origin_id': fields.many2one('res.country', string="Country of origin"),
+        'declaration_code': fields.char('Declaration code'),
+    }
+
+
+class res_country(osv.osv):
+    _name = 'res.country'
+    _inherit = 'res.country'
+    _columns = {
+        'numeral_code': fields.integer("Numeral country code"),
+    }
+
+
+class res_currency(osv.osv):
+    _name = 'res.currency'
+    _inherit = 'res.currency'
+    _columns = {
+        'code': fields.integer("Code"),
+    }
+
+
+class product_uom(osv.osv):
+    _name = 'product.uom'
+    _inherit = 'product.uom'
+    _columns = {
+        'okei': fields.integer('OKEI'),
+    }
