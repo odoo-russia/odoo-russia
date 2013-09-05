@@ -2,8 +2,8 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="invoice" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="770" leftMargin="36" rightMargin="36" topMargin="36" bottomMargin="36" isFloatColumnFooter="true">
 	<property name="OPENERP_RELATIONS" value="[&apos;invoice_line&apos;]"/>
 	<property name="ireport.zoom" value="1.2100000000000146"/>
-	<property name="ireport.x" value="31"/>
-	<property name="ireport.y" value="179"/>
+	<property name="ireport.x" value="71"/>
+	<property name="ireport.y" value="147"/>
 	<queryString language="xPath">
 		<![CDATA[]]>
 	</queryString>
@@ -321,7 +321,7 @@
 	<columnHeader>
 		<band height="72" splitType="Stretch">
 			<staticText>
-				<reportElement mode="Transparent" x="531" y="0" width="78" height="60" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="477" y="0" width="70" height="60" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -329,7 +329,7 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
-					<font fontName="DejaVu Sans" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[Стоимость
 товаров (работ,
@@ -339,7 +339,7 @@
 с налогом - всего]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="326" y="0" width="81" height="60" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="303" y="0" width="65" height="60" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -347,7 +347,7 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
-					<font fontName="DejaVu Sans" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[Стоимость
 товаров (работ,
@@ -357,7 +357,7 @@
 всего]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="441" y="0" width="47" height="60" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="395" y="0" width="42" height="60" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -365,13 +365,13 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
-					<font fontName="DejaVu Sans" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[Налоговая
 ставка]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="152" y="20" width="70" height="40" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="172" y="20" width="48" height="40" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -379,14 +379,14 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
-					<font fontName="DejaVu Sans" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[условное
 обозначение
-(национальное)]]></text>
+(националь-ное)]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="609" y="20" width="47" height="40" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="547" y="20" width="40" height="40" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -394,13 +394,13 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
-					<font fontName="DejaVu Sans" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[цифровой
 код]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="722" y="0" width="48" height="60" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="642" y="0" width="128" height="60" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -408,12 +408,12 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
-					<font fontName="DejaVu Sans" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
-				<text><![CDATA[Номер таможен-ной декла-рации]]></text>
+				<text><![CDATA[ГТД]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="127" y="0" width="95" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="147" y="0" width="73" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -421,12 +421,12 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
-					<font fontName="DejaVu Sans" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[Единица измерения]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="656" y="20" width="66" height="40" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="587" y="20" width="55" height="40" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -434,13 +434,13 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
-					<font fontName="DejaVu Sans" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[краткое
 наименование]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="222" y="0" width="32" height="60" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="220" y="0" width="32" height="60" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -448,7 +448,7 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
-					<font fontName="DejaVu Sans" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[Коли-
 чество
@@ -456,7 +456,7 @@
 ем)]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="488" y="0" width="43" height="60" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="437" y="0" width="40" height="60" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -464,7 +464,7 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
-					<font fontName="DejaVu Sans" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[Сумма
 налога,
@@ -474,7 +474,7 @@
 телю]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="127" y="20" width="25" height="40" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="147" y="20" width="25" height="40" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -482,14 +482,14 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
-					<font fontName="DejaVu Sans" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[к
 о
 д]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="254" y="0" width="72" height="60" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="252" y="0" width="51" height="60" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -497,13 +497,13 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
-					<font fontName="DejaVu Sans" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[Цена (тариф)
 за еденицу измерения]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="407" y="0" width="34" height="60" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="368" y="0" width="27" height="60" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -511,7 +511,7 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
-					<font fontName="DejaVu Sans" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[В том
 числе
@@ -519,7 +519,7 @@
 акциза]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="0" y="0" width="127" height="60" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="0" y="0" width="147" height="60" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -527,13 +527,13 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
-					<font fontName="DejaVu Sans" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[Наименование товара (описание выполненных работ, оказанных услуг),
 имущественного права]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="609" y="0" width="113" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="547" y="0" width="95" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -541,12 +541,12 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
-					<font fontName="DejaVu Sans" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[Страна происхождения]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="0" y="60" width="127" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="0" y="60" width="147" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -559,7 +559,7 @@
 				<text><![CDATA[1]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="127" y="60" width="25" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="147" y="60" width="25" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -572,7 +572,7 @@
 				<text><![CDATA[2]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="152" y="60" width="70" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="172" y="60" width="48" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -585,7 +585,7 @@
 				<text><![CDATA[2а]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="222" y="60" width="32" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="220" y="60" width="32" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -598,7 +598,7 @@
 				<text><![CDATA[3]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="254" y="60" width="72" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="252" y="60" width="51" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -611,7 +611,7 @@
 				<text><![CDATA[4]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="326" y="60" width="81" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="303" y="60" width="65" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -624,7 +624,7 @@
 				<text><![CDATA[5]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="407" y="60" width="34" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="368" y="60" width="27" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -637,7 +637,7 @@
 				<text><![CDATA[6]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="441" y="60" width="47" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="395" y="60" width="42" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -650,7 +650,7 @@
 				<text><![CDATA[7]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="488" y="60" width="43" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="437" y="60" width="40" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -663,7 +663,7 @@
 				<text><![CDATA[8]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="531" y="60" width="78" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="477" y="60" width="70" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -676,7 +676,7 @@
 				<text><![CDATA[9]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="609" y="60" width="47" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="547" y="60" width="40" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -689,7 +689,7 @@
 				<text><![CDATA[10]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="656" y="60" width="66" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="587" y="60" width="55" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -702,7 +702,7 @@
 				<text><![CDATA[10а]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="722" y="60" width="48" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="642" y="60" width="128" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -719,7 +719,7 @@
 	<detail>
 		<band height="30" splitType="Stretch">
 			<textField isBlankWhenNull="true">
-				<reportElement x="0" y="0" width="127" height="30"/>
+				<reportElement x="0" y="0" width="147" height="30"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -732,7 +732,7 @@
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{line_name}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="127" y="0" width="25" height="30"/>
+				<reportElement x="147" y="0" width="25" height="30"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -745,7 +745,7 @@
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{line_uom_OKEI}]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="false">
-				<reportElement mode="Transparent" x="152" y="0" width="70" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="172" y="0" width="48" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -758,7 +758,7 @@
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{line_uom_name}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="222" y="0" width="32" height="30"/>
+				<reportElement x="220" y="0" width="32" height="30"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -771,7 +771,7 @@
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{line_quantity}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="254" y="0" width="72" height="30"/>
+				<reportElement x="252" y="0" width="51" height="30"/>
 				<box rightPadding="4">
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -784,7 +784,7 @@
 				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%.2f", $F{line_price_unit})]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="326" y="0" width="81" height="30"/>
+				<reportElement x="303" y="0" width="65" height="30"/>
 				<box rightPadding="4">
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -797,7 +797,7 @@
 				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%.2f", $F{line_price_subtotal})]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="false">
-				<reportElement mode="Transparent" x="407" y="0" width="34" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="368" y="0" width="27" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -810,7 +810,7 @@
 				<textFieldExpression class="java.lang.String"><![CDATA["Без\nакциза"]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="441" y="0" width="47" height="30"/>
+				<reportElement x="395" y="0" width="42" height="30"/>
 				<box rightPadding="4">
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -823,7 +823,7 @@
 				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%.2f", $F{line_tax_amount})]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="488" y="0" width="43" height="30"/>
+				<reportElement x="437" y="0" width="40" height="30"/>
 				<box rightPadding="4">
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -836,7 +836,7 @@
 				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%.2f", $F{line_tax_total})]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="531" y="0" width="78" height="30"/>
+				<reportElement x="477" y="0" width="70" height="30"/>
 				<box rightPadding="4">
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -849,7 +849,7 @@
 				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%.2f", $F{line_taxed_subtotal})]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="true">
-				<reportElement mode="Transparent" x="609" y="0" width="47" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="547" y="0" width="40" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -862,7 +862,7 @@
 				<textFieldExpression class="java.lang.String"><![CDATA[($F{line_country_code} == null)?"-":$F{line_country_code}]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="false">
-				<reportElement mode="Transparent" x="656" y="0" width="66" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="587" y="0" width="55" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
@@ -875,7 +875,7 @@
 				<textFieldExpression class="java.lang.String"><![CDATA[($F{line_country_origin}.equals(""))?"-":$F{line_country_origin}]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="false">
-				<reportElement mode="Transparent" x="722" y="0" width="48" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="642" y="0" width="128" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
