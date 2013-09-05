@@ -2,9 +2,9 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="NK_EX12p" language="groovy" printOrder="Horizontal" pageWidth="841" pageHeight="595" orientation="Landscape" whenNoDataType="NoDataSection" columnWidth="841" leftMargin="0" rightMargin="0" topMargin="10" bottomMargin="0" isFloatColumnFooter="true" whenResourceMissingType="Empty">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
-	<property name="ireport.zoom" value="1.2396694214876125"/>
-	<property name="ireport.x" value="10"/>
-	<property name="ireport.y" value="332"/>
+	<property name="ireport.zoom" value="1.815000000000014"/>
+	<property name="ireport.x" value="523"/>
+	<property name="ireport.y" value="15"/>
 	<property name="OPENERP_RELATIONS" value="[&apos;invoice_line&apos;, &apos;invoice_line_tax_id&apos;]"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
@@ -14,7 +14,7 @@
 		<![CDATA[/data/record]]>
 	</queryString>
 	<field name="shipping_name" class="java.lang.String">
-		<fieldDescription><![CDATA[company_id/name]]></fieldDescription>
+		<fieldDescription><![CDATA[company_id/partner_id/name]]></fieldDescription>
 	</field>
 	<field name="shipping_zip" class="java.lang.String">
 		<fieldDescription><![CDATA[company_id/partner_id/zip]]></fieldDescription>
@@ -23,10 +23,10 @@
 		<fieldDescription><![CDATA[company_id/partner_id/inn]]></fieldDescription>
 	</field>
 	<field name="shipping_country" class="java.lang.String">
-		<fieldDescription><![CDATA[company_id/country_id/name]]></fieldDescription>
+		<fieldDescription><![CDATA[company_id/partner_id/country_id/name]]></fieldDescription>
 	</field>
 	<field name="shipping_city" class="java.lang.String">
-		<fieldDescription><![CDATA[company_id/partner_id/city]]></fieldDescription>
+		<fieldDescription><![CDATA[company_id/partner_id/partner_id/city]]></fieldDescription>
 	</field>
 	<field name="shipping_street" class="java.lang.String">
 		<fieldDescription><![CDATA[company_id/partner_id/street]]></fieldDescription>
@@ -280,7 +280,7 @@
 					<rightPen lineWidth="1.75"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Bottom">
-					<font fontName="DejaVu Sans" size="7" isBold="true" isPdfEmbedded="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[0330212]]></text>
 			</staticText>
@@ -605,7 +605,7 @@
 					<rightPen lineWidth="1.75"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Bottom">
-					<font fontName="DejaVu Sans" size="7" isBold="true" isPdfEmbedded="true"/>
+					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{shipping_okpo}]]></textFieldExpression>
 			</textField>
@@ -622,7 +622,7 @@
 					<bottomPen lineWidth="0.25"/>
 				</box>
 				<textElement verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
-					<font fontName="DejaVu Sans" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{origin}]]></textFieldExpression>
 			</textField>
@@ -642,7 +642,7 @@
 					<rightPen lineWidth="1.75"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="DejaVu Sans" size="7" isBold="true" isPdfEmbedded="true"/>
+					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{shipping_okpo}]]></textFieldExpression>
 			</textField>
@@ -652,7 +652,7 @@
 					<bottomPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
-					<font fontName="DejaVu Sans" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{shipping_name} + ", ИНН\\КПП " + $F{shipping_inn} + ", " + $F{shipping_zip} + ", " + $F{shipping_country} + ", " + $F{shipping_city} + ", " + $F{shipping_street} + ", тел.:" + $F{shipping_phone} + ", р/с " + $F{shipping_acc_number} + " в " + $F{shipping_bank_name} + ", БИК " + $F{shipping_bank_bic} + ", корр/с " + $F{shipping_bank_acc_corr}]]></textFieldExpression>
 			</textField>
@@ -662,7 +662,7 @@
 					<bottomPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
-					<font fontName="DejaVu Sans" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{supplier_name} + ", ИНН\\КПП " + $F{supplier_inn} + ", " + $F{supplier_zip} + ", " + $F{supplier_country} + ", " + $F{supplier_city} + ", " + $F{supplier_street} + ", тел.:" + $F{supplier_phone} + ", р/с " + $F{supplier_acc_number} + " в " + $F{supplier_bank_name} + ", БИК " + $F{supplier_bank_bic} + ", корр/с " + $F{supplier_bank_acc_corr}]]></textFieldExpression>
 			</textField>
@@ -672,7 +672,7 @@
 					<bottomPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
-					<font fontName="DejaVu Sans" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{supplier_name} + ", ИНН\\КПП " + $F{supplier_inn} + ", " + $F{supplier_zip} + ", " + $F{supplier_country} + ", " + $F{supplier_city} + ", " + $F{supplier_street} + ", тел.:" + $F{supplier_phone} + ", р/с " + $F{supplier_acc_number} + " в " + $F{supplier_bank_name} + ", БИК " + $F{supplier_bank_bic} + ", корр/с " + $F{supplier_bank_acc_corr}]]></textFieldExpression>
 			</textField>
@@ -685,7 +685,7 @@
 					<rightPen lineWidth="1.75"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="DejaVu Sans" size="7" isBold="true" isPdfEmbedded="true"/>
+					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{supplier_okpo}]]></textFieldExpression>
 			</textField>
@@ -698,7 +698,7 @@
 					<rightPen lineWidth="1.75"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="DejaVu Sans" size="7" isBold="true" isPdfEmbedded="true"/>
+					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{supplier_okpo}]]></textFieldExpression>
 			</textField>
