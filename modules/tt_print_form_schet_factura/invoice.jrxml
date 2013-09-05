@@ -17,19 +17,19 @@
 		<fieldDescription><![CDATA[/data/record/company_id/partner_id/name_official]]></fieldDescription>
 	</field>
 	<field name="company_zip" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/company_id/zip]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/company_id/partner_id/zip]]></fieldDescription>
 	</field>
 	<field name="company_country" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/company_id/country_id/name]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/company_id/partner_id/country_id/name]]></fieldDescription>
 	</field>
 	<field name="company_city" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/company_id/city]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/company_id/partner_id/city]]></fieldDescription>
 	</field>
 	<field name="company_street" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/company_id/street]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/company_id/partner_id/street]]></fieldDescription>
 	</field>
 	<field name="company_home" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/company_id/street2]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/company_id/partner_id/street2]]></fieldDescription>
 	</field>
 	<field name="company_inn" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/company_id/partner_id/inn]]></fieldDescription>
