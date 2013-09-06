@@ -2,8 +2,8 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="invoice" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="770" leftMargin="36" rightMargin="36" topMargin="36" bottomMargin="36" isFloatColumnFooter="true">
 	<property name="OPENERP_RELATIONS" value="[&apos;invoice_line&apos;]"/>
 	<property name="ireport.zoom" value="1.771561000000023"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="125"/>
+	<property name="ireport.x" value="375"/>
+	<property name="ireport.y" value="365"/>
 	<queryString language="xPath">
 		<![CDATA[]]>
 	</queryString>
@@ -425,7 +425,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
 					<font fontName="DejaVu Sans" size="6" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
-				<text><![CDATA[ГТД]]></text>
+				<text><![CDATA[Номер таможенной декларации]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Transparent" x="147" y="0" width="73" height="20" forecolor="#000000" backcolor="#FFFFFF"/>

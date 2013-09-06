@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 7.0-20130717-231254\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-12 20:00+0000\n"
-"PO-Revision-Date: 2013-08-12 20:00+0000\n"
+"POT-Creation-Date: 2013-09-06 07:19+0000\n"
+"PO-Revision-Date: 2013-09-06 07:19+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -20,6 +20,17 @@ msgstr ""
 #: model:ir.ui.menu,name:l10n_ru.menu_update_banks
 msgid "Update Banks"
 msgstr "Обновить банки"
+
+#. module: l10n_ru
+#: model:ir.model,name:l10n_ru.model_product_uom
+msgid "Product Unit of Measure"
+msgstr "Ед. изм. продукции"
+
+#. module: l10n_ru
+#: model:res.partner.title,name:l10n_ru.res_partner_title_sir
+#: model:res.partner.title,shortcut:l10n_ru.res_partner_title_sir
+msgid "Г-н"
+msgstr "Г-н"
 
 #. module: l10n_ru
 #: model:res.partner.title,name:l10n_ru.res_partner_title_ip
@@ -53,9 +64,14 @@ msgid "Location of bnkseek.txt"
 msgstr "Местонахождение файла bnkseek.txt"
 
 #. module: l10n_ru
-#: model:res.partner.title,shortcut:l10n_ru.res_partner_title_ip
-msgid "ИП"
-msgstr "ИП"
+#: model:ir.model,name:l10n_ru.model_product_product
+msgid "Product"
+msgstr "Продукт"
+
+#. module: l10n_ru
+#: field:product.product,declaration_code:0
+msgid "Declaration code"
+msgstr "ГТД"
 
 #. module: l10n_ru
 #: field:wizard.update.banks,location_bnkdel:0
@@ -74,11 +90,9 @@ msgid "CEO"
 msgstr "Генеральный директор"
 
 #. module: l10n_ru
-#: code:addons/l10n_ru/l10n_ru.py:80
-#: code:addons/l10n_ru/l10n_ru.py:123
-#, python-format
-msgid "Fix the URL and try again."
-msgstr "Исправьте адрес и попробуйте снова."
+#: field:res.bank,last_updated:0
+msgid "Last updated"
+msgstr "Последнее обновление"
 
 #. module: l10n_ru
 #: view:wizard.update.banks:0
@@ -86,9 +100,9 @@ msgid "Update"
 msgstr "Обновить"
 
 #. module: l10n_ru
-#: model:res.partner.title,shortcut:l10n_ru.res_partner_title_pvt_ltd
-msgid "ЗАО"
-msgstr "ЗАО"
+#: model:res.partner.title,name:l10n_ru.res_partner_title_ltd
+msgid "Общество с ограниченной ответственностью"
+msgstr "Общество с ограниченной ответственностью"
 
 #. module: l10n_ru
 #: field:res.partner,contract_num:0
@@ -112,6 +126,11 @@ msgid "Country Error: %s"
 msgstr "Ошибка страны: %s"
 
 #. module: l10n_ru
+#: model:ir.model,name:l10n_ru.model_res_country
+msgid "Country"
+msgstr "Страна"
+
+#. module: l10n_ru
 #: field:res.partner,name_official:0
 msgid "Official name"
 msgstr "Официальное наименование"
@@ -128,6 +147,11 @@ msgid "ООО"
 msgstr "ООО"
 
 #. module: l10n_ru
+#: model:res.partner.title,shortcut:l10n_ru.res_partner_title_ip
+msgid "ИП"
+msgstr "ИП"
+
+#. module: l10n_ru
 #: model:res.partner.title,name:l10n_ru.res_partner_title_madam
 #: model:res.partner.title,shortcut:l10n_ru.res_partner_title_madam
 msgid "Г-жа"
@@ -139,14 +163,9 @@ msgid "Contract date"
 msgstr "Дата договора"
 
 #. module: l10n_ru
-#: model:res.partner.title,name:l10n_ru.res_partner_title_ltd
-msgid "Общество с ограниченной ответственностью"
-msgstr "Общество с ограниченной ответственностью"
-
-#. module: l10n_ru
-#: model:account.account.type,name:l10n_ru.view
-msgid "View"
-msgstr "Вид"
+#: model:res.partner.title,shortcut:l10n_ru.res_partner_title_pvt_ltd
+msgid "ЗАО"
+msgstr "ЗАО"
 
 #. module: l10n_ru
 #: model:ir.model,name:l10n_ru.model_wizard_update_banks
@@ -154,20 +173,44 @@ msgid "wizard.update.banks"
 msgstr "Мастер обновления банков"
 
 #. module: l10n_ru
+#: field:res.currency,code:0
+msgid "Code"
+msgstr "Код"
+
+#. module: l10n_ru
+#: view:product.product:0
+msgid "Country origin"
+msgstr "Страна происхождения"
+
+#. module: l10n_ru
+#: field:product.uom,okei:0
+msgid "OKEI"
+msgstr "Код по ОКЕИ"
+
+#. module: l10n_ru
 #: model:ir.model,name:l10n_ru.model_res_partner_bank
 msgid "Bank Accounts"
 msgstr "Банковские счета"
 
 #. module: l10n_ru
-#: model:res.partner.title,name:l10n_ru.res_partner_title_sir
-#: model:res.partner.title,shortcut:l10n_ru.res_partner_title_sir
-msgid "Г-н"
-msgstr "Г-н"
+#: field:product.product,country_origin_id:0
+msgid "Country of origin"
+msgstr "Страна происхождения"
 
 #. module: l10n_ru
 #: field:res.partner,okpo:0
 msgid "OKPO"
 msgstr "ОКПО"
+
+#. module: l10n_ru
+#: field:res.country,numeral_code:0
+msgid "Numeral country code"
+msgstr "Цифровой код страны"
+
+#. module: l10n_ru
+#: model:ir.model,name:l10n_ru.model_res_currency
+msgid "Currency"
+msgstr "Валюта"
 
 #. module: l10n_ru
 #: field:res.partner,inn:0
@@ -180,9 +223,11 @@ msgid "Bank"
 msgstr "Банк"
 
 #. module: l10n_ru
-#: field:res.bank,last_updated:0
-msgid "Last updated"
-msgstr "Последнее обновление"
+#: code:addons/l10n_ru/l10n_ru.py:80
+#: code:addons/l10n_ru/l10n_ru.py:123
+#, python-format
+msgid "Fix the URL and try again."
+msgstr "Исправьте адрес и попробуйте снова."
 
 #. module: l10n_ru
 #: view:wizard.update.banks:0
@@ -192,7 +237,7 @@ msgstr "Отмена"
 #. module: l10n_ru
 #: model:ir.model,name:l10n_ru.model_res_partner
 msgid "Partner"
-msgstr "Партнер"
+msgstr "Контрагент"
 
 #. module: l10n_ru
 #: view:wizard.update.banks:0
