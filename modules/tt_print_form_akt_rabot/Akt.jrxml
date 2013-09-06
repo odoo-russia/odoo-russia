@@ -149,10 +149,10 @@
 	</variable>
 	<variable name="performer_address" class="java.lang.String">
 		<initialValueExpression><![CDATA[$F{performer_zip} +
-(($F{performer_country})?" " + $F{performer_country}:"1") +
-(($F{performer_city})?", г. " + $F{performer_city}:"2") +
-(($F{performer_street})?", ул. " + $F{performer_street}:"3") +
-(($F{performer_home})?", д. " + $F{performer_home}:"4")]]></initialValueExpression>
+(($F{performer_country})?" " + $F{performer_country}:"") +
+(($F{performer_city})?", г. " + $F{performer_city}:"") +
+(($F{performer_street})?", ул. " + $F{performer_street}:"") +
+(($F{performer_home})?", д. " + $F{performer_home}:"")]]></initialValueExpression>
 	</variable>
 	<variable name="performer_details" class="java.lang.String">
 		<initialValueExpression><![CDATA[(($F{performer_inn})?", ИНН " + $F{performer_inn}:"") +
