@@ -52,7 +52,7 @@
 		<fieldDescription><![CDATA[/data/record/company_id/partner_id/bank_ids/bank_acc_corr]]></fieldDescription>
 	</field>
 	<field name="performer_bank_bic" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/company_id/bank_ids/bank_bic]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/company_id/partner_id/bank_ids/bank_bic]]></fieldDescription>
 	</field>
 	<field name="invoice_name" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/name]]></fieldDescription>
@@ -147,6 +147,36 @@
 	<variable name="carry_flag" class="java.lang.Boolean">
 		<variableExpression><![CDATA[]]></variableExpression>
 	</variable>
+	<variable name="performer_address" class="java.lang.String">
+		<initialValueExpression><![CDATA[$F{performer_zip} +
+(($F{performer_country})?" " + $F{performer_country}:"1") +
+(($F{performer_city})?", г. " + $F{performer_city}:"2") +
+(($F{performer_street})?", ул. " + $F{performer_street}:"3") +
+(($F{performer_home})?", д. " + $F{performer_home}:"4")]]></initialValueExpression>
+	</variable>
+	<variable name="performer_details" class="java.lang.String">
+		<initialValueExpression><![CDATA[(($F{performer_inn})?", ИНН " + $F{performer_inn}:"") +
+(($F{performer_kpp})?", КПП " + $F{performer_kpp}:"") +
+(($F{performer_acc_number})?", р/сч " + $F{performer_acc_number}:"") +
+(($F{performer_bank_name})?", банк " + $F{performer_bank_name}:"") +
+(($F{performer_bank_acc_corr})?", корр. счет " + $F{performer_bank_acc_corr}:"") +
+(($F{performer_bank_bic})?", БИК " + $F{performer_bank_bic}:"")]]></initialValueExpression>
+	</variable>
+	<variable name="partner_address" class="java.lang.String">
+		<initialValueExpression><![CDATA[$F{partner_zip} +
+(($F{partner_country})?" " + $F{partner_country}:"1") +
+(($F{partner_city})?", г. " + $F{partner_city}:"2") +
+(($F{partner_street})?", ул. " + $F{partner_street}:"3") +
+(($F{partner_home})?", д. " + $F{partner_home}:"4")]]></initialValueExpression>
+	</variable>
+	<variable name="partner_details" class="java.lang.String">
+		<initialValueExpression><![CDATA[(($F{partner_inn})?", ИНН " + $F{partner_inn}:"") +
+(($F{partner_kpp})?", КПП " + $F{partner_kpp}:"") +
+(($F{partner_acc_number})?", р/сч " + $F{partner_acc_number}:"") +
+(($F{partner_bank_name})?", банк " + $F{partner_bank_name}:"") +
+(($F{partner_bank_acc_corr})?", корр. счет " + $F{partner_bank_acc_corr}:"") +
+(($F{partner_bank_bic})?", БИК " + $F{partner_bank_bic}:"")]]></initialValueExpression>
+	</variable>
 	<group name="table" isStartNewPage="true">
 		<groupExpression><![CDATA[($V{PAGE_NUMBER} == 1 && $V{PAGE_COUNT} > 25 && $F{invoices_count} == $V{REPORT_COUNT}) ||
 ($V{PAGE_NUMBER} != 1 && $V{PAGE_COUNT} > 35 && $V{REPORT_COUNT} == $F{invoices_count})]]></groupExpression>
@@ -180,7 +210,7 @@
 						<textElement verticalAlignment="Middle">
 							<font fontName="DejaVu Sans" isPdfEmbedded="true"/>
 						</textElement>
-						<textFieldExpression class="java.lang.String"><![CDATA[$F{partner_name} + ", " + $F{partner_zip} + ", " + $F{partner_country} + ", г. " + $F{partner_city} + ", ул. " + $F{partner_street} + ", д. " + $F{partner_home} + ", ИНН " + $F{partner_inn} + ", КПП " + $F{partner_kpp} + ", р/сч " + $F{partner_acc_number} + ", банк " + $F{partner_bank_name} + ", корр. счет " + $F{partner_bank_acc_corr} + ", БИК " + $F{partner_bank_bic}]]></textFieldExpression>
+						<textFieldExpression class="java.lang.String"><![CDATA[$F{partner_name} + ", " + $V{partner_address} + " " + $V{partner_details}]]></textFieldExpression>
 					</textField>
 				</elementGroup>
 			</elementGroup>
@@ -191,7 +221,7 @@
 					<textElement verticalAlignment="Middle">
 						<font fontName="DejaVu Sans" isPdfEmbedded="true"/>
 					</textElement>
-					<textFieldExpression class="java.lang.String"><![CDATA[$F{performer_official_name} + ", " + $F{performer_zip} + ", " + $F{performer_country} + ", г. " + $F{performer_city} + ", ул. " + $F{performer_street} + ", д. " + $F{performer_home} + ", ИНН " + $F{performer_inn} + ", КПП " + $F{performer_kpp} + ", р/сч " + $F{performer_acc_number} + ", банк " + $F{performer_bank_name} + ", корр. счет " + $F{performer_bank_acc_corr} + ", БИК " + $F{performer_bank_bic}]]></textFieldExpression>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{performer_official_name} + ", " + $V{performer_address} + " " + $V{performer_details}]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement x="0" y="0" width="84" height="13"/>
