@@ -1,0 +1,1961 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data noupdate="0">
+
+
+		<record id="base.AUD" model="res.currency">
+			<field name="name">AUD</field>
+			<field name="full_name">Австралийский доллар</field>
+			<field name="code">036</field>
+		</record>
+		<record id="base.rateAUD" model="res.currency.rate">
+			<field name="currency_id" ref="base.AUD" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.EUR" model="res.currency">
+			<field name="name">EUR</field>
+			<field name="full_name">Евро</field>
+			<field name="code">978</field>
+		</record>
+		<record id="base.rateEUR" model="res.currency.rate">
+			<field name="currency_id" ref="base.EUR" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.AZN" model="res.currency">
+			<field name="name">AZN</field>
+			<field name="full_name">Азербайджанский манат</field>
+			<field name="code">944</field>
+		</record>
+		<record id="base.rateAZN" model="res.currency.rate">
+			<field name="currency_id" ref="base.AZN" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.ALL" model="res.currency">
+			<field name="name">ALL</field>
+			<field name="full_name">Лек</field>
+			<field name="code">008</field>
+		</record>
+		<record id="base.rateALL" model="res.currency.rate">
+			<field name="currency_id" ref="base.ALL" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.DZD" model="res.currency">
+			<field name="name">DZD</field>
+			<field name="full_name">Алжирский динар</field>
+			<field name="code">012</field>
+		</record>
+		<record id="base.rateDZD" model="res.currency.rate">
+			<field name="currency_id" ref="base.DZD" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.USD" model="res.currency">
+			<field name="name">USD</field>
+			<field name="full_name">Доллар США</field>
+			<field name="code">840</field>
+		</record>
+		<record id="base.rateUSD" model="res.currency.rate">
+			<field name="currency_id" ref="base.USD" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.XCD" model="res.currency">
+			<field name="name">XCD</field>
+			<field name="full_name">Восточно-карибский доллар</field>
+			<field name="code">951</field>
+		</record>
+		<record id="base.rateXCD" model="res.currency.rate">
+			<field name="currency_id" ref="base.XCD" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.AOA" model="res.currency">
+			<field name="name">AOA</field>
+			<field name="full_name">Кванза</field>
+			<field name="code">973</field>
+		</record>
+		<record id="base.rateAOA" model="res.currency.rate">
+			<field name="currency_id" ref="base.AOA" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.ARS" model="res.currency">
+			<field name="name">ARS</field>
+			<field name="full_name">Аргентинское песо</field>
+			<field name="code">032</field>
+		</record>
+		<record id="base.rateARS" model="res.currency.rate">
+			<field name="currency_id" ref="base.ARS" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.AMD" model="res.currency">
+			<field name="name">AMD</field>
+			<field name="full_name">Армянский драм</field>
+			<field name="code">051</field>
+		</record>
+		<record id="base.rateAMD" model="res.currency.rate">
+			<field name="currency_id" ref="base.AMD" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.AWG" model="res.currency">
+			<field name="name">AWG</field>
+			<field name="full_name">Арубанский гульден</field>
+			<field name="code">533</field>
+		</record>
+		<record id="base.rateAWG" model="res.currency.rate">
+			<field name="currency_id" ref="base.AWG" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.AFN" model="res.currency">
+			<field name="name">AFN</field>
+			<field name="full_name">Афгани</field>
+			<field name="code">971</field>
+		</record>
+		<record id="base.rateAFN" model="res.currency.rate">
+			<field name="currency_id" ref="base.AFN" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.BSD" model="res.currency">
+			<field name="name">BSD</field>
+			<field name="full_name">Багамский доллар</field>
+			<field name="code">044</field>
+		</record>
+		<record id="base.rateBSD" model="res.currency.rate">
+			<field name="currency_id" ref="base.BSD" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.BDT" model="res.currency">
+			<field name="name">BDT</field>
+			<field name="full_name">Така</field>
+			<field name="code">050</field>
+		</record>
+		<record id="base.rateBDT" model="res.currency.rate">
+			<field name="currency_id" ref="base.BDT" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.BBD" model="res.currency">
+			<field name="name">BBD</field>
+			<field name="full_name">Барбадосский доллар</field>
+			<field name="code">052</field>
+		</record>
+		<record id="base.rateBBD" model="res.currency.rate">
+			<field name="currency_id" ref="base.BBD" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.BHD" model="res.currency">
+			<field name="name">BHD</field>
+			<field name="full_name">Бахрейнский динар</field>
+			<field name="code">048</field>
+		</record>
+		<record id="base.rateBHD" model="res.currency.rate">
+			<field name="currency_id" ref="base.BHD" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.BYR" model="res.currency">
+			<field name="name">BYR</field>
+			<field name="full_name">Белорусский рубль</field>
+			<field name="code">974</field>
+		</record>
+		<record id="base.rateBYR" model="res.currency.rate">
+			<field name="currency_id" ref="base.BYR" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.BZD" model="res.currency">
+			<field name="name">BZD</field>
+			<field name="full_name">Белизский доллар</field>
+			<field name="code">084</field>
+		</record>
+		<record id="base.rateBZD" model="res.currency.rate">
+			<field name="currency_id" ref="base.BZD" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.XOF" model="res.currency">
+			<field name="name">XOF</field>
+			<field name="full_name">Франк КФА ВСЕАО</field>
+			<field name="code">952</field>
+		</record>
+		<record id="base.rateXOF" model="res.currency.rate">
+			<field name="currency_id" ref="base.XOF" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.BMD" model="res.currency">
+			<field name="name">BMD</field>
+			<field name="full_name">Бермудский доллар</field>
+			<field name="code">060</field>
+		</record>
+		<record id="base.rateBMD" model="res.currency.rate">
+			<field name="currency_id" ref="base.BMD" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.BGN" model="res.currency">
+			<field name="name">BGN</field>
+			<field name="full_name">Болгарский лев</field>
+			<field name="code">975</field>
+		</record>
+		<record id="base.rateBGN" model="res.currency.rate">
+			<field name="currency_id" ref="base.BGN" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.BOB" model="res.currency">
+			<field name="name">BOB</field>
+			<field name="full_name">Боливиано</field>
+			<field name="code">068</field>
+		</record>
+		<record id="base.rateBOB" model="res.currency.rate">
+			<field name="currency_id" ref="base.BOB" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.BAM" model="res.currency">
+			<field name="name">BAM</field>
+			<field name="full_name">Конвертируемая марка</field>
+			<field name="code">977</field>
+		</record>
+		<record id="base.rateBAM" model="res.currency.rate">
+			<field name="currency_id" ref="base.BAM" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.BWP" model="res.currency">
+			<field name="name">BWP</field>
+			<field name="full_name">Пула</field>
+			<field name="code">072</field>
+		</record>
+		<record id="base.rateBWP" model="res.currency.rate">
+			<field name="currency_id" ref="base.BWP" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.BRL" model="res.currency">
+			<field name="name">BRL</field>
+			<field name="full_name">Бразильский реал</field>
+			<field name="code">986</field>
+		</record>
+		<record id="base.rateBRL" model="res.currency.rate">
+			<field name="currency_id" ref="base.BRL" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.BND" model="res.currency">
+			<field name="name">BND</field>
+			<field name="full_name">Брунейский доллар</field>
+			<field name="code">096</field>
+		</record>
+		<record id="base.rateBND" model="res.currency.rate">
+			<field name="currency_id" ref="base.BND" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.BIF" model="res.currency">
+			<field name="name">BIF</field>
+			<field name="full_name">Бурундийский франк</field>
+			<field name="code">108</field>
+		</record>
+		<record id="base.rateBIF" model="res.currency.rate">
+			<field name="currency_id" ref="base.BIF" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.BTN" model="res.currency">
+			<field name="name">BTN</field>
+			<field name="full_name">Нгултрум</field>
+			<field name="code">064</field>
+		</record>
+		<record id="base.rateBTN" model="res.currency.rate">
+			<field name="currency_id" ref="base.BTN" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.INR" model="res.currency">
+			<field name="name">INR</field>
+			<field name="full_name">Индийская рупия</field>
+			<field name="code">356</field>
+		</record>
+		<record id="base.rateINR" model="res.currency.rate">
+			<field name="currency_id" ref="base.INR" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.VUV" model="res.currency">
+			<field name="name">VUV</field>
+			<field name="full_name">Вату</field>
+			<field name="code">548</field>
+		</record>
+		<record id="base.rateVUV" model="res.currency.rate">
+			<field name="currency_id" ref="base.VUV" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.HUF" model="res.currency">
+			<field name="name">HUF</field>
+			<field name="full_name">Форинт</field>
+			<field name="code">348</field>
+		</record>
+		<record id="base.rateHUF" model="res.currency.rate">
+			<field name="currency_id" ref="base.HUF" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.VEF" model="res.currency">
+			<field name="name">VEF</field>
+			<field name="full_name">Боливар фуэрте</field>
+			<field name="code">937</field>
+		</record>
+		<record id="base.rateVEF" model="res.currency.rate">
+			<field name="currency_id" ref="base.VEF" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.VND" model="res.currency">
+			<field name="name">VND</field>
+			<field name="full_name">Донг</field>
+			<field name="code">704</field>
+		</record>
+		<record id="base.rateVND" model="res.currency.rate">
+			<field name="currency_id" ref="base.VND" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.XAF" model="res.currency">
+			<field name="name">XAF</field>
+			<field name="full_name">Франк КФА ВЕАС</field>
+			<field name="code">950</field>
+		</record>
+		<record id="base.rateXAF" model="res.currency.rate">
+			<field name="currency_id" ref="base.XAF" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.HTG" model="res.currency">
+			<field name="name">HTG</field>
+			<field name="full_name">Гурд</field>
+			<field name="code">332</field>
+		</record>
+		<record id="base.rateHTG" model="res.currency.rate">
+			<field name="currency_id" ref="base.HTG" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.GYD" model="res.currency">
+			<field name="name">GYD</field>
+			<field name="full_name">Гайанский доллар</field>
+			<field name="code">328</field>
+		</record>
+		<record id="base.rateGYD" model="res.currency.rate">
+			<field name="currency_id" ref="base.GYD" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.GMD" model="res.currency">
+			<field name="name">GMD</field>
+			<field name="full_name">Даласи</field>
+			<field name="code">270</field>
+		</record>
+		<record id="base.rateGMD" model="res.currency.rate">
+			<field name="currency_id" ref="base.GMD" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.GHS" model="res.currency">
+			<field name="name">GHS</field>
+			<field name="full_name">Седи</field>
+			<field name="code">936</field>
+		</record>
+		<record id="base.rateGHS" model="res.currency.rate">
+			<field name="currency_id" ref="base.GHS" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.GTQ" model="res.currency">
+			<field name="name">GTQ</field>
+			<field name="full_name">Кетсаль</field>
+			<field name="code">320</field>
+		</record>
+		<record id="base.rateGTQ" model="res.currency.rate">
+			<field name="currency_id" ref="base.GTQ" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.GNF" model="res.currency">
+			<field name="name">GNF</field>
+			<field name="full_name">Гвинейский франк</field>
+			<field name="code">324</field>
+		</record>
+		<record id="base.rateGNF" model="res.currency.rate">
+			<field name="currency_id" ref="base.GNF" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.GWP" model="res.currency">
+			<field name="name">GWP</field>
+			<field name="full_name">Песо Гвинеи-Бисау</field>
+			<field name="code">624</field>
+		</record>
+		<record id="base.rateGWP" model="res.currency.rate">
+			<field name="currency_id" ref="base.GWP" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.GIP" model="res.currency">
+			<field name="name">GIP</field>
+			<field name="full_name">Гибралтарский фунт</field>
+			<field name="code">292</field>
+		</record>
+		<record id="base.rateGIP" model="res.currency.rate">
+			<field name="currency_id" ref="base.GIP" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.HNL" model="res.currency">
+			<field name="name">HNL</field>
+			<field name="full_name">Лемпира</field>
+			<field name="code">340</field>
+		</record>
+		<record id="base.rateHNL" model="res.currency.rate">
+			<field name="currency_id" ref="base.HNL" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.HKD" model="res.currency">
+			<field name="name">HKD</field>
+			<field name="full_name">Гонконгский доллар</field>
+			<field name="code">344</field>
+		</record>
+		<record id="base.rateHKD" model="res.currency.rate">
+			<field name="currency_id" ref="base.HKD" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.DKK" model="res.currency">
+			<field name="name">DKK</field>
+			<field name="full_name">Датская крона</field>
+			<field name="code">208</field>
+		</record>
+		<record id="base.rateDKK" model="res.currency.rate">
+			<field name="currency_id" ref="base.DKK" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.GEL" model="res.currency">
+			<field name="name">GEL</field>
+			<field name="full_name">Лари</field>
+			<field name="code">981</field>
+		</record>
+		<record id="base.rateGEL" model="res.currency.rate">
+			<field name="currency_id" ref="base.GEL" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.DJF" model="res.currency">
+			<field name="name">DJF</field>
+			<field name="full_name">Франк Джибути</field>
+			<field name="code">262</field>
+		</record>
+		<record id="base.rateDJF" model="res.currency.rate">
+			<field name="currency_id" ref="base.DJF" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.DOP" model="res.currency">
+			<field name="name">DOP</field>
+			<field name="full_name">Доминиканское песо</field>
+			<field name="code">214</field>
+		</record>
+		<record id="base.rateDOP" model="res.currency.rate">
+			<field name="currency_id" ref="base.DOP" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.EGP" model="res.currency">
+			<field name="name">EGP</field>
+			<field name="full_name">Египетский фунт</field>
+			<field name="code">818</field>
+		</record>
+		<record id="base.rateEGP" model="res.currency.rate">
+			<field name="currency_id" ref="base.EGP" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.ZMK" model="res.currency">
+			<field name="name">ZMK</field>
+			<field name="full_name">Замбийская квача</field>
+			<field name="code">894</field>
+		</record>
+		<record id="base.rateZMK" model="res.currency.rate">
+			<field name="currency_id" ref="base.ZMK" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.MAD" model="res.currency">
+			<field name="name">MAD</field>
+			<field name="full_name">Марокканский дирхам</field>
+			<field name="code">504</field>
+		</record>
+		<record id="base.rateMAD" model="res.currency.rate">
+			<field name="currency_id" ref="base.MAD" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.ZWL" model="res.currency">
+			<field name="name">ZWL</field>
+			<field name="full_name">Доллар Зимбабве</field>
+			<field name="code">932</field>
+		</record>
+		<record id="base.rateZWL" model="res.currency.rate">
+			<field name="currency_id" ref="base.ZWL" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.ILS" model="res.currency">
+			<field name="name">ILS</field>
+			<field name="full_name">Новый израильский шекель</field>
+			<field name="code">376</field>
+		</record>
+		<record id="base.rateILS" model="res.currency.rate">
+			<field name="currency_id" ref="base.ILS" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.IDR" model="res.currency">
+			<field name="name">IDR</field>
+			<field name="full_name">Рупия</field>
+			<field name="code">360</field>
+		</record>
+		<record id="base.rateIDR" model="res.currency.rate">
+			<field name="currency_id" ref="base.IDR" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.JOD" model="res.currency">
+			<field name="name">JOD</field>
+			<field name="full_name">Иорданский динар</field>
+			<field name="code">400</field>
+		</record>
+		<record id="base.rateJOD" model="res.currency.rate">
+			<field name="currency_id" ref="base.JOD" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.IQD" model="res.currency">
+			<field name="name">IQD</field>
+			<field name="full_name">Иракский динар</field>
+			<field name="code">368</field>
+		</record>
+		<record id="base.rateIQD" model="res.currency.rate">
+			<field name="currency_id" ref="base.IQD" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.IRR" model="res.currency">
+			<field name="name">IRR</field>
+			<field name="full_name">Иранский риал</field>
+			<field name="code">364</field>
+		</record>
+		<record id="base.rateIRR" model="res.currency.rate">
+			<field name="currency_id" ref="base.IRR" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.ISK" model="res.currency">
+			<field name="name">ISK</field>
+			<field name="full_name">Исландская крона</field>
+			<field name="code">352</field>
+		</record>
+		<record id="base.rateISK" model="res.currency.rate">
+			<field name="currency_id" ref="base.ISK" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.YER" model="res.currency">
+			<field name="name">YER</field>
+			<field name="full_name">Йеменский риал</field>
+			<field name="code">886</field>
+		</record>
+		<record id="base.rateYER" model="res.currency.rate">
+			<field name="currency_id" ref="base.YER" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.CVE" model="res.currency">
+			<field name="name">CVE</field>
+			<field name="full_name">Эскудо Кабо-Верде</field>
+			<field name="code">132</field>
+		</record>
+		<record id="base.rateCVE" model="res.currency.rate">
+			<field name="currency_id" ref="base.CVE" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.KZT" model="res.currency">
+			<field name="name">KZT</field>
+			<field name="full_name">Тенге</field>
+			<field name="code">398</field>
+		</record>
+		<record id="base.rateKZT" model="res.currency.rate">
+			<field name="currency_id" ref="base.KZT" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.KHR" model="res.currency">
+			<field name="name">KHR</field>
+			<field name="full_name">Риель</field>
+			<field name="code">116</field>
+		</record>
+		<record id="base.rateKHR" model="res.currency.rate">
+			<field name="currency_id" ref="base.KHR" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.CAD" model="res.currency">
+			<field name="name">CAD</field>
+			<field name="full_name">Канадский доллар</field>
+			<field name="code">124</field>
+		</record>
+		<record id="base.rateCAD" model="res.currency.rate">
+			<field name="currency_id" ref="base.CAD" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.QAR" model="res.currency">
+			<field name="name">QAR</field>
+			<field name="full_name">Катарский риал</field>
+			<field name="code">634</field>
+		</record>
+		<record id="base.rateQAR" model="res.currency.rate">
+			<field name="currency_id" ref="base.QAR" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.KES" model="res.currency">
+			<field name="name">KES</field>
+			<field name="full_name">Кенийский шиллинг</field>
+			<field name="code">404</field>
+		</record>
+		<record id="base.rateKES" model="res.currency.rate">
+			<field name="currency_id" ref="base.KES" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.KGS" model="res.currency">
+			<field name="name">KGS</field>
+			<field name="full_name">Сом</field>
+			<field name="code">417</field>
+		</record>
+		<record id="base.rateKGS" model="res.currency.rate">
+			<field name="currency_id" ref="base.KGS" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.CNY" model="res.currency">
+			<field name="name">CNY</field>
+			<field name="full_name">Юань</field>
+			<field name="code">156</field>
+		</record>
+		<record id="base.rateCNY" model="res.currency.rate">
+			<field name="currency_id" ref="base.CNY" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.COP" model="res.currency">
+			<field name="name">COP</field>
+			<field name="full_name">Колумбийское песо</field>
+			<field name="code">170</field>
+		</record>
+		<record id="base.rateCOP" model="res.currency.rate">
+			<field name="currency_id" ref="base.COP" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.COU" model="res.currency">
+			<field name="name">COU</field>
+			<field name="full_name">Единица реальной стоимости</field>
+			<field name="code">970</field>
+		</record>
+		<record id="base.rateCOU" model="res.currency.rate">
+			<field name="currency_id" ref="base.COU" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.KMF" model="res.currency">
+			<field name="name">KMF</field>
+			<field name="full_name">Франк Комор</field>
+			<field name="code">174</field>
+		</record>
+		<record id="base.rateKMF" model="res.currency.rate">
+			<field name="currency_id" ref="base.KMF" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.CDF" model="res.currency">
+			<field name="name">CDF</field>
+			<field name="full_name">Конголезский франк</field>
+			<field name="code">976</field>
+		</record>
+		<record id="base.rateCDF" model="res.currency.rate">
+			<field name="currency_id" ref="base.CDF" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.KPW" model="res.currency">
+			<field name="name">KPW</field>
+			<field name="full_name">Северокорейская вона</field>
+			<field name="code">408</field>
+		</record>
+		<record id="base.rateKPW" model="res.currency.rate">
+			<field name="currency_id" ref="base.KPW" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.KRW" model="res.currency">
+			<field name="name">KRW</field>
+			<field name="full_name">Вона</field>
+			<field name="code">410</field>
+		</record>
+		<record id="base.rateKRW" model="res.currency.rate">
+			<field name="currency_id" ref="base.KRW" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.CRC" model="res.currency">
+			<field name="name">CRC</field>
+			<field name="full_name">Костариканский колон</field>
+			<field name="code">188</field>
+		</record>
+		<record id="base.rateCRC" model="res.currency.rate">
+			<field name="currency_id" ref="base.CRC" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.CUP" model="res.currency">
+			<field name="name">CUP</field>
+			<field name="full_name">Кубинское песо</field>
+			<field name="code">192</field>
+		</record>
+		<record id="base.rateCUP" model="res.currency.rate">
+			<field name="currency_id" ref="base.CUP" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.CUC" model="res.currency">
+			<field name="name">CUC</field>
+			<field name="full_name">Конвертируемое песо</field>
+			<field name="code">931</field>
+		</record>
+		<record id="base.rateCUC" model="res.currency.rate">
+			<field name="currency_id" ref="base.CUC" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.KWD" model="res.currency">
+			<field name="name">KWD</field>
+			<field name="full_name">Кувейтский динар</field>
+			<field name="code">414</field>
+		</record>
+		<record id="base.rateKWD" model="res.currency.rate">
+			<field name="currency_id" ref="base.KWD" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.LAK" model="res.currency">
+			<field name="name">LAK</field>
+			<field name="full_name">Кип</field>
+			<field name="code">418</field>
+		</record>
+		<record id="base.rateLAK" model="res.currency.rate">
+			<field name="currency_id" ref="base.LAK" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.LVL" model="res.currency">
+			<field name="name">LVL</field>
+			<field name="full_name">Латвийский лат</field>
+			<field name="code">428</field>
+		</record>
+		<record id="base.rateLVL" model="res.currency.rate">
+			<field name="currency_id" ref="base.LVL" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.LSL" model="res.currency">
+			<field name="name">LSL</field>
+			<field name="full_name">Лоти</field>
+			<field name="code">426</field>
+		</record>
+		<record id="base.rateLSL" model="res.currency.rate">
+			<field name="currency_id" ref="base.LSL" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.ZAR" model="res.currency">
+			<field name="name">ZAR</field>
+			<field name="full_name">Рэнд</field>
+			<field name="code">710</field>
+		</record>
+		<record id="base.rateZAR" model="res.currency.rate">
+			<field name="currency_id" ref="base.ZAR" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.LRD" model="res.currency">
+			<field name="name">LRD</field>
+			<field name="full_name">Либерийский доллар</field>
+			<field name="code">430</field>
+		</record>
+		<record id="base.rateLRD" model="res.currency.rate">
+			<field name="currency_id" ref="base.LRD" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.LBP" model="res.currency">
+			<field name="name">LBP</field>
+			<field name="full_name">Ливанский фунт</field>
+			<field name="code">422</field>
+		</record>
+		<record id="base.rateLBP" model="res.currency.rate">
+			<field name="currency_id" ref="base.LBP" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.LYD" model="res.currency">
+			<field name="name">LYD</field>
+			<field name="full_name">Ливийский динар</field>
+			<field name="code">434</field>
+		</record>
+		<record id="base.rateLYD" model="res.currency.rate">
+			<field name="currency_id" ref="base.LYD" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.LTL" model="res.currency">
+			<field name="name">LTL</field>
+			<field name="full_name">Литовский лит</field>
+			<field name="code">440</field>
+		</record>
+		<record id="base.rateLTL" model="res.currency.rate">
+			<field name="currency_id" ref="base.LTL" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.CHF" model="res.currency">
+			<field name="name">CHF</field>
+			<field name="full_name">Швейцарский франк</field>
+			<field name="code">756</field>
+		</record>
+		<record id="base.rateCHF" model="res.currency.rate">
+			<field name="currency_id" ref="base.CHF" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.MUR" model="res.currency">
+			<field name="name">MUR</field>
+			<field name="full_name">Маврикийская рупия</field>
+			<field name="code">480</field>
+		</record>
+		<record id="base.rateMUR" model="res.currency.rate">
+			<field name="currency_id" ref="base.MUR" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.MRO" model="res.currency">
+			<field name="name">MRO</field>
+			<field name="full_name">Угия</field>
+			<field name="code">478</field>
+		</record>
+		<record id="base.rateMRO" model="res.currency.rate">
+			<field name="currency_id" ref="base.MRO" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.MGA" model="res.currency">
+			<field name="name">MGA</field>
+			<field name="full_name">Малагасийский ариари</field>
+			<field name="code">969</field>
+		</record>
+		<record id="base.rateMGA" model="res.currency.rate">
+			<field name="currency_id" ref="base.MGA" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.MOP" model="res.currency">
+			<field name="name">MOP</field>
+			<field name="full_name">Патака</field>
+			<field name="code">446</field>
+		</record>
+		<record id="base.rateMOP" model="res.currency.rate">
+			<field name="currency_id" ref="base.MOP" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.MKD" model="res.currency">
+			<field name="name">MKD</field>
+			<field name="full_name">Денар</field>
+			<field name="code">807</field>
+		</record>
+		<record id="base.rateMKD" model="res.currency.rate">
+			<field name="currency_id" ref="base.MKD" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.MWK" model="res.currency">
+			<field name="name">MWK</field>
+			<field name="full_name">Квача</field>
+			<field name="code">454</field>
+		</record>
+		<record id="base.rateMWK" model="res.currency.rate">
+			<field name="currency_id" ref="base.MWK" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.MYR" model="res.currency">
+			<field name="name">MYR</field>
+			<field name="full_name">Малайзийский ринггит</field>
+			<field name="code">458</field>
+		</record>
+		<record id="base.rateMYR" model="res.currency.rate">
+			<field name="currency_id" ref="base.MYR" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.MVR" model="res.currency">
+			<field name="name">MVR</field>
+			<field name="full_name">Руфия</field>
+			<field name="code">462</field>
+		</record>
+		<record id="base.rateMVR" model="res.currency.rate">
+			<field name="currency_id" ref="base.MVR" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.XDR" model="res.currency">
+			<field name="name">XDR</field>
+			<field name="full_name">СДР (специальные права заимствования)</field>
+			<field name="code">960</field>
+		</record>
+		<record id="base.rateXDR" model="res.currency.rate">
+			<field name="currency_id" ref="base.XDR" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.MXN" model="res.currency">
+			<field name="name">MXN</field>
+			<field name="full_name">Мексиканское песо</field>
+			<field name="code">484</field>
+		</record>
+		<record id="base.rateMXN" model="res.currency.rate">
+			<field name="currency_id" ref="base.MXN" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.MZN" model="res.currency">
+			<field name="name">MZN</field>
+			<field name="full_name">Метикал</field>
+			<field name="code">943</field>
+		</record>
+		<record id="base.rateMZN" model="res.currency.rate">
+			<field name="currency_id" ref="base.MZN" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.MDL" model="res.currency">
+			<field name="name">MDL</field>
+			<field name="full_name">Молдавский лей</field>
+			<field name="code">498</field>
+		</record>
+		<record id="base.rateMDL" model="res.currency.rate">
+			<field name="currency_id" ref="base.MDL" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.MNT" model="res.currency">
+			<field name="name">MNT</field>
+			<field name="full_name">Тугрик</field>
+			<field name="code">496</field>
+		</record>
+		<record id="base.rateMNT" model="res.currency.rate">
+			<field name="currency_id" ref="base.MNT" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.MMK" model="res.currency">
+			<field name="name">MMK</field>
+			<field name="full_name">Кьят</field>
+			<field name="code">104</field>
+		</record>
+		<record id="base.rateMMK" model="res.currency.rate">
+			<field name="currency_id" ref="base.MMK" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.NAD" model="res.currency">
+			<field name="name">NAD</field>
+			<field name="full_name">Доллар Намибии</field>
+			<field name="code">516</field>
+		</record>
+		<record id="base.rateNAD" model="res.currency.rate">
+			<field name="currency_id" ref="base.NAD" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.NPR" model="res.currency">
+			<field name="name">NPR</field>
+			<field name="full_name">Непальская рупия</field>
+			<field name="code">524</field>
+		</record>
+		<record id="base.rateNPR" model="res.currency.rate">
+			<field name="currency_id" ref="base.NPR" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.NGN" model="res.currency">
+			<field name="name">NGN</field>
+			<field name="full_name">Найра</field>
+			<field name="code">566</field>
+		</record>
+		<record id="base.rateNGN" model="res.currency.rate">
+			<field name="currency_id" ref="base.NGN" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.ANG" model="res.currency">
+			<field name="name">ANG</field>
+			<field name="full_name">Нидерландский антильский гульден</field>
+			<field name="code">532</field>
+		</record>
+		<record id="base.rateANG" model="res.currency.rate">
+			<field name="currency_id" ref="base.ANG" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.NIO" model="res.currency">
+			<field name="name">NIO</field>
+			<field name="full_name">Золотая кордоба</field>
+			<field name="code">558</field>
+		</record>
+		<record id="base.rateNIO" model="res.currency.rate">
+			<field name="currency_id" ref="base.NIO" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.NZD" model="res.currency">
+			<field name="name">NZD</field>
+			<field name="full_name">Новозеландский доллар</field>
+			<field name="code">554</field>
+		</record>
+		<record id="base.rateNZD" model="res.currency.rate">
+			<field name="currency_id" ref="base.NZD" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.XPF" model="res.currency">
+			<field name="name">XPF</field>
+			<field name="full_name">Франк КФП</field>
+			<field name="code">953</field>
+		</record>
+		<record id="base.rateXPF" model="res.currency.rate">
+			<field name="currency_id" ref="base.XPF" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.NOK" model="res.currency">
+			<field name="name">NOK</field>
+			<field name="full_name">Норвежская крона</field>
+			<field name="code">578</field>
+		</record>
+		<record id="base.rateNOK" model="res.currency.rate">
+			<field name="currency_id" ref="base.NOK" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.AED" model="res.currency">
+			<field name="name">AED</field>
+			<field name="full_name">Дирхам (ОАЭ)</field>
+			<field name="code">784</field>
+		</record>
+		<record id="base.rateAED" model="res.currency.rate">
+			<field name="currency_id" ref="base.AED" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.OMR" model="res.currency">
+			<field name="name">OMR</field>
+			<field name="full_name">Оманский риал</field>
+			<field name="code">512</field>
+		</record>
+		<record id="base.rateOMR" model="res.currency.rate">
+			<field name="currency_id" ref="base.OMR" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.KYD" model="res.currency">
+			<field name="name">KYD</field>
+			<field name="full_name">Доллар Островов Кайман</field>
+			<field name="code">136</field>
+		</record>
+		<record id="base.rateKYD" model="res.currency.rate">
+			<field name="currency_id" ref="base.KYD" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.PKR" model="res.currency">
+			<field name="name">PKR</field>
+			<field name="full_name">Пакистанская рупия</field>
+			<field name="code">586</field>
+		</record>
+		<record id="base.ratePKR" model="res.currency.rate">
+			<field name="currency_id" ref="base.PKR" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.PAB" model="res.currency">
+			<field name="name">PAB</field>
+			<field name="full_name">Бальбоа</field>
+			<field name="code">590</field>
+		</record>
+		<record id="base.ratePAB" model="res.currency.rate">
+			<field name="currency_id" ref="base.PAB" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.PGK" model="res.currency">
+			<field name="name">PGK</field>
+			<field name="full_name">Кина</field>
+			<field name="code">598</field>
+		</record>
+		<record id="base.ratePGK" model="res.currency.rate">
+			<field name="currency_id" ref="base.PGK" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.PYG" model="res.currency">
+			<field name="name">PYG</field>
+			<field name="full_name">Гуарани</field>
+			<field name="code">600</field>
+		</record>
+		<record id="base.ratePYG" model="res.currency.rate">
+			<field name="currency_id" ref="base.PYG" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.PEN" model="res.currency">
+			<field name="name">PEN</field>
+			<field name="full_name">Новый соль</field>
+			<field name="code">604</field>
+		</record>
+		<record id="base.ratePEN" model="res.currency.rate">
+			<field name="currency_id" ref="base.PEN" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.PLN" model="res.currency">
+			<field name="name">PLN</field>
+			<field name="full_name">Злотый</field>
+			<field name="code">985</field>
+		</record>
+		<record id="base.ratePLN" model="res.currency.rate">
+			<field name="currency_id" ref="base.PLN" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.RUB" model="res.currency">
+			<field name="name">RUB</field>
+			<field name="full_name">Российский рубль</field>
+			<field name="code">643</field>
+		</record>
+		<record id="base.rateRUB" model="res.currency.rate">
+			<field name="currency_id" ref="base.RUB" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.RWF" model="res.currency">
+			<field name="name">RWF</field>
+			<field name="full_name">Франк Руанды</field>
+			<field name="code">646</field>
+		</record>
+		<record id="base.rateRWF" model="res.currency.rate">
+			<field name="currency_id" ref="base.RWF" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.RON" model="res.currency">
+			<field name="name">RON</field>
+			<field name="full_name">Новый лей</field>
+			<field name="code">946</field>
+		</record>
+		<record id="base.rateRON" model="res.currency.rate">
+			<field name="currency_id" ref="base.RON" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.WST" model="res.currency">
+			<field name="name">WST</field>
+			<field name="full_name">Тала</field>
+			<field name="code">882</field>
+		</record>
+		<record id="base.rateWST" model="res.currency.rate">
+			<field name="currency_id" ref="base.WST" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.STD" model="res.currency">
+			<field name="name">STD</field>
+			<field name="full_name">Добра</field>
+			<field name="code">678</field>
+		</record>
+		<record id="base.rateSTD" model="res.currency.rate">
+			<field name="currency_id" ref="base.STD" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.SAR" model="res.currency">
+			<field name="name">SAR</field>
+			<field name="full_name">Саудовский риял</field>
+			<field name="code">682</field>
+		</record>
+		<record id="base.rateSAR" model="res.currency.rate">
+			<field name="currency_id" ref="base.SAR" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.SZL" model="res.currency">
+			<field name="name">SZL</field>
+			<field name="full_name">Лилангени</field>
+			<field name="code">748</field>
+		</record>
+		<record id="base.rateSZL" model="res.currency.rate">
+			<field name="currency_id" ref="base.SZL" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.SHP" model="res.currency">
+			<field name="name">SHP</field>
+			<field name="full_name">Фунт Святой Елены</field>
+			<field name="code">654</field>
+		</record>
+		<record id="base.rateSHP" model="res.currency.rate">
+			<field name="currency_id" ref="base.SHP" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.SCR" model="res.currency">
+			<field name="name">SCR</field>
+			<field name="full_name">Сейшельская рупия</field>
+			<field name="code">690</field>
+		</record>
+		<record id="base.rateSCR" model="res.currency.rate">
+			<field name="currency_id" ref="base.SCR" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.RSD" model="res.currency">
+			<field name="name">RSD</field>
+			<field name="full_name">Сербский динар</field>
+			<field name="code">941</field>
+		</record>
+		<record id="base.rateRSD" model="res.currency.rate">
+			<field name="currency_id" ref="base.RSD" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.SGD" model="res.currency">
+			<field name="name">SGD</field>
+			<field name="full_name">Сингапурский доллар</field>
+			<field name="code">702</field>
+		</record>
+		<record id="base.rateSGD" model="res.currency.rate">
+			<field name="currency_id" ref="base.SGD" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.SYP" model="res.currency">
+			<field name="name">SYP</field>
+			<field name="full_name">Сирийский фунт</field>
+			<field name="code">760</field>
+		</record>
+		<record id="base.rateSYP" model="res.currency.rate">
+			<field name="currency_id" ref="base.SYP" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.GBP" model="res.currency">
+			<field name="name">GBP</field>
+			<field name="full_name">Фунт стерлингов</field>
+			<field name="code">826</field>
+		</record>
+		<record id="base.rateGBP" model="res.currency.rate">
+			<field name="currency_id" ref="base.GBP" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.SBD" model="res.currency">
+			<field name="name">SBD</field>
+			<field name="full_name">Доллар Соломоновых Островов</field>
+			<field name="code">090</field>
+		</record>
+		<record id="base.rateSBD" model="res.currency.rate">
+			<field name="currency_id" ref="base.SBD" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.SOS" model="res.currency">
+			<field name="name">SOS</field>
+			<field name="full_name">Сомалийский шиллинг</field>
+			<field name="code">706</field>
+		</record>
+		<record id="base.rateSOS" model="res.currency.rate">
+			<field name="currency_id" ref="base.SOS" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.SDG" model="res.currency">
+			<field name="name">SDG</field>
+			<field name="full_name">Суданский фунт</field>
+			<field name="code">938</field>
+		</record>
+		<record id="base.rateSDG" model="res.currency.rate">
+			<field name="currency_id" ref="base.SDG" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.SRD" model="res.currency">
+			<field name="name">SRD</field>
+			<field name="full_name">Суринамский доллар</field>
+			<field name="code">968</field>
+		</record>
+		<record id="base.rateSRD" model="res.currency.rate">
+			<field name="currency_id" ref="base.SRD" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.SLL" model="res.currency">
+			<field name="name">SLL</field>
+			<field name="full_name">Леоне</field>
+			<field name="code">694</field>
+		</record>
+		<record id="base.rateSLL" model="res.currency.rate">
+			<field name="currency_id" ref="base.SLL" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.TJS" model="res.currency">
+			<field name="name">TJS</field>
+			<field name="full_name">Сомони</field>
+			<field name="code">972</field>
+		</record>
+		<record id="base.rateTJS" model="res.currency.rate">
+			<field name="currency_id" ref="base.TJS" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.THB" model="res.currency">
+			<field name="name">THB</field>
+			<field name="full_name">Бат</field>
+			<field name="code">764</field>
+		</record>
+		<record id="base.rateTHB" model="res.currency.rate">
+			<field name="currency_id" ref="base.THB" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.TWD" model="res.currency">
+			<field name="name">TWD</field>
+			<field name="full_name">Новый тайваньский доллар</field>
+			<field name="code">901</field>
+		</record>
+		<record id="base.rateTWD" model="res.currency.rate">
+			<field name="currency_id" ref="base.TWD" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.TZS" model="res.currency">
+			<field name="name">TZS</field>
+			<field name="full_name">Танзанийский шиллинг</field>
+			<field name="code">834</field>
+		</record>
+		<record id="base.rateTZS" model="res.currency.rate">
+			<field name="currency_id" ref="base.TZS" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.TOP" model="res.currency">
+			<field name="name">TOP</field>
+			<field name="full_name">Паанга</field>
+			<field name="code">776</field>
+		</record>
+		<record id="base.rateTOP" model="res.currency.rate">
+			<field name="currency_id" ref="base.TOP" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.TTD" model="res.currency">
+			<field name="name">TTD</field>
+			<field name="full_name">Доллар Тринидада и Тобаго</field>
+			<field name="code">780</field>
+		</record>
+		<record id="base.rateTTD" model="res.currency.rate">
+			<field name="currency_id" ref="base.TTD" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.TND" model="res.currency">
+			<field name="name">TND</field>
+			<field name="full_name">Тунисский динар</field>
+			<field name="code">788</field>
+		</record>
+		<record id="base.rateTND" model="res.currency.rate">
+			<field name="currency_id" ref="base.TND" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.TMT" model="res.currency">
+			<field name="name">TMT</field>
+			<field name="full_name">Новый манат</field>
+			<field name="code">934</field>
+		</record>
+		<record id="base.rateTMT" model="res.currency.rate">
+			<field name="currency_id" ref="base.TMT" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.TRY" model="res.currency">
+			<field name="name">TRY</field>
+			<field name="full_name">Турецкая лира</field>
+			<field name="code">949</field>
+		</record>
+		<record id="base.rateTRY" model="res.currency.rate">
+			<field name="currency_id" ref="base.TRY" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.UGX" model="res.currency">
+			<field name="name">UGX</field>
+			<field name="full_name">Угандийский шиллинг</field>
+			<field name="code">800</field>
+		</record>
+		<record id="base.rateUGX" model="res.currency.rate">
+			<field name="currency_id" ref="base.UGX" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.UZS" model="res.currency">
+			<field name="name">UZS</field>
+			<field name="full_name">Узбекский сум</field>
+			<field name="code">860</field>
+		</record>
+		<record id="base.rateUZS" model="res.currency.rate">
+			<field name="currency_id" ref="base.UZS" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.UAH" model="res.currency">
+			<field name="name">UAH</field>
+			<field name="full_name">Гривна</field>
+			<field name="code">980</field>
+		</record>
+		<record id="base.rateUAH" model="res.currency.rate">
+			<field name="currency_id" ref="base.UAH" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.UYI" model="res.currency">
+			<field name="name">UYI</field>
+			<field name="full_name">Уругвайское песо в индексированных единицах</field>
+			<field name="code">940</field>
+		</record>
+		<record id="base.rateUYI" model="res.currency.rate">
+			<field name="currency_id" ref="base.UYI" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.UYU" model="res.currency">
+			<field name="name">UYU</field>
+			<field name="full_name">Уругвайское песо</field>
+			<field name="code">858</field>
+		</record>
+		<record id="base.rateUYU" model="res.currency.rate">
+			<field name="currency_id" ref="base.UYU" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.FJD" model="res.currency">
+			<field name="name">FJD</field>
+			<field name="full_name">Доллар Фиджи</field>
+			<field name="code">242</field>
+		</record>
+		<record id="base.rateFJD" model="res.currency.rate">
+			<field name="currency_id" ref="base.FJD" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.PHP" model="res.currency">
+			<field name="name">PHP</field>
+			<field name="full_name">Филиппинское песо</field>
+			<field name="code">608</field>
+		</record>
+		<record id="base.ratePHP" model="res.currency.rate">
+			<field name="currency_id" ref="base.PHP" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.FKP" model="res.currency">
+			<field name="name">FKP</field>
+			<field name="full_name">Фунт Фолклендских островов</field>
+			<field name="code">238</field>
+		</record>
+		<record id="base.rateFKP" model="res.currency.rate">
+			<field name="currency_id" ref="base.FKP" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.HRK" model="res.currency">
+			<field name="name">HRK</field>
+			<field name="full_name">Хорватская куна</field>
+			<field name="code">191</field>
+		</record>
+		<record id="base.rateHRK" model="res.currency.rate">
+			<field name="currency_id" ref="base.HRK" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.CZK" model="res.currency">
+			<field name="name">CZK</field>
+			<field name="full_name">Чешская крона</field>
+			<field name="code">203</field>
+		</record>
+		<record id="base.rateCZK" model="res.currency.rate">
+			<field name="currency_id" ref="base.CZK" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.CLP" model="res.currency">
+			<field name="name">CLP</field>
+			<field name="full_name">Чилийское песо</field>
+			<field name="code">152</field>
+		</record>
+		<record id="base.rateCLP" model="res.currency.rate">
+			<field name="currency_id" ref="base.CLP" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.SEK" model="res.currency">
+			<field name="name">SEK</field>
+			<field name="full_name">Шведская крона</field>
+			<field name="code">752</field>
+		</record>
+		<record id="base.rateSEK" model="res.currency.rate">
+			<field name="currency_id" ref="base.SEK" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.LKR" model="res.currency">
+			<field name="name">LKR</field>
+			<field name="full_name">Шри-Ланкийская рупия</field>
+			<field name="code">144</field>
+		</record>
+		<record id="base.rateLKR" model="res.currency.rate">
+			<field name="currency_id" ref="base.LKR" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.SVC" model="res.currency">
+			<field name="name">SVC</field>
+			<field name="full_name">Сальвадорский колон</field>
+			<field name="code">222</field>
+		</record>
+		<record id="base.rateSVC" model="res.currency.rate">
+			<field name="currency_id" ref="base.SVC" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.ERN" model="res.currency">
+			<field name="name">ERN</field>
+			<field name="full_name">Накфа</field>
+			<field name="code">232</field>
+		</record>
+		<record id="base.rateERN" model="res.currency.rate">
+			<field name="currency_id" ref="base.ERN" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.EEK" model="res.currency">
+			<field name="name">EEK</field>
+			<field name="full_name">Крона</field>
+			<field name="code">233</field>
+		</record>
+		<record id="base.rateEEK" model="res.currency.rate">
+			<field name="currency_id" ref="base.EEK" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.ETB" model="res.currency">
+			<field name="name">ETB</field>
+			<field name="full_name">Эфиопский быр</field>
+			<field name="code">230</field>
+		</record>
+		<record id="base.rateETB" model="res.currency.rate">
+			<field name="currency_id" ref="base.ETB" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.JMD" model="res.currency">
+			<field name="name">JMD</field>
+			<field name="full_name">Ямайский доллар</field>
+			<field name="code">388</field>
+		</record>
+		<record id="base.rateJMD" model="res.currency.rate">
+			<field name="currency_id" ref="base.JMD" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+
+
+		<record id="base.JPY" model="res.currency">
+			<field name="name">JPY</field>
+			<field name="full_name">Иена</field>
+			<field name="code">392</field>
+		</record>
+		<record id="base.rateJPY" model="res.currency.rate">
+			<field name="currency_id" ref="base.JPY" />
+			<field eval="time.strftime('%Y-01-01')" name="name"/>
+		</record>
+
+	</data>
+</openerp>

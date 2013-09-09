@@ -43,6 +43,7 @@ This module is the localization of OpenERP for Russian Federation.
     'data': [
         'data/account.account.template.csv',
         'data/account_chart_template.xml',
+        'data/okv.xml',
         'data/account.tax.code.template.csv',
         'data/res.country.state.csv',
 		'data/res.partner.title.csv',

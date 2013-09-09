@@ -173,6 +173,7 @@ class res_currency(osv.osv):
     _inherit = 'res.currency'
     _columns = {
         'code': fields.integer("Code"),
+        'full_name': fields.char("Full name"),
     }
 
 

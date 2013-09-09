@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 7.0-20130717-231254\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-06 07:19+0000\n"
-"PO-Revision-Date: 2013-09-06 07:19+0000\n"
+"POT-Creation-Date: 2013-09-09 08:11+0000\n"
+"PO-Revision-Date: 2013-09-09 08:11+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -90,9 +90,11 @@ msgid "CEO"
 msgstr "Генеральный директор"
 
 #. module: l10n_ru
-#: field:res.bank,last_updated:0
-msgid "Last updated"
-msgstr "Последнее обновление"
+#: code:addons/l10n_ru/l10n_ru.py:80
+#: code:addons/l10n_ru/l10n_ru.py:123
+#, python-format
+msgid "Fix the URL and try again."
+msgstr "Исправьте адрес и попробуйте снова."
 
 #. module: l10n_ru
 #: view:wizard.update.banks:0
@@ -103,6 +105,11 @@ msgstr "Обновить"
 #: model:res.partner.title,name:l10n_ru.res_partner_title_ltd
 msgid "Общество с ограниченной ответственностью"
 msgstr "Общество с ограниченной ответственностью"
+
+#. module: l10n_ru
+#: field:res.currency,full_name:0
+msgid "Full name"
+msgstr "Название валюты"
 
 #. module: l10n_ru
 #: field:res.partner,contract_num:0
@@ -223,11 +230,9 @@ msgid "Bank"
 msgstr "Банк"
 
 #. module: l10n_ru
-#: code:addons/l10n_ru/l10n_ru.py:80
-#: code:addons/l10n_ru/l10n_ru.py:123
-#, python-format
-msgid "Fix the URL and try again."
-msgstr "Исправьте адрес и попробуйте снова."
+#: field:res.bank,last_updated:0
+msgid "Last updated"
+msgstr "Последнее обновление"
 
 #. module: l10n_ru
 #: view:wizard.update.banks:0
