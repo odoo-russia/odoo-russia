@@ -1,0 +1,3720 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data noupdate="0">
+
+		<!-- Product UOM: Единицы длины -->
+		<record id="product_uom_categ_0" model="product.uom.categ">
+			<field name="name">Единицы длины</field>
+		</record>
+
+			<record id="product_uom_0" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_0"/>
+				<field name="name">миля.</field>
+				<field name="full_name">Морская миля (1852 м)</field>
+				<field name="okei">47</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_1" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_0"/>
+				<field name="name">км; 10^3 м.</field>
+				<field name="full_name">Километр; тысяча метров</field>
+				<field name="okei">8</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_2" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_0"/>
+				<field name="name">дм.</field>
+				<field name="full_name">Дециметр</field>
+				<field name="okei">5</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_3" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_0"/>
+				<field name="name">см.</field>
+				<field name="full_name">Сантиметр</field>
+				<field name="okei">4</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_4" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_0"/>
+				<field name="name">дюйм.</field>
+				<field name="full_name">Дюйм (25,4 мм)</field>
+				<field name="okei">39</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_5" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_0"/>
+				<field name="name">м.</field>
+				<field name="full_name">Метр</field>
+				<field name="okei">6</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_6" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_0"/>
+				<field name="name">фут.</field>
+				<field name="full_name">Фут (0,3048 м)</field>
+				<field name="okei">41</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_7" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_0"/>
+				<field name="name">мм.</field>
+				<field name="full_name">Миллиметр</field>
+				<field name="okei">3</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_8" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_0"/>
+				<field name="name">Мм; 10^6 м.</field>
+				<field name="full_name">Мегаметр; миллион метров</field>
+				<field name="okei">9</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_9" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_0"/>
+				<field name="name">ярд.</field>
+				<field name="full_name">Ярд (0,9144 м)</field>
+				<field name="okei">43</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_10" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_0"/>
+				<field name="name">км усл. труб.</field>
+				<field name="full_name">Километр условных труб</field>
+				<field name="okei">49</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_11" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_0"/>
+				<field name="name">усл. м.</field>
+				<field name="full_name">Условный метр</field>
+				<field name="okei">20</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_12" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_0"/>
+				<field name="name">10^3 усл. м.</field>
+				<field name="full_name">Тысяча условных метров</field>
+				<field name="okei">48</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_13" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_0"/>
+				<field name="name">пог. м.</field>
+				<field name="full_name">Погонный метр</field>
+				<field name="okei">18</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_14" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_0"/>
+				<field name="name">10^3 пог. м.</field>
+				<field name="full_name">Тысяча погонных метров</field>
+				<field name="okei">19</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_15" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_0"/>
+				<field name="name">Гектометр.</field>
+				<field name="full_name">Гектометр</field>
+				<field name="okei">17</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_16" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_0"/>
+				<field name="name">Миля (уставная) (1609,344 м).</field>
+				<field name="full_name">Миля (уставная) (1609,344 м)</field>
+				<field name="okei">45</field>
+				<field name="factor">1</field>
+			</record>
+
+		<!-- Product UOM: Экономические единицы -->
+		<record id="product_uom_categ_1" model="product.uom.categ">
+			<field name="name">Экономические единицы</field>
+		</record>
+
+			<record id="product_uom_17" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">элем.</field>
+				<field name="full_name">Элемент</field>
+				<field name="okei">745</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_18" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">100 упак.</field>
+				<field name="full_name">Сто упаковок</field>
+				<field name="okei">781</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_19" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10 пар.</field>
+				<field name="full_name">Десять пар</field>
+				<field name="okei">732</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_20" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 м3/сут.</field>
+				<field name="full_name">Тысяча кубических метров в сутки</field>
+				<field name="okei">599</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_21" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">20.</field>
+				<field name="full_name">Два десятка</field>
+				<field name="okei">730</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_22" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">дюжина пар.</field>
+				<field name="full_name">Дюжина пар</field>
+				<field name="okei">733</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_23" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^6 шт.</field>
+				<field name="full_name">Миллион штук</field>
+				<field name="okei">799</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_24" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">шт.</field>
+				<field name="full_name">Штука</field>
+				<field name="okei">796</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_25" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">упак.</field>
+				<field name="full_name">Упаковка</field>
+				<field name="okei">778</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_26" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">л 100% спирта.</field>
+				<field name="full_name">Литр чистого (100%) спирта</field>
+				<field name="okei">831</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_27" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">изд.</field>
+				<field name="full_name">Изделие</field>
+				<field name="okei">657</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_28" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">кг Р2О5.</field>
+				<field name="full_name">Килограмм пятиокиси фосфора</field>
+				<field name="okei">865</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_29" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">дюжина.</field>
+				<field name="full_name">Дюжина (12 шт.)</field>
+				<field name="okei">641</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_30" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">кг H2О2.</field>
+				<field name="full_name">Килограмм пероксида водорода</field>
+				<field name="okei">841</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_31" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">посыл.</field>
+				<field name="full_name">Посылка</field>
+				<field name="okei">734</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_32" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">набор.</field>
+				<field name="full_name">Набор</field>
+				<field name="okei">704</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_33" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">т 90% с/в.</field>
+				<field name="full_name">Тонна 90%-го сухого вещества</field>
+				<field name="okei">847</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_34" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">кг/с.</field>
+				<field name="full_name">Килограмм в секунду</field>
+				<field name="okei">499</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_35" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^12 шт.</field>
+				<field name="full_name">Биллион штук (Европа); триллион штук</field>
+				<field name="okei">801</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_36" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">100 ящ..</field>
+				<field name="full_name">Сто ящиков</field>
+				<field name="okei">683</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_37" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">дюжина шт.</field>
+				<field name="full_name">Дюжина штук</field>
+				<field name="okei">740</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_38" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^18 шт.</field>
+				<field name="full_name">Квинтильон штук (Европа)</field>
+				<field name="okei">802</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_39" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">креп. спирта по объему.</field>
+				<field name="full_name">Крепость спирта по объему</field>
+				<field name="okei">821</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_40" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">т пар/ч.</field>
+				<field name="full_name">Тонна пара в час</field>
+				<field name="okei">533</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_41" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">кг КОН.</field>
+				<field name="full_name">Килограмм гидроксида калия</field>
+				<field name="okei">859</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_42" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">кг К2О.</field>
+				<field name="full_name">Килограмм оксида калия</field>
+				<field name="okei">852</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_43" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">л..</field>
+				<field name="full_name">Лист</field>
+				<field name="okei">625</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_44" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">тыс. шт; 1000 шт.</field>
+				<field name="full_name">Тысяча штук</field>
+				<field name="okei">798</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_45" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">тыс станд. усл. кирп.</field>
+				<field name="full_name">Тысяча стандартных условных кирпичей</field>
+				<field name="okei">630</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_46" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">100 шт.</field>
+				<field name="full_name">Сто штук</field>
+				<field name="okei">797</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_47" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">100 л..</field>
+				<field name="full_name">Сто листов</field>
+				<field name="okei">626</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_48" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">рул.</field>
+				<field name="full_name">Рулон</field>
+				<field name="okei">736</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_49" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">дюжина упак.</field>
+				<field name="full_name">Дюжина упаковок</field>
+				<field name="okei">780</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_50" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^9 шт.</field>
+				<field name="full_name">Миллиард штук</field>
+				<field name="okei">800</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_51" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">кг NaOH.</field>
+				<field name="full_name">Килограмм гидроксида натрия</field>
+				<field name="okei">863</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_52" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">Гл 100% спирта.</field>
+				<field name="full_name">Гектолитр чистого (100%) спирта</field>
+				<field name="okei">833</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_53" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">пар.</field>
+				<field name="full_name">Пара (2 шт.)</field>
+				<field name="okei">715</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_54" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">кг N.</field>
+				<field name="full_name">Килограмм азота</field>
+				<field name="okei">861</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_55" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">м3/ч.</field>
+				<field name="full_name">Кубический метр в час</field>
+				<field name="okei">598</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_56" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">кг 90% с/в.</field>
+				<field name="full_name">Килограмм 90%-го сухого вещества</field>
+				<field name="okei">845</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_57" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">кг U.</field>
+				<field name="full_name">Килограмм урана</field>
+				<field name="okei">867</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_58" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">часть.</field>
+				<field name="full_name">Часть</field>
+				<field name="okei">735</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_59" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">дюжина рул.</field>
+				<field name="full_name">Дюжина рулонов</field>
+				<field name="okei">737</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_60" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">креп. спирта по массе.</field>
+				<field name="full_name">Крепость спирта по массе</field>
+				<field name="okei">820</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_61" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">боб.</field>
+				<field name="full_name">Бобина</field>
+				<field name="okei">616</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_62" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">м3/с.</field>
+				<field name="full_name">Кубический метр в секунду</field>
+				<field name="okei">596</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_63" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">т/ч.</field>
+				<field name="full_name">Тонна в час</field>
+				<field name="okei">534</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_64" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">авто т.</field>
+				<field name="full_name">Автотонна</field>
+				<field name="okei">513</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_65" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">усл. ед.</field>
+				<field name="full_name">Условная единица</field>
+				<field name="okei">876</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_66" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">л. авт.</field>
+				<field name="full_name">Лист авторский</field>
+				<field name="okei">918</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_67" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 флак.</field>
+				<field name="full_name">Тысяча флаконов</field>
+				<field name="okei">873</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_68" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 учен. мест.</field>
+				<field name="full_name">Тысяча ученических мест</field>
+				<field name="okei">903</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_69" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">ампул.</field>
+				<field name="full_name">Ампула</field>
+				<field name="okei">870</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_70" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">пасс. мест.</field>
+				<field name="full_name">Пассажирское место (пассажирских мест)</field>
+				<field name="okei">421</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_71" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">чел.дн.</field>
+				<field name="full_name">Человеко-день</field>
+				<field name="okei">540</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_72" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">пасс.поток.</field>
+				<field name="full_name">Пассажиропоток</field>
+				<field name="okei">427</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_73" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">семей.</field>
+				<field name="full_name">Семья</field>
+				<field name="okei">896</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_74" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 рул.</field>
+				<field name="full_name">Тысяча рулонов</field>
+				<field name="okei">751</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_75" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 ваг (маш).ч.</field>
+				<field name="full_name">Тысяча вагоно-(машино)-часов</field>
+				<field name="okei">951</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_76" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">привед.ч.</field>
+				<field name="full_name">Приведенный час</field>
+				<field name="okei">963</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_77" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">канал. конц.</field>
+				<field name="full_name">Канало-концы</field>
+				<field name="okei">978</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_78" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">суго. сут..</field>
+				<field name="full_name">Суго-сутки</field>
+				<field name="okei">975</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_79" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^6 т. миль.</field>
+				<field name="full_name">Миллион тонно-миль</field>
+				<field name="okei">967</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_80" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">чел.</field>
+				<field name="full_name">Человек</field>
+				<field name="okei">792</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_81" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">компл.</field>
+				<field name="full_name">Комплект</field>
+				<field name="okei">839</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_82" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">пар/смен.</field>
+				<field name="full_name">Пара в смену</field>
+				<field name="okei">547</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_83" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">усл. банк.</field>
+				<field name="full_name">Условная банка</field>
+				<field name="okei">881</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_84" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 пряд.верет.</field>
+				<field name="full_name">Тысяча прядильных веретен</field>
+				<field name="okei">562</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_85" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">кварт.</field>
+				<field name="full_name">Квартира</field>
+				<field name="okei">909</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_86" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^6 ед.</field>
+				<field name="full_name">Миллион единиц</field>
+				<field name="okei">644</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_87" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">знак.</field>
+				<field name="full_name">Знак</field>
+				<field name="okei">922</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_88" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 усл. ед.</field>
+				<field name="full_name">Тысяча условных единиц</field>
+				<field name="okei">877</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_89" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">ваг.сут.</field>
+				<field name="full_name">Вагоно-сутки</field>
+				<field name="okei">954</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_90" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 автомоб.т.дн.</field>
+				<field name="full_name">Тысяча автомобиле-тонно-дней</field>
+				<field name="okei">960</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_91" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 стан.</field>
+				<field name="full_name">Тысяча станов</field>
+				<field name="okei">761</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_92" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">кг/Гкал.</field>
+				<field name="full_name">Килограмм на гигакалорию</field>
+				<field name="okei">511</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_93" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 коек.</field>
+				<field name="full_name">Тысяча коек</field>
+				<field name="okei">912</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_94" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 доллар.</field>
+				<field name="full_name">Тысяча долларов</field>
+				<field name="okei">980</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_95" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^12 руб.</field>
+				<field name="full_name">Триллион рублей</field>
+				<field name="okei">387</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_96" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">ном.</field>
+				<field name="full_name">Номер</field>
+				<field name="okei">908</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_97" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^6 пасс. миль.</field>
+				<field name="full_name">Миллион пассажиро-миль</field>
+				<field name="okei">968</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_98" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 автомоб.мест. дн.</field>
+				<field name="full_name">Тысяча автомобиле-место-дней</field>
+				<field name="okei">962</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_99" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">усл. рем/год.</field>
+				<field name="full_name">Условный ремонт в год</field>
+				<field name="okei">916</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_100" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^6 усл. кирп.</field>
+				<field name="full_name">Миллион условных кирпичей</field>
+				<field name="okei">895</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_101" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">пасс.км.</field>
+				<field name="full_name">Пассажиро-километр</field>
+				<field name="okei">414</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_102" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 мест.</field>
+				<field name="full_name">Тысяча мест</field>
+				<field name="okei">699</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_103" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 усл. ящ.</field>
+				<field name="full_name">Тысяча условных ящиков</field>
+				<field name="okei">888</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_104" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">чел/км2.</field>
+				<field name="full_name">Человек на квадратный километр</field>
+				<field name="okei">522</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_105" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 бут.</field>
+				<field name="full_name">Тысяча бутылок</field>
+				<field name="okei">869</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_106" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 пасс.миль.</field>
+				<field name="full_name">Тысяча пассажиро-миль</field>
+				<field name="okei">958</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_107" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">г/кВт.ч.</field>
+				<field name="full_name">Грамм на киловатт-час</field>
+				<field name="okei">510</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_108" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">суд.сут.</field>
+				<field name="full_name">Судо-сутки</field>
+				<field name="okei">983</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_109" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">т/сут.</field>
+				<field name="full_name">Тонна в сутки</field>
+				<field name="okei">535</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_110" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^6 пасс. км.</field>
+				<field name="full_name">Миллион пассажиро-километров</field>
+				<field name="okei">424</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_111" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 посад. мест.</field>
+				<field name="full_name">Тысяча посадочных мест</field>
+				<field name="okei">907</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_112" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 км.</field>
+				<field name="full_name">Тысяча километров</field>
+				<field name="okei">965</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_113" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 т/год.</field>
+				<field name="full_name">Тысяча тонн в год</field>
+				<field name="okei">538</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_114" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 посещ/смен.</field>
+				<field name="full_name">Тысяча посещений в смену</field>
+				<field name="okei">546</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_115" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 тюбик.</field>
+				<field name="full_name">Тысяча тюбиков</field>
+				<field name="okei">775</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_116" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 автомоб.ч.</field>
+				<field name="full_name">Тысяча автомобиле-часов</field>
+				<field name="okei">961</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_117" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 т/сез.</field>
+				<field name="full_name">Тысяча тонн в сезон</field>
+				<field name="okei">537</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_118" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">т.км.</field>
+				<field name="full_name">Тонно-километр</field>
+				<field name="okei">449</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_119" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 гол/год.</field>
+				<field name="full_name">Тысяча голов в год</field>
+				<field name="okei">556</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_120" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">руб.</field>
+				<field name="full_name">Рубль</field>
+				<field name="okei">383</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_121" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^6 пасс. мест. миль.</field>
+				<field name="full_name">Миллион пассажиро-место-миль</field>
+				<field name="okei">970</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_122" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">л. уч.-изд.</field>
+				<field name="full_name">Лист учетно-издательский</field>
+				<field name="okei">921</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_123" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 усл. кирп.</field>
+				<field name="full_name">Тысяча условных кирпичей</field>
+				<field name="okei">894</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_124" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">т.тяги.</field>
+				<field name="full_name">Тонна тяги</field>
+				<field name="okei">514</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_125" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^15 руб.</field>
+				<field name="full_name">Квадрильон рублей</field>
+				<field name="okei">388</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_126" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 чел.дн.</field>
+				<field name="full_name">Тысяча человеко-дней</field>
+				<field name="okei">541</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_127" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">корм. дн.</field>
+				<field name="full_name">Кормо-день</field>
+				<field name="okei">971</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_128" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10 ^3мест.км.</field>
+				<field name="full_name">Тысяча место-километров</field>
+				<field name="okei">953</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_129" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 ампул.</field>
+				<field name="full_name">Тысяча ампул</field>
+				<field name="okei">871</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_130" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^6 руб.</field>
+				<field name="full_name">Миллион рублей</field>
+				<field name="okei">385</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_131" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 тоннаж. рейс.</field>
+				<field name="full_name">Тысяча тоннаже-рейсов</field>
+				<field name="okei">966</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_132" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">коек.</field>
+				<field name="full_name">Койка</field>
+				<field name="okei">911</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_133" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">бут.</field>
+				<field name="full_name">Бутылка</field>
+				<field name="okei">868</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_134" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 усл. плит.</field>
+				<field name="full_name">Тысяча условных плиток</field>
+				<field name="okei">892</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_135" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^6 ед/год.</field>
+				<field name="full_name">Миллион единиц в год</field>
+				<field name="okei">544</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_136" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 чел.</field>
+				<field name="full_name">Тысяча человек</field>
+				<field name="okei">793</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_137" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^6 лист.оттиск.</field>
+				<field name="full_name">Миллион листов-оттисков</field>
+				<field name="okei">949</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_138" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^6 усл. кус.</field>
+				<field name="full_name">Миллион условных кусков</field>
+				<field name="okei">886</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_139" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">мест.</field>
+				<field name="full_name">Место</field>
+				<field name="okei">698</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_140" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">т/смен.</field>
+				<field name="full_name">Тонна в смену</field>
+				<field name="okei">536</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_141" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 пар/смен.</field>
+				<field name="full_name">Тысяча пар в смену</field>
+				<field name="okei">548</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_142" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">усл. рем.</field>
+				<field name="full_name">Условный ремонт</field>
+				<field name="okei">915</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_143" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">ящ.</field>
+				<field name="full_name">Ящик</field>
+				<field name="okei">812</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_144" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 поезд.км.</field>
+				<field name="full_name">Тысяча поездо-километров</field>
+				<field name="okei">956</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_145" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 т перераб/ сут.</field>
+				<field name="full_name">Тысяча тонн переработки в сутки</field>
+				<field name="okei">553</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_146" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 т.км.</field>
+				<field name="full_name">Тысяча тонно-километров</field>
+				<field name="okei">450</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_147" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">ваг (маш).дн.</field>
+				<field name="full_name">Вагоно(машино)-день</field>
+				<field name="okei">950</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_148" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">т перераб/сут.</field>
+				<field name="full_name">Тонна переработки в сутки</field>
+				<field name="okei">552</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_149" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 пасс.км.</field>
+				<field name="full_name">Тысяча пассажиро-километров</field>
+				<field name="okei">423</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_150" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">символ.</field>
+				<field name="full_name">Символ</field>
+				<field name="okei">924</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_151" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 упак.</field>
+				<field name="full_name">Тысяча упаковок</field>
+				<field name="okei">782</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_152" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^6 пар.</field>
+				<field name="full_name">Миллион пар</field>
+				<field name="okei">838</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_153" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 раб. мест.</field>
+				<field name="full_name">Тысяча рабочих мест</field>
+				<field name="okei">905</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_154" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">усл. ящ.</field>
+				<field name="full_name">Условный ящик</field>
+				<field name="okei">887</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_155" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">%.</field>
+				<field name="full_name">Процент</field>
+				<field name="okei">744</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_156" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">доз.</field>
+				<field name="full_name">Доза</field>
+				<field name="okei">639</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_157" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">усл. плит.</field>
+				<field name="full_name">Условная плитка</field>
+				<field name="okei">891</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_158" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">посещ/смен.</field>
+				<field name="full_name">Посещение в смену</field>
+				<field name="okei">545</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_159" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 усл. банк/ смен.</field>
+				<field name="full_name">Тысяча условных банок в смену</field>
+				<field name="okei">543</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_160" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">усл. кирп.</field>
+				<field name="full_name">Условный кирпич</field>
+				<field name="okei">893</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_161" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 т.миль.</field>
+				<field name="full_name">Тысяча тонно-миль</field>
+				<field name="okei">957</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_162" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">канал. км.</field>
+				<field name="full_name">Канало-километр</field>
+				<field name="okei">977</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_163" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^6 домхоз.</field>
+				<field name="full_name">Миллион домохозяйств</field>
+				<field name="okei">901</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_164" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">штук в 20-футовом эквиваленте.</field>
+				<field name="full_name">Штук в 20-футовом эквиваленте (ДФЭ)</field>
+				<field name="okei">976</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_165" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">станц.</field>
+				<field name="full_name">Станция</field>
+				<field name="okei">762</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_166" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 семей.</field>
+				<field name="full_name">Тысяча семей</field>
+				<field name="okei">897</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_167" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 усл. шт.</field>
+				<field name="full_name">Тысяча условных штук</field>
+				<field name="okei">880</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_168" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">слово.</field>
+				<field name="full_name">Слово</field>
+				<field name="okei">923</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_169" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 поезд.ч.</field>
+				<field name="full_name">Тысяча поездо-часов</field>
+				<field name="okei">955</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_170" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">чел.ч.</field>
+				<field name="full_name">Человеко-час</field>
+				<field name="okei">539</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_171" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">канал.</field>
+				<field name="full_name">Канал</field>
+				<field name="okei">661</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_172" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 туб.</field>
+				<field name="full_name">Тысяча тубов</field>
+				<field name="okei">874</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_173" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 птицемест.</field>
+				<field name="full_name">Тысяча птицемест</field>
+				<field name="okei">558</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_174" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">том книжн. фонд.</field>
+				<field name="full_name">Том книжного фонда</field>
+				<field name="okei">913</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_175" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 компл.</field>
+				<field name="full_name">Тысяча комплектов</field>
+				<field name="okei">673</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_176" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 доз.</field>
+				<field name="full_name">Тысяча доз</field>
+				<field name="okei">640</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_177" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 ед.</field>
+				<field name="full_name">Тысяча единиц</field>
+				<field name="okei">643</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_178" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^6 усл. ед.</field>
+				<field name="full_name">Миллион условных единиц</field>
+				<field name="okei">878</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_179" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 том. книжн. фонд.</field>
+				<field name="full_name">Тысяча томов книжного фонда</field>
+				<field name="okei">914</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_180" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^6 усл. банк.</field>
+				<field name="full_name">Миллион условных банок</field>
+				<field name="okei">883</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_181" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 руб.</field>
+				<field name="full_name">Тысяча рублей</field>
+				<field name="okei">384</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_182" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">усл. труб.</field>
+				<field name="full_name">Условная труба</field>
+				<field name="okei">925</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_183" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">усл. кат.</field>
+				<field name="full_name">Условная катушка</field>
+				<field name="okei">889</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_184" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 домхоз.</field>
+				<field name="full_name">Тысяча домохозяйств</field>
+				<field name="okei">900</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_185" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^6 семей.</field>
+				<field name="full_name">Миллион семей</field>
+				<field name="okei">898</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_186" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">самолет.км.</field>
+				<field name="full_name">Самолето-километр</field>
+				<field name="okei">964</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_187" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 экз.</field>
+				<field name="full_name">Тысяча экземпляров</field>
+				<field name="okei">979</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_188" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">промилле.</field>
+				<field name="full_name">Промилле (0,1 процента)</field>
+				<field name="okei">746</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_189" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 усл. кат.</field>
+				<field name="full_name">Тысяча условных катушек</field>
+				<field name="okei">890</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_190" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 га порц.</field>
+				<field name="full_name">Тысяча гектаров порций</field>
+				<field name="okei">724</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_191" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 чел.ч.</field>
+				<field name="full_name">Тысяча человеко-часов</field>
+				<field name="okei">542</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_192" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">ед.</field>
+				<field name="full_name">Единица</field>
+				<field name="okei">642</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_193" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">мин. заработн. плат.</field>
+				<field name="full_name">Минимальная заработная плата</field>
+				<field name="okei">560</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_194" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^6 гол/год.</field>
+				<field name="full_name">Миллион голов в год</field>
+				<field name="okei">557</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_195" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">смен.</field>
+				<field name="full_name">Смена</field>
+				<field name="okei">917</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_196" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">учен. мест.</field>
+				<field name="full_name">Ученическое место</field>
+				<field name="okei">902</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_197" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">чел/м2.</field>
+				<field name="full_name">Человек на квадратный метр</field>
+				<field name="okei">521</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_198" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 набор.</field>
+				<field name="full_name">Тысяча наборов</field>
+				<field name="okei">479</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_199" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">домхоз.</field>
+				<field name="full_name">Домохозяйство</field>
+				<field name="okei">899</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_200" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">посад. мест.</field>
+				<field name="full_name">Посадочное место</field>
+				<field name="okei">906</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_201" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^6 корм ед.</field>
+				<field name="full_name">Миллион тонн кормовых единиц</field>
+				<field name="okei">982</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_202" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">дедвейт.т.</field>
+				<field name="full_name">Дедвейт-тонна</field>
+				<field name="okei">515</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_203" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">автомоб.дн.</field>
+				<field name="full_name">Автомобиле-день</field>
+				<field name="okei">959</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_204" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">ц корм ед.</field>
+				<field name="full_name">Центнер кормовых единиц</field>
+				<field name="okei">972</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_205" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 усл. банк.</field>
+				<field name="full_name">Тысяча условных банок</field>
+				<field name="okei">882</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_206" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^6 тоннаж. миль.</field>
+				<field name="full_name">Миллион тоннаже-миль</field>
+				<field name="okei">969</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_207" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 пар.</field>
+				<field name="full_name">Тысяча пар</field>
+				<field name="okei">837</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_208" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">яч.</field>
+				<field name="full_name">Ячейка</field>
+				<field name="okei">810</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_209" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">т.танид.</field>
+				<field name="full_name">Тонно-танид</field>
+				<field name="okei">516</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_210" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^6 чел.</field>
+				<field name="full_name">Миллион человек</field>
+				<field name="okei">794</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_211" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^6 т. км.</field>
+				<field name="full_name">Миллион тонно-километров</field>
+				<field name="okei">451</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_212" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">гол.</field>
+				<field name="full_name">Голова</field>
+				<field name="okei">836</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_213" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">флак.</field>
+				<field name="full_name">Флакон</field>
+				<field name="okei">872</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_214" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^6 экз.</field>
+				<field name="full_name">Миллион экземпляров</field>
+				<field name="okei">808</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_215" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 т пар/ч.</field>
+				<field name="full_name">Тысяча тонн пара в час</field>
+				<field name="okei">561</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_216" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 автомоб. км.</field>
+				<field name="full_name">Тысяча автомобиле-километров</field>
+				<field name="okei">973</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_217" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 корм ед.</field>
+				<field name="full_name">Тысяча тонн кормовых единиц</field>
+				<field name="okei">981</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_218" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">ц перераб/сут.</field>
+				<field name="full_name">Центнер переработки в сутки</field>
+				<field name="okei">554</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_219" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^9 руб.</field>
+				<field name="full_name">Миллиард рублей</field>
+				<field name="okei">386</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_220" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 усл. кус.</field>
+				<field name="full_name">Тысяча условных кусков</field>
+				<field name="okei">885</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_221" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^6 доз.</field>
+				<field name="full_name">Миллион доз</field>
+				<field name="okei">937</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_222" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">л. печ.</field>
+				<field name="full_name">Лист печатный</field>
+				<field name="okei">920</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_223" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^6 упак.</field>
+				<field name="full_name">Миллион упаковок</field>
+				<field name="okei">779</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_224" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 ном.</field>
+				<field name="full_name">Тысяча номеров</field>
+				<field name="okei">709</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_225" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">т.ном.</field>
+				<field name="full_name">Тонно-номер</field>
+				<field name="okei">512</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_226" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 ваг (маш).км.</field>
+				<field name="full_name">Тысяча вагоно-(машино)-километров</field>
+				<field name="okei">952</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_227" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">усл. шт.</field>
+				<field name="full_name">Условная штука</field>
+				<field name="okei">879</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_228" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">раб. мест.</field>
+				<field name="full_name">Рабочее место</field>
+				<field name="okei">904</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_229" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 кур. несуш.</field>
+				<field name="full_name">Тысяча кур-несушек</field>
+				<field name="okei">559</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_230" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">секц.</field>
+				<field name="full_name">Секция</field>
+				<field name="okei">840</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_231" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 пач.</field>
+				<field name="full_name">Тысяча пачек</field>
+				<field name="okei">729</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_232" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 тоннаж. сут.</field>
+				<field name="full_name">Тысяча тоннаже-сут</field>
+				<field name="okei">974</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_233" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 кварт.</field>
+				<field name="full_name">Тысяча квартир</field>
+				<field name="okei">910</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_234" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^6 т/год.</field>
+				<field name="full_name">Миллион тонн в год</field>
+				<field name="okei">550</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_235" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 пряд.мест.</field>
+				<field name="full_name">Тысяча прядильных мест</field>
+				<field name="okei">563</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_236" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 кор.</field>
+				<field name="full_name">Тысяча коробок</field>
+				<field name="okei">875</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_237" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 усл.туб.</field>
+				<field name="full_name">Тысяча условных тубов</field>
+				<field name="okei">776</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_238" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">усл. кус.</field>
+				<field name="full_name">Условный кусок</field>
+				<field name="okei">884</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_239" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 пласт.</field>
+				<field name="full_name">Тысяча пластин</field>
+				<field name="okei">930</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_240" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">10^3 ц перераб/ сут.</field>
+				<field name="full_name">Тысяча центнеров переработки в сутки</field>
+				<field name="okei">555</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_241" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">Гросс (144 шт.).</field>
+				<field name="full_name">Гросс (144 шт.)</field>
+				<field name="okei">638</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_242" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">Сто международных единиц.</field>
+				<field name="full_name">Сто международных единиц</field>
+				<field name="okei">853</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_243" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">Галлон спирта установленной крепости.</field>
+				<field name="full_name">Галлон спирта установленной крепости</field>
+				<field name="okei">835</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_244" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">Международная единица.</field>
+				<field name="full_name">Международная единица</field>
+				<field name="okei">851</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_245" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">Большой гросс (12 гроссов).</field>
+				<field name="full_name">Большой гросс (12 гроссов)</field>
+				<field name="okei">731</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_246" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_1"/>
+				<field name="name">Короткий стандарт (7200 единиц).</field>
+				<field name="full_name">Короткий стандарт (7200 единиц)</field>
+				<field name="okei">738</field>
+				<field name="factor">1</field>
+			</record>
+
+		<!-- Product UOM: Единицы площади -->
+		<record id="product_uom_categ_2" model="product.uom.categ">
+			<field name="name">Единицы площади</field>
+		</record>
+
+			<record id="product_uom_247" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_2"/>
+				<field name="name">га.</field>
+				<field name="full_name">Гектар</field>
+				<field name="okei">59</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_248" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_2"/>
+				<field name="name">фут2.</field>
+				<field name="full_name">Квадратный фут (0,092903 м2)</field>
+				<field name="okei">73</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_249" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_2"/>
+				<field name="name">дм2.</field>
+				<field name="full_name">Квадратный дециметр</field>
+				<field name="okei">53</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_250" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_2"/>
+				<field name="name">км2.</field>
+				<field name="full_name">Квадратный километр</field>
+				<field name="okei">61</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_251" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_2"/>
+				<field name="name">см2.</field>
+				<field name="full_name">Квадратный сантиметр</field>
+				<field name="okei">51</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_252" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_2"/>
+				<field name="name">а.</field>
+				<field name="full_name">Ар (100 м2)</field>
+				<field name="okei">109</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_253" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_2"/>
+				<field name="name">м2.</field>
+				<field name="full_name">Квадратный метр</field>
+				<field name="okei">55</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_254" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_2"/>
+				<field name="name">10^3 м^2.</field>
+				<field name="full_name">Тысяча квадратных метров</field>
+				<field name="okei">58</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_255" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_2"/>
+				<field name="name">ярд2.</field>
+				<field name="full_name">Квадратный ярд (0,8361274 м2)</field>
+				<field name="okei">75</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_256" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_2"/>
+				<field name="name">мм2.</field>
+				<field name="full_name">Квадратный миллиметр</field>
+				<field name="okei">50</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_257" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_2"/>
+				<field name="name">дюйм2.</field>
+				<field name="full_name">Квадратный дюйм (645,16 мм2)</field>
+				<field name="okei">71</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_258" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_2"/>
+				<field name="name">10^6 м2.</field>
+				<field name="full_name">Миллион квадратных метров</field>
+				<field name="okei">57</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_259" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_2"/>
+				<field name="name">м2 общ. пл.</field>
+				<field name="full_name">Квадратный метр общей площади</field>
+				<field name="okei">81</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_260" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_2"/>
+				<field name="name">10^6 усл. м2.</field>
+				<field name="full_name">Миллион условных квадратных метров</field>
+				<field name="okei">64</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_261" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_2"/>
+				<field name="name">10^6 м2 общ. пл.</field>
+				<field name="full_name">Миллион квадратных метров общей площади</field>
+				<field name="okei">83</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_262" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_2"/>
+				<field name="name">усл. м2.</field>
+				<field name="full_name">Условный квадратный метр</field>
+				<field name="okei">62</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_263" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_2"/>
+				<field name="name">10^3 усл. м2.</field>
+				<field name="full_name">Тысяча условных квадратных метров</field>
+				<field name="okei">63</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_264" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_2"/>
+				<field name="name">10^6 м2 жил. пл.</field>
+				<field name="full_name">Миллион квадратных метров жилой площади</field>
+				<field name="okei">86</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_265" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_2"/>
+				<field name="name">10^3 м2 общ. пл.</field>
+				<field name="full_name">Тысяча квадратных метров общей площади</field>
+				<field name="okei">82</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_266" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_2"/>
+				<field name="name">10^6 дм2.</field>
+				<field name="full_name">Миллион квадратных дециметров</field>
+				<field name="okei">56</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_267" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_2"/>
+				<field name="name">10^3 дм2.</field>
+				<field name="full_name">Тысяча квадратных дециметров</field>
+				<field name="okei">54</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_268" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_2"/>
+				<field name="name">10^6 м2 2 мм исч.</field>
+				<field name="full_name">Миллион квадратных метров в двухмиллиметровом исчислении</field>
+				<field name="okei">89</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_269" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_2"/>
+				<field name="name">10^3 га.</field>
+				<field name="full_name">Тысяча гектаров</field>
+				<field name="okei">60</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_270" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_2"/>
+				<field name="name">10^3 м2 уч. лаб. здан.</field>
+				<field name="full_name">Тысяча квадратных метров учебно-лабораторных зданий</field>
+				<field name="okei">88</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_271" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_2"/>
+				<field name="name">м2 уч. лаб. здан.</field>
+				<field name="full_name">Квадратный метр учебно-лабораторных зданий</field>
+				<field name="okei">87</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_272" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_2"/>
+				<field name="name">10^3 м2 жил. пл.</field>
+				<field name="full_name">Тысяча квадратных метров жилой площади</field>
+				<field name="okei">85</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_273" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_2"/>
+				<field name="name">м2 жил. пл.</field>
+				<field name="full_name">Квадратный метр жилой площади</field>
+				<field name="okei">84</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_274" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_2"/>
+				<field name="name">Квадратная миля.</field>
+				<field name="full_name">Квадратная миля</field>
+				<field name="okei">79</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_275" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_2"/>
+				<field name="name">Акр (4840 квадратных ярдов).</field>
+				<field name="full_name">Акр (4840 квадратных ярдов)</field>
+				<field name="okei">77</field>
+				<field name="factor">1</field>
+			</record>
+
+		<!-- Product UOM: Единицы массы -->
+		<record id="product_uom_categ_3" model="product.uom.categ">
+			<field name="name">Единицы массы</field>
+		</record>
+
+			<record id="product_uom_276" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">10^3 т.</field>
+				<field name="full_name">Килотонна</field>
+				<field name="okei">170</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_277" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">мг.</field>
+				<field name="full_name">Миллиграмм</field>
+				<field name="okei">161</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_278" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">сг.</field>
+				<field name="full_name">Сантиграмм</field>
+				<field name="okei">173</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_279" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">ц.</field>
+				<field name="full_name">Центнер (метрический) (100 кг); гектокилограмм; квинтал1 (метрический); децитонна</field>
+				<field name="okei">206</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_280" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">г.</field>
+				<field name="full_name">Грамм</field>
+				<field name="okei">163</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_281" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">БРТ.</field>
+				<field name="full_name">Брутто-регистровая тонна (2,8316 м3)</field>
+				<field name="okei">181</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_282" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">гг.</field>
+				<field name="full_name">Гектограмм</field>
+				<field name="okei">160</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_283" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">т.</field>
+				<field name="full_name">Тонна; метрическая тонна (1000 кг)</field>
+				<field name="okei">168</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_284" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">кар.</field>
+				<field name="full_name">Метрический карат</field>
+				<field name="okei">162</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_285" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">т грп.</field>
+				<field name="full_name">Грузоподъемность в метрических тоннах</field>
+				<field name="okei">185</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_286" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">кг.</field>
+				<field name="full_name">Килограмм</field>
+				<field name="okei">166</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_287" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">10^6 кар.</field>
+				<field name="full_name">Миллион каратов метрических</field>
+				<field name="okei">167</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_288" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">10^3 т перераб.</field>
+				<field name="full_name">Тысяча тонн переработки</field>
+				<field name="okei">178</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_289" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">10^6 т усл. топл.</field>
+				<field name="full_name">Миллион тонн условного топлива</field>
+				<field name="okei">176</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_290" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">усл. т.</field>
+				<field name="full_name">Условная тонна</field>
+				<field name="okei">179</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_291" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">10^3 ц.</field>
+				<field name="full_name">Тысяча центнеров</field>
+				<field name="okei">207</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_292" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">10^6 т.</field>
+				<field name="full_name">Миллион тонн</field>
+				<field name="okei">171</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_293" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">10^3 т единовр. хран.</field>
+				<field name="full_name">Тысяча тонн единовременного хранения</field>
+				<field name="okei">177</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_294" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">10^3 т.</field>
+				<field name="full_name">Тысяча тонн</field>
+				<field name="okei">169</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_295" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">10^3 кар.</field>
+				<field name="full_name">Тысяча каратов метрических</field>
+				<field name="okei">165</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_296" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">10^3 т усл. топл.</field>
+				<field name="full_name">Тысяча тонн условного топлива</field>
+				<field name="okei">175</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_297" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">т усл. топл.</field>
+				<field name="full_name">Тонна условного топлива</field>
+				<field name="okei">172</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_298" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">Водоизмещение.</field>
+				<field name="full_name">Водоизмещение</field>
+				<field name="okei">184</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_299" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">Центнер США (45,3592 кг).</field>
+				<field name="full_name">Центнер США (45,3592 кг)</field>
+				<field name="okei">193</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_300" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">Стоун СК (6,350293 кг).</field>
+				<field name="full_name">Стоун СК (6,350293 кг)</field>
+				<field name="okei">190</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_301" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">Гран СК, США (64,798910 мг).</field>
+				<field name="full_name">Гран СК, США (64,798910 мг)</field>
+				<field name="okei">189</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_302" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">Драхма США (3,887935 г).</field>
+				<field name="full_name">Драхма США (3,887935 г)</field>
+				<field name="okei">200</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_303" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">Длинный центнер СК (50,802345 кг).</field>
+				<field name="full_name">Длинный центнер СК (50,802345 кг)</field>
+				<field name="okei">194</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_304" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">Квартер СК (12,700586 кг).</field>
+				<field name="full_name">Квартер СК (12,700586 кг)</field>
+				<field name="okei">191</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_305" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">Фунт СК, США (0,45359237 кг).</field>
+				<field name="full_name">Фунт СК, США (0,45359237 кг)</field>
+				<field name="okei">186</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_306" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">Унция СК, США (28,349523 г).</field>
+				<field name="full_name">Унция СК, США (28,349523 г)</field>
+				<field name="okei">187</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_307" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">Скрупул СК, США (1,295982 г).</field>
+				<field name="full_name">Скрупул СК, США (1,295982 г)</field>
+				<field name="okei">197</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_308" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">Нетто-регистровая тонна.</field>
+				<field name="full_name">Нетто-регистровая тонна</field>
+				<field name="okei">182</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_309" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">Тройский фунт США (373,242 г).</field>
+				<field name="full_name">Тройский фунт США (373,242 г)</field>
+				<field name="okei">202</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_310" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">Унция СК, США (31,10348 г); тройская унция.</field>
+				<field name="full_name">Унция СК, США (31,10348 г); тройская унция</field>
+				<field name="okei">201</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_311" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">Длинная тонна СК, США (1,0160469 т) [2*].</field>
+				<field name="full_name">Длинная тонна СК, США (1,0160469 т) [2*]</field>
+				<field name="okei">196</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_312" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">Драхма СК (1,771745 г).</field>
+				<field name="full_name">Драхма СК (1,771745 г)</field>
+				<field name="okei">188</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_313" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">Обмерная (фрахтовая) тонна.</field>
+				<field name="full_name">Обмерная (фрахтовая) тонна</field>
+				<field name="okei">183</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_314" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">Пеннивейт СК, США (1,555174 г).</field>
+				<field name="full_name">Пеннивейт СК, США (1,555174 г)</field>
+				<field name="okei">198</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_315" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">Центал СК (45,359237 кг).</field>
+				<field name="full_name">Центал СК (45,359237 кг)</field>
+				<field name="okei">192</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_316" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">Короткая тонна СК, США (0,90718474 т) [2*].</field>
+				<field name="full_name">Короткая тонна СК, США (0,90718474 т) [2*]</field>
+				<field name="okei">195</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_317" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_3"/>
+				<field name="name">Драхма СК (3,887935 г).</field>
+				<field name="full_name">Драхма СК (3,887935 г)</field>
+				<field name="okei">199</field>
+				<field name="factor">1</field>
+			</record>
+
+		<!-- Product UOM: Единицы объема -->
+		<record id="product_uom_categ_4" model="product.uom.categ">
+			<field name="name">Единицы объема</field>
+		</record>
+
+			<record id="product_uom_318" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">Мл.</field>
+				<field name="full_name">Мегалитр</field>
+				<field name="okei">126</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_319" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">фут3.</field>
+				<field name="full_name">Кубический фут (0,02831685 м3)</field>
+				<field name="okei">132</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_320" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">дл.</field>
+				<field name="full_name">Децилитр</field>
+				<field name="okei">118</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_321" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">ярд3.</field>
+				<field name="full_name">Кубический ярд (0,764555 м3)</field>
+				<field name="okei">133</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_322" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">л; дм3.</field>
+				<field name="full_name">Литр; кубический дециметр</field>
+				<field name="okei">112</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_323" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">м3.</field>
+				<field name="full_name">Кубический метр</field>
+				<field name="okei">113</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_324" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">дюйм3.</field>
+				<field name="full_name">Кубический дюйм (16387,1 мм3)</field>
+				<field name="okei">131</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_325" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">10^6 м3.</field>
+				<field name="full_name">Миллион кубических метров</field>
+				<field name="okei">159</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_326" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">мм3.</field>
+				<field name="full_name">Кубический миллиметр</field>
+				<field name="okei">110</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_327" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">гл.</field>
+				<field name="full_name">Гектолитр</field>
+				<field name="okei">122</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_328" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">см3; мл.</field>
+				<field name="full_name">Кубический сантиметр; миллилитр</field>
+				<field name="okei">111</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_329" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">плотн. м3.</field>
+				<field name="full_name">Плотный кубический метр</field>
+				<field name="okei">121</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_330" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">10^3 усл. м3.</field>
+				<field name="full_name">Тысяча условных кубических метров</field>
+				<field name="okei">124</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_331" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">10^3 л; 1000 л.</field>
+				<field name="full_name">Тысяча литров; 1000 литров</field>
+				<field name="okei">130</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_332" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">10^6 дкл.</field>
+				<field name="full_name">Миллион декалитров</field>
+				<field name="okei">120</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_333" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">10^6 пол. л.</field>
+				<field name="full_name">Миллион полулитров</field>
+				<field name="okei">129</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_334" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">10^3 пол. л.</field>
+				<field name="full_name">Тысяча полулитров</field>
+				<field name="okei">128</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_335" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">усл. м3.</field>
+				<field name="full_name">Условный кубический метр</field>
+				<field name="okei">123</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_336" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">10^3 плотн. м3.</field>
+				<field name="full_name">Тысяча плотных кубических метров</field>
+				<field name="okei">127</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_337" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">дкл.</field>
+				<field name="full_name">Декалитр</field>
+				<field name="okei">116</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_338" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">10^3 м3.</field>
+				<field name="full_name">Тысяча кубических метров</field>
+				<field name="okei">114</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_339" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">10^9 м3.</field>
+				<field name="full_name">Миллиард кубических метров</field>
+				<field name="okei">115</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_340" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">10^3 дкл.</field>
+				<field name="full_name">Тысяча декалитров</field>
+				<field name="okei">119</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_341" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">10^6 м3 перераб. газа.</field>
+				<field name="full_name">Миллион кубических метров переработки газа</field>
+				<field name="okei">125</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_342" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">Пинта СК (0,568262 дм3).</field>
+				<field name="full_name">Пинта СК (0,568262 дм3)</field>
+				<field name="okei">137</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_343" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">Жидкостная унция США (29,5735 см3).</field>
+				<field name="full_name">Жидкостная унция США (29,5735 см3)</field>
+				<field name="okei">141</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_344" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">Сухой галлон США (4,404884 дм3).</field>
+				<field name="full_name">Сухой галлон США (4,404884 дм3)</field>
+				<field name="okei">149</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_345" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">Корд (3,63 м3).</field>
+				<field name="full_name">Корд (3,63 м3)</field>
+				<field name="okei">153</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_346" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">Стандарт.</field>
+				<field name="full_name">Стандарт</field>
+				<field name="okei">152</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_347" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">Жидкостный галлон США (3,78541 дм3).</field>
+				<field name="full_name">Жидкостный галлон США (3,78541 дм3)</field>
+				<field name="okei">145</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_348" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">Тысячи бордфутов (2,36 м3).</field>
+				<field name="full_name">Тысячи бордфутов (2,36 м3)</field>
+				<field name="okei">154</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_349" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">Жидкостная пинта США (0,473176 дм3).</field>
+				<field name="full_name">Жидкостная пинта США (0,473176 дм3)</field>
+				<field name="okei">143</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_350" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">Бушель США (35,2391 дм3).</field>
+				<field name="full_name">Бушель США (35,2391 дм3)</field>
+				<field name="okei">150</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_351" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">Джилл СК (0,142065 дм3).</field>
+				<field name="full_name">Джилл СК (0,142065 дм3)</field>
+				<field name="okei">136</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_352" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">Жидкостная кварта США (0,946353 дм3).</field>
+				<field name="full_name">Жидкостная кварта США (0,946353 дм3)</field>
+				<field name="okei">144</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_353" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">Кварта СК (1,136523 дм3).</field>
+				<field name="full_name">Кварта СК (1,136523 дм3)</field>
+				<field name="okei">138</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_354" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">Жидкостная унция СК (28,413 см3).</field>
+				<field name="full_name">Жидкостная унция СК (28,413 см3)</field>
+				<field name="okei">135</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_355" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">Галлон СК (4,546092 дм3).</field>
+				<field name="full_name">Галлон СК (4,546092 дм3)</field>
+				<field name="okei">139</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_356" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">Сухая кварта США (1,101221 дм3).</field>
+				<field name="full_name">Сухая кварта США (1,101221 дм3)</field>
+				<field name="okei">148</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_357" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">Бушель СК (36,36874 дм3).</field>
+				<field name="full_name">Бушель СК (36,36874 дм3)</field>
+				<field name="okei">140</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_358" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">Сухой баррель США (115,627 дм3).</field>
+				<field name="full_name">Сухой баррель США (115,627 дм3)</field>
+				<field name="okei">151</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_359" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">Джилл США (11,8294 см3).</field>
+				<field name="full_name">Джилл США (11,8294 см3)</field>
+				<field name="okei">142</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_360" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">Сухая пинта США (0,55061 дм3).</field>
+				<field name="full_name">Сухая пинта США (0,55061 дм3)</field>
+				<field name="okei">147</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_361" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_4"/>
+				<field name="name">Баррель (нефтяной) США (158,987 дм3).</field>
+				<field name="full_name">Баррель (нефтяной) США (158,987 дм3)</field>
+				<field name="okei">146</field>
+				<field name="factor">1</field>
+			</record>
+
+		<!-- Product UOM: Технические единицы -->
+		<record id="product_uom_categ_5" model="product.uom.categ">
+			<field name="name">Технические единицы</field>
+		</record>
+
+			<record id="product_uom_362" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">атм.</field>
+				<field name="full_name">Физическая атмосфера (101325 Па)</field>
+				<field name="okei">300</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_363" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">об/мин.</field>
+				<field name="full_name">Оборот в минуту</field>
+				<field name="okei">331</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_364" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">г Д/И.</field>
+				<field name="full_name">Грамм делящихся изотопов</field>
+				<field name="okei">306</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_365" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">мКи.</field>
+				<field name="full_name">Милликюри</field>
+				<field name="okei">304</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_366" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">Вт.ч.</field>
+				<field name="full_name">Ватт-час</field>
+				<field name="okei">243</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_367" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">бар.</field>
+				<field name="full_name">Бар</field>
+				<field name="okei">309</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_368" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">ат.</field>
+				<field name="full_name">Техническая атмосфера (98066,5 Па)</field>
+				<field name="okei">301</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_369" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">Кл.</field>
+				<field name="full_name">Кулон</field>
+				<field name="okei">270</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_370" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">K.</field>
+				<field name="full_name">Кельвин</field>
+				<field name="okei">288</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_371" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">град. C.</field>
+				<field name="full_name">Градус Цельсия</field>
+				<field name="okei">280</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_372" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">кд.</field>
+				<field name="full_name">Кандела</field>
+				<field name="okei">282</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_373" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">об/с.</field>
+				<field name="full_name">Оборот в секунду</field>
+				<field name="okei">330</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_374" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">кПа.</field>
+				<field name="full_name">Килопаскаль</field>
+				<field name="okei">297</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_375" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">ГБк.</field>
+				<field name="full_name">Гигабеккерель</field>
+				<field name="okei">302</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_376" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">кГц.</field>
+				<field name="full_name">Килогерц</field>
+				<field name="okei">291</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_377" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">квар.</field>
+				<field name="full_name">Киловар</field>
+				<field name="okei">230</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_378" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">град. F.</field>
+				<field name="full_name">Градус Фаренгейта</field>
+				<field name="okei">281</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_379" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">МГц.</field>
+				<field name="full_name">Мегагерц</field>
+				<field name="okei">292</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_380" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">кВ.А.</field>
+				<field name="full_name">Киловольт-ампер</field>
+				<field name="okei">227</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_381" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">Бк.</field>
+				<field name="full_name">Беккерель</field>
+				<field name="okei">323</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_382" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">МПа.</field>
+				<field name="full_name">Мегапаскаль</field>
+				<field name="okei">298</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_383" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">А.ч.</field>
+				<field name="full_name">Ампер-час (3,6 кКл)</field>
+				<field name="okei">263</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_384" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">ГВт.ч.</field>
+				<field name="full_name">Гигаватт-час (миллион киловатт-часов)</field>
+				<field name="okei">247</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_385" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">кВт.ч.</field>
+				<field name="full_name">Киловатт-час</field>
+				<field name="okei">245</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_386" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">Вт.</field>
+				<field name="full_name">Ватт</field>
+				<field name="okei">212</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_387" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">кДж.</field>
+				<field name="full_name">Килоджоуль</field>
+				<field name="okei">273</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_388" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">Ки.</field>
+				<field name="full_name">Кюри</field>
+				<field name="okei">305</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_389" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">МВ.А.</field>
+				<field name="full_name">Мегавольт-ампер (тысяча киловольт-ампер)</field>
+				<field name="okei">228</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_390" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">Ф.</field>
+				<field name="full_name">Фарад</field>
+				<field name="okei">314</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_391" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">лм.</field>
+				<field name="full_name">Люмен</field>
+				<field name="okei">284</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_392" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">МВт; 10^3 кВт.</field>
+				<field name="full_name">Мегаватт; тысяча киловатт</field>
+				<field name="okei">215</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_393" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">Ом.</field>
+				<field name="full_name">Ом</field>
+				<field name="okei">274</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_394" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">Дж.</field>
+				<field name="full_name">Джоуль</field>
+				<field name="okei">271</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_395" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">км/ч.</field>
+				<field name="full_name">Километр в час</field>
+				<field name="okei">333</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_396" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">Кл/кг.</field>
+				<field name="full_name">Кулон на килограмм</field>
+				<field name="okei">349</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_397" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">10^3 А.ч.</field>
+				<field name="full_name">Тысяча ампер-часов</field>
+				<field name="okei">264</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_398" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">В.</field>
+				<field name="full_name">Вольт</field>
+				<field name="okei">222</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_399" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">кВ.</field>
+				<field name="full_name">Киловольт</field>
+				<field name="okei">223</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_400" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">м/с2.</field>
+				<field name="full_name">Метр на секунду в квадрате</field>
+				<field name="okei">335</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_401" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">Гц.</field>
+				<field name="full_name">Герц</field>
+				<field name="okei">290</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_402" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">А.</field>
+				<field name="full_name">Ампер</field>
+				<field name="okei">260</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_403" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">МВт.ч; 10^3 кВт.ч.</field>
+				<field name="full_name">Мегаватт-час; 1000 киловатт-часов</field>
+				<field name="okei">246</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_404" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">Вб.</field>
+				<field name="full_name">Вебер</field>
+				<field name="okei">324</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_405" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">кб.</field>
+				<field name="full_name">Килобар</field>
+				<field name="okei">312</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_406" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">Па.</field>
+				<field name="full_name">Паскаль</field>
+				<field name="okei">294</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_407" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">лк.</field>
+				<field name="full_name">Люкс</field>
+				<field name="okei">283</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_408" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">гб.</field>
+				<field name="full_name">Гектобар</field>
+				<field name="okei">310</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_409" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">мб.</field>
+				<field name="full_name">Миллибар</field>
+				<field name="okei">308</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_410" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">уз.</field>
+				<field name="full_name">Узел (миля/ч)</field>
+				<field name="okei">327</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_411" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">См.</field>
+				<field name="full_name">Сименс</field>
+				<field name="okei">296</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_412" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">кг/м3.</field>
+				<field name="full_name">Килограмм на кубический метр</field>
+				<field name="okei">316</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_413" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">м/с.</field>
+				<field name="full_name">Метр в секунду</field>
+				<field name="okei">328</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_414" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">кВт.</field>
+				<field name="full_name">Киловатт</field>
+				<field name="okei">214</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_415" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">Н.</field>
+				<field name="full_name">Ньютон</field>
+				<field name="okei">289</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_416" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">В.А.</field>
+				<field name="full_name">Вольт-ампер</field>
+				<field name="okei">226</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_417" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">см вод. ст.</field>
+				<field name="full_name">Сантиметр водяного столба</field>
+				<field name="okei">339</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_418" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">кал/ч.</field>
+				<field name="full_name">Калория в час</field>
+				<field name="okei">236</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_419" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">бай.</field>
+				<field name="full_name">Байт</field>
+				<field name="okei">255</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_420" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">Гн.</field>
+				<field name="full_name">Генри</field>
+				<field name="okei">287</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_421" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">10^3 кВ.А Р.</field>
+				<field name="full_name">Тысяча киловольт-ампер реактивных</field>
+				<field name="okei">250</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_422" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">10^6 Гкал.</field>
+				<field name="full_name">Миллион гигакалорий</field>
+				<field name="okei">235</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_423" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">Тл.</field>
+				<field name="full_name">Тесла</field>
+				<field name="okei">313</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_424" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">кбайт.</field>
+				<field name="full_name">Килобайт</field>
+				<field name="okei">256</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_425" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">10^3 Гкал.</field>
+				<field name="full_name">Тысяча гигакалорий</field>
+				<field name="okei">234</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_426" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">ккал/ч.</field>
+				<field name="full_name">Килокалория в час</field>
+				<field name="okei">237</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_427" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">10^3 Гкал/ч.</field>
+				<field name="full_name">Тысяча гигакалорий в час</field>
+				<field name="okei">239</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_428" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">кг/см^2.</field>
+				<field name="full_name">Килограмм на квадратный сантиметр</field>
+				<field name="okei">317</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_429" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">10^3 л. с.</field>
+				<field name="full_name">Тысяча лошадиных сил</field>
+				<field name="okei">252</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_430" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">Гкал/ч.</field>
+				<field name="full_name">Гигакалория в час</field>
+				<field name="okei">238</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_431" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">мм рт. ст.</field>
+				<field name="full_name">Миллиметр ртутного столба</field>
+				<field name="okei">338</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_432" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">мм вод. ст.</field>
+				<field name="full_name">Миллиметр водяного столба</field>
+				<field name="okei">337</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_433" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">л. с.</field>
+				<field name="full_name">Лошадиная сила</field>
+				<field name="okei">251</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_434" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">бод.</field>
+				<field name="full_name">Бод</field>
+				<field name="okei">258</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_435" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">10^6 кВ.А.</field>
+				<field name="full_name">Миллион киловольт-ампер</field>
+				<field name="okei">242</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_436" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">ккал.</field>
+				<field name="full_name">Килокалория</field>
+				<field name="okei">232</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_437" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">Мбайт.</field>
+				<field name="full_name">Мегабайт</field>
+				<field name="okei">257</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_438" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">10^9 кВт.ч.</field>
+				<field name="full_name">Миллиард киловатт-часов</field>
+				<field name="okei">249</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_439" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">10^6 А.ч.</field>
+				<field name="full_name">Миллион ампер-часов</field>
+				<field name="okei">241</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_440" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">Гкал.</field>
+				<field name="full_name">Гигакалория</field>
+				<field name="okei">233</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_441" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">10^6 л. с.</field>
+				<field name="full_name">Миллион лошадиных сил</field>
+				<field name="okei">253</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_442" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">м/ч.</field>
+				<field name="full_name">Метр в час</field>
+				<field name="okei">231</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_443" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">бит.</field>
+				<field name="full_name">Бит</field>
+				<field name="okei">254</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_444" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">кВ.А Р.</field>
+				<field name="full_name">Киловольт-ампер реактивный</field>
+				<field name="okei">248</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_445" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">Британская тепловая единица (1,055 кДж).</field>
+				<field name="full_name">Британская тепловая единица (1,055 кДж)</field>
+				<field name="okei">275</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_446" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_5"/>
+				<field name="name">Эффективная мощность (245,7 ватт).</field>
+				<field name="full_name">Эффективная мощность (245,7 ватт)</field>
+				<field name="okei">213</field>
+				<field name="factor">1</field>
+			</record>
+
+		<!-- Product UOM: Единицы времени -->
+		<record id="product_uom_categ_6" model="product.uom.categ">
+			<field name="name">Единицы времени</field>
+		</record>
+
+			<record id="product_uom_447" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_6"/>
+				<field name="name">деслет.</field>
+				<field name="full_name">Десятилетие</field>
+				<field name="okei">368</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_448" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_6"/>
+				<field name="name">дек.</field>
+				<field name="full_name">Декада</field>
+				<field name="okei">361</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_449" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_6"/>
+				<field name="name">кварт.</field>
+				<field name="full_name">Квартал</field>
+				<field name="okei">364</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_450" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_6"/>
+				<field name="name">полгода.</field>
+				<field name="full_name">Полугодие</field>
+				<field name="okei">365</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_451" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_6"/>
+				<field name="name">мес.</field>
+				<field name="full_name">Месяц</field>
+				<field name="okei">362</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_452" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_6"/>
+				<field name="name">сут; дн.</field>
+				<field name="full_name">Сутки</field>
+				<field name="okei">359</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_453" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_6"/>
+				<field name="name">мин.</field>
+				<field name="full_name">Минута</field>
+				<field name="okei">355</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_454" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_6"/>
+				<field name="name">ч.</field>
+				<field name="full_name">Час</field>
+				<field name="okei">356</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_455" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_6"/>
+				<field name="name">нед.</field>
+				<field name="full_name">Неделя</field>
+				<field name="okei">360</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_456" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_6"/>
+				<field name="name">с.</field>
+				<field name="full_name">Секунда</field>
+				<field name="okei">354</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_457" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_6"/>
+				<field name="name">г; лет.</field>
+				<field name="full_name">Год</field>
+				<field name="okei">366</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_458" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_6"/>
+				<field name="name">мкс.</field>
+				<field name="full_name">Микросекунда</field>
+				<field name="okei">352</field>
+				<field name="factor">1</field>
+			</record>
+
+			<record id="product_uom_459" model="product.uom">
+				<field name="category_id" ref="product_uom_categ_6"/>
+				<field name="name">млс.</field>
+				<field name="full_name">Миллисекунда</field>
+				<field name="okei">353</field>
+				<field name="factor">1</field>
+			</record>
+	</data>
+</openerp>

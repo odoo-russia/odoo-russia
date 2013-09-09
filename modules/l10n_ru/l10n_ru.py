@@ -182,4 +182,5 @@ class product_uom(osv.osv):
     _inherit = 'product.uom'
     _columns = {
         'okei': fields.integer('OKEI'),
+        'full_name': fields.char('Full name', size=128),
     }
