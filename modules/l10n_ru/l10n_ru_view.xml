@@ -30,6 +30,20 @@
             </field>
         </record>
 
+    <record id="view_currency_tree_l10n_ru" model="ir.ui.view">
+        <field name="name">res.currency.tree</field>
+        <field name="model">res.currency</field>
+        <field name="inherit_id" ref="base.view_currency_tree"/>
+        <field name="arch" type="xml">
+            <field name="name" position="before">
+                <field name="full_name"/>
+            </field>
+            <field name="name" position="after">
+                <field name="code"/>
+            </field>
+        </field>
+    </record>
+
     <record id="product_normal_form_view_l10n_ru" model="ir.ui.view">
         <field name="name">product.normal.form</field>
         <field name="model">product.product</field>
