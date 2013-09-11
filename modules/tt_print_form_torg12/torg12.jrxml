@@ -4,7 +4,7 @@
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.815000000000014"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="63"/>
+	<property name="ireport.y" value="0"/>
 	<property name="OPENERP_RELATIONS" value="[&apos;invoice_line&apos;, &apos;invoice_line_tax_id&apos;]"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
@@ -14,7 +14,7 @@
 		<![CDATA[/data/record]]>
 	</queryString>
 	<field name="shipping_name" class="java.lang.String">
-		<fieldDescription><![CDATA[company_id/partner_id/name]]></fieldDescription>
+		<fieldDescription><![CDATA[company_id/partner_id/name_official]]></fieldDescription>
 	</field>
 	<field name="shipping_zip" class="java.lang.String">
 		<fieldDescription><![CDATA[company_id/partner_id/zip]]></fieldDescription>
@@ -56,7 +56,7 @@
 		<fieldDescription><![CDATA[company_id/partner_id/bank_ids/bank_acc_corr]]></fieldDescription>
 	</field>
 	<field name="supplier_name" class="java.lang.String">
-		<fieldDescription><![CDATA[partner_id/name]]></fieldDescription>
+		<fieldDescription><![CDATA[partner_id/name_official]]></fieldDescription>
 	</field>
 	<field name="shipping_accountant" class="java.lang.String">
 		<fieldDescription><![CDATA[company_id/partner_id/accountant]]></fieldDescription>
@@ -125,7 +125,7 @@
 		<fieldDescription><![CDATA[invoice_line/quantity]]></fieldDescription>
 	</field>
 	<field name="line_OKEI" class="java.lang.String">
-		<fieldDescription><![CDATA[invoice_line/uos_id/OKEI]]></fieldDescription>
+		<fieldDescription><![CDATA[invoice_line/uos_id/okei]]></fieldDescription>
 	</field>
 	<field name="line_weight" class="java.lang.Double">
 		<fieldDescription><![CDATA[invoice_line/product_id/weight]]></fieldDescription>
@@ -267,7 +267,7 @@
 				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{shipping_name} + $V{shipping_inn_kpp} + $V{shipping_address} + $V{shipping_details} ]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{shipping_name} + $V{shipping_inn_kpp} + $V{shipping_address} + $V{shipping_details}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement key="staticText-10" mode="Transparent" x="159" y="225" width="142" height="14" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -696,7 +696,7 @@
 				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="6" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{shipping_name} + $V{shipping_inn_kpp} + $V{shipping_address} + $V{shipping_details} ]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{shipping_name} + $V{shipping_inn_kpp} + $V{shipping_address} + $V{shipping_details}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 				<reportElement key="textField" mode="Transparent" x="120" y="93" width="429" height="26" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -706,7 +706,7 @@
 				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="6" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{supplier_name} + $V{supplier_inn_kpp} + $V{supplier_address} + $V{supplier_details} ]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{supplier_name} + $V{supplier_inn_kpp} + $V{supplier_address} + $V{supplier_details}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 				<reportElement key="textField" mode="Transparent" x="120" y="157" width="429" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -716,7 +716,7 @@
 				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="6" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{supplier_name} + $V{supplier_inn_kpp} + $V{supplier_address} + $V{supplier_details} ]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{supplier_name} + $V{supplier_inn_kpp} + $V{supplier_address} + $V{supplier_details}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="675" y="148" width="65" height="29"/>

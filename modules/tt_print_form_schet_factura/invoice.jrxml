@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="invoice" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="770" leftMargin="36" rightMargin="36" topMargin="36" bottomMargin="36" isFloatColumnFooter="true">
 	<property name="OPENERP_RELATIONS" value="[&apos;invoice_line&apos;]"/>
-	<property name="ireport.zoom" value="1.771561000000023"/>
-	<property name="ireport.x" value="375"/>
-	<property name="ireport.y" value="365"/>
+	<property name="ireport.zoom" value="1.464100000000019"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="54"/>
 	<queryString language="xPath">
 		<![CDATA[]]>
 	</queryString>
@@ -74,7 +74,7 @@
 		<fieldDescription><![CDATA[/data/record/origin]]></fieldDescription>
 	</field>
 	<field name="currency_name" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/currency_id/name]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/currency_id/full_name]]></fieldDescription>
 	</field>
 	<field name="currency_code" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/currency_id/code]]></fieldDescription>
@@ -100,17 +100,17 @@
 	<field name="line_price_subtotal" class="java.lang.Double">
 		<fieldDescription><![CDATA[/data/record/invoice_line/price_subtotal]]></fieldDescription>
 	</field>
-	<field name="line_uom_OKEI" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/invoice_line/product_id/uom_id/OKEI]]></fieldDescription>
+	<field name="line_uom_OKEI" class="java.lang.Integer">
+		<fieldDescription><![CDATA[/data/record/invoice_line/product_id/uom_id/okei]]></fieldDescription>
 	</field>
 	<field name="line_uom_name" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/invoice_line/product_id/uom_id/name]]></fieldDescription>
 	</field>
-	<field name="line_country_code" class="java.lang.Integer">
-		<fieldDescription><![CDATA[/data/record/invoice_line/product_id/country_code]]></fieldDescription>
+	<field name="line_country_code" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/invoice_line/product_id/country_origin_id/numeral_code]]></fieldDescription>
 	</field>
 	<field name="line_country_origin" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/invoice_line/product_id/country_origin]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/invoice_line/product_id/country_origin_id/code]]></fieldDescription>
 	</field>
 	<field name="line_declaration_code" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/invoice_line/product_id/declaration_code]]></fieldDescription>
@@ -202,7 +202,7 @@
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{company_name}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{company_name_official}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="43" y="89" width="727" height="15"/>
@@ -279,7 +279,7 @@
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{partner_name}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{partner_name_official}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="164" width="77" height="15"/>
@@ -303,14 +303,14 @@
 				<text><![CDATA[Адрес: ]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="141" y="194" width="629" height="15"/>
+				<reportElement x="129" y="194" width="641" height="15"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{partner_inn} + "/" + $F{partner_kpp}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="194" width="141" height="15"/>
+				<reportElement x="0" y="194" width="129" height="15"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" isBold="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
@@ -735,13 +735,13 @@
 		<band height="30" splitType="Stretch">
 			<textField isBlankWhenNull="true">
 				<reportElement x="0" y="0" width="147" height="30"/>
-				<box>
+				<box leftPadding="3">
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="0.25"/>
 					<bottomPen lineWidth="0.25"/>
 					<rightPen lineWidth="0.25"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+				<textElement verticalAlignment="Middle" markup="none">
 					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{line_name}]]></textFieldExpression>
@@ -832,7 +832,7 @@
 					<bottomPen lineWidth="0.25"/>
 					<rightPen lineWidth="0.25"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
 					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%.2f", $F{line_tax_amount})]]></textFieldExpression>
@@ -845,7 +845,7 @@
 					<bottomPen lineWidth="0.25"/>
 					<rightPen lineWidth="0.25"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
 					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%.2f", $F{line_tax_total})]]></textFieldExpression>
@@ -874,7 +874,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
 					<font fontName="DejaVu Sans" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[($F{line_country_code} == null)?"-":$F{line_country_code}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{line_country_code}.equals(""))?"-":$F{line_country_code}]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="false">
 				<reportElement mode="Transparent" x="587" y="0" width="55" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -961,7 +961,7 @@
 					<bottomPen lineWidth="0.25"/>
 					<rightPen lineWidth="0.25"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
 					<font fontName="DejaVu Sans" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%.2f", $V{tax_value_page})]]></textFieldExpression>
@@ -1140,7 +1140,7 @@
 					<bottomPen lineWidth="0.25"/>
 					<rightPen lineWidth="0.25"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
 					<font fontName="DejaVu Sans" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%.2f", $V{tax_value_page})]]></textFieldExpression>
@@ -1148,14 +1148,14 @@
 			<textField pattern="" isBlankWhenNull="false">
 				<reportElement mode="Transparent" x="283" y="31" width="114" height="15" forecolor="#000000" backcolor="#FFFFFF"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
-					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
+					<font fontName="DejaVu Sans" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{company_accountant}]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="false">
 				<reportElement mode="Transparent" x="656" y="31" width="114" height="15" forecolor="#000000" backcolor="#FFFFFF"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
-					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
+					<font fontName="DejaVu Sans" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{comapny_ceo}]]></textFieldExpression>
 			</textField>
@@ -1167,7 +1167,7 @@
 					<bottomPen lineWidth="0.25"/>
 					<rightPen lineWidth="0.25"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
 					<font fontName="DejaVu Sans" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%.2f", $V{tax_value_report})]]></textFieldExpression>
