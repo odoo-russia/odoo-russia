@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-from osv import orm, osv, fields
+from openerp.osv import orm, osv, fields
+import openerp.addons.decimal_precision as dp
 
 
 class sale_order_line(osv.osv):
@@ -18,4 +19,8 @@ class sale_order_line(osv.osv):
             cur = line.order_id.pricelist_id.currency_id
             res[line.id] = cur_obj.round(cr, uid, cur, taxes['total_included'])
         return res
+
+    _columns = {
+        'price_subtotal': fields.function(_amount_line, string='Subtotal', digits_compute=dp.get_precision('Account')),
+    }
 sale_order_line()
