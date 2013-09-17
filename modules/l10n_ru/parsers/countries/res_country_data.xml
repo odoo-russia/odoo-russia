@@ -1,0 +1,1762 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data noupdate="0">
+
+		<record id="base.ab" model="res.country">
+			<field name="name">Абхазия</field>
+			<field name="code">ab</field>
+			<field name="full_name">Республика Абхазия</field>
+			<field name="numeral_code">895</field>
+		</record>
+    
+		<record id="base.au" model="res.country">
+			<field name="name">Австралия</field>
+			<field name="code">au</field>
+			<field name="full_name">Австралия</field>
+			<field name="numeral_code">036</field>
+		</record>
+    
+		<record id="base.at" model="res.country">
+			<field name="name">Австрия</field>
+			<field name="code">at</field>
+			<field name="full_name">Австрийская Республика</field>
+			<field name="numeral_code">040</field>
+		</record>
+    
+		<record id="base.az" model="res.country">
+			<field name="name">Азербайджан</field>
+			<field name="code">az</field>
+			<field name="full_name">Республика Азербайджан</field>
+			<field name="numeral_code">031</field>
+		</record>
+    
+		<record id="base.al" model="res.country">
+			<field name="name">Албания</field>
+			<field name="code">al</field>
+			<field name="full_name">Республика Албания</field>
+			<field name="numeral_code">008</field>
+		</record>
+    
+		<record id="base.dz" model="res.country">
+			<field name="name">Алжир</field>
+			<field name="code">dz</field>
+			<field name="full_name">Алжирская Народная Демократическая Республика</field>
+			<field name="numeral_code">012</field>
+		</record>
+    
+		<record id="base.as" model="res.country">
+			<field name="name">Американское Самоа</field>
+			<field name="code">as</field>
+			<field name="full_name">Американское Самоа</field>
+			<field name="numeral_code">016</field>
+		</record>
+    
+		<record id="base.ai" model="res.country">
+			<field name="name">Ангилья</field>
+			<field name="code">ai</field>
+			<field name="full_name">Ангилья</field>
+			<field name="numeral_code">660</field>
+		</record>
+    
+		<record id="base.ao" model="res.country">
+			<field name="name">Ангола</field>
+			<field name="code">ao</field>
+			<field name="full_name">Республика Ангола</field>
+			<field name="numeral_code">024</field>
+		</record>
+    
+		<record id="base.ad" model="res.country">
+			<field name="name">Андорра</field>
+			<field name="code">ad</field>
+			<field name="full_name">Княжество Андорра</field>
+			<field name="numeral_code">020</field>
+		</record>
+    
+		<record id="base.aq" model="res.country">
+			<field name="name">Антарктида</field>
+			<field name="code">aq</field>
+			<field name="full_name">Антарктида</field>
+			<field name="numeral_code">010</field>
+		</record>
+    
+		<record id="base.ag" model="res.country">
+			<field name="name">Антигуа и Барбуда</field>
+			<field name="code">ag</field>
+			<field name="full_name">Антигуа и Барбуда</field>
+			<field name="numeral_code">028</field>
+		</record>
+    
+		<record id="base.ar" model="res.country">
+			<field name="name">Аргентина</field>
+			<field name="code">ar</field>
+			<field name="full_name">Аргентинская Республика</field>
+			<field name="numeral_code">032</field>
+		</record>
+    
+		<record id="base.am" model="res.country">
+			<field name="name">Армения</field>
+			<field name="code">am</field>
+			<field name="full_name">Республика Армения</field>
+			<field name="numeral_code">051</field>
+		</record>
+    
+		<record id="base.aw" model="res.country">
+			<field name="name">Аруба</field>
+			<field name="code">aw</field>
+			<field name="full_name">Аруба</field>
+			<field name="numeral_code">533</field>
+		</record>
+    
+		<record id="base.af" model="res.country">
+			<field name="name">Афганистан</field>
+			<field name="code">af</field>
+			<field name="full_name">Переходное Исламское Государство Афганистан</field>
+			<field name="numeral_code">004</field>
+		</record>
+    
+		<record id="base.bs" model="res.country">
+			<field name="name">Багамы</field>
+			<field name="code">bs</field>
+			<field name="full_name">Содружество Багамы</field>
+			<field name="numeral_code">044</field>
+		</record>
+    
+		<record id="base.bd" model="res.country">
+			<field name="name">Бангладеш</field>
+			<field name="code">bd</field>
+			<field name="full_name">Народная Республика Бангладеш</field>
+			<field name="numeral_code">050</field>
+		</record>
+    
+		<record id="base.bb" model="res.country">
+			<field name="name">Барбадос</field>
+			<field name="code">bb</field>
+			<field name="full_name">Барбадос</field>
+			<field name="numeral_code">052</field>
+		</record>
+    
+		<record id="base.bh" model="res.country">
+			<field name="name">Бахрейн</field>
+			<field name="code">bh</field>
+			<field name="full_name">Королевство Бахрейн</field>
+			<field name="numeral_code">048</field>
+		</record>
+    
+		<record id="base.by" model="res.country">
+			<field name="name">Беларусь</field>
+			<field name="code">by</field>
+			<field name="full_name">Республика Беларусь</field>
+			<field name="numeral_code">112</field>
+		</record>
+    
+		<record id="base.bz" model="res.country">
+			<field name="name">Белиз</field>
+			<field name="code">bz</field>
+			<field name="full_name">Белиз</field>
+			<field name="numeral_code">084</field>
+		</record>
+    
+		<record id="base.be" model="res.country">
+			<field name="name">Бельгия</field>
+			<field name="code">be</field>
+			<field name="full_name">Королевство Бельгии</field>
+			<field name="numeral_code">056</field>
+		</record>
+    
+		<record id="base.bj" model="res.country">
+			<field name="name">Бенин</field>
+			<field name="code">bj</field>
+			<field name="full_name">Республика Бенин</field>
+			<field name="numeral_code">204</field>
+		</record>
+    
+		<record id="base.bm" model="res.country">
+			<field name="name">Бермуды</field>
+			<field name="code">bm</field>
+			<field name="full_name">Бермуды</field>
+			<field name="numeral_code">060</field>
+		</record>
+    
+		<record id="base.bg" model="res.country">
+			<field name="name">Болгария</field>
+			<field name="code">bg</field>
+			<field name="full_name">Республика Болгария</field>
+			<field name="numeral_code">100</field>
+		</record>
+    
+		<record id="base.bo" model="res.country">
+			<field name="name">Боливия, Многонациональное Государство</field>
+			<field name="code">bo</field>
+			<field name="full_name">Многонациональное Государство Боливия</field>
+			<field name="numeral_code">068</field>
+		</record>
+    
+		<record id="base.bq" model="res.country">
+			<field name="name">Бонайре, Саба и Синт-Эстатиус</field>
+			<field name="code">bq</field>
+			<field name="full_name">Бонайре, Саба и Синт-Эстатиус</field>
+			<field name="numeral_code">535</field>
+		</record>
+    
+		<record id="base.ba" model="res.country">
+			<field name="name">Босния и Герцеговина</field>
+			<field name="code">ba</field>
+			<field name="full_name">Босния и Герцеговина</field>
+			<field name="numeral_code">070</field>
+		</record>
+    
+		<record id="base.bw" model="res.country">
+			<field name="name">Ботсвана</field>
+			<field name="code">bw</field>
+			<field name="full_name">Республика Ботсвана</field>
+			<field name="numeral_code">072</field>
+		</record>
+    
+		<record id="base.br" model="res.country">
+			<field name="name">Бразилия</field>
+			<field name="code">br</field>
+			<field name="full_name">Федеративная Республика Бразилия</field>
+			<field name="numeral_code">076</field>
+		</record>
+    
+		<record id="base.io" model="res.country">
+			<field name="name">Британская территория в Индийском океане</field>
+			<field name="code">io</field>
+			<field name="full_name">Британская территория в Индийском океане</field>
+			<field name="numeral_code">086</field>
+		</record>
+    
+		<record id="base.bn" model="res.country">
+			<field name="name">Бруней-Даруссалам</field>
+			<field name="code">bn</field>
+			<field name="full_name">Бруней-Даруссалам</field>
+			<field name="numeral_code">096</field>
+		</record>
+    
+		<record id="base.bf" model="res.country">
+			<field name="name">Буркина-Фасо</field>
+			<field name="code">bf</field>
+			<field name="full_name">Буркина-Фасо</field>
+			<field name="numeral_code">854</field>
+		</record>
+    
+		<record id="base.bi" model="res.country">
+			<field name="name">Бурунди</field>
+			<field name="code">bi</field>
+			<field name="full_name">Республика Бурунди</field>
+			<field name="numeral_code">108</field>
+		</record>
+    
+		<record id="base.bt" model="res.country">
+			<field name="name">Бутан</field>
+			<field name="code">bt</field>
+			<field name="full_name">Королевство Бутан</field>
+			<field name="numeral_code">064</field>
+		</record>
+    
+		<record id="base.vu" model="res.country">
+			<field name="name">Вануату</field>
+			<field name="code">vu</field>
+			<field name="full_name">Республика Вануату</field>
+			<field name="numeral_code">548</field>
+		</record>
+    
+		<record id="base.hu" model="res.country">
+			<field name="name">Венгрия</field>
+			<field name="code">hu</field>
+			<field name="full_name">Венгерская Республика</field>
+			<field name="numeral_code">348</field>
+		</record>
+    
+		<record id="base.ve" model="res.country">
+			<field name="name">Венесуэла Боливарианская Республика</field>
+			<field name="code">ve</field>
+			<field name="full_name">Боливарийская Республика Венесуэла</field>
+			<field name="numeral_code">862</field>
+		</record>
+    
+		<record id="base.vg" model="res.country">
+			<field name="name">Виргинские острова, Британские</field>
+			<field name="code">vg</field>
+			<field name="full_name">Британские Виргинские острова</field>
+			<field name="numeral_code">092</field>
+		</record>
+    
+		<record id="base.vi" model="res.country">
+			<field name="name">Виргинские острова, США</field>
+			<field name="code">vi</field>
+			<field name="full_name">Виргинские острова Соединенных Штатов</field>
+			<field name="numeral_code">850</field>
+		</record>
+    
+		<record id="base.vn" model="res.country">
+			<field name="name">Вьетнам</field>
+			<field name="code">vn</field>
+			<field name="full_name">Социалистическая Республика Вьетнам</field>
+			<field name="numeral_code">704</field>
+		</record>
+    
+		<record id="base.ga" model="res.country">
+			<field name="name">Габон</field>
+			<field name="code">ga</field>
+			<field name="full_name">Габонская Республика</field>
+			<field name="numeral_code">266</field>
+		</record>
+    
+		<record id="base.ht" model="res.country">
+			<field name="name">Гаити</field>
+			<field name="code">ht</field>
+			<field name="full_name">Республика Гаити</field>
+			<field name="numeral_code">332</field>
+		</record>
+    
+		<record id="base.gy" model="res.country">
+			<field name="name">Гайана</field>
+			<field name="code">gy</field>
+			<field name="full_name">Республика Гайана</field>
+			<field name="numeral_code">328</field>
+		</record>
+    
+		<record id="base.gm" model="res.country">
+			<field name="name">Гамбия</field>
+			<field name="code">gm</field>
+			<field name="full_name">Республика Гамбия</field>
+			<field name="numeral_code">270</field>
+		</record>
+    
+		<record id="base.gh" model="res.country">
+			<field name="name">Гана</field>
+			<field name="code">gh</field>
+			<field name="full_name">Республика Гана</field>
+			<field name="numeral_code">288</field>
+		</record>
+    
+		<record id="base.gp" model="res.country">
+			<field name="name">Гваделупа</field>
+			<field name="code">gp</field>
+			<field name="full_name">Гваделупа</field>
+			<field name="numeral_code">312</field>
+		</record>
+    
+		<record id="base.gt" model="res.country">
+			<field name="name">Гватемала</field>
+			<field name="code">gt</field>
+			<field name="full_name">Республика Гватемала</field>
+			<field name="numeral_code">320</field>
+		</record>
+    
+		<record id="base.gn" model="res.country">
+			<field name="name">Гвинея</field>
+			<field name="code">gn</field>
+			<field name="full_name">Гвинейская Республика</field>
+			<field name="numeral_code">324</field>
+		</record>
+    
+		<record id="base.gw" model="res.country">
+			<field name="name">Гвинея-Бисау</field>
+			<field name="code">gw</field>
+			<field name="full_name">Республика Гвинея-Бисау</field>
+			<field name="numeral_code">624</field>
+		</record>
+    
+		<record id="base.de" model="res.country">
+			<field name="name">Германия</field>
+			<field name="code">de</field>
+			<field name="full_name">Федеративная Республика Германия</field>
+			<field name="numeral_code">276</field>
+		</record>
+    
+		<record id="base.gg" model="res.country">
+			<field name="name">Гернси</field>
+			<field name="code">gg</field>
+			<field name="full_name">Гернси</field>
+			<field name="numeral_code">831</field>
+		</record>
+    
+		<record id="base.gi" model="res.country">
+			<field name="name">Гибралтар</field>
+			<field name="code">gi</field>
+			<field name="full_name">Гибралтар</field>
+			<field name="numeral_code">292</field>
+		</record>
+    
+		<record id="base.hn" model="res.country">
+			<field name="name">Гондурас</field>
+			<field name="code">hn</field>
+			<field name="full_name">Республика Гондурас</field>
+			<field name="numeral_code">340</field>
+		</record>
+    
+		<record id="base.hk" model="res.country">
+			<field name="name">Гонконг</field>
+			<field name="code">hk</field>
+			<field name="full_name">Специальный  административный  регион Китая Гонконг</field>
+			<field name="numeral_code">344</field>
+		</record>
+    
+		<record id="base.gd" model="res.country">
+			<field name="name">Гренада</field>
+			<field name="code">gd</field>
+			<field name="full_name">Гренада</field>
+			<field name="numeral_code">308</field>
+		</record>
+    
+		<record id="base.gl" model="res.country">
+			<field name="name">Гренландия</field>
+			<field name="code">gl</field>
+			<field name="full_name">Гренландия</field>
+			<field name="numeral_code">304</field>
+		</record>
+    
+		<record id="base.gr" model="res.country">
+			<field name="name">Греция</field>
+			<field name="code">gr</field>
+			<field name="full_name">Греческая Республика</field>
+			<field name="numeral_code">300</field>
+		</record>
+    
+		<record id="base.ge" model="res.country">
+			<field name="name">Грузия</field>
+			<field name="code">ge</field>
+			<field name="full_name">Грузия</field>
+			<field name="numeral_code">268</field>
+		</record>
+    
+		<record id="base.gu" model="res.country">
+			<field name="name">Гуам</field>
+			<field name="code">gu</field>
+			<field name="full_name">Гуам</field>
+			<field name="numeral_code">316</field>
+		</record>
+    
+		<record id="base.dk" model="res.country">
+			<field name="name">Дания</field>
+			<field name="code">dk</field>
+			<field name="full_name">Королевство Дания</field>
+			<field name="numeral_code">208</field>
+		</record>
+    
+		<record id="base.je" model="res.country">
+			<field name="name">Джерси</field>
+			<field name="code">je</field>
+			<field name="full_name">Джерси</field>
+			<field name="numeral_code">832</field>
+		</record>
+    
+		<record id="base.dj" model="res.country">
+			<field name="name">Джибути</field>
+			<field name="code">dj</field>
+			<field name="full_name">Республика Джибути</field>
+			<field name="numeral_code">262</field>
+		</record>
+    
+		<record id="base.dm" model="res.country">
+			<field name="name">Доминика</field>
+			<field name="code">dm</field>
+			<field name="full_name">Содружество Доминики</field>
+			<field name="numeral_code">212</field>
+		</record>
+    
+		<record id="base.do" model="res.country">
+			<field name="name">Доминиканская Республика</field>
+			<field name="code">do</field>
+			<field name="full_name">Доминиканская Республика</field>
+			<field name="numeral_code">214</field>
+		</record>
+    
+		<record id="base.eg" model="res.country">
+			<field name="name">Египет</field>
+			<field name="code">eg</field>
+			<field name="full_name">Арабская Республика Египет</field>
+			<field name="numeral_code">818</field>
+		</record>
+    
+		<record id="base.zm" model="res.country">
+			<field name="name">Замбия</field>
+			<field name="code">zm</field>
+			<field name="full_name">Республика Замбия</field>
+			<field name="numeral_code">894</field>
+		</record>
+    
+		<record id="base.eh" model="res.country">
+			<field name="name">Западная Сахара</field>
+			<field name="code">eh</field>
+			<field name="full_name">Западная Сахара</field>
+			<field name="numeral_code">732</field>
+		</record>
+    
+		<record id="base.zw" model="res.country">
+			<field name="name">Зимбабве</field>
+			<field name="code">zw</field>
+			<field name="full_name">Республика Зимбабве</field>
+			<field name="numeral_code">716</field>
+		</record>
+    
+		<record id="base.il" model="res.country">
+			<field name="name">Израиль</field>
+			<field name="code">il</field>
+			<field name="full_name">Государство Израиль</field>
+			<field name="numeral_code">376</field>
+		</record>
+    
+		<record id="base.in" model="res.country">
+			<field name="name">Индия</field>
+			<field name="code">in</field>
+			<field name="full_name">Республика Индия</field>
+			<field name="numeral_code">356</field>
+		</record>
+    
+		<record id="base.id" model="res.country">
+			<field name="name">Индонезия</field>
+			<field name="code">id</field>
+			<field name="full_name">Республика Индонезия</field>
+			<field name="numeral_code">360</field>
+		</record>
+    
+		<record id="base.jo" model="res.country">
+			<field name="name">Иордания</field>
+			<field name="code">jo</field>
+			<field name="full_name">Иорданское Хашимитское Королевство</field>
+			<field name="numeral_code">400</field>
+		</record>
+    
+		<record id="base.iq" model="res.country">
+			<field name="name">Ирак</field>
+			<field name="code">iq</field>
+			<field name="full_name">Республика Ирак</field>
+			<field name="numeral_code">368</field>
+		</record>
+    
+		<record id="base.ir" model="res.country">
+			<field name="name">Иран, Исламская Республика</field>
+			<field name="code">ir</field>
+			<field name="full_name">Исламская Республика Иран</field>
+			<field name="numeral_code">364</field>
+		</record>
+    
+		<record id="base.ie" model="res.country">
+			<field name="name">Ирландия</field>
+			<field name="code">ie</field>
+			<field name="full_name">Ирландия</field>
+			<field name="numeral_code">372</field>
+		</record>
+    
+		<record id="base.is" model="res.country">
+			<field name="name">Исландия</field>
+			<field name="code">is</field>
+			<field name="full_name">Республика Исландия</field>
+			<field name="numeral_code">352</field>
+		</record>
+    
+		<record id="base.es" model="res.country">
+			<field name="name">Испания</field>
+			<field name="code">es</field>
+			<field name="full_name">Королевство Испания</field>
+			<field name="numeral_code">724</field>
+		</record>
+    
+		<record id="base.it" model="res.country">
+			<field name="name">Италия</field>
+			<field name="code">it</field>
+			<field name="full_name">Итальянская Республика</field>
+			<field name="numeral_code">380</field>
+		</record>
+    
+		<record id="base.ye" model="res.country">
+			<field name="name">Йемен</field>
+			<field name="code">ye</field>
+			<field name="full_name">Йеменская Республика</field>
+			<field name="numeral_code">887</field>
+		</record>
+    
+		<record id="base.cv" model="res.country">
+			<field name="name">Кабо-Верде</field>
+			<field name="code">cv</field>
+			<field name="full_name">Республика Кабо-Верде</field>
+			<field name="numeral_code">132</field>
+		</record>
+    
+		<record id="base.kz" model="res.country">
+			<field name="name">Казахстан</field>
+			<field name="code">kz</field>
+			<field name="full_name">Республика Казахстан</field>
+			<field name="numeral_code">398</field>
+		</record>
+    
+		<record id="base.kh" model="res.country">
+			<field name="name">Камбоджа</field>
+			<field name="code">kh</field>
+			<field name="full_name">Королевство Камбоджа</field>
+			<field name="numeral_code">116</field>
+		</record>
+    
+		<record id="base.cm" model="res.country">
+			<field name="name">Камерун</field>
+			<field name="code">cm</field>
+			<field name="full_name">Республика Камерун</field>
+			<field name="numeral_code">120</field>
+		</record>
+    
+		<record id="base.ca" model="res.country">
+			<field name="name">Канада</field>
+			<field name="code">ca</field>
+			<field name="full_name">Канада</field>
+			<field name="numeral_code">124</field>
+		</record>
+    
+		<record id="base.qa" model="res.country">
+			<field name="name">Катар</field>
+			<field name="code">qa</field>
+			<field name="full_name">Государство Катар</field>
+			<field name="numeral_code">634</field>
+		</record>
+    
+		<record id="base.ke" model="res.country">
+			<field name="name">Кения</field>
+			<field name="code">ke</field>
+			<field name="full_name">Республика Кения</field>
+			<field name="numeral_code">404</field>
+		</record>
+    
+		<record id="base.cy" model="res.country">
+			<field name="name">Кипр</field>
+			<field name="code">cy</field>
+			<field name="full_name">Республика Кипр</field>
+			<field name="numeral_code">196</field>
+		</record>
+    
+		<record id="base.kg" model="res.country">
+			<field name="name">Киргизия</field>
+			<field name="code">kg</field>
+			<field name="full_name">Киргизская Республика</field>
+			<field name="numeral_code">417</field>
+		</record>
+    
+		<record id="base.ki" model="res.country">
+			<field name="name">Кирибати</field>
+			<field name="code">ki</field>
+			<field name="full_name">Республика Кирибати</field>
+			<field name="numeral_code">296</field>
+		</record>
+    
+		<record id="base.cn" model="res.country">
+			<field name="name">Китай</field>
+			<field name="code">cn</field>
+			<field name="full_name">Китайская Народная Республика</field>
+			<field name="numeral_code">156</field>
+		</record>
+    
+		<record id="base.cc" model="res.country">
+			<field name="name">Кокосовые (Килинг) острова</field>
+			<field name="code">cc</field>
+			<field name="full_name">Кокосовые (Килинг) острова</field>
+			<field name="numeral_code">166</field>
+		</record>
+    
+		<record id="base.co" model="res.country">
+			<field name="name">Колумбия</field>
+			<field name="code">co</field>
+			<field name="full_name">Республика Колумбия</field>
+			<field name="numeral_code">170</field>
+		</record>
+    
+		<record id="base.km" model="res.country">
+			<field name="name">Коморы</field>
+			<field name="code">km</field>
+			<field name="full_name">Союз Коморы</field>
+			<field name="numeral_code">174</field>
+		</record>
+    
+		<record id="base.cg" model="res.country">
+			<field name="name">Конго</field>
+			<field name="code">cg</field>
+			<field name="full_name">Республика Конго</field>
+			<field name="numeral_code">178</field>
+		</record>
+    
+		<record id="base.cd" model="res.country">
+			<field name="name">Конго, Демократическая Республика</field>
+			<field name="code">cd</field>
+			<field name="full_name">Демократическая Республика Конго</field>
+			<field name="numeral_code">180</field>
+		</record>
+    
+		<record id="base.kp" model="res.country">
+			<field name="name">Корея, Народно-Демократическая Республика</field>
+			<field name="code">kp</field>
+			<field name="full_name">Корейская Народно-Демократическая Республика</field>
+			<field name="numeral_code">408</field>
+		</record>
+    
+		<record id="base.kr" model="res.country">
+			<field name="name">Корея, Республика</field>
+			<field name="code">kr</field>
+			<field name="full_name">Республика Корея</field>
+			<field name="numeral_code">410</field>
+		</record>
+    
+		<record id="base.cr" model="res.country">
+			<field name="name">Коста-Рика</field>
+			<field name="code">cr</field>
+			<field name="full_name">Республика Коста-Рика</field>
+			<field name="numeral_code">188</field>
+		</record>
+    
+		<record id="base.ci" model="res.country">
+			<field name="name">Кот д'Ивуар</field>
+			<field name="code">ci</field>
+			<field name="full_name">Республика Кот д'Ивуар</field>
+			<field name="numeral_code">384</field>
+		</record>
+    
+		<record id="base.cu" model="res.country">
+			<field name="name">Куба</field>
+			<field name="code">cu</field>
+			<field name="full_name">Республика Куба</field>
+			<field name="numeral_code">192</field>
+		</record>
+    
+		<record id="base.kw" model="res.country">
+			<field name="name">Кувейт</field>
+			<field name="code">kw</field>
+			<field name="full_name">Государство Кувейт</field>
+			<field name="numeral_code">414</field>
+		</record>
+    
+		<record id="base.cw" model="res.country">
+			<field name="name">Кюрасао</field>
+			<field name="code">cw</field>
+			<field name="full_name">Кюрасао</field>
+			<field name="numeral_code">531</field>
+		</record>
+    
+		<record id="base.la" model="res.country">
+			<field name="name">Лаос</field>
+			<field name="code">la</field>
+			<field name="full_name">Лаосская Народно-Демократическая Республика</field>
+			<field name="numeral_code">418</field>
+		</record>
+    
+		<record id="base.lv" model="res.country">
+			<field name="name">Латвия</field>
+			<field name="code">lv</field>
+			<field name="full_name">Латвийская Республика</field>
+			<field name="numeral_code">428</field>
+		</record>
+    
+		<record id="base.ls" model="res.country">
+			<field name="name">Лесото</field>
+			<field name="code">ls</field>
+			<field name="full_name">Королевство Лесото</field>
+			<field name="numeral_code">426</field>
+		</record>
+    
+		<record id="base.lb" model="res.country">
+			<field name="name">Ливан</field>
+			<field name="code">lb</field>
+			<field name="full_name">Ливанская Республика</field>
+			<field name="numeral_code">422</field>
+		</record>
+    
+		<record id="base.ly" model="res.country">
+			<field name="name">Ливийская Арабская Джамахирия</field>
+			<field name="code">ly</field>
+			<field name="full_name">Социалистическая Народная Ливийская Арабская Джамахирия</field>
+			<field name="numeral_code">434</field>
+		</record>
+    
+		<record id="base.lr" model="res.country">
+			<field name="name">Либерия</field>
+			<field name="code">lr</field>
+			<field name="full_name">Республика Либерия</field>
+			<field name="numeral_code">430</field>
+		</record>
+    
+		<record id="base.li" model="res.country">
+			<field name="name">Лихтенштейн</field>
+			<field name="code">li</field>
+			<field name="full_name">Княжество Лихтенштейн</field>
+			<field name="numeral_code">438</field>
+		</record>
+    
+		<record id="base.lt" model="res.country">
+			<field name="name">Литва</field>
+			<field name="code">lt</field>
+			<field name="full_name">Литовская Республика</field>
+			<field name="numeral_code">440</field>
+		</record>
+    
+		<record id="base.lu" model="res.country">
+			<field name="name">Люксембург</field>
+			<field name="code">lu</field>
+			<field name="full_name">Великое Герцогство Люксембург</field>
+			<field name="numeral_code">442</field>
+		</record>
+    
+		<record id="base.mu" model="res.country">
+			<field name="name">Маврикий</field>
+			<field name="code">mu</field>
+			<field name="full_name">Республика Маврикий</field>
+			<field name="numeral_code">480</field>
+		</record>
+    
+		<record id="base.mr" model="res.country">
+			<field name="name">Мавритания</field>
+			<field name="code">mr</field>
+			<field name="full_name">Исламская Республика Мавритания</field>
+			<field name="numeral_code">478</field>
+		</record>
+    
+		<record id="base.mg" model="res.country">
+			<field name="name">Мадагаскар</field>
+			<field name="code">mg</field>
+			<field name="full_name">Республика Мадагаскар</field>
+			<field name="numeral_code">450</field>
+		</record>
+    
+		<record id="base.yt" model="res.country">
+			<field name="name">Майотта</field>
+			<field name="code">yt</field>
+			<field name="full_name">Майотта</field>
+			<field name="numeral_code">175</field>
+		</record>
+    
+		<record id="base.mo" model="res.country">
+			<field name="name">Макао</field>
+			<field name="code">mo</field>
+			<field name="full_name">Специальный административный регион Китая Макао</field>
+			<field name="numeral_code">446</field>
+		</record>
+    
+		<record id="base.mw" model="res.country">
+			<field name="name">Малави</field>
+			<field name="code">mw</field>
+			<field name="full_name">Республика Малави</field>
+			<field name="numeral_code">454</field>
+		</record>
+    
+		<record id="base.my" model="res.country">
+			<field name="name">Малайзия</field>
+			<field name="code">my</field>
+			<field name="full_name">Малайзия</field>
+			<field name="numeral_code">458</field>
+		</record>
+    
+		<record id="base.ml" model="res.country">
+			<field name="name">Мали</field>
+			<field name="code">ml</field>
+			<field name="full_name">Республика Мали</field>
+			<field name="numeral_code">466</field>
+		</record>
+    
+		<record id="base.um" model="res.country">
+			<field name="name">Малые Тихоокеанские отдаленные острова Соединенных Штатов</field>
+			<field name="code">um</field>
+			<field name="full_name">Малые Тихоокеанские отдаленные острова Соединенных Штатов</field>
+			<field name="numeral_code">581</field>
+		</record>
+    
+		<record id="base.mv" model="res.country">
+			<field name="name">Мальдивы</field>
+			<field name="code">mv</field>
+			<field name="full_name">Мальдивская Республика</field>
+			<field name="numeral_code">462</field>
+		</record>
+    
+		<record id="base.mt" model="res.country">
+			<field name="name">Мальта</field>
+			<field name="code">mt</field>
+			<field name="full_name">Республика Мальта</field>
+			<field name="numeral_code">470</field>
+		</record>
+    
+		<record id="base.ma" model="res.country">
+			<field name="name">Марокко</field>
+			<field name="code">ma</field>
+			<field name="full_name">Королевство Марокко</field>
+			<field name="numeral_code">504</field>
+		</record>
+    
+		<record id="base.mq" model="res.country">
+			<field name="name">Мартиника</field>
+			<field name="code">mq</field>
+			<field name="full_name">Мартиника</field>
+			<field name="numeral_code">474</field>
+		</record>
+    
+		<record id="base.mh" model="res.country">
+			<field name="name">Маршалловы острова</field>
+			<field name="code">mh</field>
+			<field name="full_name">Республика Маршалловы острова</field>
+			<field name="numeral_code">584</field>
+		</record>
+    
+		<record id="base.mx" model="res.country">
+			<field name="name">Мексика</field>
+			<field name="code">mx</field>
+			<field name="full_name">Мексиканские Соединенные Штаты</field>
+			<field name="numeral_code">484</field>
+		</record>
+    
+		<record id="base.fm" model="res.country">
+			<field name="name">Микронезия, Федеративные Штаты</field>
+			<field name="code">fm</field>
+			<field name="full_name">Федеративные штаты Микронезии</field>
+			<field name="numeral_code">583</field>
+		</record>
+    
+		<record id="base.mz" model="res.country">
+			<field name="name">Мозамбик</field>
+			<field name="code">mz</field>
+			<field name="full_name">Республика Мозамбик</field>
+			<field name="numeral_code">508</field>
+		</record>
+    
+		<record id="base.md" model="res.country">
+			<field name="name">Молдова, Республика</field>
+			<field name="code">md</field>
+			<field name="full_name">Республика Молдова</field>
+			<field name="numeral_code">498</field>
+		</record>
+    
+		<record id="base.mc" model="res.country">
+			<field name="name">Монако</field>
+			<field name="code">mc</field>
+			<field name="full_name">Княжество Монако</field>
+			<field name="numeral_code">492</field>
+		</record>
+    
+		<record id="base.mn" model="res.country">
+			<field name="name">Монголия</field>
+			<field name="code">mn</field>
+			<field name="full_name">Монголия</field>
+			<field name="numeral_code">496</field>
+		</record>
+    
+		<record id="base.ms" model="res.country">
+			<field name="name">Монтсеррат</field>
+			<field name="code">ms</field>
+			<field name="full_name">Монтсеррат</field>
+			<field name="numeral_code">500</field>
+		</record>
+    
+		<record id="base.mm" model="res.country">
+			<field name="name">Мьянма</field>
+			<field name="code">mm</field>
+			<field name="full_name">Союз Мьянма</field>
+			<field name="numeral_code">104</field>
+		</record>
+    
+		<record id="base.na" model="res.country">
+			<field name="name">Намибия</field>
+			<field name="code">na</field>
+			<field name="full_name">Республика Намибия</field>
+			<field name="numeral_code">516</field>
+		</record>
+    
+		<record id="base.nr" model="res.country">
+			<field name="name">Науру</field>
+			<field name="code">nr</field>
+			<field name="full_name">Республика Науру</field>
+			<field name="numeral_code">520</field>
+		</record>
+    
+		<record id="base.np" model="res.country">
+			<field name="name">Непал</field>
+			<field name="code">np</field>
+			<field name="full_name">Королевство Непал</field>
+			<field name="numeral_code">524</field>
+		</record>
+    
+		<record id="base.ne" model="res.country">
+			<field name="name">Нигер</field>
+			<field name="code">ne</field>
+			<field name="full_name">Республика Нигер</field>
+			<field name="numeral_code">562</field>
+		</record>
+    
+		<record id="base.ng" model="res.country">
+			<field name="name">Нигерия</field>
+			<field name="code">ng</field>
+			<field name="full_name">Федеративная Республика Нигерия</field>
+			<field name="numeral_code">566</field>
+		</record>
+    
+		<record id="base.nl" model="res.country">
+			<field name="name">Нидерланды</field>
+			<field name="code">nl</field>
+			<field name="full_name">Королевство Нидерландов</field>
+			<field name="numeral_code">528</field>
+		</record>
+    
+		<record id="base.ni" model="res.country">
+			<field name="name">Никарагуа</field>
+			<field name="code">ni</field>
+			<field name="full_name">Республика Никарагуа</field>
+			<field name="numeral_code">558</field>
+		</record>
+    
+		<record id="base.nu" model="res.country">
+			<field name="name">Ниуэ</field>
+			<field name="code">nu</field>
+			<field name="full_name">Республика Ниуэ</field>
+			<field name="numeral_code">570</field>
+		</record>
+    
+		<record id="base.nz" model="res.country">
+			<field name="name">Новая Зеландия</field>
+			<field name="code">nz</field>
+			<field name="full_name">Новая Зеландия</field>
+			<field name="numeral_code">554</field>
+		</record>
+    
+		<record id="base.nc" model="res.country">
+			<field name="name">Новая Каледония</field>
+			<field name="code">nc</field>
+			<field name="full_name">Новая Каледония</field>
+			<field name="numeral_code">540</field>
+		</record>
+    
+		<record id="base.no" model="res.country">
+			<field name="name">Норвегия</field>
+			<field name="code">no</field>
+			<field name="full_name">Королевство Норвегия</field>
+			<field name="numeral_code">578</field>
+		</record>
+    
+		<record id="base.ae" model="res.country">
+			<field name="name">Объединенные Арабские Эмираты</field>
+			<field name="code">ae</field>
+			<field name="full_name">Объединенные Арабские Эмираты</field>
+			<field name="numeral_code">784</field>
+		</record>
+    
+		<record id="base.om" model="res.country">
+			<field name="name">Оман</field>
+			<field name="code">om</field>
+			<field name="full_name">Султанат Оман</field>
+			<field name="numeral_code">512</field>
+		</record>
+    
+		<record id="base.bv" model="res.country">
+			<field name="name">Остров Буве</field>
+			<field name="code">bv</field>
+			<field name="full_name">Остров Буве</field>
+			<field name="numeral_code">074</field>
+		</record>
+    
+		<record id="base.im" model="res.country">
+			<field name="name">Остров Мэн</field>
+			<field name="code">im</field>
+			<field name="full_name">Остров Мэн</field>
+			<field name="numeral_code">833</field>
+		</record>
+    
+		<record id="base.nf" model="res.country">
+			<field name="name">Остров Норфолк</field>
+			<field name="code">nf</field>
+			<field name="full_name">Остров Норфолк</field>
+			<field name="numeral_code">574</field>
+		</record>
+    
+		<record id="base.cx" model="res.country">
+			<field name="name">Остров Рождества</field>
+			<field name="code">cx</field>
+			<field name="full_name">Остров Рождества</field>
+			<field name="numeral_code">162</field>
+		</record>
+    
+		<record id="base.hm" model="res.country">
+			<field name="name">Остров Херд и острова Макдональд</field>
+			<field name="code">hm</field>
+			<field name="full_name">Остров Херд и острова Макдональд</field>
+			<field name="numeral_code">334</field>
+		</record>
+    
+		<record id="base.ky" model="res.country">
+			<field name="name">Острова Кайман</field>
+			<field name="code">ky</field>
+			<field name="full_name">Острова Кайман</field>
+			<field name="numeral_code">136</field>
+		</record>
+    
+		<record id="base.ck" model="res.country">
+			<field name="name">Острова Кука</field>
+			<field name="code">ck</field>
+			<field name="full_name">Острова Кука</field>
+			<field name="numeral_code">184</field>
+		</record>
+    
+		<record id="base.tc" model="res.country">
+			<field name="name">Острова Теркс и Кайкос</field>
+			<field name="code">tc</field>
+			<field name="full_name">Острова Теркс и Кайкос</field>
+			<field name="numeral_code">796</field>
+		</record>
+    
+		<record id="base.pk" model="res.country">
+			<field name="name">Пакистан</field>
+			<field name="code">pk</field>
+			<field name="full_name">Исламская Республика Пакистан</field>
+			<field name="numeral_code">586</field>
+		</record>
+    
+		<record id="base.pw" model="res.country">
+			<field name="name">Палау</field>
+			<field name="code">pw</field>
+			<field name="full_name">Республика Палау</field>
+			<field name="numeral_code">585</field>
+		</record>
+    
+		<record id="base.ps" model="res.country">
+			<field name="name">Палестинская территория, оккупированная</field>
+			<field name="code">ps</field>
+			<field name="full_name">Оккупированная Палестинская территория</field>
+			<field name="numeral_code">275</field>
+		</record>
+    
+		<record id="base.pa" model="res.country">
+			<field name="name">Панама</field>
+			<field name="code">pa</field>
+			<field name="full_name">Республика Панама</field>
+			<field name="numeral_code">591</field>
+		</record>
+    
+		<record id="base.va" model="res.country">
+			<field name="name">Папский Престол (Государство &mdash; город Ватикан)</field>
+			<field name="code">va</field>
+			<field name="full_name">Папский Престол (Государство &mdash; город Ватикан)</field>
+			<field name="numeral_code">336</field>
+		</record>
+    
+		<record id="base.pg" model="res.country">
+			<field name="name">Папуа-Новая Гвинея</field>
+			<field name="code">pg</field>
+			<field name="full_name">Папуа-Новая Гвинея</field>
+			<field name="numeral_code">598</field>
+		</record>
+    
+		<record id="base.py" model="res.country">
+			<field name="name">Парагвай</field>
+			<field name="code">py</field>
+			<field name="full_name">Республика Парагвай</field>
+			<field name="numeral_code">600</field>
+		</record>
+    
+		<record id="base.pe" model="res.country">
+			<field name="name">Перу</field>
+			<field name="code">pe</field>
+			<field name="full_name">Республика Перу</field>
+			<field name="numeral_code">604</field>
+		</record>
+    
+		<record id="base.pn" model="res.country">
+			<field name="name">Питкерн</field>
+			<field name="code">pn</field>
+			<field name="full_name">Питкерн</field>
+			<field name="numeral_code">612</field>
+		</record>
+    
+		<record id="base.pl" model="res.country">
+			<field name="name">Польша</field>
+			<field name="code">pl</field>
+			<field name="full_name">Республика Польша</field>
+			<field name="numeral_code">616</field>
+		</record>
+    
+		<record id="base.pt" model="res.country">
+			<field name="name">Португалия</field>
+			<field name="code">pt</field>
+			<field name="full_name">Португальская Республика</field>
+			<field name="numeral_code">620</field>
+		</record>
+    
+		<record id="base.pr" model="res.country">
+			<field name="name">Пуэрто-Рико</field>
+			<field name="code">pr</field>
+			<field name="full_name">Пуэрто-Рико</field>
+			<field name="numeral_code">630</field>
+		</record>
+    
+		<record id="base.mk" model="res.country">
+			<field name="name">Республика Македония</field>
+			<field name="code">mk</field>
+			<field name="full_name">Республика Македония</field>
+			<field name="numeral_code">807</field>
+		</record>
+    
+		<record id="base.re" model="res.country">
+			<field name="name">Реюньон</field>
+			<field name="code">re</field>
+			<field name="full_name">Реюньон</field>
+			<field name="numeral_code">638</field>
+		</record>
+    
+		<record id="base.ru" model="res.country">
+			<field name="name">Россия</field>
+			<field name="code">ru</field>
+			<field name="full_name">Российская Федерация</field>
+			<field name="numeral_code">643</field>
+		</record>
+    
+		<record id="base.rw" model="res.country">
+			<field name="name">Руанда</field>
+			<field name="code">rw</field>
+			<field name="full_name">Руандийская Республика</field>
+			<field name="numeral_code">646</field>
+		</record>
+    
+		<record id="base.ro" model="res.country">
+			<field name="name">Румыния</field>
+			<field name="code">ro</field>
+			<field name="full_name">Румыния</field>
+			<field name="numeral_code">642</field>
+		</record>
+    
+		<record id="base.ws" model="res.country">
+			<field name="name">Самоа</field>
+			<field name="code">ws</field>
+			<field name="full_name">Независимое Государство Самоа</field>
+			<field name="numeral_code">882</field>
+		</record>
+    
+		<record id="base.sm" model="res.country">
+			<field name="name">Сан-Марино</field>
+			<field name="code">sm</field>
+			<field name="full_name">Республика Сан-Марино</field>
+			<field name="numeral_code">674</field>
+		</record>
+    
+		<record id="base.st" model="res.country">
+			<field name="name">Сан-Томе и Принсипи</field>
+			<field name="code">st</field>
+			<field name="full_name">Демократическая Республика Сан-Томе и Принсипи</field>
+			<field name="numeral_code">678</field>
+		</record>
+    
+		<record id="base.sa" model="res.country">
+			<field name="name">Саудовская Аравия</field>
+			<field name="code">sa</field>
+			<field name="full_name">Королевство Саудовская Аравия</field>
+			<field name="numeral_code">682</field>
+		</record>
+    
+		<record id="base.sz" model="res.country">
+			<field name="name">Свазиленд</field>
+			<field name="code">sz</field>
+			<field name="full_name">Королевство Свазиленд</field>
+			<field name="numeral_code">748</field>
+		</record>
+    
+		<record id="base.sh" model="res.country">
+			<field name="name">Святая Елена, Остров вознесения, Тристан-да-Кунья</field>
+			<field name="code">sh</field>
+			<field name="full_name">Святая Елена, Остров вознесения, Тристан-да-Кунья</field>
+			<field name="numeral_code">654</field>
+		</record>
+    
+		<record id="base.mp" model="res.country">
+			<field name="name">Северные Марианские острова</field>
+			<field name="code">mp</field>
+			<field name="full_name">Содружество Северных Марианских островов</field>
+			<field name="numeral_code">580</field>
+		</record>
+    
+		<record id="base.bl" model="res.country">
+			<field name="name">Сен-Бартельми</field>
+			<field name="code">bl</field>
+			<field name="full_name">Сен-Бартельми</field>
+			<field name="numeral_code">652</field>
+		</record>
+    
+		<record id="base.mf" model="res.country">
+			<field name="name">Сен-Мартен</field>
+			<field name="code">mf</field>
+			<field name="full_name">Сен-Мартен</field>
+			<field name="numeral_code">663</field>
+		</record>
+    
+		<record id="base.sn" model="res.country">
+			<field name="name">Сенегал</field>
+			<field name="code">sn</field>
+			<field name="full_name">Республика Сенегал</field>
+			<field name="numeral_code">686</field>
+		</record>
+    
+		<record id="base.vc" model="res.country">
+			<field name="name">Сент-Винсент и Гренадины</field>
+			<field name="code">vc</field>
+			<field name="full_name">Сент-Винсент и Гренадины</field>
+			<field name="numeral_code">670</field>
+		</record>
+    
+		<record id="base.kn" model="res.country">
+			<field name="name">Сент-Китс и Невис</field>
+			<field name="code">kn</field>
+			<field name="full_name">Сент-Китс и Невис</field>
+			<field name="numeral_code">659</field>
+		</record>
+    
+		<record id="base.lc" model="res.country">
+			<field name="name">Сент-Люсия</field>
+			<field name="code">lc</field>
+			<field name="full_name">Сент-Люсия</field>
+			<field name="numeral_code">662</field>
+		</record>
+    
+		<record id="base.pm" model="res.country">
+			<field name="name">Сент-Пьер и Микелон</field>
+			<field name="code">pm</field>
+			<field name="full_name">Сент-Пьер и Микелон</field>
+			<field name="numeral_code">666</field>
+		</record>
+    
+		<record id="base.rs" model="res.country">
+			<field name="name">Сербия</field>
+			<field name="code">rs</field>
+			<field name="full_name">Республика Сербия</field>
+			<field name="numeral_code">688</field>
+		</record>
+    
+		<record id="base.sc" model="res.country">
+			<field name="name">Сейшелы</field>
+			<field name="code">sc</field>
+			<field name="full_name">Республика Сейшелы</field>
+			<field name="numeral_code">690</field>
+		</record>
+    
+		<record id="base.sg" model="res.country">
+			<field name="name">Сингапур</field>
+			<field name="code">sg</field>
+			<field name="full_name">Республика Сингапур</field>
+			<field name="numeral_code">702</field>
+		</record>
+    
+		<record id="base.sx" model="res.country">
+			<field name="name">Синт-Мартен</field>
+			<field name="code">sx</field>
+			<field name="full_name">Синт-Мартен</field>
+			<field name="numeral_code">534</field>
+		</record>
+    
+		<record id="base.sy" model="res.country">
+			<field name="name">Сирийская Арабская Республика</field>
+			<field name="code">sy</field>
+			<field name="full_name">Сирийская Арабская Республика</field>
+			<field name="numeral_code">760</field>
+		</record>
+    
+		<record id="base.sk" model="res.country">
+			<field name="name">Словакия</field>
+			<field name="code">sk</field>
+			<field name="full_name">Словацкая Республика</field>
+			<field name="numeral_code">703</field>
+		</record>
+    
+		<record id="base.si" model="res.country">
+			<field name="name">Словения</field>
+			<field name="code">si</field>
+			<field name="full_name">Республика Словения</field>
+			<field name="numeral_code">705</field>
+		</record>
+    
+		<record id="base.uk" model="res.country">
+			<field name="name">Соединенное Королевство</field>
+			<field name="code">uk</field>
+			<field name="full_name">Соединенное Королевство Великобритании и Северной Ирландии</field>
+			<field name="numeral_code">826</field>
+		</record>
+    
+		<record id="base.us" model="res.country">
+			<field name="name">Соединенные Штаты</field>
+			<field name="code">us</field>
+			<field name="full_name">Соединенные Штаты Америки</field>
+			<field name="numeral_code">840</field>
+		</record>
+    
+		<record id="base.sb" model="res.country">
+			<field name="name">Соломоновы острова</field>
+			<field name="code">sb</field>
+			<field name="full_name">Соломоновы острова</field>
+			<field name="numeral_code">090</field>
+		</record>
+    
+		<record id="base.so" model="res.country">
+			<field name="name">Сомали</field>
+			<field name="code">so</field>
+			<field name="full_name">Сомалийская Республика</field>
+			<field name="numeral_code">706</field>
+		</record>
+    
+		<record id="base.sd" model="res.country">
+			<field name="name">Судан</field>
+			<field name="code">sd</field>
+			<field name="full_name">Республика Судан</field>
+			<field name="numeral_code">736</field>
+		</record>
+    
+		<record id="base.sr" model="res.country">
+			<field name="name">Суринам</field>
+			<field name="code">sr</field>
+			<field name="full_name">Республика Суринам</field>
+			<field name="numeral_code">740</field>
+		</record>
+    
+		<record id="base.sl" model="res.country">
+			<field name="name">Сьерра-Леоне</field>
+			<field name="code">sl</field>
+			<field name="full_name">Республика Сьерра-Леоне</field>
+			<field name="numeral_code">694</field>
+		</record>
+    
+		<record id="base.tj" model="res.country">
+			<field name="name">Таджикистан</field>
+			<field name="code">tj</field>
+			<field name="full_name">Республика Таджикистан</field>
+			<field name="numeral_code">762</field>
+		</record>
+    
+		<record id="base.th" model="res.country">
+			<field name="name">Таиланд</field>
+			<field name="code">th</field>
+			<field name="full_name">Королевство Таиланд</field>
+			<field name="numeral_code">764</field>
+		</record>
+    
+		<record id="base.tw" model="res.country">
+			<field name="name">Тайвань (Китай)</field>
+			<field name="code">tw</field>
+			<field name="full_name">Тайвань (Китай)</field>
+			<field name="numeral_code">158</field>
+		</record>
+    
+		<record id="base.tz" model="res.country">
+			<field name="name">Танзания, Объединенная Республика</field>
+			<field name="code">tz</field>
+			<field name="full_name">Объединенная Республика Танзания</field>
+			<field name="numeral_code">834</field>
+		</record>
+    
+		<record id="base.tl" model="res.country">
+			<field name="name">Тимор-Лесте</field>
+			<field name="code">tl</field>
+			<field name="full_name">Демократическая Республика Тимор-Лесте</field>
+			<field name="numeral_code">626</field>
+		</record>
+    
+		<record id="base.tg" model="res.country">
+			<field name="name">Того</field>
+			<field name="code">tg</field>
+			<field name="full_name">Тоголезская Республика</field>
+			<field name="numeral_code">768</field>
+		</record>
+    
+		<record id="base.tk" model="res.country">
+			<field name="name">Токелау</field>
+			<field name="code">tk</field>
+			<field name="full_name">Токелау</field>
+			<field name="numeral_code">772</field>
+		</record>
+    
+		<record id="base.to" model="res.country">
+			<field name="name">Тонга</field>
+			<field name="code">to</field>
+			<field name="full_name">Королевство Тонга</field>
+			<field name="numeral_code">776</field>
+		</record>
+    
+		<record id="base.tt" model="res.country">
+			<field name="name">Тринидад и Тобаго</field>
+			<field name="code">tt</field>
+			<field name="full_name">Республика Тринидад и Тобаго</field>
+			<field name="numeral_code">780</field>
+		</record>
+    
+		<record id="base.tv" model="res.country">
+			<field name="name">Тувалу</field>
+			<field name="code">tv</field>
+			<field name="full_name">Тувалу</field>
+			<field name="numeral_code">798</field>
+		</record>
+    
+		<record id="base.tn" model="res.country">
+			<field name="name">Тунис</field>
+			<field name="code">tn</field>
+			<field name="full_name">Тунисская Республика</field>
+			<field name="numeral_code">788</field>
+		</record>
+    
+		<record id="base.tm" model="res.country">
+			<field name="name">Туркмения</field>
+			<field name="code">tm</field>
+			<field name="full_name">Туркменистан</field>
+			<field name="numeral_code">795</field>
+		</record>
+    
+		<record id="base.tr" model="res.country">
+			<field name="name">Турция</field>
+			<field name="code">tr</field>
+			<field name="full_name">Турецкая Республика</field>
+			<field name="numeral_code">792</field>
+		</record>
+    
+		<record id="base.ug" model="res.country">
+			<field name="name">Уганда</field>
+			<field name="code">ug</field>
+			<field name="full_name">Республика Уганда</field>
+			<field name="numeral_code">800</field>
+		</record>
+    
+		<record id="base.uz" model="res.country">
+			<field name="name">Узбекистан</field>
+			<field name="code">uz</field>
+			<field name="full_name">Республика Узбекистан</field>
+			<field name="numeral_code">860</field>
+		</record>
+    
+		<record id="base.ua" model="res.country">
+			<field name="name">Украина</field>
+			<field name="code">ua</field>
+			<field name="full_name">Украина</field>
+			<field name="numeral_code">804</field>
+		</record>
+    
+		<record id="base.wf" model="res.country">
+			<field name="name">Уоллис и Футуна</field>
+			<field name="code">wf</field>
+			<field name="full_name">Уоллис и Футуна</field>
+			<field name="numeral_code">876</field>
+		</record>
+    
+		<record id="base.uy" model="res.country">
+			<field name="name">Уругвай</field>
+			<field name="code">uy</field>
+			<field name="full_name">Восточная Республика Уругвай</field>
+			<field name="numeral_code">858</field>
+		</record>
+    
+		<record id="base.fo" model="res.country">
+			<field name="name">Фарерские острова</field>
+			<field name="code">fo</field>
+			<field name="full_name">Фарерские острова</field>
+			<field name="numeral_code">234</field>
+		</record>
+    
+		<record id="base.fj" model="res.country">
+			<field name="name">Фиджи</field>
+			<field name="code">fj</field>
+			<field name="full_name">Республика островов Фиджи</field>
+			<field name="numeral_code">242</field>
+		</record>
+    
+		<record id="base.ph" model="res.country">
+			<field name="name">Филиппины</field>
+			<field name="code">ph</field>
+			<field name="full_name">Республика Филиппины</field>
+			<field name="numeral_code">608</field>
+		</record>
+    
+		<record id="base.fi" model="res.country">
+			<field name="name">Финляндия</field>
+			<field name="code">fi</field>
+			<field name="full_name">Финляндская Республика</field>
+			<field name="numeral_code">246</field>
+		</record>
+    
+		<record id="base.fk" model="res.country">
+			<field name="name">Фолклендские острова (Мальвинские)</field>
+			<field name="code">fk</field>
+			<field name="full_name">Фолклендские острова (Мальвинские)</field>
+			<field name="numeral_code">238</field>
+		</record>
+    
+		<record id="base.fr" model="res.country">
+			<field name="name">Франция</field>
+			<field name="code">fr</field>
+			<field name="full_name">Французская Республика</field>
+			<field name="numeral_code">250</field>
+		</record>
+    
+		<record id="base.gf" model="res.country">
+			<field name="name">Французская Гвиана</field>
+			<field name="code">gf</field>
+			<field name="full_name">Французская Гвиана</field>
+			<field name="numeral_code">254</field>
+		</record>
+    
+		<record id="base.pf" model="res.country">
+			<field name="name">Французская Полинезия</field>
+			<field name="code">pf</field>
+			<field name="full_name">Французская Полинезия</field>
+			<field name="numeral_code">258</field>
+		</record>
+    
+		<record id="base.tf" model="res.country">
+			<field name="name">Французские Южные территории</field>
+			<field name="code">tf</field>
+			<field name="full_name">Французские Южные территории</field>
+			<field name="numeral_code">260</field>
+		</record>
+    
+		<record id="base.hr" model="res.country">
+			<field name="name">Хорватия</field>
+			<field name="code">hr</field>
+			<field name="full_name">Республика Хорватия</field>
+			<field name="numeral_code">191</field>
+		</record>
+    
+		<record id="base.cf" model="res.country">
+			<field name="name">Центрально-Африканская Республика</field>
+			<field name="code">cf</field>
+			<field name="full_name">Центрально-Африканская Республика</field>
+			<field name="numeral_code">140</field>
+		</record>
+    
+		<record id="base.td" model="res.country">
+			<field name="name">Чад</field>
+			<field name="code">td</field>
+			<field name="full_name">Республика Чад</field>
+			<field name="numeral_code">148</field>
+		</record>
+    
+		<record id="base.me" model="res.country">
+			<field name="name">Черногория</field>
+			<field name="code">me</field>
+			<field name="full_name">Республика Черногория</field>
+			<field name="numeral_code">499</field>
+		</record>
+    
+		<record id="base.cz" model="res.country">
+			<field name="name">Чешская Республика</field>
+			<field name="code">cz</field>
+			<field name="full_name">Чешская Республика</field>
+			<field name="numeral_code">203</field>
+		</record>
+    
+		<record id="base.cl" model="res.country">
+			<field name="name">Чили</field>
+			<field name="code">cl</field>
+			<field name="full_name">Республика Чили</field>
+			<field name="numeral_code">152</field>
+		</record>
+    
+		<record id="base.ch" model="res.country">
+			<field name="name">Швейцария</field>
+			<field name="code">ch</field>
+			<field name="full_name">Швейцарская Конфедерация</field>
+			<field name="numeral_code">756</field>
+		</record>
+    
+		<record id="base.se" model="res.country">
+			<field name="name">Швеция</field>
+			<field name="code">se</field>
+			<field name="full_name">Королевство Швеция</field>
+			<field name="numeral_code">752</field>
+		</record>
+    
+		<record id="base.sj" model="res.country">
+			<field name="name">Шпицберген и Ян Майен</field>
+			<field name="code">sj</field>
+			<field name="full_name">Шпицберген и Ян Майен</field>
+			<field name="numeral_code">744</field>
+		</record>
+    
+		<record id="base.lk" model="res.country">
+			<field name="name">Шри-Ланка</field>
+			<field name="code">lk</field>
+			<field name="full_name">Демократическая Социалистическая Республика Шри-Ланка</field>
+			<field name="numeral_code">144</field>
+		</record>
+    
+		<record id="base.ec" model="res.country">
+			<field name="name">Эквадор</field>
+			<field name="code">ec</field>
+			<field name="full_name">Республика Эквадор</field>
+			<field name="numeral_code">218</field>
+		</record>
+    
+		<record id="base.gq" model="res.country">
+			<field name="name">Экваториальная Гвинея</field>
+			<field name="code">gq</field>
+			<field name="full_name">Республика Экваториальная Гвинея</field>
+			<field name="numeral_code">226</field>
+		</record>
+    
+		<record id="base.ax" model="res.country">
+			<field name="name">Эландские острова</field>
+			<field name="code">ax</field>
+			<field name="full_name">Эландские острова</field>
+			<field name="numeral_code">248</field>
+		</record>
+    
+		<record id="base.sv" model="res.country">
+			<field name="name">Эль-Сальвадор</field>
+			<field name="code">sv</field>
+			<field name="full_name">Республика Эль-Сальвадор</field>
+			<field name="numeral_code">222</field>
+		</record>
+    
+		<record id="base.er" model="res.country">
+			<field name="name">Эритрея</field>
+			<field name="code">er</field>
+			<field name="full_name">Эритрея</field>
+			<field name="numeral_code">232</field>
+		</record>
+    
+		<record id="base.ee" model="res.country">
+			<field name="name">Эстония</field>
+			<field name="code">ee</field>
+			<field name="full_name">Эстонская Республика</field>
+			<field name="numeral_code">233</field>
+		</record>
+    
+		<record id="base.et" model="res.country">
+			<field name="name">Эфиопия</field>
+			<field name="code">et</field>
+			<field name="full_name">Федеративная Демократическая Республика Эфиопия</field>
+			<field name="numeral_code">231</field>
+		</record>
+    
+		<record id="base.za" model="res.country">
+			<field name="name">Южная Африка</field>
+			<field name="code">za</field>
+			<field name="full_name">Южно-Африканская Республика</field>
+			<field name="numeral_code">710</field>
+		</record>
+    
+		<record id="base.gs" model="res.country">
+			<field name="name">Южная Джорджия и Южные Сандвичевы острова</field>
+			<field name="code">gs</field>
+			<field name="full_name">Южная Джорджия и Южные Сандвичевы острова</field>
+			<field name="numeral_code">239</field>
+		</record>
+    
+		<record id="base.os" model="res.country">
+			<field name="name">Южная Осетия</field>
+			<field name="code">os</field>
+			<field name="full_name">Республика Южная Осетия</field>
+			<field name="numeral_code">896</field>
+		</record>
+    
+		<record id="base.ss" model="res.country">
+			<field name="name">Южный Судан</field>
+			<field name="code">ss</field>
+			<field name="full_name">Южный Судан</field>
+			<field name="numeral_code">728</field>
+		</record>
+    
+		<record id="base.jm" model="res.country">
+			<field name="name">Ямайка</field>
+			<field name="code">jm</field>
+			<field name="full_name">Ямайка</field>
+			<field name="numeral_code">388</field>
+		</record>
+    
+		<record id="base.jp" model="res.country">
+			<field name="name">Япония</field>
+			<field name="code">jp</field>
+			<field name="full_name">Япония</field>
+			<field name="numeral_code">392</field>
+		</record>
+    	</data>
+</openerp>

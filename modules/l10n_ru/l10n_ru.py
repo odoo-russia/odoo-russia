@@ -165,6 +165,7 @@ class res_country(osv.osv):
     _inherit = 'res.country'
     _columns = {
         'numeral_code': fields.integer("Numeral country code"),
+        'full_name': fields.char("Full name"),
     }
 
 

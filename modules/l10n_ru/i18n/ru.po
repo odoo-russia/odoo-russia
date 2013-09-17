@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 7.0-20130717-231254\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-09 09:38+0000\n"
-"PO-Revision-Date: 2013-09-09 09:38+0000\n"
+"POT-Creation-Date: 2013-09-17 10:34+0000\n"
+"PO-Revision-Date: 2013-09-17 10:34+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -109,12 +109,12 @@ msgstr "Общество с ограниченной ответственнос�
 #. module: l10n_ru
 #: field:res.currency,full_name:0
 msgid "Full name"
-msgstr "Название валюты"
+msgstr "Название ед. изм."
 
 #. module: l10n_ru
-#: field:product.uom,full_name:0
+#: field:res.country,full_name:0
 msgid "Full name"
-msgstr "Название ед. изм."
+msgstr "Полное название"
 
 #. module: l10n_ru
 #: field:res.partner,contract_num:0
