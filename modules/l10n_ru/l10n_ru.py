@@ -20,6 +20,16 @@ def csv_reader(iterable, encoding='utf-8', **kwargs):
         yield [unicode(cell, encoding) for cell in row]
 
 class res_partner(osv.osv):
+    def _format_address(self, cr, uid, ids, field, arg, context=None):
+        res = {}
+
+        for partner in self.browse(cr, uid, ids, context):
+            address = [partner.zip, partner.country_id.name, partner.state_id.name, partner.city, partner.street]
+            address = filter(bool, address)
+            address = filter(None, address)
+            res[partner.id] = ', '.join(address) if address else ""
+        return res
+
     _name = 'res.partner'
     _inherit = 'res.partner'
     _columns = {
@@ -31,6 +41,7 @@ class res_partner(osv.osv):
         'contract_date': fields.date('Contract date'),
         'ceo': fields.char('CEO', size=200),
         'accountant': fields.char('Accountant', size=200),
+        'address_formatted': fields.function(_format_address, string='Formatted Address', type='char', store=False),
     }
 res_partner()
 

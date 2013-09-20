@@ -124,6 +124,12 @@
 	<field name="date_invoice" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/date_invoice]]></fieldDescription>
 	</field>
+	<field name="company_address" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/company_id/partner_id/address_formatted]]></fieldDescription>
+	</field>
+	<field name="partner_address" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/partner_id/address_formatted]]></fieldDescription>
+	</field>
 	<variable name="price_suntotal_page" class="java.lang.Double" resetType="Page" calculation="Sum">
 		<variableExpression><![CDATA[$F{line_price_subtotal}]]></variableExpression>
 	</variable>
@@ -145,21 +151,6 @@
 	<variable name="carry_flag" class="java.lang.Boolean">
 		<variableExpression><![CDATA[($V{PAGE_NUMBER} == 1 && $V{PAGE_COUNT} > 3 && $F{invoices_count} == $V{REPORT_COUNT}) ||
 ($V{PAGE_NUMBER} != 1 && $V{PAGE_COUNT} > 11 && $V{PAGE_COUNT} < 20 && $V{REPORT_COUNT} == $F{invoices_count})]]></variableExpression>
-	</variable>
-	<variable name="company_address" class="java.lang.String">
-		<variableExpression><![CDATA[]]></variableExpression>
-		<initialValueExpression><![CDATA[$F{company_zip} +
-(($F{company_country})?" " + $F{company_country}:"") +
-(($F{company_city})?", г. " + $F{company_city}:"") +
-(($F{company_street})?", ул. " + $F{company_street}:"") +
-(($F{company_home})?", д. " + $F{company_home}:"")]]></initialValueExpression>
-	</variable>
-	<variable name="partner_address" class="java.lang.String">
-		<initialValueExpression><![CDATA[$F{partner_zip} +
-(($F{partner_country})?" " + $F{partner_country}:"") +
-(($F{partner_city})?", г. " + $F{partner_city}:"") +
-(($F{partner_street})?", ул. " + $F{partner_street}:"") +
-(($F{partner_home})?", д. " + $F{partner_home}:"")]]></initialValueExpression>
 	</variable>
 	<group name="table" isStartNewPage="true">
 		<groupExpression><![CDATA[$V{carry_flag}]]></groupExpression>
@@ -209,7 +200,7 @@
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$V{company_address}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{company_address}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="89" width="43" height="15"/>
@@ -237,7 +228,7 @@
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$V{company_address}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{company_address}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="119" width="175" height="15"/>
@@ -251,7 +242,7 @@
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$V{partner_address}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{partner_address}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="134" width="175" height="15"/>
@@ -293,7 +284,7 @@
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$V{partner_address}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{partner_address}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="179" width="42" height="15"/>
