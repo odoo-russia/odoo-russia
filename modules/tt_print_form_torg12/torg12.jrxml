@@ -2,9 +2,9 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="NK_EX12p" language="groovy" printOrder="Horizontal" pageWidth="841" pageHeight="595" orientation="Landscape" whenNoDataType="NoDataSection" columnWidth="841" leftMargin="0" rightMargin="0" topMargin="10" bottomMargin="0" isFloatColumnFooter="true" whenResourceMissingType="Empty">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
-	<property name="ireport.zoom" value="2.415765000000021"/>
-	<property name="ireport.x" value="608"/>
-	<property name="ireport.y" value="936"/>
+	<property name="ireport.zoom" value="1.2396694214876138"/>
+	<property name="ireport.x" value="50"/>
+	<property name="ireport.y" value="187"/>
 	<property name="OPENERP_RELATIONS" value="[&apos;invoice_line&apos;, &apos;invoice_line_tax_id&apos;]"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
@@ -180,6 +180,15 @@
 	</field>
 	<field name="weight_net_in_words" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/weight_nett_in_words]]></fieldDescription>
+	</field>
+	<field name="origin_number" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/origin_number]]></fieldDescription>
+	</field>
+	<field name="origin_date" class="java.util.Date">
+		<fieldDescription><![CDATA[/data/record/origin_date]]></fieldDescription>
+	</field>
+	<field name="origin_type" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/origin_type]]></fieldDescription>
 	</field>
 	<variable name="ROWNUM" class="java.lang.Integer" calculation="Sum">
 		<variableExpression><![CDATA[1]]></variableExpression>
@@ -368,19 +377,19 @@
 				</textElement>
 				<text><![CDATA[]]></text>
 			</staticText>
-			<staticText>
+			<textField pattern="dd.MM.yyyy">
 				<reportElement key="staticText-52" x="675" y="203" width="65" height="11"/>
 				<box>
-					<pen lineWidth="0.25"/>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="0.25"/>
 					<rightPen lineWidth="1.75"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
 					<font fontName="DejaVu Sans" size="7" isBold="true" isPdfEmbedded="true"/>
 				</textElement>
-				<text><![CDATA[]]></text>
-			</staticText>
+				<textFieldExpression class="java.lang.String"><![CDATA[new SimpleDateFormat("dd.MM.yyyy").format($F{origin_date})]]></textFieldExpression>
+			</textField>
 			<staticText>
 				<reportElement key="staticText-53" x="675" y="214" width="65" height="11"/>
 				<box>
@@ -394,19 +403,19 @@
 				</textElement>
 				<text><![CDATA[]]></text>
 			</staticText>
-			<staticText>
+			<textField>
 				<reportElement key="staticText-54" x="675" y="177" width="65" height="26"/>
 				<box>
-					<pen lineWidth="0.25"/>
 					<topPen lineWidth="0.25"/>
 					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="0.25"/>
 					<rightPen lineWidth="1.75"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
 					<font fontName="DejaVu Sans" size="7" isBold="true" isPdfEmbedded="true"/>
 				</textElement>
-				<text><![CDATA[]]></text>
-			</staticText>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{origin_number}]]></textFieldExpression>
+			</textField>
 			<staticText>
 				<reportElement key="staticText-55" x="675" y="225" width="65" height="14"/>
 				<box>
@@ -668,7 +677,7 @@
 				<textElement verticalAlignment="Bottom" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="6" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{origin}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{origin_type}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement key="staticText-57" x="570" y="65" width="105" height="14"/>
