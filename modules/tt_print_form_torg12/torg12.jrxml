@@ -2,9 +2,9 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="NK_EX12p" language="groovy" printOrder="Horizontal" pageWidth="841" pageHeight="595" orientation="Landscape" whenNoDataType="NoDataSection" columnWidth="841" leftMargin="0" rightMargin="0" topMargin="10" bottomMargin="0" isFloatColumnFooter="true" whenResourceMissingType="Empty">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
-	<property name="ireport.zoom" value="1.815000000000014"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="48"/>
+	<property name="ireport.zoom" value="1.6500000000000126"/>
+	<property name="ireport.x" value="411"/>
+	<property name="ireport.y" value="363"/>
 	<property name="OPENERP_RELATIONS" value="[&apos;invoice_line&apos;, &apos;invoice_line_tax_id&apos;]"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
@@ -26,7 +26,7 @@
 		<fieldDescription><![CDATA[company_id/partner_id/country_id/name]]></fieldDescription>
 	</field>
 	<field name="shipping_city" class="java.lang.String">
-		<fieldDescription><![CDATA[company_id/partner_id/partner_id/city]]></fieldDescription>
+		<fieldDescription><![CDATA[company_id/partner_id/city]]></fieldDescription>
 	</field>
 	<field name="shipping_street" class="java.lang.String">
 		<fieldDescription><![CDATA[company_id/partner_id/street]]></fieldDescription>
@@ -133,13 +133,13 @@
 	<field name="line_weight_net" class="java.lang.String">
 		<fieldDescription><![CDATA[invoice_line/product_id/weight_net]]></fieldDescription>
 	</field>
-	<field name="line_price_unit" class="java.lang.String">
+	<field name="line_price_unit" class="java.lang.Double">
 		<fieldDescription><![CDATA[invoice_line/price_unit]]></fieldDescription>
 	</field>
 	<field name="line_price_subtotal" class="java.lang.Double">
 		<fieldDescription><![CDATA[invoice_line/price_subtotal]]></fieldDescription>
 	</field>
-	<field name="line_tax_amount" class="java.lang.String">
+	<field name="line_tax_amount" class="java.lang.Double">
 		<fieldDescription><![CDATA[invoice_line/line_tax_amount]]></fieldDescription>
 	</field>
 	<field name="line_taxed_subtotal" class="java.lang.Double">
@@ -206,10 +206,10 @@
 		<variableExpression><![CDATA[$F{line_quantity}]]></variableExpression>
 	</variable>
 	<variable name="weight_page" class="java.lang.Double" resetType="Page" calculation="Sum">
-		<variableExpression><![CDATA[$F{line_weight}]]></variableExpression>
+		<variableExpression><![CDATA[$V{line_weight}]]></variableExpression>
 	</variable>
 	<variable name="weight_report" class="java.lang.Double" calculation="Sum">
-		<variableExpression><![CDATA[$F{line_weight}]]></variableExpression>
+		<variableExpression><![CDATA[$V{line_weight}]]></variableExpression>
 	</variable>
 	<variable name="carry_flag" class="java.lang.Boolean" resetType="Page">
 		<variableExpression><![CDATA[($V{PAGE_NUMBER} == 1 && $F{invoices_count} > 2 && $F{invoices_count} < 13 && $F{invoices_count} == $V{REPORT_COUNT}) ||
@@ -219,8 +219,7 @@
 		<initialValueExpression><![CDATA[(($F{shipping_name})?$F{shipping_name} + ", ":"")]]></initialValueExpression>
 	</variable>
 	<variable name="shipping_inn_kpp" class="java.lang.String">
-		<initialValueExpression><![CDATA[(($F{shipping_inn})?"ИНН " + $F{shipping_inn} + ", ":"") +
-(($F{shipping_kpp})?"КПП " + $F{shipping_kpp} + ", ":"")]]></initialValueExpression>
+		<initialValueExpression><![CDATA["ИНН/КПП " + $F{shipping_inn} + "/" + $F{shipping_kpp}]]></initialValueExpression>
 	</variable>
 	<variable name="shipping_details" class="java.lang.String">
 		<initialValueExpression><![CDATA[(($F{shipping_phone})?", тел.: " + $F{shipping_phone}:"") +
@@ -233,8 +232,7 @@
 		<initialValueExpression><![CDATA[(($F{supplier_name})?$F{supplier_name} + ", ":"")]]></initialValueExpression>
 	</variable>
 	<variable name="supplier_inn_kpp" class="java.lang.String">
-		<initialValueExpression><![CDATA[(($F{supplier_inn})?"ИНН " + $F{supplier_inn} + ", ":"") +
-(($F{supplier_kpp})?"КПП " + $F{supplier_kpp} + ", ":"")]]></initialValueExpression>
+		<initialValueExpression><![CDATA["ИНН/КПП " + $F{supplier_inn} + "/" + $F{supplier_kpp}]]></initialValueExpression>
 	</variable>
 	<variable name="supplier_details" class="java.lang.String">
 		<initialValueExpression><![CDATA[(($F{supplier_phone})?", тел.: " + $F{supplier_phone}:"") +
@@ -242,6 +240,12 @@
 (($F{supplier_bank_name})?", банк " + $F{supplier_bank_name}:"") +
 (($F{supplier_bank_acc_corr})?", корр. счет " + $F{supplier_bank_acc_corr}:"") +
 (($F{supplier_bank_bic})?", БИК " + $F{supplier_bank_bic}:"")]]></initialValueExpression>
+	</variable>
+	<variable name="line_weight" class="java.lang.Double" resetType="None">
+		<variableExpression><![CDATA[$F{line_weight} * $F{line_quantity}]]></variableExpression>
+	</variable>
+	<variable name="line_price_untaxed" class="java.lang.String">
+		<variableExpression><![CDATA[$F{line_quantity} * $F{line_price_unit}]]></variableExpression>
 	</variable>
 	<group name="table" isStartNewPage="true">
 		<groupExpression><![CDATA[$V{carry_flag}]]></groupExpression>
@@ -529,7 +533,7 @@
 				<text><![CDATA[Вид операции  ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-68" x="549" y="177" width="76" height="62"/>
+				<reportElement key="staticText-68" x="549" y="214" width="76" height="25"/>
 				<box rightPadding="1"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
@@ -1418,7 +1422,7 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[($F{line_weight}.equals("")) ? "" : String.format("%.2f", $F{line_weight}.toDouble())]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{line_weight}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
