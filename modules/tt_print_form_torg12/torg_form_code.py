@@ -59,6 +59,26 @@ class account_invoice(osv.osv):
 
         return res
 
+    def _weight_nett_in_words(self, cr, uid, ids, field, arg, context=None):
+        res = {}
+        for invoice in self.browse(cr, uid, ids, context):
+            weight = 0
+            for line in invoice.invoice_line:
+                weight += line.product_id.weight_net
+            res[invoice.id] = numeral.in_words(weight)
+            print numeral.in_words(weight)
+        return res
+
+    def _weight_brutt_in_words(self, cr, uid, ids, field, arg, context=None):
+        res = {}
+        for invoice in self.browse(cr, uid, ids, context):
+            weight = 0
+            for line in invoice.invoice_line:
+                weight += line.product_id.weight
+            res[invoice.id] = numeral.in_words(weight)
+            print numeral.in_words(weight)
+        return res
+
     _name = 'account.invoice'
     _inherit = 'account.invoice'
     _columns = {
@@ -66,6 +86,8 @@ class account_invoice(osv.osv):
         'price_in_words': fields.function(_get_price_in_words, type='char'),
         'pos_in_words': fields.function(_get_pos_in_words, type='char'),
         'invoices_count': fields.function(_get_invoices_count, type='integer'),
+        'weight_nett_in_words': fields.function(_weight_nett_in_words, type='char', store=False),
+        'weight_brutt_in_words': fields.function(_weight_brutt_in_words, type='char', store=False),
     }
 account_invoice()
 
