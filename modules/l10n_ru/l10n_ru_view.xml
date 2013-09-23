@@ -49,14 +49,10 @@
         <field name="model">product.product</field>
         <field name="inherit_id" ref="product.product_normal_form_view"/>
         <field name="arch" type="xml">
-            <group name="properties" position="after">
-                <group string="Country origin">
-                    <group>
-                        <field name="country_origin_id"/>
-                    </group>
-                    <group/>
-                </group>
-            </group>
+            <field name="standard_price" position="after">
+                <field name="declaration_code"/>
+                <field name="country_origin_id"/>
+            </field>
         </field>
     </record>
 
