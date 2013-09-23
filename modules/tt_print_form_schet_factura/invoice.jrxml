@@ -2,8 +2,8 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="invoice" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="770" leftMargin="36" rightMargin="36" topMargin="36" bottomMargin="36" isFloatColumnFooter="true">
 	<property name="OPENERP_RELATIONS" value="[&apos;invoice_line&apos;]"/>
 	<property name="ireport.zoom" value="1.464100000000019"/>
-	<property name="ireport.x" value="6"/>
-	<property name="ireport.y" value="150"/>
+	<property name="ireport.x" value="43"/>
+	<property name="ireport.y" value="294"/>
 	<queryString language="xPath">
 		<![CDATA[]]>
 	</queryString>
@@ -837,7 +837,7 @@ $F{company_address}]]></textFieldExpression>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
 					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%.2f", $F{line_tax_amount})]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%.0f%%", ($F{line_tax_amount}*100))]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement x="437" y="0" width="40" height="30"/>
@@ -847,7 +847,7 @@ $F{company_address}]]></textFieldExpression>
 					<bottomPen lineWidth="0.25"/>
 					<rightPen lineWidth="0.25"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
 					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%.2f", $F{line_tax_total})]]></textFieldExpression>
@@ -963,7 +963,7 @@ $F{company_address}]]></textFieldExpression>
 					<bottomPen lineWidth="0.25"/>
 					<rightPen lineWidth="0.25"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
+				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
 					<font fontName="DejaVu Sans" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%.2f", $V{tax_value_page})]]></textFieldExpression>
@@ -1142,7 +1142,7 @@ $F{company_address}]]></textFieldExpression>
 					<bottomPen lineWidth="0.25"/>
 					<rightPen lineWidth="0.25"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
+				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
 					<font fontName="DejaVu Sans" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%.2f", $V{tax_value_page})]]></textFieldExpression>
@@ -1169,7 +1169,7 @@ $F{company_address}]]></textFieldExpression>
 					<bottomPen lineWidth="0.25"/>
 					<rightPen lineWidth="0.25"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
+				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
 					<font fontName="DejaVu Sans" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%.2f", $V{tax_value_report})]]></textFieldExpression>
