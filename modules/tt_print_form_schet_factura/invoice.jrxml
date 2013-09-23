@@ -2,8 +2,8 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="invoice" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="770" leftMargin="36" rightMargin="36" topMargin="36" bottomMargin="36" isFloatColumnFooter="true">
 	<property name="OPENERP_RELATIONS" value="[&apos;invoice_line&apos;]"/>
 	<property name="ireport.zoom" value="1.464100000000019"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="54"/>
+	<property name="ireport.x" value="6"/>
+	<property name="ireport.y" value="150"/>
 	<queryString language="xPath">
 		<![CDATA[]]>
 	</queryString>
@@ -224,91 +224,63 @@
 				<text><![CDATA[ИНН/КПП продавца:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="175" y="119" width="595" height="15"/>
+				<reportElement positionType="Float" x="195" y="149" width="575" height="15"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{company_address}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA["-"]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="119" width="175" height="15"/>
+				<reportElement positionType="Float" x="0" y="149" width="195" height="15"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" isBold="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
-				<text><![CDATA[Грузоотправитель и его адрес: ]]></text>
+				<text><![CDATA[К платежно-расчетному документу:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="175" y="134" width="595" height="15"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="DejaVu Sans" pdfEncoding="cp1251" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{partner_address}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement x="0" y="134" width="175" height="15"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="DejaVu Sans" isBold="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
-				</textElement>
-				<text><![CDATA[Грузополучатель и его адрес:]]></text>
-			</staticText>
-			<textField>
-				<reportElement x="213" y="149" width="557" height="15"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="DejaVu Sans" pdfEncoding="cp1251" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{origin}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement x="0" y="149" width="213" height="15"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="DejaVu Sans" isBold="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
-				</textElement>
-				<text><![CDATA[К платежно-расчетному документу]]></text>
-			</staticText>
-			<textField>
-				<reportElement x="77" y="164" width="693" height="15"/>
+				<reportElement positionType="Float" x="77" y="164" width="693" height="15"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{partner_name_official}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="164" width="77" height="15"/>
+				<reportElement positionType="Float" x="0" y="164" width="77" height="15"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" isBold="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[Покупатель:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="43" y="179" width="727" height="15"/>
+				<reportElement positionType="Float" x="43" y="179" width="727" height="15"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{partner_address}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="179" width="42" height="15"/>
+				<reportElement positionType="Float" x="0" y="179" width="42" height="15"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" isBold="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[Адрес: ]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="129" y="194" width="641" height="15"/>
+				<reportElement positionType="Float" x="129" y="194" width="641" height="15"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{partner_inn} + "/" + $F{partner_kpp}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="194" width="129" height="15"/>
+				<reportElement positionType="Float" x="0" y="194" width="129" height="15"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" isBold="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[ИНН/КПП покупателя:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="47" y="209" width="723" height="15"/>
+				<reportElement positionType="Float" x="47" y="209" width="723" height="15"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" pdfEncoding="cp1251" isPdfEmbedded="true"/>
@@ -316,12 +288,51 @@
 				<textFieldExpression class="java.lang.String"><![CDATA["наименование " + $F{currency_name} + ", код " + $F{currency_code}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="209" width="47" height="15"/>
+				<reportElement positionType="Float" x="0" y="209" width="47" height="15"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" isBold="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[Валюта: ]]></text>
 			</staticText>
+			<frame>
+				<reportElement x="0" y="119" width="770" height="30"/>
+				<frame>
+					<reportElement x="0" y="0" width="770" height="15"/>
+					<staticText>
+						<reportElement x="0" y="0" width="175" height="15"/>
+						<textElement verticalAlignment="Middle">
+							<font fontName="DejaVu Sans" isBold="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
+						</textElement>
+						<text><![CDATA[Грузоотправитель и его адрес: ]]></text>
+					</staticText>
+					<textField isStretchWithOverflow="true">
+						<reportElement x="175" y="0" width="595" height="15"/>
+						<textElement verticalAlignment="Middle">
+							<font fontName="DejaVu Sans" pdfEncoding="cp1251" isPdfEmbedded="true"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA[(($F{company_name_official})?$F{company_name_official} + ", " : "") +
+$F{company_address}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="15" width="770" height="15"/>
+					<staticText>
+						<reportElement x="0" y="0" width="175" height="15"/>
+						<textElement verticalAlignment="Middle">
+							<font fontName="DejaVu Sans" isBold="false" pdfEncoding="cp1251" isPdfEmbedded="true"/>
+						</textElement>
+						<text><![CDATA[Грузополучатель и его адрес:]]></text>
+					</staticText>
+					<textField isStretchWithOverflow="true">
+						<reportElement x="175" y="0" width="595" height="15"/>
+						<textElement verticalAlignment="Middle">
+							<font fontName="DejaVu Sans" pdfEncoding="cp1251" isPdfEmbedded="true"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA[(($F{partner_name_official})?$F{partner_name_official} + ", " : "") +
+    $F{partner_address}]]></textFieldExpression>
+					</textField>
+				</frame>
+			</frame>
 		</band>
 	</title>
 	<columnHeader>
