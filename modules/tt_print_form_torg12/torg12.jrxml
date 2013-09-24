@@ -3,8 +3,8 @@
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.6500000000000143"/>
-	<property name="ireport.x" value="283"/>
-	<property name="ireport.y" value="280"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="507"/>
 	<property name="OPENERP_RELATIONS" value="[&apos;invoice_line&apos;, &apos;invoice_line_tax_id&apos;]"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
@@ -189,6 +189,9 @@
 	</field>
 	<field name="origin_type" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/origin_type]]></fieldDescription>
+	</field>
+	<field name="ceo_function" class="java.lang.String">
+		<fieldDescription><![CDATA[company_id/partner_id/ceo_function]]></fieldDescription>
 	</field>
 	<variable name="ROWNUM" class="java.lang.Integer" calculation="Sum">
 		<variableExpression><![CDATA[1]]></variableExpression>
@@ -2001,9 +2004,10 @@
 				<box>
 					<bottomPen lineWidth="0.25"/>
 				</box>
-				<textElement verticalAlignment="Bottom">
-					<font fontName="DejaVu Sans" size="8" isBold="false" isPdfEmbedded="true"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ceo_function}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement key="textField-44" x="279" y="180" width="90" height="14"/>
@@ -2020,9 +2024,10 @@
 				<box>
 					<bottomPen lineWidth="0.25"/>
 				</box>
-				<textElement verticalAlignment="Bottom">
-					<font fontName="DejaVu Sans" size="8" isBold="false" isPdfEmbedded="true"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ceo_function}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement key="staticText-153" x="461" y="118" width="45" height="11"/>
