@@ -49,14 +49,10 @@
         <field name="model">product.product</field>
         <field name="inherit_id" ref="product.product_normal_form_view"/>
         <field name="arch" type="xml">
-            <group name="properties" position="after">
-                <group string="Country origin">
-                    <group>
-                        <field name="country_origin_id"/>
-                    </group>
-                    <group/>
-                </group>
-            </group>
+            <field name="standard_price" position="after">
+                <field name="declaration_code"/>
+                <field name="country_origin_id"/>
+            </field>
         </field>
     </record>
 
@@ -80,6 +76,9 @@
             <field name="type">form</field>
             <field name="inherit_id" ref="account.view_partner_property_form"/>
             <field name="arch" type="xml">
+                <field name="street2" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
                 <xpath expr="//page[@string='Accounting']/group[1]" position="before">
                     <label for="name_official"/>
                     <group>
@@ -89,6 +88,7 @@
                             <field name="kpp"/>
                             <field name="okpo"/>
                             <field name="ceo"/>
+                            <field name="ceo_function"/>
                             <field name="accountant"/>
                         </group>
                         <group>

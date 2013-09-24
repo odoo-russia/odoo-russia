@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Schet2" language="groovy" pageWidth="595" pageHeight="842" columnWidth="539" leftMargin="28" rightMargin="28" topMargin="28" bottomMargin="28" isFloatColumnFooter="true">
 	<property name="ireport.zoom" value="1.1289478601075655"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="17"/>
+	<property name="ireport.y" value="0"/>
 	<property name="OPENERP_RELATIONS" value="[&apos;order_line&apos;, &apos;invoice_line&apos;]"/>
 	<property name="OPENERP_RELATIONS0" value="[&apos;order_line&apos;]"/>
 	<subDataset name="Table Dataset 1">
@@ -146,6 +146,9 @@
 	<field name="orders_count" class="java.lang.Integer">
 		<fieldDescription><![CDATA[/data/record/orders_count]]></fieldDescription>
 	</field>
+	<field name="performer_address" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/company_id/partner_id/address_formatted]]></fieldDescription>
+	</field>
 	<variable name="lines_count" class="java.lang.Integer">
 		<variableExpression><![CDATA[]]></variableExpression>
 		<initialValueExpression><![CDATA[($F{is_invoice})?$F{invoices_count}:$F{orders_count}]]></initialValueExpression>
@@ -193,7 +196,7 @@
 				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{performer_zip} + ",  " + $F{performer_country} + ", г. " + $F{performer_city} + ", ул. " + $F{performer_street} + ", д. " + $F{performer_home} + ", тел: " + $F{performer_phone}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{performer_address} + (($F{performer_phone}.equals(""))?"":", тел.: " + $F{performer_phone})]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement key="staticText-70" mode="Transparent" x="3" y="255" width="110" height="13" forecolor="#000000" backcolor="#FFFFFF"/>

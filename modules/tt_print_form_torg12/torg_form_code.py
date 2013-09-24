@@ -2,7 +2,7 @@
 
 import time
 from openerp.report import report_sxw
-from osv import orm, osv, fields
+from openerp.osv import orm, osv, fields
 from openerp.addons.jasper_reports.pytils import numeral
 from tools.translate import _
 
@@ -59,6 +59,76 @@ class account_invoice(osv.osv):
 
         return res
 
+    def _weight_nett_in_words(self, cr, uid, ids, field, arg, context=None):
+        res = {}
+        for invoice in self.browse(cr, uid, ids, context):
+            weight = 0
+            for line in invoice.invoice_line:
+                weight += line.product_id.weight_net*line.quantity
+            if weight:
+                res[invoice.id] = numeral.in_words(weight)
+            else:
+                res[invoice.id] = ""
+        return res
+
+    def _weight_brutt_in_words(self, cr, uid, ids, field, arg, context=None):
+        res = {}
+        for invoice in self.browse(cr, uid, ids, context):
+            weight = 0
+            for line in invoice.invoice_line:
+                weight += line.product_id.weight*line.quantity
+            if weight:
+                res[invoice.id] = numeral.in_words(weight)
+            else:
+                res[invoice.id] = ""
+        return res
+
+    def _get_origin_number(self, cr, uid, ids, fields, arg, context=None):
+        res = {}
+        for invoice in self.browse(cr, uid, ids, context):
+            if invoice.partner_id.contract_num and invoice.partner_id.contract_date:
+                res[invoice.id] = invoice.partner_id.contract_num
+            elif invoice.origin:
+                so_obj = self.pool.get('sale.order')
+                order_id = so_obj.search(cr, uid, [('name', '=', invoice.origin)], context=context)[0]
+                order = so_obj.browse(cr, uid, order_id, context=context)
+
+                seq_id = self.pool.get('ir.sequence').search(cr, uid, [('code', '=', 'sale.order')])
+                sequence = self.pool.get('ir.sequence').read(cr, uid, seq_id, ['padding', 'active'])[0]
+                if sequence and sequence.get('active'):
+                    padding = sequence.get('padding')
+                    padding = 0 - int(padding)
+                    res[invoice.id] = order.name[padding:].lstrip('0')
+                else:
+                    res[invoice.id] = ""
+            else:
+                res[invoice.id] = ""
+        return res
+
+    def _get_origin_date(self, cr, uid, ids, fields, arg, context=None):
+        res = {}
+        for invoice in self.browse(cr, uid, ids, context):
+            if invoice.partner_id.contract_date and invoice.partner_id.contract_num:
+                res[invoice.id] = invoice.partner_id.contract_date
+            elif invoice.origin:
+                so_obj = self.pool.get('sale.order')
+                order_id = so_obj.search(cr, uid, [('name', '=', invoice.origin)], context=context)[0]
+                res[invoice.id] = so_obj.browse(cr, uid, order_id, context=context).date_order
+            else:
+                res[invoice.id] = ""
+        return res
+
+    def _get_origin_type(self, cr, uid, ids, fields, arg, context=None):
+        res = {}
+        for invoice in self.browse(cr, uid, ids, context):
+            if invoice.partner_id.contract_num:
+                res[invoice.id] = "Договор"
+            elif invoice.origin:
+                res[invoice.id] = "Заказ"
+            else:
+                res[invoice.id] = ""
+        return res
+
     _name = 'account.invoice'
     _inherit = 'account.invoice'
     _columns = {
@@ -66,6 +136,11 @@ class account_invoice(osv.osv):
         'price_in_words': fields.function(_get_price_in_words, type='char'),
         'pos_in_words': fields.function(_get_pos_in_words, type='char'),
         'invoices_count': fields.function(_get_invoices_count, type='integer'),
+        'weight_nett_in_words': fields.function(_weight_nett_in_words, type='char', store=False),
+        'weight_brutt_in_words': fields.function(_weight_brutt_in_words, type='char', store=False),
+        'origin_number': fields.function(_get_origin_number, type='char', store=False),
+        'origin_date': fields.function(_get_origin_date, type='date', store=False),
+        'origin_type': fields.function(_get_origin_type, type='char', store=False),
     }
 account_invoice()
 

@@ -4,7 +4,7 @@
     'category' : 'Extra Reports',
     'author'  : 'Transparent Technologies Ltd.',
     'license' : 'AGPL-3',
-    'depends' : ['base', 'jasper_reports', 'l10n_ru'],
+    'depends' : ['base', 'jasper_reports', 'l10n_ru', 'tt_acc_invoice_line_subtotal_gross'],
     'update_xml' : ['acc_inv_data.xml',],
     'installable': True,
     'auto_install': False,

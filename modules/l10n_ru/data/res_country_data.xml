@@ -1360,9 +1360,9 @@
 			<field name="numeral_code">705</field>
 		</record>
     
-		<record id="base.gb" model="res.country">
+		<record id="base.uk" model="res.country">
 			<field name="name">Соединенное Королевство</field>
-			<field name="code">uk</field>
+			<field name="code">gb</field>
 			<field name="full_name">Соединенное Королевство Великобритании и Северной Ирландии</field>
 			<field name="numeral_code">826</field>
 		</record>

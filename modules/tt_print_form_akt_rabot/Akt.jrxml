@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Schet2" language="groovy" pageWidth="595" pageHeight="842" columnWidth="539" leftMargin="28" rightMargin="28" topMargin="28" bottomMargin="28" isFloatColumnFooter="true">
 	<property name="ireport.zoom" value="1.128947860107556"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="96"/>
+	<property name="ireport.y" value="0"/>
 	<property name="OPENERP_RELATIONS" value="[&apos;invoice_line&apos;]"/>
 	<subDataset name="Table Dataset 1">
 		<queryString language="SQL">
@@ -141,18 +141,14 @@
 	<field name="invoices_count" class="java.lang.Integer">
 		<fieldDescription><![CDATA[/data/record/invoices_count]]></fieldDescription>
 	</field>
-	<field name="invoice_line" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/invoice_line]]></fieldDescription>
+	<field name="performer_address" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/company_id/partner_id/address_formatted]]></fieldDescription>
+	</field>
+	<field name="partner_address" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/partner_id/address_formatted]]></fieldDescription>
 	</field>
 	<variable name="carry_flag" class="java.lang.Boolean">
 		<variableExpression><![CDATA[]]></variableExpression>
-	</variable>
-	<variable name="performer_address" class="java.lang.String">
-		<initialValueExpression><![CDATA[$F{performer_zip} +
-(($F{performer_country})?" " + $F{performer_country}:"") +
-(($F{performer_city})?", г. " + $F{performer_city}:"") +
-(($F{performer_street})?", ул. " + $F{performer_street}:"") +
-(($F{performer_home})?", д. " + $F{performer_home}:"")]]></initialValueExpression>
 	</variable>
 	<variable name="performer_details" class="java.lang.String">
 		<initialValueExpression><![CDATA[(($F{performer_inn})?", ИНН " + $F{performer_inn}:"") +
@@ -161,13 +157,6 @@
 (($F{performer_bank_name})?", банк " + $F{performer_bank_name}:"") +
 (($F{performer_bank_acc_corr})?", корр. счет " + $F{performer_bank_acc_corr}:"") +
 (($F{performer_bank_bic})?", БИК " + $F{performer_bank_bic}:"")]]></initialValueExpression>
-	</variable>
-	<variable name="partner_address" class="java.lang.String">
-		<initialValueExpression><![CDATA[$F{partner_zip} +
-(($F{partner_country})?" " + $F{partner_country}:"1") +
-(($F{partner_city})?", г. " + $F{partner_city}:"2") +
-(($F{partner_street})?", ул. " + $F{partner_street}:"3") +
-(($F{partner_home})?", д. " + $F{partner_home}:"4")]]></initialValueExpression>
 	</variable>
 	<variable name="partner_details" class="java.lang.String">
 		<initialValueExpression><![CDATA[(($F{partner_inn})?", ИНН " + $F{partner_inn}:"") +
@@ -210,7 +199,9 @@
 						<textElement verticalAlignment="Middle">
 							<font fontName="DejaVu Sans" isPdfEmbedded="true"/>
 						</textElement>
-						<textFieldExpression class="java.lang.String"><![CDATA[$F{partner_name_official} + ", " + $V{partner_address} + " " + $V{partner_details}]]></textFieldExpression>
+						<textFieldExpression class="java.lang.String"><![CDATA[(($F{partner_name}.equals(""))?"":$F{partner_name} + ", ") +
+$F{partner_address} + " " +
+$V{partner_details}]]></textFieldExpression>
 					</textField>
 				</elementGroup>
 			</elementGroup>
@@ -221,7 +212,9 @@
 					<textElement verticalAlignment="Middle">
 						<font fontName="DejaVu Sans" isPdfEmbedded="true"/>
 					</textElement>
-					<textFieldExpression class="java.lang.String"><![CDATA[$F{performer_official_name} + ", " + $V{performer_address} + " " + $V{performer_details}]]></textFieldExpression>
+					<textFieldExpression class="java.lang.String"><![CDATA[(($F{performer_official_name}.equals(""))?"":$F{performer_official_name} + ", ") +
+$F{performer_address} + " " +
+$V{performer_details}]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement x="0" y="0" width="84" height="13"/>
