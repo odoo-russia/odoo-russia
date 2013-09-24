@@ -2,7 +2,7 @@
 
 import time
 from openerp.report import report_sxw
-from osv import orm, osv, fields
+from openerp.osv import orm, osv, fields
 from openerp.addons.jasper_reports.pytils import numeral
 from tools.translate import _
 
@@ -64,8 +64,11 @@ class account_invoice(osv.osv):
         for invoice in self.browse(cr, uid, ids, context):
             weight = 0
             for line in invoice.invoice_line:
-                weight += line.product_id.weight_net
-            res[invoice.id] = numeral.in_words(weight)
+                weight += line.product_id.weight_net*line.quantity
+            if weight:
+                res[invoice.id] = numeral.in_words(weight)
+            else:
+                res[invoice.id] = ""
         return res
 
     def _weight_brutt_in_words(self, cr, uid, ids, field, arg, context=None):
@@ -73,8 +76,11 @@ class account_invoice(osv.osv):
         for invoice in self.browse(cr, uid, ids, context):
             weight = 0
             for line in invoice.invoice_line:
-                weight += line.product_id.weight
-            res[invoice.id] = numeral.in_words(weight)
+                weight += line.product_id.weight*line.quantity
+            if weight:
+                res[invoice.id] = numeral.in_words(weight)
+            else:
+                res[invoice.id] = ""
         return res
 
     def _get_origin_number(self, cr, uid, ids, fields, arg, context=None):
@@ -117,8 +123,10 @@ class account_invoice(osv.osv):
         for invoice in self.browse(cr, uid, ids, context):
             if invoice.partner_id.contract_num:
                 res[invoice.id] = "Договор"
-            else:
+            elif invoice.origin:
                 res[invoice.id] = "Заказ"
+            else:
+                res[invoice.id] = ""
         return res
 
     _name = 'account.invoice'

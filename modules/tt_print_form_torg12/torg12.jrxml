@@ -2,9 +2,9 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="NK_EX12p" language="groovy" printOrder="Horizontal" pageWidth="841" pageHeight="595" orientation="Landscape" whenNoDataType="NoDataSection" columnWidth="841" leftMargin="0" rightMargin="0" topMargin="10" bottomMargin="0" isFloatColumnFooter="true" whenResourceMissingType="Empty">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
-	<property name="ireport.zoom" value="1.2396694214876138"/>
-	<property name="ireport.x" value="50"/>
-	<property name="ireport.y" value="139"/>
+	<property name="ireport.zoom" value="1.6500000000000143"/>
+	<property name="ireport.x" value="283"/>
+	<property name="ireport.y" value="280"/>
 	<property name="OPENERP_RELATIONS" value="[&apos;invoice_line&apos;, &apos;invoice_line_tax_id&apos;]"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
@@ -197,10 +197,10 @@
 		<initialValueExpression><![CDATA[0]]></initialValueExpression>
 	</variable>
 	<variable name="taxed_sum_page" class="java.lang.Double" resetType="Page" calculation="Sum">
-		<variableExpression><![CDATA[$F{line_taxed_subtotal}]]></variableExpression>
+		<variableExpression><![CDATA[$F{line_price_subtotal}]]></variableExpression>
 	</variable>
 	<variable name="taxed_sum_report" class="java.lang.Double" calculation="Sum">
-		<variableExpression><![CDATA[$F{line_taxed_subtotal}]]></variableExpression>
+		<variableExpression><![CDATA[$F{line_price_subtotal}]]></variableExpression>
 	</variable>
 	<variable name="tax_total_page" class="java.lang.Double" resetType="Page" calculation="Sum">
 		<variableExpression><![CDATA[$F{line_tax_total}]]></variableExpression>
@@ -209,10 +209,10 @@
 		<variableExpression><![CDATA[$F{line_tax_total}]]></variableExpression>
 	</variable>
 	<variable name="price_subtotal_page" class="java.lang.Double" resetType="Page" calculation="Sum">
-		<variableExpression><![CDATA[$F{line_price_subtotal}]]></variableExpression>
+		<variableExpression><![CDATA[(($F{line_tax_amount} != null)?$F{line_price_subtotal}/(1+$F{line_tax_amount}):$F{line_price_subtotal})]]></variableExpression>
 	</variable>
 	<variable name="price_subtotal_report" class="java.lang.Double" calculation="Sum">
-		<variableExpression><![CDATA[$F{line_price_subtotal}]]></variableExpression>
+		<variableExpression><![CDATA[(($F{line_tax_amount} != null)?$F{line_price_subtotal}/(1+$F{line_tax_amount}):$F{line_price_subtotal})]]></variableExpression>
 	</variable>
 	<variable name="quantity_page" class="java.lang.Double" resetType="Page" calculation="Sum">
 		<variableExpression><![CDATA[$F{line_quantity}]]></variableExpression>
@@ -221,10 +221,10 @@
 		<variableExpression><![CDATA[$F{line_quantity}]]></variableExpression>
 	</variable>
 	<variable name="weight_page" class="java.lang.Double" resetType="Page" calculation="Sum">
-		<variableExpression><![CDATA[$V{line_weight}]]></variableExpression>
+		<variableExpression><![CDATA[$F{line_weight}*$F{line_quantity}]]></variableExpression>
 	</variable>
 	<variable name="weight_report" class="java.lang.Double" calculation="Sum">
-		<variableExpression><![CDATA[$V{line_weight}]]></variableExpression>
+		<variableExpression><![CDATA[$F{line_weight}*$F{line_quantity}]]></variableExpression>
 	</variable>
 	<variable name="carry_flag" class="java.lang.Boolean" resetType="Page">
 		<variableExpression><![CDATA[($V{PAGE_NUMBER} == 1 && $F{invoices_count} > 2 && $F{invoices_count} < 13 && $F{invoices_count} == $V{REPORT_COUNT}) ||
@@ -234,7 +234,7 @@
 		<initialValueExpression><![CDATA[(($F{shipping_name})?$F{shipping_name} + ", ":"")]]></initialValueExpression>
 	</variable>
 	<variable name="shipping_inn_kpp" class="java.lang.String">
-		<initialValueExpression><![CDATA["ИНН/КПП " + $F{shipping_inn} + "/" + $F{shipping_kpp}]]></initialValueExpression>
+		<initialValueExpression><![CDATA["ИНН/КПП " + $F{shipping_inn} + "/" + $F{shipping_kpp} + ", "]]></initialValueExpression>
 	</variable>
 	<variable name="shipping_details" class="java.lang.String">
 		<initialValueExpression><![CDATA[(($F{shipping_phone})?", тел.: " + $F{shipping_phone}:"") +
@@ -247,7 +247,7 @@
 		<initialValueExpression><![CDATA[(($F{supplier_name})?$F{supplier_name} + ", ":"")]]></initialValueExpression>
 	</variable>
 	<variable name="supplier_inn_kpp" class="java.lang.String">
-		<initialValueExpression><![CDATA["ИНН/КПП " + $F{supplier_inn} + "/" + $F{supplier_kpp}]]></initialValueExpression>
+		<initialValueExpression><![CDATA["ИНН/КПП " + $F{supplier_inn} + "/" + $F{supplier_kpp} + ", "]]></initialValueExpression>
 	</variable>
 	<variable name="supplier_details" class="java.lang.String">
 		<initialValueExpression><![CDATA[(($F{supplier_phone})?", тел.: " + $F{supplier_phone}:"") +
@@ -255,9 +255,6 @@
 (($F{supplier_bank_name})?", банк " + $F{supplier_bank_name}:"") +
 (($F{supplier_bank_acc_corr})?", корр. счет " + $F{supplier_bank_acc_corr}:"") +
 (($F{supplier_bank_bic})?", БИК " + $F{supplier_bank_bic}:"")]]></initialValueExpression>
-	</variable>
-	<variable name="line_weight" class="java.lang.Double" resetType="None">
-		<variableExpression><![CDATA[$F{line_weight} * $F{line_quantity}]]></variableExpression>
 	</variable>
 	<variable name="line_price_untaxed" class="java.lang.String">
 		<variableExpression><![CDATA[$F{line_quantity} * $F{line_price_unit}]]></variableExpression>
@@ -1287,7 +1284,7 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%d", (int)$F{line_quantity}.toDouble())]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%.3f", $F{line_quantity})]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement key="textField" stretchType="RelativeToTallestObject" mode="Transparent" x="627" y="0" width="48" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -1300,7 +1297,7 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[($F{line_tax_total}.equals(""))?"":String.format("%.2f", $F{line_tax_total}.toDouble())]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{line_tax_total})?String.format("%.2f", $F{line_tax_total}):"-"]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 				<reportElement key="textField" stretchType="RelativeToTallestObject" mode="Transparent" x="675" y="0" width="65" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -1313,7 +1310,7 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%.2f", $F{line_taxed_subtotal})]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%.2f", $F{line_price_subtotal})]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 				<reportElement key="textField-7" stretchType="RelativeToTallestObject" mode="Transparent" x="488" y="0" width="45" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -1412,7 +1409,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[($F{line_tax_amount}.equals(""))?"":String.format("%.0f %%", $F{line_tax_amount}.toDouble()*100)]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{line_tax_amount})?String.format("%.0f%%", $F{line_tax_amount}*100):"-"]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 				<reportElement key="textField-8" stretchType="RelativeToTallestObject" mode="Transparent" x="533" y="0" width="57" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -1425,7 +1422,7 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%.2f", $F{line_price_subtotal}.toDouble())]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%.2f", (($F{line_tax_amount} != null)?$F{line_price_subtotal}/(1+$F{line_tax_amount}):$F{line_price_subtotal}))]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="###0.0" isBlankWhenNull="true">
 				<reportElement key="textField-15" stretchType="RelativeToTallestObject" mode="Transparent" x="406" y="0" width="39" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -1437,7 +1434,7 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$V{line_weight}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{line_weight}*$F{line_quantity}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
@@ -1484,7 +1481,7 @@
 				</textElement>
 				<textFieldExpression class="java.lang.Double"><![CDATA[(Math.round($V{weight_page}*100))/100]]></textFieldExpression>
 			</textField>
-			<textField isBlankWhenNull="true">
+			<textField pattern="###0.000" isBlankWhenNull="true">
 				<reportElement x="445" y="0" width="43" height="11">
 					<printWhenExpression><![CDATA[$V{REPORT_COUNT} != $F{invoices_count}]]></printWhenExpression>
 				</reportElement>
@@ -2098,7 +2095,7 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[(Math.round($V{weight_report}*100))/100]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%.1f", (Math.round($V{weight_report}*100))/100)]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement key="staticText-113" mode="Transparent" x="488" y="11" width="45" height="11" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -2152,8 +2149,8 @@
 				</textElement>
 				<textFieldExpression class="java.lang.Double"><![CDATA[$V{quantity_report}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="###0.00" isBlankWhenNull="true">
-				<reportElement key="textField-31" stretchType="RelativeToTallestObject" mode="Transparent" x="533" y="11" width="57" height="11" forecolor="#000000" backcolor="#FFFFFF"/>
+			<textField pattern="###0.0" isBlankWhenNull="true">
+				<reportElement key="textField-31" mode="Transparent" x="533" y="11" width="57" height="11" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box rightPadding="3">
 					<leftPen lineWidth="0.25"/>
 					<bottomPen lineWidth="0.25"/>
@@ -2161,7 +2158,7 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$V{price_subtotal_report}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%.2f", $V{price_subtotal_report})]]></textFieldExpression>
 			</textField>
 			<textField pattern="###0.00" isBlankWhenNull="true">
 				<reportElement key="textField-32" stretchType="RelativeToTallestObject" mode="Transparent" x="627" y="11" width="48" height="11" forecolor="#000000" backcolor="#FFFFFF"/>
