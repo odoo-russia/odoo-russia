@@ -1,2 +1,0 @@
-import stock
-import print_form_nakl_transp
