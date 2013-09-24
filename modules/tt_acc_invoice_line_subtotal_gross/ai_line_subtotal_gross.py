@@ -57,7 +57,7 @@ class account_invoice(osv.osv):
             result[line.invoice_id.id] = True
         return result.keys()
 
-    _colums = {
+    _columns = {
          'amount_untaxed': fields.function(_amount_all, digits_compute=dp.get_precision('Account'), string='Subtotal', track_visibility='always',
             store={
                 'account.invoice': (lambda self, cr, uid, ids, c={}: ids, ['invoice_line'], 20),
