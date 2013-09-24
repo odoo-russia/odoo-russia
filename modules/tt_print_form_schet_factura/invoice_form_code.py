@@ -90,18 +90,9 @@ class invoice_line(osv.osv):
 
         return res
 
-    def _get_taxed_subtotal(self,cr,uid,ids,field,arg,context=None):
-        res = {}
-
-        for row in self.browse(cr, uid, ids, context):
-            res[row.id] = row.line_tax_total + row.price_subtotal
-
-        return res
-
     _name = 'account.invoice.line'
     _inherit = 'account.invoice.line'
     _columns = {
         'line_tax_amount': fields.function(_get_line_tax, type='double'),
         'line_tax_total': fields.function(_get_tax_total, type='double'),
-        'line_taxed_subtotal': fields.function(_get_taxed_subtotal, type='double'),
     }
