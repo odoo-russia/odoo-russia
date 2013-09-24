@@ -76,6 +76,9 @@
             <field name="type">form</field>
             <field name="inherit_id" ref="account.view_partner_property_form"/>
             <field name="arch" type="xml">
+                <field name="street2" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
                 <xpath expr="//page[@string='Accounting']/group[1]" position="before">
                     <label for="name_official"/>
                     <group>
@@ -85,6 +88,7 @@
                             <field name="kpp"/>
                             <field name="okpo"/>
                             <field name="ceo"/>
+                            <field name="ceo_function"/>
                             <field name="accountant"/>
                         </group>
                         <group>

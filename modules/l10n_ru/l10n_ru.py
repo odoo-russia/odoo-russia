@@ -39,8 +39,9 @@ class res_partner(osv.osv):
         'okpo': fields.char('OKPO', size=14),
         'contract_num': fields.char('Contract number', size=64),
         'contract_date': fields.date('Contract date'),
-        'ceo': fields.char('CEO', size=200),
-        'accountant': fields.char('Accountant', size=200),
+        'ceo': fields.char('CEO', size=200, help="Example: Lenin V.I."),
+        'ceo_function': fields.char('CEO Function', size=200),
+        'accountant': fields.char('Chief accountant', size=200),
         'address_formatted': fields.function(_format_address, string='Formatted Address', type='char', store=False),
     }
 res_partner()
