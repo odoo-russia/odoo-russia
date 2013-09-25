@@ -39,9 +39,10 @@ class account_invoice(osv.osv):
                 'amount_total': 0.0
             }
             for line in invoice.invoice_line:
-                res[invoice.id]['amount_untaxed'] += line.price_subtotal - line.amount
+                res[invoice.id]['amount_untaxed'] += line.price_subtotal
             for line in invoice.tax_line:
                 res[invoice.id]['amount_tax'] += line.amount
+            res[invoice.id]['amount_untaxed'] -= res[invoice.id]['amount_tax']
             res[invoice.id]['amount_total'] = res[invoice.id]['amount_tax'] + res[invoice.id]['amount_untaxed']
         return res
 
