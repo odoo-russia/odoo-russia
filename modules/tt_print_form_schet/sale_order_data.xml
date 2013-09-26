@@ -2,11 +2,12 @@
 <openerp>
     <data noupdate="0">
         <report auto="False"
-                id="sale_order_id"
+                id="report_sale_order"
                 model="sale.order"
-                name="report.new_sale_order_report"
+                name="sale.order"
                 rml="tt_print_form_schet/Schet.jrxml"
                 string="Счёт"
+                usage="default"
         />
 
         <report auto="False"
@@ -16,5 +17,15 @@
                 rml="tt_print_form_schet/Schet.jrxml"
                 string="Счёт"
         />
+    </data>
+
+    <data noupdate="1">
+        <record id="sale.email_template_edi_sale" model="email.template">
+            <field name="report_name">Счёт №${(object.number_only or '')} от ${object.date_order or ''} для ${object.partner_id.name if object.partner.id else 'никого'}</field>
+        </record>
+
+        <record id="portal_sale.email_template_edi_sale" model="email.template">
+            <field name="report_name">Счёт №${(object.number_only or '')} от ${object.date_order or ''} для ${object.partner_id.name or ''}</field>
+        </record>
     </data>
 </openerp>
