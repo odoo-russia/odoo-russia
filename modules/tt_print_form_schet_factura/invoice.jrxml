@@ -802,7 +802,7 @@ $F{company_address}]]></textFieldExpression>
 				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
 					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%.2f", $F{line_price_unit})]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%.2f", ($F{line_price_unit}/(1+$F{line_tax_amount})))]]></textFieldExpression>
 			</textField>
 			<textField pattern="###0.00" isBlankWhenNull="true">
 				<reportElement x="303" y="0" width="65" height="30"/>
