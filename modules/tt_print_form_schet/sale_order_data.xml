@@ -21,7 +21,7 @@
 
     <data noupdate="1">
         <record id="sale.email_template_edi_sale" model="email.template">
-            <field name="report_name">Счёт №${(object.number_only or '')} от ${object.date_order or ''} для ${object.partner_id.name if object.partner.id else 'никого'}</field>
+            <field name="report_name">Счёт №${(object.number_only or '')} от ${object.date_order or ''} для ${object.partner_id.name or ''}</field>
         </record>
 
         <record id="portal_sale.email_template_edi_sale" model="email.template">
