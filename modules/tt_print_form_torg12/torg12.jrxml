@@ -3,8 +3,8 @@
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.6500000000000143"/>
-	<property name="ireport.x" value="270"/>
-	<property name="ireport.y" value="363"/>
+	<property name="ireport.x" value="31"/>
+	<property name="ireport.y" value="493"/>
 	<property name="OPENERP_RELATIONS" value="[&apos;invoice_line&apos;, &apos;invoice_line_tax_id&apos;]"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
@@ -206,10 +206,10 @@
 		<variableExpression><![CDATA[$F{line_price_subtotal}]]></variableExpression>
 	</variable>
 	<variable name="tax_total_page" class="java.lang.Double" resetType="Page" calculation="Sum">
-		<variableExpression><![CDATA[$F{line_tax_total}]]></variableExpression>
+		<variableExpression><![CDATA[($F{line_price_subtotal} - $F{line_price_subtotal}/(1+$F{line_tax_amount}))]]></variableExpression>
 	</variable>
 	<variable name="tax_total_report" class="java.lang.Double" calculation="Sum">
-		<variableExpression><![CDATA[$F{line_tax_total}]]></variableExpression>
+		<variableExpression><![CDATA[($F{line_price_subtotal} - $F{line_price_subtotal}/(1+$F{line_tax_amount}))]]></variableExpression>
 	</variable>
 	<variable name="price_subtotal_page" class="java.lang.Double" resetType="Page" calculation="Sum">
 		<variableExpression><![CDATA[(($F{line_tax_amount} != null)?$F{line_price_subtotal}/(1+$F{line_tax_amount}):$F{line_price_subtotal})]]></variableExpression>
@@ -1300,7 +1300,7 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[($F{line_tax_total})?String.format("%.2f", $F{line_tax_total}):"-"]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{line_tax_amount})?String.format("%.2f", ($F{line_price_subtotal} - $F{line_price_subtotal}/(1+$F{line_tax_amount}))):"-"]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 				<reportElement key="textField" stretchType="RelativeToTallestObject" mode="Transparent" x="675" y="0" width="65" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -1780,13 +1780,6 @@
 				<text><![CDATA[Отпуск груза произвел]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-143" x="78" y="202" width="33" height="11"/>
-				<textElement verticalAlignment="Bottom">
-					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
-				</textElement>
-				<text><![CDATA[М.П. ]]></text>
-			</staticText>
-			<staticText>
 				<reportElement key="staticText-146" x="120" y="195" width="92" height="7"/>
 				<textElement textAlignment="Center" verticalAlignment="Top">
 					<font fontName="DejaVu Sans" size="6" isBold="false" isPdfEmbedded="true"/>
@@ -2017,7 +2010,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Bottom">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{shipping_ceo}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement key="textField-44" x="120" y="181" width="92" height="14"/>
@@ -2027,7 +2020,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Bottom">
 					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{ceo_function}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement key="staticText-153" x="461" y="118" width="45" height="11"/>
@@ -2305,6 +2298,13 @@
 					<font fontName="DejaVu Sans" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-158" x="77" y="205" width="252" height="12"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[М.П.                           "      " ___________________ 20      года]]></text>
 			</staticText>
 		</band>
 	</summary>
