@@ -63,8 +63,11 @@ class account_invoice(osv.osv):
         res = {}
         for invoice in self.browse(cr, uid, ids, context):
             weight = 0
+
             for line in invoice.invoice_line:
-                weight += line.product_id.weight_net*line.quantity
+                if line.product_id.weight_net:
+                    weight += line.product_id.weight_net*line.quantity
+
             if weight:
                 res[invoice.id] = numeral.in_words(weight)
             else:
@@ -76,7 +79,8 @@ class account_invoice(osv.osv):
         for invoice in self.browse(cr, uid, ids, context):
             weight = 0
             for line in invoice.invoice_line:
-                weight += line.product_id.weight*line.quantity
+                if line.product_id.weight:
+                    weight += line.product_id.weight*line.quantity
             if weight:
                 res[invoice.id] = numeral.in_words(weight)
             else:
