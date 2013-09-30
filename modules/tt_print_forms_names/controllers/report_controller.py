@@ -81,18 +81,23 @@ class Reports(openerpweb.Controller):
         report_mimetype = self.TYPES_MAPPING.get(
             report_struct['format'], 'octet-stream')
 
-        file_name = self._get_file_name(req, action['model'], action['name'], context)
+        model = report_data.get('model')
+        if not model:
+            model = context.get('active_model')
 
-        if not file_name:
-            file_name = action.get('name', 'report')
-            if 'name' not in action:
-                reports = req.session.model('ir.actions.report.xml')
-                res_id = reports.search([('report_name', '=', action['report_name']),],
-                                        0, False, False, context)
-                if len(res_id) > 0:
-                    file_name = reports.read(res_id[0], ['name'], context)['name']
-                else:
-                    file_name = action['report_name']
+        report_name = action.get('name', 'report')
+        if 'name' not in action:
+            reports = req.session.model('ir.actions.report.xml')
+            res_id = reports.search([('report_name', '=', action['report_name']),],
+                                    0, False, False, context)
+            if len(res_id) > 0:
+                if res_id > 1:
+                    res_id[0] = res_id[1]
+                report_name = reports.read(res_id[0], ['name'], context)['name']
+            else:
+                report_name = action['report_name']
+
+        file_name = self._get_file_name(req, model, report_name, context)
 
         return req.make_response(report,
              headers=[
