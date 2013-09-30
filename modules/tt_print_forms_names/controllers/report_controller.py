@@ -1,24 +1,48 @@
-# import openerp.addons.web.http as http
-# # from openerp.addons.web.http import request
-# import openerp.addons.web.controllers.main as main
-
-import openerp.addons.web.http as openerpweb
-import openerp.addons.web.controllers.main as main
-
-import base64
+# coding: utf-8
 import simplejson
 import time
+import base64
 import zlib
+import openerp.addons.web.controllers.main as main
+from openerp.addons.web import http as http
+openerpweb = http
 
-# from openerp.addons.web import http
-# openerpweb = http
 
+class Reports(openerpweb.Controller):
+    _cp_path = "/web/named_report"
+    POLLING_DELAY = 0.25
+    TYPES_MAPPING = {
+        'doc': 'application/vnd.ms-word',
+        'html': 'text/html',
+        'odt': 'application/vnd.oasis.opendocument.text',
+        'pdf': 'application/pdf',
+        'sxw': 'application/vnd.sun.xml.writer',
+        'xls': 'application/vnd.ms-excel',
+    }
 
-class Report(main.Reports):
-    _cp_path = "/web/report"
+    def _get_file_name(self, request, model, report_name, context):
+        model_obj = request.session.model(model)
+        field_number = ""
+        field_date = ""
+        file_name = ""
+        if model == 'account.invoice':
+            field_date = 'date_invoice'
+            field_number = 'number_only'
+        elif model == 'sale.order':
+            field_date = 'date_order'
+            field_number = 'number_only'
+        elif model.startswith('stock.picking'):
+            field_date = 'date'
+            field_number = 'name'
 
-    def __init__(self):
-        print 'init controller'
+        if field_date and field_number:
+            model_data = model_obj.read(context['active_id'], [field_number, field_date, 'partner_id'], context)
+            report_number = u"№" + model_data[field_number] if model_data[field_number] else ""
+            report_date = u"от " + model_data[field_date] if model_data[field_date] else ""
+            report_partner_name = u"для " + model_data['partner_id'][1] if model_data['partner_id'] else ""
+            file_name = u"%s %s %s %s" % (report_name, report_number, report_date, report_partner_name)
+
+        return file_name
 
     @openerpweb.httprequest
     def index(self, req, action, token):
@@ -56,17 +80,19 @@ class Report(main.Reports):
             report = zlib.decompress(report)
         report_mimetype = self.TYPES_MAPPING.get(
             report_struct['format'], 'octet-stream')
-        file_name = action.get('name', 'report')
-        if 'name' not in action:
-            reports = req.session.model('ir.actions.report.xml')
-            res_id = reports.search([('report_name', '=', action['report_name']),],
-                                    0, False, False, context)
-            if len(res_id) > 0:
-                file_name = reports.read(res_id[0], ['name'], context)['name']
-            else:
-                file_name = action['report_name']
-        # file_name = '%s.%s' % (file_name, report_struct['format'])
-        file_name = "oisdhgouisdhiouhgij.pdf"
+
+        file_name = self._get_file_name(req, action['model'], action['name'], context)
+
+        if not file_name:
+            file_name = action.get('name', 'report')
+            if 'name' not in action:
+                reports = req.session.model('ir.actions.report.xml')
+                res_id = reports.search([('report_name', '=', action['report_name']),],
+                                        0, False, False, context)
+                if len(res_id) > 0:
+                    file_name = reports.read(res_id[0], ['name'], context)['name']
+                else:
+                    file_name = action['report_name']
 
         return req.make_response(report,
              headers=[
