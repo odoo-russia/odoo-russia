@@ -103,6 +103,12 @@ class Reports(openerpweb.Controller):
 
         file_name = self._get_file_name(req, model, report_name, context)
 
+        if not file_name:
+            if action.get('name'):
+                file_name = action['name']
+            else:
+                file_name = report_name
+
         return req.make_response(report,
              headers=[
                  ('Content-Disposition', main.content_disposition(file_name + "." + report_struct['format'], req)),
