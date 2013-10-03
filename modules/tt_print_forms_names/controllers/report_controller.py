@@ -91,8 +91,6 @@ class Reports(openerpweb.Controller):
             res_id = reports.search([('report_name', '=', action['report_name']),],
                                     0, False, False, context)
             if len(res_id) > 0:
-                if res_id > 1:
-                    res_id[0] = res_id[1]
                 report_name = reports.read(res_id[0], ['name'], context)['name']
             else:
                 report_name = action['report_name']
