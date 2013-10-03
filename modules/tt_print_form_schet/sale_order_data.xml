@@ -1,31 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data noupdate="0">
-        <report auto="False"
-                id="report_sale_order"
-                model="sale.order"
-                name="sale.order"
-                rml="tt_print_form_schet/Schet.jrxml"
-                string="Счёт"
-                usage="default"
-        />
+        <record id="sale.report_sale_order" model="ir.actions.report.xml">
+            <field name="report_rml">tt_print_form_schet/Schet.jrxml</field>
+            <field name="name">Schet</field>
+        </record>
 
         <report auto="False"
                 id="account_invoice_id"
                 model="account.invoice"
                 name="account.invoice.new_report"
                 rml="tt_print_form_schet/Schet.jrxml"
-                string="Счёт"
+                string="Schet"
         />
-    </data>
 
-    <data noupdate="1">
         <record id="sale.email_template_edi_sale" model="email.template">
-            <field name="report_name">Счёт №${(object.number_only or '')} от ${object.date_order or ''} для ${object.partner_id.name or ''}</field>
+            <field name="report_name">Schet #${(object.number_only or '')} from ${object.date_order or ''} for ${object.partner_id.name or ''}</field>
         </record>
 
         <record id="portal_sale.email_template_edi_sale" model="email.template">
-            <field name="report_name">Счёт №${(object.number_only or '')} от ${object.date_order or ''} для ${object.partner_id.name or ''}</field>
+            <field name="report_name">Schet #${(object.number_only or '')} from ${object.date_order or ''} for ${object.partner_id.name or ''}</field>
         </record>
     </data>
 </openerp>

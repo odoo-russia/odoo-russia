@@ -1,40 +1,38 @@
 # -*- coding: utf-8 -*-
 
 import time
-from openerp.addons.pad import pad
 from openerp.report import report_sxw
-from osv import orm, osv, fields
+from openerp.osv import osv, fields
+from openerp.netsvc import Service
 from openerp.addons.jasper_reports.pytils import numeral
+
 
 class sale_order_report(report_sxw.rml_parse):
     def __init__(self, cr, uid, name, context):
         super(sale_order_report, self).__init__(cr, uid, name, context=context)
-        self.localcontext.update( {'time': time,})
+        self.localcontext.update( {'time': time})
 
-report_sxw.report_sxw('report.sale.order.new_report', 'sale.order',
+del Service._services['report.sale.order']
+report_sxw.report_sxw('report.sale.order', 'sale.order',
                       'tt_print_form_schet/Schet.jrxml',
                       parser=sale_order_report)
 
 
-###------ Rgister Account Invoice Report ----------###
 class account_invoice_report(report_sxw.rml_parse):
     def __init__(self, cr, uid, name, context):
         super(account_invoice_report, self).__init__(cr, uid, name, context=context)
-        self.localcontext.update( {'time': time,})
+        self.localcontext.update({'time': time})
 
-report_sxw.report_sxw('report.new_account_invoice_report', 'account_invoice',
+report_sxw.report_sxw('report.new_account_invoice_report', 'account.invoice',
                       'tt_print_form_schet/Schet.jrxml',
                       parser=account_invoice_report)
 
 
-###------ Modify sale order ----------###
-###------   + add is_invoice field ---###
-###------   + add number_only field --###
 class sale_order(osv.osv):
     _name = 'sale.order'
     _inherit = 'sale.order'
 
-    def _is_invoice(self,cr,uid,ids,field,arg,context=None):
+    def _is_invoice(self, cr, uid, ids, field, arg, context=None):
         res = {}
         for row in self.browse(cr, uid, ids, context):
             res[row.id] = False
@@ -65,7 +63,7 @@ class sale_order(osv.osv):
 
         return res
 
-    def _get_orders_count(self,cr,uid,ids,field,arg,context=None):
+    def _get_orders_count(self, cr, uid, ids, field, arg, context=None):
         res = {}
 
         for row in self.browse(cr, uid, ids, context):
@@ -99,7 +97,7 @@ class account_invoice(osv.osv):
 
         return res
 
-    def _is_invoice(self,cr,uid,ids,field,arg,context=None):
+    def _is_invoice(self, cr, uid, ids, field, arg, context=None):
         res = {}
         for row in self.browse(cr, uid, ids, context):
             res[row.id] = True
@@ -116,7 +114,7 @@ class account_invoice(osv.osv):
 
         return res
 
-    def _get_invoices_count(self,cr,uid,ids,field,arg,context=None):
+    def _get_invoices_count(self, cr, uid, ids, field, arg, context=None):
         res = {}
 
         for row in self.browse(cr, uid, ids, context):
