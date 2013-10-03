@@ -5,6 +5,7 @@ import base64
 import zlib
 import openerp.addons.web.controllers.main as main
 from openerp.addons.web import http as http
+from time import strptime, strftime
 openerpweb = http
 
 
@@ -37,8 +38,13 @@ class Reports(openerpweb.Controller):
 
         if field_date and field_number:
             model_data = model_obj.read(context['active_id'], [field_number, field_date, 'partner_id'], context)
+
+            report_date = model_data[field_date] if model_data[field_date] else ""
+            if report_date:
+                date_obj = strptime(report_date, "%Y-%m-%d")
+                report_date = "от " + strftime("%d.%m.%Y", date_obj)
+            report_date = unicode(report_date, 'utf')
             report_number = u"№" + model_data[field_number] if model_data[field_number] else ""
-            report_date = u"от " + model_data[field_date] if model_data[field_date] else ""
             report_partner_name = u"для " + model_data['partner_id'][1] if model_data['partner_id'] else ""
             file_name = u"%s %s %s %s" % (report_name, report_number, report_date, report_partner_name)
 
@@ -99,7 +105,7 @@ class Reports(openerpweb.Controller):
 
         return req.make_response(report,
              headers=[
-                 ('Content-Disposition', main.content_disposition(file_name, req)),
+                 ('Content-Disposition', main.content_disposition(file_name + "." + report_struct['format'], req)),
                  ('Content-Type', report_mimetype),
                  ('Content-Length', len(report))],
              cookies={'fileToken': token})
