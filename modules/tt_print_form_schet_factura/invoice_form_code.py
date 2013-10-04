@@ -80,9 +80,6 @@ class account_invoice(osv.osv):
             res = ""
         return res
 
-    def _format_bank(self, partner):
-        return "Bank info"
-
     def get_partner_info(self, cr, uid, ids, fields=None, args=None, context=None):
         if context is None:
             context = {}
@@ -120,9 +117,6 @@ class account_invoice(osv.osv):
                     inn = partner.inn if partner.inn else partner.parent_id.inn
                     kpp = partner.kpp if partner.kpp else partner.parent_id.kpp
                     value = self._format_inn_kpp(inn, kpp)
-                elif field_postfix == 'bank':
-                    partner = partner.parent_id if partner.is_company else partner
-                    value = self._format_bank(partner)
                 else:
                     method = getattr(self, "_get_" + field_postfix) or False
                     if method:
