@@ -1361,7 +1361,7 @@
 		</record>
     
 		<record id="base.uk" model="res.country">
-			<field name="name">Соединенное Королевство</field>
+			<field name="name">Великобритания</field>
 			<field name="code">gb</field>
 			<field name="full_name">Соединенное Королевство Великобритании и Северной Ирландии</field>
 			<field name="numeral_code">826</field>
