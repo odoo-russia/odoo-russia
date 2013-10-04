@@ -2,8 +2,8 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="invoice" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="770" leftMargin="36" rightMargin="36" topMargin="36" bottomMargin="36" isFloatColumnFooter="true">
 	<property name="OPENERP_RELATIONS" value="[&apos;invoice_line&apos;]"/>
 	<property name="ireport.zoom" value="1.464100000000019"/>
-	<property name="ireport.x" value="316"/>
-	<property name="ireport.y" value="322"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="164"/>
 	<queryString language="xPath">
 		<![CDATA[]]>
 	</queryString>
@@ -11,31 +11,13 @@
 		<fieldDescription><![CDATA[/data/record/invoice_line]]></fieldDescription>
 	</field>
 	<field name="company_name" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/company_id/partner_id/name]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/company_name]]></fieldDescription>
 	</field>
-	<field name="company_name_official" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/company_id/partner_id/name_official]]></fieldDescription>
+	<field name="company_address" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/company_address]]></fieldDescription>
 	</field>
-	<field name="company_zip" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/company_id/partner_id/zip]]></fieldDescription>
-	</field>
-	<field name="company_country" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/company_id/partner_id/country_id/name]]></fieldDescription>
-	</field>
-	<field name="company_city" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/company_id/partner_id/city]]></fieldDescription>
-	</field>
-	<field name="company_street" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/company_id/partner_id/street]]></fieldDescription>
-	</field>
-	<field name="company_home" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/company_id/partner_id/street2]]></fieldDescription>
-	</field>
-	<field name="company_inn" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/company_id/partner_id/inn]]></fieldDescription>
-	</field>
-	<field name="company_kpp" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/company_id/partner_id/kpp]]></fieldDescription>
+	<field name="company_inn_kpp" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/company_innkpp]]></fieldDescription>
 	</field>
 	<field name="company_accountant" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/company_id/partner_id/accountant]]></fieldDescription>
@@ -43,35 +25,20 @@
 	<field name="comapny_ceo" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/company_id/partner_id/ceo]]></fieldDescription>
 	</field>
-	<field name="partner_name" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/partner_id/name]]></fieldDescription>
+	<field name="invoice_name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/invoice_partner_name]]></fieldDescription>
 	</field>
-	<field name="partner_name_official" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/partner_id/name_official]]></fieldDescription>
+	<field name="invoice_address" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/invoice_address]]></fieldDescription>
 	</field>
-	<field name="partner_zip" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/partner_id/zip]]></fieldDescription>
+	<field name="invoice_inn_kpp" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/invoice_innkpp]]></fieldDescription>
 	</field>
-	<field name="partner_country" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/partner_id/country_id/name]]></fieldDescription>
+	<field name="shipping_name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/shipping_partner_name]]></fieldDescription>
 	</field>
-	<field name="partner_city" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/partner_id/city]]></fieldDescription>
-	</field>
-	<field name="partner_street" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/partner_id/street]]></fieldDescription>
-	</field>
-	<field name="partner_home" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/partner_id/street2]]></fieldDescription>
-	</field>
-	<field name="partner_inn" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/partner_id/inn]]></fieldDescription>
-	</field>
-	<field name="partner_kpp" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/partner_id/kpp]]></fieldDescription>
-	</field>
-	<field name="origin" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/origin]]></fieldDescription>
+	<field name="shipping_address" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/shipping_address]]></fieldDescription>
 	</field>
 	<field name="currency_name" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/currency_id/full_name]]></fieldDescription>
@@ -123,15 +90,6 @@
 	</field>
 	<field name="date_invoice" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/date_invoice]]></fieldDescription>
-	</field>
-	<field name="company_address" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/company_id/partner_id/address_formatted]]></fieldDescription>
-	</field>
-	<field name="partner_address" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/partner_id/address_formatted]]></fieldDescription>
-	</field>
-	<field name="shipping_address" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/shipping_address]]></fieldDescription>
 	</field>
 	<variable name="price_subtotal_page" class="java.lang.Double" resetType="Page" calculation="Sum">
 		<variableExpression><![CDATA[(($F{line_tax_amount} != null)?$F{line_price_subtotal}/(1+$F{line_tax_amount}):$F{line_price_subtotal})]]></variableExpression>
@@ -197,7 +155,7 @@
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{company_name_official}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{company_name}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="43" y="89" width="727" height="15"/>
@@ -218,7 +176,7 @@
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{company_inn}+"/"+$F{company_kpp}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{company_inn_kpp}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="104" width="115" height="15"/>
@@ -246,7 +204,7 @@
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{partner_name_official}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{invoice_name}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement positionType="Float" x="0" y="164" width="77" height="15"/>
@@ -260,7 +218,7 @@
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{partner_address}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{invoice_address}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement positionType="Float" x="0" y="179" width="42" height="15"/>
@@ -274,7 +232,7 @@
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{partner_inn} + "/" + $F{partner_kpp}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{invoice_inn_kpp}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement positionType="Float" x="0" y="194" width="129" height="15"/>
@@ -314,8 +272,7 @@
 						<textElement verticalAlignment="Middle">
 							<font fontName="DejaVu Sans" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 						</textElement>
-						<textFieldExpression class="java.lang.String"><![CDATA[(($F{company_name_official})?$F{company_name_official} + ", " : "") +
-$F{company_address}]]></textFieldExpression>
+						<textFieldExpression class="java.lang.String"><![CDATA[$F{company_name} + ", " + $F{company_address}]]></textFieldExpression>
 					</textField>
 				</frame>
 				<frame>
@@ -332,8 +289,7 @@ $F{company_address}]]></textFieldExpression>
 						<textElement verticalAlignment="Middle">
 							<font fontName="DejaVu Sans" pdfEncoding="cp1251" isPdfEmbedded="true"/>
 						</textElement>
-						<textFieldExpression class="java.lang.String"><![CDATA[(($F{partner_name_official})?$F{partner_name_official} + ", " : "") +
-    $F{partner_address}]]></textFieldExpression>
+						<textFieldExpression class="java.lang.String"><![CDATA[$F{shipping_name} + ", " + $F{shipping_address}]]></textFieldExpression>
 					</textField>
 				</frame>
 			</frame>
