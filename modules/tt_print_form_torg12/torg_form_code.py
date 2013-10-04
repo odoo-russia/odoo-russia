@@ -9,7 +9,7 @@ from tools.translate import _
 class torg_form(report_sxw.rml_parse):
     def __init__(self, cr, uid, name, context):
         super(torg_form, self).__init__(cr, uid, name, context=context)
-        self.localcontext.update( {'time': time,})
+        self.localcontext.update({'time': time})
 
 report_sxw.report_sxw('report.new_torg_form_report', 'account.invoice',
                       'tt_print_form_torg12/torg12.jrxml',
@@ -32,7 +32,7 @@ class account_invoice(osv.osv):
 
         return res
 
-    def _get_pos_in_words(self,cr,uid,ids,field,arg,context=None):
+    def _get_pos_in_words(self, cr, uid, ids, field, arg, context=None):
         res = {}
 
         for row in self.browse(cr, uid, ids, context):
@@ -40,7 +40,7 @@ class account_invoice(osv.osv):
 
         return res
 
-    def _get_price_in_words(self,cr,uid,ids,field,arg,context=None):
+    def _get_price_in_words(self, cr, uid, ids, field, arg, context=None):
         res = {}
 
         for row in self.browse(cr, uid, ids, context):
@@ -51,7 +51,7 @@ class account_invoice(osv.osv):
 
         return res
 
-    def _get_invoices_count(self,cr,uid,ids,field,arg,context=None):
+    def _get_invoices_count(self, cr, uid, ids, field, arg, context=None):
         res = {}
 
         for row in self.browse(cr, uid, ids, context):
@@ -133,6 +133,62 @@ class account_invoice(osv.osv):
                 res[invoice.id] = ""
         return res
 
+    def _format_inn_kpp(self, inn, kpp):
+        res = ""
+        if inn and kpp:
+            res = u"ИНН/КПП %s/%s" % (inn, kpp)
+        elif inn:
+            res = u"ИНН %s" % inn
+        elif kpp:
+            res = u"KPP %s" % kpp
+        return res
+
+    def get_partner_info(self, cr, uid, ids, fields=None, args=None, context=None):
+        return super(account_invoice, self).get_partner_info(cr, uid, ids, fields, args, context)
+
+    def _get_fullinfo(self, field, invoice, partner):
+        acc_number = None
+        bank_name = None
+        bank_acc_corr = None
+        bank_bic = None
+
+        phone = u"тел.: " + partner.phone if partner.phone else None
+        if not phone and partner.parent_id:
+            phone = u"тел.: " + partner.parent_id.phone if partner.parent_id.phone else None
+
+        if partner.bank_ids:
+            bank = partner.bank_ids[0]
+        elif partner.parent_id and partner.parent_id.bank_ids:
+            bank = partner.parent_id.bank_ids[0]
+        else:
+            bank = None
+
+        if bank:
+            acc_number = u"р/сч " + bank.acc_number if bank.acc_number else None
+            bank_name = u"банк " + bank.bank_name if bank.bank_name else None
+            bank_acc_corr = u"корр. счет " + bank.bank_acc_corr if bank.bank_acc_corr else None
+            bank_bic = u"БИК " + bank.bank_bic if bank.bank_bic else None
+
+        name = invoice[field[0] + '_partner_name']
+        innkpp = invoice[field[0] + '_innkpp']
+        address = invoice[field[0] + '_address']
+
+        values = [
+            name,
+            innkpp,
+            address,
+            phone,
+            acc_number,
+            bank_name,
+            bank_acc_corr,
+            bank_bic
+        ]
+
+        values = filter(bool, values)
+        values = filter(None, values)
+
+        return ', '.join(values) if values else ""
+
     _name = 'account.invoice'
     _inherit = 'account.invoice'
     _columns = {
@@ -145,12 +201,18 @@ class account_invoice(osv.osv):
         'origin_number': fields.function(_get_origin_number, type='char', store=False),
         'origin_date': fields.function(_get_origin_date, type='date', store=False),
         'origin_type': fields.function(_get_origin_type, type='char', store=False),
+        'shipping_innkpp': fields.function(get_partner_info, type='char', store=False, multi='partner_info'),
+        'company_partner_name': fields.function(get_partner_info, type='char', store=False, multi='partner_info'),
+        'company_fullinfo': fields.function(get_partner_info, type='char', store=False, multi='partner_info'),
+        'partner_fullinfo': fields.function(get_partner_info, type='char', store=False, multi='partner_info'),
+        'shipping_fullinfo': fields.function(get_partner_info, type='char', store=False, multi='partner_info'),
+        'invoice_fullinfo': fields.function(get_partner_info, type='char', store=False, multi='partner_info'),
     }
 account_invoice()
 
 
 class invoice_line(osv.osv):
-    def _get_line_tax(self,cr,uid,ids,field,arg,context=None):
+    def _get_line_tax(self, cr, uid, ids, field, arg, context=None):
         res = {}
 
         for row in self.browse(cr, uid, ids, context):
@@ -161,19 +223,11 @@ class invoice_line(osv.osv):
 
         return res
 
-    def _get_tax_total(self,cr,uid,ids,field,arg,context=None):
+    def _get_tax_total(self, cr, uid, ids, field, arg, context=None):
         res = {}
 
         for row in self.browse(cr, uid, ids, context):
             res[row.id] = row.line_tax_amount * row.price_subtotal
-
-        return res
-
-    def _get_taxed_subtotal(self,cr,uid,ids,field,arg,context=None):
-        res = {}
-
-        for row in self.browse(cr, uid, ids, context):
-            res[row.id] = row.line_tax_total + row.price_subtotal
 
         return res
 
@@ -182,5 +236,4 @@ class invoice_line(osv.osv):
     _columns = {
         'line_tax_amount': fields.function(_get_line_tax, type='double'),
         'line_tax_total': fields.function(_get_tax_total, type='double'),
-        'line_taxed_subtotal': fields.function(_get_taxed_subtotal, type='double'),
     }
