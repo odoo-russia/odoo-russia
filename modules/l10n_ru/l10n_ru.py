@@ -48,11 +48,7 @@ res_partner()
 
 class Bank(osv.osv):
     def name_search(self, cr, uid, name='', args=[], operator='ilike', context=None, limit=80):
-        if context is None:
-            context = {}
-        ids = []
-        if name:
-            ids = self.search(cr, uid, ['|', ('bic', operator, name),
+        ids = self.search(cr, uid, ['|', ('bic', operator, name),
                                         ('name', operator, name)] + args, limit=limit, context=context)
         return self.name_get(cr,uid,ids)
 
