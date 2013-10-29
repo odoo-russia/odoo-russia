@@ -1,0 +1,1754 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="nakl_transp.jrxml" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.4641000000000093"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="48"/>
+	<queryString language="xPath">
+		<![CDATA[]]>
+	</queryString>
+	<field name="gruz_carrier_five" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/gruz_carrier_five]]></fieldDescription>
+	</field>
+	<field name="gruz_carrier_four" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/gruz_carrier_four]]></fieldDescription>
+	</field>
+	<field name="gruz_carrier_one" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/gruz_carrier_one]]></fieldDescription>
+	</field>
+	<field name="gruz_carrier_three" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/gruz_carrier_three]]></fieldDescription>
+	</field>
+	<field name="gruz_carrier_two" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/gruz_carrier_two]]></fieldDescription>
+	</field>
+	<field name="gruz_carry_conditions_five" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/gruz_carry_conditions_five]]></fieldDescription>
+	</field>
+	<field name="gruz_carry_conditions_four" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/gruz_carry_conditions_four]]></fieldDescription>
+	</field>
+	<field name="gruz_carry_conditions_one" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/gruz_carry_conditions_one]]></fieldDescription>
+	</field>
+	<field name="gruz_carry_conditions_six" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/gruz_carry_conditions_six]]></fieldDescription>
+	</field>
+	<field name="gruz_carry_conditions_three" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/gruz_carry_conditions_three]]></fieldDescription>
+	</field>
+	<field name="gruz_carry_conditions_two" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/gruz_carry_conditions_two]]></fieldDescription>
+	</field>
+	<field name="gruz_goods_name_four" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/gruz_goods_name_four]]></fieldDescription>
+	</field>
+	<field name="gruz_notes_four" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/gruz_notes_four]]></fieldDescription>
+	</field>
+	<field name="gruz_notes_one" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/gruz_notes_one]]></fieldDescription>
+	</field>
+	<field name="gruz_notes_three" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/gruz_notes_three]]></fieldDescription>
+	</field>
+	<field name="gruz_notes_two" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/gruz_notes_two]]></fieldDescription>
+	</field>
+	<field name="gruz_order_acceptance" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/gruz_order_acceptance]]></fieldDescription>
+	</field>
+	<field name="gruz_others_one" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/gruz_others_one]]></fieldDescription>
+	</field>
+	<field name="gruz_others_two" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/gruz_others_two]]></fieldDescription>
+	</field>
+	<field name="gruz_readdressing_four" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/gruz_readdressing_four]]></fieldDescription>
+	</field>
+	<field name="gruz_readdressing_one" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/gruz_readdressing_one]]></fieldDescription>
+	</field>
+	<field name="gruz_readdressing_three" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/gruz_readdressing_three]]></fieldDescription>
+	</field>
+	<field name="gruz_readdressing_two" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/gruz_readdressing_two]]></fieldDescription>
+	</field>
+	<field name="gruz_shipper_instructions_one" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/gruz_shipper_instructions_one]]></fieldDescription>
+	</field>
+	<field name="gruz_shipper_instructions_three" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/gruz_shipper_instructions_three]]></fieldDescription>
+	</field>
+	<field name="gruz_shipper_instructions_two" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/gruz_shipper_instructions_two]]></fieldDescription>
+	</field>
+	<field name="gruz_supp_docs_one" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/gruz_supp_docs_one]]></fieldDescription>
+	</field>
+	<field name="gruz_supp_docs_two" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/gruz_supp_docs_two]]></fieldDescription>
+	</field>
+	<field name="gruz_vehicle_one" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/gruz_vehicle_one]]></fieldDescription>
+	</field>
+	<field name="gruz_vehicle_two" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/gruz_vehicle_two]]></fieldDescription>
+	</field>
+	<field name="gruz_goods_name_one" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/gruz_goods_name_one]]></fieldDescription>
+	</field>
+	<field name="gruz_goods_name_two" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/gruz_goods_name_two]]></fieldDescription>
+	</field>
+	<field name="gruz_goods_name_three" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/gruz_goods_name_three]]></fieldDescription>
+	</field>
+	<title>
+		<band height="802" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="29"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[Приложение No 4
+к Правилам перевозок грузов автомобильным транспортом,
+утв. постановлением Правительства РФ от 15 апреля 2011 г. No 272
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="29" width="555" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="11" isBold="true" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[Транспортная накладная]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="77" y="61" width="201" height="14"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="10" isBold="false" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="278" y="49" width="277" height="12"/>
+				<box>
+					<leftPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="10" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[Заказ (заявка)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="475" y="61" width="80" height="14"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="10" isBold="false" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="309" y="61" width="149" height="14"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="10" isBold="false" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="458" y="61" width="17" height="14"/>
+				<box>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="10" isBold="false" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[№]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="61" width="31" height="14"/>
+				<box>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="10" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[Дата]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="61" width="77" height="14"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="10" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[Экземпляр №]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="75" width="270" height="16"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="10" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[1. Грузоотправитель]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="285" y="75" width="270" height="16"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="10" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[2. Грузополучатель]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="285" y="91" width="270" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="285" y="103" width="270" height="14"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(фамилия, имя, отчество, адрес места жительства, данные о средствах связи — для физического лица,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="129" width="270" height="9"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[полное наименование, адрес места нахождения — для юридического лица)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="117" width="270" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="150" width="270" height="9"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(фамилия, имя, отчество, данные о средствах связи лица, ответственного за перевозку)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="138" width="270" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="285" y="129" width="270" height="9"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[полное наименование, адрес места нахождения — для юридического лица)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="285" y="117" width="270" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="285" y="138" width="270" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="285" y="150" width="270" height="9"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(фамилия, имя, отчество, данные о средствах связи лица, ответственного за перевозку)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="75" width="7" height="84"/>
+				<box>
+					<leftPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="162" width="555" height="16"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="10" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[3. Наименование груза]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="178" width="555" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="9" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_goods_name_one}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="190" width="555" height="14"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="6" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(отгрузочное наименование груза (для опасных грузов - в соответствии с ДОПОГ, для скоропортящихся грузов — в соответствии с СПС), его состояние и другая необходимая информация о грузе))]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="216" width="555" height="9"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="6" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(количество грузовых мест, маркировка, вид тары и способ упаковки)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="204" width="555" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="9" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_goods_name_two}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="237" width="555" height="9"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="6" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(масса нетто (брутто) грузовых мест в килограммах, размеры (высота, ширина и длина) в метрах, объем грузовых мест в кубических метрах)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="225" width="555" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="9" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_goods_name_three}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="258" width="555" height="9"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="6" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(в случае перевозки опасного груза — информация по каждому опасному веществу, материалу или изделию в соответствии с пунктом 5.4.1. ДОПОГ)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="246" width="555" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="9" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_goods_name_four}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="270" width="555" height="16"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="10" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[4. Сопроводительные документы на груз]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="298" width="555" height="14"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="6" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(перечень прилагаемых к транспортной накладной документов, предусмотренных ДОПОГ, санитарными, таможенными, карантинными, иными правилами в соответствии с законодательством Российской Федерации)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="286" width="555" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="9" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_supp_docs_one}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="324" width="555" height="14"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="6" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(перечень прилагаемых к грузу сертификатов, паспортов качества, удостоверений, разрешений, инструкций, товарораспорядительных и других документов, наличие которых установлено законодательством Российской Федерации)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="312" width="555" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="9" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_supp_docs_two}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="343" width="555" height="16"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="10" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[5. Указания грузоотправителя]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="369" width="555" height="9"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="6" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(параметры транспортного средства, необходимые для перевозки груза (тип, марка, грузоподъемность, вместимость и др.))]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="357" width="555" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="9" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_shipper_instructions_one}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="390" width="555" height="14"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="6" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(указания, необходимые для выполнения фитосанитарных, санитарных, карантинных, таможенных и прочих требований, установленных законодательством Российской Федерации)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="378" width="555" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="9" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_shipper_instructions_two}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="416" width="555" height="14"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="6" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(рекомендации о предельных сроках и температурном режиме перевозки, сведения о запорно-пломбировочных устройствах (в случае их предоставления грузоотправителем)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="404" width="555" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="9" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_shipper_instructions_three}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="480" width="270" height="7"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(дата и время подачи транспортного средства под выгрузку)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="285" y="468" width="270" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="278" y="433" width="7" height="135"/>
+				<box>
+					<leftPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="468" width="270" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="285" y="449" width="270" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="449" width="270" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="499" width="270" height="7"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(фактические дата и время прибытия)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="285" y="499" width="270" height="7"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(фактические дата и время прибытия)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="461" width="270" height="7"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(адрес места погрузки)
+
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="487" width="270" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="285" y="461" width="270" height="7"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(адрес места погрузки)
+
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="285" y="433" width="270" height="16"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="10" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[7. Сдача груза]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="433" width="270" height="16"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="10" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[6. Прием груза]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="285" y="487" width="270" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="285" y="480" width="270" height="7"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(дата и время подачи транспортного средства под выгрузку)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="285" y="518" width="270" height="7"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(фактическое состояние груза, тары, упаковки, маркировки и опломбирования)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="285" y="506" width="270" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="285" y="525" width="270" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="285" y="537" width="270" height="7"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[масса груза, количество грузовых мест)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="285" y="544" width="270" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="285" y="556" width="270" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(подпись и оттиск печати грузополучателя (при наличии) подпись водителя, принявшего груз)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="556" width="270" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(подпись и оттиск печати грузоотправителя (при наличии) подпись водителя, принявшего груз)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="544" width="270" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="537" width="270" height="7"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[масса груза, количество грузовых мест)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="506" width="270" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="518" width="270" height="7"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(фактическое состояние груза, тары, упаковки, маркировки и опломбирования)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="525" width="270" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="572" width="555" height="16"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="10" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[8. Условия перевозки]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="589" width="555" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="9" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_carry_conditions_one}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="601" width="555" height="14"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="6" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(сроки, по истечении которых грузоотправитель и грузополучатель вправе считать груз утраченным, форма уведомления о проведении экспертизы для определения размера фактических недостачи, повреждения (порчи) груза)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="615" width="555" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="9" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_carry_conditions_two}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="627" width="555" height="14"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="6" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(размер платы и предельный срок хранения груза в терминале перевозчика, сроки погрузки (выгрузки) грузов, порядок предоставления и установки приспособлений, необходимых для погрузки, выгрузки и перевозки груза)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="653" width="555" height="9"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="6" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(масса груза и способ ее определения, сведения об опломбировании крытых транспортных средств и контейнеров)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="641" width="555" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="9" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_carry_conditions_three}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="662" width="555" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="9" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_carry_conditions_four}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="674" width="555" height="9"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="6" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(порядок выполнения погрузо-разгрузочных работ, работ по промывке и дезинфекции транспортных средств)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="683" width="555" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="9" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_carry_conditions_five}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="695" width="555" height="14"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="6" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(размер штрафа за невывоз груза по вине перевозчика, несвоевременное предоставление транспортного средства, контейнера, просрочку доставки груза, порядок исчисления срока просрочки)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="721" width="555" height="14"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="6" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(размер штрафа за непредъявление для перевозки груза, за задержку (простой) транспортных средств, поданных под погрузку, выгрузку, за простой специализированных транспортных средств, за задержку (простой) контейнеров)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="709" width="555" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="9" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_carry_conditions_six}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="740" width="555" height="16"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="10" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[9. Информация о принятии заказа (заявки) к исполнению]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="756" width="555" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="9" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_order_acceptance}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="768" width="555" height="14"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="6" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(дата принятия заказа (заявки) к исполнению — фамилия, имя, отчество, должность лица, принявшего заказ (заявку)  к исполнению, оттиск печати (при наличии), подпись)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="782" width="555" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="9" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="91" width="270" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="103" width="270" height="14"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(фамилия, имя, отчество, адрес места жительства, данные о средствах связи — для физического лица,]]></text>
+			</staticText>
+		</band>
+	</title>
+	<summary>
+		<band height="802">
+			<staticText>
+				<reportElement x="0" y="6" width="555" height="16"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="10" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[10. Перевозчик]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="50" width="270" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_carrier_two}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="80" width="270" height="7"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(фамилия, имя, отчество лица, ответственного за перевозку, данные о средствах связи)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="285" y="49" width="270" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_carrier_five}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="285" y="24" width="270" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_carrier_four}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="24" width="270" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_carrier_one}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="62" width="270" height="6"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[наименование и адрес места нахождения — для юридического лица)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="36" width="270" height="13"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(фамилия, имя, отчество, адрес места жительства — для физического лица,]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="68" width="270" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_carrier_three}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="285" y="68" width="270" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="285" y="36" width="270" height="14"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(фамилия, имя, отчество, данные о средствах связи (при их наличии) водителя (водителей),]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="285" y="61" width="270" height="7"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[сведения о путевом листе (листах))]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="24" width="7" height="63"/>
+				<box>
+					<leftPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="113" width="7" height="31"/>
+				<box>
+					<leftPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="125" width="270" height="7"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(количество, тип, марка, грузоподъемность в тоннах, вместимость в кубических метрах)
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="285" y="113" width="270" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_vehicle_two}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="285" y="132" width="270" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="285" y="125" width="270" height="7"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(регистрационные номера)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="95" width="555" height="16"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="10" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[11. Транспортное средство]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="113" width="270" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_vehicle_one}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="132" width="270" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="285" y="199" width="270" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_notes_four}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="285" y="173" width="270" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_notes_three}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="199" width="270" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_notes_two}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="173" width="270" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_notes_one}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="278" y="173" width="7" height="45"/>
+				<box>
+					<leftPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="185" width="270" height="14"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(фактическое состояние груза, тары, упаковки, маркировки и опломбирования при приеме груза)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="285" y="185" width="270" height="14"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(фактическое состояние груза, тары, упаковки, маркировки и опломбирования при сдаче груза)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="155" width="555" height="16"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="10" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[12. Оговорки и замечания перевозчика]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="211" width="270" height="7"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(изменение условий перевозки при движении)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="285" y="211" width="270" height="7"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(изменение условий перевозки при выгрузке)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="271" width="555" height="7"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="6" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(режим труда и отдыха водителя в пути следования, сведения о коммерческих и иных актах)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="259" width="555" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="9" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_others_two}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="240" width="555" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="9" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_others_one}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="252" width="555" height="7"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="6" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(номер, дата и срок действия специального разрешения, установленный маршрут перевозки опасного, тяжеловесного или крупногабаритного груза и др.)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="220" width="555" height="16"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="10" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[13. Прочие условия]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="304" width="273" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_readdressing_one}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="335" width="273" height="14"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(сведения о лице, от которого получено указание на переадресовку (наименование, фамилия, имя, отчество и др.))]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="282" y="316" width="273" height="7"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(адрес нового пункта выгрузки, дата и время подачи транспортного средства под выгрузку)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="316" width="273" height="7"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(дата, форма переадресовки (устно или письменно)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="282" y="304" width="273" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_readdressing_three}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="282" y="335" width="273" height="14"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(при изменении получателя груза — новое наименование грузополучателя и место его нахождения)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="282" y="323" width="273" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_readdressing_four}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="286" width="555" height="16"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="10" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[14. Переадресовка]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="323" width="273" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_readdressing_two}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="357" width="555" height="16"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="10" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[15. Стоимость услуг перевозчика и порядок расчета провозной платы]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="375" width="175" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="406" width="175" height="7"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(порядок (механизм) расчета (исчислений) платы)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="189" y="387" width="366" height="7"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(расходы перевозчика и предъявляемые грузоотправителю платежи за проезд по платным автомобильным дорогам,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="387" width="175" height="7"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(стоимость услуги в рублях)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="189" y="375" width="366" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="189" y="406" width="366" height="7"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[при перевозке опасных, тяжеловесных и крупногабаритных грузов, уплату таможенных пошлин и сборов,]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="189" y="394" width="366" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="394" width="175" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="182" y="375" width="7" height="64"/>
+				<box>
+					<leftPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="425" width="175" height="14"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(размер провозной платы (заполняется после окончания перевозки) в рублях))]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="189" y="413" width="366" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="189" y="425" width="366" height="14"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[выполнение погрузо-разгрузочных работ, работ по промывке и дезинфекции транспортных средств)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="413" width="175" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="282" y="473" width="273" height="7"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(перевозчик, оттиск печати (при наличии), дата, подпись)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="282" y="461" width="273" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="443" width="555" height="16"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="10" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[16. Дата составления, подписи сторон]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="473" width="273" height="7"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="5" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[(грузоотправитель, оттиск печати (при наличии), дата, подпись)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="461" width="273" height="12"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="491" width="555" height="16"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="10" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[17. Отметки грузоотправителей, грузополучателей и перевозчиков]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="510" width="259" height="25"/>
+				<box leftPadding="0">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="9" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[Краткое описание обстоятельств, послуживших основанием для отметки]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="259" y="510" width="179" height="25"/>
+				<box leftPadding="0">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="9" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[Расчет и размер штрафа]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="438" y="510" width="117" height="25"/>
+				<box leftPadding="0">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="9" pdfEncoding="cp1251"/>
+				</textElement>
+				<text><![CDATA[Подпись, дата]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

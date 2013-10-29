@@ -2,8 +2,6 @@
 
 import time
 from openerp.report import report_sxw
-from openerp.osv import osv, fields
-from tools.translate import _
 
 
 class waybill_report_stock(report_sxw.rml_parse):

@@ -1,31 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data noupdate="0">
-        <record id="view_picking_form" model="ir.ui.view">
-            <field name="name">stock.picking.form</field>
-            <field name="model">stock.picking</field>
-            <field name="inherit_id" ref="stock.view_picking_form"/>
-            <field name="arch" type="xml">
-                <page string="Products" position="after">
-                    <page string="Move information">
-                        <field name="invoices_count"/>
-                    </page>
-                </page>
-            </field>
-        </record>
-
-        <record id="view_picking_in_form" model="ir.ui.view">
-            <field name="name">stock.picking.in.form</field>
-            <field name="model">stock.picking.in</field>
-            <field name="inherit_id" ref="stock.view_picking_in_form"/>
-            <field name="arch" type="xml">
-                <page string="Products" position="after">
-                    <page string="Move information">
-                        <field name="invoices_count"/>
-                    </page>
-                </page>
-            </field>
-        </record>
 
         <record id="view_picking_out_form" model="ir.ui.view">
             <field name="name">stock.picking.out.form</field>
@@ -33,14 +8,175 @@
             <field name="inherit_id" ref="stock.view_picking_out_form"/>
             <field name="arch" type="xml">
                 <page string="Products" position="after">
-                    <page string="Move information">
-                        <field name="invoices_count"/>
+                    <page string="Транспортная накладная ">
+                        <group string="3. Наименование груза">
+                            <p>
+                                Отгрузочное наименование груза (для опасных грузов - в соответствии с ДОПОГ, для
+                                скоропортящихся грузов — в соответствии с СПС), его состояние и другая
+                                необходимая информация о грузе)
+                            </p>
+                            <field name="gruz_goods_name_one" nolabel="1"/>
+                            <p>Количество грузовых мест, маркировка, вид тары и способ упаковки</p>
+                            <field name="gruz_goods_name_two" nolabel="1"/>
+                            <p>
+                                Масса нетто (брутто) грузовых мест в килограммах, размеры (высота, ширина и длина)
+                                в метрах, объем грузовых мест в кубических метрах
+                            </p>
+                            <field name="gruz_goods_name_three" nolabel="1"/>
+                            <p>
+                                В случае перевозки опасного груза — информация по каждому опасному веществу,
+                                материалу или изделию в соответствии с пунктом 5.4.1. ДОПОГ
+                            </p>
+                            <field name="gruz_goods_name_four" nolabel="1"/>
+                        </group>
+
+                        <group string="4. Сопроводительные документы на груз">
+                            <p>
+                                Перечень прилагаемых к транспортной накладной документов, предусмотренных ДОПОГ,
+                                санитарными, таможенными, карантинными, иными правилами в соответствии с
+                                законодательством Российской Федерации
+                            </p>
+                            <field name="gruz_supp_docs_one" nolabel="1"/>
+                            <p>
+                                Перечень прилагаемых к грузу сертификатов, паспортов качества, удостоверений,
+                                разрешений, инструкций, товарораспорядительных и других документов, наличие которых
+                                установлено законодательством Российской Федерации
+                            </p>
+                            <field name="gruz_supp_docs_two" nolabel="1"/>
+                        </group>
+
+                        <group string="5. Указания грузоотправителя">
+                            <p>
+                                Параметры транспортного средства, необходимые для перевозки груза (тип, марка,
+                                грузоподъемность, вместимость и др.)
+                            </p>
+                            <field name="gruz_shipper_instructions_one" nolabel="1"/>
+                            <p>
+                                Указания, необходимые для выполнения фитосанитарных, санитарных, карантинных,
+                                таможенных и прочих требований, установленных законодательством Российской Федерации
+                            </p>
+                            <field name="gruz_shipper_instructions_two" nolabel="1"/>
+                            <p>
+                                Рекомендации о предельных сроках и температурном режиме перевозки, сведения о
+                                запорно-пломбировочных устройствах (в случае их предоставления грузоотправителем)
+                            </p>
+                            <field name="gruz_shipper_instructions_three" nolabel="1"/>
+                        </group>
+
+                        <group string="8. Условия перевозки">
+                            <p>
+                                Сроки, по истечении которых грузоотправитель и грузополучатель вправе считать груз
+                                утраченным, форма уведомления о проведении экспертизы для определения размера
+                                фактических недостачи, повреждения (порчи) груза
+                            </p>
+                            <field name="gruz_carry_conditions_one" nolabel="1"/>
+                            <p>
+                                Размер платы и предельный срок хранения груза в терминале перевозчика, сроки погрузки
+                                (выгрузки) грузов, порядок предоставления и установки приспособлений, необходимых для
+                                погрузки, выгрузки и перевозки груза
+                            </p>
+                            <field name="gruz_carry_conditions_two" nolabel="1"/>
+                            <p>
+                                Масса груза и способ ее определения, сведения об опломбировании крытых
+                                транспортных средств и контейнеров
+                            </p>
+                            <field name="gruz_carry_conditions_three" nolabel="1"/>
+                            <p>
+                                Порядок выполнения погрузо-разгрузочных работ, работ по
+                                промывке и дезинфекции транспортных средств
+                            </p>
+                            <field name="gruz_carry_conditions_four" nolabel="1"/>
+                            <p>
+                                Размер штрафа за невывоз груза по вине перевозчика, несвоевременное
+                                предоставление транспортного средства, контейнера, просрочку доставки груза,
+                                порядок исчисления срока просрочки
+                            </p>
+                            <field name="gruz_carry_conditions_five" nolabel="1"/>
+                            <p>
+                                Размер штрафа за непредъявление для перевозки груза, за задержку (простой)
+                                транспортных средств, поданных под погрузку, выгрузку, за простой специализированных
+                                транспортных средств, за задержку (простой) контейнеров
+                            </p>
+                            <field name="gruz_carry_conditions_six" nolabel="1"/>
+                        </group>
+
+                        <group string="9. Информация о принятии заказа (заявки) к исполнению">
+                            <p>
+                                Дата принятия заказа (заявки) к исполнению — фамилия, имя, отчество, должность лица,
+                                принявшего заказ (заявку)  к исполнению, оттиск печати (при наличии), подпись
+                            </p>
+                            <field name="gruz_order_acceptance" nolabel="1"/>
+                        </group>
+
+                        <group string="10. Перевозчик">
+                            <p>Фамилия, имя, отчество, адрес места жительства — для физического лица</p>
+                            <field name="gruz_carrier_one" nolabel="1"/>
+                            <p>Наименование и адрес места нахождения — для юридического лица</p>
+                            <field name="gruz_carrier_two" nolabel="1"/>
+                            <p>Фамилия, имя, отчество лица, ответственного за перевозку, данные о средствах связи</p>
+                            <field name="gruz_carrier_three" nolabel="1"/>
+                            <p>
+                                Фамилия, имя, отчество, данные о средствах связи (при их наличии) водителя (водителей)
+                            </p>
+                            <field name="gruz_carrier_four" nolabel="1"/>
+                            <p>Сведения о путевом листе (листах).</p>
+                            <field name="gruz_carrier_five" nolabel="1"/>
+                        </group>
+
+                        <group string="11. Транспортное средство">
+                            <p>Количество, тип, марка, грузоподъемность в тоннах, вместимость в кубических метрах</p>
+                            <field name="gruz_vehicle_one" nolabel="1"/>
+                            <p>Регистрационные номера</p>
+                            <field name="gruz_vehicle_two" nolabel="1"/>
+                        </group>
+
+                        <group string="12. Оговорки и замечания перевозчика">
+                            <p>
+                                Фактическое состояние груза, тары, упаковки, маркировки и
+                                опломбирования при приеме груза
+                            </p>
+                            <field name="gruz_notes_one" nolabel="1"/>
+                            <p>Изменение условий перевозки при движении</p>
+                            <field name="gruz_notes_two" nolabel="1"/>
+                            <p>
+                                Фактическое состояние груза, тары, упаковки, маркировки
+                                и опломбирования при сдаче груза
+                            </p>
+                            <field name="gruz_notes_three" nolabel="1"/>
+                            <p>Изменение условий перевозки при выгрузке</p>
+                            <field name="gruz_notes_four" nolabel="1"/>
+                        </group>
+
+                        <group string="13. Прочие условия">
+                            <p>
+                                Номер, дата и срок действия специального разрешения, установленный маршрут
+                                перевозки опасного, тяжеловесного или крупногабаритного груза и др.
+                            </p>
+                            <field name="gruz_others_one" nolabel="1"/>
+                            <p>Режим труда и отдыха водителя в пути следования, сведения о коммерческих и иных актах</p>
+                            <field name="gruz_others_two" nolabel="1"/>
+                        </group>
+
+                        <group string="14. Переадресовка">
+                            <p>Дата, форма переадресовки (устно или письменно)</p>
+                            <field name="gruz_readdressing_one" nolabel="1"/>
+                            <p>
+                                Сведения о лице, от которого получено указание на переадресовку
+                                (наименование, фамилия, имя, отчество и др.)
+                            </p>
+                            <field name="gruz_readdressing_two" nolabel="1"/>
+                            <p>Адрес нового пункта выгрузки, дата и время подачи транспортного средства под выгрузку</p>
+                            <field name="gruz_readdressing_three" nolabel="1"/>
+                            <p>
+                                При изменении получателя груза — новое наименование грузополучателя и
+                                место его нахождения
+                            </p>
+                            <field name="gruz_readdressing_four" nolabel="1"/>
+                        </group>
                     </page>
                 </page>
             </field>
         </record>
-
-
 
     </data>
 </openerp>
