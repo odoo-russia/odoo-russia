@@ -9,6 +9,16 @@
             <field name="arch" type="xml">
                 <page string="Products" position="after">
                     <page string="Транспортная накладная ">
+                        <group string="1. Грузоотправитель">
+                            <p>Фамилия, имя, отчество, данные о средствах связи лица, ответственного за перевозку</p>
+                            <field name="gruz_shipper_three" nolabel="1"/>
+                        </group>
+
+                        <group string="2. Грузополучатель">
+                            <p>Фамилия, имя, отчество, данные о средствах связи лица, ответственного за перевозку</p>
+                            <field name="gruz_consignee_three" nolabel="1"/>
+                        </group>
+
                         <group string="3. Наименование груза">
                             <p>
                                 Отгрузочное наименование груза (для опасных грузов - в соответствии с ДОПОГ, для
@@ -172,6 +182,11 @@
                                 место его нахождения
                             </p>
                             <field name="gruz_readdressing_four" nolabel="1"/>
+                        </group>
+
+                        <group string="15. Стоимость услуг перевозчика и порядок расчета провозной платы">
+                            <p>Порядок (механизм) расчета (исчислений) платы</p>
+                            <field name="gruz_cost_two" nolabel="1"/>
                         </group>
                     </page>
                 </page>
