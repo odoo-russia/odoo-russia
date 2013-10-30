@@ -1,5 +1,9 @@
 # coding: utf-8
+import re
+from datetime import datetime
 from openerp.osv import osv, fields
+
+account_number_re = re.compile(r"[a-zA-Zа-яА-Я]*\/[0-9]*\/([0-9]*)", re.I + re.U)
 
 
 def _get_number_only(self, cr, uid, ids, field_name, arg, context=None):
@@ -25,10 +29,49 @@ def _get_cost_total(self, cr, uid, ids, field_name, arg, context=None):
             res[row.id] += line.product_id.list_price * line.product_qty
     return res
 
-def _get_invoices_count(self, cr, uid, ids, field, arg, context=None):
+
+def _get_weight_total(self, cr, uid, ids, field_name, arg, context=None):
+    res = {}
+    for picking in self.browse(cr, uid, ids, context=context):
+        weight_total = 0
+        for move in picking.move_lines:
+            weight_total += move.product_id.weight_net * move.product_qty
+        res[picking.id] = weight_total
+    return res
+
+
+def _get_pickings_count(self, cr, uid, ids, field, arg, context=None):
     res = {}
     for row in self.browse(cr, uid, ids, context):
         res[row.id] = len(row.move_lines)
+    return res
+
+
+def _get_invoices_string(self, cr, uid, ids, field_name, arg, context=None):
+    result = {}
+    for picking in self.browse(cr, uid, ids, context=context):
+        invoices = []
+        for invoice in picking.gruz_invoice_ids:
+            if invoice.number:
+                match = account_number_re.findall(invoice.number)
+                if match:
+                    date = ''
+                    if invoice.date_invoice:
+                        date = datetime.strftime(datetime.strptime(invoice.date_invoice, '%Y-%m-%d'), 'от %d.%m.%Y г.')
+                    invoices.append(u"Накладная №%s %s" % (match[0].lstrip('0'), unicode(date, 'utf')))
+        result[picking.id] = ', '.join(invoices)
+    return result
+
+
+def _get_supp_docs(self, cr, uid, ids, field_name, arg, context=None):
+    res = {}
+    for picking in self.browse(cr, uid, ids, context=context):
+        docs = []
+        if picking.gruz_attached_invoices:
+            docs.append(picking.gruz_attached_invoices)
+        if picking.gruz_supp_docs_one:
+            docs.append(picking.gruz_supp_docs_one)
+        res[picking.id] = ', '.join(docs)
     return res
 
 columns = {
@@ -66,11 +109,6 @@ columns = {
     'gruz_vehicle_one': fields.text(''),
     'gruz_vehicle_two': fields.text(''),
 
-    'gruz_notes_one': fields.text(''),
-    'gruz_notes_two': fields.text(''),
-    'gruz_notes_three': fields.text(''),
-    'gruz_notes_four': fields.text(''),
-
     'gruz_others_one': fields.text(''),
     'gruz_others_two': fields.text(''),
 
@@ -81,9 +119,14 @@ columns = {
 
     'gruz_cost_two': fields.text(''),
 
-    'invoices_count': fields.function(_get_invoices_count, type='integer'),
-    'number_only': fields.function(_get_number_only, type="char"),
-    'cost_total': fields.function(_get_cost_total, type='float')
+    'pickings_count': fields.function(_get_pickings_count, type='integer'),
+    'number_only': fields.function(_get_number_only, type='char'),
+    'cost_total': fields.function(_get_cost_total, type='float'),
+    'weight_total': fields.function(_get_weight_total, type='float'),
+    'gruz_invoice_ids': fields.many2many('account.invoice', domain="[('origin', '=', origin), "
+                                                                   "('state', 'in', ['open', 'paid'])]"),
+    'gruz_attached_invoices': fields.function(_get_invoices_string, type='char'),
+    'gruz_supp_docs': fields.function(_get_supp_docs, type='char'),
 }
 
 

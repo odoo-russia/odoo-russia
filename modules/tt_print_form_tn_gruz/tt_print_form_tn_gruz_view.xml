@@ -9,6 +9,9 @@
             <field name="arch" type="xml">
                 <page string="Products" position="after">
                     <page string="Транспортная накладная ">
+                        <group string="Прилагаемые счета для накладной">
+                            <field name="gruz_invoice_ids" nolabel="1"/>
+                        </group>
                         <group string="1. Грузоотправитель">
                             <p>Фамилия, имя, отчество, данные о средствах связи лица, ответственного за перевозку</p>
                             <field name="gruz_shipper_three" nolabel="1"/>
@@ -138,23 +141,6 @@
                             <field name="gruz_vehicle_one" nolabel="1"/>
                             <p>Регистрационные номера</p>
                             <field name="gruz_vehicle_two" nolabel="1"/>
-                        </group>
-
-                        <group string="12. Оговорки и замечания перевозчика">
-                            <p>
-                                Фактическое состояние груза, тары, упаковки, маркировки и
-                                опломбирования при приеме груза
-                            </p>
-                            <field name="gruz_notes_one" nolabel="1"/>
-                            <p>Изменение условий перевозки при движении</p>
-                            <field name="gruz_notes_two" nolabel="1"/>
-                            <p>
-                                Фактическое состояние груза, тары, упаковки, маркировки
-                                и опломбирования при сдаче груза
-                            </p>
-                            <field name="gruz_notes_three" nolabel="1"/>
-                            <p>Изменение условий перевозки при выгрузке</p>
-                            <field name="gruz_notes_four" nolabel="1"/>
                         </group>
 
                         <group string="13. Прочие условия">

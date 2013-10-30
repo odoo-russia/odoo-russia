@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="nakl_transp.jrxml" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
-	<property name="ireport.zoom" value="1.4641000000000093"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="1701"/>
+	<property name="ireport.zoom" value="1.7715610000000115"/>
+	<property name="ireport.x" value="32"/>
+	<property name="ireport.y" value="1501"/>
 	<queryString language="xPath">
 		<![CDATA[]]>
 	</queryString>
@@ -41,18 +41,6 @@
 	</field>
 	<field name="gruz_goods_name_four" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/gruz_goods_name_four]]></fieldDescription>
-	</field>
-	<field name="gruz_notes_four" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/gruz_notes_four]]></fieldDescription>
-	</field>
-	<field name="gruz_notes_one" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/gruz_notes_one]]></fieldDescription>
-	</field>
-	<field name="gruz_notes_three" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/gruz_notes_three]]></fieldDescription>
-	</field>
-	<field name="gruz_notes_two" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/gruz_notes_two]]></fieldDescription>
 	</field>
 	<field name="gruz_order_acceptance" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/gruz_order_acceptance]]></fieldDescription>
@@ -138,6 +126,15 @@
 	<field name="gruz_cost_two" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/gruz_cost_two]]></fieldDescription>
 	</field>
+	<field name="gruz_attached_invoices" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/gruz_attached_invoices]]></fieldDescription>
+	</field>
+	<field name="gruz_supp_docs" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/gruz_supp_docs]]></fieldDescription>
+	</field>
+	<field name="weight_total" class="java.lang.Float">
+		<fieldDescription><![CDATA[/data/record/weight_total]]></fieldDescription>
+	</field>
 	<variable name="date" class="java.lang.String">
 		<variableExpression><![CDATA[($F{date})?new SimpleDateFormat("dd.MM.yyyy г.").format($F{date}):""]]></variableExpression>
 		<initialValueExpression><![CDATA[($F{date})?new SimpleDateFormat("dd.MM.yyyy г.").format($F{date}):""]]></initialValueExpression>
@@ -145,6 +142,14 @@
 	<variable name="date_done" class="java.lang.String">
 		<variableExpression><![CDATA[($F{date_done})?new SimpleDateFormat("dd.MM.yyyy г.").format($F{date_done}):""]]></variableExpression>
 		<initialValueExpression><![CDATA[($F{date_done})?new SimpleDateFormat("dd.MM.yyyy г.").format($F{date_done}):""]]></initialValueExpression>
+	</variable>
+	<variable name="date_with_time" class="java.lang.String">
+		<variableExpression><![CDATA[($F{date})?new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format($F{date}):""]]></variableExpression>
+		<initialValueExpression><![CDATA[($F{date})?new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format($F{date}):""]]></initialValueExpression>
+	</variable>
+	<variable name="date_done_with_time" class="java.lang.String">
+		<variableExpression><![CDATA[($F{date_done})?new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format($F{date_done}):""]]></variableExpression>
+		<initialValueExpression><![CDATA[($F{date_done})?new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format($F{date_done}):""]]></initialValueExpression>
 	</variable>
 	<title>
 		<band height="802" splitType="Stretch">
@@ -390,7 +395,8 @@
 				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
 					<font fontName="DejaVu Sans" size="7" pdfEncoding="cp1251"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_goods_name_one}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_goods_name_one}
+]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="190" width="555" height="14"/>
@@ -494,7 +500,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
 					<font fontName="DejaVu Sans" size="7" pdfEncoding="cp1251"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_supp_docs_one}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_supp_docs}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="324" width="555" height="14"/>
@@ -610,7 +616,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
 					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$V{date_done}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{date_done_with_time}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="278" y="433" width="7" height="135"/>
@@ -629,7 +635,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
 					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$V{date}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{date_with_time}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="285" y="449" width="270" height="12"/>
@@ -779,7 +785,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
 					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%.2f кг.", $F{weight_total})]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="285" y="537" width="270" height="7"/>
@@ -873,7 +879,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
 					<font fontName="DejaVu Sans" size="8" pdfEncoding="cp1251"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[String.format("%.2f кг.", $F{weight_total})]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="572" width="555" height="16"/>
@@ -1304,7 +1310,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
 					<font fontName="DejaVu Sans" size="6" pdfEncoding="cp1251"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_notes_four}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="285" y="171" width="270" height="14"/>
@@ -1315,7 +1321,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
 					<font fontName="DejaVu Sans" size="6" pdfEncoding="cp1251"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_notes_three}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="0" y="197" width="270" height="14"/>
@@ -1326,7 +1332,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
 					<font fontName="DejaVu Sans" size="6" pdfEncoding="cp1251"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_notes_two}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="0" y="171" width="270" height="14"/>
@@ -1337,7 +1343,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
 					<font fontName="DejaVu Sans" size="6" pdfEncoding="cp1251"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{gruz_notes_one}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="278" y="171" width="7" height="47"/>
@@ -1706,7 +1712,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
 					<font fontName="DejaVu Sans" size="6" pdfEncoding="cp1251"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{partner_name}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{partner_name} + " " + $V{date_done}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="443" width="555" height="16"/>
