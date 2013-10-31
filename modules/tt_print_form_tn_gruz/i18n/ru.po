@@ -1,0 +1,21 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* tt_print_form_tn_gruz
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20131009-231130\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-10-31 11:24+0000\n"
+"PO-Revision-Date: 2013-10-31 11:24+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: tt_print_form_tn_gruz
+#: model:ir.actions.report.xml,name:tt_print_form_tn_gruz.waybill_id
+msgid "Waybill"
+msgstr "Транспортная накладная"
