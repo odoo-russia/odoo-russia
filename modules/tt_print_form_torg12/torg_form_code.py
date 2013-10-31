@@ -169,7 +169,7 @@ class account_invoice(osv.osv):
             bank_acc_corr = u"корр. счет " + bank.bank_acc_corr if bank.bank_acc_corr else None
             bank_bic = u"БИК " + bank.bank_bic if bank.bank_bic else None
 
-        name = invoice[field[0] + '_partner_name']
+        name = invoice[field[0] + '_name']
         innkpp = invoice[field[0] + '_innkpp']
         address = invoice[field[0] + '_address']
 

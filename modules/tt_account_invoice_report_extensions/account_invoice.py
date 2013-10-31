@@ -72,14 +72,16 @@ class account_invoice(osv.osv):
         return res
 
     _columns = {
-        'invoice_partner_name': fields.function(get_partner_info, type='char', store=False, multi='partner_info'),
+        'invoice_name': fields.function(get_partner_info, type='char', store=False, multi='partner_info'),
         'invoice_address': fields.function(get_partner_info, type='char', store=False, multi='partner_info'),
         'invoice_innkpp': fields.function(get_partner_info, type='char', store=False, multi='partner_info'),
-        'shipping_partner_name': fields.function(get_partner_info, type='char', store=False, multi='partner_info'),
+        'shipping_name': fields.function(get_partner_info, type='char', store=False, multi='partner_info'),
         'shipping_address': fields.function(get_partner_info, type='char', store=False, multi='partner_info'),
         'company_name': fields.function(get_partner_info, type='char', store=False, multi='partner_info'),
         'company_address': fields.function(get_partner_info, type='char', store=False, multi='partner_info'),
         'company_innkpp': fields.function(get_partner_info, type='char', store=False, multi='partner_info'),
         'partner_name': fields.function(get_partner_info, type='char', store=False, multi='partner_info'),
+        'partner_innkpp': fields.function(get_partner_info, type='char', store=False, multi='partner_info'),
+        'partner_address': fields.function(get_partner_info, type='char', store=False, multi='partner_info'),
     }
 

@@ -5,7 +5,7 @@ import base64
 import zlib
 import openerp.addons.web.controllers.main as main
 from openerp.addons.web import http as http
-from time import strptime, strftime
+from datetime import datetime
 openerpweb = http
 
 
@@ -34,15 +34,15 @@ class Reports(openerpweb.Controller):
             field_number = 'number_only'
         elif model.startswith('stock.picking'):
             field_date = 'date'
-            field_number = 'name'
+            field_number = 'number_only'
 
         if field_date and field_number:
             model_data = model_obj.read(context['active_id'], [field_number, field_date, 'partner_id'], context)
 
             report_date = model_data[field_date] if model_data[field_date] else ""
             if report_date:
-                date_obj = strptime(report_date, "%Y-%m-%d")
-                report_date = "от " + strftime("%d.%m.%Y", date_obj)
+                date_obj = datetime.strptime(report_date.split(' ')[0], "%Y-%m-%d")
+                report_date = "от " + datetime.strftime(date_obj, "%d.%m.%Y")
             report_date = unicode(report_date, 'utf')
             report_number = u"№" + model_data[field_number] if model_data[field_number] else ""
             report_partner_name = u"для " + model_data['partner_id'][1] if model_data['partner_id'] else ""
@@ -94,7 +94,7 @@ class Reports(openerpweb.Controller):
         report_name = action.get('name', 'report')
         if 'name' not in action:
             reports = req.session.model('ir.actions.report.xml')
-            res_id = reports.search([('report_name', '=', action['report_name']),],
+            res_id = reports.search([('report_name', '=', action['report_name']), ],
                                     0, False, False, context)
             if len(res_id) > 0:
                 report_name = reports.read(res_id[0], ['name'], context)['name']

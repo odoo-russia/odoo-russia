@@ -4,7 +4,7 @@
         <report auto="False"
                 id="new_report_id"
                 model="account.invoice"
-                name="account.invoice"
+                name="account.invoice.akt_rabot"
                 rml="tt_print_form_akt_rabot/Akt.jrxml"
                 string="Акт выполненных работ"
         />
