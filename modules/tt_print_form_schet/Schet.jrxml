@@ -577,7 +577,7 @@ $F{performer_bank_name}]]></textFieldExpression>
 				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<text><![CDATA[Итого: ]]></text>
+				<text><![CDATA[Итого без НДС: ]]></text>
 			</staticText>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 				<reportElement key="textField-7" mode="Transparent" x="463" y="0" width="76" height="13" forecolor="#000000" backcolor="#FFFFFF"/>

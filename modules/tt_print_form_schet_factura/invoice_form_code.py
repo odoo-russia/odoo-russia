@@ -2,18 +2,20 @@
 
 import time
 from openerp.report import report_sxw
-from osv import orm, osv, fields
+from openerp.osv import osv, fields
 from openerp.addons.jasper_reports.pytils import numeral
 from tools.translate import _
+
 
 class invoice_form(report_sxw.rml_parse):
     def __init__(self, cr, uid, name, context):
         super(invoice_form, self).__init__(cr, uid, name, context=context)
-        self.localcontext.update( {'time': time,})
+        self.localcontext.update({'time': time})
 
 report_sxw.report_sxw('report.new_invoice_form_report', 'account.invoice',
                       'tt_print_form_schet_factura/invoice.jrxml',
                       parser=invoice_form)
+
 
 class account_invoice(osv.osv):
     def _get_number_only(self, cr, uid, ids, field_name, arg, context):
@@ -32,7 +34,7 @@ class account_invoice(osv.osv):
 
         return res
 
-    def _get_pos_in_words(self,cr,uid,ids,field,arg,context=None):
+    def _get_pos_in_words(self, cr, uid, ids, field, arg, context=None):
         res = {}
 
         for row in self.browse(cr, uid, ids, context):
@@ -40,7 +42,7 @@ class account_invoice(osv.osv):
 
         return res
 
-    def _get_price_in_words(self,cr,uid,ids,field,arg,context=None):
+    def _get_price_in_words(self, cr, uid, ids, field, arg, context=None):
         res = {}
 
         for row in self.browse(cr, uid, ids, context):
@@ -51,13 +53,16 @@ class account_invoice(osv.osv):
 
         return res
 
-    def _get_invoices_count(self,cr,uid,ids,field,arg,context=None):
+    def _get_invoices_count(self, cr, uid, ids, field, arg, context=None):
         res = {}
 
         for row in self.browse(cr, uid, ids, context):
             res[row.id] = len(row.invoice_line)
 
         return res
+
+    def get_partner_info(self, cr, uid, ids, fields=None, args=None, context=None):
+        return super(account_invoice, self).get_partner_info(cr, uid, ids, fields, args, context)
 
     _name = 'account.invoice'
     _inherit = 'account.invoice'
@@ -71,7 +76,7 @@ account_invoice()
 
 
 class invoice_line(osv.osv):
-    def _get_line_tax(self,cr,uid,ids,field,arg,context=None):
+    def _get_line_tax(self, cr, uid, ids, field, arg, context=None):
         res = {}
 
         for row in self.browse(cr, uid, ids, context):
@@ -82,7 +87,7 @@ class invoice_line(osv.osv):
 
         return res
 
-    def _get_tax_total(self,cr,uid,ids,field,arg,context=None):
+    def _get_tax_total(self, cr, uid, ids, field, arg, context=None):
         res = {}
 
         for row in self.browse(cr, uid, ids, context):

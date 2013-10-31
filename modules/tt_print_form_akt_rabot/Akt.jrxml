@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Schet2" language="groovy" pageWidth="595" pageHeight="842" columnWidth="539" leftMargin="28" rightMargin="28" topMargin="28" bottomMargin="28" isFloatColumnFooter="true">
-	<property name="ireport.zoom" value="1.128947860107556"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.zoom" value="2.6620000000000044"/>
+	<property name="ireport.x" value="153"/>
+	<property name="ireport.y" value="133"/>
 	<property name="OPENERP_RELATIONS" value="[&apos;invoice_line&apos;]"/>
 	<subDataset name="Table Dataset 1">
 		<queryString language="SQL">
@@ -188,14 +188,14 @@
 			<elementGroup>
 				<elementGroup>
 					<staticText>
-						<reportElement positionType="Float" x="0" y="57" width="80" height="13"/>
+						<reportElement positionType="Float" x="0" y="57" width="84" height="13"/>
 						<textElement verticalAlignment="Middle">
 							<font fontName="DejaVu Sans" isBold="true" isPdfEmbedded="true"/>
 						</textElement>
 						<text><![CDATA[Заказчик:]]></text>
 					</staticText>
 					<textField isStretchWithOverflow="true">
-						<reportElement positionType="Float" x="80" y="57" width="459" height="13"/>
+						<reportElement positionType="Float" x="84" y="57" width="455" height="13"/>
 						<textElement verticalAlignment="Middle">
 							<font fontName="DejaVu Sans" isPdfEmbedded="true"/>
 						</textElement>
@@ -535,7 +535,7 @@ $V{performer_details}]]></textFieldExpression>
 				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
 				</textElement>
-				<text><![CDATA[Итого: ]]></text>
+				<text><![CDATA[Итого без НДС: ]]></text>
 			</staticText>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 				<reportElement key="textField-7" mode="Transparent" x="463" y="0" width="76" height="13" forecolor="#000000" backcolor="#FFFFFF"/>

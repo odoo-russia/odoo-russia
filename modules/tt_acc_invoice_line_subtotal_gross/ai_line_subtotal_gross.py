@@ -30,6 +30,19 @@ class account_invoice(osv.osv):
     _name = 'account.invoice'
     _inherit = 'account.invoice'
 
+    def _get_analytic_lines(self, cr, uid, id, context=None):
+        res = super(account_invoice, self)._get_analytic_lines(cr, uid, id, context=context)
+
+        for invoice_line in res:
+            tax_total = 0.0
+
+            for tax in invoice_line['taxes']:
+                if tax.price_include and tax.include_base_amount:
+                    tax_total += tax.amount
+            invoice_line['price'] = float(invoice_line['price'])/(1+tax_total)
+
+        return res
+
     def _amount_all(self, cr, uid, ids, name, args, context=None):
         res = {}
         for invoice in self.browse(cr, uid, ids, context=context):
@@ -39,9 +52,10 @@ class account_invoice(osv.osv):
                 'amount_total': 0.0
             }
             for line in invoice.invoice_line:
-                res[invoice.id]['amount_untaxed'] += line.price_subtotal - line.amount
+                res[invoice.id]['amount_untaxed'] += line.price_subtotal
             for line in invoice.tax_line:
                 res[invoice.id]['amount_tax'] += line.amount
+            res[invoice.id]['amount_untaxed'] -= res[invoice.id]['amount_tax']
             res[invoice.id]['amount_total'] = res[invoice.id]['amount_tax'] + res[invoice.id]['amount_untaxed']
         return res
 
