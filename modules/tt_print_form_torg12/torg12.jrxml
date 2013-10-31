@@ -3,8 +3,8 @@
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.6500000000000143"/>
-	<property name="ireport.x" value="310"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="564"/>
 	<property name="OPENERP_RELATIONS" value="[&apos;invoice_line&apos;, &apos;invoice_line_tax_id&apos;]"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
@@ -1661,7 +1661,7 @@
 			<textField isBlankWhenNull="false">
 				<reportElement key="textField-46" x="24" y="159" width="152" height="14"/>
 				<textElement verticalAlignment="Bottom">
-					<font fontName="DejaVu Sans" size="8" isBold="false" isPdfEmbedded="true"/>
+					<font fontName="DejaVu Sans" size="7" isBold="false" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA["Главный (старший) бухгалтер"]]></textFieldExpression>
 			</textField>
