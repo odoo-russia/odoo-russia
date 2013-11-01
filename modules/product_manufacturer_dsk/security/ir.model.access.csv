@@ -1,5 +1,0 @@
-"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
-"access_product_brand_eshop_user","product.brand eshop_user","model_product_brand","eshop_base_dsk.group_eshop_user",1,0,0,0
-"access_product_brand_eshop_manager","product.brand eshop_manager","model_product_brand","eshop_base_dsk.group_eshop_manager",1,1,1,1
-"access_product_manufacturer_eshop_user","product.manufacturer eshop_user","model_product_manufacturer","eshop_base_dsk.group_eshop_user",1,0,0,0
-"access_product_manufacturer_eshop_manager","product.manufacturer eshop_manager","model_product_manufacturer","eshop_base_dsk.group_eshop_manager",1,1,1,1
