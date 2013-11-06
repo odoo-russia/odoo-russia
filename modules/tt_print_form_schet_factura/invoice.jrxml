@@ -3,7 +3,7 @@
 	<property name="OPENERP_RELATIONS" value="[&apos;invoice_line&apos;]"/>
 	<property name="ireport.zoom" value="1.464100000000019"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="164"/>
+	<property name="ireport.y" value="151"/>
 	<queryString language="xPath">
 		<![CDATA[]]>
 	</queryString>
@@ -26,7 +26,7 @@
 		<fieldDescription><![CDATA[/data/record/company_id/partner_id/ceo]]></fieldDescription>
 	</field>
 	<field name="invoice_name" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/invoice_partner_name]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/invoice_name]]></fieldDescription>
 	</field>
 	<field name="invoice_address" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/invoice_address]]></fieldDescription>
@@ -35,7 +35,7 @@
 		<fieldDescription><![CDATA[/data/record/invoice_innkpp]]></fieldDescription>
 	</field>
 	<field name="shipping_name" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/shipping_partner_name]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/shipping_name]]></fieldDescription>
 	</field>
 	<field name="shipping_address" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/shipping_address]]></fieldDescription>
