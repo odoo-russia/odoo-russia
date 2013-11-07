@@ -112,10 +112,10 @@
 		<fieldDescription><![CDATA[/data/record/gruz_consignee_three]]></fieldDescription>
 	</field>
 	<field name="partner_address" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/partner_id/address_formatted]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/partner_address]]></fieldDescription>
 	</field>
 	<field name="partner_name" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/partner_id/name_official]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/partner_name]]></fieldDescription>
 	</field>
 	<field name="cost_total" class="java.lang.Float">
 		<fieldDescription><![CDATA[/data/record/cost_total]]></fieldDescription>
