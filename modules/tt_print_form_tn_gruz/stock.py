@@ -80,8 +80,10 @@ def _get_partner_name(self, cr, uid, ids, field_name, arg, context=None):
 
     for picking in self.browse(cr, uid, ids, context=context):
         partner = picking.partner_id
-        if not partner.name_official and partner.parent_id:
+        if not partner.name_official and partner.parent_id and partner.parent_id.name_official:
             res[picking.id] = partner.parent_id.name_official
+        elif partner.name_official:
+            res[picking.id] = partner.name_official
         else:
             res[picking.id] = partner.name
     return res
