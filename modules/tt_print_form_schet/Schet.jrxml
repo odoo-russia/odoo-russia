@@ -69,10 +69,7 @@
 		<fieldDescription><![CDATA[/data/record/company_id/partner_id/ceo]]></fieldDescription>
 	</field>
 	<field name="partner_name" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/partner_id/name_official]]></fieldDescription>
-	</field>
-	<field name="partner_name_off" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/partner_id/name_official]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/partner_name]]></fieldDescription>
 	</field>
 	<field name="partner_shipping_name" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/partner_shipping_id/name_official]]></fieldDescription>
@@ -210,14 +207,14 @@
 				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{partner_name_off}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{partner_name}]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="false">
 				<reportElement key="textField-31" mode="Transparent" x="113" y="255" width="338" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[($F{is_invoice})?$F{partner_name_off}:$F{partner_shipping_name_off}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{is_invoice})?$F{partner_name}:$F{partner_shipping_name_off}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 				<reportElement key="textField-31" mode="Transparent" x="52" y="223" width="456" height="17" forecolor="#000000" backcolor="#FFFFFF"/>
