@@ -1,6 +1,7 @@
 openerp.tt_print_forms_names = function(instance) {
     var module = instance.web;
     var QWeb = instance.web.qweb;
+    var _t = instance.web._t;
 
 module.ActionManager = module.ActionManager.extend({
     ir_actions_report_xml: function(action, options) {
