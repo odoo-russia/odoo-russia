@@ -38,7 +38,7 @@
 		<fieldDescription><![CDATA[/data/record/company_id/partner_id/name_official]]></fieldDescription>
 	</field>
 	<field name="performer_name" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/company_id/partner_id/name]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/company_id/partner_id/name_official_multi]]></fieldDescription>
 	</field>
 	<field name="performer_inn" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/company_id/partner_id/inn]]></fieldDescription>
@@ -68,7 +68,7 @@
 		<fieldDescription><![CDATA[/data/record/company_id/partner_id/ceo]]></fieldDescription>
 	</field>
 	<field name="partner_name" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/partner_id/name]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/partner_id/name_official_multi]]></fieldDescription>
 	</field>
 	<field name="partner_name_off" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/partner_id/name_official]]></fieldDescription>
@@ -170,14 +170,14 @@
 				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{partner_name_off}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{partner_name}]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="false">
 				<reportElement key="textField-31" mode="Transparent" x="79" y="22" width="460" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{performer_official_name}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{performer_name}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement key="staticText-70" mode="Transparent" x="0" y="35" width="79" height="13" forecolor="#000000" backcolor="#FFFFFF"/>

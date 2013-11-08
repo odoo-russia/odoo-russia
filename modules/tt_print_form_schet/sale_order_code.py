@@ -71,36 +71,11 @@ class sale_order(osv.osv):
 
         return res
 
-    def _get_partner_name(self, cr, uid, ids, field_name, arg, context=None):
-        res = dict.fromkeys(ids)
-
-        for order in self.browse(cr, uid, ids, context=context):
-            partner = order.partner_id
-            if partner.name_official:
-                res[order.id] = partner.name_official
-            elif partner.parent_id and partner.parent_id.name_official:
-                res[order.id] = partner.parent_id.name_official
-            else:
-                res[order.id] = partner.name
-        return res
-
-
-    def _get_partner_address(self, cr, uid, ids, field_name, arg, context=None):
-        res = dict.fromkeys(ids)
-
-        for order in self.browse(cr, uid, ids, context=context):
-            partner = partner.parent_id if partner.use_parent_address else partner
-            res[order.id] = partner.address_formatted
-        return res
-
     _columns = {
         'is_invoice': fields.function(_is_invoice, type='boolean'),
         'number_only': fields.function(_get_number_only, type='char'),
         'price_in_words':fields.function(_get_price_in_words, type='char'),
         'orders_count': fields.function(_get_orders_count, type='integer'),
-
-        'partner_name': fields.function(_get_partner_name, type='char'),
-        'partner_address': fields.function(_get_partner_address, type='char'),
     }
 sale_order()
 

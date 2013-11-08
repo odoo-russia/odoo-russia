@@ -23,6 +23,12 @@
 	<field name="invoice_name" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/number]]></fieldDescription>
 	</field>
+	<field name="performer_name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/company_id/partner_id/name_official_multi]]></fieldDescription>
+	</field>
+	<field name="performer_address" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/company_id/partner_id/address_multi]]></fieldDescription>
+	</field>
 	<field name="performer_zip" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/company_id/partner_id/zip]]></fieldDescription>
 	</field>
@@ -37,9 +43,6 @@
 	</field>
 	<field name="performer_phone" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/company_id/partner_id/phone]]></fieldDescription>
-	</field>
-	<field name="performer_official_name" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/company_id/partner_id/name_official]]></fieldDescription>
 	</field>
 	<field name="performer_inn" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/company_id/partner_id/inn]]></fieldDescription>
@@ -69,10 +72,10 @@
 		<fieldDescription><![CDATA[/data/record/company_id/partner_id/ceo]]></fieldDescription>
 	</field>
 	<field name="partner_name" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/partner_name]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/partner_id/name_official_multi]]></fieldDescription>
 	</field>
 	<field name="partner_shipping_name" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/partner_shipping_id/name_official]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/partner_shipping_id/name_official_multi]]></fieldDescription>
 	</field>
 	<field name="partner_shipping_name_off" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/partner_shipping_id/name_official]]></fieldDescription>
@@ -143,9 +146,6 @@
 	<field name="orders_count" class="java.lang.Integer">
 		<fieldDescription><![CDATA[/data/record/orders_count]]></fieldDescription>
 	</field>
-	<field name="performer_address" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/company_id/partner_id/address_formatted]]></fieldDescription>
-	</field>
 	<variable name="lines_count" class="java.lang.Integer">
 		<variableExpression><![CDATA[]]></variableExpression>
 		<initialValueExpression><![CDATA[($F{is_invoice})?$F{invoices_count}:$F{orders_count}]]></initialValueExpression>
@@ -183,7 +183,7 @@
 				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="10" isBold="true" isItalic="false" isUnderline="true" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{performer_official_name}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{performer_name}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="false">
 				<reportElement key="textField-31" positionType="Float" mode="Transparent" x="40" y="19" width="499" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -214,7 +214,7 @@
 				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[($F{is_invoice})?$F{partner_name}:$F{partner_shipping_name_off}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{is_invoice})?$F{partner_name}:$F{partner_shipping_name}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 				<reportElement key="textField-31" mode="Transparent" x="52" y="223" width="456" height="17" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -306,7 +306,7 @@
 						<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 					</textElement>
 					<textFieldExpression class="java.lang.String"><![CDATA["Получатель:\n" +
-$F{performer_official_name} +
+$F{performer_name} +
 "\nг. " +$F{performer_city}]]></textFieldExpression>
 				</textField>
 			</frame>

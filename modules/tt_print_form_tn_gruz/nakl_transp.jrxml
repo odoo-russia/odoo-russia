@@ -100,10 +100,10 @@
 		<fieldDescription><![CDATA[/data/record/number_only]]></fieldDescription>
 	</field>
 	<field name="shipping_name" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/company_id/partner_id/name_official]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/company_id/partner_id/name_official_multi]]></fieldDescription>
 	</field>
 	<field name="shipping_address" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/company_id/partner_id/address_formatted]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/company_id/partner_id/address_multi]]></fieldDescription>
 	</field>
 	<field name="gruz_shipper_three" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/gruz_shipper_three]]></fieldDescription>
@@ -112,10 +112,10 @@
 		<fieldDescription><![CDATA[/data/record/gruz_consignee_three]]></fieldDescription>
 	</field>
 	<field name="partner_address" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/partner_address]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/partner_id/address_multi]]></fieldDescription>
 	</field>
 	<field name="partner_name" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/partner_name]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/partner_id/name_official_multi]]></fieldDescription>
 	</field>
 	<field name="cost_total" class="java.lang.Float">
 		<fieldDescription><![CDATA[/data/record/cost_total]]></fieldDescription>

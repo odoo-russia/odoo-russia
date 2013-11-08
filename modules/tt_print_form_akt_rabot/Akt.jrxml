@@ -46,7 +46,7 @@
 		<fieldDescription><![CDATA[/data/record/company_id/partner_id/bank_ids/bank_name]]></fieldDescription>
 	</field>
 	<field name="performer_name" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/company_id/partner_id/bank_ids/name]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/company_id/partner_id/name_official_multi]]></fieldDescription>
 	</field>
 	<field name="performer_bank_acc_corr" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/company_id/partner_id/bank_ids/bank_acc_corr]]></fieldDescription>
@@ -67,7 +67,7 @@
 		<fieldDescription><![CDATA[/data/record/amount_tax]]></fieldDescription>
 	</field>
 	<field name="partner_name" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/partner_id/name]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/partner_id/name_official_multi]]></fieldDescription>
 	</field>
 	<field name="line_price_unit" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/invoice_line/price_unit]]></fieldDescription>
@@ -199,7 +199,7 @@
 						<textElement verticalAlignment="Middle">
 							<font fontName="DejaVu Sans" isPdfEmbedded="true"/>
 						</textElement>
-						<textFieldExpression class="java.lang.String"><![CDATA[(($F{partner_name}.equals(""))?"":$F{partner_name} + ", ") +
+						<textFieldExpression class="java.lang.String"><![CDATA[$F{partner_name} + ", " +
 $F{partner_address} + " " +
 $V{partner_details}]]></textFieldExpression>
 					</textField>
@@ -212,7 +212,7 @@ $V{partner_details}]]></textFieldExpression>
 					<textElement verticalAlignment="Middle">
 						<font fontName="DejaVu Sans" isPdfEmbedded="true"/>
 					</textElement>
-					<textFieldExpression class="java.lang.String"><![CDATA[(($F{performer_official_name}.equals(""))?"":$F{performer_official_name} + ", ") +
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{performer_name} + ", " +
 $F{performer_address} + " " +
 $V{performer_details}]]></textFieldExpression>
 				</textField>
@@ -427,14 +427,14 @@ $V{performer_details}]]></textFieldExpression>
 				<textElement verticalAlignment="Top">
 					<font fontName="DejaVu Sans" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{performer_official_name}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{performer_name}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
 				<reportElement x="289" y="162" width="250" height="64"/>
 				<textElement verticalAlignment="Top">
 					<font fontName="DejaVu Sans" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{partner_name_official}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{partner_name}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement positionType="Float" x="0" y="226" width="97" height="13"/>

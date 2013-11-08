@@ -74,31 +74,6 @@ def _get_supp_docs(self, cr, uid, ids, field_name, arg, context=None):
         res[picking.id] = ', '.join(docs)
     return res
 
-
-def _get_partner_name(self, cr, uid, ids, field_name, arg, context=None):
-    res = dict.fromkeys(ids)
-
-    for picking in self.browse(cr, uid, ids, context=context):
-        partner = picking.partner_id
-
-        if partner.name_official:
-            res[picking.id] = partner.name_official
-        elif partner.parent_id and partner.parent_id.name_official:
-            res[picking.id] = partner.parent_id.name_official
-        else:
-            res[picking.id] = partner.name
-    return res
-
-
-def _get_partner_address(self, cr, uid, ids, field_name, arg, context=None):
-    res = dict.fromkeys(ids)
-
-    for picking in self.browse(cr, uid, ids, context=context):
-        partner = partner.parent_id if partner.use_parent_address else partner
-        res[picking.id] = partner.address_formatted
-    return res
-
-
 columns = {
     'gruz_shipper_three': fields.text(''),
 
@@ -152,9 +127,6 @@ columns = {
                                                                    "('state', 'in', ['open', 'paid'])]"),
     'gruz_attached_invoices': fields.function(_get_invoices_string, type='char'),
     'gruz_supp_docs': fields.function(_get_supp_docs, type='char'),
-
-    'partner_name': fields.function(_get_partner_name, type='char'),
-    'partner_address': fields.function(_get_partner_address, type='char'),
 }
 
 
