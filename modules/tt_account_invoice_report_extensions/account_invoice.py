@@ -40,10 +40,10 @@ class account_invoice(osv.osv):
                 field_postfix = field_splitted[-1]
 
                 # Get correct partner by the prefix of field name
-                if field_prefix == 'invoice' and origin and origin.partner_invoice_id:
-                    partner = origin.partner_invoice_id
-                elif field_prefix == 'shipping' and origin and origin.partner_shipping_id:
-                    partner = origin.partner_shipping_id
+                if field_prefix == 'invoice':
+                    partner = origin.partner_invoice_id or origin.partner_id if origin else invoice.partner_id
+                elif field_prefix == 'shipping':
+                    partner = origin.partner_shipping_id or origin.partner_id if origin else invoice.partner_id
                 elif field_prefix == 'company':
                     partner = invoice.company_id.partner_id
                 elif field_prefix == 'partner':
