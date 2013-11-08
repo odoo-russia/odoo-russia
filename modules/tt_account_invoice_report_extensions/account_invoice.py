@@ -54,10 +54,10 @@ class account_invoice(osv.osv):
 
                 # Get information by the postfix of field name
                 if field_postfix == 'name':
-                    if not partner.name_official and partner.parent_id and partner.parent_id.name_official:
-                        value = partner.parent_id.name_official
-                    elif partner.name_official:
+                    if partner.name_official:
                         value = partner.name_official
+                    elif partner.parent_id and partner.parent_id.name_official:
+                        value = partner.parent_id.name_official
                     else:
                         value = partner.name
                 elif field_postfix == 'address':

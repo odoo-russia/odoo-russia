@@ -76,10 +76,10 @@ class sale_order(osv.osv):
 
         for order in self.browse(cr, uid, ids, context=context):
             partner = order.partner_id
-            if not partner.name_official and partner.parent_id and partner.parent_id.name_official:
-                res[order.id] = partner.parent_id.name_official
-            elif partner.name_official:
+            if partner.name_official:
                 res[order.id] = partner.name_official
+            elif partner.parent_id and partner.parent_id.name_official:
+                res[order.id] = partner.parent_id.name_official
             else:
                 res[order.id] = partner.name
         return res
