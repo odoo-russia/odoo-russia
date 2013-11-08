@@ -54,15 +54,9 @@ class account_invoice(osv.osv):
 
                 # Get information by the postfix of field name
                 if field_postfix == 'name':
-                    if partner.name_official:
-                        value = partner.name_official
-                    elif partner.parent_id and partner.parent_id.name_official:
-                        value = partner.parent_id.name_official
-                    else:
-                        value = partner.name
+                    value = partner.name_official_multi
                 elif field_postfix == 'address':
-                    partner = partner.parent_id if partner.use_parent_address else partner
-                    value = partner.address_formatted
+                    value = partner.address_multi
                 elif field_postfix == 'innkpp':
                     inn = partner.inn if partner.inn else partner.parent_id.inn
                     kpp = partner.kpp if partner.kpp else partner.parent_id.kpp

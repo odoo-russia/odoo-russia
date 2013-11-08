@@ -1,7 +1,7 @@
 #coding: utf-8
 
-from osv import fields, osv
-from tools.translate import _
+from openerp.osv import fields, osv
+from openerp.tools.translate import _
 from datetime import date
 from csv import reader
 import urllib2
@@ -19,6 +19,7 @@ def csv_reader(iterable, encoding='utf-8', **kwargs):
         # decode UTF-8 to Unicode, cell by cell:
         yield [unicode(cell, encoding) for cell in row]
 
+
 class res_partner(osv.osv):
     def _format_address(self, cr, uid, ids, field, arg, context=None):
         res = {}
@@ -30,10 +31,29 @@ class res_partner(osv.osv):
             res[partner.id] = ', '.join(address) if address else ""
         return res
 
+    def _get_official_name_multi(self, cr, uid, ids, field, arg, context=None):
+        res = {}
+        for partner in self.browse(cr, uid, ids, context=context):
+            if partner.name_official:
+                res[partner.id] = partner.name_official
+            elif partner.parent_id and partner.parent_id.name_official:
+                res[partner.id] = partner.parent_id.name_official
+            else:
+                res[partner.id] = partner.name
+        return res
+
+    def _get_address_multi(self, cr, uid, ids, field, arg, context=None):
+        res = {}
+        for partner in self.browse(cr, uid, ids, context=context):
+            real_partner = partner.parent_id if partner.use_parent_address else partner
+            res[partner.id] = real_partner.address_formatted
+        return res
+
     _name = 'res.partner'
     _inherit = 'res.partner'
     _columns = {
         'name_official': fields.char('Official name', size=200),
+        'name_official_multi': fields.function(_get_official_name_multi, type='char'),
         'inn': fields.char('INN', size=12),
         'kpp': fields.char('KPP', size=9),
         'okpo': fields.char('OKPO', size=14),
@@ -43,8 +63,10 @@ class res_partner(osv.osv):
         'ceo_function': fields.char('CEO Function', size=200),
         'accountant': fields.char('Chief accountant', size=200),
         'address_formatted': fields.function(_format_address, string='Formatted Address', type='char', store=False),
+        'address_multi': fields.function(_get_address_multi, type='char'),
     }
 res_partner()
+
 
 class Bank(osv.osv):
     def name_search(self, cr, uid, name='', args=[], operator='ilike', context=None, limit=80):
