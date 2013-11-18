@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from openerp.osv import orm, osv, fields
+from openerp.tools.translate import _
 import openerp.addons.decimal_precision as dp
 
 
@@ -34,14 +35,18 @@ class account_invoice(osv.osv):
 
     def _get_analytic_lines(self, cr, uid, id, context=None):
         res = super(account_invoice, self)._get_analytic_lines(cr, uid, id, context=context)
+        try:
+            precision = dp.get_precision('Product Price')(cr)[1]
+        except:
+            raise osv.except_osv(_("Error"),
+                                 _("I can't get decimal precision of Product Price. Ask for help from developers."))
 
         for invoice_line in res:
             tax_total = 0.0
-
             for tax in invoice_line['taxes']:
                 if tax.price_include and tax.include_base_amount:
                     tax_total += tax.amount
-            invoice_line['price'] = float(invoice_line['price'])/(1+tax_total)
+            invoice_line['price'] = round(float(invoice_line['price'])/(1+tax_total), precision)
 
         return res
 
