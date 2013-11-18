@@ -60,16 +60,10 @@ class account_invoice(osv.osv):
         return res
 
     def _get_invoice_tax(self, cr, uid, ids, context=None):
-        result = {}
-        for tax in self.pool.get('account.invoice.tax').browse(cr, uid, ids, context=context):
-            result[tax.invoice_id.id] = True
-        return result.keys()
+        return super(account_invoice, self)._get_invoice_tax(cr, uid, ids, context=context)
 
     def _get_invoice_line(self, cr, uid, ids, context=None):
-        result = {}
-        for line in self.pool.get('account.invoice.line').browse(cr, uid, ids, context=context):
-            result[line.invoice_id.id] = True
-        return result.keys()
+        return super(account_invoice, self)._get_invoice_line(cr, uid, ids, context=context)
 
     _columns = {
          'amount_untaxed': fields.function(_amount_all, digits_compute=dp.get_precision('Account'), string='Subtotal', track_visibility='always',
