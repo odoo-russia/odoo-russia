@@ -13,7 +13,8 @@ class account_invoice_line(osv.osv):
         cur_obj = self.pool.get('res.currency')
         for line in self.browse(cr, uid, ids):
             price = line.price_unit * (1-(line.discount or 0.0)/100.0)
-            taxes = tax_obj.compute_all(cr, uid, line.invoice_line_tax_id, price, line.quantity, product=line.product_id, partner=line.invoice_id.partner_id)
+            taxes = tax_obj.compute_all(cr, uid, line.invoice_line_tax_id, price, line.quantity,
+                                        product=line.product_id, partner=line.invoice_id.partner_id)
             res[line.id] = taxes['total_included']
             if line.invoice_id:
                 cur = line.invoice_id.currency_id
@@ -21,7 +22,8 @@ class account_invoice_line(osv.osv):
         return res
 
     _columns = {
-        'price_subtotal': fields.function(_amount_line, string='Amount', type="float", digits_compute= dp.get_precision('Account'), store=True),
+        'price_subtotal': fields.function(_amount_line, string='Amount', type="float",
+                                          digits_compute=dp.get_precision('Account'), store=True),
     }
 account_invoice_line()
 
@@ -66,25 +68,29 @@ class account_invoice(osv.osv):
         return super(account_invoice, self)._get_invoice_line(cr, uid, ids, context=context)
 
     _columns = {
-         'amount_untaxed': fields.function(_amount_all, digits_compute=dp.get_precision('Account'), string='Subtotal', track_visibility='always',
+         'amount_untaxed': fields.function(_amount_all, digits_compute=dp.get_precision('Account'), string='Subtotal',
+                                           track_visibility='always',
             store={
                 'account.invoice': (lambda self, cr, uid, ids, c={}: ids, ['invoice_line'], 20),
                 'account.invoice.tax': (_get_invoice_tax, None, 20),
-                'account.invoice.line': (_get_invoice_line, ['price_unit','invoice_line_tax_id','quantity','discount','invoice_id'], 20),
+                'account.invoice.line': (_get_invoice_line, ['price_unit', 'invoice_line_tax_id', 'quantity',
+                                                             'discount', 'invoice_id'], 20),
             },
             multi='all'),
         'amount_tax': fields.function(_amount_all, digits_compute=dp.get_precision('Account'), string='Tax',
             store={
                 'account.invoice': (lambda self, cr, uid, ids, c={}: ids, ['invoice_line'], 20),
                 'account.invoice.tax': (_get_invoice_tax, None, 20),
-                'account.invoice.line': (_get_invoice_line, ['price_unit','invoice_line_tax_id','quantity','discount','invoice_id'], 20),
+                'account.invoice.line': (_get_invoice_line, ['price_unit', 'invoice_line_tax_id', 'quantity',
+                                                             'discount', 'invoice_id'], 20),
             },
             multi='all'),
         'amount_total': fields.function(_amount_all, digits_compute=dp.get_precision('Account'), string='Total',
             store={
                 'account.invoice': (lambda self, cr, uid, ids, c={}: ids, ['invoice_line'], 20),
                 'account.invoice.tax': (_get_invoice_tax, None, 20),
-                'account.invoice.line': (_get_invoice_line, ['price_unit','invoice_line_tax_id','quantity','discount','invoice_id'], 20),
+                'account.invoice.line': (_get_invoice_line, ['price_unit', 'invoice_line_tax_id', 'quantity',
+                                                             'discount', 'invoice_id'], 20),
             },
             multi='all'),
     }
