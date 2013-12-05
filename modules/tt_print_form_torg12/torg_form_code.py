@@ -1,10 +1,13 @@
 # -*- coding: utf-8 -*-
 
 import time
+from datetime import datetime
 from openerp.report import report_sxw
 from openerp.osv import orm, osv, fields
 from openerp.addons.jasper_reports.pytils import numeral
+from openerp.addons.jasper_reports.pytils.dt import MONTH_NAMES
 from tools.translate import _
+
 
 class torg_form(report_sxw.rml_parse):
     def __init__(self, cr, uid, name, context):
@@ -126,7 +129,11 @@ class account_invoice(osv.osv):
         res = {}
         for invoice in self.browse(cr, uid, ids, context):
             if invoice.partner_id.contract_num:
-                res[invoice.id] = "Договор"
+                if invoice.partner_id.factoring and invoice.partner_id.factoring_conditions:
+                    contract = "Договор поставки с отсрочкой платежа"
+                else:
+                    contract = "Договор"
+                res[invoice.id] = contract
             elif invoice.origin:
                 res[invoice.id] = "Заказ"
             else:
@@ -189,6 +196,12 @@ class account_invoice(osv.osv):
 
         return ', '.join(values) if values else ""
 
+    def _format_header(self, cr, uid, ids, field, arg, context=None):
+        res = {}
+        for invoice in self.browse(cr, uid, ids, context=context):
+            res[invoice.id] = invoice.partner_id.factoring and invoice.partner_id.factoring_conditions or ''
+        return res
+
     _name = 'account.invoice'
     _inherit = 'account.invoice'
     _columns = {
@@ -207,6 +220,7 @@ class account_invoice(osv.osv):
         'partner_fullinfo': fields.function(get_partner_info, type='char', store=False, multi='partner_info'),
         'shipping_fullinfo': fields.function(get_partner_info, type='char', store=False, multi='partner_info'),
         'invoice_fullinfo': fields.function(get_partner_info, type='char', store=False, multi='partner_info'),
+        'torg12_header': fields.function(_format_header, type='char'),
     }
 account_invoice()
 
@@ -236,4 +250,12 @@ class invoice_line(osv.osv):
     _columns = {
         'line_tax_amount': fields.function(_get_line_tax, type='double'),
         'line_tax_total': fields.function(_get_tax_total, type='double'),
+    }
+
+
+class res_partner(osv.osv):
+    _inherit = 'res.partner'
+    _columns = {
+        'factoring': fields.boolean('Factoring'),
+        'factoring_conditions': fields.text('Factoring conditions'),
     }
