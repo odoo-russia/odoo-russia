@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
 
 import time
-from datetime import datetime
 from openerp.report import report_sxw
-from openerp.osv import orm, osv, fields
+from openerp.osv import osv, fields
 from openerp.addons.jasper_reports.pytils import numeral
-from openerp.addons.jasper_reports.pytils.dt import MONTH_NAMES
 from tools.translate import _
 
 
