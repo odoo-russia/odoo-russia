@@ -30,7 +30,7 @@ msgstr "Вы должны подтвердить счёт перед печат�
 #. module: tt_print_form_torg12
 #: model:ir.model,name:tt_print_form_torg12.model_res_partner
 msgid "Partner"
-msgstr "Контрагент"
+msgstr "Партнер"
 
 #. module: tt_print_form_torg12
 #: model:ir.model,name:tt_print_form_torg12.model_account_invoice_line
@@ -56,4 +56,4 @@ msgstr "Условия факторинга"
 #. module: tt_print_form_torg12
 #: model:ir.actions.report.xml,name:tt_print_form_torg12.new_torg_report_id
 msgid "Torg-12"
-msgstr "Торг-12"
+msgstr "ТОРГ-12"
