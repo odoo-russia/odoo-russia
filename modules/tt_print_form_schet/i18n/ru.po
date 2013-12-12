@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenERP Server 7.0-20130717-231254\n"
+"Project-Id-Version: OpenERP Server 7.0-20131009-231130\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-03 09:56+0000\n"
-"PO-Revision-Date: 2013-10-03 09:56+0000\n"
+"POT-Creation-Date: 2013-12-12 13:01+0000\n"
+"PO-Revision-Date: 2013-12-12 13:01+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,11 +16,25 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: tt_print_form_schet
-#: model:ir.actions.report.xml,name:tt_print_form_schet.account_invoice_id
-#: model:ir.actions.report.xml,name:sale.report_sale_order
-#: model:ir.actions.report.xml,name:tt_print_form_schet.report_sale_order
+#: model:ir.model,name:tt_print_form_schet.model_sale_order
+msgid "Sales Order"
+msgstr "Заказ продаж"
+
+#. module: tt_print_form_schet
+#: model:ir.actions.report.xml,name:tt_print_form_schet.report_account_invoice_schet
+#: model:ir.actions.report.xml,name:tt_print_form_schet.report_sale_order_schet
 msgid "Schet"
 msgstr "Счёт"
+
+#. module: tt_print_form_schet
+#: model:ir.actions.report.xml,name:sale.report_sale_order
+msgid "Order form"
+msgstr "Бланк заказа"
+
+#. module: tt_print_form_schet
+#: model:ir.actions.report.xml,name:account.account_invoices
+msgid "International invoice"
+msgstr "Международная накладная"
 
 #. module: tt_print_form_schet
 #: model:email.template,report_name:sale.email_template_edi_sale
@@ -33,13 +47,3 @@ msgstr "Счёт №${(object.number_only or '')} от ${object.date_order or ''
 #: model:email.template,report_name:account.email_template_edi_invoice
 msgid "Schet #${(object.number_only or '')} from ${object.date_invocie or ''} for ${object.partner_id.name or ''}"
 msgstr "Счёт №${(object.number_only or '')} от ${object.date_invocie or ''} для ${object.partner_id.name or ''}"
-
-#. module: tt_print_form_schet
-#: model:ir.actions.report.xml,name:sale.report_sale_order
-msgid "Schet"
-msgstr "Счёт"
-
-#. module: tt_print_form_schet
-#: model:ir.actions.report.xml,name:account.account_invoices
-msgid "Schet"
-msgstr "Счёт"
