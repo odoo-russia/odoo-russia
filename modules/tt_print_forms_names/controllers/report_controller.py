@@ -5,6 +5,7 @@ import base64
 import zlib
 import openerp.addons.web.controllers.main as main
 from openerp.addons.web import http as http
+from openerp.osv import fields
 from datetime import datetime
 openerpweb = http
 
@@ -40,14 +41,16 @@ class Reports(openerpweb.Controller):
             model_data = model_obj.read(context['active_id'], [field_number, field_date, 'partner_id'], context)
 
             report_date = model_data[field_date] if model_data[field_date] else ""
-            if report_date:
-                date_obj = datetime.strptime(report_date.split(' ')[0], "%Y-%m-%d")
-                report_date = "от " + datetime.strftime(date_obj, "%d.%m.%Y")
+            if not report_date:
+                report_date = fields.date.today()
+            date_obj = datetime.strptime(report_date.split(' ')[0], "%Y-%m-%d")
+            report_date = " от " + datetime.strftime(date_obj, "%d.%m.%Y")
             report_date = unicode(report_date, 'utf')
-            report_number = u"№" + model_data[field_number] if model_data[field_number] else ""
-            report_partner_name = u"для " + model_data['partner_id'][1] if model_data['partner_id'] else ""
-            file_name = u"%s %s %s %s" % (report_name, report_number, report_date, report_partner_name)
 
+            report_number = u" №" + model_data[field_number] if model_data[field_number] else u"-черновик"
+
+            report_partner_name = u" для " + model_data['partner_id'][1] if model_data['partner_id'] else ""
+            file_name = u"%s%s%s%s" % (report_name, report_number, report_date, report_partner_name)
         return file_name
 
     @openerpweb.httprequest
