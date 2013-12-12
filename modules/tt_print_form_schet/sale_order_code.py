@@ -86,12 +86,12 @@ class account_invoice(osv.osv):
         for row in self.browse(cr, uid, ids, context):
             res[row.id] = row.number
             if not row.number:
-            seq_id = self.pool.get('ir.sequence').search(cr, uid, [('code', '=', 'sale.order')])
-            sequence = self.pool.get('ir.sequence').read(cr, uid, seq_id, ['padding', 'active'])[0]
-            if sequence and sequence.get('active'):
-                padding = sequence.get('padding')
-                padding = 0 - int(padding)
-                res[row.id] = row.number[padding:].lstrip('0')
+                seq_id = self.pool.get('ir.sequence').search(cr, uid, [('code', '=', 'sale.order')])
+                sequence = self.pool.get('ir.sequence').read(cr, uid, seq_id, ['padding', 'active'])[0]
+                if sequence and sequence.get('active'):
+                    padding = sequence.get('padding')
+                    padding = 0 - int(padding)
+                    res[row.id] = row.number[padding:].lstrip('0')
         return res
 
     def _is_invoice(self, cr, uid, ids, field, arg, context=None):
