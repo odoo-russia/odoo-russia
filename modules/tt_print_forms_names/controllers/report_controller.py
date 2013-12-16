@@ -42,7 +42,10 @@ class Reports(openerpweb.Controller):
             report_date = model_data[field_date] if model_data[field_date] else ""
             if report_date:
                 date_obj = datetime.strptime(report_date.split(' ')[0], "%Y-%m-%d")
-                report_date = "от " + datetime.strftime(date_obj, "%d.%m.%Y")
+            else:
+                date_obj = datetime.today()
+            report_date = "от " + datetime.strftime(date_obj, "%d.%m.%Y")
+
             report_date = unicode(report_date, 'utf')
             report_number = u"№" + model_data[field_number] if model_data[field_number] else ""
             report_partner_name = u"для " + model_data['partner_id'][1] if model_data['partner_id'] else ""
