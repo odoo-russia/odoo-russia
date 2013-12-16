@@ -2,6 +2,7 @@
 <openerp>
     <data noupdate="0">
 
+        <!--Rename default reports for sale.order and account.invoice-->
         <record id="sale.report_sale_order" model="ir.actions.report.xml">
             <field name="name">Order form</field>
         </record>
@@ -10,20 +11,7 @@
             <field name="name">International invoice</field>
         </record>
 
-        <report id="report_sale_order_schet"
-                model="sale.order"
-                name="sale.order.schet"
-                rml="tt_print_form_schet/Schet.jrxml"
-                string="Schet"
-        />
-
-        <report id="report_account_invoice_schet"
-                model="account.invoice"
-                name="account.invoice.schet"
-                rml="tt_print_form_schet/Schet.jrxml"
-                string="Schet"
-        />
-
+        <!--Rename report names for schet print form in email attachments-->
         <record id="sale.email_template_edi_sale" model="email.template">
             <field name="report_template" ref="account.account_invoices"/>
             <field name="report_name">Schet #${(object.number_only or '')} from ${object.date_order or ''} for ${object.partner_id.name or ''}</field>

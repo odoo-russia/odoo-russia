@@ -12,11 +12,12 @@
                  'tt_acc_invoice_line_subtotal_gross',
                  'tt_sale_order_line_subtotal_gross',
                  'tt_print_forms_names',],
-    'update_xml' : ['sale_order_data.xml',],
+    'data' : [
+        'print_form_schet_data.xml',
+        'report/account_invoice_schet_report.xml',
+        'report/sale_order_schet_report.xml',
+    ],
     'installable': True,
     'auto_install': False,
-    'description': '''
-This module adds new Sale Order Print Form.
-============================================================
-    '''
+    'description': '''This module adds new Schet Print Form.'''
 }

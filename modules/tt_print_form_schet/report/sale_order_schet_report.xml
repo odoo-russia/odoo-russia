@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+
+        <report id="report_sale_order_schet"
+                model="sale.order"
+                name="sale.order.schet"
+                rml="tt_print_form_schet/schet.jrxml"
+                string="Schet"
+        />
+
+    </data>
+</openerp>
