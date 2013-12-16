@@ -1,37 +1,25 @@
 # -*- coding: utf-8 -*-
-
-import time
-from openerp.report import report_sxw
 from openerp.osv import osv, fields
 from openerp.addons.jasper_reports.pytils import numeral
-from tools.translate import _
-
-
-class invoice_form(report_sxw.rml_parse):
-    def __init__(self, cr, uid, name, context):
-        super(invoice_form, self).__init__(cr, uid, name, context=context)
-        self.localcontext.update({'time': time})
-
-report_sxw.report_sxw('report.new_invoice_form_report', 'account.invoice',
-                      'tt_print_form_schet_factura/invoice.jrxml',
-                      parser=invoice_form)
 
 
 class account_invoice(osv.osv):
     def _get_number_only(self, cr, uid, ids, field_name, arg, context):
         res = {}
+        seq_obj = self.pool.get('ir.sequence')
 
         for row in self.browse(cr, uid, ids, context):
-            if not row.number:
-                raise osv.except_osv(_('Error!'), _('You must confirm invoice!'))
+            number = u'0-черновик'
+            seq_id = seq_obj.search(cr, uid, ['|', ('code', '=', self._name),
+                                              ('name', '=', 'Account Default Sales Journal')], context=context)
+            seq_id = seq_id and seq_id[0] or False
 
-            seq_id = self.pool.get('ir.sequence').search(cr, uid, [('code', '=', 'sale.order')])
-            sequence = self.pool.get('ir.sequence').read(cr, uid, seq_id, ['padding', 'active'])[0]
-            if sequence and sequence.get('active'):
-                padding = sequence.get('padding')
+            if seq_id and row.number:
+                seq_data = seq_obj.read(cr, uid, seq_id, ['padding'], context=context)
+                padding = seq_data.get('padding')
                 padding = 0 - int(padding)
-                res[row.id] = row.number[padding:].lstrip('0')
-
+                number = row.number[padding:].lstrip('0')
+            res[row.id] = number
         return res
 
     def _get_pos_in_words(self, cr, uid, ids, field, arg, context=None):

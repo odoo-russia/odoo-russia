@@ -42,9 +42,9 @@ msgid "Currency"
 msgstr "Валюта"
 
 #. module: tt_print_form_schet_factura
-#: model:ir.actions.report.xml,name:tt_print_form_schet_factura.new_invoice_report_id
+#: model:ir.actions.report.xml,name:tt_print_form_schet_factura.report_account_invoice_schet_factura
 #: model:ir.model,name:tt_print_form_schet_factura.model_account_invoice
-msgid "Invoice"
+msgid "Schet-factura"
 msgstr "Счет-фактура"
 
 #. module: tt_print_form_schet_factura

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+
+        <report id="report_account_invoice_schet_factura"
+                model="account.invoice"
+                name="account.invoice.schet_factura"
+                rml="tt_print_form_schet_factura/schet_factura.jrxml"
+                string="Schet-factura"
+        />
+
+    </data>
+</openerp>

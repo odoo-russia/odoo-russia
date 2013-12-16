@@ -11,11 +11,8 @@
                  'tt_acc_invoice_line_subtotal_gross',
                  'tt_account_invoice_report_extensions',
                  'tt_print_forms_names',],
-    'update_xml' : ['invoice_form_data.xml',],
+    'data' : ['report/schet_factura_report.xml',],
     'installable': True,
     'auto_install': False,
-    'description': '''
-This module adds Invoice Print Form.
-============================================================
-    '''
+    'description': '''This module adds Schet Factura Print Form.'''
 }
