@@ -3,7 +3,6 @@
 import time
 from openerp.report import report_sxw
 from openerp.osv import osv, fields
-from openerp.netsvc import Service
 from openerp.addons.jasper_reports.pytils import numeral
 
 
