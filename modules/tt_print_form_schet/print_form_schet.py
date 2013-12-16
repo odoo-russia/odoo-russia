@@ -3,7 +3,6 @@
 import time
 from openerp.report import report_sxw
 from openerp.osv import osv, fields
-from openerp.netsvc import Service
 from openerp.addons.jasper_reports.pytils import numeral
 
 
@@ -12,8 +11,7 @@ class sale_order_report(report_sxw.rml_parse):
         super(sale_order_report, self).__init__(cr, uid, name, context=context)
         self.localcontext.update( {'time': time})
 
-del Service._services['report.sale.order']
-report_sxw.report_sxw('report.sale.order', 'sale.order',
+report_sxw.report_sxw('report.sale.order.schet', 'sale.order',
                       'tt_print_form_schet/Schet.jrxml',
                       parser=sale_order_report)
 
@@ -23,7 +21,7 @@ class account_invoice_report(report_sxw.rml_parse):
         super(account_invoice_report, self).__init__(cr, uid, name, context=context)
         self.localcontext.update({'time': time})
 
-report_sxw.report_sxw('report.new_account_invoice_report', 'account.invoice',
+report_sxw.report_sxw('report.account.invoice.schet', 'account.invoice',
                       'tt_print_form_schet/Schet.jrxml',
                       parser=account_invoice_report)
 
@@ -43,13 +41,13 @@ class sale_order(osv.osv):
         res = {}
 
         for row in self.browse(cr, uid, ids, context):
+            res[row.id] = row.name
             seq_id = self.pool.get('ir.sequence').search(cr, uid, [('code', '=', 'sale.order')])
             sequence = self.pool.get('ir.sequence').read(cr, uid, seq_id, ['padding', 'active'])[0]
             if sequence and sequence.get('active'):
                 padding = sequence.get('padding')
                 padding = 0 - int(padding)
                 res[row.id] = row.name[padding:].lstrip('0')
-
         return res
 
     def _get_price_in_words(self, cr, uid, ids, field_name, arg, context):
@@ -85,16 +83,14 @@ class account_invoice(osv.osv):
         res = {}
 
         for row in self.browse(cr, uid, ids, context):
+            res[row.id] = row.number
             if not row.number:
-                raise osv.except_osv('Error!', 'You must confirm invoice!')
-
-            seq_id = self.pool.get('ir.sequence').search(cr, uid, [('code', '=', 'sale.order')])
-            sequence = self.pool.get('ir.sequence').read(cr, uid, seq_id, ['padding', 'active'])[0]
-            if sequence and sequence.get('active'):
-                padding = sequence.get('padding')
-                padding = 0 - int(padding)
-                res[row.id] = row.number[padding:].lstrip('0')
-
+                seq_id = self.pool.get('ir.sequence').search(cr, uid, [('code', '=', 'sale.order')])
+                sequence = self.pool.get('ir.sequence').read(cr, uid, seq_id, ['padding', 'active'])[0]
+                if sequence and sequence.get('active'):
+                    padding = sequence.get('padding')
+                    padding = 0 - int(padding)
+                    res[row.id] = row.number[padding:].lstrip('0')
         return res
 
     def _is_invoice(self, cr, uid, ids, field, arg, context=None):
