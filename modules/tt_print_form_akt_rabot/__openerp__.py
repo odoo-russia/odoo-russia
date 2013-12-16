@@ -9,11 +9,8 @@
                  'l10n_ru',
                  'tt_acc_invoice_line_subtotal_gross',
                  'tt_print_forms_names',],
-    'update_xml' : ['acc_inv_data.xml',],
+    'update_xml' : ['report/akt_rabot_report.xml'],
     'installable': True,
     'auto_install': False,
-    'description': '''
-This module adds Account Invoice Print Form.
-============================================================
-    '''
+    'description': '''This module adds Account Invoice Print Form.'''
 }

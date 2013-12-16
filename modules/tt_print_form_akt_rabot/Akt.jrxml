@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Schet2" language="groovy" pageWidth="595" pageHeight="842" columnWidth="539" leftMargin="28" rightMargin="28" topMargin="28" bottomMargin="28" isFloatColumnFooter="true">
-	<property name="ireport.zoom" value="2.6620000000000044"/>
-	<property name="ireport.x" value="153"/>
-	<property name="ireport.y" value="133"/>
+	<property name="ireport.zoom" value="1.241842646118312"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
 	<property name="OPENERP_RELATIONS" value="[&apos;invoice_line&apos;]"/>
 	<subDataset name="Table Dataset 1">
 		<queryString language="SQL">
@@ -147,6 +147,9 @@
 	<field name="partner_address" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/partner_id/address_formatted]]></fieldDescription>
 	</field>
+	<field name="date_formatted" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/report_date_formatted]]></fieldDescription>
+	</field>
 	<variable name="carry_flag" class="java.lang.Boolean">
 		<variableExpression><![CDATA[]]></variableExpression>
 	</variable>
@@ -154,7 +157,7 @@
 		<initialValueExpression><![CDATA[(($F{performer_inn})?", ИНН " + $F{performer_inn}:"") +
 (($F{performer_kpp})?", КПП " + $F{performer_kpp}:"") +
 (($F{performer_acc_number})?", р/сч " + $F{performer_acc_number}:"") +
-(($F{performer_bank_name})?", банк " + $F{performer_bank_name}:"") +
+(($F{performer_bank_name})?", " + $F{performer_bank_name}:"") +
 (($F{performer_bank_acc_corr})?", корр. счет " + $F{performer_bank_acc_corr}:"") +
 (($F{performer_bank_bic})?", БИК " + $F{performer_bank_bic}:"")]]></initialValueExpression>
 	</variable>
@@ -176,14 +179,14 @@
 	<title>
 		<band height="70" splitType="Stretch">
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-				<reportElement key="textField-31" mode="Transparent" x="41" y="0" width="456" height="17" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement key="textField-31" mode="Transparent" x="0" y="0" width="539" height="17" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<bottomPen lineWidth="0.0"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="14" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[String.format("АКТ № %s от %s", $F{number_only}, (new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse($F{date_invoice})).format("dd.MM.yyyy"))]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[String.format("АКТ № %s от %s г.", $F{number_only}, $F{date_formatted})]]></textFieldExpression>
 			</textField>
 			<elementGroup>
 				<elementGroup>
