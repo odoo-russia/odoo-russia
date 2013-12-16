@@ -165,7 +165,7 @@
 		<initialValueExpression><![CDATA[(($F{partner_inn})?", ИНН " + $F{partner_inn}:"") +
 (($F{partner_kpp})?", КПП " + $F{partner_kpp}:"") +
 (($F{partner_acc_number})?", р/сч " + $F{partner_acc_number}:"") +
-(($F{partner_bank_name})?", банк " + $F{partner_bank_name}:"") +
+(($F{partner_bank_name})?", " + $F{partner_bank_name}:"") +
 (($F{partner_bank_acc_corr})?", корр. счет " + $F{partner_bank_acc_corr}:"") +
 (($F{partner_bank_bic})?", БИК " + $F{partner_bank_bic}:"")]]></initialValueExpression>
 	</variable>
