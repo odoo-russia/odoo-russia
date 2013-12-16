@@ -1,5 +1,5 @@
 {
-    'name' : 'Bill of product print form',
+    'name' : 'Nakladnaya dlya sklada',
     'version' : '1.0',
     'category' : 'Extra Reports',
     'author'  : 'Transparent Technologies',
@@ -10,11 +10,8 @@
                  'l10n_ru',
                  'tt_acc_invoice_line_subtotal_gross',
                  'tt_print_forms_names',],
-    'update_xml' : ['bill_of_product_form_data.xml',],
+    'data' : ['report/nakl_sklad_report.xml'],
     'installable': True,
     'auto_install': False,
-    'description': '''
-This module adds new Bill of product form
-============================================================
-    '''
+    'description': '''This module adds new Bill of product form.'''
 }

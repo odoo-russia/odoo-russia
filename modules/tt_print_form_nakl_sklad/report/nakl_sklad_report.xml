@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+
+        <report id="report_account_invoice_nakl_sklad"
+                model="account.invoice"
+                name="account.invoice.nakl_sklad"
+                rml="tt_print_form_nakl_sklad/nakl_sklad.jrxml"
+                string="Invoice for warehouse"
+        />
+
+    </data>
+</openerp>
