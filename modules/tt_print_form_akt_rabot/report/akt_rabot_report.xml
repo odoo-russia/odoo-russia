@@ -8,6 +8,6 @@
                 rml="tt_print_form_akt_rabot/Akt.jrxml"
                 string="Akt vypolnennykh rabot"
         />
-        <!--Акт выполненных работ-->
+
     </data>
 </openerp>
