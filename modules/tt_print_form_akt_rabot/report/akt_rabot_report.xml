@@ -2,8 +2,7 @@
 <openerp>
     <data noupdate="0">
 
-        <report auto="False"
-                id="new_report_id"
+        <report id="report_account_invoice_akt_rabot"
                 model="account.invoice"
                 name="account.invoice.akt_rabot"
                 rml="tt_print_form_akt_rabot/Akt.jrxml"
