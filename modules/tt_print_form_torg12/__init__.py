@@ -1,1 +1,3 @@
-import torg_form_code
+import report
+import account
+import res_partner

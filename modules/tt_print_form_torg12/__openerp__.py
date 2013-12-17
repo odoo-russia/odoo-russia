@@ -12,13 +12,10 @@
                  'tt_account_invoice_report_extensions',
                  'tt_print_forms_names',],
     'data' : [
-        'torg_form_data.xml',
-        'torg_form_view.xml',
+        'report/torg12_report.xml',
+        'res_partner_view.xml',
     ],
     'installable': True,
     'auto_install': False,
-    'description': '''
-This module adds Torg12 Print Form.
-============================================================
-    '''
+    'description': '''This module adds Torg12 Print Form.'''
 }

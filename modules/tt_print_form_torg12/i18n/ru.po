@@ -16,36 +16,9 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: tt_print_form_torg12
-#: code:addons/tt_print_form_torg12/torg_form_code.py:27
-#, python-format
-msgid "Error!"
-msgstr "Ошибка!"
-
-#. module: tt_print_form_torg12
-#: code:addons/tt_print_form_torg12/torg_form_code.py:27
-#, python-format
-msgid "You must confirm invoice!"
-msgstr "Вы должны подтвердить счёт перед печатью!"
-
-#. module: tt_print_form_torg12
-#: model:ir.model,name:tt_print_form_torg12.model_res_partner
-msgid "Partner"
-msgstr "Партнер"
-
-#. module: tt_print_form_torg12
-#: model:ir.model,name:tt_print_form_torg12.model_account_invoice_line
-msgid "Invoice Line"
-msgstr "Позиция счета"
-
-#. module: tt_print_form_torg12
 #: field:res.partner,factoring:0
 msgid "Factoring"
 msgstr "Факторинг"
-
-#. module: tt_print_form_torg12
-#: model:ir.model,name:tt_print_form_torg12.model_account_invoice
-msgid "Invoice"
-msgstr "Счет"
 
 #. module: tt_print_form_torg12
 #: view:res.partner:0
@@ -54,6 +27,6 @@ msgid "Factoring conditions"
 msgstr "Условия факторинга"
 
 #. module: tt_print_form_torg12
-#: model:ir.actions.report.xml,name:tt_print_form_torg12.new_torg_report_id
+#: model:ir.actions.report.xml,name:tt_print_form_torg12.report_account_invoice_torg12
 msgid "Torg-12"
 msgstr "ТОРГ-12"
