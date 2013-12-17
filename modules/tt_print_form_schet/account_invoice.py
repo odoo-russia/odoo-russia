@@ -1,6 +1,6 @@
 # coding: utf-8
 from openerp.osv import osv, fields
-from openerp.addons.jasper_reports.pytils import numeral
+from openerp.addons.jasper_reports.pytils import numeral, dt
 
 
 class account_invoice(osv.osv):
@@ -47,6 +47,16 @@ class account_invoice(osv.osv):
 
         return res
 
+    def _get_report_date_formatted(self, cr, uid, ids, field, args, context=None):
+        res = {}
+        for row in self.browse(cr, uid, ids, context=context):
+            from datetime import datetime
+            from openerp.tools.misc import DEFAULT_SERVER_DATE_FORMAT as date_format
+            date = row.date_invoice or fields.date.today()
+            date_object = datetime.strptime(date, date_format).date()
+            res[row.id] = dt.ru_strftime(format=u"%d %B %Y", date=date_object, inflected=True)
+        return res
+
     _name = 'account.invoice'
     _inherit = 'account.invoice'
     _columns = {
@@ -54,5 +64,6 @@ class account_invoice(osv.osv):
         'number_only': fields.function(_get_number_only, type='char'),
         'price_in_words':fields.function(_get_price_in_words, type='char'),
         'invoices_count': fields.function(_get_invoices_count, type='integer'),
+        'report_date_formatted': fields.function(_get_report_date_formatted, type='char'),
     }
 account_invoice()

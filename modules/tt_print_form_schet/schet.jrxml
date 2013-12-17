@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Schet2" language="groovy" pageWidth="595" pageHeight="842" columnWidth="539" leftMargin="28" rightMargin="28" topMargin="28" bottomMargin="28" isFloatColumnFooter="true">
-	<property name="ireport.zoom" value="1.1289478601075655"/>
+	<property name="ireport.zoom" value="1.3660269107301555"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="274"/>
 	<property name="OPENERP_RELATIONS" value="[&apos;order_line&apos;, &apos;invoice_line&apos;]"/>
 	<property name="OPENERP_RELATIONS0" value="[&apos;order_line&apos;]"/>
 	<subDataset name="Table Dataset 1">
@@ -57,7 +57,7 @@
 		<fieldDescription><![CDATA[/data/record/company_id/partner_id/bank_ids/acc_number]]></fieldDescription>
 	</field>
 	<field name="performer_bank_name" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/company_id/partner_id/bank_ids/bank_name]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/company_id/partner_id/bank_ids/bank/name]]></fieldDescription>
 	</field>
 	<field name="performer_bank_acc_corr" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/company_id/partner_id/bank_ids/bank_acc_corr]]></fieldDescription>
@@ -146,6 +146,9 @@
 	<field name="orders_count" class="java.lang.Integer">
 		<fieldDescription><![CDATA[/data/record/orders_count]]></fieldDescription>
 	</field>
+	<field name="date_formatted" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/report_date_formatted]]></fieldDescription>
+	</field>
 	<variable name="lines_count" class="java.lang.Integer">
 		<variableExpression><![CDATA[]]></variableExpression>
 		<initialValueExpression><![CDATA[($F{is_invoice})?$F{invoices_count}:$F{orders_count}]]></initialValueExpression>
@@ -163,15 +166,13 @@
 	<title>
 		<band height="278" splitType="Stretch">
 			<staticText>
-				<reportElement key="staticText-1" mode="Transparent" x="140" y="62" width="271" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement key="staticText-1" mode="Transparent" x="0" y="62" width="539" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box leftPadding="3" rightPadding="3"/>
-				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[Образец заполнения платежного поручения]]></text>
 			</staticText>
-			<elementGroup/>
-			<elementGroup/>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="false">
 				<reportElement key="textField-31" mode="Transparent" x="0" y="0" width="539" height="19" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
@@ -186,7 +187,7 @@
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{performer_name}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="false">
-				<reportElement key="textField-31" positionType="Float" mode="Transparent" x="40" y="19" width="499" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement key="textField-31" positionType="Float" mode="Transparent" x="40" y="19" width="499" height="43" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
@@ -217,14 +218,14 @@
 				<textFieldExpression class="java.lang.String"><![CDATA[($F{is_invoice})?$F{partner_name}:$F{partner_shipping_name}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-				<reportElement key="textField-31" mode="Transparent" x="52" y="223" width="456" height="17" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement key="textField-31" mode="Transparent" x="0" y="223" width="539" height="17" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<bottomPen lineWidth="0.0"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="14" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[String.format("СЧЕТ № %s от %s", $F{number_only}, (new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(($F{is_invoice})?$F{date_invoice}:$F{date_order})).format("dd.MM.yyyy"))]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[String.format("СЧЕТ № %s от %s г.", $F{number_only}, $F{date_formatted})]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement key="staticText-52" mode="Transparent" x="3" y="242" width="110" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -234,14 +235,14 @@
 				<text><![CDATA[Плательщик:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="-1" y="19" width="41" height="20"/>
+				<reportElement x="0" y="19" width="40" height="43"/>
 				<textElement verticalAlignment="Top">
 					<font fontName="DejaVu Sans" isBold="true" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[Адрес:]]></text>
 			</staticText>
 			<frame>
-				<reportElement x="0" y="90" width="539" height="64"/>
+				<reportElement x="0" y="86" width="539" height="64"/>
 				<staticText>
 					<reportElement key="staticText-5" stretchType="RelativeToTallestObject" mode="Transparent" x="292" y="0" width="43" height="63" forecolor="#000000" backcolor="#FFFFFF"/>
 					<box>
@@ -307,13 +308,13 @@
 					</textElement>
 					<textFieldExpression class="java.lang.String"><![CDATA["Получатель:\n" +
 $F{performer_name} +
-"\nг. " +$F{performer_city}]]></textFieldExpression>
+"\n" +$F{performer_city}]]></textFieldExpression>
 				</textField>
 			</frame>
 			<frame>
-				<reportElement stretchType="RelativeToBandHeight" x="0" y="153" width="540" height="42"/>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="149" width="540" height="60"/>
 				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="false">
-					<reportElement key="textField-1" stretchType="RelativeToBandHeight" mode="Transparent" x="0" y="0" width="292" height="41" forecolor="#000000" backcolor="#FFFFFF"/>
+					<reportElement key="textField-1" mode="Transparent" x="0" y="0" width="292" height="60" forecolor="#000000" backcolor="#FFFFFF"/>
 					<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="2">
 						<topPen lineWidth="0.0"/>
 						<leftPen lineWidth="0.75"/>
@@ -327,7 +328,7 @@ $F{performer_name} +
 $F{performer_bank_name}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="false">
-					<reportElement key="textField-28" stretchType="RelativeToTallestObject" mode="Transparent" x="335" y="20" width="204" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
+					<reportElement key="textField-28" stretchType="RelativeToTallestObject" mode="Transparent" x="335" y="30" width="204" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
 					<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="2">
 						<topPen lineWidth="0.75"/>
 						<leftPen lineWidth="0.0"/>
@@ -340,7 +341,7 @@ $F{performer_bank_name}]]></textFieldExpression>
 					<textFieldExpression class="java.lang.String"><![CDATA[$F{performer_bank_acc_corr}]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement key="" stretchType="RelativeToBandHeight" mode="Transparent" x="292" y="20" width="43" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
+					<reportElement key="" stretchType="RelativeToBandHeight" mode="Transparent" x="292" y="30" width="43" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
 					<box>
 						<topPen lineWidth="0.0"/>
 						<leftPen lineWidth="0.0"/>
@@ -353,7 +354,7 @@ $F{performer_bank_name}]]></textFieldExpression>
 					<text><![CDATA[Сч. №]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="" stretchType="RelativeToBandHeight" mode="Transparent" x="292" y="0" width="43" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+					<reportElement key="" stretchType="RelativeToBandHeight" mode="Transparent" x="292" y="0" width="43" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
 					<box>
 						<topPen lineWidth="0.0"/>
 						<leftPen lineWidth="0.0"/>
@@ -366,7 +367,7 @@ $F{performer_bank_name}]]></textFieldExpression>
 					<text><![CDATA[БИК]]></text>
 				</staticText>
 				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="false">
-					<reportElement key="" stretchType="RelativeToBandHeight" mode="Transparent" x="335" y="0" width="204" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+					<reportElement key="" stretchType="RelativeToBandHeight" mode="Transparent" x="335" y="0" width="204" height="30" forecolor="#000000" backcolor="#FFFFFF"/>
 					<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="2">
 						<topPen lineWidth="0.0"/>
 						<leftPen lineWidth="0.0"/>
@@ -549,7 +550,7 @@ $F{performer_bank_name}]]></textFieldExpression>
 		</band>
 	</detail>
 	<summary>
-		<band height="165">
+		<band height="170">
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 				<reportElement key="textField-7" mode="Transparent" x="463" y="26" width="76" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="2">
@@ -636,24 +637,24 @@ $F{performer_bank_name}]]></textFieldExpression>
 				<text><![CDATA[Руководитель предприятия:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" mode="Transparent" x="0" y="148" width="108" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement key="staticText-4" mode="Transparent" x="0" y="138" width="108" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[Главный бухгалтер:]]></text>
 			</staticText>
-			<textField pattern="" isBlankWhenNull="false">
-				<reportElement key="textField-1" mode="Transparent" x="108" y="109" width="250" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="textField-1" mode="Transparent" x="113" y="109" width="57" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<bottomPen lineWidth="0.75"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{performer_ceo}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="false">
-				<reportElement key="textField-1" mode="Transparent" x="108" y="148" width="250" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement key="textField-1" mode="Transparent" x="184" y="138" width="231" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
 				<box>
 					<pen lineWidth="0.0"/>
 					<topPen lineWidth="0.0"/>
@@ -676,10 +677,63 @@ $F{performer_bank_name}]]></textFieldExpression>
 			<textField>
 				<reportElement positionType="Float" x="0" y="63" width="539" height="20"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="DejaVu Sans" isBold="false" pdfEncoding="cp1251"/>
+					<font fontName="DejaVu Sans" isBold="true" pdfEncoding="cp1251"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{price_in_words}.substring(0, 1).toUpperCase() + $F{price_in_words}.substring(1, $F{price_in_words}.length())]]></textFieldExpression>
 			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="textField-1" mode="Transparent" x="184" y="109" width="231" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<bottomPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{performer_ceo}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="textField-1" mode="Transparent" x="113" y="138" width="57" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<bottomPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[
+]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="textField-1" mode="Transparent" x="113" y="151" width="57" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="2"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" lineSpacing="Single" markup="none">
+					<font fontName="DejaVu Sans" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[(подпись)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="textField-1" mode="Transparent" x="113" y="122" width="57" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="2"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" lineSpacing="Single" markup="none">
+					<font fontName="DejaVu Sans" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[(подпись)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="textField-1" mode="Transparent" x="184" y="122" width="231" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="2"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" lineSpacing="Single" markup="none">
+					<font fontName="DejaVu Sans" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[(Ф.И.О.)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="textField-1" mode="Transparent" x="184" y="151" width="231" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="2"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" lineSpacing="Single" markup="none">
+					<font fontName="DejaVu Sans" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[(Ф.И.О.)]]></text>
+			</staticText>
 		</band>
 	</summary>
 </jasperReport>
