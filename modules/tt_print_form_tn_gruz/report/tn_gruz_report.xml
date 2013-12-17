@@ -1,27 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data noupdate="0">
-        <!-- ТТН для преевозчика -->
-        <report auto="False"
-                id="waybill_id"
+
+        <report id="report_stock_picking_tn_gruz"
                 model="stock.picking"
-                name="stock.picking.new_waybill_report"
+                name="stock.picking.tn_gruz"
                 rml="tt_print_form_tn_gruz/nakl_transp.jrxml"
                 string="Waybill"
         />
 
-        <report auto="False"
-                id="waybill_id"
+        <report id="report_stock_picking_in_tn_gruz"
                 model="stock.picking.in"
-                name="stock.picking.in.new_waybill_report"
+                name="stock.picking.in.tn_gruz"
                 rml="tt_print_form_tn_gruz/nakl_transp.jrxml"
                 string="Waybill"
         />
 
-        <report auto="False"
-                id="waybill_id"
+        <report id="report_stock_picking_out_tn_gruz"
                 model="stock.picking.out"
-                name="stock.picking.out.new_waybill_report"
+                name="stock.picking.out.tn_gruz"
                 rml="tt_print_form_tn_gruz/nakl_transp.jrxml"
                 string="Waybill"
         />

@@ -5,18 +5,30 @@ from openerp.osv import osv, fields
 
 account_number_re = re.compile(r"[a-zA-Zа-яА-Я]*\/[0-9]*\/([0-9]*)", re.I + re.U)
 
+PICKING_MAP = {
+    'stock.picking': 'Picking INT',
+    'stock.picking.in': 'Picking IN',
+    'stock.picking.out': 'Picking OUT',
+}
 
-def _get_number_only(self, cr, uid, ids, field_name, arg, context=None):
+
+def _get_number_only(self, cr, uid, ids, field_name, arg, context):
     res = {}
+    seq_obj = self.pool.get('ir.sequence')
 
-    for row in self.browse(cr, uid, ids, context=context):
-        seq_id = self.pool.get('ir.sequence').search(cr, uid, [('code', '=', self._name)], context=context)
-        sequence = self.pool.get('ir.sequence').read(cr, uid, seq_id, ['padding', 'active'], context=context)[0]
-        if sequence and sequence.get('active'):
-            padding = sequence.get('padding')
+    for row in self.browse(cr, uid, ids, context):
+        number = u'0-черновик'
+        seq_name = PICKING_MAP.get(self._name, 'Picking INT')
+        seq_id = seq_obj.search(cr, uid, ['|', ('code', '=', self._name),
+                                          ('name', '=', seq_name)], context=context)
+        seq_id = seq_id and seq_id[0] or False
+
+        if seq_id and row.name:
+            seq_data = seq_obj.read(cr, uid, seq_id, ['padding'], context=context)
+            padding = seq_data.get('padding')
             padding = 0 - int(padding)
-            res[row.id] = row.name[padding:].lstrip('0')
-
+            number = row.name[padding:].lstrip('0')
+        res[row.id] = number
     return res
 
 

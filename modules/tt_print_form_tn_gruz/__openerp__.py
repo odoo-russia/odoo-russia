@@ -6,12 +6,10 @@
     'license': 'AGPL-3',
     'depends': ['base', 'stock', 'jasper_reports', 'l10n_ru', 'tt_print_forms_names'],
     'update_xml': [
-        'tt_print_form_tn_gruz_data.xml',
-        'tt_print_form_tn_gruz_view.xml',
+        'report/tn_gruz_report.xml',
+        'stock_view.xml',
     ],
     'installable': True,
     'auto_install': False,
-    'description': '''
-    Transportnaya naklandnaya
-    '''
+    'description': '''Transportnaya naklandnaya'''
 }
