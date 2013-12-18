@@ -1,6 +1,9 @@
-# -*- coding: utf-8 -*-
+# coding: utf-8
 from openerp.osv import osv, fields
 from openerp.addons.jasper_reports.pytils import numeral
+
+RECORDS_FIRST_PAGE = 2
+RECORDS_OTHER_PAGES = 22
 
 
 class account_invoice(osv.osv):
@@ -189,9 +192,21 @@ class account_invoice(osv.osv):
             res[invoice.id] = invoice.partner_id.factoring and invoice.partner_id.factoring_conditions or ''
         return res
 
+    def _get_pages_count(self, cr, uid, ids, field, arg, context=None):
+        res = {}
+        for row in self.browse(cr, uid, ids, context=context):
+            pages = 1
+            invoices_count = row.invoices_count
+            if invoices_count > RECORDS_FIRST_PAGE:
+                pages += ((invoices_count - RECORDS_FIRST_PAGE) / RECORDS_OTHER_PAGES) + 1
+            pages_in_words = numeral.choose_plural(pages, (u"листе", u"листах", u"листах"))
+            res[row.id] = "%s %s" % (pages, pages_in_words)
+        return res
+
     _name = 'account.invoice'
     _inherit = 'account.invoice'
     _columns = {
+        'pages_count': fields.function(_get_pages_count, type='char'),
         'number_only': fields.function(_get_number_only, type='char'),
         'price_in_words': fields.function(_get_price_in_words, type='char'),
         'pos_in_words': fields.function(_get_pos_in_words, type='char'),
