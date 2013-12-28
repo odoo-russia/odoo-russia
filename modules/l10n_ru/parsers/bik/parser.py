@@ -16,7 +16,7 @@ CBRF_BIK_URL = 'http://www.cbr.ru/mcirabis/BIK/'
 OUT_FILE = os.path.join(os.path.dirname(__file__), '../../data/res_bank_data.xml')
 
 
-def generate_bank_file():
+def generate_bank_file(out_file):
 
     catalog = etree.parse(StringIO(
         urllib2.urlopen(CBRF_BIK_CATALOG_URL).read()
@@ -39,38 +39,39 @@ def generate_bank_file():
     print 'Saving data to temporary file'
     bik_f.write(urllib2.urlopen(bik_url).read())
     bik_f.seek(0, os.SEEK_SET)
+
     z = ZipFile(bik_f)
     dbf_f = TemporaryFile()
     dbf_f.write(z.read('BNKSEEK.DBF'))
     z.close()
+
     db = dbf.Dbf(dbf_f)
-    out_f = open(OUT_FILE, 'w')
-    out_f.write('<?xml version="1.0" encoding="utf-8"?>\n'
-                '<openerp>\n'
-                '\t<data noupdate="0">\n')
+
+    root = etree.Element('openerp')
+    data = etree.SubElement(root, 'data')
+
+    def _append_field(name, text):
+        n = etree.SubElement(record, 'field', attrib={'name': name})
+        n.text = text
+
     for rec in db:
-        out_f.write("""\t\t<record model="res.country" id="bank.%s">
-\t\t\t<field name="name">%s</field>
-\t\t\t<field name="city">%s</field>
-\t\t\t<field name="street">%s</field>
-\t\t\t<field name="phone">%s</field>
-\t\t\t<field name="country" ref="ru"/>
-\t\t\t<field name="bic">%s</field>
-\t\t\t<field name="acc_corr">%s</field>
-\t\t\t<field name="active">True</field>
-\t\t\t<field name="last_updated">%s</field>
-\t\t</record>\n""" % (rec['KSNP'],
-                      rec['NAMEP'].decode('cp866').encode('utf-8'),
-                      rec['NNP'].decode('cp866').encode('utf-8'),
-                      rec['ADR'].decode('cp866').encode('utf-8'),
-                      rec['TELEF'].decode('cp866').encode('utf-8'),
-                      rec['NEWNUM'],
-                      rec['KSNP'],
-                      today.strftime('%Y%m%d')))
-    out_f.write('\t</data>\n</openerp>')
+        record = etree.SubElement(data, 'record', attrib={'model':'res.bank', 'id':'bank.%d' % i })
+        _append_field('name',     rec['NAMEP'])
+        _append_field('city',     rec['NNP'].decode('cp866'))
+        _append_field('street',   rec['ADR'].decode('cp866'))
+        _append_field('phone',    rec['TELEF'].decode('cp866'))
+        _append_field('bic',      rec['NEWNUM'])
+        _append_field('acc_corr', rec['KSNP'])
+        _append_field('active',   'True')
+        _append_field('last_updated', today.strftime('%Y%m%d'))
+        etree.SubElement(record, 'field', attrib={'name': name, 'ref':'ru'})
+
+    out_f = open(out_file, 'wb')
+    out_f.write(etree.tostring(root, pretty_print=True, xml_declaration=True, encoding='utf-8'))
     out_f.close()
+
     dbf_f.close()
 
 
 if __name__ == '__main__':
-    generate_bank_file()
+    generate_bank_file(OUT_FILE)
