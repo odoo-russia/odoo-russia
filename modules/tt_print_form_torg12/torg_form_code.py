@@ -4,7 +4,7 @@ import time
 from openerp.report import report_sxw
 from openerp.osv import osv, fields
 from openerp.addons.jasper_reports.pytils import numeral
-from tools.translate import _
+from openerp.tools.translate import _
 
 
 class torg_form(report_sxw.rml_parse):
@@ -15,6 +15,7 @@ class torg_form(report_sxw.rml_parse):
 report_sxw.report_sxw('report.new_torg_form_report', 'account.invoice',
                       'tt_print_form_torg12/torg12.jrxml',
                       parser=torg_form)
+
 
 class account_invoice(osv.osv):
     def _get_number_only(self, cr, uid, ids, field_name, arg, context):
@@ -48,7 +49,7 @@ class account_invoice(osv.osv):
             rubles = numeral.rubles(int(row.amount_total))
             copek_tmp = round(row.amount_total - int(row.amount_total))
             copek = numeral.choose_plural(int(copek_tmp), (u"копейка", u"копейки", u"копеек"))
-            res[row.id] = ("%s %02d %s")%(rubles, copek_tmp, copek)
+            res[row.id] = "%s %02d %s" % (rubles, copek_tmp, copek)
 
         return res
 
@@ -67,7 +68,7 @@ class account_invoice(osv.osv):
 
             for line in invoice.invoice_line:
                 if line.product_id.weight_net:
-                    weight += line.product_id.weight_net*line.quantity
+                    weight += line.product_id.weight_net * line.quantity
 
             if weight:
                 res[invoice.id] = numeral.in_words(weight)
@@ -81,7 +82,7 @@ class account_invoice(osv.osv):
             weight = 0
             for line in invoice.invoice_line:
                 if line.product_id.weight:
-                    weight += line.product_id.weight*line.quantity
+                    weight += line.product_id.weight * line.quantity
             if weight:
                 res[invoice.id] = numeral.in_words(weight)
             else:
@@ -138,6 +139,7 @@ class account_invoice(osv.osv):
                 res[invoice.id] = ""
         return res
 
+    @staticmethod
     def _format_inn_kpp(self, inn, kpp):
         res = ""
         if inn and kpp:
@@ -151,6 +153,7 @@ class account_invoice(osv.osv):
     def get_partner_info(self, cr, uid, ids, fields=None, args=None, context=None):
         return super(account_invoice, self).get_partner_info(cr, uid, ids, fields, args, context)
 
+    @staticmethod
     def _get_fullinfo(self, field, invoice, partner):
         acc_number = None
         bank_name = None
