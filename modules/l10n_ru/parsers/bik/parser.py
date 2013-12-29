@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# Генерация справочника банков
+
+
 import os
 import urllib2
 from StringIO import StringIO
@@ -11,21 +14,20 @@ from dbfpy import dbf  # pip install http://downloads.sourceforge.net/project/db
 from zipfile import ZipFile
 
 
-CBRF_BIK_CATALOG_URL = 'http://www.cbr.ru/mcirabis/PluginInterface/GetBicCatalog.aspx'
-CBRF_BIK_URL = 'http://www.cbr.ru/mcirabis/BIK/'
+CBRF_BIC_CATALOG_URL = 'http://www.cbr.ru/mcirabis/PluginInterface/GetBicCatalog.aspx'
+CBRF_BASE_BIC_URL = 'http://www.cbr.ru/mcirabis/BIK/'
 OUT_FILE = os.path.join(os.path.dirname(__file__), '../../data/res_bank_data.xml')
 
 
-def generate_bank_file(out_file):
-
+def get_bic_list(catalog_url=CBRF_BIC_CATALOG_URL, base_bic_url=CBRF_BASE_BIC_URL):
     catalog = etree.parse(StringIO(
-        urllib2.urlopen(CBRF_BIK_CATALOG_URL).read()
+        urllib2.urlopen(catalog_url).read()
     ))
 
     today = date.today()
 
-    print 'Generation date : %s' % catalog.xpath('/BicDBList/@DataGeneration')[0]
     print 'Catalog hash    : %s' % catalog.xpath('/BicDBList/CatalogHash/@hash')[0]
+    print 'Generation date : %s' % catalog.xpath('/BicDBList/@DataGeneration')[0]
     print 'Today           : %s' % today.strftime('%d.%m.%Y')
 
     metadata = [item.attrib
@@ -33,44 +35,62 @@ def generate_bank_file(out_file):
                 if datetime.strptime(item.attrib['date'], '%d.%m.%Y').date() >= today
                 ][0]
 
-    bik_url = CBRF_BIK_URL + metadata['file']
-    print 'Current bik url : %s' % bik_url
-    bik_f = TemporaryFile()
-    print 'Saving data to temporary file'
-    bik_f.write(urllib2.urlopen(bik_url).read())
-    bik_f.seek(0, os.SEEK_SET)
+    bic_url = base_bic_url + metadata['file']
+    print 'Current bik url : %s' % bic_url
 
-    z = ZipFile(bik_f)
-    dbf_f = TemporaryFile()
-    dbf_f.write(z.read('BNKSEEK.DBF'))
-    z.close()
+    bic_list = []
 
-    db = dbf.Dbf(dbf_f)
+    with TemporaryFile() as f:
+        print 'Saving data to temporary file'
+        f.write(urllib2.urlopen(bic_url).read())
+        f.seek(0, os.SEEK_SET)
+        with TemporaryFile() as df:
+            z = ZipFile(f)
+            df.write(z.read('BNKSEEK.DBF'))
+            db = dbf.Dbf(df)
+
+            for rec in db:
+                bic_list.append({
+                    'name': rec['NAMEP'].decode('cp866'),
+                    'city': rec['NNP'].decode('cp866'),
+                    'street': rec['ADR'].decode('cp866'),
+                    'phone': rec['TELEF'].decode('cp866'),
+                    'bic': rec['NEWNUM'],
+                    'acc_corr': rec['KSNP'],
+                    'active': 'True',
+                    'last_updated': today.strftime('%Y%m%d'),
+                })
+
+    return bic_list
+
+
+def generate_bank_file(out_file):
+    bic_list = get_bic_list()
+
+    def _append_field(name, text):
+        if not name:
+            name = chr(32)
+        n = etree.SubElement(record, 'field', attrib={'name': name})
+        print repr(name), repr(text)
+        n.text = text
 
     root = etree.Element('openerp')
     data = etree.SubElement(root, 'data')
 
-    def _append_field(name, text):
-        n = etree.SubElement(record, 'field', attrib={'name': name})
-        n.text = text
+    for bic in bic_list:
+        record = etree.SubElement(data, 'record',
+                                  attrib={'model': 'res.bank',
+                                          'id': 'bank_%s' % bic['bic']})
+        for k, v in bic.items():
+            _append_field(k, v)
+        etree.SubElement(record, 'field', attrib={'name': 'country',
+                                                  'ref': 'country_ru'})
 
-    for rec in db:
-        record = etree.SubElement(data, 'record', attrib={'model':'res.bank', 'id':'bank.%d' % i })
-        _append_field('name',     rec['NAMEP'])
-        _append_field('city',     rec['NNP'].decode('cp866'))
-        _append_field('street',   rec['ADR'].decode('cp866'))
-        _append_field('phone',    rec['TELEF'].decode('cp866'))
-        _append_field('bic',      rec['NEWNUM'])
-        _append_field('acc_corr', rec['KSNP'])
-        _append_field('active',   'True')
-        _append_field('last_updated', today.strftime('%Y%m%d'))
-        etree.SubElement(record, 'field', attrib={'name': name, 'ref':'ru'})
-
-    out_f = open(out_file, 'wb')
-    out_f.write(etree.tostring(root, pretty_print=True, xml_declaration=True, encoding='utf-8'))
-    out_f.close()
-
-    dbf_f.close()
+    with open(out_file, 'wb') as f:
+        f.write(etree.tostring(root,
+                               pretty_print=True,
+                               xml_declaration=True,
+                               encoding='utf-8'))
 
 
 if __name__ == '__main__':
