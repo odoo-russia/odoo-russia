@@ -71,11 +71,10 @@ def generate_bank_file(out_file):
         if not name:
             name = chr(32)
         n = etree.SubElement(record, 'field', attrib={'name': name})
-        print repr(name), repr(text)
         n.text = text
 
     root = etree.Element('openerp')
-    data = etree.SubElement(root, 'data')
+    data = etree.SubElement(root, 'data', attrib={'noupdate': '0'})
 
     for bic in bic_list:
         record = etree.SubElement(data, 'record',
@@ -83,8 +82,9 @@ def generate_bank_file(out_file):
                                           'id': 'bank_%s' % bic['bic']})
         for k, v in bic.items():
             _append_field(k, v)
-        etree.SubElement(record, 'field', attrib={'name': 'country',
-                                                  'ref': 'country_ru'})
+        etree.SubElement(record, 'field', attrib={'model': 'res.country',
+                                                  'name': 'country',
+                                                  'ref': 'base.ru'})
 
     with open(out_file, 'wb') as f:
         f.write(etree.tostring(root,

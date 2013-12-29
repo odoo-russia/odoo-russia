@@ -21,7 +21,7 @@ def generate_countries(in_file, out_file):
         f.readline()  # skip header
 
         root = etree.Element('openerp')
-        data = etree.SubElement(root, 'data')
+        data = etree.SubElement(root, 'data', attrib={'noupdate': '0'})
 
         for l in f:
             if not l:
@@ -29,9 +29,8 @@ def generate_countries(in_file, out_file):
             c = l.split('\t')
             record = etree.SubElement(data, 'record',
                                       attrib={'model': 'res.country',
-                                              'id': 'country_%s' % c[3].lower()})
+                                              'id': 'base.%s' % c[3].lower()})
             _append_field('name', c[0])
-            _append_field('code', c[3].lower())
             _append_field('full_name', c[1] if c[1] else c[0])
             _append_field('numeral_code', c[5])
 
