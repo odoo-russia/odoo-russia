@@ -4,7 +4,7 @@
     'category' : 'Sales Management',
     'author'  : 'Transparent Technologies',
     'license' : 'AGPL-3',
-    'depends' : ['base', 'sale'],
+    'depends' : ['base', 'purchase'],
     'installable': True,
     'auto_install': False,
     'description': '''
