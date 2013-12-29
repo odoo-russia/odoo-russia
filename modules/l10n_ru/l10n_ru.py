@@ -13,9 +13,10 @@ csvEncoding = 'windows-1251'
 
 our_country = u'Российская Федерация'
 
+
 def csv_reader(iterable, encoding='utf-8', **kwargs):
-    csv_reader = reader(iterable, **kwargs)
-    for row in csv_reader:
+    csv = reader(iterable, **kwargs)
+    for row in csv:
         # decode UTF-8 to Unicode, cell by cell:
         yield [unicode(cell, encoding) for cell in row]
 
@@ -69,10 +70,12 @@ res_partner()
 
 
 class Bank(osv.osv):
-    def name_search(self, cr, uid, name='', args=[], operator='ilike', context=None, limit=80):
+    def name_search(self, cr, uid, name='', args=None, operator='ilike', context=None, limit=80):
+        if not args:
+            args = []
         ids = self.search(cr, uid, ['|', ('bic', operator, name),
                                         ('name', operator, name)] + args, limit=limit, context=context)
-        return self.name_get(cr,uid,ids)
+        return self.name_get(cr, uid, ids)
 
     _name = 'res.bank'
     _inherit = 'res.bank'
@@ -81,6 +84,7 @@ class Bank(osv.osv):
         'last_updated': fields.char('Last updated', size=8)
     }
 Bank()
+
 
 class res_partner_bank(osv.osv):
     _name = 'res.partner.bank'
@@ -99,6 +103,7 @@ class res_partner_bank(osv.osv):
         return {'value': result}
 res_partner_bank()
 
+
 class wizard_update_banks(osv.osv_memory):
     def update_banks(self, cr, uid, ids, context=None):
         if context is None:
@@ -106,7 +111,7 @@ class wizard_update_banks(osv.osv_memory):
         bank = self.pool.get('res.bank')
         try:
             bnkseek = urllib2.urlopen(context.get('location_bnkseek'))
-        except urllib2.HTTPError, err:
+        except urllib2.HTTPError:
             raise osv.except_osv(_('Bad URL for bnkseek.txt!'), _('Fix the URL and try again.'))
         csv = csv_reader(bnkseek, csvEncoding, delimiter=csvDelimiter)
 
@@ -149,7 +154,7 @@ class wizard_update_banks(osv.osv_memory):
                 bank.create(cr, uid, values, context=context)
         try:
             bnkdel = urllib2.urlopen(context.get('location_bnkdel'))
-        except urllib2.HTTPError, err:
+        except urllib2.HTTPError:
             raise osv.except_osv(_('Bad URL for bnkdel.txt!'), _('Fix the URL and try again.'))
         csv = csv_reader(bnkdel, csvEncoding, delimiter=csvDelimiter)
         for row in csv:
