@@ -12,7 +12,7 @@
                  'tt_acc_invoice_line_subtotal_gross',
                  'tt_sale_order_line_subtotal_gross',
                  'tt_print_forms_names',],
-    'update_xml' : ['sale_order_data.xml',],
+    'data' : ['sale_order_data.xml',],
     'installable': True,
     'auto_install': False,
     'description': '''

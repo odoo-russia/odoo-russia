@@ -2,11 +2,12 @@
 <openerp>
     <data noupdate="0">
         <report auto="False"
-                id="new_report_id"
+                id="report_akt_rabot"
                 model="account.invoice"
                 name="account.invoice.akt_rabot"
                 rml="tt_print_form_akt_rabot/Akt.jrxml"
                 string="Акт выполненных работ"
+					 parser="tt_print_form_akt_rabot.acc_inv_code.acc_inv"
         />
     </data>
 </openerp>

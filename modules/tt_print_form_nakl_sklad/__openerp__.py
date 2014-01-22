@@ -10,7 +10,7 @@
                  'l10n_ru',
                  'tt_acc_invoice_line_subtotal_gross',
                  'tt_print_forms_names',],
-    'update_xml' : ['bill_of_product_form_data.xml',],
+    'data' : ['bill_of_product_form_data.xml',],
     'installable': True,
     'auto_install': False,
     'description': '''

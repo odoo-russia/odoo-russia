@@ -13,9 +13,9 @@ class torg_form(report_sxw.rml_parse):
         super(torg_form, self).__init__(cr, uid, name, context=context)
         self.localcontext.update({'time': time})
 
-report_sxw.report_sxw('report.new_torg_form_report', 'account.invoice',
-                      'tt_print_form_torg12/torg12.jrxml',
-                      parser=torg_form)
+#report_sxw.report_sxw('report.new_torg_form_report', 'account.invoice',
+#                      'tt_print_form_torg12/torg12.jrxml',
+#                      parser=torg_form)
 
 class account_invoice(osv.osv):
     def _get_number_only(self, cr, uid, ids, field_name, arg, context):
