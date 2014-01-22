@@ -3,7 +3,7 @@
 import time
 from openerp.report import report_sxw
 from osv import orm, osv, fields
-from tools.translate import _
+from openerp.tools.translate import _
 
 
 class bill_of_product_report(report_sxw.rml_parse):

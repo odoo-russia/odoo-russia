@@ -3,8 +3,9 @@
 import time
 from openerp.report import report_sxw
 from openerp.osv import osv, fields
-from openerp.addons.jasper_reports.pytils import numeral
-from tools.translate import _
+from openerp.addons.jasper_reports import numeral
+#from openerp.addons.jasper_reports.pytils import numeral
+from openerp.tools.translate import _
 
 
 class torg_form(report_sxw.rml_parse):

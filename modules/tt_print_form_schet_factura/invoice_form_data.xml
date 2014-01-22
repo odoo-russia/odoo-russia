@@ -4,8 +4,9 @@
         <report auto="False"
                 id="new_invoice_report_id"
                 model="account.invoice"
-                name="account.invoice.invoice_form"
+                name="report.new_invoice_form_report"
                 rml="tt_print_form_schet_factura/invoice.jrxml"
+					 parser="tt_print_form_schet_factura.invoice_form_code.invoice_form"
                 string="Invoice"
         />
     </data>

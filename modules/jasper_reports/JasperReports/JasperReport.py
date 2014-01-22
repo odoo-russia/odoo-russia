@@ -29,8 +29,8 @@
 import os
 from lxml import etree
 import re
-from tools.safe_eval import safe_eval
-import tools
+from openerp.tools.safe_eval import safe_eval
+from openerp import tools
 
 dataSourceExpressionRegExp = re.compile( r"""\$P\{(\w+)\}""" )
 

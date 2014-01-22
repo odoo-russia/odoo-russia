@@ -3,8 +3,9 @@
 import time
 from openerp.report import report_sxw
 from openerp.osv import osv, fields
-from openerp.addons.jasper_reports.pytils import numeral
-from tools.translate import _
+#from openerp.addons.jasper_reports.pytils import numeral
+from openerp.addons.jasper_reports import numeral
+from openerp.tools.translate import _
 
 
 class invoice_form(report_sxw.rml_parse):
@@ -12,9 +13,9 @@ class invoice_form(report_sxw.rml_parse):
         super(invoice_form, self).__init__(cr, uid, name, context=context)
         self.localcontext.update({'time': time})
 
-report_sxw.report_sxw('report.new_invoice_form_report', 'account.invoice',
-                      'tt_print_form_schet_factura/invoice.jrxml',
-                      parser=invoice_form)
+#report_sxw.report_sxw('report.new_invoice_form_report', 'account.invoice',
+#                      'tt_print_form_schet_factura/invoice.jrxml',
+#                      parser=invoice_form)
 
 
 class account_invoice(osv.osv):

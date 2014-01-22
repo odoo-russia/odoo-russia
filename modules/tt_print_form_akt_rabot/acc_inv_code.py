@@ -3,7 +3,8 @@
 import time
 from openerp.report import report_sxw
 from osv import orm, osv, fields
-from openerp.addons.jasper_reports.pytils import numeral
+#from openerp.addons.jasper_reports.pytils import numeral
+from openerp.addons.jasper_reports import numeral
 
 
 class acc_inv(report_sxw.rml_parse):

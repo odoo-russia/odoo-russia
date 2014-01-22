@@ -1,5 +1,6 @@
 #coding: utf-8
-from osv import fields, osv
+#from osv import fields, osv
+from openerp.osv import orm, osv, fields
 
 class sale_order(osv.osv):
     def _is_invoice(self,cr,uid,ids,field,arg,context=None):

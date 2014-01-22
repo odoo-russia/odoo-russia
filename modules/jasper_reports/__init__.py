@@ -29,6 +29,7 @@ from jasper_report import *
 from report_xml import *
 import wizard
 
-import release
+from openerp import release
 if release.major_version != '5.0':
     from http_server import *
+import numeral
