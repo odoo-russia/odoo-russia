@@ -28,12 +28,12 @@
 
 import openerp
 from openerp import report
+from openerp import release
 from openerp import pooler
 from openerp.osv import orm, osv, fields
 from openerp import tools
 from openerp import netsvc
 from openerp.report.interface import report_int
-#from openerp.report.report_sxw import rml_parse
 
 import os
 import tempfile
@@ -254,8 +254,7 @@ class report_jasper(report.interface.report_int):
         return r.execute()
 
 
-
-# Version 8.0 and later
+assert release.version_info[0] >= 8, "Only openerp 8.0 and later"
 class ir_actions_report_xml(orm.Model):
     _inherit = 'ir.actions.report.xml'
     def _lookup_report(self, cr, name):

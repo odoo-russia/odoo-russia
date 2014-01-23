@@ -1,5 +1,4 @@
 #coding: utf-8
-#from osv import fields, osv
 from openerp.osv import orm, osv, fields
 
 class account_invoice(osv.osv):

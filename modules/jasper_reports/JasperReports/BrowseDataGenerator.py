@@ -34,7 +34,6 @@ import csv
 import copy
 import base64
 from xml.dom.minidom import getDOMImplementation
-#from osv import orm, osv, fields
 from openerp.osv import orm, osv, fields
 import tempfile
 import codecs

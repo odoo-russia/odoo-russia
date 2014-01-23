@@ -3,7 +3,6 @@
 import time
 from openerp.report import report_sxw
 from openerp.osv import orm, osv, fields
-#from openerp.addons.jasper_reports.pytils import numeral
 from openerp.addons.jasper_reports import numeral
 
 
@@ -11,10 +10,6 @@ class acc_inv(report_sxw.rml_parse):
     def __init__(self, cr, uid, name, context):
         super(acc_inv, self).__init__(cr, uid, name, context=context)
         self.localcontext.update( {'time': time,})
-
-#report_sxw.report_sxw('report.new_report', 'account.invoice',
-#                      'tt_print_form_akt_rabot/Akt.jrxml',
-#                      parser=acc_inv)
 
 class account_invoice(osv.osv):
     def _get_number_only(self, cr, uid, ids, field_name, arg, context):

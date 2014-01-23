@@ -11,7 +11,6 @@ openerpweb = http
 
 
 class Reports(openerpweb.Controller):
-    #_cp_path = "/web/named_report"
     POLLING_DELAY = 0.25
     TYPES_MAPPING = {
         'doc': 'application/vnd.ms-word',
@@ -53,8 +52,6 @@ class Reports(openerpweb.Controller):
 
     @openerpweb.route("/web/named_report")
     def index(self, action, token):
-    #def index(*args, **kwargs):
-    #    print 'index', args, kwargs
         action = simplejson.loads(action)
 
         report_srv = req.session.proxy("report")

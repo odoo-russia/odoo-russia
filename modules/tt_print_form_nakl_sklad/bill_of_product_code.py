@@ -12,11 +12,6 @@ class bill_of_product_report(report_sxw.rml_parse):
         super(bill_of_product_report, self).__init__(cr, uid, name, context=context)
         self.localcontext.update( {'time': time,})
 
-#report_sxw.report_sxw('report.new_bill_of_product_report', 'account_invoice',
-#                      'tt_print_form_nakl_sklad/bill_of_product.jrxml',
-#                      parser=bill_of_product_report)
-
-
 class account_invoice(osv.osv):
     def _get_number_only(self, cr, uid, ids, field_name, arg, context):
         res = {}

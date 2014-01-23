@@ -1,8 +1,6 @@
-#import wizard
 from openerp import pooler
 import base64
 from openerp.osv import orm, osv, fields
-#from osv import osv,fields
 from openerp.tools.translate import _
 
 class create_data_template(osv.osv_memory):
