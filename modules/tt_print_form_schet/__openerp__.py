@@ -6,6 +6,7 @@
     'license' : 'AGPL-3',
     'depends' : ['base',
                  'sale',
+                 'portal_sale',
                  'account',
                  'jasper_reports',
                  'l10n_ru',
