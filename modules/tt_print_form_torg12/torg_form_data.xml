@@ -2,9 +2,9 @@
 <openerp>
     <data noupdate="0">
         <report auto="False"
-                id="report_torg12"
+                id="report_account_invoice_torg12"
                 model="account.invoice"
-                name="account.invoice.torg_form"
+                name="account.invoice.torg12"
                 rml="tt_print_form_torg12/torg12.jrxml"
                 string="Torg-12"
                 parser="tt_print_form_torg12.torg_form_code.torg_form"

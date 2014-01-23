@@ -3,27 +3,27 @@
     <data noupdate="0">
         <!-- ТТН для преевозчика -->
         <report auto="False"
-                id="report_waybill"
+                id="report_stock_picking_nakl_transp"
                 model="stock.picking"
-                name="stock.picking.new_waybill_report"
+                name="stock.picking.nakl_transp"
                 rml="tt_print_form_tn_gruz/nakl_transp.jrxml"
                 string="Waybill"
                 parser="tt_print_form_tn_gruz.tt_print_form_tn_gruz.waybill_report_stock"
         />
 
         <report auto="False"
-                id="report_waybill_in"
+                id="report_stock_picking_in_nakl_transp"
                 model="stock.picking.in"
-                name="stock.picking.in.new_waybill_report"
+                name="stock.picking.in.nakl_transp"
                 rml="tt_print_form_tn_gruz/nakl_transp.jrxml"
                 string="Waybill"
                 parser="tt_print_form_tn_gruz.tt_print_form_tn_gruz.waybill_report_stock_in"
         />
 
         <report auto="False"
-                id="report_waybill_out"
+                id="report_stock_picking_out_nakl_transp"
                 model="stock.picking.out"
-                name="stock.picking.out.new_waybill_report"
+                name="stock.picking.out.nakl_transp"
                 rml="tt_print_form_tn_gruz/nakl_transp.jrxml"
                 string="Waybill"
                 parser="tt_print_form_tn_gruz.tt_print_form_tn_gruz.waybill_report_stock_out"
