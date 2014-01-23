@@ -15,7 +15,7 @@
                 'tt_print_form_torg12',
                 'tt_print_form_tn_gruz',
     ],
-    'update_xml': [],
+    'data': [],
     'installable': True,
     'auto_install': False,
     'description': '''
