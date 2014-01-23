@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenERP Server 8.0alpha1\n"
+"Project-Id-Version: OpenERP Server 7.0-20130717-231254\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-22 13:48+0000\n"
-"PO-Revision-Date: 2014-01-22 13:48+0000\n"
+"POT-Creation-Date: 2013-10-03 09:56+0000\n"
+"PO-Revision-Date: 2013-10-03 09:56+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,29 +16,30 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: tt_print_form_schet
-#: report:report.new_account_invoice_report:0
-#: report:report.sale.order:0
-msgid "$F{performer_bank_bic}"
-msgstr ""
+#: model:ir.actions.report.xml,name:tt_print_form_schet.account_invoice_id
+#: model:ir.actions.report.xml,name:sale.report_sale_order
+#: model:ir.actions.report.xml,name:tt_print_form_schet.report_sale_order
+msgid "Schet"
+msgstr "Счёт"
 
 #. module: tt_print_form_schet
-#: report:report.new_account_invoice_report:0
-#: report:report.sale.order:0
-msgid "/data/record/company_id/partner_id/ceo"
-msgstr ""
+#: model:email.template,report_name:sale.email_template_edi_sale
+#: model:email.template,report_name:portal_sale.email_template_edi_sale
+msgid "Schet #${(object.number_only or '')} from ${object.date_order or ''} for ${object.partner_id.name or ''}"
+msgstr "Счёт №${(object.number_only or '')} от ${object.date_order or ''} для ${object.partner_id.name or ''}"
 
 #. module: tt_print_form_schet
-#: report:report.new_account_invoice_report:0
-#: report:report.sale.order:0
-msgid "/data/record/company_id/partner_id/city"
-msgstr ""
+#: model:email.template,report_name:portal_sale.email_template_edi_invoice
+#: model:email.template,report_name:account.email_template_edi_invoice
+msgid "Schet #${(object.number_only or '')} from ${object.date_invocie or ''} for ${object.partner_id.name or ''}"
+msgstr "Счёт №${(object.number_only or '')} от ${object.date_invocie or ''} для ${object.partner_id.name or ''}"
 
 #. module: tt_print_form_schet
-#: report:report.new_account_invoice_report:0
-#: report:report.sale.order:0
-msgid "new DecimalFormat(\"###0.00\").format($F{amount_total}.toDouble())"
-msgstr ""
+#: model:ir.actions.report.xml,name:sale.report_sale_order
+msgid "Schet"
+msgstr "Счёт"
 
 #. module: tt_print_form_schet
-#: report:report.new_account_invoice_report:0
-#: report:report.sale.order:0
+#: model:ir.actions.report.xml,name:account.account_invoices
+msgid "Schet"
+msgstr "Счёт"
