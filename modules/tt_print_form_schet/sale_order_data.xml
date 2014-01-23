@@ -2,7 +2,7 @@
 <openerp>
     <data noupdate="0">
         <report auto="False"
-                id="report_sale_order_schet"
+                id="sale.report_sale_order"
                 model="sale.order"
                 name="sale.order.schet"
                 rml="tt_print_form_schet/Schet.jrxml"
@@ -10,7 +10,7 @@
                 string="Schet"
         />
         <report auto="False"
-                id="report_account_invoice_schet"
+                id="account.account_invoices"
                 model="account.invoice"
                 name="account.invoice.schet"
                 rml="tt_print_form_schet/Schet.jrxml"

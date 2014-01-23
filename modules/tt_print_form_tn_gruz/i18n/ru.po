@@ -16,6 +16,9 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: tt_print_form_tn_gruz
+#: model:ir.actions.report.xml,name:stock.report_picking_list_in
+#: model:ir.actions.report.xml,name:stock.report_picking_list
+#: model:ir.actions.report.xml,name:stock.report_picking_list_out
 #: model:ir.actions.report.xml,name:tt_print_form_tn_gruz.waybill_id
 msgid "Waybill"
 msgstr "Транспортная накладная"

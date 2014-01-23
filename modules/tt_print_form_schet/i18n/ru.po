@@ -35,11 +35,12 @@ msgid "Schet #${(object.number_only or '')} from ${object.date_invocie or ''} fo
 msgstr "Счёт №${(object.number_only or '')} от ${object.date_invocie or ''} для ${object.partner_id.name or ''}"
 
 #. module: tt_print_form_schet
+#: model:ir.actions.report.xml,name:account.account_invoices
 #: model:ir.actions.report.xml,name:sale.report_sale_order
 msgid "Schet"
 msgstr "Счёт"
 
 #. module: tt_print_form_schet
-#: model:ir.actions.report.xml,name:account.account_invoices
-msgid "Schet"
-msgstr "Счёт"
+#: model:ir.model,name:tt_print_form_schet.model_account_invoice
+msgid "Invoice"
+msgstr "Счет"

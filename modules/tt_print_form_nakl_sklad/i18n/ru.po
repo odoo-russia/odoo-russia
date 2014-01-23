@@ -216,7 +216,7 @@ msgid "new DecimalFormat(\"###0.00\").format($F{invoice_price_subtotal}.toDouble
 msgstr "new DecimalFormat(\"###0.00\").format($F{invoice_price_subtotal}.toDouble())"
 
 #. module: tt_print_form_nakl_sklad
-#: model:ir.actions.report.xml,name:tt_print_form_nakl_sklad.bill_of_product_id
+#: model:ir.actions.report.xml,name:tt_print_form_nakl_sklad.report_account_invoice_nakl_sklad
 msgid "Invoice for warehouse"
 msgstr "Накладная для склада"
 
