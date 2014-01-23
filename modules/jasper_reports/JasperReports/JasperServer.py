@@ -27,13 +27,13 @@
 ##############################################################################
 
 import os
-from osv import osv
+from openerp.osv import orm, osv, fields
 import glob
 import time
 import socket
 import subprocess
 import xmlrpclib
-from tools.translate import _
+from openerp.tools.translate import _
 import logging
 
 class JasperServer:

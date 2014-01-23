@@ -54,6 +54,6 @@ msgid "Factoring conditions"
 msgstr "Условия факторинга"
 
 #. module: tt_print_form_torg12
-#: model:ir.actions.report.xml,name:tt_print_form_torg12.new_torg_report_id
+#: model:ir.actions.report.xml,name:tt_print_form_torg12.report_account_invoice_torg12
 msgid "Torg-12"
 msgstr "ТОРГ-12"

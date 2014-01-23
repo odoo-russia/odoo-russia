@@ -29,10 +29,10 @@
 #
 ##############################################################################
 
-from service.http_server import reg_http_service
+from openerp.service.http_server import reg_http_service
 from BaseHTTPServer import BaseHTTPRequestHandler
-import netsvc
-import tools
+from openerp import netsvc
+from openerp import tools
 
 class Message:
     def __init__(self):

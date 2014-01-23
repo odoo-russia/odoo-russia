@@ -3,8 +3,8 @@
 import time
 from openerp.report import report_sxw
 from openerp.osv import osv, fields
-from openerp.netsvc import Service
-from openerp.addons.jasper_reports.pytils import numeral
+from openerp.report.interface import report_int
+from openerp.addons.jasper_reports import numeral
 
 
 class sale_order_report(report_sxw.rml_parse):
@@ -12,21 +12,10 @@ class sale_order_report(report_sxw.rml_parse):
         super(sale_order_report, self).__init__(cr, uid, name, context=context)
         self.localcontext.update( {'time': time})
 
-del Service._services['report.sale.order']
-report_sxw.report_sxw('report.sale.order', 'sale.order',
-                      'tt_print_form_schet/Schet.jrxml',
-                      parser=sale_order_report)
-
-
 class account_invoice_report(report_sxw.rml_parse):
     def __init__(self, cr, uid, name, context):
         super(account_invoice_report, self).__init__(cr, uid, name, context=context)
         self.localcontext.update({'time': time})
-
-report_sxw.report_sxw('report.new_account_invoice_report', 'account.invoice',
-                      'tt_print_form_schet/Schet.jrxml',
-                      parser=account_invoice_report)
-
 
 class sale_order(osv.osv):
     _name = 'sale.order'

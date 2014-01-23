@@ -29,10 +29,10 @@
 
 import os
 import base64
-import report
-from osv import orm, osv, fields
+from openerp import report
+from openerp.osv import orm, osv, fields
+from openerp.tools.translate import _
 import jasper_report
-from tools.translate import _
 
 import unicodedata
 from xml.dom.minidom import getDOMImplementation

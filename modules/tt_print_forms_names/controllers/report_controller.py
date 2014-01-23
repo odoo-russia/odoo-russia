@@ -5,12 +5,12 @@ import base64
 import zlib
 import openerp.addons.web.controllers.main as main
 from openerp.addons.web import http as http
+from openerp.addons.web.http import request as req
 from datetime import datetime
 openerpweb = http
 
 
 class Reports(openerpweb.Controller):
-    _cp_path = "/web/named_report"
     POLLING_DELAY = 0.25
     TYPES_MAPPING = {
         'doc': 'application/vnd.ms-word',
@@ -50,8 +50,8 @@ class Reports(openerpweb.Controller):
 
         return file_name
 
-    @openerpweb.httprequest
-    def index(self, req, action, token):
+    @openerpweb.route("/web/named_report")
+    def index(self, action, token):
         action = simplejson.loads(action)
 
         report_srv = req.session.proxy("report")
@@ -111,7 +111,7 @@ class Reports(openerpweb.Controller):
 
         return req.make_response(report,
              headers=[
-                 ('Content-Disposition', main.content_disposition(file_name + "." + report_struct['format'], req)),
+                 ('Content-Disposition', main.content_disposition(file_name + "." + report_struct['format'])),
                  ('Content-Type', report_mimetype),
                  ('Content-Length', len(report))],
              cookies={'fileToken': token})

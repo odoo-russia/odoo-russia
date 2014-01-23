@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data noupdate="0">
-        <record id="sale.report_sale_order" model="ir.actions.report.xml">
-            <field name="report_rml">tt_print_form_schet/Schet.jrxml</field>
-            <field name="name">Schet</field>
-            <field name="report_name">sale.order</field>
-        </record>
-
-        <record id="account.account_invoices" model="ir.actions.report.xml">
-            <field name="report_rml">tt_print_form_schet/Schet.jrxml</field>
-            <field name="name">Schet</field>
-            <field name="report_name">account.invoice</field>
-        </record>
-
+        <report auto="False"
+                id="sale.report_sale_order"
+                model="sale.order"
+                name="sale.order.schet"
+                rml="tt_print_form_schet/Schet.jrxml"
+					 parser="tt_print_form_schet.sale_order_code.sale_order_report"
+                string="Schet"
+        />
+        <report auto="False"
+                id="account.account_invoices"
+                model="account.invoice"
+                name="account.invoice.schet"
+                rml="tt_print_form_schet/Schet.jrxml"
+					 parser="tt_print_form_schet.sale_order_code.account_invoice_report"
+                string="Schet"
+        />
         <record id="sale.email_template_edi_sale" model="email.template">
             <field name="report_template" ref="account.account_invoices"/>
             <field name="report_name">Schet #${(object.number_only or '')} from ${object.date_order or ''} for ${object.partner_id.name or ''}</field>

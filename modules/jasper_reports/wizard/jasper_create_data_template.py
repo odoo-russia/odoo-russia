@@ -1,8 +1,7 @@
-#import wizard
-import pooler
+from openerp import pooler
 import base64
-from osv import osv,fields
-from tools.translate import _
+from openerp.osv import orm, osv, fields
+from openerp.tools.translate import _
 
 class create_data_template(osv.osv_memory):
     _name = 'jasper.create.data.template'

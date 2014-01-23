@@ -2,10 +2,11 @@
 <openerp>
     <data noupdate="0">
         <report auto="False"
-                id="new_invoice_report_id"
+                id="report_account_invoice_schet_factura"
                 model="account.invoice"
-                name="account.invoice.invoice_form"
+                name="account.invoice.schet_factura"
                 rml="tt_print_form_schet_factura/invoice.jrxml"
+					 parser="tt_print_form_schet_factura.invoice_form_code.invoice_form"
                 string="Invoice"
         />
     </data>

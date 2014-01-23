@@ -3,11 +3,12 @@
     <data noupdate="0">
 
         <report auto="False"
-                id="bill_of_product_id"
+                id="report_account_invoice_nakl_sklad"
                 model="account.invoice"
-                name="account.invoice.new_bill_of_product_report"
+                name="account.invoice.nakl_sklad"
                 rml="tt_print_form_nakl_sklad/bill_of_product.jrxml"
                 string="Invoice for warehouse"
+                parser="tt_print_form_nakl_sklad.bill_of_product_code.bill_of_product_report"
         />
 
     </data>

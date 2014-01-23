@@ -26,17 +26,21 @@
 #
 ##############################################################################
 
+import openerp
+from openerp import report
+from openerp import release
+from openerp import pooler
+from openerp.osv import orm, osv, fields
+from openerp import tools
+from openerp import netsvc
+from openerp.report.interface import report_int
+
 import os
-import report
-import pooler
-from osv import orm, osv, fields
-import tools
 import tempfile
-import netsvc
-import release
 import logging
 
 from JasperReports import *
+import numeral
 
 # Determines the port where the JasperServer process should listen with its XML-RPC server for incomming calls
 tools.config['jasperport'] = tools.config.get('jasperport', 8090)
@@ -227,18 +231,8 @@ class Report:
 
 
 class report_jasper(report.interface.report_int):
-    def __init__(self, name, model, parser=None ):
-        # Remove report name from list of services if it already
-        # exists to avoid report_int's assert. We want to keep the 
-        # automatic registration at login, but at the same time we 
-        # need modules to be able to use a parser for certain reports.
-        if release.major_version == '5.0':
-            if name in netsvc.SERVICES:
-                del netsvc.SERVICES[name]
-        else:
-            if name in netsvc.Service._services:
-                del netsvc.Service._services[name]
-        super(report_jasper, self).__init__(name)
+    def __init__(self, name, model, parser=None, register=True):
+        super(report_jasper, self).__init__(name, register)
         self.model = model
         self.parser = parser
 
@@ -260,68 +254,43 @@ class report_jasper(report.interface.report_int):
         return r.execute()
 
 
+assert release.version_info[0] >= 8, "Only openerp 8.0 and later"
+class ir_actions_report_xml(orm.Model):
+    _inherit = 'ir.actions.report.xml'
+    def _lookup_report(self, cr, name):
+        """
+        Look up a report definition.
+        """
+        import operator
+        import os
+        opj = os.path.join
 
-if release.major_version == '5.0':
-    # Version 5.0 specific code
+        # First lookup in the deprecated place, because if the report definition
+        # has not been updated, it is more likely the correct definition is there.
+        # Only reports with custom parser specified in Python are still there.
+        if 'report.' + name in report_int._reports:
+            new_report = report_int._reports['report.' + name]
+            if not isinstance(new_report, report_jasper):
+                new_report = None
+        else:
+            cr.execute("SELECT * FROM ir_act_report_xml WHERE report_name=%s and report_rml ilike '%%.jrxml'", (name,))
+            r = cr.dictfetchone()
+            if r:
+                if r['parser']:
+                    parser = operator.attrgetter(r['parser'])(openerp.addons)
+                    kwargs = { 'parser': parser }
+                else:
+                    kwargs = {}
 
-    # Ugly hack to avoid developers the need to register reports
-    import pooler
-    import report
+                new_report = report_jasper('report.'+r['report_name'], r['model'])
+                #new_report = report_jasper('report.'+r['report_name'],
+                #    r['model'], opj('addons',r['report_rml'] or '/'),
+                #    header=r['header'], register=False, **kwargs)
+            else:
+                new_report = None
 
-    def register_jasper_report(name, model):
-        name = 'report.%s' % name
-        # Register only if it didn't exist another "jasper_report" with the same name
-        # given that developers might prefer/need to register the reports themselves.
-        # For example, if they need their own parser.
-        if netsvc.service_exist( name ):
-            if isinstance( netsvc.SERVICES[name], report_jasper ):
-                return
-            del netsvc.SERVICES[name]
-        report_jasper( name, model )
-
-
-    # This hack allows automatic registration of jrxml files without 
-    # the need for developers to register them programatically.
-
-    old_register_all = report.interface.register_all
-    def new_register_all(db):
-        value = old_register_all(db)
-
-        cr = db.cursor()
-        # Originally we had auto=true in the SQL filter but we will register all reports.
-        cr.execute("SELECT * FROM ir_act_report_xml WHERE report_rml ilike '%.jrxml' ORDER BY id")
-        records = cr.dictfetchall()
-        cr.close()
-        for record in records:
-            register_jasper_report( record['report_name'], record['model'] )
-        return value
-
-    report.interface.register_all = new_register_all
-else:
-    # Version 6.0 and later
-
-    def register_jasper_report(report_name, model_name):
-        name = 'report.%s' % report_name
-        # Register only if it didn't exist another "jasper_report" with the same name
-        # given that developers might prefer/need to register the reports themselves.
-        # For example, if they need their own parser.
-        if name in netsvc.Service._services:
-            if isinstance(netsvc.Service._services[name], report_jasper):
-                return
-            del netsvc.Service._services[name]
-        report_jasper( name, model_name )
-
-    class ir_actions_report_xml(osv.osv):
-        _inherit = 'ir.actions.report.xml'
-
-        def register_all(self, cr):
-            # Originally we had auto=true in the SQL filter but we will register all reports.
-            cr.execute("SELECT * FROM ir_act_report_xml WHERE report_rml ilike '%.jrxml' ORDER BY id")
-            records = cr.dictfetchall()
-            for record in records:
-                register_jasper_report(record['report_name'], record['model'])
-            return super(ir_actions_report_xml, self).register_all(cr)
-
-    ir_actions_report_xml()
-
+        if new_report:
+            return new_report
+        else:
+            return super(ir_actions_report_xml, self)._lookup_report(cr, name)
 # vim:noexpandtab:smartindent:tabstop=8:softtabstop=8:shiftwidth=8:
