@@ -55,7 +55,7 @@ class sale_order(osv.osv):
         for row in self.browse(cr, uid, ids, context=context):
             from datetime import datetime
             from openerp.tools.misc import DEFAULT_SERVER_DATE_FORMAT as date_format
-            date = row.date_invoice or fields.date.today()
+            date = row.date_order or fields.date.today()
             date_object = datetime.strptime(date, date_format).date()
             res[row.id] = dt.ru_strftime(format=u"%d %B %Y", date=date_object, inflected=True)
         return res
