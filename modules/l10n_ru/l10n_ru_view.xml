@@ -88,6 +88,7 @@
                             <field name="kpp"/>
                             <field name="okpo"/>
                             <field name="ceo"/>
+                            <field name="ceo_genitive"/>
                             <field name="ceo_function"/>
                             <field name="accountant"/>
                         </group>

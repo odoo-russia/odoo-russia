@@ -4,16 +4,22 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenERP Server 7.0-20130717-231254\n"
+"Project-Id-Version: OpenERP Server 7.0-20131211-002426\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-24 14:26+0000\n"
-"PO-Revision-Date: 2013-09-24 14:26+0000\n"
+"POT-Creation-Date: 2014-05-30 12:43+0000\n"
+"PO-Revision-Date: 2014-05-30 12:43+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: l10n_ru
+#: field:res.partner,address_multi:0
+#: field:res.partner,name_official_multi:0
+msgid "unknown"
+msgstr "unknown"
 
 #. module: l10n_ru
 #: model:ir.actions.act_window,name:l10n_ru.action_wizard_update_banks
@@ -33,9 +39,9 @@ msgid "Г-н"
 msgstr "Г-н"
 
 #. module: l10n_ru
-#: model:res.partner.title,name:l10n_ru.res_partner_title_ip
-msgid "Индивидуальный предприниматель"
-msgstr "Индивидуальный предприниматель"
+#: field:res.partner,ceo_genitive:0
+msgid "CEO in genitive"
+msgstr "Руководитель (в род. падеже)"
 
 #. module: l10n_ru
 #: model:res.partner.title,name:l10n_ru.res_partner_title_pvt_ltd
@@ -48,7 +54,8 @@ msgid "Открытое акционерное общество"
 msgstr "Открытое акционерное общество"
 
 #. module: l10n_ru
-#: code:addons/l10n_ru/l10n_ru.py:135
+#: code:addons/l10n_ru/l10n_ru.py:131
+#: code:addons/l10n_ru/l10n_ru.py:154
 #, python-format
 msgid "Bad URL for bnkdel.txt!"
 msgstr "Неправильный адрес файла bnkdel.txt!"
@@ -74,7 +81,8 @@ msgid "Location of bnkdel.txt"
 msgstr "Местонахождение файла bnkdel.txt"
 
 #. module: l10n_ru
-#: code:addons/l10n_ru/l10n_ru.py:92
+#: code:addons/l10n_ru/l10n_ru.py:88
+#: code:addons/l10n_ru/l10n_ru.py:111
 #, python-format
 msgid "Bad URL for bnkseek.txt!"
 msgstr "Неправильный адрес файла bnkseek.txt!"
@@ -85,8 +93,10 @@ msgid "CEO"
 msgstr "Руководитель"
 
 #. module: l10n_ru
-#: code:addons/l10n_ru/l10n_ru.py:92
-#: code:addons/l10n_ru/l10n_ru.py:135
+#: code:addons/l10n_ru/l10n_ru.py:88
+#: code:addons/l10n_ru/l10n_ru.py:111
+#: code:addons/l10n_ru/l10n_ru.py:131
+#: code:addons/l10n_ru/l10n_ru.py:154
 #, python-format
 msgid "Fix the URL and try again."
 msgstr "Исправьте адрес и попробуйте снова."
@@ -134,7 +144,8 @@ msgid "ОАО"
 msgstr "ОАО"
 
 #. module: l10n_ru
-#: code:addons/l10n_ru/l10n_ru.py:100
+#: code:addons/l10n_ru/l10n_ru.py:96
+#: code:addons/l10n_ru/l10n_ru.py:119
 #, python-format
 msgid "Country Error: %s"
 msgstr "Ошибка страны: %s"
@@ -217,6 +228,11 @@ msgid "OKPO"
 msgstr "ОКПО"
 
 #. module: l10n_ru
+#: model:res.partner.title,name:l10n_ru.res_partner_title_ip
+msgid "Индивидуальный предприниматель"
+msgstr "Индивидуальный предприниматель"
+
+#. module: l10n_ru
 #: field:res.country,numeral_code:0
 msgid "Numeral country code"
 msgstr "Цифровой код страны"
@@ -249,7 +265,12 @@ msgstr "Отмена"
 #. module: l10n_ru
 #: model:ir.model,name:l10n_ru.model_res_partner
 msgid "Partner"
-msgstr "Партнер"
+msgstr "Контрагент"
+
+#. module: l10n_ru
+#: view:wizard.update.banks:0
+msgid "Create Account"
+msgstr "Создать счет"
 
 #. module: l10n_ru
 #: field:res.partner,ceo_function:0
@@ -257,7 +278,7 @@ msgid "CEO Function"
 msgstr "Должность руководителя"
 
 #. module: l10n_ru
-#: view:wizard.update.banks:0
-msgid "Create Account"
-msgstr "Создать счет"
+#: help:res.partner,ceo_genitive:0
+msgid "Example: Leninu V.I"
+msgstr "Пример: Ленину V.I"
 
