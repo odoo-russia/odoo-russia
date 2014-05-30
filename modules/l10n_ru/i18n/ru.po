@@ -279,6 +279,6 @@ msgstr "Должность руководителя"
 
 #. module: l10n_ru
 #: help:res.partner,ceo_genitive:0
-msgid "Example: Leninu V.I"
-msgstr "Пример: Ленину V.I"
+msgid "Example: Lenina V.I"
+msgstr "Пример: Ленина V.I"
 

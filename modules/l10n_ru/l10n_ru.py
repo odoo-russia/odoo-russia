@@ -60,7 +60,7 @@ class res_partner(osv.osv):
         'contract_num': fields.char('Contract number', size=64),
         'contract_date': fields.date('Contract date'),
         'ceo': fields.char('CEO', size=200, help="Example: Lenin V.I."),
-        'ceo_genitive': fields.char('CEO in genitive', size=200, help="Example: Leninu V.I"),
+        'ceo_genitive': fields.char('CEO in genitive', size=200, help="Example: Lenina V.I"),
         'ceo_function': fields.char('CEO Function', size=200),
         'accountant': fields.char('Chief accountant', size=200),
         'address_formatted': fields.function(_format_address, string='Formatted Address', type='char', store=False),
