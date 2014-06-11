@@ -1,1 +1,1 @@
-import l10n_ru_bnkreg
+import l10n_ru
