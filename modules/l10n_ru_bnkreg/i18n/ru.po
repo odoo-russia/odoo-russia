@@ -1,0 +1,263 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* l10n_ru
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20130717-231254\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-09-24 14:26+0000\n"
+"PO-Revision-Date: 2013-09-24 14:26+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_ru
+#: model:ir.actions.act_window,name:l10n_ru.action_wizard_update_banks
+#: model:ir.ui.menu,name:l10n_ru.menu_update_banks
+msgid "Update Banks"
+msgstr "Обновить банки"
+
+#. module: l10n_ru
+#: model:ir.model,name:l10n_ru.model_product_uom
+msgid "Product Unit of Measure"
+msgstr "Ед. изм. продукции"
+
+#. module: l10n_ru
+#: model:res.partner.title,name:l10n_ru.res_partner_title_sir
+#: model:res.partner.title,shortcut:l10n_ru.res_partner_title_sir
+msgid "Г-н"
+msgstr "Г-н"
+
+#. module: l10n_ru
+#: model:res.partner.title,name:l10n_ru.res_partner_title_ip
+msgid "Индивидуальный предприниматель"
+msgstr "Индивидуальный предприниматель"
+
+#. module: l10n_ru
+#: model:res.partner.title,name:l10n_ru.res_partner_title_pvt_ltd
+msgid "Закрытое акционерное общество"
+msgstr "Закрытое акционерное общество"
+
+#. module: l10n_ru
+#: model:res.partner.title,name:l10n_ru.res_partner_title_oao
+msgid "Открытое акционерное общество"
+msgstr "Открытое акционерное общество"
+
+#. module: l10n_ru
+#: code:addons/l10n_ru/l10n_ru.py:135
+#, python-format
+msgid "Bad URL for bnkdel.txt!"
+msgstr "Неправильный адрес файла bnkdel.txt!"
+
+#. module: l10n_ru
+#: field:wizard.update.banks,location_bnkseek:0
+msgid "Location of bnkseek.txt"
+msgstr "Местонахождение файла bnkseek.txt"
+
+#. module: l10n_ru
+#: model:ir.model,name:l10n_ru.model_product_product
+msgid "Product"
+msgstr "Продукт"
+
+#. module: l10n_ru
+#: field:product.product,declaration_code:0
+msgid "Declaration code"
+msgstr "ГТД"
+
+#. module: l10n_ru
+#: field:wizard.update.banks,location_bnkdel:0
+msgid "Location of bnkdel.txt"
+msgstr "Местонахождение файла bnkdel.txt"
+
+#. module: l10n_ru
+#: code:addons/l10n_ru/l10n_ru.py:92
+#, python-format
+msgid "Bad URL for bnkseek.txt!"
+msgstr "Неправильный адрес файла bnkseek.txt!"
+
+#. module: l10n_ru
+#: field:res.partner,ceo:0
+msgid "CEO"
+msgstr "Руководитель"
+
+#. module: l10n_ru
+#: code:addons/l10n_ru/l10n_ru.py:92
+#: code:addons/l10n_ru/l10n_ru.py:135
+#, python-format
+msgid "Fix the URL and try again."
+msgstr "Исправьте адрес и попробуйте снова."
+
+#. module: l10n_ru
+#: view:wizard.update.banks:0
+msgid "Update"
+msgstr "Обновить"
+
+#. module: l10n_ru
+#: help:res.partner,ceo:0
+msgid "Example: Lenin V.I."
+msgstr "Пример: Ленин В.И."
+
+#. module: l10n_ru
+#: field:res.partner,accountant:0
+msgid "Chief accountant"
+msgstr "Главный бухгалтер"
+
+#. module: l10n_ru
+#: model:res.partner.title,name:l10n_ru.res_partner_title_ltd
+msgid "Общество с ограниченной ответственностью"
+msgstr "Общество с ограниченной ответственностью"
+
+#. module: l10n_ru
+#: field:product.uom,full_name:0
+#: field:res.country,full_name:0
+#: field:res.currency,full_name:0
+msgid "Full name"
+msgstr "Полное наименование"
+
+#. module: l10n_ru
+#: field:res.partner,contract_num:0
+msgid "Contract number"
+msgstr "Номер договора"
+
+#. module: l10n_ru
+#: field:res.partner,kpp:0
+msgid "KPP"
+msgstr "КПП"
+
+#. module: l10n_ru
+#: model:res.partner.title,shortcut:l10n_ru.res_partner_title_oao
+msgid "ОАО"
+msgstr "ОАО"
+
+#. module: l10n_ru
+#: code:addons/l10n_ru/l10n_ru.py:100
+#, python-format
+msgid "Country Error: %s"
+msgstr "Ошибка страны: %s"
+
+#. module: l10n_ru
+#: model:ir.model,name:l10n_ru.model_res_country
+msgid "Country"
+msgstr "Страна"
+
+#. module: l10n_ru
+#: field:res.partner,address_formatted:0
+msgid "Formatted Address"
+msgstr "Formatted Address"
+
+#. module: l10n_ru
+#: field:res.partner,name_official:0
+msgid "Official name"
+msgstr "Официальное наименование"
+
+#. module: l10n_ru
+#: field:res.bank,acc_corr:0
+#: field:res.partner.bank,bank_acc_corr:0
+msgid "Corr. account"
+msgstr "Корр. счет"
+
+#. module: l10n_ru
+#: model:res.partner.title,shortcut:l10n_ru.res_partner_title_ltd
+msgid "ООО"
+msgstr "ООО"
+
+#. module: l10n_ru
+#: model:res.partner.title,shortcut:l10n_ru.res_partner_title_ip
+msgid "ИП"
+msgstr "ИП"
+
+#. module: l10n_ru
+#: model:res.partner.title,name:l10n_ru.res_partner_title_madam
+#: model:res.partner.title,shortcut:l10n_ru.res_partner_title_madam
+msgid "Г-жа"
+msgstr "Г-жа"
+
+#. module: l10n_ru
+#: field:res.partner,contract_date:0
+msgid "Contract date"
+msgstr "Дата договора"
+
+#. module: l10n_ru
+#: model:res.partner.title,shortcut:l10n_ru.res_partner_title_pvt_ltd
+msgid "ЗАО"
+msgstr "ЗАО"
+
+#. module: l10n_ru
+#: model:ir.model,name:l10n_ru.model_wizard_update_banks
+msgid "wizard.update.banks"
+msgstr "Мастер обновления банков"
+
+#. module: l10n_ru
+#: field:res.currency,code:0
+msgid "Code"
+msgstr "Код"
+
+#. module: l10n_ru
+#: field:product.uom,okei:0
+msgid "OKEI"
+msgstr "Код по ОКЕИ"
+
+#. module: l10n_ru
+#: model:ir.model,name:l10n_ru.model_res_partner_bank
+msgid "Bank Accounts"
+msgstr "Банковские счета"
+
+#. module: l10n_ru
+#: field:product.product,country_origin_id:0
+msgid "Country of origin"
+msgstr "Страна происхождения"
+
+#. module: l10n_ru
+#: field:res.partner,okpo:0
+msgid "OKPO"
+msgstr "ОКПО"
+
+#. module: l10n_ru
+#: field:res.country,numeral_code:0
+msgid "Numeral country code"
+msgstr "Цифровой код страны"
+
+#. module: l10n_ru
+#: model:ir.model,name:l10n_ru.model_res_currency
+msgid "Currency"
+msgstr "Валюта"
+
+#. module: l10n_ru
+#: field:res.partner,inn:0
+msgid "INN"
+msgstr "ИНН"
+
+#. module: l10n_ru
+#: model:ir.model,name:l10n_ru.model_res_bank
+msgid "Bank"
+msgstr "Банк"
+
+#. module: l10n_ru
+#: field:res.bank,last_updated:0
+msgid "Last updated"
+msgstr "Последнее обновление"
+
+#. module: l10n_ru
+#: view:wizard.update.banks:0
+msgid "Cancel"
+msgstr "Отмена"
+
+#. module: l10n_ru
+#: model:ir.model,name:l10n_ru.model_res_partner
+msgid "Partner"
+msgstr "Партнер"
+
+#. module: l10n_ru
+#: field:res.partner,ceo_function:0
+msgid "CEO Function"
+msgstr "Должность руководителя"
+
+#. module: l10n_ru
+#: view:wizard.update.banks:0
+msgid "Create Account"
+msgstr "Создать счет"
+

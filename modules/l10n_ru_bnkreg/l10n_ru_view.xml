@@ -1,0 +1,72 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+
+        <record id="view_res_bank_form_l10n_ru" model="ir.ui.view">
+            <field name="name">res.bank.form</field>
+            <field name="model">res.bank</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="base.view_res_bank_form"/>
+            <field name="arch" type="xml">
+                <field name="bic" position="after">
+                    <field name="acc_corr" select="1"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_res_bank_tree_l10n_ru" model="ir.ui.view">
+            <field name="name">res.bank.tree</field>
+            <field name="model">res.bank</field>
+            <field name="type">tree</field>
+            <field name="inherit_id" ref="base.view_res_bank_tree"/>
+            <field name="arch" type="xml">
+                <field name="bic" position="after">
+                    <field name="acc_corr"/>
+                    <field name="city"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_partner_bank_form_l10n_ru" model="ir.ui.view">
+            <field name="name">res.partner.bank.form</field>
+            <field name="model">res.partner.bank</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="base.view_partner_bank_form"/>
+            <field name="arch" type="xml">
+                <field name="bank_bic" position="after">
+                    <field name="bank_acc_corr"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_wizard_update_banks" model="ir.ui.view">
+            <field name="name">wizard.update.banks.form</field>
+            <field name="model">wizard.update.banks</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Create Account" version="7.0">
+                    <header>
+                        <button name="update_banks" string="Update" type="object"
+                                context="{'location_bnkseek': location_bnkseek, 'location_bnkdel': location_bnkdel}"/>
+                        <button special="cancel" type="object" string="Cancel"/>
+                    </header>
+                    <group>
+                        <field name="location_bnkseek"/>
+                        <field name="location_bnkdel"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="action_wizard_update_banks"
+                    name="Update Banks"
+                    target="new"
+                    res_model="wizard.update.banks"
+                    src_model="res.bank"
+                    view_type="form" view_mode="form"/>
+
+        <menuitem sequence="1" action="action_wizard_update_banks"
+                  id="menu_update_banks" parent="account.account_account_menu"/>
+
+    </data>
+</openerp>
