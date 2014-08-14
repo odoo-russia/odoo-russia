@@ -91,17 +91,19 @@ class account_invoice(osv.osv):
                 res[invoice.id] = invoice.partner_id.contract_num
             elif invoice.origin:
                 so_obj = self.pool.get('sale.order')
-                order_id = so_obj.search(cr, uid, [('name', '=', invoice.origin)], context=context)[0]
-                order = so_obj.browse(cr, uid, order_id, context=context)
+                order_id = so_obj.search(cr, uid, [('name', '=', invoice.origin)], context=context)
+                if order_id:
+                    order_id = order_id[0]
+                    order = so_obj.browse(cr, uid, order_id, context=context)
 
-                seq_id = self.pool.get('ir.sequence').search(cr, uid, [('code', '=', 'sale.order')])
-                sequence = self.pool.get('ir.sequence').read(cr, uid, seq_id, ['padding', 'active'])[0]
-                if sequence and sequence.get('active'):
-                    padding = sequence.get('padding')
-                    padding = 0 - int(padding)
-                    res[invoice.id] = order.name[padding:].lstrip('0')
-                else:
-                    res[invoice.id] = ""
+                    seq_id = self.pool.get('ir.sequence').search(cr, uid, [('code', '=', 'sale.order')])
+                    sequence = self.pool.get('ir.sequence').read(cr, uid, seq_id, ['padding', 'active'])[0]
+                    if sequence and sequence.get('active'):
+                        padding = sequence.get('padding')
+                        padding = 0 - int(padding)
+                        res[invoice.id] = order.name[padding:].lstrip('0')
+                    else:
+                        res[invoice.id] = ""
             else:
                 res[invoice.id] = ""
         return res
@@ -113,8 +115,11 @@ class account_invoice(osv.osv):
                 res[invoice.id] = invoice.partner_id.contract_date
             elif invoice.origin:
                 so_obj = self.pool.get('sale.order')
-                order_id = so_obj.search(cr, uid, [('name', '=', invoice.origin)], context=context)[0]
-                res[invoice.id] = so_obj.browse(cr, uid, order_id, context=context).date_order
+                order_id = so_obj.search(cr, uid, [('name', '=', invoice.origin)], context=context)
+                if order_id:
+                    order_id = order_id[0]
+                    res[invoice.id] = so_obj.browse(cr, uid, order_id, context=context).date_order
+
             else:
                 res[invoice.id] = ""
         return res
