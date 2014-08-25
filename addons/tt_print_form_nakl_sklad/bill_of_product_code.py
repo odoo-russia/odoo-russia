@@ -3,14 +3,15 @@
 import time
 from openerp.report import report_sxw
 from osv import orm, osv, fields
-from tools.translate import _
+from openerp.tools.translate import _
 
 
 class bill_of_product_report(report_sxw.rml_parse):
     name = 'account_invoice.new_bill_report'
+
     def __init__(self, cr, uid, name, context):
         super(bill_of_product_report, self).__init__(cr, uid, name, context=context)
-        self.localcontext.update( {'time': time,})
+        self.localcontext.update({'time': time})
 
 report_sxw.report_sxw('report.new_bill_of_product_report', 'account_invoice',
                       'tt_print_form_nakl_sklad/bill_of_product.jrxml',
@@ -49,4 +50,3 @@ class account_invoice(osv.osv):
         'invoices_count': fields.function(_get_invoices_count, type='integer'),
     }
 account_invoice()
-

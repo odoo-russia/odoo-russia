@@ -1,58 +1,44 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # coding: utf-8
-# Countries Parser
 
-from xmlrpclib import ServerProxy, Fault
+# Нормативный документ: Постановление Госстандарта России от 14.12.2001 N 529-ст (ред. от 04.07.2013)
+# "О принятии и введении в действие Общероссийского классификатора стран мира"
+# (вместе с "ОК (МК (ИСО 3166) 004-97) 025-2001...") (дата введения 01.07.2002)
 
-input_file = "country"
-out_file = "../../data/res_country_data.xml"
-header = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
-header1 = "<openerp>\n"
-header2 = "\t<data noupdate=\"0\">\n"
-footer2 = "\t</data>\n"
-footer1 = "</openerp>\n"
+import os
+from lxml import etree
+
+IN_FILE = 'country'
+OUT_FILE = os.path.join(os.path.dirname(__file__), '../../data/res_country_data.xml')
 
 
-def format_country_entry(id, name, code, full_name, iso):
-    return """
-\t\t<record id="base.%s" model="res.country">
-\t\t\t<field name="name">%s</field>
-\t\t\t<field name="code">%s</field>
-\t\t\t<field name="full_name">%s</field>
-\t\t\t<field name="numeral_code">%s</field>
-\t\t</record>
-    """%(id, name, code, full_name, iso)
+def generate_countries(in_file, out_file):
+    def _append_field(name, text):
+        n = etree.SubElement(record, 'field', attrib={'name': name})
+        n.text = text.strip().decode('utf-8')
 
-try:
-    source = open(input_file, 'r')
-    dest = open(out_file, 'w')
+    with open(in_file, 'r') as f:
+        f.readline()  # skip header
 
-    keys_line = source.readline()
-    keys = keys_line.replace('\n', '').split('\t')
+        root = etree.Element('openerp')
+        data = etree.SubElement(root, 'data', attrib={'noupdate': '0'})
 
-    dest.write(header)
-    dest.write(header1)
-    dest.write(header2)
+        for l in f:
+            if not l:
+                continue
+            c = l.split('\t')
+            record = etree.SubElement(data, 'record',
+                                      attrib={'model': 'res.country',
+                                              'id': 'base.%s' % c[3].lower()})
+            _append_field('name', c[0])
+            _append_field('full_name', c[1] if c[1] else c[0])
+            _append_field('numeral_code', c[5])
 
-    for line in source:
-        values = line.replace('\n', '').split('\t')
-        id = values[3].lower()
-        code = id
-        name = values[0]
-        full_name = values[1] if values[1] else name
-        iso = values[5]
+    with open(out_file, 'w') as f:
+        f.write(etree.tostring(root,
+                                pretty_print=True,
+                                xml_declaration=True,
+                                encoding='utf-8'))
 
-        if id == 'gb':
-            code = 'uk'
-
-        entry = format_country_entry(id, name, code, full_name, iso)
-        dest.write(entry)
-
-    dest.write(footer2)
-    dest.write(footer1)
-    source.close()
-    dest.close()
-
-except Exception as ex:
-    print 'Exception:',ex.message
-
+if __name__ == '__main__':
+    generate_countries(IN_FILE, OUT_FILE)
