@@ -1,0 +1,155 @@
+# Russian translation for openobject-addons
+# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
+# This file is distributed under the same license as the openobject-addons package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: openobject-addons\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2012-12-21 17:06+0000\n"
+"PO-Revision-Date: 2013-05-25 12:14+0200\n"
+"Last-Translator: \n"
+"Language-Team: Russian <ru@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2013-01-24 18:54+0000\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#. module: project_mrp
+#: model:process.node,note:project_mrp.process_node_procuretasktask0
+msgid "For each product, on type service and on order"
+msgstr "Для каждого продукта на вид сервиса или на сделку"
+
+#. module: project_mrp
+#: model:process.transition,note:project_mrp.process_transition_createtask0
+msgid "Product type is service, then its creates the task."
+msgstr "Вид продукта - сервис, затем он создает задачу"
+
+#. module: project_mrp
+#: code:addons/project_mrp/project_procurement.py:92
+#, python-format
+msgid "Task created"
+msgstr "Задача создана"
+
+#. module: project_mrp
+#: model:process.node,note:project_mrp.process_node_saleordertask0
+msgid "In case you sell services on sales order"
+msgstr "В случае если вы продаете сервисы на продажу ордера"
+
+#. module: project_mrp
+#: model:process.node,note:project_mrp.process_node_mrptask0
+msgid "A task is created to provide the service."
+msgstr "Задача создаа для предоставления сервиса"
+
+#. module: project_mrp
+#: model:ir.model,name:project_mrp.model_product_product
+msgid "Product"
+msgstr "Товар"
+
+#. module: project_mrp
+#: model:process.node,name:project_mrp.process_node_saleordertask0
+msgid "Sales Order Task"
+msgstr "Задача на продажу ордера"
+
+#. module: project_mrp
+#: model:process.transition,note:project_mrp.process_transition_procuretask0
+msgid "if product type is 'service' then it creates the task."
+msgstr "Если тип продукта \"сервис\" тогда создается задача"
+
+#. module: project_mrp
+#: model:process.transition,name:project_mrp.process_transition_ordertask0
+msgid "Order Task"
+msgstr "Задача сделки"
+
+#. module: project_mrp
+#: model:process.transition,name:project_mrp.process_transition_procuretask0
+msgid "Procurement Task"
+msgstr "Задача на осуществление закупок"
+
+#. module: project_mrp
+#: field:procurement.order,sale_line_id:0
+msgid "Sales order line"
+msgstr "Позиция сделки на продажу"
+
+#. module: project_mrp
+#: model:ir.model,name:project_mrp.model_project_task
+#: model:process.node,name:project_mrp.process_node_mrptask0
+#: model:process.node,name:project_mrp.process_node_procuretasktask0
+#: field:procurement.order,task_id:0
+msgid "Task"
+msgstr "Задание"
+
+#. module: project_mrp
+#: view:product.product:0
+msgid ""
+"will be \n"
+"                        created to follow up the job to do. This task will "
+"appear\n"
+"                        in the project related to the contract of the sales "
+"order."
+msgstr ""
+"будет \n"
+"                     создано для отслеживания как выполняется работа. Эта "
+"задача появится \n"
+"                     в проэкте, связанном с контрактом по сделке."
+
+#. module: project_mrp
+#: view:product.product:0
+msgid "When you sell this service to a customer,"
+msgstr "Когда вы предоставляете этот сервис потребителю."
+
+#. module: project_mrp
+#: field:product.product,project_id:0
+msgid "Project"
+msgstr "Проэкт"
+
+#. module: project_mrp
+#: model:ir.model,name:project_mrp.model_procurement_order
+#: field:project.task,procurement_id:0
+msgid "Procurement"
+msgstr "Закупки"
+
+#. module: project_mrp
+#: view:product.product:0
+msgid "False"
+msgstr "Неверно"
+
+#. module: project_mrp
+#: code:addons/project_mrp/project_procurement.py:86
+#, python-format
+msgid "Task created."
+msgstr "Задача создана"
+
+#. module: project_mrp
+#: model:process.transition,note:project_mrp.process_transition_ordertask0
+msgid "If procurement method is Make to order and supply method is produce"
+msgstr ""
+"Если метод осуществления закупок работает строго на основании заказа и метод "
+"поставки позволяет получить"
+
+#. module: project_mrp
+#: field:project.task,sale_line_id:0
+msgid "Sales Order Line"
+msgstr "Позиция сделки на продажу"
+
+#. module: project_mrp
+#: model:process.transition,name:project_mrp.process_transition_createtask0
+msgid "Create Task"
+msgstr "Создать задачу"
+
+#. module: project_mrp
+#: model:ir.model,name:project_mrp.model_sale_order
+msgid "Sales Order"
+msgstr "Ордер на продажу"
+
+#. module: project_mrp
+#: view:project.task:0
+msgid "Order Line"
+msgstr "Позиция сделки"
+
+#. module: project_mrp
+#: view:product.product:0
+msgid "a task"
+msgstr "Задача"
