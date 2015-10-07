@@ -1,19 +1,19 @@
-chart_template_id,id,name,description,parent_id:id,sign
-l10n_ru_account_chart_template,tax_code_ru_root,,Налоги РФ,,0
-l10n_ru_account_chart_template,tax_code_ru_1,VAT,НДС,tax_code_ru_root,1
-l10n_ru_account_chart_template,tax_code_ru_1_1,VATin,НДС входящий,tax_code_ru_1,1
-l10n_ru_account_chart_template,tax_code_ru_1_2,VATout,НДС исходящий,tax_code_ru_1,1
-l10n_ru_account_chart_template,tax_code_ru_2,Acc,Акцизы,tax_code_ru_root,1
-l10n_ru_account_chart_template,tax_code_ru_3,NDFL,НДФЛ,tax_code_ru_root,1
-l10n_ru_account_chart_template,tax_code_ru_4,STRAH,Страховые взносы,tax_code_ru_root,1
-l10n_ru_account_chart_template,tax_code_ru_5,,Налог на прибыль,tax_code_ru_root,1
-l10n_ru_account_chart_template,tax_code_ru_6,,Сборы,tax_code_ru_root,1
-l10n_ru_account_chart_template,tax_code_ru_7,,Водный налог,tax_code_ru_root,1
-l10n_ru_account_chart_template,tax_code_ru_8,,Государственная пошлина,tax_code_ru_root,1
-l10n_ru_account_chart_template,tax_code_ru_9,,НДПИ,tax_code_ru_root,1
-l10n_ru_account_chart_template,tax_code_ru_10,,УСНО,tax_code_ru_root,1
-l10n_ru_account_chart_template,tax_code_ru_11,,ЕНВД,tax_code_ru_root,1
-l10n_ru_account_chart_template,tax_code_ru_12,,Транспортный налог,tax_code_ru_root,1
-l10n_ru_account_chart_template,tax_code_ru_13,,Налог на игорный бизнес,tax_code_ru_root,1
-l10n_ru_account_chart_template,tax_code_ru_14,,Налог на имущество организации,tax_code_ru_root,1
-l10n_ru_account_chart_template,tax_code_ru_15,,Земельный налог,tax_code_ru_root,1
+chart_template_id,name,description,sign
+l10n_ru_account_chart_template,,Налоги РФ,0
+l10n_ru_account_chart_template,VAT,НДС,1
+l10n_ru_account_chart_template,VATin,НДС входящий,1
+l10n_ru_account_chart_template,VATout,НДС исходящий,1
+l10n_ru_account_chart_template,Acc,Акцизы,1
+l10n_ru_account_chart_template,NDFL,НДФЛ,1
+l10n_ru_account_chart_template,STRAH,Страховые взносы,1
+l10n_ru_account_chart_template,,Налог на прибыль,1
+l10n_ru_account_chart_template,,Сборы,1
+l10n_ru_account_chart_template,,Водный налог,1
+l10n_ru_account_chart_template,,Государственная пошлина,1
+l10n_ru_account_chart_template,,НДПИ,1
+l10n_ru_account_chart_template,,УСНО,1
+l10n_ru_account_chart_template,,ЕНВД,1
+l10n_ru_account_chart_template,,Транспортный налог,1
+l10n_ru_account_chart_template,,Налог на игорный бизнес,1
+l10n_ru_account_chart_template,,Налог на имущество организации,1
+l10n_ru_account_chart_template,,Земельный налог,1
