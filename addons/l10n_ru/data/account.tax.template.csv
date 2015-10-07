@@ -1,19 +1,19 @@
-chart_template_id,name,description
-l10n_ru_account_chart_template,,Налоги РФ
-l10n_ru_account_chart_template,VAT,НДС
-l10n_ru_account_chart_template,VATin,НДС входящий
-l10n_ru_account_chart_template,VATout,НДС исходящий
-l10n_ru_account_chart_template,Acc,Акцизы
-l10n_ru_account_chart_template,NDFL,НДФЛ
-l10n_ru_account_chart_template,STRAH,Страховые взносы
-l10n_ru_account_chart_template,,Налог на прибыль
-l10n_ru_account_chart_template,,Сборы
-l10n_ru_account_chart_template,,Водный налог
-l10n_ru_account_chart_template,,Государственная пошлина
-l10n_ru_account_chart_template,,НДПИ
-l10n_ru_account_chart_template,,УСНО
-l10n_ru_account_chart_template,,ЕНВД
-l10n_ru_account_chart_template,,Транспортный налог
-l10n_ru_account_chart_template,,Налог на игорный бизнес
-l10n_ru_account_chart_template,,Налог на имущество организации
-l10n_ru_account_chart_template,,Земельный налог
+chart_template_id,name,description,amount
+l10n_ru_account_chart_template,,Налоги РФ,4
+l10n_ru_account_chart_template,VAT,НДС,4
+l10n_ru_account_chart_template,VATin,НДС входящий,4
+l10n_ru_account_chart_template,VATout,НДС исходящий,4
+l10n_ru_account_chart_template,Acc,Акцизы,4
+l10n_ru_account_chart_template,NDFL,НДФЛ,4
+l10n_ru_account_chart_template,STRAH,Страховые взносы,4
+l10n_ru_account_chart_template,,Налог на прибыль,4
+l10n_ru_account_chart_template,,Сборы,4
+l10n_ru_account_chart_template,,Водный налог,4
+l10n_ru_account_chart_template,,Государственная пошлина,4
+l10n_ru_account_chart_template,,НДПИ,4
+l10n_ru_account_chart_template,,УСНО,4
+l10n_ru_account_chart_template,,ЕНВД,4
+l10n_ru_account_chart_template,,Транспортный налог,4
+l10n_ru_account_chart_template,,Налог на игорный бизнес,4
+l10n_ru_account_chart_template,,Налог на имущество организации,4
+l10n_ru_account_chart_template,,Земельный налог,4
