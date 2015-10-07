@@ -16,7 +16,7 @@
         </field>
     </record>
 
-    <record id="view_currency_form_l10n_ru" model="ir.ui.view">
+    <!--<record id="view_currency_form_l10n_ru" model="ir.ui.view">
             <field name="name">res.currency.form_new</field>
             <field name="model">res.currency</field>
             <field name="inherit_id" ref="base.view_currency_form"/>
@@ -28,7 +28,7 @@
                     <field name="code"/>
                 </xpath>
             </field>
-        </record>
+        </record>-->
 
     <record id="view_currency_tree_l10n_ru" model="ir.ui.view">
         <field name="name">res.currency.tree</field>
