@@ -1,4 +1,4 @@
-chart_template_id,name,description,amount
+chart_template_id:id,name,description,amount
 l10n_ru_account_chart_template,,Налоги РФ,4
 l10n_ru_account_chart_template,VAT,НДС,4
 l10n_ru_account_chart_template,VATin,НДС входящий,4
