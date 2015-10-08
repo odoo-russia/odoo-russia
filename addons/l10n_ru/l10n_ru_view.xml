@@ -16,20 +16,6 @@
         </field>
     </record>
 
-    <!--<record id="view_currency_form_l10n_ru" model="ir.ui.view">
-            <field name="name">res.currency.form_new</field>
-            <field name="model">res.currency</field>
-            <field name="inherit_id" ref="base.view_currency_form"/>
-            <field name="arch" type="xml">
-                <field name="name" position="before">
-                    <field name="full_name"/>
-                </field>
-                <xpath expr="//form/group//field[@name='active']" position="after">
-                    <field name="code"/>
-                </xpath>
-            </field>
-        </record>-->
-
     <record id="view_currency_tree_l10n_ru" model="ir.ui.view">
         <field name="name">res.currency.tree</field>
         <field name="model">res.currency</field>
@@ -131,9 +117,6 @@
             <field name="type">form</field>
             <field name="inherit_id" ref="base.view_partner_bank_form"/>
             <field name="arch" type="xml">
-                <!--<field name="bank_bic" position="after">
-                    <field name="bank_acc_corr"/>
-                    </field>-->
                 <form position="inside">
                   <group name="bank" string="Information About the Bank">
                     <field name="bank_acc_corr"/>
