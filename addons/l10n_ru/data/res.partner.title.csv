@@ -1,7 +1,7 @@
-"id","domain","name","shortcut"
-"res_partner_title_pvt_ltd","partner","Закрытое акционерное общество","ЗАО"
-"res_partner_title_ltd","partner","Общество с ограниченной ответственностью","ООО"
-"res_partner_title_oao","partner","Открытое акционерное общество","ОАО"
-"res_partner_title_ip","partner","Индивидуальный предприниматель","ИП"
-"res_partner_title_madam","contact","Г-жа","Г-жа"
-"res_partner_title_sir","contact","Г-н","Г-н"
+id,name,shortcut
+res_partner_title_pvt_ltd,Закрытое акционерное общество,ЗАО
+res_partner_title_ltd,Общество с ограниченной ответственностью,ООО
+res_partner_title_oao,Открытое акционерное общество,ОАО
+res_partner_title_ip,Индивидуальный предприниматель,ИП
+res_partner_title_madam,Г-жа,Г-жа
+res_partner_title_sir,Г-н,Г-н
