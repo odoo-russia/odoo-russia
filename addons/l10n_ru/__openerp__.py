@@ -39,7 +39,6 @@ This module is the localization of OpenERP for Russian Federation.
     'author': 'OpenERP Russian Localization Team, Transparent Technologies, CodUP',
     'website': 'https://launchpad.net/~openerp-l10n-ru, http://tterp.ru, http://codup.com',
     'images': ['images/flag_ru.png'],
-    #'depends': ['account', 'account_chart'],
     'depends': ['account'],
     'data': [
         'data/account_chart_template.xml',
@@ -48,6 +47,7 @@ This module is the localization of OpenERP for Russian Federation.
         'data/res_country_data.xml',
         'data/account.tax.template.csv',
         'data/res.country.state.csv',
+        'data/res.partner.title.csv',
         'l10n_ru_view.xml',
         'data/account_chart_template.yml',
     ],
