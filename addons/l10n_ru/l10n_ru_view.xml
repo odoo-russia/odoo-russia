@@ -17,18 +17,18 @@
     </record>
 
     <record id="view_currency_form_l10n_ru" model="ir.ui.view">
-            <field name="name">res.currency.form_new</field>
-            <field name="model">res.currency</field>
-            <field name="inherit_id" ref="base.view_currency_form"/>
-            <field name="arch" type="xml">
-                <field name="name" position="before">
-                    <field name="full_name"/>
-                </field>
-                <xpath expr="//form/group//field[@name='active']" position="after">
-                    <field name="code"/>
-                </xpath>
-            </field>
-        </record>
+      <field name="name">res.currency.form_new</field>
+      <field name="model">res.currency</field>
+      <field name="inherit_id" ref="base.view_currency_form"/>
+      <field name="arch" type="xml">
+        <field name="name" position="before">
+          <field name="full_name"/>
+        </field>
+        <xpath expr="//form/sheet/group//field[@name='active']" position="after">
+          <field name="code"/>
+        </xpath>
+      </field>
+    </record>
 
     <record id="view_currency_tree_l10n_ru" model="ir.ui.view">
         <field name="name">res.currency.tree</field>
@@ -79,7 +79,7 @@
                 <field name="street2" position="attributes">
                     <attribute name="invisible">1</attribute>
                 </field>
-                <xpath expr="//page[@string='Accounting']/group[1]" position="before">
+                <xpath expr="//page[@name='accounting']/group[1]" position="before">
                     <label for="name_official"/>
                     <group>
                         <field name="name_official" colspan="4" nolabel="1"/>
@@ -131,9 +131,11 @@
             <field name="type">form</field>
             <field name="inherit_id" ref="base.view_partner_bank_form"/>
             <field name="arch" type="xml">
-                <field name="bank_bic" position="after">
+                <form position="inside">
+                  <group name="bank" string="Information About the Bank">
                     <field name="bank_acc_corr"/>
-                </field>
+                  </group>
+                </form>
             </field>
         </record>
 
